@@ -157,6 +157,15 @@ export function parsePairing(entry: string): Pairing {
   };
 }
 
+/** "6.6" -> { module: 6, fileId: "06" }, or null if not that shape. Used to resolve a
+ * bookmark's stored `lesson_id` (ARCHITECTURE.md: "lesson_id text -- e.g. '6.6'") back to
+ * a lesson file. */
+export function parseLessonId(lessonId: string): { module: number; fileId: string } | null {
+  const match = lessonId.match(/^(\d+)\.(\d+)$/);
+  if (!match) return null;
+  return { module: Number(match[1]), fileId: match[2].padStart(2, "0") };
+}
+
 /** Known content bug flagged in DECISIONS.md — do not silently ship it. */
 export function isFlaggedForReview(lesson: Lesson): boolean {
   return lesson.module === 6 && lesson.lesson === "6.6";
