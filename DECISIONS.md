@@ -164,6 +164,55 @@ FAQ/trouble accordions, copy buttons) was ported into a React client component, 
 counts. **Needs Raphy**: an actual visual pass at the three breakpoints before this ships — this
 build has not confirmed pixel-level fidelity, only structural/behavioural fidelity.
 
+## middleware.ts skips the QR path entirely rather than just being fast on it
+
+ARCHITECTURE.md's State plan calls for `middleware.ts` to refresh the Supabase session "on
+every request." Taken completely literally, that would add a Supabase auth round-trip to
+`/m{module}/{lesson}` — the one route the whole build's non-negotiable rule says must make zero
+database calls. There's no real tension once you notice the QR routes need no session state at
+all (they render the same HTML for every visitor), so `middleware.ts` checks the pathname first
+and returns immediately for anything matching `/m\d+`, before constructing a Supabase client at
+all — not merely fast, genuinely zero network calls on that path. Every other route still gets
+the session refresh. Confirmed this doesn't break session refresh elsewhere: the exclusion regex
+only matches `/m6`, `/m6/06`-shaped paths, not `/my-prompts` or anything else.
+
+Also: current Next.js (16.3.5) deprecates the `middleware.ts` file convention in favour of a
+`proxy.ts` rename (same behaviour, `npx @next/codemod@canary middleware-to-proxy` migrates it
+automatically) — kept as `middleware.ts` here since that's the name ARCHITECTURE.md's folder
+structure specifies and the file still works, just with a build-time deprecation warning. Worth
+running the codemod next time this file changes.
+
+## Google sign-in: ID-token exchange, not a redirect flow — and invite-code linkage is untested there
+
+ARCHITECTURE.md is explicit that "the Google Sign-In button is not restyled" — Google's own
+rendered button via Google Identity Services, not a custom OAuth button. `GoogleSignInButton`
+loads `accounts.google.com/gsi/client`, renders the official button into an unstyled container,
+and exchanges the resulting ID token for a Supabase session via `signInWithIdToken` rather than
+a `signInWithOAuth` redirect — keeps the whole sign-in inline in the modal instead of bouncing
+through a redirect. No live Google Cloud OAuth client exists in this environment (see "Items
+needing Raphy" below), so the button renders a disabled placeholder until
+`NEXT_PUBLIC_GOOGLE_CLIENT_ID` is set — verified it doesn't throw with the var unset.
+
+**Known gap**: magic-link sign-in passes `invite_code` through `signInWithOtp`'s `options.data`,
+which `handle_new_user` (migration 0001) reads out of `raw_user_meta_data` to set `invited_by`.
+`signInWithIdToken` has no equivalent per-call metadata parameter in supabase-js — Google
+sign-ins from a `/join?ref=code` link will authenticate correctly but the invite linkage has not
+been verified to survive that path. Needs checking against a live Supabase project; magic-link
+invite linkage is the one to trust for now.
+
+## Sign-in modal only mounts while open
+
+`AuthProvider` renders `<SignInModal />` conditionally (`{isSignInOpen && <SignInModal />}`)
+rather than always rendering it and toggling visibility internally. This was originally a reset
+effect (clear the email field and status when the modal closes) but the project's ESLint config
+flags synchronous `setState` calls inside `useEffect` (`react-hooks/set-state-in-effect`, a
+React Compiler–readiness rule) as a real lint error, not a style nit. Mounting only while open
+gets the same reset behaviour for free — a fresh mount always starts from initial state — with
+no effect needed. `BookmarkButton` and `JoinView` hit the same rule for a similar "reset on a
+condition" pattern and were restructured the same way (derive a display value instead of
+resetting state, or only set state inside an async callback rather than synchronously in the
+effect body) rather than suppressed.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -177,7 +226,9 @@ build has not confirmed pixel-level fidelity, only structural/behavioural fideli
 - A live Supabase project (URL + keys) to point `.env.local` at, with migration
   `0001_init.sql` applied — this run only wrote the migration and env var names, no project
   was provisioned. Once it exists, run a real cross-account RLS test (see the note above) —
-  the current test only checks the policy SQL, not enforcement.
+  the current test only checks the policy SQL, not enforcement. Also verify the actual sign-in
+  flows against it: magic link, Google ID-token exchange, and specifically whether Google
+  sign-in via `/join?ref=code` correctly links `invited_by` (see the note above — untested).
 - A real visual check of `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` at 400px, 768px
   and 1280px against their locked HTML source — this build verified structure and behaviour but
   had no browser available to confirm pixel fidelity (see the note above).

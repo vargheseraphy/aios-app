@@ -66,12 +66,21 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 5 — accounts, bookmarks, invites
 
-- [ ] Magic link + Google OAuth sign-in
-- [ ] Bookmarking and invites require an account; browsing/copying never do
-- [ ] `middleware.ts` refreshes the session
-- [ ] `/account`, `/my-prompts`, `/join`
-- [ ] Acceptance: sign-out clears the session; session cookie is HttpOnly, Secure,
-      SameSite=Lax; public routes still make zero database calls
+- [x] Magic link + Google OAuth sign-in (`components/auth/SignInModal.tsx`,
+      `GoogleSignInButton.tsx` — Google via GIS + `signInWithIdToken`, see DECISIONS.md for
+      the invite-code-linkage gap on that path)
+- [x] Bookmarking and invites require an account; browsing/copying never do (verified: no
+      route under `app/[module]/` imports Supabase, `/m{module}/{lesson}` stays statically
+      generated with `BookmarkButton` as the only auth-aware, client-only island on the page)
+- [x] `middleware.ts` refreshes the session, skips the QR path entirely (see DECISIONS.md)
+- [x] `/account`, `/my-prompts`, `/join`
+- [x] Acceptance: sign-out clears the session (`supabase.auth.signOut()`, default
+      `@supabase/ssr` cookie handling — HttpOnly/Secure/SameSite=Lax, no overrides in this
+      codebase); public routes still make zero database calls — `npm run build` confirms all
+      118 QR routes plus the 5 marketing pages stay static (`○`/`●`), `grep -r
+      SUPABASE_SERVICE .next/static` clean; `npm run build`, `npx tsc --noEmit`, `npx vitest
+      run`, `npm run lint` all pass. No live Supabase/Google project to run a real sign-in
+      flow against in this environment — see DECISIONS.md's "Items needing Raphy."
 
 ## Phase 6 — finish
 
