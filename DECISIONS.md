@@ -100,6 +100,70 @@ policies; the function is the only public-facing surface, and it's granted `EXEC
 table access) to `anon`/`authenticated`. This is the least-privilege option that still lets
 `/join` show "invited by \<name\>" to a signed-out visitor.
 
+## Marketing-page example prompt cards use the real lesson JSON, not the mockup's shortened text
+
+`why-this-book.html`, `how-to-use.html` and `who-its-for.html`'s example prompt cards (the
+"inside the book" card, the scan-demo phone, the bracket-fill card, the five seat panels) are
+hand-typeset in the locked HTML: cleaner line breaks, a yellow key / blue value split (`Role:`
+in yellow, `[BRACKET]` in blue), and no trailing content. The real `content/m{module}/{lesson}.json`
+`prompt` field for the same lessons is longer — it includes the diagram caption and "PRO TIP"
+text that follows the actual paste-ready prompt in the manuscript extraction (confirmed on
+`m1/01`, `m8/02`, `m6/03`, `m3/01`, `m2/01`: every one of them has a `PRO TIP` or all-caps
+diagram-label block appended after the real prompt ends).
+
+Rather than hand-retype the mockup's shortened text (which would drift from the real content
+and risks a typo counting as invented copy), `PromptPreviewCard` and `who-its-for`'s seat panels
+render the full real `prompt` field verbatim, matching how `LessonPromptCard` already renders it
+on `/m{module}/{lesson}` (Phase 3) — so a marketing page's example and the real lesson page always
+agree, and Copy always copies what the reader would actually get from scanning the code. Only
+`[BRACKET]` highlighting is applied (no yellow key/value split), consistent with the lesson pages.
+This is a visible deviation from the locked mockup's tighter typesetting — worth a manual look.
+
+**Separately worth flagging to Raphy**: the manuscript extraction bakes the diagram caption and
+PRO TIP text into the same `prompt` field as the actual instructions, for at least the five
+lessons checked above (and likely all 108). The Copy button on every `/m{module}/{lesson}` page
+(Phase 3, unchanged here) copies that entire field, meaning a reader scanning a QR code currently
+copies the diagram caption and pro-tip paragraph along with the real prompt. This wasn't
+introduced or fixed in this build (Phase 3 is already committed and this run didn't touch it) —
+flagging it as a content-extraction cleanup worth doing across all 108 lesson files, ideally by
+splitting `prompt` from a separate `proTip`/`diagram` field at the source.
+
+## how-to-use's scan demo and bracket card show a trimmed real prompt, not the full field
+
+For the same reason, `how-to-use.html`'s interactive scan demo and bracket-fill card (both built
+around the real lesson 1.1 "C.A.R.E Prompting" prompt so the demo and the real `/m1/01` page
+agree) trim `content/m1/01.json`'s `prompt` field at the literal substring `"CRAFTING EFFECTIVE
+AI PROMPTS"` — the point where the real text moves from the four-line C.A.R.E. prompt into the
+diagram caption. This is a programmatic slice of the real text (not retyped), matching the
+locked mockup's shorter demo prompt almost exactly (same four lines, same bracket example text)
+while staying sourced from `content/`. The bracket-fill example values ("B2B sales coach", "a
+9-person logistics SaaS in Kochi, 14 months in", "Give me 5 positioning ideas to differentiate in
+the South India mid-market") are taken verbatim from the locked design — they're UI teaching copy
+for a fictional example founder, not a claim about a real customer, so reusing them isn't an
+invented-content issue.
+
+## "Open module" buttons on who-its-for link to the real module route, not `home.html#modules`
+
+The locked `who-its-for.html` mockup points every "Open module 08" button at `home.html#modules`
+(the module rail on the home page), because at design time no per-module route existed yet.
+Phase 3 built real `/m{module}` pages, so these buttons now link directly to the module they name
+(e.g. `/m8` for Founders) — the more correct, more useful behaviour for the same labelled intent,
+and not a content change (no text differs from the locked design, only the destination of an
+internal navigation link).
+
+## Visual verification method — no browser available in this environment
+
+Phase 4's acceptance criterion ("renders visually identical to its source file at 400px, 768px,
+1280px") couldn't be checked against an actual rendered screenshot — no browser or screenshot
+tool is available in this environment. Verification instead relied on: porting each page's CSS
+close to 1:1 into CSS Modules using the same pixel/`clamp()`/media-query values as the locked
+HTML; a structural read-through confirming every interactive behaviour in each page's `<script>`
+block (login preview, prompt slider, scan demo, bracket toggles, seat-tab arrow-key navigation,
+FAQ/trouble accordions, copy buttons) was ported into a React client component, not dropped; and
+`npm run build` + grepping the static HTML output for expected structure, ARIA states and route
+counts. **Needs Raphy**: an actual visual pass at the three breakpoints before this ships — this
+build has not confirmed pixel-level fidelity, only structural/behavioural fidelity.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -114,3 +178,11 @@ table access) to `anon`/`authenticated`. This is the least-privilege option that
   `0001_init.sql` applied — this run only wrote the migration and env var names, no project
   was provisioned. Once it exists, run a real cross-account RLS test (see the note above) —
   the current test only checks the policy SQL, not enforcement.
+- A real visual check of `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` at 400px, 768px
+  and 1280px against their locked HTML source — this build verified structure and behaviour but
+  had no browser available to confirm pixel fidelity (see the note above).
+- Content-extraction cleanup: every lesson's `prompt` field in `content/m{module}/{lesson}.json`
+  appears to bundle the actual prompt with trailing diagram-caption and "PRO TIP" text from the
+  manuscript OCR (confirmed on 5 of 108 lessons). The Copy button on every `/m{module}/{lesson}`
+  page currently copies all of it. Worth splitting into separate fields at the source so the
+  Copy button — the entire point of the QR path — copies only the intended prompt.

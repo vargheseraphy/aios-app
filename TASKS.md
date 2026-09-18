@@ -58,10 +58,11 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 - [x] `/` from `docs/design/pages/home.html`
 - [x] `/why-this-book` from `why-this-book.html`
 - [x] `/how-to-use` from `how-to-use.html`
-- [ ] `/who-its-for` from `who-its-for.html`
-- [ ] Acceptance: each route renders visually identical to its source file at 400px, 768px,
+- [x] `/who-its-for` from `who-its-for.html`
+- [x] Acceptance: each route renders visually identical to its source file at 400px, 768px,
       1280px; interactive parts work (prompt slider, scan demo, bracket toggles, seat tabs,
-      accordions, copy buttons)
+      accordions, copy buttons) — verified via structural/CSS comparison and build output, not
+      a real rendered screenshot (no browser in this environment); see DECISIONS.md
 
 ## Phase 5 — accounts, bookmarks, invites
 
