@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Roboto, Roboto_Mono } from "next/font/google";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -32,7 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${archivo.variable} ${roboto.variable} ${robotoMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

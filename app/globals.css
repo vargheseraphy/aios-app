@@ -154,3 +154,216 @@ svg {
     padding-inline: 80px;
   }
 }
+
+/*
+ * Shared design primitives lifted from docs/design/pages/home.html, used by
+ * every locked marketing page (home, why-this-book, how-to-use, who-its-for)
+ * — kept global rather than per-component so all four pages draw from one
+ * definition. See docs/design/DESIGN.md's Illustration/Buttons/Components
+ * sections for the source spec.
+ */
+
+/* ---- icons + inline line-art: inherit color so they never vanish ---- */
+.i {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+.line {
+  color: #fff;
+}
+.line .s {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.95;
+}
+.line .s2 {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.55;
+}
+.line .s3 {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-dasharray: 4 6;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+.line .f {
+  fill: currentColor;
+  opacity: 0.16;
+}
+.line .fd {
+  fill: currentColor;
+}
+.line .t {
+  fill: currentColor;
+  opacity: 0.62;
+  font-family: var(--font-mono-stack);
+  font-size: 9px;
+}
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.15s;
+  white-space: nowrap;
+}
+.btn-white {
+  background: #fff;
+  color: var(--ink);
+}
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.88);
+}
+.btn-line {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn-line:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.btn-blue {
+  background: var(--blue);
+  color: #fff;
+}
+.btn-blue:hover {
+  background: var(--blue-lo);
+}
+.btn-ink {
+  background: var(--ink-2);
+  color: #fff;
+}
+.btn-ink:hover {
+  background: #2a2c33;
+}
+.btn-linedark {
+  background: transparent;
+  color: var(--ink-2);
+  border-color: var(--line-l2);
+}
+.btn-linedark:hover {
+  background: var(--wash);
+}
+.btn-onbright {
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+}
+.btn-onbright:hover {
+  background: #000;
+}
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* ---- reading-section backgrounds ---- */
+.light {
+  background: #fff;
+  color: var(--ink-2);
+}
+.wash {
+  background: var(--wash);
+  color: var(--ink-2);
+}
+.light .kicker,
+.wash .kicker {
+  color: var(--gray-l2);
+}
+.light .sd,
+.wash .sd {
+  color: var(--gray-l);
+}
+.dark {
+  background: var(--ink);
+  color: #fff;
+}
+section {
+  padding-block: 76px;
+}
+h2.sh {
+  font-size: clamp(25px, 3.6vw, 38px);
+  line-height: 1.1;
+  margin-block: 12px 12px;
+  max-width: 20ch;
+}
+.sd {
+  font-size: 14.5px;
+  color: var(--fg-2);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+.head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+/* ---- dot navigation (prompt slider, testimonial rail) ---- */
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 22px;
+}
+.dot-b {
+  appearance: none;
+  border: none;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a6adbb;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dot-b:hover {
+  background: #7c8494;
+}
+.dot-b[aria-current="true"] {
+  background: var(--blue);
+  width: 30px;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marq-track,
+  .ticker-track {
+    animation: none !important;
+  }
+}
+
+/* visually hidden but still reachable by screen readers / find-in-page */
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

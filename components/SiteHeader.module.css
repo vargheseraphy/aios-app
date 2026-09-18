@@ -1,0 +1,107 @@
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 60;
+  background: rgba(14, 15, 18, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-d);
+}
+.navIn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+}
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-disp);
+  font-weight: 800;
+  font-size: 14.5px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.sq {
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  background: conic-gradient(
+    from 210deg,
+    var(--blue),
+    var(--red),
+    var(--yellow),
+    var(--green),
+    var(--blue)
+  );
+}
+.navLinks {
+  display: none;
+  gap: 2px;
+  margin-left: 20px;
+}
+@media (min-width: 1040px) {
+  .navLinks {
+    display: flex;
+  }
+}
+.navLinks a {
+  font-size: 13px;
+  color: var(--fg-2);
+  padding: 7px 11px;
+  border-radius: 6px;
+}
+.navLinks a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+.navCta {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s;
+  flex: none;
+}
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.avatarChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line-d);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+.avatarChip .av {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--blue), var(--green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+}
+.avatarChip .cr {
+  color: var(--fg-3);
+}

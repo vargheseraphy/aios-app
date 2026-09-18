@@ -1,0 +1,42 @@
+.marq {
+  border-block: 1px solid var(--line-d);
+  background: var(--panel);
+  overflow: hidden;
+  padding-block: 13px;
+}
+.track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: slide 42s linear infinite;
+}
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--fg-2);
+  border: 1px solid var(--line-d);
+  border-radius: 999px;
+  padding: 6px 15px;
+  white-space: nowrap;
+}
+.item b {
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  color: var(--blue-hi);
+  font-weight: 500;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

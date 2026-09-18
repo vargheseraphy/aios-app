@@ -8,6 +8,14 @@ interface AccordionItemProps {
   children: ReactNode;
   defaultOpen?: boolean;
   className?: string;
+  /**
+   * Controlled mode, for an exclusive-open accordion (e.g. FAQ) where a
+   * parent decides which single item is open. When provided, `open`/`onToggle`
+   * replace the item's own internal state; omit both for the default
+   * every-item-independent behaviour used on lesson pages.
+   */
+  open?: boolean;
+  onToggle?: () => void;
 }
 
 /**
@@ -23,8 +31,13 @@ export function AccordionItem({
   children,
   defaultOpen = false,
   className = "",
+  open: openProp,
+  onToggle,
 }: AccordionItemProps) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [openState, setOpenState] = useState(defaultOpen);
+  const controlled = openProp !== undefined;
+  const open = controlled ? openProp : openState;
+  const toggle = controlled ? onToggle! : () => setOpenState((v) => !v);
   const panelId = `${id}-panel`;
   const triggerId = `${id}-trigger`;
 
@@ -35,7 +48,7 @@ export function AccordionItem({
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
-        onClick={() => setOpen((v) => !v)}
+        onClick={toggle}
         className="flex w-full items-center justify-between gap-4 py-[22px] text-left font-display text-[16.5px] font-bold tracking-[-0.015em] text-ink-2 cursor-pointer"
       >
         {trigger}
