@@ -38,7 +38,7 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 3 — content layer and the QR routes
 
-- [ ] `lib/content.ts` reads and caches `content/`, typed — no lesson text hardcoded
+- [x] `lib/content.ts` reads and caches `content/`, typed — no lesson text hardcoded
 - [ ] `/m{module}` and `/m{module}/{lesson}` routes (see DECISIONS.md for URL format),
       statically generated for all 10 modules and 108 lessons; lesson route pre-expands and
       scrolls to that framework
