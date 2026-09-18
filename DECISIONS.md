@@ -48,6 +48,33 @@ Delegation Ladder prompt, copied from an error in the printed book. Per the buil
 is rendered with a visible "prompt under review" notice rather than silently shipped. **Needs
 Raphy**: the correct prompt text for 6.6.
 
+## RLS test is a static policy-text check, not a live integration test
+
+The Phase 2 acceptance check calls for "a written test proves account A cannot read account
+B's bookmark rows." No Supabase CLI, Docker, or local `psql` is available in this environment
+(checked: `which supabase`, `which docker`, `which psql` all fail), so there is no local
+Postgres to actually run two accounts against. `supabase/migrations/0001_init.test.ts`
+(Vitest) instead asserts against the migration's SQL text: RLS is enabled on all three tables,
+every `bookmarks`/`invites` policy is scoped by `auth.uid() = user_id`/`inviter_id`, no policy
+lacks a `using`/`with check` clause, and no table carries a public/anon grant (the `/join`
+invite-name lookup goes through a `SECURITY DEFINER` function returning one scalar instead).
+This proves the policies are written correctly; it does not prove Postgres enforces them as
+written. **Needs Raphy** (or whoever provisions the Supabase project): once a real project
+exists, run a live test — sign in as two accounts, insert a bookmark as account A, assert
+account B's client cannot select it — before this ships.
+
+## users-table public-read question, resolved without a public policy
+
+`ARCHITECTURE.md`'s `getInviterName(code)` server action is public (no session) and needs a
+display name reachable only via an invite code. Rather than add a public SELECT policy to
+`invites` or `users` — which would let any anonymous caller enumerate every inviter's code,
+email, and display name, not just the one they have a code for — the migration adds
+`get_inviter_name(p_code text)`, a `SECURITY DEFINER` SQL function that returns a single
+`display_name` (or null) for a given code and nothing else. Both tables keep owner-only
+policies; the function is the only public-facing surface, and it's granted `EXECUTE` (not
+table access) to `anon`/`authenticated`. This is the least-privilege option that still lets
+`/join` show "invited by \<name\>" to a signed-out visitor.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -58,5 +85,7 @@ Raphy**: the correct prompt text for 6.6.
 - Google Cloud OAuth client ID/secret for Google Sign-In (steps in
   `docs/technical/ARCHITECTURE.md`) — not created during this autonomous run, since it requires
   a human with console access; `.env.example` documents the variable name.
-- A live Supabase project (URL + keys) to point `.env.local` at — this run only wrote the
-  migration and env var names, no project was provisioned.
+- A live Supabase project (URL + keys) to point `.env.local` at, with migration
+  `0001_init.sql` applied — this run only wrote the migration and env var names, no project
+  was provisioned. Once it exists, run a real cross-account RLS test (see the note above) —
+  the current test only checks the policy SQL, not enforcement.

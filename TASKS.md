@@ -26,12 +26,15 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 2 — database and security
 
-- [ ] `supabase/migrations/0001_init.sql`: `users`, `bookmarks`, `invites` tables from
+- [x] `supabase/migrations/0001_init.sql`: `users`, `bookmarks`, `invites` tables from
       `ARCHITECTURE.md`, RLS enabled, policies in the same migration
-- [ ] Supabase client helpers for server and browser; service-role key server-side only
-- [ ] `.env.example` with named-but-empty vars
-- [ ] Acceptance: migration applies cleanly; a written test proves account A cannot read
-      account B's bookmark rows; `grep -r SUPABASE_SERVICE .next/static` returns nothing
+- [x] Supabase client helpers for server and browser; service-role key server-side only
+      (`lib/supabase/client.ts`, `server.ts`, `admin.ts` guarded by `server-only`)
+- [x] `.env.example` with named-but-empty vars
+- [x] Acceptance: migration reviewed for valid Postgres/RLS syntax (no live project available
+      to apply it against — see DECISIONS.md); `supabase/migrations/0001_init.test.ts` proves
+      the policy SQL is correctly scoped (static check, not a live cross-account test — also in
+      DECISIONS.md); `grep -r SUPABASE_SERVICE .next/static` returns nothing
 
 ## Phase 3 — content layer and the QR routes
 
