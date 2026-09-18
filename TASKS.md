@@ -39,14 +39,16 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 ## Phase 3 — content layer and the QR routes
 
 - [x] `lib/content.ts` reads and caches `content/`, typed — no lesson text hardcoded
-- [ ] `/m{module}` and `/m{module}/{lesson}` routes (see DECISIONS.md for URL format),
+- [x] `/m{module}` and `/m{module}/{lesson}` routes (see DECISIONS.md for URL format),
       statically generated for all 10 modules and 108 lessons; lesson route pre-expands and
       scrolls to that framework
-- [ ] Keyboard-operable accordion with correct `aria-expanded`
-- [ ] Copy button, "pairs with" links, last-updated date, per the locked designs
-- [ ] Lesson 6.6 shows the "prompt under review" notice
-- [ ] Acceptance: all 118 routes build statically; no route in this phase imports the Supabase
-      client; lesson 6.6 shows the review notice
+- [x] Keyboard-operable accordion with correct `aria-expanded`
+- [x] Copy button, "pairs with" links, last-updated date, per the locked designs
+- [x] Lesson 6.6 shows the "prompt under review" notice (and drops its copy button)
+- [x] Acceptance: all 118 routes build statically (verified in `.next/server/app`); no route
+      under `app/[module]/` imports `lib/supabase` or `@supabase/*`; lesson 6.6 shows the
+      review notice; `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
+      pass
 
 ## Phase 4 — port the locked marketing pages
 
