@@ -29,6 +29,22 @@ PRD pages without a locked design file are not built. Sign-in is handled inline 
 input + Google button) rather than as a separate `/sign-in` route, consistent with the accounts
 phase as scoped in the build prompt.
 
+## Route folder naming: `app/[module]`, not `app/m[module]`
+
+The obvious way to get the URL `/m6/06` from Next.js App Router is a folder literally named
+`m[module]`, fusing the static "m" prefix with the dynamic segment. Turbopack in this Next.js
+16.3.5 build does not substitute static params into that kind of mixed literal+bracket folder
+name during static export: a build produced exactly one file, `m[module].html`, and the
+prerender manifest listed the literal path `/m[module]/00` instead of `/m1/00`, `/m6/00`, etc.
+(only 13 lesson-number paths total, one per fractional lesson id, module never varied).
+
+Fixed by using a plain `app/[module]` folder and baking the `m` prefix into the **param value**
+instead (`generateStaticParams` returns `{ module: "m6" }`, not `{ module: "6" }`), parsed back
+with `parseModuleParam()` in `lib/content.ts`. This is the portable pattern and produces the
+same `/m6/06` URLs the locked design requires (see the URL-format decision above) without
+depending on prefix-in-folder-name support. Worth re-testing the `app/m[module]` form if the
+Next.js/Turbopack version is upgraded later — it may just be a version-specific gap.
+
 ## Scaffold: Next.js 16 / Tailwind v4, no `tailwind.config.ts`
 
 `docs/technical/ARCHITECTURE.md`'s folder tree lists a `tailwind.config.ts`. Current
