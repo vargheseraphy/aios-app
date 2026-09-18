@@ -30,13 +30,14 @@ export function LessonAccordionList({
   }, [expandedFileId]);
 
   return (
-    <Accordion>
+    <Accordion variant="dark">
       {lessons.map((lesson) => (
         <AccordionItem
           key={lesson.fileId}
           id={`lesson-${lesson.fileId}`}
           defaultOpen={lesson.fileId === expandedFileId}
           className="scroll-mt-20"
+          variant="dark"
           actions={<BookmarkButton lessonId={lesson.lesson} />}
           trigger={
             <span className="flex items-baseline gap-3">

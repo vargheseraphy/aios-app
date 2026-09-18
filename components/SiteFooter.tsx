@@ -28,7 +28,7 @@ export function SiteFooter() {
             </div>
           </div>
           <div className={styles.footCol}>
-            <h4>The book</h4>
+            <p className={styles.footColLabel}>The book</p>
             <Link href="/why-this-book">Why this book</Link>
             <Link href="/how-to-use">How to use</Link>
             <Link href="/who-its-for">Who it&rsquo;s for</Link>
@@ -36,21 +36,21 @@ export function SiteFooter() {
             <Link href="/#get">Buy a copy</Link>
           </div>
           <div className={styles.footCol}>
-            <h4>Prompts</h4>
+            <p className={styles.footColLabel}>Prompts</p>
             <Link href="/#modules">All 10 modules</Link>
             <Link href="/#try">Sample prompts</Link>
             <Link href="#">Latest updates</Link>
-            <Link href="#">My prompts</Link>
+            <Link href="/my-prompts">My prompts</Link>
           </div>
           <div className={styles.footCol}>
-            <h4>Read</h4>
+            <p className={styles.footColLabel}>Read</p>
             <Link href="#">Articles</Link>
             <Link href="#">Blog</Link>
             <Link href="/#faq">FAQ</Link>
             <Link href="#">Newsletter</Link>
           </div>
           <div className={styles.footCol}>
-            <h4>Buy &amp; contact</h4>
+            <p className={styles.footColLabel}>Buy &amp; contact</p>
             <Link href="#">For business</Link>
             <Link href="#">For institutions</Link>
             <Link href="#">Bulk orders</Link>

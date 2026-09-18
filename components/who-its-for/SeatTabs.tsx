@@ -116,13 +116,13 @@ export function SeatTabs({ seats }: { seats: Seat[] }) {
             </p>
             <div className={styles.ientry}>
               <div className={styles.colSit}>
-                <h4 className={styles.collab}>The situation</h4>
+                <h3 className={styles.collab}>The situation</h3>
                 <p className={styles.lead}>{seat.lead}</p>
                 <p>{seat.situationBody}</p>
               </div>
 
               <div>
-                <h4 className={styles.collab}>Start here</h4>
+                <h3 className={styles.collab}>Start here</h3>
                 <div className={styles.mods}>
                   {seat.startModules.map((m) => (
                     <div className={styles.mod} key={m.number}>
@@ -138,7 +138,7 @@ export function SeatTabs({ seats }: { seats: Seat[] }) {
               </div>
 
               <div>
-                <h4 className={styles.collab}>One prompt to run</h4>
+                <h3 className={styles.collab}>One prompt to run</h3>
                 <PromptPreviewCard {...seat.prompt} />
               </div>
             </div>

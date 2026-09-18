@@ -22,6 +22,16 @@ interface AccordionItemProps {
    * trigger `<button>` would be invalid HTML and double-fire clicks.
    */
   actions?: ReactNode;
+  /**
+   * `"light"` (default) for a light/wash section (e.g. the FAQ accordion) —
+   * ink-2 text on a light hairline border. `"dark"` for a near-black canvas
+   * (e.g. the lesson list on `/m{module}/{lesson}`) — white text on a dark
+   * hairline. Lighthouse caught this as a real bug, not a style choice: the
+   * lesson accordion used to render its light-section ink-2 title text
+   * (#1b1c1f) directly on the near-black canvas (#0e0f12), a measured
+   * 1.12:1 contrast ratio — effectively invisible. See DECISIONS.md.
+   */
+  variant?: "light" | "dark";
 }
 
 /**
@@ -40,6 +50,7 @@ export function AccordionItem({
   open: openProp,
   onToggle,
   actions,
+  variant = "light",
 }: AccordionItemProps) {
   const [openState, setOpenState] = useState(defaultOpen);
   const controlled = openProp !== undefined;
@@ -47,9 +58,13 @@ export function AccordionItem({
   const toggle = controlled ? onToggle! : () => setOpenState((v) => !v);
   const panelId = `${id}-panel`;
   const triggerId = `${id}-trigger`;
+  const dark = variant === "dark";
 
   return (
-    <div className={`border-b border-line-l ${className}`} id={id}>
+    <div
+      className={`border-b ${dark ? "border-line-d" : "border-line-l"} ${className}`}
+      id={id}
+    >
       <div className="flex items-center gap-2">
         <button
           id={triggerId}
@@ -57,15 +72,21 @@ export function AccordionItem({
           aria-expanded={open}
           aria-controls={panelId}
           onClick={toggle}
-          className="flex flex-1 items-center justify-between gap-4 py-[22px] text-left font-display text-[16.5px] font-bold tracking-[-0.015em] text-ink-2 cursor-pointer"
+          className={`flex flex-1 items-center justify-between gap-4 py-[22px] text-left font-display text-[16.5px] font-bold tracking-[-0.015em] cursor-pointer ${
+            dark ? "text-white" : "text-ink-2"
+          }`}
         >
           {trigger}
           <span
             aria-hidden="true"
             className={`flex h-6 w-6 flex-none items-center justify-center rounded-full border font-sans text-[15px] transition-transform duration-200 ${
               open
-                ? "rotate-45 border-ink-2 bg-ink-2 text-white"
-                : "border-line-l2 text-gray-l"
+                ? dark
+                  ? "rotate-45 border-white bg-white text-ink"
+                  : "rotate-45 border-ink-2 bg-ink-2 text-white"
+                : dark
+                  ? "border-line-d2 text-fg-2"
+                  : "border-line-l2 text-gray-l"
             }`}
           >
             +
@@ -95,9 +116,15 @@ export function AccordionItem({
 export function Accordion({
   className = "",
   children,
+  variant = "light",
 }: {
   className?: string;
   children: ReactNode;
+  variant?: "light" | "dark";
 }) {
-  return <div className={`border-t border-line-l ${className}`}>{children}</div>;
+  return (
+    <div className={`border-t ${variant === "dark" ? "border-line-d" : "border-line-l"} ${className}`}>
+      {children}
+    </div>
+  );
 }

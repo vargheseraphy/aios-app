@@ -44,7 +44,13 @@ export function HowItWorksSection() {
                 className={i === hovered ? `${styles.step} ${styles.stepOn}` : styles.step}
                 onMouseEnter={() => setHovered(i)}
               >
-                <span className={styles.no}>{step.no}</span>
+                {/* Decorative step-order flourish — the same info is already
+                    conveyed by list order and the step's own heading, so
+                    this low-contrast numeral is hidden from assistive tech
+                    rather than requiring 3:1 against white. */}
+                <span className={styles.no} aria-hidden="true">
+                  {step.no}
+                </span>
                 <div>
                   <h3>{step.title}</h3>
                   <p>
