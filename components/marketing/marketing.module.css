@@ -1,0 +1,193 @@
+/*
+ * Shared sections that repeat verbatim across the locked marketing pages
+ * (why-this-book.html, who-its-for.html for .buy; every locked page for
+ * .news) — kept here once rather than duplicated per page.
+ */
+
+/* ---- buy ---- */
+.buy {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.buyBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 440px at 16% 10%, rgba(59, 123, 247, 0.9), transparent 62%),
+    radial-gradient(620px 440px at 88% 92%, rgba(47, 171, 87, 0.8), transparent 60%),
+    radial-gradient(520px 380px at 60% 50%, rgba(251, 190, 16, 0.3), transparent 62%),
+    var(--blue-deep);
+}
+.buyLines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse at 40% 50%, black, transparent 78%);
+}
+.buyIn {
+  position: relative;
+  display: grid;
+  gap: 34px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 960px) {
+  .buyIn {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+}
+.buyIn h2 {
+  font-size: clamp(27px, 4.2vw, 42px);
+  line-height: 1.07;
+  max-width: 22ch;
+  margin-bottom: 14px;
+}
+.buyIn p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  max-width: 58ch;
+  margin-bottom: 26px;
+}
+.phBtns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.sellers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.seller {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: 0.15s;
+}
+.seller:hover {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+.si {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: #fff;
+}
+.seller b {
+  display: block;
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: 15.5px;
+}
+.sellerSub {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.62);
+}
+.sellerGo {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.7);
+}
+.buyNote {
+  margin-top: 16px;
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- subscribe / news band ---- */
+.news {
+  background: var(--wash);
+  color: var(--ink-2);
+  border-top: 1px solid var(--line-l);
+  padding-block: 44px;
+}
+.newsBand {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid var(--line-l);
+  border-radius: 18px;
+  padding: 26px 32px;
+}
+.newsIc {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(140deg, var(--blue), var(--blue-lo));
+}
+.newsTxt {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.newsTxt b {
+  display: block;
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: 17.5px;
+  letter-spacing: -0.018em;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.newsTxt span {
+  font-size: 13.5px;
+  color: var(--gray-l);
+  line-height: 1.5;
+}
+.newsForm {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 340px;
+  min-width: 0;
+}
+.newsForm input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ink-2);
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--line-l2);
+  background: #fff;
+}
+.newsForm input::placeholder {
+  color: var(--gray-l2);
+}
+.newsForm input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59, 123, 247, 0.18);
+}
+.newsBtn {
+  flex: none;
+  padding: 14px 30px;
+  font-size: 15px;
+  border-radius: 10px;
+}

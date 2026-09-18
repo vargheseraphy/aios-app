@@ -56,7 +56,7 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
       (`components/SiteHeader.tsx`, `SiteFooter.tsx`, `Button.tsx`, `Marquee.tsx`, `PillTabs.tsx`;
       reused Phase 3's `Accordion`/`CopyButton`/`LessonPromptCard` rather than duplicating them)
 - [x] `/` from `docs/design/pages/home.html`
-- [ ] `/why-this-book` from `why-this-book.html`
+- [x] `/why-this-book` from `why-this-book.html`
 - [ ] `/how-to-use` from `how-to-use.html`
 - [ ] `/who-its-for` from `who-its-for.html`
 - [ ] Acceptance: each route renders visually identical to its source file at 400px, 768px,

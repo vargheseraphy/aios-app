@@ -13,7 +13,7 @@ function formatUpdatedAt(dateStr: string): string {
 }
 
 /** Renders [BRACKETED PLACEHOLDERS] in blue, everything else plain. */
-function PromptBody({ prompt }: { prompt: string }) {
+export function PromptBody({ prompt }: { prompt: string }) {
   const parts = prompt.split(/(\[[^\]]+\])/g);
   return (
     <>
