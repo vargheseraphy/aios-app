@@ -94,5 +94,5 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
       contrast bug the audit surfaced; `/` and `/who-its-for` also checked,
       both 90+)
 - [x] `README.md` updated with setup, env vars, deploy steps
-- [ ] `DECISIONS.md` finalised
-- [ ] Final commit: `docs: record build decisions and outstanding items`
+- [x] `DECISIONS.md` finalised
+- [x] Final commit: `docs: record build decisions and outstanding items`

@@ -162,7 +162,10 @@ block (login preview, prompt slider, scan demo, bracket toggles, seat-tab arrow-
 FAQ/trouble accordions, copy buttons) was ported into a React client component, not dropped; and
 `npm run build` + grepping the static HTML output for expected structure, ARIA states and route
 counts. **Needs Raphy**: an actual visual pass at the three breakpoints before this ships — this
-build has not confirmed pixel-level fidelity, only structural/behavioural fidelity.
+build has not confirmed pixel-level fidelity, only structural/behavioural fidelity. (Phase 6,
+below, did later find a real Chrome installed on this machine and used it — but only to confirm
+routes render without crashing and to run real Lighthouse, not for a pixel comparison against
+the locked HTML. That specific check is still open — see "Items needing Raphy.")
 
 ## middleware.ts skips the QR path entirely rather than just being fast on it
 
