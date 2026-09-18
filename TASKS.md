@@ -84,7 +84,10 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 6 — finish
 
-- [ ] Accessibility pass: focus states, contrast, keyboard paths, reduced motion
+- [x] Accessibility pass: focus states, contrast, keyboard paths, reduced motion
+      (sign-in modal focus trap + restore, arrow-key PillTabs, stronger input
+      focus rings, fg-3/gray-l2 contrast bumped to clear WCAG AA — see
+      DECISIONS.md)
 - [ ] Lighthouse on a lesson route, mobile: performance and accessibility both 90+
 - [ ] `README.md` updated with setup, env vars, deploy steps
 - [ ] `DECISIONS.md` finalised
