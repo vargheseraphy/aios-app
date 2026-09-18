@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 
 function generateCode(): string {
   // 8 URL-safe characters — collisions are handled by the unique constraint
@@ -68,6 +68,10 @@ export async function getMyInviteStats(): Promise<InviteStats | null> {
  * one whose code they already have), never enumerate the table.
  */
 export async function getInviterName(code: string): Promise<string | null> {
+  // Called unprompted on /join page load (no session gate) — no live
+  // Supabase project is provisioned yet, so fail soft rather than throw an
+  // unhandled rejection into the caller's effect. See DECISIONS.md.
+  if (!isSupabaseConfigured) return null;
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("get_inviter_name", { p_code: code });
   if (error) throw error;

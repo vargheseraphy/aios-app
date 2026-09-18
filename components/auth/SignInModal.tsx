@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
 import { useAuth } from "./AuthProvider";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 
@@ -61,9 +61,18 @@ export function SignInModal() {
 
   async function handleMagicLink(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("sending");
     setError(null);
 
+    // No live Supabase project yet (see DECISIONS.md) — `createClient()`
+    // throws synchronously, which previously left the form stuck on
+    // "Sending…" forever since nothing ever settled `status`.
+    if (!isSupabaseConfigured) {
+      setStatus("error");
+      setError("Sign-in isn't set up yet — check back soon.");
+      return;
+    }
+
+    setStatus("sending");
     const supabase = createClient();
     const { error: signInError } = await supabase.auth.signInWithOtp({
       email,

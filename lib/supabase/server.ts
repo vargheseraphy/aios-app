@@ -2,6 +2,18 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 /**
+ * False until a live Supabase project's URL/anon key are set (see
+ * DECISIONS.md — none is provisioned yet). Actions that run unprompted on
+ * page load (e.g. `getInviterName` on `/join`) must check this before
+ * calling `createClient()`, since it throws synchronously otherwise.
+ * Actions gated behind `if (!user)` don't strictly need the check — no one
+ * can sign in without a live project either — but it's cheap insurance.
+ */
+export const isSupabaseConfigured = Boolean(
+  process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+);
+
+/**
  * Server-side Supabase client for use in server components, route handlers
  * and server actions. Reads the session from the request's cookies via the
  * anon key — RLS scopes what it can actually see, per signed-in user.
