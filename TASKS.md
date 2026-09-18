@@ -93,6 +93,6 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
       after fixing a site-wide crash-when-unconfigured bug and an accordion
       contrast bug the audit surfaced; `/` and `/who-its-for` also checked,
       both 90+)
-- [ ] `README.md` updated with setup, env vars, deploy steps
+- [x] `README.md` updated with setup, env vars, deploy steps
 - [ ] `DECISIONS.md` finalised
 - [ ] Final commit: `docs: record build decisions and outstanding items`
