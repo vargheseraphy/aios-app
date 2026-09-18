@@ -102,14 +102,33 @@ export function getLesson(
   return getLessonsForModule(moduleNumber).find((l) => l.fileId === fileId);
 }
 
+/**
+ * The `module` route param carries the `m` prefix itself (e.g. "m6"), not
+ * just the number — `app/[module]` can't be named `app/m[module]` to get a
+ * literal "m" prefix in the URL, since Turbopack (Next.js 16.3.5) doesn't
+ * substitute static params into a folder name that mixes literal text with
+ * a bracket (confirmed via the prerender manifest emitting the literal
+ * string "m[module]" instead of "m1", "m6", ...). Baking the prefix into
+ * the param value instead is the portable fix — see DECISIONS.md.
+ */
+export function moduleParam(moduleNumber: number): string {
+  return `m${moduleNumber}`;
+}
+
+/** "m6" -> 6, or null if the param isn't in that shape. */
+export function parseModuleParam(param: string): number | null {
+  const match = param.match(/^m(\d+)$/);
+  return match ? Number(match[1]) : null;
+}
+
 export function getAllModuleParams(): { module: string }[] {
-  return getAllModules().map((m) => ({ module: String(m.module) }));
+  return getAllModules().map((m) => ({ module: moduleParam(m.module) }));
 }
 
 export function getAllLessonParams(): { module: string; lesson: string }[] {
   return getAllModules().flatMap((m) =>
     getLessonsForModule(m.module).map((l) => ({
-      module: String(m.module),
+      module: moduleParam(m.module),
       lesson: l.fileId,
     })),
   );
@@ -141,4 +160,35 @@ export function parsePairing(entry: string): Pairing {
 /** Known content bug flagged in DECISIONS.md — do not silently ship it. */
 export function isFlaggedForReview(lesson: Lesson): boolean {
   return lesson.module === 6 && lesson.lesson === "6.6";
+}
+
+export interface ResolvedLesson extends LessonWithFileId {
+  pairings: Pairing[];
+  flaggedForReview: boolean;
+}
+
+function ensureAllModulesLoaded(): void {
+  getAllModules().forEach((m) => getLessonsForModule(m.module));
+}
+
+/**
+ * Like `getLessonsForModule`, but with pairings resolved into links and the
+ * 6.6 review flag pre-computed — so presentational components (some of
+ * which render inside client component trees) never need to import this
+ * fs-backed module themselves, only the plain `ResolvedLesson` type.
+ */
+export function getResolvedLessonsForModule(moduleNumber: number): ResolvedLesson[] {
+  ensureAllModulesLoaded();
+  return getLessonsForModule(moduleNumber).map((lesson) => ({
+    ...lesson,
+    pairings: lesson.pairsWith.map(parsePairing),
+    flaggedForReview: isFlaggedForReview(lesson),
+  }));
+}
+
+export function getResolvedLesson(
+  moduleNumber: number,
+  fileId: string,
+): ResolvedLesson | undefined {
+  return getResolvedLessonsForModule(moduleNumber).find((l) => l.fileId === fileId);
 }

@@ -6,6 +6,8 @@ import {
   getLesson,
   getLessonsForModule,
   getModule,
+  getResolvedLesson,
+  getResolvedLessonsForModule,
   isFlaggedForReview,
   parsePairing,
 } from "./content";
@@ -55,5 +57,23 @@ describe("content", () => {
   it("generates static params covering all modules and lessons", () => {
     expect(getAllModuleParams()).toHaveLength(10);
     expect(getAllLessonParams()).toHaveLength(108);
+  });
+
+  it("resolves pairings and the review flag onto lesson data", () => {
+    const resolved = getResolvedLessonsForModule(6);
+    expect(resolved).toHaveLength(12);
+
+    const flagged = resolved.find((l) => l.fileId === "06");
+    expect(flagged?.flaggedForReview).toBe(true);
+    expect(flagged?.pairings.every((p) => p.resolved)).toBe(true);
+
+    const notFlagged = resolved.find((l) => l.fileId === "07");
+    expect(notFlagged?.flaggedForReview).toBe(false);
+  });
+
+  it("getResolvedLesson matches the raw lesson plus resolved fields", () => {
+    const resolved = getResolvedLesson(1, "01");
+    expect(resolved?.lesson).toBe("1.1");
+    expect(resolved?.pairings.length).toBeGreaterThan(0);
   });
 });
