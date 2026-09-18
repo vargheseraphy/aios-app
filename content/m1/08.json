@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.8",
+  "title": "Inversion Thinking",
+  "sourcePages": {
+    "intro": 38,
+    "prompt": 39
+  },
+  "prompt": "Act as a strategic risk advisor using inversion thinking.\nGoal        :   [WHAT I AM TRYING TO ACHIEVE  be specific]\nContext  :   [SITUATION, INDUSTRY, STAGE, TEAM]\nStep 1      :   List everything that would guarantee I fail. Think broadly - execution,  \n                     market, team,  timing, assumptions, behaviour.\nStep 2     :   Rank these failure causes by probability.\nStep 3     :   For the top 5, give one specific prevention action I can take \n                    before moving forward.\nSTRESS-TEST PLANS WITH INVERSION THINKING\nReview and Mitigate List Failure Causes\nCross off already Ask AI for failure\naddressed risks guarantees\nBuild Prevention Inversion Thinking\nDeﬁne Goal\nActions\nBe speciﬁc about\nCreate actions to\nachievement\navoid failure\nUnrevealed Plan Problems Stress-Tested Plan\nForward thinking misses risks Risks are identiﬁed and avoided\nPRO TIP\nShare the failure list with your team before launch. Ask each person to add one item you\nmissed. The combined list will contain at least one thing that would have actually stopped\nyou  and now it won't.",
+  "pairsWith": [
+    "1.6 First Principles",
+    "8.2 Pre-Mortem",
+    "8.6 Red Team Thinking"
+  ],
+  "updatedAt": "2026-09-18"
+}

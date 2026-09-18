@@ -1,0 +1,16 @@
+{
+  "module": 10,
+  "lesson": "10.6",
+  "title": "Atomic Habits Stack",
+  "sourcePages": {
+    "intro": 235,
+    "prompt": 236
+  },
+  "prompt": "Act as a habit design coach using James Clear's Atomic Habits framework.\nMy goal                                       :  [THE OUTCOME I WANT,  E.G. BETTER FOCUS, \n                                                        EXERCISE, READING]\nMy current morning routine :  [WHAT YOU ACTUALLY DO EACH MORNING]\nMy current evening routine  :  [WHAT YOU ACTUALLY DO EACH EVENING]\nPast habit failures                    :  [WHAT YOU HAVE TRIED AND ABANDONED]\nDesign my Atomic Habits Stack:\nStep 1 :  Identify 3 strong existing habits as anchors.\nStep 2 :  For each new habit I want to build, apply the 4 Laws:\nOBVIOUS        :  What is the cue? Where will I see it?\nATTRACTIVE  :  How do I make it appealing?\nEASY                :  What is the 2-minute version?\nSATISFYING   :  What is the immediate reward?\nStep 3 :  Write my Habit Stack as if/when-then statements:\n                After I [ANCHOR HABIT], I will [NEW HABIT].\nStep 4 :  Design one environment change that makes the most important habit easier \n                without willpower.\nStep 5 :  What is the one habit that, if built, makes all the others easier?\nHabit stacking progresses from awareness to reward.\nCue triggers current Link new habit to Reduce friction for Reinforce new habit\nhabit positive feelings new habit with reward\nPRO TIP\nThe keystone habit, the one that makes all others easier  is almost always sleep. Every\nother habit in your stack performs better on sufficient sleep and degrades on insufficient\nsleep. If your habit stack has any room for only one new behaviour, make it a consistent\nsleep and wake time. Build everything else on that foundation.",
+  "pairsWith": [
+    "10.4 Energy Quadrants",
+    "10.3 Weekly Review",
+    "10.2 90-Day Planning"
+  ],
+  "updatedAt": "2026-09-18"
+}

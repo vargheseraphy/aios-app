@@ -1,0 +1,17 @@
+{
+  "module": 3,
+  "lesson": "3.9",
+  "title": "STP Model - Segment, Target,",
+  "sourcePages": {
+    "intro": 86,
+    "prompt": 87
+  },
+  "prompt": "Act as a marketing strategist using the STP framework.\nMy business          :  [DESCRIBE YOUR PRODUCT AND CURRENT MARKET]\nTotal market         :  [THE BROAD MARKET YOU OPERATE IN]\nSEGMENTATION :\nDivide the total market into 5–6 distinct customer segments based on\nindustry, need, behaviour, or size. Describe each segment in 2–3 lines.\nTARGETING:\nScore each segment 1–5 on:\nMarket size and growth rate\nFit with my current capabilities\nCompetitive intensity in this segment\nLikely profitability and retention\nRecommend the top 1–2 segments to target first.\nPOSITIONING:\nFor the top segment,  write one positioning statement that clearly\ndifferentiates me from alternatives.\nSTP Model — Choose Your Market. Own Your Position.\nSegmentation\nInitial market segmentation\n100%\nTargeting\nTarget market selection\n50%\nPositioning\nMarket positioning\n25%\nPRO TIP\nMost founders target the largest segment, not the most winnable one. The most\nwinnable segment is where you have a natural advantage,  a network, a credential, an\ninsight,  that competitors don't. Winning one segment completely is worth more than\npartial penetration of three.",
+  "pairsWith": [
+    "3.4 ICP",
+    "3.7 Positioning Statement",
+    "5.4 Marketing Mix",
+    "5.6 GTM Canvas"
+  ],
+  "updatedAt": "2026-09-18"
+}

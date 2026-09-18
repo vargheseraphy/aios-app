@@ -1,0 +1,17 @@
+{
+  "module": 2,
+  "lesson": "2.1",
+  "title": "Value Proposition Canvas",
+  "sourcePages": {
+    "intro": 49,
+    "prompt": 50
+  },
+  "prompt": "Act as a product-market fit consultant.\nMy product / service :  [DESCRIBE WHAT YOU OFFER]\nTarget customer          :  [SPECIFIC ROLE, INDUSTRY, COMPANY SIZE]\nCUSTOMER PROFILE:\nJobs             :  What are they trying to accomplish — functional, social, and emotional jobs?\nPains           :  What frustrates them, costs them, or risks them?\nGains           :  What outcomes and benefits do they want?\nVALUE MAP:\nPain Relievers  :  How does my product address each pain?\nGain Creators   :  How does it deliver the gains they want?\nFit Score            :  Where is the match strong? Where are the gaps?\nIdentify the top 3 pains I am NOT addressing. Tell me what to build or change first.\nFIT\nValue proposition alignment\nCustomer Proﬁle\nValue Map\nUnderstanding customer\nHow products deliver value\nneeds\nPRO TIP\nAsk AI to fill in the Customer Profile as if it were your most sceptical potential customer\nnot your ideal one. The gap between the ideal profile and the sceptical one is exactly\nwhere your messaging and product need to improve.",
+  "pairsWith": [
+    "2.5 JTBD",
+    "3.4 ICP",
+    "3.8 Voice of Customer",
+    "2.3 Lean Canvas"
+  ],
+  "updatedAt": "2026-09-18"
+}

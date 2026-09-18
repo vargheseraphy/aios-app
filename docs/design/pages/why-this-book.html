@@ -1,0 +1,692 @@
+<meta charset="utf-8">
+<title>Why This Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .f{fill:currentColor; opacity:.16;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:.15s; white-space:nowrap;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* page hero */
+.phero{position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; min-height:440px;}
+.phero .bg{position:absolute; inset:0; background:
+  radial-gradient(820px 560px at 12% 18%, #3B7BF7 0%, transparent 62%),
+  radial-gradient(660px 480px at 88% 8%, #EC4A3B 0%, transparent 58%),
+  radial-gradient(620px 520px at 72% 90%, #FBBE10 0%, transparent 56%), var(--ink);}
+.phero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.phero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.44) 58%, rgba(14,15,18,.58) 100%);}
+.phero-in{position:relative; padding-block:70px 54px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.phero-in{grid-template-columns:1.2fr .8fr; gap:52px; padding-block:76px 66px;}}
+.phero-copy{display:flex; flex-direction:column; gap:20px; max-width:680px;}
+.phero-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-d2); background:rgba(0,0,0,.28); backdrop-filter:blur(4px); min-height:300px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.phero-art svg{position:relative; width:100%; max-width:300px; height:auto;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+h1.ph-h{font-size:clamp(32px,5.8vw,52px); line-height:1.07; letter-spacing:-.032em; font-weight:800;}
+.ph-sub{font-size:16px; color:var(--fg-1); line-height:1.5; max-width:64ch;}
+@media(min-width:640px){.ph-sub{font-size:17.5px;}}
+.ph-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:6px;}
+
+/* sections */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+.light .kicker,.wash .kicker{color:var(--gray-l2);}
+.light .sd,.wash .sd{color:var(--gray-l);}
+section{padding-block:78px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:32ch;}
+.sd{font-size:14.5px; color:var(--fg-2); max-width:84ch; line-height:1.6;}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:36px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* alternating problem blocks */
+.alt{display:grid; gap:28px; grid-template-columns:1fr; align-items:center;}
+@media(min-width:900px){.alt{grid-template-columns:1.85fr 1fr; gap:52px;}
+  .alt.flip{grid-template-columns:1fr 1.85fr;}
+  .alt.flip .alt-copy{order:2;} .alt.flip .alt-art{order:1;}}
+.alt + .alt{margin-top:72px;}
+.alt-copy .num{font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--blue); margin-bottom:12px;}
+.alt-copy h3{font-size:clamp(21px,2.9vw,30px); line-height:1.14; margin-bottom:14px; max-width:34ch;}
+.alt-copy p{font-size:15px; color:var(--gray-l); line-height:1.7; max-width:62ch; margin-bottom:12px;}
+.alt-copy p:last-child{margin-bottom:0;}
+.alt-art{position:relative; border-radius:16px; overflow:hidden; min-height:210px; align-self:stretch; display:flex; align-items:center; justify-content:center; padding:22px;}
+.alt-art .artbg{position:absolute; inset:0;}
+.alt-art svg{position:relative; width:100%; max-width:230px; height:auto;}
+
+/* statement band */
+.statement{position:relative; overflow:hidden; padding-block:88px; background:
+  radial-gradient(720px 420px at 18% 8%, rgba(110,160,255,.55), transparent 62%),
+  radial-gradient(620px 420px at 88% 92%, rgba(15,46,117,.85), transparent 60%), var(--blue);}
+.statement .lines{position:absolute; inset:0; opacity:.32;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:48px 48px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.statement-in{position:relative; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:960px){.statement-in{grid-template-columns:1.25fr .75fr; gap:56px;}}
+.statement-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,.26); background:rgba(0,0,0,.24); min-height:280px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.statement-art svg{position:relative; width:100%; max-width:280px; height:auto;}
+.statement blockquote{margin:0; font-family:var(--disp); font-weight:800; font-size:clamp(26px,4.6vw,48px); line-height:1.08; letter-spacing:-.03em; color:#fff; max-width:20ch;}
+.statement .after{margin-top:22px; font-size:15.5px; color:rgba(255,255,255,.86); max-width:70ch; line-height:1.65;}
+
+/* before / after */
+.compare-wrap{position:relative;}
+.compare{display:grid; gap:16px; grid-template-columns:1fr;}
+@media(min-width:880px){.compare{grid-template-columns:1fr 1fr; gap:26px;}}
+.vs{display:none;}
+@media(min-width:880px){.vs{display:flex; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
+  width:52px; height:52px; border-radius:50%; background:var(--ink-2); color:#fff; align-items:center; justify-content:center;
+  font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.02em; border:4px solid #fff; box-shadow:0 10px 24px -10px rgba(20,30,60,.5);}}
+.cc{border-radius:20px; padding:28px; border:1px solid var(--line-l); background:#fff; display:flex; flex-direction:column; gap:16px;}
+.cc.bad{background:var(--wash); border-color:var(--line-l2);}
+.cc.good{border-color:rgba(59,123,247,.42); box-shadow:0 18px 44px -24px rgba(30,92,224,.45);}
+.cc .cc-h{display:flex; align-items:center; gap:12px;}
+.cc .cc-ic{width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; flex:none;}
+.cc.bad .cc-ic{background:#FBE7E4; color:var(--red);}
+.cc.good .cc-ic{background:#E7EFFE; color:var(--blue);}
+.cc h3{font-size:17.5px;}
+.cc .cc-h .lbl{margin-left:auto; font-family:var(--mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; padding:4px 10px; border-radius:999px;}
+.cc.bad .lbl{background:#FBE7E4; color:#9A2E22;}
+.cc.good .lbl{background:#E7EFFE; color:var(--blue-lo);}
+.cc .step-lbl{font-family:var(--mono); font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--gray-l2); display:flex; align-items:center; gap:9px;}
+.cc .step-lbl::after{content:""; flex:1; height:1px; background:var(--line-l);}
+.cc .mock{border-radius:12px; overflow:hidden; border:1px solid var(--line-l); background:#0E0F12; font-family:var(--mono); font-size:12px; line-height:1.8; color:rgba(255,255,255,.88); padding:16px; white-space:pre-wrap; min-height:132px;}
+.cc.bad .mock{background:#2A2C33;}
+.cc .mock .dim{color:rgba(255,255,255,.4);}
+.cc .mock .k{color:var(--yellow);} .cc .mock .v{color:var(--blue-hi);}
+.cc .out{border-radius:12px; border:1px dashed var(--line-l2); padding:16px; background:#fff;}
+.cc.good .out{border-color:rgba(59,123,247,.4); background:#F7FAFF;}
+.cc .out .ghost{height:9px; border-radius:4px; background:var(--line-l); margin-bottom:9px;}
+.cc .out .ghost.w1{width:92%;} .cc .out .ghost.w2{width:78%;} .cc .out .ghost.w3{width:86%;} .cc .out .ghost.w4{width:54%;}
+.cc .out ol{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px;}
+.cc .out li{font-size:12.5px; color:var(--ink-2); line-height:1.5;}
+.cc .out li span{color:var(--gray-l);}
+.cc .verdict{display:flex; align-items:center; gap:9px; font-size:12.5px; font-weight:500; margin-top:2px;}
+.cc.bad .verdict{color:#9A2E22;} .cc.good .verdict{color:#1B7A3C;}
+.cc ul.pts{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; padding-top:14px; border-top:1px solid var(--line-l);}
+.cc ul.pts li{display:flex; gap:10px; font-size:13px; line-height:1.55; color:var(--gray-l);}
+.cc ul.pts .li-ic{width:19px; height:19px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px;}
+.cc.bad .li-ic{background:#FBE7E4; color:var(--red);}
+.cc.good .li-ic{background:#E4F4EB; color:var(--green);}
+
+/* differentiators */
+.diffs{display:grid; gap:14px; grid-template-columns:1fr;}
+@media(min-width:760px){.diffs{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1120px){.diffs{grid-template-columns:repeat(4,1fr);}}
+.diff{position:relative; border:1px solid var(--line-d); border-radius:18px; padding:26px; display:flex; flex-direction:column; gap:13px; overflow:hidden; transition:.18s;}
+.diff::before{content:""; position:absolute; left:0; right:0; top:0; height:4px;}
+.diff:hover{transform:translateY(-3px);}
+.diff .ic{width:44px; height:44px; border-radius:12px; color:#fff; display:flex; align-items:center; justify-content:center; flex:none;}
+.diff.c-blue{background:rgba(59,123,247,.13); border-color:rgba(59,123,247,.34);}
+.diff.c-blue::before{background:var(--blue);} .diff.c-blue .ic{background:var(--blue);}
+.diff.c-red{background:rgba(236,74,59,.13); border-color:rgba(236,74,59,.34);}
+.diff.c-red::before{background:var(--red);} .diff.c-red .ic{background:var(--red);}
+.diff.c-yellow{background:rgba(251,190,16,.14); border-color:rgba(251,190,16,.36);}
+.diff.c-yellow::before{background:var(--yellow);} .diff.c-yellow .ic{background:var(--yellow); color:#1B1408;}
+.diff.c-green{background:rgba(47,171,87,.14); border-color:rgba(47,171,87,.36);}
+.diff.c-green::before{background:var(--green);} .diff.c-green .ic{background:var(--green);}
+.diff h3{font-size:16px; line-height:1.25;}
+.diff p{font-size:13.5px; color:var(--fg-2); line-height:1.6;}
+
+/* inside the book */
+.inside{display:grid; gap:28px; grid-template-columns:1fr;}
+@media(min-width:960px){.inside{grid-template-columns:1.05fr .95fr; gap:52px; align-items:center;}}
+.modlist{display:flex; flex-direction:column;}
+.modrow{display:flex; align-items:baseline; gap:16px; padding-block:13px; border-top:1px solid var(--line-l);}
+.modrow:first-child{border-top:none;}
+.modrow .mn{font-family:var(--mono); font-size:11.5px; color:var(--blue); width:26px; flex:none;}
+.modrow .mt{font-family:var(--disp); font-weight:700; font-size:15.5px; flex:1 1 auto;}
+.modrow .mc{font-family:var(--mono); font-size:11.5px; color:var(--gray-l2); flex:none;}
+.promptcard{background:var(--ink); border-radius:16px; overflow:hidden; border:1px solid #23262E; box-shadow:0 30px 60px -30px rgba(10,14,25,.5);}
+.pc-top{display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:3px 7px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13.5px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10.5px; color:var(--fg-3);}
+.pc-body{padding:20px 18px; font-family:var(--mono); font-size:12.5px; line-height:1.85; color:rgba(255,255,255,.88); white-space:pre-wrap;}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:13px 16px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .pairs{font-size:11.5px; color:var(--fg-3);}
+.copybtn{margin-left:auto;} .copybtn.done{background:var(--green); color:#fff;}
+
+/* audience chips */
+.chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
+.chip-link{display:inline-flex; align-items:center; gap:10px; border:1px solid var(--line-l2); border-radius:999px; padding:11px 20px; font-size:14px; color:var(--ink-2); background:#fff; transition:.15s;}
+.chip-link:hover{background:var(--ink-2); color:#fff; border-color:var(--ink-2);}
+.chip-link svg{opacity:.55;}
+
+/* author strip */
+.astrip{position:relative; overflow:hidden; background:var(--ink); padding-block:88px;}
+.astrip .bg{position:absolute; inset:0; background:radial-gradient(700px 460px at 12% 20%,rgba(59,123,247,.42),transparent 62%),radial-gradient(560px 400px at 90% 86%,rgba(47,171,87,.3),transparent 60%),radial-gradient(420px 320px at 62% 10%,rgba(251,190,16,.14),transparent 62%);}
+.astrip-in{position:relative; display:grid; gap:30px; grid-template-columns:1fr; align-items:start;}
+@media(min-width:900px){.astrip-in{grid-template-columns:auto 1fr; gap:40px;}}
+.astrip .av{width:76px; height:76px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:22px; color:#fff; flex:none;}
+.astrip .q blockquote{margin:0 0 18px; font-family:var(--disp); font-weight:800; font-size:clamp(22px,3.2vw,34px); line-height:1.16; letter-spacing:-.025em; max-width:26ch;}
+.astrip .q p{font-size:15px; color:var(--fg-1); line-height:1.7; max-width:66ch; margin-bottom:12px;}
+.astrip .meta{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:22px; padding-top:20px; border-top:1px solid var(--line-d);}
+.astrip .meta .nm b{display:block; font-family:var(--disp); font-size:15.5px;}
+.astrip .meta .nm span{font-size:12.5px; color:var(--fg-2);}
+.astrip .meta .btn{margin-left:auto;}
+@media(max-width:620px){.astrip .meta .btn{margin-left:0;}}
+
+/* buy */
+.buy{position:relative; overflow:hidden; background:var(--ink);}
+.buy .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 16% 10%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 440px at 88% 92%, rgba(47,171,87,.8), transparent 60%),
+  radial-gradient(520px 380px at 60% 50%, rgba(251,190,16,.3), transparent 62%), var(--blue-deep);}
+.buy .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.buy-in{position:relative; display:grid; gap:34px; grid-template-columns:1fr;}
+@media(min-width:960px){.buy-in{grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}}
+.buy h2{font-size:clamp(27px,4.2vw,42px); line-height:1.07; max-width:22ch; margin-bottom:14px;}
+.buy p{color:rgba(255,255,255,.88); font-size:15px; max-width:58ch; margin-bottom:26px;}
+.sellers{display:flex; flex-direction:column; gap:12px;}
+.seller{display:flex; align-items:center; gap:16px; padding:18px 20px; border-radius:14px; border:1px solid rgba(255,255,255,.22); background:rgba(0,0,0,.30); backdrop-filter:blur(8px); transition:.15s;}
+.seller:hover{background:rgba(0,0,0,.45); border-color:rgba(255,255,255,.4); transform:translateY(-2px);}
+.seller .si{width:44px; height:44px; border-radius:11px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.seller b{display:block; font-family:var(--disp); font-weight:700; font-size:15.5px;}
+.seller span.sub{font-size:12.5px; color:rgba(255,255,255,.62);}
+.seller .go{margin-left:auto; color:rgba(255,255,255,.7);}
+.buy-note{margin-top:16px; font-family:var(--mono); font-size:11px; color:rgba(255,255,255,.55);}
+
+/* subscribe */
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a class="on" href="#">Why this book</a><a href="home.html#modules">Modules</a><a href="#">How to use</a><a href="#">Who it's for</a><a href="#">FAQ</a><a href="#">Articles</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#get">Get the book</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<header class="phero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad phero-in">
+    <div class="phero-copy">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>Why this book</span></div>
+      <h1 class="ph-h">AI did not make you a better leader. A framework might.</h1>
+      <p class="ph-sub">Nearly everyone now has the same models on the same screen. The gap is no longer access &mdash; it is knowing what to ask, in what order, with what context attached.</p>
+      <div class="ph-btns">
+        <a class="btn btn-white" href="#compare">See the difference</a>
+        <a class="btn btn-line" href="#inside">What's inside</a>
+      </div>
+    </div>
+    <div class="phero-art">
+      <svg viewBox="0 0 300 300" class="line" aria-hidden="true">
+        <text class="t" x="16" y="22" style="font-size:10px;letter-spacing:.1em">ONE LINE</text>
+        <rect class="s2" x="14" y="32" width="272" height="46" rx="12"/>
+        <path class="s2" d="M34 55c14-8 26 8 40 0s26 8 40 0 26 8 40 0" opacity=".5"/>
+        <circle class="s2" cx="252" cy="55" r="11"/><path class="s2" d="M252 50v6M252 60v.5"/>
+        <path class="s3" d="M150 90v26"/><path class="s" d="M142 108l8 10 8-10"/>
+        <text class="t" x="16" y="144" style="font-size:10px;letter-spacing:.1em">FOUR LAYERS</text>
+        <rect class="s" x="14" y="154" width="182" height="26" rx="8"/><text class="t" x="28" y="171">ROLE</text>
+        <rect class="s" x="14" y="188" width="220" height="26" rx="8"/><text class="t" x="28" y="205">CONTEXT</text>
+        <rect class="s" x="14" y="222" width="200" height="26" rx="8"/><text class="t" x="28" y="239">ACTION</text>
+        <rect class="s" x="14" y="256" width="248" height="26" rx="8"/><text class="t" x="28" y="273">EXPECTATION</text>
+        <path class="s3" d="M206 167h34M244 201h30M224 235h34M272 269h10"/>
+        <circle class="fd" cx="254" cy="167" r="3.2"/><circle class="fd" cx="284" cy="201" r="3.2"/>
+        <circle class="fd" cx="268" cy="235" r="3.2"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE PROBLEM ============ -->
+<section class="light" id="problem"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">The problem</div>
+      <h2 class="sh">Three reasons AI quietly disappoints people.</h2>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="alt-copy">
+      <div class="num">01</div>
+      <h3>A blank box gives you back exactly what you put in.</h3>
+      <p>Type "write a marketing plan" and you get a marketing plan for nobody &mdash; no industry, no stage, no constraint, no customer. It reads fine and is useless, which is the worst combination, because it takes a week to notice.</p>
+      <p>The model is not guessing badly. It is guessing, because you did not tell it anything worth using.</p>
+    </div>
+    <div class="alt-art">
+      <div class="artbg" style="background:radial-gradient(340px 260px at 30% 26%,#EC4A3B,transparent 62%),radial-gradient(300px 240px at 84% 82%,#3B7BF7,transparent 60%),#0B0C0F"></div>
+      <svg viewBox="0 0 320 240" class="line" aria-hidden="true">
+        <rect class="s" x="24" y="34" width="272" height="52" rx="12"/>
+        <path class="s2" d="M46 60h74"/>
+        <path class="s3" d="M128 60h6"/>
+        <rect class="s2" x="24" y="110" width="272" height="106" rx="12"/>
+        <path class="s2" d="M46 138h228M46 158h204M46 178h236M46 198h150" opacity=".32"/>
+        <circle class="s" cx="258" cy="60" r="13"/><path class="s" d="M258 54v7M258 66.5v.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="alt flip">
+    <div class="alt-copy">
+      <div class="num">02</div>
+      <h3>Everyone on the team prompts differently.</h3>
+      <p>One person writes a paragraph, another writes five words, a third pastes a whole document. Three answers come back in three shapes, and none of them can be compared, reviewed or reused.</p>
+      <p>Without a shared structure, AI makes a team faster at producing work that does not add up.</p>
+    </div>
+    <div class="alt-art">
+      <div class="artbg" style="background:radial-gradient(340px 260px at 70% 24%,#FBBE10,transparent 60%),radial-gradient(300px 240px at 20% 84%,#2FAB57,transparent 60%),#0B0C0F"></div>
+      <svg viewBox="0 0 320 240" class="line" aria-hidden="true">
+        <circle class="s" cx="64" cy="58" r="17"/><rect class="s2" x="96" y="44" width="56" height="28" rx="8"/><path class="s2" d="M110 58h28"/>
+        <circle class="s" cx="64" cy="120" r="17"/><rect class="s2" x="96" y="98" width="128" height="44" rx="8"/><path class="s2" d="M110 114h96M110 130h62"/>
+        <circle class="s" cx="64" cy="186" r="17"/><rect class="s2" x="96" y="172" width="86" height="28" rx="8"/><path class="s2" d="M110 186h56"/>
+        <path class="s3" d="M246 40v164"/>
+        <path class="s2" d="M256 58h34M256 120h34M256 186h34" opacity=".4"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="alt">
+    <div class="alt-copy">
+      <div class="num">03</div>
+      <h3>What worked last year stops working.</h3>
+      <p>Prompting technique moves faster than print. A book of prompts written today is partly wrong within a year, and the reader has no way of knowing which parts.</p>
+      <p>That is a structural problem with books about software &mdash; and it is the one this book was designed around rather than ignored.</p>
+    </div>
+    <div class="alt-art">
+      <div class="artbg" style="background:radial-gradient(340px 260px at 26% 70%,#3B7BF7,transparent 62%),radial-gradient(300px 240px at 82% 24%,#EC4A3B,transparent 60%),#0B0C0F"></div>
+      <svg viewBox="0 0 320 240" class="line" aria-hidden="true">
+        <rect class="s2" x="30" y="70" width="70" height="96" rx="10"/><text class="t" x="52" y="124" style="font-size:12px">2024</text>
+        <rect class="s2" x="118" y="70" width="70" height="96" rx="10" opacity=".35"/><text class="t" x="140" y="124" style="font-size:12px;opacity:.35">2025</text>
+        <rect class="s" x="206" y="70" width="84" height="96" rx="10"/><text class="t" x="230" y="124" style="font-size:12px;opacity:.95">NOW</text>
+        <path class="s3" d="M106 118h6M194 118h6"/>
+        <path class="s" d="M248 52V34M226 58l-10-12M270 58l10-12"/>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement">
+  <div class="lines"></div>
+  <div class="pad statement-in">
+    <div>
+      <blockquote>The prompt was never the hard part. The thinking behind it was.</blockquote>
+      <p class="after">This book is 108 of those thoughts, written down in the order a business actually runs into them &mdash; each one ending in a prompt you can paste, not a principle you have to interpret.</p>
+    </div>
+    <div class="statement-art">
+      <svg viewBox="0 0 280 300" class="line" aria-hidden="true">
+        <path class="s" d="M196 96c0-44-36-74-78-74S40 52 40 96c0 22 8 34 8 52 0 14-10 18-10 28 0 8 10 10 10 10 0 14-4 18-4 26 0 12 14 20 34 20h30v-46"/>
+        <rect class="s" x="74" y="86" width="86" height="20" rx="6"/><text class="t" x="86" y="100">ROLE</text>
+        <rect class="s" x="74" y="114" width="104" height="20" rx="6"/><text class="t" x="86" y="128">CONTEXT</text>
+        <rect class="s" x="74" y="142" width="94" height="20" rx="6"/><text class="t" x="86" y="156">ACTION</text>
+        <rect class="s2" x="74" y="170" width="116" height="20" rx="6"/><text class="t" x="86" y="184">EXPECTATION</text>
+        <path class="s3" d="M196 130h40"/><path class="s" d="M226 122l10 8-10 8"/>
+        <rect class="s" x="196" y="196" width="72" height="62" rx="10"/>
+        <path class="s2" d="M210 216h44M210 230h30M210 244h38"/>
+        <path class="s3" d="M232 190v-46"/>
+        <circle class="fd" cx="232" cy="130" r="3.4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="light" id="compare"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">The difference</div>
+      <h2 class="sh">Same question. Same model. Two very different inputs.</h2>
+      <p class="sd">A founder asking about positioning. On the left, the way most people ask. On the right, framework 1.1 from module one &mdash; and what each one gets back.</p>
+    </div>
+  </div>
+
+  <div class="compare-wrap">
+    <span class="vs">VS</span>
+    <div class="compare">
+
+      <div class="cc bad">
+        <div class="cc-h">
+          <span class="cc-ic"><svg class="i" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span>
+          <h3>Without a framework</h3>
+          <span class="lbl">Most people</span>
+        </div>
+
+        <div class="step-lbl">What you type</div>
+        <div class="mock">How do I make my company stand out?</div>
+
+        <div class="step-lbl">What comes back</div>
+        <div class="out">
+          <div class="ghost w1"></div><div class="ghost w3"></div><div class="ghost w2"></div><div class="ghost w4"></div>
+          <div class="verdict" style="margin-top:12px;">
+            <svg class="i" width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Four paragraphs that would fit any company on earth
+          </div>
+        </div>
+
+        <ul class="pts">
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>No industry, stage or customer attached</span></li>
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>No format asked for, so you still have to process it</span></li>
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Ask again tomorrow and you get something else</span></li>
+        </ul>
+      </div>
+
+      <div class="cc good">
+        <div class="cc-h">
+          <span class="cc-ic"><svg class="i" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg></span>
+          <h3>With framework 1.1</h3>
+          <span class="lbl">C.A.R.E</span>
+        </div>
+
+        <div class="step-lbl">What you type</div>
+        <div class="mock"><span class="k">Role:</span>        Act as a <span class="v">[B2B sales coach]</span>.
+<span class="k">Context:</span>     I run <span class="v">[a 9-person logistics SaaS]</span>.
+<span class="k">Action:</span>      Give me 5 positioning ideas to stand out
+             in <span class="v">[the South India mid-market]</span>.
+<span class="k">Expectation:</span> Numbered list, 2&ndash;3 lines each, plain
+             business language, no jargon.</div>
+
+        <div class="step-lbl">What comes back</div>
+        <div class="out">
+          <ol>
+            <li>Own same-day dispatch visibility <span>&mdash; the one metric their current vendor hides</span></li>
+            <li>Price per shipment, not per seat <span>&mdash; matches how they already budget</span></li>
+            <li>Position against spreadsheets, not rivals <span>&mdash; that is the real incumbent</span></li>
+          </ol>
+          <div class="verdict" style="margin-top:12px;">
+            <svg class="i" width="15" height="15" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.5l2.5 2.5 4.5-5.5"/></svg>
+            Five options you can argue about in a meeting on Monday
+          </div>
+        </div>
+
+        <ul class="pts">
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Role and context attached, so the answer is about your business</span></li>
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Format specified, so it arrives ready to act on</span></li>
+          <li><span class="li-ic"><svg class="i" width="11" height="11" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Repeatable &mdash; your co-founder runs it and you can compare</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ WHAT MAKES IT DIFFERENT ============ -->
+<section class="dark"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">What makes it different</div>
+      <h2 class="sh">A printed book that does not go out of date.</h2>
+      <p class="sd" style="color:var(--fg-2);">Four decisions that separate this from every other book of prompts on the shelf.</p>
+    </div>
+  </div>
+  <div class="diffs">
+    <div class="diff c-blue">
+      <span class="ic"><svg class="i" width="21" height="21" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><path d="M17.25 13.5v7.5M13.5 17.25h7.5"/></svg></span>
+      <h3>Every page has a live twin</h3>
+      <p>Scan the code on any framework and the current version of that prompt opens on your phone. The paper stays fixed; the prompt keeps moving.</p>
+    </div>
+    <div class="diff c-red">
+      <span class="ic"><svg class="i" width="21" height="21" viewBox="0 0 24 24"><path d="M12 3v7M12 10L6 20M12 10l6 10"/><circle cx="12" cy="3" r="1.8"/><circle cx="6" cy="20.5" r="2"/><circle cx="18" cy="20.5" r="2"/></svg></span>
+      <h3>Organised by decision, not by topic</h3>
+      <p>Chapters follow the order a business hits problems &mdash; strategy, model, market, sales, team, operations, money &mdash; so you read the one you need this week.</p>
+    </div>
+    <div class="diff c-yellow">
+      <span class="ic"><svg class="i" width="21" height="21" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h9"/><circle cx="18" cy="17" r="2"/></svg></span>
+      <h3>Frameworks that point at each other</h3>
+      <p>Each one names the two or three it pairs with, so finishing a pricing question hands you the positioning question that follows it.</p>
+    </div>
+    <div class="diff c-green">
+      <span class="ic"><svg class="i" width="21" height="21" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M7 9.5h6M7 13.5h4"/><path d="M21 9l-4 3 4 3"/></svg></span>
+      <h3>The prompts are free, forever</h3>
+      <p>No account, no paywall, no trial on the website. The book earns its price by explaining when to reach for which one &mdash; not by locking the text away.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ WHAT'S INSIDE ============ -->
+<section class="wash" id="inside"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">What's inside</div>
+      <h2 class="sh">Ten modules. 108 frameworks. 276 pages.</h2>
+      <p class="sd">Every framework follows the same shape: what it is, when to use it, the prompt, and what it pairs with next.</p>
+    </div>
+    <a class="btn btn-ink" href="home.html#modules">Browse all modules</a>
+  </div>
+  <div class="inside">
+    <div class="modlist">
+      <div class="modrow"><span class="mn">01</span><span class="mt">Think Like a Strategist</span><span class="mc">13</span></div>
+      <div class="modrow"><span class="mn">02</span><span class="mt">Design Your Business</span><span class="mc">10</span></div>
+      <div class="modrow"><span class="mn">03</span><span class="mt">Know Your Market</span><span class="mc">10</span></div>
+      <div class="modrow"><span class="mn">04</span><span class="mt">Sell Like a Pro</span><span class="mc">11</span></div>
+      <div class="modrow"><span class="mn">05</span><span class="mt">Market Your Message</span><span class="mc">10</span></div>
+      <div class="modrow"><span class="mn">06</span><span class="mt">Build Your Team</span><span class="mc">12</span></div>
+      <div class="modrow"><span class="mn">07</span><span class="mt">Operate with Precision</span><span class="mc">12</span></div>
+      <div class="modrow"><span class="mn">08</span><span class="mt">Decide with Confidence</span><span class="mc">10</span></div>
+      <div class="modrow"><span class="mn">09</span><span class="mt">Finance &amp; Metrics</span><span class="mc">9</span></div>
+      <div class="modrow"><span class="mn">10</span><span class="mt">Lead Yourself First</span><span class="mc">11</span></div>
+    </div>
+    <div>
+      <div class="promptcard">
+        <div class="pc-top"><span class="tag">8.2</span><span class="ttl">Pre-Mortem Analysis</span><span class="up">Module 08</span></div>
+        <div class="pc-body">Act as a Pre-Mortem facilitator.
+
+<span class="k">Project or decision:</span> <span class="v">[WHAT YOU ARE ABOUT TO DO]</span>
+<span class="k">Timeline:</span>           <span class="v">[HOW LONG THIS WILL TAKE]</span>
+
+<span class="k">SCENARIO:</span> It is <span class="v">[12 MONTHS FROM NOW]</span>. This project
+failed. Not partially &mdash; completely. What happened?
+
+Generate 10 specific reasons, ranked by likelihood.</div>
+        <div class="pc-foot"><span class="pairs">Pairs with 8.1 Decision Matrix &middot; 8.4 Risk Register</span>
+          <button class="btn btn-blue btn-sm copybtn">Copy prompt</button></div>
+      </div>
+      <p class="sd" style="margin-top:16px; font-size:13px;">This is one page of the book, and the page its QR code opens. Both say the same thing today. Only one of them can be corrected next year.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ AUTHOR STRIP ============ -->
+<!-- NOTE: draft copy. Replace with Raphy's own words. -->
+<section class="astrip">
+  <div class="bg"></div>
+  <div class="pad astrip-in">
+    <span class="av">RV</span>
+    <div class="q">
+      <blockquote>"I wrote the book I kept trying to find &mdash; the one that answers the question I am actually stuck on, on the day I am stuck on it."</blockquote>
+      <p>Most business books are read once and shelved. This one was built to be scanned at a desk, mid-problem, with the model already open in the next tab. Every framework had to earn its page by being something I would reach for again.</p>
+      <p>The QR codes are not a gimmick. They are how the printed version stays honest &mdash; when a technique changes, the page behind the code changes with it, and nobody has to buy a second edition.</p>
+      <div class="meta">
+        <span class="nm"><b>Raphy Varghese</b><span>Author, AI Operating System for Leaders</span></span>
+        <a class="btn btn-line" href="#">Read the full story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="light"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Who it's for</div>
+      <h2 class="sh">If you make decisions for a living, it was written for you.</h2>
+      <p class="sd">Five groups get the most out of it. Each has its own page with the modules that matter first.</p>
+    </div>
+  </div>
+  <div class="chips">
+    <a class="chip-link" href="#">Founders <svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="chip-link" href="#">Managers <svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="chip-link" href="#">Students <svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="chip-link" href="#">Teams <svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="chip-link" href="#">Institutions <svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div></section>
+
+<!-- ============ BUY ============ -->
+<section class="buy" id="get">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad buy-in">
+    <div>
+      <h2>Keep it on the desk. Not on a shelf.</h2>
+      <p>108 frameworks in print, every prompt live on this site, updated as the models change.</p>
+      <div class="ph-btns"><a class="btn btn-line" href="home.html#modules">Browse the prompts free</a></div>
+      <p class="buy-note">Paperback &middot; 276 pages &middot; published by Notion Press</p>
+    </div>
+    <div class="sellers">
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><path d="M3 16.5c4.2 3 13.8 3 18-0.5"/><path d="M19.2 19c1-1.5 1.3-3.2.8-3.6"/><path d="M7 4.5h10v8H7z"/><path d="M9.5 8h5"/></svg></span>
+        <span><b>Amazon</b><span class="sub">Paperback and Kindle &mdash; ships next day</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 7.5h8M8 12h8M8 16.5h5"/></svg></span>
+        <span><b>Notion Press</b><span class="sub">Direct from the publisher</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 19c0-2.3 1.3-4 3.2-4s2.8 1.3 2.8 3"/></svg></span>
+        <span><b>Bulk &amp; institutions</b><span class="sub">Ten copies or more, invoiced</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <p class="buy-note">Store links to be added before launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="#">Why this book</a><a href="#">How to use</a><a href="#">Who it's for</a><a href="#">About Raphy</a><a href="#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="#">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="#">For business</a><a href="#">For institutions</a><a href="#">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.closest('.promptcard').querySelector('.pc-body').innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy prompt'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+})();
+</script>

@@ -1,0 +1,16 @@
+{
+  "module": 6,
+  "lesson": "6.1",
+  "title": "RACI Matrix",
+  "sourcePages": {
+    "intro": 135,
+    "prompt": 136
+  },
+  "prompt": "Act as an operations consultant specialising in team clarity.\nProcess or function  : [THE AREA YOU WANT TO MAP  e.g. client onboarding, \n                                        monthly reporting]\nTeam roles involved :\n[LIST YOUR ROLES:  e.g. CEO, Sales Lead, Account Manager, Marketing Manager,\nOperations Lead]\nFor each key task in this process, assign:\nR  =  Responsible (does the actual work)\nA  =  Accountable (one person - owns the outcome)\nC  =  Consulted (gives input before action is taken)\nI   =  Informed (told after action is complete)\nFormat as a clear table.\nFlag any task with more than one A, explain the risk.\nFlag any task with no clear R.\nRecommend the 2 most urgent clarity fixes.\nRACI Matrix Hierarchy\nAccountable\nUltimately responsible for task completion\nResponsible\nCarries out the task\nConsulted\nProvided input and feedback\nInformed\nKept up-to-date on progress\nPRO TIP\nIf more than one person is marked Accountable for any task, the matrix is already\nbroken. There must be exactly one A per row that single constraint removes more\nteam friction than any team meeting ever will. When everyone knows who owns the\noutcome, everything else becomes easier to delegate.",
+  "pairsWith": [
+    "6.2 OKRs",
+    "6.7 Delegation Ladder",
+    "6.8 Meeting Design"
+  ],
+  "updatedAt": "2026-09-18"
+}

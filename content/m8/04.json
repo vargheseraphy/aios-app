@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.4",
+  "title": "Risk Matrix",
+  "sourcePages": {
+    "intro": 191,
+    "prompt": 192
+  },
+  "prompt": "Act as a risk management consultant using the Risk Matrix framework.\nMy business                 :  [DESCRIBE YOUR COMPANY, STAGE, AND CURRENT PLANS]\nDecision or initiative :  [WHAT YOU ARE ABOUT TO DO OR COMMIT TO]\nStep 1  :  Generate 15 risks across five categories:\n· Strategic  · Operational  · Financial  · People  · External\nStep 2 :  Score each risk:\nLIKELIHOOD :  1 (unlikely) to 5 (almost certain)\nIMPACT          :  1 (minimal) to 5 (existential)\nRISK SCORE = Likelihood × Impact\nStep 3 :  Group by priority:\nRED (score 15–25)     :  Act immediately\nAMBER (score 8–14) :  Monitor and prepare\nGREEN (score 1–7)    :  Accept or note\nStep 4 :  For each RED risk: Mitigation action · Owner · Trigger signal\nStep 5 :  Identify the one risk I am most likely to be underestimating.\nRisk Matrix Quadrant Actions\nAccept Monitor Closely Manage Immediate Priority\nLow Likelihood / Low Likelihood / High Likelihood / High Likelihood /\nLow Impact High Impact Low Impact High Impact\nPRO TIP\nThe most dangerous risks are not the ones scored highest, they are the ones missing\nfrom the list entirely. After scoring, ask AI: 'What risk have I not considered that\nregularly kills businesses at my stage?' Black swan events, regulatory changes, and key\nperson dependencies are consistently the most underestimated categories.",
+  "pairsWith": [
+    "8.2 Pre-Mortem",
+    "8.5 Scenario Planning",
+    "8.6 Red Team",
+    "1.7 Second Order"
+  ],
+  "updatedAt": "2026-09-18"
+}

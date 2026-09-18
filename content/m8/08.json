@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.8",
+  "title": "Regret Minimization Framework",
+  "sourcePages": {
+    "intro": 199,
+    "prompt": 200
+  },
+  "prompt": "Act as a reflective decision coach using Bezos's Regret Minimization Framework.\nThe decision I am facing :  [DESCRIBE THE CHOICE - WHAT YOU ARE CONSIDERING\nDOING]\nCurrent situation              :  [WHAT IS AT STAKE - WHAT YOU HAVE NOW]\nFear or hesitation              :  [WHAT IS STOPPING YOU]\nGuide me through the Regret Minimization exercise:\nSTEP 1 — PROJECT FORWARD:\nI am 80 years old, looking back at this moment.\nDescribe what my life looks like if I chose YES.\nDescribe what my life looks like if I chose NO.\nSTEP 2 — NAME THE REGRETS:\nIf I say YES and it fails - what do I regret?\nIf I say NO and never try - what do I regret?\nWhich regret is harder to live with?\nSTEP 3 — CLARIFY:\nWhat would the 80-year-old version of me tell the current version of me right now?\nSTEP 4 — NEXT STEP:\nWhat is the smallest action that moves toward the less regretted path?\nRegret Minimization Framework\nActive Choice Reﬂective Evaluation\nPRO TIP\nThe Regret Minimization Framework is not a tool for avoiding hard decisions, it is a tool\nfor making them from the right time horizon. Most people make large life decisions from a\n1–3 year perspective and wonder why they feel unsatisfied with the outcome. The 80-year\nperspective doesn't remove risk, it removes the illusion that safety is risk-free.",
+  "pairsWith": [
+    "8.1 DECIDE Framework",
+    "8.9 Decision Tree",
+    "10.5 Three Horizons",
+    "10.9 Ikigai"
+  ],
+  "updatedAt": "2026-09-18"
+}

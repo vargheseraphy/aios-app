@@ -1,0 +1,1215 @@
+<meta charset="utf-8">
+<title>AIOS Home Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+
+/* ---- icons + line art: inherit color so they never vanish ---- */
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .f{fill:currentColor; opacity:.16;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.62; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:.15s; white-space:nowrap;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-onbright{background:rgba(0,0,0,.82); color:#fff;} .btn-onbright:hover{background:#000;}
+.btn-sm{padding:8px 14px; font-size:13px;}
+
+/* ---------------- nav ---------------- */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* ---------------- hero ---------------- */
+.hero{position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; min-height:600px;}
+.hero-bg{position:absolute; inset:0; background:
+  radial-gradient(880px 620px at 10% 16%, #3B7BF7 0%, transparent 62%),
+  radial-gradient(740px 520px at 86% 4%, #EC4A3B 0%, transparent 58%),
+  radial-gradient(700px 580px at 76% 88%, #FBBE10 0%, transparent 56%),
+  radial-gradient(840px 700px at 20% 94%, #2FAB57 0%, transparent 60%),
+  var(--ink);}
+.hero-grid-lines{position:absolute; inset:0; opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 40%, black, transparent 72%);}
+.hero-scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.42) 54%, rgba(14,15,18,.60) 100%);}
+.hero-in{position:relative; padding-block:88px 44px; display:flex; flex-direction:column; gap:34px;}
+@media(min-width:1024px){.hero-in{flex-direction:row; align-items:center; gap:56px; padding-block:112px 56px;}}
+.hero-copy{display:flex; flex-direction:column; gap:22px; max-width:700px;}
+.glass{display:inline-flex; width:fit-content; align-items:center; gap:9px; white-space:nowrap; border-radius:8px; border:1px solid var(--line-d); background:rgba(255,255,255,.10); padding:8px 14px; font-size:12px; backdrop-filter:blur(6px);}
+.glass .dot{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(47,171,87,.25);}
+.glass .mute{color:var(--fg-3);}
+h1.hero-h{font-family:var(--disp); font-weight:800; font-size:clamp(34px,6.4vw,56px); line-height:1.06; letter-spacing:-.032em;}
+.hero-sub{font-size:15px; line-height:1.45; color:var(--fg-1); max-width:50ch;}
+@media(min-width:640px){.hero-sub{font-size:17px;}}
+.hero-btns{display:flex; flex-wrap:wrap; gap:12px; margin-top:2px;}
+.hero-meta{display:flex; gap:26px; flex-wrap:wrap; margin-top:10px; padding-top:18px; border-top:1px solid var(--line-d);}
+.hero-meta div .n{font-family:var(--disp); font-weight:800; font-size:22px; letter-spacing:-.02em;}
+.hero-meta div .l{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); margin-top:2px;}
+
+.ticker{display:none;}
+@media(min-width:1024px){.ticker{display:block; flex:none; height:320px; overflow:hidden; mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);}}
+.ticker-track{display:flex; flex-direction:column; animation:tick 26s linear infinite;}
+.ticker-track span{height:64px; display:flex; align-items:center; white-space:nowrap; font-family:var(--disp); font-weight:800; font-size:28px; letter-spacing:-.03em; color:rgba(255,255,255,.20);}
+.ticker-track span.on{color:#fff;}
+@keyframes tick{from{transform:translateY(0)} to{transform:translateY(-640px)}}
+
+/* ---------------- marquee ---------------- */
+.marq{border-block:1px solid var(--line-d); background:var(--panel); overflow:hidden; padding-block:13px;}
+.marq-track{display:flex; gap:10px; width:max-content; animation:slide 42s linear infinite;}
+.marq-item{display:inline-flex; align-items:center; gap:9px; font-size:12.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:6px 15px; white-space:nowrap;}
+.marq-item b{font-family:var(--mono); font-size:11px; color:var(--blue-hi); font-weight:500;}
+@keyframes slide{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marq-track,.ticker-track,.tmarq-track{animation:none;}}
+
+/* ---------------- shared ---------------- */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.light .kicker,.wash .kicker{color:var(--gray-l2);}
+.light .sd,.wash .sd{color:var(--gray-l);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:76px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:20ch;}
+.sd{font-size:14.5px; color:var(--fg-2); max-width:60ch; line-height:1.6;}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:34px;}
+
+/* ---------------- facts ---------------- */
+.facts{display:grid; gap:14px; grid-template-columns:1fr;}
+@media(min-width:760px){.facts{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1100px){.facts{grid-template-columns:1.25fr 1fr 1fr;}}
+.fact{border:1px solid var(--line-l); border-radius:16px; padding:24px; background:#fff; display:flex; flex-direction:column; gap:12px;}
+.fact.feature{grid-row:span 2; background:var(--ink); border-color:#23262E; color:#fff; position:relative; overflow:hidden; justify-content:space-between;}
+.fact.feature .bg{position:absolute; inset:0; background:radial-gradient(420px 300px at 20% 20%,#3B7BF7,transparent 62%),radial-gradient(360px 300px at 85% 85%,#2FAB57,transparent 58%); opacity:.92;}
+.fact.feature .inner{position:relative; display:flex; flex-direction:column; gap:16px; height:100%;}
+.fact .ic{width:40px; height:40px; border-radius:11px; background:#EDF2FE; color:var(--blue); display:flex; align-items:center; justify-content:center; flex:none;}
+.fact.feature .ic{background:rgba(255,255,255,.16); color:#fff; border:1px solid var(--line-d);}
+.fact h3{font-size:16.5px; line-height:1.25;}
+.fact.feature h3{font-size:clamp(20px,2.4vw,26px); line-height:1.15;}
+.fact p{font-size:13.5px; color:var(--gray-l); line-height:1.6;}
+.fact.feature p{color:var(--fg-1); font-size:14.5px;}
+.fact .big{font-family:var(--disp); font-weight:800; font-size:38px; line-height:1; letter-spacing:-.03em; color:var(--ink-2);}
+.fact .big span{font-size:15px; color:var(--gray-l2); letter-spacing:0;}
+.artbox{margin-top:auto; border-radius:12px; overflow:hidden; border:1px solid var(--line-d); background:rgba(0,0,0,.30); padding:16px;}
+
+/* ---------------- prompt slider ---------------- */
+.try{display:grid; gap:26px; grid-template-columns:1fr;}
+@media(min-width:960px){.try{grid-template-columns:.82fr 1.18fr; gap:48px; align-items:center;}}
+.slider{position:relative;}
+.slide{display:none;}
+.slide.on{display:block; animation:fade .28s ease;}
+@keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+.promptcard{background:var(--ink); border-radius:16px; overflow:hidden; border:1px solid #23262E; box-shadow:0 30px 60px -30px rgba(10,14,25,.5);}
+.pc-top{display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:3px 7px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13.5px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10.5px; color:var(--fg-3);}
+.pc-body{padding:20px 18px; font-family:var(--mono); font-size:12.5px; line-height:1.85; color:rgba(255,255,255,.88); white-space:pre-wrap; word-break:break-word; min-height:216px;}
+.pc-body .k{color:var(--yellow);}
+.pc-body .v{color:var(--blue-hi);}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:13px 16px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .pairs{font-size:11.5px; color:var(--fg-3);}
+.copybtn{margin-left:auto;}
+.copybtn.done{background:var(--green); color:#fff;}
+.dots{display:flex; align-items:center; justify-content:center; gap:9px; margin-top:22px;}
+.dot-b{appearance:none; border:none; padding:0; width:10px; height:10px; border-radius:50%; background:#A6ADBB; cursor:pointer; transition:.2s;}
+.dot-b:hover{background:#7C8494;}
+.dot-b[aria-current="true"]{background:var(--blue); width:30px; border-radius:999px;}
+
+/* ---- sign-up band ---- */
+.signup{position:relative; overflow:hidden; background:var(--ink); padding-block:58px;}
+.signup .bg{position:absolute; inset:0; background:radial-gradient(620px 360px at 14% 20%,rgba(59,123,247,.55),transparent 62%),radial-gradient(520px 340px at 88% 86%,rgba(47,171,87,.38),transparent 60%);}
+.signup-in{position:relative; display:flex; align-items:center; gap:30px; flex-wrap:wrap;}
+.signup-ic{width:54px; height:54px; border-radius:14px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.13); border:1px solid var(--line-d);}
+.signup-txt{flex:1 1 380px; min-width:0;}
+.signup-txt h3{font-size:clamp(20px,2.6vw,27px); line-height:1.14; margin-bottom:8px;}
+.signup-txt p{font-size:14px; color:var(--fg-1); max-width:56ch; line-height:1.6;}
+.signup-cta{display:flex; gap:12px; flex-wrap:wrap;}
+
+/* ---- author ---- */
+.author-grid{display:grid; gap:28px; grid-template-columns:1fr;}
+@media(min-width:900px){.author-grid{grid-template-columns:.8fr 1.2fr; gap:52px; align-items:center;}}
+.author-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-l); min-height:320px; display:flex; align-items:center; justify-content:center; padding:28px;}
+.author-art .artbg{position:absolute; inset:0; background:radial-gradient(380px 300px at 32% 26%,#3B7BF7,transparent 64%),radial-gradient(320px 280px at 82% 84%,#2FAB57,transparent 60%),#0B0C0F;}
+.author-art svg{position:relative; width:100%; max-width:250px;}
+.author-art .cap{position:absolute; left:14px; bottom:14px; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.78); background:rgba(0,0,0,.42); backdrop-filter:blur(4px); border:1px solid var(--line-d); border-radius:6px; padding:5px 9px;}
+.author-copy blockquote{margin:0 0 22px; font-family:var(--disp); font-weight:700; font-size:clamp(19px,2.5vw,26px); line-height:1.25; letter-spacing:-.02em; color:var(--ink-2); border-left:3px solid var(--blue); padding-left:20px;}
+.author-copy p{font-size:14.5px; color:var(--gray-l); line-height:1.7; margin-bottom:14px; max-width:60ch;}
+.author-sign{display:flex; align-items:center; gap:14px; margin-top:24px; padding-top:20px; border-top:1px solid var(--line-l);}
+.author-sign .av{width:46px; height:46px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:15px; color:#fff; flex:none;}
+.author-sign b{display:block; font-family:var(--disp); font-size:15px;}
+.author-sign span{font-size:12.5px; color:var(--gray-l2);}
+.draft-note{font-family:var(--mono); font-size:11px; color:var(--gray-l2); margin-top:16px;}
+
+/* ---- testimonial slider ---- */
+.trail{display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding-bottom:6px; margin-inline:-20px; padding-inline:20px;}
+.trail::-webkit-scrollbar{display:none;}
+@media(min-width:640px){.trail{margin-inline:-40px; padding-inline:40px;}}
+@media(min-width:1024px){.trail{margin-inline:-80px; padding-inline:80px;}}
+.trail .tcard{flex:none; width:330px; scroll-snap-align:start;}
+@media(min-width:1024px){.trail .tcard{width:392px;}}
+
+/* ---------------- how it works ---------------- */
+.how{display:grid; gap:24px; grid-template-columns:1fr; align-items:stretch;}
+@media(min-width:900px){.how{grid-template-columns:1.15fr .85fr; gap:40px;}}
+.step-list{display:flex; flex-direction:column;}
+.step{display:flex; gap:20px; padding-block:26px; border-top:1px solid var(--line-l);}
+.step:first-child{border-top:none; padding-top:0;}
+.step:last-child{padding-bottom:0;}
+.step .no{font-family:var(--disp); font-weight:800; font-size:32px; line-height:1; letter-spacing:-.04em; color:var(--line-l2); width:50px; flex:none; transition:color .18s;}
+.step h3{font-size:18px; margin-bottom:6px;}
+.step p{font-size:13.5px; color:var(--gray-l); line-height:1.6; max-width:46ch;}
+.step.on .no{color:var(--blue);}
+.how-art{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line-l); min-height:340px; display:flex; align-items:center; justify-content:center; padding:30px;}
+.how-art .artbg{position:absolute; inset:0; background:
+  radial-gradient(420px 320px at 28% 22%,#3B7BF7,transparent 64%),
+  radial-gradient(380px 320px at 80% 84%,#FBBE10,transparent 60%),#0B0C0F;}
+.how-art svg{position:relative; width:100%; max-width:320px; height:auto;}
+.how-art .cap{position:absolute; left:14px; bottom:14px; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.78); background:rgba(0,0,0,.42); backdrop-filter:blur(4px); border:1px solid var(--line-d); border-radius:6px; padding:5px 9px;}
+
+/* ---------------- bento ---------------- */
+.bento{display:grid; gap:14px; grid-template-columns:1fr;}
+@media(min-width:900px){.bento{grid-template-columns:repeat(3,1fr); grid-auto-rows:minmax(240px,auto);}
+  .b1{grid-column:1; grid-row:1 / span 2;}
+  .b2{grid-column:2 / span 2; grid-row:1;}
+  .b3{grid-column:2; grid-row:2;}
+  .b4{grid-column:3; grid-row:2;}
+}
+.bcard{position:relative; border-radius:18px; overflow:hidden; padding:28px; display:flex; flex-direction:column; gap:12px; border:1px solid transparent; min-height:240px;}
+.bcard h3{font-size:clamp(18px,2.2vw,23px); line-height:1.14; max-width:19ch;}
+.bcard p{font-size:13.5px; line-height:1.6; max-width:42ch;}
+.bcard .bart{margin-top:auto; padding-top:18px;}
+.bcard .blist{margin:4px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+.bcard .blist li{display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.5;}
+.bcard .blist .ti{width:20px; height:20px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px;}
+.bcard .bcta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+.bcard.tone-wash{background:#fff; color:var(--ink-2); border-color:var(--line-l);}
+.bcard.tone-wash p{color:var(--gray-l);}
+.bcard.tone-wash .line{color:var(--ink-2);}
+.bcard.tone-wash .blist .ti{background:#EDF2FE; color:var(--blue);}
+.bcard.tone-ink{background:#0B0C0F; color:#fff;} .bcard.tone-ink p{color:var(--fg-1);}
+.bcard.tone-blue{background:var(--blue); color:#fff;} .bcard.tone-blue p{color:rgba(255,255,255,.82);}
+.bcard.tone-yellow{background:var(--yellow); color:#1B1408;} .bcard.tone-yellow p{color:rgba(27,20,8,.72);} .bcard.tone-yellow .line{color:#1B1408;}
+.bcard .sheen{position:absolute; inset:0; pointer-events:none;}
+
+/* ---------------- module rail ---------------- */
+.rail-wrap{position:relative;}
+.rail{display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; margin-inline:-20px; padding-inline:20px; scrollbar-width:none;}
+.rail::-webkit-scrollbar{display:none;}
+@media(min-width:640px){.rail{margin-inline:-40px; padding-inline:40px;}}
+@media(min-width:1024px){.rail{margin-inline:-80px; padding-inline:80px;}}
+.railnav{display:flex; gap:8px;}
+.rbtn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-l2); background:#fff; color:var(--ink-2); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s;}
+.rbtn:hover{background:var(--ink-2); color:#fff; border-color:var(--ink-2);}
+.rbtn:disabled{opacity:.3; cursor:default;}
+.rbtn:disabled:hover{background:#fff; color:var(--ink-2); border-color:var(--line-l2);}
+.mcard{flex:none; width:282px; scroll-snap-align:start; border-radius:16px; overflow:hidden; border:1px solid var(--line-l); background:#fff; display:flex; flex-direction:column; transition:.18s;}
+.mcard:hover{border-color:var(--line-l2); transform:translateY(-3px);}
+.mcard .media{height:140px; position:relative; display:flex; align-items:center; justify-content:center;}
+.mcard .media svg{position:relative; width:84px; height:84px;}
+.mcard .media .n{position:absolute; top:10px; left:10px; font-family:var(--mono); font-size:11px; color:#fff; background:rgba(0,0,0,.45); backdrop-filter:blur(4px); border:1px solid var(--line-d); border-radius:7px; width:30px; height:26px; display:flex; align-items:center; justify-content:center;}
+.mcard .body{padding:15px 16px 18px; display:flex; flex-direction:column; gap:7px; flex:1;}
+.mcard h3{font-size:16px;}
+.mcard p{font-size:12.5px; color:var(--gray-l); line-height:1.5;}
+.mcard .cnt{margin-top:auto; padding-top:10px; font-family:var(--mono); font-size:11px; color:var(--gray-l2);}
+.railhint{font-family:var(--mono); font-size:11px; color:var(--gray-l2); margin-top:6px;}
+
+/* ---------------- audience ---------------- */
+.tabs-center{display:flex; justify-content:center;}
+.tabs{position:relative; display:flex; gap:2px; overflow-x:auto; padding:5px; background:#fff; border:1px solid var(--line-l); border-radius:999px; width:fit-content; max-width:100%; scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{position:relative; z-index:2; appearance:none; background:none; border:none; color:var(--gray-l); font-family:var(--sans); font-weight:500; font-size:13.5px; padding:10px 20px; border-radius:999px; cursor:pointer; white-space:nowrap; transition:color .18s;}
+.tab[aria-selected="true"]{color:#fff;}
+.pillslide{position:absolute; z-index:1; top:5px; height:calc(100% - 10px); background:var(--ink-2); border-radius:999px; transition:transform .28s cubic-bezier(.4,0,.2,1), width .28s cubic-bezier(.4,0,.2,1);}
+.aud{margin-top:26px;}
+.aud-panel[hidden]{display:none;}
+.aud-card{position:relative; border-radius:22px; overflow:hidden; border:1px solid #23262E; background:#0B0C0F;}
+.aud-card .cardbg{position:absolute; inset:0;}
+.aud-grid{position:relative; display:grid; grid-template-columns:1fr; gap:26px; padding:32px;}
+@media(min-width:960px){.aud-grid{grid-template-columns:1fr 1.05fr; gap:44px; padding:46px; align-items:center;}}
+.aud-copy h3{font-size:clamp(21px,2.8vw,30px); line-height:1.12; margin-bottom:12px; color:#fff;}
+.aud-copy .lead{font-size:14.5px; color:var(--fg-1); line-height:1.65; max-width:46ch;}
+.aud-copy .feats{margin:26px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:18px;}
+.aud-copy .feats li{display:flex; gap:13px; align-items:flex-start;}
+.aud-copy .feats .fi{width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,.13); border:1px solid var(--line-d); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.aud-copy .feats b{display:block; font-family:var(--disp); font-weight:700; font-size:14.5px; margin-bottom:3px; color:#fff;}
+.aud-copy .feats span.tx{font-size:13px; color:var(--fg-2); line-height:1.55; display:block;}
+.aud-cta{margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;}
+.aud-art{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line-d); min-height:320px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.aud-art .artbg{position:absolute; inset:0;}
+.aud-art svg{position:relative; width:100%; max-width:320px; height:auto;}
+
+/* ---------------- testimonials ---------------- */
+.tgrid{display:grid; gap:14px; grid-template-columns:1fr;}
+@media(min-width:720px){.tgrid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1080px){.tgrid{grid-template-columns:repeat(3,1fr);}}
+.tcard{border:1px solid var(--line-l); border-radius:16px; padding:22px; background:#fff; display:flex; flex-direction:column; gap:14px; position:relative;}
+.tcard .stars{display:flex; gap:3px; color:var(--yellow);}
+.tcard q{display:block; font-size:14px; line-height:1.62; color:var(--ink-2); quotes:none;}
+.tcard .who{display:flex; align-items:center; gap:11px; margin-top:auto; padding-top:15px; border-top:1px solid var(--line-l);}
+.tcard .av{width:36px; height:36px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:13px; color:#fff;}
+.tcard .who .nm{font-size:13px; font-weight:500; color:var(--ink-2);}
+.tcard .who .rl{font-size:12px; color:var(--gray-l2);}
+.tcard .smp{position:absolute; top:14px; right:14px; font-family:var(--mono); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:#8A5B00; background:#FFF4D6; border:1px solid #F3D77F; border-radius:5px; padding:2px 6px;}
+
+/* ---------------- faq ---------------- */
+.faq-grid{display:grid; gap:24px; grid-template-columns:1fr;}
+@media(min-width:960px){.faq-grid{grid-template-columns:.78fr 1.22fr; gap:56px; align-items:start;}}
+.faq-art{border-radius:18px; overflow:hidden; position:relative; min-height:230px; display:flex; align-items:center; justify-content:center; padding:26px; margin-bottom:26px;}
+.faq-art .artbg{position:absolute; inset:0; background:radial-gradient(360px 280px at 30% 26%,#3B7BF7,transparent 64%),radial-gradient(320px 260px at 84% 82%,#2FAB57,transparent 60%),#0B0C0F;}
+.faq-art svg{position:relative; width:100%; max-width:210px;}
+.acc{border-top:1px solid var(--line-l);}
+.acc-item{border-bottom:1px solid var(--line-l);}
+.acc-btn{width:100%; appearance:none; background:none; border:none; color:var(--ink-2); font-family:var(--disp); font-weight:700; font-size:16.5px; letter-spacing:-.015em; text-align:left; padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer;}
+.acc-btn .pm{flex:none; width:24px; height:24px; border-radius:50%; border:1px solid var(--line-l2); display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-size:15px; color:var(--gray-l); transition:.22s;}
+.acc-btn[aria-expanded="true"] .pm{background:var(--ink-2); color:#fff; border-color:var(--ink-2); transform:rotate(45deg);}
+.acc-panel{overflow:hidden; max-height:0; opacity:0; transition:max-height .3s ease, opacity .25s ease;}
+.acc-panel .inner{padding-bottom:22px; font-size:14px; color:var(--gray-l); line-height:1.7; max-width:64ch;}
+.acc-panel .inner code{font-family:var(--mono); font-size:12.5px; background:var(--wash); padding:2px 6px; border-radius:5px;}
+
+/* ---------------- buy ---------------- */
+.buy{position:relative; overflow:hidden; background:var(--ink);}
+.buy .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 16% 10%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 440px at 88% 92%, rgba(47,171,87,.8), transparent 60%),
+  radial-gradient(520px 380px at 60% 50%, rgba(251,190,16,.3), transparent 62%), var(--blue-deep);}
+.buy .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.buy-in{position:relative; display:grid; gap:34px; grid-template-columns:1fr;}
+@media(min-width:960px){.buy-in{grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}}
+.buy h2{font-size:clamp(27px,4.2vw,42px); line-height:1.07; max-width:16ch; margin-bottom:14px;}
+.buy p{color:rgba(255,255,255,.88); font-size:15px; max-width:46ch; margin-bottom:26px;}
+.sellers{display:flex; flex-direction:column; gap:12px;}
+.seller{display:flex; align-items:center; gap:16px; padding:18px 20px; border-radius:14px; border:1px solid rgba(255,255,255,.22); background:rgba(0,0,0,.30); backdrop-filter:blur(8px); transition:.15s;}
+.seller:hover{background:rgba(0,0,0,.45); border-color:rgba(255,255,255,.4); transform:translateY(-2px);}
+.seller .si{width:44px; height:44px; border-radius:11px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.seller b{display:block; font-family:var(--disp); font-weight:700; font-size:15.5px;}
+.seller span.sub{font-size:12.5px; color:rgba(255,255,255,.62);}
+.seller .go{margin-left:auto; color:rgba(255,255,255,.7);}
+.buy-note{margin-top:16px; font-family:var(--mono); font-size:11px; color:rgba(255,255,255,.55);}
+
+/* ---------------- subscribe ---------------- */
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* ---------------- footer ---------------- */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="#"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="#why">Why frameworks</a><a href="#modules">Modules</a><a href="#how">How to use</a><a href="#who">Who it's for</a><a href="#faq">FAQ</a><a href="#">Articles</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#get">Get the book</a>
+    <!-- signed-out: icon only, keeps the bar uncluttered -->
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <!-- signed-in: avatar replaces the icon once the user has an account -->
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span>
+      <svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bg"></div><div class="hero-grid-lines"></div><div class="hero-scrim"></div>
+  <div class="pad hero-in">
+    <div class="hero-copy">
+      <span class="glass"><span class="dot"></span>Free to use <span class="mute">&mdash; no account needed to copy a prompt</span></span>
+      <h1 class="hero-h">Every prompt in the book. Kept current.</h1>
+      <p class="hero-sub">Scan the code on any page and land on that framework's prompt &mdash; ready to paste into ChatGPT, Claude or Gemini. The book stays printed. The prompts keep improving.</p>
+      <div class="hero-btns">
+        <a class="btn btn-white" href="#try">See a prompt</a>
+        <a class="btn btn-line" href="#modules">All 10 modules</a>
+      </div>
+      <div class="hero-meta">
+        <div><div class="n">108</div><div class="l">Prompts</div></div>
+        <div><div class="n">10</div><div class="l">Modules</div></div>
+        <div><div class="n">1 tap</div><div class="l">To copy</div></div>
+        <div><div class="n">Free</div><div class="l">To use</div></div>
+      </div>
+    </div>
+    <div class="ticker"><div class="ticker-track">
+      <span class="on">Think Like a Strategist</span><span>Design Your Business</span><span>Know Your Market</span><span>Sell Like a Pro</span><span>Market Your Message</span><span>Build Your Team</span><span>Operate with Precision</span><span>Decide with Confidence</span><span>Finance &amp; Metrics</span><span>Lead Yourself First</span>
+      <span class="on">Think Like a Strategist</span><span>Design Your Business</span><span>Know Your Market</span><span>Sell Like a Pro</span><span>Market Your Message</span><span>Build Your Team</span><span>Operate with Precision</span><span>Decide with Confidence</span><span>Finance &amp; Metrics</span><span>Lead Yourself First</span>
+    </div></div>
+  </div>
+</header>
+
+<div class="marq"><div class="marq-track">
+  <span class="marq-item"><b>01</b>Think Like a Strategist</span><span class="marq-item"><b>02</b>Design Your Business</span><span class="marq-item"><b>03</b>Know Your Market</span><span class="marq-item"><b>04</b>Sell Like a Pro</span><span class="marq-item"><b>05</b>Market Your Message</span><span class="marq-item"><b>06</b>Build Your Team</span><span class="marq-item"><b>07</b>Operate with Precision</span><span class="marq-item"><b>08</b>Decide with Confidence</span><span class="marq-item"><b>09</b>Finance &amp; Metrics</span><span class="marq-item"><b>10</b>Lead Yourself First</span>
+  <span class="marq-item"><b>01</b>Think Like a Strategist</span><span class="marq-item"><b>02</b>Design Your Business</span><span class="marq-item"><b>03</b>Know Your Market</span><span class="marq-item"><b>04</b>Sell Like a Pro</span><span class="marq-item"><b>05</b>Market Your Message</span><span class="marq-item"><b>06</b>Build Your Team</span><span class="marq-item"><b>07</b>Operate with Precision</span><span class="marq-item"><b>08</b>Decide with Confidence</span><span class="marq-item"><b>09</b>Finance &amp; Metrics</span><span class="marq-item"><b>10</b>Lead Yourself First</span>
+</div></div>
+
+<!-- ============ WHY A FRAMEWORK ============ -->
+<section class="light" id="why"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Why a framework</div>
+      <h2 class="sh">A blank chat box knows nothing about your business.</h2>
+      <p class="sd">Most people type one sentence, get something generic, and conclude AI is overrated. A framework fixes the input, not the model.</p>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact feature">
+      <div class="bg"></div>
+      <div class="inner">
+        <span class="ic"><svg class="i" width="20" height="20" viewBox="0 0 24 24"><path d="M4 6h16M4 12h11M4 18h7"/><circle cx="19" cy="18" r="2.4"/></svg></span>
+        <div>
+          <h3>Four layers beat one sentence.</h3>
+          <p>Every prompt states a role, the context, the action and the expected format. That is the difference between "write me a sales email" and output you can actually send.</p>
+        </div>
+        <div class="artbox">
+          <svg viewBox="0 0 280 118" class="line" style="width:100%;height:auto;" aria-hidden="true">
+            <rect class="s2" x="8" y="8" width="264" height="102" rx="12"/>
+            <rect class="s" x="24" y="22" width="56" height="18" rx="6"/><text class="t" x="34" y="34">ROLE</text>
+            <path class="s2" d="M88 31h72"/><circle class="fd" cx="166" cy="31" r="3"/>
+            <rect class="s" x="24" y="46" width="76" height="18" rx="6"/><text class="t" x="34" y="58">CONTEXT</text>
+            <path class="s2" d="M108 55h58"/><circle class="fd" cx="172" cy="55" r="3"/>
+            <rect class="s" x="24" y="70" width="66" height="18" rx="6"/><text class="t" x="34" y="82">ACTION</text>
+            <path class="s2" d="M98 79h86"/><circle class="fd" cx="190" cy="79" r="3"/>
+            <rect class="s" x="24" y="92" width="92" height="16" rx="6" opacity=".55"/><text class="t" x="34" y="103">EXPECTATION</text>
+            <path class="s3" d="M214 24v72"/>
+            <rect class="s" x="222" y="42" width="38" height="36" rx="8"/>
+            <path class="s" d="M232 60l6 6 12-14"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact">
+      <span class="ic"><svg class="i" width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><path d="M17.25 13.5v7.5M13.5 17.25h7.5"/></svg></span>
+      <div class="big">108 <span>frameworks</span></div>
+      <p>One for nearly every recurring decision a founder or manager faces &mdash; hiring, pricing, positioning, firing, forecasting.</p>
+    </div>
+
+    <div class="fact">
+      <span class="ic"><svg class="i" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v3.4M12 18.1v3.4M2.5 12h3.4M18.1 12h3.4M5.2 5.2l2.4 2.4M16.4 16.4l2.4 2.4M18.8 5.2l-2.4 2.4M7.6 16.4l-2.4 2.4"/></svg></span>
+      <div class="big">Any model</div>
+      <p>Plain language, no tool-specific syntax &mdash; the same prompt works in ChatGPT, Claude, Gemini or whatever replaces them next year.</p>
+    </div>
+
+    <div class="fact">
+      <span class="ic"><svg class="i" width="20" height="20" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.9-6.4"/><path d="M20.5 4.2V9h-4.8"/><circle cx="12" cy="12" r="2"/></svg></span>
+      <div class="big">Never stale</div>
+      <p>The print run is fixed. The prompts on this site get rewritten as technique moves &mdash; the QR code always opens the current one.</p>
+    </div>
+
+    <div class="fact">
+      <span class="ic"><svg class="i" width="20" height="20" viewBox="0 0 24 24"><path d="M5 20V9M12 20V4M19 20v-7"/><circle cx="5" cy="6.5" r="1.6"/><circle cx="19" cy="10.5" r="1.6"/></svg></span>
+      <div class="big">10 modules</div>
+      <p>Strategy through self-leadership, in the order a business actually grows &mdash; not the order a textbook teaches.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ PROMPT SLIDER ============ -->
+<section class="wash" id="try"><div class="pad">
+  <div class="try">
+    <div>
+      <div class="kicker">See it working</div>
+      <h2 class="sh">Pick a decision. There's a prompt for it.</h2>
+      <p class="sd">No sign-up wall, no tour, no explainer video. The prompt, the brackets you fill in, and a copy button. That is the whole experience &mdash; repeated 108 times.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; align-items:center;">
+        <a class="btn btn-ink" href="#modules">Browse all 108</a>
+      </div>
+    </div>
+
+    <div class="slider" id="slider">
+      <div class="slide on">
+        <div class="promptcard">
+          <div class="pc-top"><span class="tag">1.1</span><span class="ttl">C.A.R.E Prompting</span><span class="up">Module 01</span></div>
+          <div class="pc-body"><span class="k">Role:</span>        Act as a <span class="v">[EXPERT ROLE &mdash; e.g. B2B sales coach]</span>.
+<span class="k">Context:</span>     I am <span class="v">[YOUR SITUATION &mdash; company, stage, industry]</span>.
+<span class="k">Action:</span>      <span class="v">[WHAT YOU WANT &mdash; e.g. Give me 5 positioning ideas
+             to differentiate in the [MARKET / REGION]]</span>.
+<span class="k">Expectation:</span> Format as a numbered list. Each point 2&ndash;3 lines.
+             Use plain business language. No jargon.</div>
+          <div class="pc-foot"><span class="pairs">Pairs with 1.2 Context Stack &middot; 1.3 Role Prompting</span>
+            <button class="btn btn-blue btn-sm copybtn">Copy prompt</button></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="promptcard">
+          <div class="pc-top"><span class="tag">8.2</span><span class="ttl">Pre-Mortem Analysis</span><span class="up">Module 08</span></div>
+          <div class="pc-body">Act as a Pre-Mortem facilitator.
+
+<span class="k">Project or decision:</span>  <span class="v">[DESCRIBE WHAT YOU ARE ABOUT TO DO]</span>
+<span class="k">Timeline:</span>            <span class="v">[HOW LONG THIS WILL TAKE]</span>
+<span class="k">Team involved:</span>       <span class="v">[ROLES RESPONSIBLE FOR EXECUTION]</span>
+
+<span class="k">SCENARIO:</span> It is <span class="v">[DATE 12 MONTHS FROM NOW]</span>. This project has
+failed. Not partially &mdash; completely. What happened?
+
+Generate 10 specific reasons, ranked by likelihood.</div>
+          <div class="pc-foot"><span class="pairs">Pairs with 8.1 Decision Matrix &middot; 8.4 Risk Register</span>
+            <button class="btn btn-blue btn-sm copybtn">Copy prompt</button></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="promptcard">
+          <div class="pc-top"><span class="tag">4.2</span><span class="ttl">SPIN Discovery Call</span><span class="up">Module 04</span></div>
+          <div class="pc-body">Act as a B2B sales coach using SPIN Selling.
+
+<span class="k">I am selling:</span>     <span class="v">[YOUR PRODUCT OR SERVICE]</span>
+<span class="k">Prospect role:</span>   <span class="v">[JOB TITLE AND INDUSTRY]</span>
+<span class="k">Known context:</span>   <span class="v">[WHAT YOU ALREADY KNOW ABOUT THEM]</span>
+
+Generate 3 strong questions for each stage:
+<span class="k">SITUATION</span>    &mdash; their current state and setup
+<span class="k">PROBLEM</span>      &mdash; the pain they may not have named
+<span class="k">IMPLICATION</span>  &mdash; the cost of leaving it alone</div>
+          <div class="pc-foot"><span class="pairs">Pairs with 4.1 ICP Builder &middot; 4.5 Objection Handling</span>
+            <button class="btn btn-blue btn-sm copybtn">Copy prompt</button></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="promptcard">
+          <div class="pc-top"><span class="tag">10.2</span><span class="ttl">90-Day Planning</span><span class="up">Module 10</span></div>
+          <div class="pc-body">Act as a 90-day planning coach.
+
+<span class="k">My context:</span>          <span class="v">[ROLE, BUSINESS STAGE, KEY PRIORITIES]</span>
+<span class="k">Longer-term vision:</span>  <span class="v">[WHERE YOU WANT TO BE IN 12&ndash;18 MONTHS]</span>
+<span class="k">Current blockers:</span>    <span class="v">[WHAT IS SLOWING YOU MOST]</span>
+
+<span class="k">BREAKTHROUGH GOALS:</span> 3 outcomes that would make this
+quarter genuinely significant &mdash; not just busy.</div>
+          <div class="pc-foot"><span class="pairs">Pairs with 10.1 Energy Audit &middot; 10.5 Weekly Review</span>
+            <button class="btn btn-blue btn-sm copybtn">Copy prompt</button></div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="light" id="how"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">How it works</div>
+      <h2 class="sh">Three moves. Under ten seconds.</h2>
+    </div>
+    <a class="btn btn-linedark" href="#">Full guide</a>
+  </div>
+  <div class="how">
+    <div class="step-list">
+      <div class="step on"><span class="no">01</span><div><h3>Scan the code on the page</h3><p>Every framework in the book carries its own code. Your phone camera is enough &mdash; no app, no login.</p></div></div>
+      <div class="step"><span class="no">02</span><div><h3>The right prompt opens</h3><p>You land on that exact lesson, already expanded. The rest of the module sits below it if you want more.</p></div></div>
+      <div class="step"><span class="no">03</span><div><h3>Copy, fill the brackets, run it</h3><p>Paste into whichever AI you use. Replace anything in <span style="font-family:var(--mono);font-size:12px;background:var(--wash);padding:1px 5px;border-radius:4px;">[SQUARE BRACKETS]</span> with your real situation.</p></div></div>
+    </div>
+    <div class="how-art">
+      <div class="artbg"></div>
+      <svg viewBox="0 0 330 300" class="line" aria-hidden="true">
+        <!-- open book: x 18 to 166 -->
+        <path class="s" d="M18 92c22-12 52-12 74 4v136c-22-16-52-16-74-4z"/>
+        <path class="s" d="M166 92c-22-12-52-12-74 4v136c22-16 52-16 74-4z"/>
+        <path class="s" d="M92 96v136"/>
+        <path class="s2" d="M32 120h42M32 138h28M110 120h42M110 138h30"/>
+        <!-- qr code on the right page: x 104 to 154 -->
+        <rect class="s" x="104" y="166" width="50" height="50" rx="5"/>
+        <rect class="s" x="110" y="172" width="13" height="13" rx="3"/>
+        <rect class="s" x="135" y="172" width="13" height="13" rx="3"/>
+        <rect class="s" x="110" y="197" width="13" height="13" rx="3"/>
+        <rect class="fd" x="114" y="176" width="5" height="5" rx="1"/>
+        <rect class="fd" x="139" y="176" width="5" height="5" rx="1"/>
+        <rect class="fd" x="114" y="201" width="5" height="5" rx="1"/>
+        <rect class="f" x="133" y="194" width="6" height="6"/><rect class="f" x="143" y="203" width="6" height="6"/>
+        <rect class="f" x="143" y="190" width="5" height="5"/>
+        <!-- scan brackets around the qr only -->
+        <path class="s2" d="M96 176v-18h18M162 176v-18h-18M96 206v18h18M162 206v18h-18" opacity=".5"/>
+        <!-- beam across the empty gap: x 168 to 212 -->
+        <path class="s3" d="M212 186l-40 4M212 172l-40-8"/>
+        <!-- phone: x 216 to 312, clear of the book -->
+        <rect class="s" x="216" y="46" width="96" height="176" rx="18"/>
+        <path class="s2" d="M250 62h28"/>
+        <rect class="s2" x="228" y="78" width="72" height="92" rx="9"/>
+        <rect class="s" x="240" y="92" width="48" height="10" rx="5"/>
+        <path class="s2" d="M240 116h48M240 130h32M240 144h42"/>
+        <rect class="s" x="234" y="182" width="60" height="24" rx="12"/>
+        <text class="t" x="249" y="198" style="font-size:10px; opacity:.95;">COPY</text>
+      </svg>
+      <span class="cap">Line art &mdash; replace with a photo later</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ SIGN-UP CTA ============ -->
+<section class="signup">
+  <div class="bg"></div>
+  <div class="pad signup-in">
+    <span class="signup-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><path d="M19 21V10l-7-6-7 6v11"/><path d="M9 21v-7h6v7"/><path d="M15.5 3.5l3 3M18.5 3.5l-3 3"/></svg></span>
+    <div class="signup-txt">
+      <h3>Copying is free. An account keeps them.</h3>
+      <p>Save any prompt to your own list, pick up where you left off on another device, and send a colleague a link that carries your name on it. No card, no trial, no paywall on the prompts themselves.</p>
+    </div>
+    <div class="signup-cta">
+      <a class="btn btn-white" href="#">Create a free account</a>
+      <a class="btn btn-line" href="#">Log in</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENTO ============ -->
+<section class="wash"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">What you get</div>
+      <h2 class="sh">Start with one prompt. Run the whole system when you're ready.</h2>
+    </div>
+    <a class="btn btn-ink" href="#get">Get the book</a>
+  </div>
+  <div class="bento">
+
+    <article class="bcard tone-wash b1">
+      <h3>Every framework, ready to paste</h3>
+      <p>108 prompts across ten modules, each one written and tested against a real business decision &mdash; not generated filler. Open the one you need, fill the brackets, run it.</p>
+      <ul class="blist">
+        <li><span class="ti"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Bracketed placeholders so it fits your industry, not a generic one</span></li>
+        <li><span class="ti"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Every prompt names the frameworks it pairs with next</span></li>
+        <li><span class="ti"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>One-tap copy on a phone, straight from a scanned page</span></li>
+        <li><span class="ti"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span>Free to read and copy &mdash; the book explains when to use which</span></li>
+      </ul>
+      <div class="bcta">
+        <a class="btn btn-ink btn-sm" href="#try">See a prompt</a>
+        <a class="btn btn-linedark btn-sm" href="#modules">Browse modules</a>
+      </div>
+      <div class="bart">
+        <svg viewBox="0 0 320 132" class="line" style="width:100%;height:auto;" aria-hidden="true">
+          <rect class="s" x="6" y="12" width="126" height="108" rx="12"/>
+          <rect class="s2" x="22" y="28" width="42" height="14" rx="7"/>
+          <path class="s" d="M22 60h94M22 76h68M22 92h84"/>
+          <path class="s3" d="M142 66h22"/><path class="s2" d="M158 60l6 6-6 6"/>
+          <rect class="s" x="174" y="12" width="140" height="70" rx="12"/>
+          <path class="s2" d="M192 38h96M192 56h64"/>
+          <rect class="s" x="250" y="94" width="64" height="26" rx="13"/>
+          <text class="t" x="264" y="111" style="font-size:10px;opacity:.95;">COPY</text>
+        </svg>
+      </div>
+    </article>
+
+    <article class="bcard tone-ink b2">
+      <h3>Ten modules that connect to each other</h3>
+      <p>Each framework names the others it pairs with, so one decision leads to the next instead of dead-ending.</p>
+      <div class="bart">
+        <svg viewBox="0 0 540 140" class="line" style="width:100%;height:auto;" aria-hidden="true">
+          <path class="s3" d="M56 70h428"/>
+          <path class="s" d="M76 66q32-26 68-26M184 44q44 26 66 52M290 100q44 26 66-52M396 44q44 0 68 26"/>
+          <circle class="s" cx="56" cy="70" r="19" fill="#0B0C0F"/><text class="t" x="47" y="74" style="opacity:.95">01</text>
+          <circle class="s" cx="166" cy="40" r="19" fill="#0B0C0F"/><text class="t" x="157" y="44" style="opacity:.95">03</text>
+          <circle class="s" cx="272" cy="100" r="19" fill="#0B0C0F"/><text class="t" x="263" y="104" style="opacity:.95">06</text>
+          <circle class="s" cx="378" cy="40" r="19" fill="#0B0C0F"/><text class="t" x="369" y="44" style="opacity:.95">08</text>
+          <circle class="s" cx="484" cy="70" r="19" fill="#0B0C0F"/><text class="t" x="475" y="74" style="opacity:.95">10</text>
+        </svg>
+      </div>
+    </article>
+
+    <article class="bcard tone-blue b3">
+      <h3>One system, the whole team</h3>
+      <p>Hand out copies. Everyone works from the same frameworks, so plans arrive in the same shape.</p>
+      <div class="bart">
+        <svg viewBox="0 0 260 124" class="line" style="width:100%;height:auto;" aria-hidden="true">
+          <rect class="s" x="94" y="6" width="72" height="42" rx="8"/>
+          <path class="s2" d="M110 22h40M110 34h24"/>
+          <path class="s3" d="M130 48v10M48 66v-8h164v8"/>
+          <circle class="s" cx="48" cy="80" r="13"/><path class="s" d="M35 116c0-8 6-13 13-13s13 5 13 13"/>
+          <circle class="s" cx="130" cy="80" r="13"/><path class="s" d="M117 116c0-8 6-13 13-13s13 5 13 13"/>
+          <circle class="s" cx="212" cy="80" r="13"/><path class="s" d="M199 116c0-8 6-13 13-13s13 5 13 13"/>
+        </svg>
+      </div>
+    </article>
+
+    <article class="bcard tone-yellow b4">
+      <h3>Updated as the models change</h3>
+      <p>The page behind each QR code gets rewritten. The book on the desk never goes out of date.</p>
+      <div class="bart">
+        <svg viewBox="0 0 260 124" class="line" style="width:100%;height:auto;" aria-hidden="true">
+          <rect class="s" x="12" y="46" width="52" height="30" rx="8"/><text class="t" x="27" y="65" style="font-size:11px;opacity:.95">v1</text>
+          <path class="s3" d="M70 61h16"/>
+          <rect class="s" x="92" y="46" width="52" height="30" rx="8"/><text class="t" x="107" y="65" style="font-size:11px;opacity:.95">v2</text>
+          <path class="s3" d="M150 61h16"/>
+          <circle class="s" cx="206" cy="61" r="38"/>
+          <path class="s" d="M206 34a27 27 0 1 1-25 17"/>
+          <path class="s" d="M194 22l12 12-12 10"/>
+        </svg>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ MODULES ============ -->
+<section class="light" id="modules"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">The system</div>
+      <h2 class="sh">Ten modules, front to back.</h2>
+      <p class="sd">Read the book in order or jump to the one that's on fire this week. Each module holds nine to thirteen frameworks.</p>
+    </div>
+    <div class="railnav">
+      <button class="rbtn" id="railPrev" aria-label="Scroll modules left"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="rbtn" id="railNext" aria-label="Scroll modules right"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</div>
+<div class="pad rail-wrap"><div class="rail" id="modRail">
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 130px at 30% 30%,#3B7BF7,transparent 64%),radial-gradient(160px 130px at 82% 78%,#6EA0FF,transparent 60%),#0B0C0F"><span class="n">01</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><circle class="s" cx="36" cy="36" r="24"/><path class="s" d="M46 26L40 42l-16 6 6-16z"/><circle class="fd" cx="36" cy="36" r="3.2"/><path class="s2" d="M36 8v6M36 58v6M8 36h6M58 36h6"/></svg></div>
+    <div class="body"><h3>Think Like a Strategist</h3><p>Learn to work with AI. Then learn to think. Both are non-negotiable.</p><span class="cnt">13 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 130px at 70% 25%,#EC4A3B,transparent 62%),radial-gradient(180px 140px at 20% 85%,#FBBE10,transparent 60%),#0B0C0F"><span class="n">02</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><path class="s" d="M14 30l22-14 22 14-22 13z"/><path class="s" d="M14 30v18l22 13 22-13V30"/><path class="s2" d="M36 43v18"/><path class="s3" d="M24 24l24 14"/></svg></div>
+    <div class="body"><h3>Design Your Business</h3><p>Shape what you're building so it deserves to exist.</p><span class="cnt">10 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 140px at 25% 35%,#2FAB57,transparent 62%),radial-gradient(160px 140px at 85% 75%,#3B7BF7,transparent 60%),#0B0C0F"><span class="n">03</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><circle class="s" cx="32" cy="32" r="17"/><path class="s" d="M44 44l14 14"/><path class="s" d="M26 36v-8M32 36V24M38 36v-5"/></svg></div>
+    <div class="body"><h3>Know Your Market</h3><p>See your competitive landscape clearly before you move.</p><span class="cnt">10 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 130px at 40% 20%,#FBBE10,transparent 60%),radial-gradient(180px 140px at 80% 85%,#EC4A3B,transparent 62%),#0B0C0F"><span class="n">04</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><path class="s" d="M12 16h48L42 38v18l-12 6V38z"/><path class="s2" d="M20 24h32"/><circle class="fd" cx="36" cy="52" r="2.6"/></svg></div>
+    <div class="body"><h3>Sell Like a Pro</h3><p>Build a machine that turns cold strangers into paying customers.</p><span class="cnt">11 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(190px 140px at 30% 70%,#6EA0FF,transparent 62%),radial-gradient(160px 130px at 75% 25%,#2FAB57,transparent 60%),#0B0C0F"><span class="n">05</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><path class="s" d="M14 28v14h10l16 12V16L24 28z"/><path class="s" d="M18 42v10h8v-10"/><path class="s2" d="M48 28c5 5 5 11 0 16M55 22c8 8 8 20 0 28"/></svg></div>
+    <div class="body"><h3>Market Your Message</h3><p>Build the system that makes your right customer find you.</p><span class="cnt">10 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 140px at 65% 30%,#3B7BF7,transparent 62%),radial-gradient(180px 140px at 20% 80%,#FBBE10,transparent 60%),#0B0C0F"><span class="n">06</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><circle class="s" cx="26" cy="26" r="9"/><path class="s" d="M10 52c0-9 7-15 16-15s16 6 16 15"/><circle class="s2" cx="48" cy="29" r="7.5"/><path class="s2" d="M38 52c0-8 5-13 10-13s10 5 10 13"/></svg></div>
+    <div class="body"><h3>Build Your Team</h3><p>Build people who build the company &mdash; leadership is the product.</p><span class="cnt">12 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 130px at 35% 30%,#EC4A3B,transparent 60%),radial-gradient(180px 140px at 85% 80%,#2FAB57,transparent 62%),#0B0C0F"><span class="n">07</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><circle class="s" cx="36" cy="36" r="10"/><path class="s" d="M36 14v8M36 50v8M14 36h8M50 36h8M20 20l6 6M46 46l6 6M52 20l-6 6M26 46l-6 6"/><circle class="fd" cx="36" cy="36" r="3"/></svg></div>
+    <div class="body"><h3>Operate with Precision</h3><p>Build systems that run without you and improve without being told.</p><span class="cnt">12 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(190px 140px at 25% 25%,#2FAB57,transparent 62%),radial-gradient(160px 130px at 80% 80%,#6EA0FF,transparent 58%),#0B0C0F"><span class="n">08</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><path class="s" d="M36 16v14M36 30L20 48M36 30l16 18"/><circle class="s" cx="36" cy="14" r="5"/><circle class="s2" cx="20" cy="52" r="6"/><circle class="s" cx="52" cy="52" r="6"/><path class="s" d="M49 52l2.5 2.5L56 50"/></svg></div>
+    <div class="body"><h3>Decide with Confidence</h3><p>Make better decisions, faster, with less regret.</p><span class="cnt">10 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 140px at 70% 35%,#FBBE10,transparent 60%),radial-gradient(180px 140px at 25% 85%,#3B7BF7,transparent 62%),#0B0C0F"><span class="n">09</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><path class="s" d="M14 54V34M28 54V24M42 54V40M56 54V18"/><path class="s2" d="M10 58h52"/><path class="s3" d="M14 30l14-10 14 14 14-20"/></svg></div>
+    <div class="body"><h3>Finance &amp; Metrics</h3><p>Know your numbers. Own your narrative.</p><span class="cnt">9 frameworks</span></div></a>
+
+  <a class="mcard" href="#"><div class="media" style="background:radial-gradient(180px 130px at 30% 75%,#6EA0FF,transparent 60%),radial-gradient(180px 140px at 80% 25%,#EC4A3B,transparent 62%),#0B0C0F"><span class="n">10</span>
+    <svg viewBox="0 0 72 72" class="line" aria-hidden="true"><circle class="s" cx="36" cy="26" r="10"/><path class="s" d="M18 56c0-10 8-16 18-16s18 6 18 16"/><path class="s2" d="M36 6v6M22 11l3 5M50 11l-3 5"/></svg></div>
+    <div class="body"><h3>Lead Yourself First</h3><p>The company can only grow as fast as its founder.</p><span class="cnt">11 frameworks</span></div></a>
+
+</div>
+<p class="railhint">Scroll, or use the arrows above</p>
+</div></section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="wash" id="who"><div class="pad">
+  <div style="text-align:center; display:flex; flex-direction:column; align-items:center; margin-bottom:28px;">
+    <div class="kicker">Who it's for</div>
+    <h2 class="sh" style="max-width:24ch;">Built for the person doing the job, not studying it.</h2>
+  </div>
+  <div class="tabs-center">
+    <div class="tabs" role="tablist" id="audtabs">
+      <span class="pillslide" id="audslide"></span>
+      <button class="tab" role="tab" aria-selected="true" data-p="a1">Founders</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="a2">Managers</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="a3">Students</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="a4">Teams</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="a5">Institutions</button>
+    </div>
+  </div>
+
+  <div class="aud">
+    <!-- FOUNDERS -->
+    <div class="aud-panel" id="a1"><div class="aud-card">
+      <div class="cardbg" style="background:radial-gradient(700px 420px at 12% 12%,rgba(59,123,247,.55),transparent 62%),radial-gradient(600px 400px at 92% 88%,rgba(251,190,16,.30),transparent 60%),#0B0C0F"></div>
+      <div class="aud-grid">
+        <div class="aud-copy">
+          <h3>You decide five things a day with nobody to check them against.</h3>
+          <p class="lead">The frameworks give you a second opinion in the time it takes to paste a prompt.</p>
+          <ul class="feats">
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M3 17l5.5-6.5 4 3.5L21 5"/><path d="M21 5v6h-6"/></svg></span><span><b>Pressure-test before you commit</b><span class="tx">Module 02 makes you defend the business model on paper, before the money moves.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.5l3.5 2"/></svg></span><span><b>Decide in an hour, not a week</b><span class="tx">Module 08 turns a spinning decision into a written comparison you can act on today.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M12 21V6"/><path d="M6.5 11.5L12 6l5.5 5.5"/><path d="M5 21h14"/></svg></span><span><b>The founder problems nobody slides</b><span class="tx">Module 10 covers the ones you do not raise in a board meeting.</span></span></li>
+          </ul>
+          <div class="aud-cta">
+            <a class="btn btn-white" href="#">Know more for founders</a>
+            <a class="btn btn-line" href="#get">Get the book</a>
+          </div>
+        </div>
+        <div class="aud-art"><div class="artbg" style="background:radial-gradient(320px 240px at 30% 26%,#3B7BF7,transparent 64%),radial-gradient(280px 240px at 84% 82%,#FBBE10,transparent 60%),#090A0D"></div>
+          <svg viewBox="0 0 300 220" class="line" aria-hidden="true">
+            <path class="s3" d="M30 192h244"/><path class="s3" d="M34 192V40"/>
+            <path class="s" d="M46 170l50-42 40 26 44-56 52 32"/>
+            <circle class="fd" cx="96" cy="128" r="4.5"/><circle class="fd" cx="180" cy="98" r="4.5"/>
+            <path class="s" d="M232 130V62h46l-11 12 11 12h-46"/>
+            <rect class="s2" x="42" y="34" width="104" height="56" rx="10"/>
+            <path class="s2" d="M58 56h60M58 72h38"/>
+          </svg>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- MANAGERS -->
+    <div class="aud-panel" id="a2" hidden><div class="aud-card">
+      <div class="cardbg" style="background:radial-gradient(700px 420px at 14% 14%,rgba(236,74,59,.45),transparent 62%),radial-gradient(600px 400px at 90% 86%,rgba(47,171,87,.35),transparent 60%),#0B0C0F"></div>
+      <div class="aud-grid">
+        <div class="aud-copy">
+          <h3>You were promoted for doing the work, then handed a team.</h3>
+          <p class="lead">Delegation, feedback, hiring, culture &mdash; the parts nobody trained you for, turned into prompts you run before the conversation.</p>
+          <ul class="feats">
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.6"/><circle cx="17" cy="9.5" r="2.8"/><path d="M3 19c0-3.4 2.7-6 6-6s6 2.6 6 6"/><path d="M15.5 19c0-2.4 1.4-4.2 3.5-4.2s3 1.4 3 3.2"/></svg></span><span><b>Build people, not just output</b><span class="tx">Module 06 puts hiring, feedback and delegation frameworks in one place.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.4"/><path d="M12 4v3.2M12 16.8V20M4 12h3.2M16.8 12H20M6.5 6.5l2.2 2.2M15.3 15.3l2.2 2.2"/></svg></span><span><b>Systems that hold without you</b><span class="tx">Module 07 documents the process so the team stops asking you the same question.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9"/><path d="M20 6v5h-5"/><path d="M3 21h18"/></svg></span><span><b>Coach a team to a number</b><span class="tx">Module 04 breaks a sales target into conversations your team can actually have.</span></span></li>
+          </ul>
+          <div class="aud-cta">
+            <a class="btn btn-white" href="#">Know more for managers</a>
+            <a class="btn btn-line" href="#get">Get the book</a>
+          </div>
+        </div>
+        <div class="aud-art"><div class="artbg" style="background:radial-gradient(320px 240px at 26% 30%,#EC4A3B,transparent 62%),radial-gradient(280px 240px at 82% 80%,#2FAB57,transparent 60%),#090A0D"></div>
+          <svg viewBox="0 0 300 220" class="line" aria-hidden="true">
+            <rect class="s" x="112" y="22" width="76" height="38" rx="9"/><circle class="fd" cx="150" cy="41" r="4"/>
+            <path class="s3" d="M150 60v26M58 112V86h184v26M150 86v26"/>
+            <rect class="s" x="22" y="112" width="72" height="38" rx="9"/><path class="s2" d="M38 132h40"/>
+            <rect class="s2" x="114" y="112" width="72" height="38" rx="9"/><path class="s2" d="M130 132h40"/>
+            <rect class="s2" x="206" y="112" width="72" height="38" rx="9"/><path class="s2" d="M222 132h40"/>
+            <path class="s3" d="M58 150v24h184v-24"/>
+            <rect class="s" x="112" y="182" width="76" height="26" rx="8"/><path class="s2" d="M128 195h44"/>
+          </svg>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- STUDENTS -->
+    <div class="aud-panel" id="a3" hidden><div class="aud-card">
+      <div class="cardbg" style="background:radial-gradient(700px 420px at 12% 16%,rgba(47,171,87,.45),transparent 62%),radial-gradient(600px 400px at 88% 84%,rgba(110,160,255,.4),transparent 60%),#0B0C0F"></div>
+      <div class="aud-grid">
+        <div class="aud-copy">
+          <h3>You'll graduate into a job where AI fluency is assumed.</h3>
+          <p class="lead">Not prompt tricks &mdash; the thinking behind a business decision, with the prompt as the way in.</p>
+          <ul class="feats">
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M12 4L2.8 8.6 12 13.2l9.2-4.6L12 4z"/><path d="M6.5 11v4.6c0 1.7 2.7 3.2 5.5 3.2s5.5-1.5 5.5-3.2V11"/></svg></span><span><b>Think, then ask</b><span class="tx">Module 01 teaches the reasoning first and the prompt second.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/><path d="M8.5 12V9.5M11 12V7.5M13.5 12v-2"/></svg></span><span><b>Read a market before you pitch it</b><span class="tx">Module 03 is the difference between an opinion and a case.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M5 19v-7M12 19V5M19 19v-9"/><path d="M3 21h18"/></svg></span><span><b>Numbers that decide an idea</b><span class="tx">Module 09 gives you the model a real investor asks for.</span></span></li>
+          </ul>
+          <div class="aud-cta">
+            <a class="btn btn-white" href="#">Know more for students</a>
+            <a class="btn btn-line" href="#get">Get the book</a>
+          </div>
+        </div>
+        <div class="aud-art"><div class="artbg" style="background:radial-gradient(320px 240px at 28% 32%,#2FAB57,transparent 62%),radial-gradient(280px 240px at 84% 78%,#6EA0FF,transparent 60%),#090A0D"></div>
+          <svg viewBox="0 0 300 220" class="line" aria-hidden="true">
+            <path class="s" d="M150 40L56 82l94 42 94-42-94-42z"/>
+            <path class="s" d="M88 98v34c0 15 28 26 62 26s62-11 62-26V98"/>
+            <path class="s" d="M244 82v50"/><circle class="fd" cx="244" cy="138" r="5"/>
+            <rect class="s2" x="98" y="176" width="104" height="30" rx="8"/><path class="s2" d="M114 191h40"/>
+          </svg>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- TEAMS -->
+    <div class="aud-panel" id="a4" hidden><div class="aud-card">
+      <div class="cardbg" style="background:radial-gradient(700px 420px at 14% 12%,rgba(59,123,247,.5),transparent 62%),radial-gradient(600px 400px at 90% 88%,rgba(251,190,16,.32),transparent 60%),#0B0C0F"></div>
+      <div class="aud-grid">
+        <div class="aud-copy">
+          <h3>Everyone uses AI differently, so nothing compounds.</h3>
+          <p class="lead">One shared set of frameworks means a plan from one person looks like a plan from another.</p>
+          <ul class="feats">
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></span><span><b>Same language in a week</b><span class="tx">Marketing, sales and ops stop reinventing the same brief.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="14" rx="2.5"/><path d="M7 3h11a2.5 2.5 0 0 1 2.5 2.5V16"/><path d="M7 11h6M7 15h4"/></svg></span><span><b>Bulk copies, one desk each</b><span class="tx">Volume pricing for teams of ten and up, invoiced directly.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.9-6.4"/><path d="M20.5 4.2V9h-4.8"/></svg></span><span><b>The book never goes stale</b><span class="tx">Prompts update on the site; nobody reprints anything.</span></span></li>
+          </ul>
+          <div class="aud-cta">
+            <a class="btn btn-white" href="#">Know more for teams</a>
+            <a class="btn btn-line" href="#get">Bulk orders</a>
+          </div>
+        </div>
+        <div class="aud-art"><div class="artbg" style="background:radial-gradient(320px 240px at 30% 28%,#3B7BF7,transparent 62%),radial-gradient(280px 240px at 82% 82%,#FBBE10,transparent 60%),#090A0D"></div>
+          <svg viewBox="0 0 300 220" class="line" aria-hidden="true">
+            <circle class="s" cx="150" cy="110" r="38"/>
+            <path class="s2" d="M130 102h40M130 114h26"/><circle class="fd" cx="150" cy="110" r="3"/>
+            <circle class="s2" cx="58" cy="54" r="20"/><circle class="s2" cx="242" cy="54" r="20"/>
+            <circle class="s2" cx="58" cy="166" r="20"/><circle class="s2" cx="242" cy="166" r="20"/>
+            <path class="s3" d="M76 68l42 24M224 68l-42 24M76 152l42-24M224 152l-42-24"/>
+          </svg>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- INSTITUTIONS -->
+    <div class="aud-panel" id="a5" hidden><div class="aud-card">
+      <div class="cardbg" style="background:radial-gradient(700px 420px at 12% 14%,rgba(251,190,16,.4),transparent 62%),radial-gradient(600px 400px at 90% 86%,rgba(236,74,59,.4),transparent 60%),#0B0C0F"></div>
+      <div class="aud-grid">
+        <div class="aud-copy">
+          <h3>For libraries, colleges and B-school shelves.</h3>
+          <p class="lead">A reference title students take off the shelf, because every page does something rather than explains something.</p>
+          <ul class="feats">
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><path d="M3 20V8.5L12 4l9 4.5V20"/><path d="M9 20v-6h6v6"/><path d="M2 20h20"/></svg></span><span><b>Library and department copies</b><span class="tx">Institutional pricing, invoiced to the department.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span><b>Fits existing coursework</b><span class="tx">Maps onto entrepreneurship and management modules without a syllabus rewrite.</span></span></li>
+            <li><span class="fi"><svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c3.2 3.7 3.2 13.3 0 17"/></svg></span><span><b>Current without a new edition</b><span class="tx">The digital layer refreshes; the shelf copy stays valid.</span></span></li>
+          </ul>
+          <div class="aud-cta">
+            <a class="btn btn-white" href="#">Know more for institutions</a>
+            <a class="btn btn-line" href="#get">Request a quote</a>
+          </div>
+        </div>
+        <div class="aud-art"><div class="artbg" style="background:radial-gradient(320px 240px at 26% 70%,#FBBE10,transparent 60%),radial-gradient(280px 240px at 82% 26%,#EC4A3B,transparent 62%),#090A0D"></div>
+          <svg viewBox="0 0 300 220" class="line" aria-hidden="true">
+            <path class="s" d="M44 94L150 42l106 52"/><circle class="fd" cx="150" cy="68" r="5"/>
+            <path class="s" d="M64 94v74M110 94v74M190 94v74M236 94v74"/>
+            <path class="s" d="M36 168h228"/><path class="s2" d="M36 184h228"/>
+            <rect class="s2" x="124" y="118" width="52" height="50" rx="5"/>
+            <path class="s2" d="M136 132h28M136 144h20"/>
+          </svg>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ============ ABOUT THE AUTHOR ============ -->
+<!-- NOTE: draft copy in Raphy's voice. Replace with his own words and a real portrait. -->
+<section class="light" id="author"><div class="pad">
+  <div class="author-grid">
+    <div class="author-art">
+      <div class="artbg"></div>
+      <svg viewBox="0 0 260 300" class="line" aria-hidden="true">
+        <circle class="s" cx="130" cy="96" r="42"/>
+        <path class="s" d="M56 216c0-40 33-66 74-66s74 26 74 66"/>
+        <path class="s2" d="M100 88c8-6 22-6 30 0"/>
+        <rect class="s" x="74" y="232" width="112" height="46" rx="8"/>
+        <path class="s" d="M130 232v46"/>
+        <path class="s2" d="M88 250h30M142 250h30M88 264h22M142 264h26"/>
+        <path class="s3" d="M26 150h32M202 150h32"/>
+      </svg>
+      <span class="cap">Portrait &mdash; add Raphy's photo</span>
+    </div>
+    <div class="author-copy">
+      <div class="kicker">The author</div>
+      <h2 class="sh">Why this book exists.</h2>
+      <blockquote>Everyone had access to the same AI. Almost nobody was getting anything useful out of it.</blockquote>
+      <p>I kept watching capable founders and managers open a chat window, type one line, read something generic, and quietly decide the whole thing was hype. The tool was not the problem. The input was. The people getting real value were the ones who already knew how to frame a business question &mdash; and that framing was the part nobody was teaching.</p>
+      <p>So I wrote down the frameworks I use, one per decision, in the order a business actually grows. Then I put a QR code on every one of them, because a framework you cannot reach in three seconds is a framework you will not use. The book is the thinking. This site is the part that keeps up.</p>
+      <div class="author-sign">
+        <span class="av">RV</span>
+        <span><b>Raphy Varghese</b><span>Author, AI Operating System for Leaders</span></span>
+      </div>
+      <p class="draft-note">Draft copy &mdash; rewrite in your own words before launch.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<!-- NOTE: draft quotes for layout. Replace each with a real, permissioned quote before this page goes live. -->
+<section class="light"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Readers</div>
+      <h2 class="sh">What people say after a month.</h2>
+      <p class="sd" style="font-style:italic;">Draft quotes &mdash; replace with real ones you have permission to publish.</p>
+    </div>
+  </div>
+</div>
+<div class="pad"><div class="trail" id="tRail">
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>I used to open ChatGPT and stare at it. Now I scan the page for whichever decision I am stuck on and the thinking is already structured for me. The pre-mortem one saved us from a launch that was not ready.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#3B7BF7,#1E5CE0)">AM</span><span><span class="nm">Anoop Menon</span><br><span class="rl">Founder, SaaS studio &middot; Kochi</span></span></div>
+    </article>
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>The 1-on-1 framework changed how my team reviews go. I run it the night before instead of walking in and improvising, and the conversations are far less awkward for both of us.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#EC4A3B,#B5301F)">DN</span><span><span class="nm">Deepa Nair</span><br><span class="rl">Engineering Manager &middot; Technopark, Trivandrum</span></span></div>
+    </article>
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>I bought four copies for the sales team. What I did not expect was that everyone started sending proposals in the same structure within a fortnight. That consistency was worth more than the prompts.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#2FAB57,#1B7A3C)">SK</span><span><span class="nm">Sreejith Kumar</span><br><span class="rl">Sales Head, logistics firm &middot; Kozhikode</span></span></div>
+    </article>
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>As a first-time founder the finance module was the one I avoided and needed most. Working through the unit economics prompt was the first time our numbers made sense to me rather than to my accountant.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#FBBE10,#C68F00)">FR</span><span><span class="nm">Fathima Rasheed</span><br><span class="rl">Co-founder, D2C brand &middot; Kochi</span></span></div>
+    </article>
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>What sold me was the QR codes. I keep the book on the desk, scan whatever page I am on, and the prompt is on my phone before the meeting starts. No hunting through saved notes.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#6EA0FF,#3B7BF7)">VP</span><span><span class="nm">Vishnu Prasad</span><br><span class="rl">Operations Lead &middot; Thrissur</span></span></div>
+    </article>
+    <article class="tcard">
+      <span class="stars"><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg><svg class="i" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7-6.3-3.4L5.7 21 7 14.2 2 9.4l7-.9z"/></svg></span>
+      <q>I teach an entrepreneurship elective and recommended it to my students. They actually use it, which is more than I can say for most books on the reading list.</q>
+      <div class="who"><span class="av" style="background:linear-gradient(140deg,#2FAB57,#3B7BF7)">NT</span><span><span class="nm">Neethu Thomas</span><br><span class="rl">Faculty, management college &middot; Ernakulam</span></span></div>
+    </article>
+</div>
+<div class="dots" id="tDots" style="justify-content:flex-start;"></div>
+</div></section>
+
+<!-- ============ FAQ ============ -->
+<section class="wash" id="faq"><div class="pad">
+  <div class="faq-grid">
+    <div>
+      <div class="faq-art"><div class="artbg"></div>
+        <svg viewBox="0 0 240 200" class="line" aria-hidden="true">
+          <path class="s" d="M28 36h150a12 12 0 0 1 12 12v58a12 12 0 0 1-12 12H84l-30 24v-24H28a12 12 0 0 1-12-12V48a12 12 0 0 1 12-12z"/>
+          <path class="s" d="M88 68a16 16 0 1 1 22 15v10"/><circle class="fd" cx="110" cy="102" r="4"/>
+          <path class="s3" d="M196 60h30M196 84h22M196 108h34"/>
+          <circle class="s2" cx="212" cy="150" r="16"/><path class="s2" d="M207 150l4 4 8-9"/>
+        </svg>
+      </div>
+      <div class="kicker">FAQ</div>
+      <h2 class="sh">Questions people ask first.</h2>
+      <p class="sd">Still stuck? The contact form goes to Raphy directly.</p>
+      <a class="btn btn-linedark" href="#" style="margin-top:20px;">Contact</a>
+    </div>
+    <div class="acc" id="faqAcc">
+      <div class="acc-item"><button class="acc-btn" aria-expanded="true"><span>Do I need the book to use the prompts?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">No. Every prompt on this site is free to read and copy. The book is what makes them make sense &mdash; it explains when to reach for each framework and what to do with the answer.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>Do I need an account to copy a prompt?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">No. Copying is never gated &mdash; a QR code scanned at a desk should work in three seconds, not after a sign-up. An account only adds bookmarking prompts into a personal list and inviting someone else.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>Which AI tools do these work with?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Any of them. The prompts are written in plain language with no tool-specific syntax, so they behave the same in ChatGPT, Claude, Gemini, Copilot or whatever your company has approved.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>What are the square brackets for?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Anything in <code>[SQUARE BRACKETS]</code> is yours to replace &mdash; your industry, your stage, your actual numbers. That substitution is the whole reason the output stops sounding generic.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>What happens when the models change?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">The prompt behind each QR code gets rewritten on this site. Your printed copy keeps working because the code points at a page, not at a fixed block of text.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>Can I buy copies for my team?</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Yes &mdash; bulk and institutional orders are handled directly. Use the contact form with how many copies and where they are going.</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ BUY ============ -->
+<section class="buy" id="get">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad buy-in">
+    <div>
+      <h2>Keep it on the desk. Not on a shelf.</h2>
+      <p>108 frameworks in print, every prompt live on this site, updated as the models change.</p>
+      <div class="hero-btns"><a class="btn btn-line" href="#modules">Browse the prompts free</a></div>
+      <p class="buy-note">Paperback &middot; 276 pages &middot; published by Notion Press</p>
+    </div>
+    <div class="sellers">
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><path d="M3 16.5c4.2 3 13.8 3 18-0.5"/><path d="M19.2 19c1-1.5 1.3-3.2.8-3.6"/><path d="M7 4.5h10v8H7z"/><path d="M9.5 8h5"/></svg></span>
+        <span><b>Amazon</b><span class="sub">Paperback and Kindle &mdash; ships next day</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 7.5h8M8 12h8M8 16.5h5"/></svg></span>
+        <span><b>Notion Press</b><span class="sub">Direct from the publisher</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 19c0-2.3 1.3-4 3.2-4s2.8 1.3 2.8 3"/></svg></span>
+        <span><b>Bulk &amp; institutions</b><span class="sub">Ten copies or more, invoiced</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <p class="buy-note">Store links to be added before launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="#"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="#why">Why this book</a><a href="#how">How to use</a><a href="#who">Who it's for</a><a href="#">About Raphy</a><a href="#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="#modules">All 10 modules</a><a href="#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="#faq">FAQ</a><a href="#">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="#">For business</a><a href="#">For institutions</a><a href="#">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  // ---- login / signed-in preview
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  // ---- audience tabs
+  var rail=document.getElementById('audtabs'), slide=document.getElementById('audslide');
+  var tabs=rail.querySelectorAll('.tab');
+  function move(b){ slide.style.width=b.offsetWidth+'px'; slide.style.transform='translateX('+(b.offsetLeft-5)+'px)'; }
+  function select(b){
+    tabs.forEach(function(t){
+      var on=t===b; t.setAttribute('aria-selected',on?'true':'false');
+      document.getElementById(t.dataset.p).hidden=!on;
+    });
+    move(b);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ select(t); }); });
+  window.addEventListener('resize',function(){ var c=rail.querySelector('.tab[aria-selected="true"]'); if(c) move(c); });
+  requestAnimationFrame(function(){ move(tabs[0]); });
+
+  // ---- prompt slider
+  var slider=document.getElementById('slider');
+  var slides=slider.querySelectorAll('.slide');
+  var dotsWrap=document.getElementById('dots');
+  var idx=0;
+  slides.forEach(function(s,i){
+    var d=document.createElement('button');
+    d.className='dot-b'; d.type='button';
+    d.setAttribute('aria-label','Show prompt '+(i+1));
+    d.setAttribute('aria-current', i===0?'true':'false');
+    d.addEventListener('click',function(){ go(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots=dotsWrap.querySelectorAll('.dot-b');
+  function go(n){
+    idx=(n+slides.length)%slides.length;
+    slides.forEach(function(s,i){ s.classList.toggle('on', i===idx); });
+    dots.forEach(function(d,i){ d.setAttribute('aria-current', i===idx?'true':'false'); });
+  }
+  // ---- testimonial rail + dots
+  var tRail=document.getElementById('tRail'), tDots=document.getElementById('tDots');
+  var tCards=tRail.querySelectorAll('.tcard');
+  tCards.forEach(function(c,i){
+    var d=document.createElement('button');
+    d.className='dot-b'; d.type='button';
+    d.setAttribute('aria-label','Show testimonial '+(i+1));
+    d.setAttribute('aria-current', i===0?'true':'false');
+    d.addEventListener('click',function(){
+      tRail.scrollTo({left: c.offsetLeft - tRail.offsetLeft, behavior:'smooth'});
+    });
+    tDots.appendChild(d);
+  });
+  var tDotEls=tDots.querySelectorAll('.dot-b');
+  tRail.addEventListener('scroll',function(){
+    var w=tCards[0].offsetWidth+14;
+    var n=Math.round(tRail.scrollLeft / w);
+    tDotEls.forEach(function(d,i){ d.setAttribute('aria-current', i===n?'true':'false'); });
+  });
+
+  // ---- copy buttons (each slide)
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var body=btn.closest('.promptcard').querySelector('.pc-body');
+      var text=body.innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy prompt'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+
+  // ---- module rail arrows
+  var mr=document.getElementById('modRail'), prev=document.getElementById('railPrev'), next=document.getElementById('railNext');
+  function stepW(){ var c=mr.querySelector('.mcard'); return c ? c.offsetWidth+12 : 300; }
+  function sync(){
+    prev.disabled = mr.scrollLeft <= 4;
+    next.disabled = mr.scrollLeft >= (mr.scrollWidth - mr.clientWidth - 4);
+  }
+  prev.addEventListener('click',function(){ mr.scrollBy({left:-stepW()*2, behavior:'smooth'}); });
+  next.addEventListener('click',function(){ mr.scrollBy({left: stepW()*2, behavior:'smooth'}); });
+  mr.addEventListener('scroll', sync); window.addEventListener('resize', sync); sync();
+
+  // ---- faq accordion
+  var items=document.querySelectorAll('#faqAcc .acc-item');
+  function shut(it){ var p=it.querySelector('.acc-panel'); it.querySelector('.acc-btn').setAttribute('aria-expanded','false'); p.style.maxHeight='0px'; p.style.opacity='0'; }
+  function openIt(it){ var p=it.querySelector('.acc-panel'); it.querySelector('.acc-btn').setAttribute('aria-expanded','true'); p.style.maxHeight=p.scrollHeight+'px'; p.style.opacity='1'; }
+  items.forEach(function(it){
+    it.querySelector('.acc-btn').addEventListener('click',function(){
+      var isOpen=it.querySelector('.acc-btn').getAttribute('aria-expanded')==='true';
+      items.forEach(shut); if(!isOpen) openIt(it);
+    });
+  });
+  openIt(items[0]);
+  window.addEventListener('resize',function(){
+    items.forEach(function(it){ if(it.querySelector('.acc-btn').getAttribute('aria-expanded')==='true'){ var p=it.querySelector('.acc-panel'); p.style.maxHeight=p.scrollHeight+'px'; } });
+  });
+
+  // ---- step hover
+  var steps=document.querySelectorAll('.step');
+  steps.forEach(function(s){ s.addEventListener('mouseenter',function(){ steps.forEach(function(x){x.classList.remove('on');}); s.classList.add('on'); }); });
+})();
+</script>

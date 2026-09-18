@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.4",
+  "title": "Ideal Customer Profile (ICP)",
+  "sourcePages": {
+    "intro": 76,
+    "prompt": 77
+  },
+  "prompt": "Act as a B2B sales strategist helping me define my ICP.\nMy product                    :  [DESCRIBE WHAT IT DOES AND THE PROBLEM IT SOLVES]\nBest customers so far  :  [DESCRIBE 2–3 THAT GOT THE MOST VALUE]\nBuild my Ideal Customer Profile across these dimensions:\nFIRMOGRAPHIC          :  Industry, company size, geography, revenue\nROLE                              :  Job title, seniority, decision-making authority\nTRIGGER                       : What event makes them start looking for a solution?\nPAIN                               : The specific problem they urgently need solved\nOUTCOME                    : The result they need to see to call this a success\nDISQUALIFIER             : What makes a prospect a bad fit despite looking right?\nWrite the ICP as a one-paragraph description I can share with my sales and marketing\nteam. Also give me the 3 fastest signals to identify this customer in a first conversation.\nDeﬁne ICP\nDimensions\nReview and \nAnalyze Existing Specify industry, Update ICP\nCustomers company size, role,\nRegularly update the\ntrigger event, and\nIdentify patterns in Build Negative ICP ICP based on real\noutcome sought.\nsuccessful customer customer feedback.\nProﬁle customers\nproﬁles to deﬁne the\nwho appear to be a\nICP.\nﬁt but disappoint.\nPRO TIP\nDefine your negative ICP with the same rigour as your positive one. The accounts that\nlook like perfect fits but churn in 90 days have a pattern. Ask AI to help you find it.\nDisqualifying bad-fit accounts early is more valuable than closing them,  a churned\ncustomer costs you more than a lost deal.",
+  "pairsWith": [
+    "3.9 STP Model",
+    "2.1 Value Proposition",
+    "4.3 BANT Qualification"
+  ],
+  "updatedAt": "2026-09-18"
+}

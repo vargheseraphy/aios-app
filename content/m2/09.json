@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.9",
+  "title": "Ansoff Matrix",
+  "sourcePages": {
+    "intro": 65,
+    "prompt": 66
+  },
+  "prompt": "Act as a growth strategy advisor using the Ansoff Matrix.\nMy current business             :  [DESCRIBE PRODUCT AND MARKET]\nCurrent stage                         :  [REVENUE, TEAM SIZE, KEY MARKETS]\nGrowth objective                   :  [WHAT YOU WANT TO ACHIEVE IN 12–24 MONTHS]\nAnalyse all four Ansoff quadrants for my situation:\nMARKET PENETRATION      :  How much more can I extract from existing product +\nexisting market?\nMARKET DEVELOPMENT    :  Which new markets could my current product serve with\nminimum change?\nPRODUCT DEVELOPMENT  :  What new products could I offer to my existing\ncustomers?\nDIVERSIFICATION                 :  Where is new product + new market justified by strategic\nopportunity?\nRecommend the highest-leverage quadrant for my stage.\nWhich growth strategy should we pursue?\nMarket Penetration Diversiﬁcation\nLowest risk, focuses on Highest risk, enters new\nexisting customers and markets with new products.\nmarkets.\nMarket Development Product Development\nMedium risk, expands to new Medium risk, introduces new\nmarkets with existing products. products to existing markets.\nPRO TIP\nBefore looking at new markets or new products, ask AI to run a full Market Penetration\nanalysis on your existing business. Most companies at under 20% market share have\nsignificant penetration opportunity they haven't fully activated. Penetration is always\ncheaper than acquisition of new markets.",
+  "pairsWith": [
+    "2.4 Blue Ocean",
+    "2.2 Business Model Canvas",
+    "3.5 TAM SAM SOM"
+  ],
+  "updatedAt": "2026-09-18"
+}

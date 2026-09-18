@@ -1,0 +1,16 @@
+{
+  "module": 6,
+  "lesson": "6.8",
+  "title": "Meeting Design - Meeting OS",
+  "sourcePages": {
+    "intro": 149,
+    "prompt": 150
+  },
+  "prompt": "Act as an organisational design consultant specialising in meeting efficiency.\nMy team                : [SIZE, ROLES, WORKING STYLE  REMOTE / IN-PERSON / HYBRID]\nCurrent meetings: [LIST YOUR STANDING MEETINGS AND THEIR FREQUENCY]\nMain frustrations: [WHAT IS BROKEN ABOUT MEETINGS RIGHT NOW]\nDesign a complete Meeting OS for my team:\nMEETING TYPES: Define 4 meeting types and when each is used\nSTANDING MEETINGS: For each existing meeting \nType (decision / discussion / update / brainstorm)\nCorrect frequency and duration\nRequired attendees vs optional\nAgenda format\nMEETING RULES : 5 non-negotiable norms for all meetings\nDECISION LOG     : How we capture and share what was decided\nMEETING AUDIT  : Which of my current meetings should be cancelled, merged, or  \n                                   reformatted?\nMeeting Design Checklist\nMost Important Item\nMeeting Type Agenda 24hrs\nFirst One Facilitator\nAhead\nDecisions + Owners\nSummary Within 1\nRecorded\nHour\nPRO TIP\nThe most productive meeting reform any team can make is adding a mandatory read-\nout at the end of every meeting: 'What did we decide? Who owns each action? By\nwhen?' This 3-minute habit prevents the most common meeting failure,  leaving with\ndifferent understandings of what was agreed.",
+  "pairsWith": [
+    "6.1 RACI Matrix",
+    "6.2 OKRs",
+    "6.5 SBI Feedback"
+  ],
+  "updatedAt": "2026-09-18"
+}

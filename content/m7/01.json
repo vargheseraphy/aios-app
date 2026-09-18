@@ -1,0 +1,16 @@
+{
+  "module": 7,
+  "lesson": "7.1",
+  "title": "SOP Generation - SIPOC",
+  "sourcePages": {
+    "intro": 160,
+    "prompt": 161
+  },
+  "prompt": "I PROMPT — COPY & PASTE READY\nAct as an operations consultant specialising in SOP documentation.\nProcess to document     :  [NAME AND DESCRIBE THE PROCESS]\nWho performs it             :  [ROLE AND EXPERIENCE LEVEL]\nTools and systems used :  [SOFTWARE, PLATFORMS, RESOURCES]\nHow often it runs            :  [DAILY / WEEKLY / PER PROJECT]\nGenerate a complete SOP using the SIPOC structure:\nSIPOC OVERVIEW:\n→ → → →\nSuppliers  Inputs  Process Steps  Outputs  Customers\nFULL SOP:\nPurpose   :  Why this process exists\nScope       :  What is and is not included\nOwner      :  Who is responsible for this process\nSteps        :  Numbered steps with decision points noted\nQuality     :  How to know each step was done correctly\nErrors       :  Common mistakes and how to avoid them\nReview     :  When and how this SOP should be updated",
+  "pairsWith": [
+    "7.2 Swimlane Mapping",
+    "7.11 Poka-Yoke",
+    "6.1 RACI Matrix"
+  ],
+  "updatedAt": "2026-09-18"
+}

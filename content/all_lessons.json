@@ -1,0 +1,1792 @@
+[
+  {
+    "module": 1,
+    "lesson": "1.0",
+    "title": "The AI Mental Model",
+    "sourcePages": {
+      "intro": 22,
+      "prompt": 23
+    },
+    "prompt": "I want to understand how to work with you more effectively.\nMy situation: [WHO I AM - role, industry, company stage]\nWhat I typically use AI for: [YOUR MAIN USE CASES]\nBased on this, tell me:\n1.Where am I most likely leaving quality on the table?\n2.What context should I always give you that I probably forget?\n3.What is one thing I can do differently from today that would\n       improve every output I get from you?\nBe direct. Assume I am smart but new to working with AI well.\nHow to improve AI output?\nDeﬁne Role\nSpeciﬁes the AI's perspective, leading to\nmore tailored responses.\nProvide Context\nInforms the AI about the situation, ensuring\nrelevance.\nSet Expectations\nGuides the AI towards the desired output\nformat and content.\nPRO TIP\nThe most common mistake is treating a bad output as a model failure. It is\nalmost never the model. It is almost always a missing Role, thin Context, or no\nstated Expectation. Diagnose before you retry.",
+    "pairsWith": [
+      "1.1 C.A.R.E Prompting",
+      "1.2 Context Stack",
+      "1.3 Role Prompting",
+      "1.4 Refinement ..."
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.1",
+    "title": "C.A.R.E Prompting",
+    "sourcePages": {
+      "intro": 24,
+      "prompt": 25
+    },
+    "prompt": "Role:               Act as a [EXPERT ROLE  e.g. B2B sales coach].\nContext:        I am [YOUR SITUATION  company, stage, industry].\nAction:           [WHAT YOU WANT e.g. Give me 5 positioning ideas\n                        to differentiate in the [MARKET / REGION]].\nExpectation: Format as a numbered list. Each point 2–3 lines.\nUse plain business language. No jargon.\nCRAFTING EFFECTIVE AI PROMPTS\n4 State Expectation\nClearly outline the desired format,\nlength, and tone of the output.\n3 Start with Role\nBegin the prompt by deﬁning the\nAI's persona.\n2 Fill C.A.R.E Layers\nProvide context, action, role, and\nexpectation for the prompt.\nIdentify Need\n1\nDetermine the speciﬁc task you\nwant the AI to perform.\nPRO TIP\nIf your output feels off, the problem is almost always a vague Role or missing\nExpectation. Fix those two before rewriting the whole prompt.",
+    "pairsWith": [
+      "1.2 Context Stack",
+      "1.3 Role Prompting",
+      "1.4 Refinement Loop"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.2",
+    "title": "The Context Stack",
+    "sourcePages": {
+      "intro": 26,
+      "prompt": 27
+    },
+    "prompt": "Situation           :     [What is happening - current challenge or goal]\nBackground      :     [Industry, team size, stage, audience, product, region -   \n                                  whatever is relevant]\nConstraints       :     [Time, budget, tone, audience level, things to avoid]\nOutput format  :     [List / paragraph / table / email draft]\nNow                    :     [YOUR ACTUAL QUESTION OR REQUEST]\nAI Output Feels Shallow: Missing Context\nRecurring Tasks\nNo built-in template\nReusing Context\nfunctionality\nStack\nRequires manual pasting\nNon-Obvious each time\nConstraints\nAI misses important\nlimitations Imprecise Context\nStack\nLeads to imprecise AI\noutput\nNo AI Memory\nEvery prompt starts from\nzero\nPRO TIP\nSave your most-used context stacks as text snippets. Paste them at the start of any AI\nsession. This single habit cuts prompt iteration time by half.",
+    "pairsWith": [
+      "1.1 C.A.R.E Prompting",
+      "1.3 Role Prompting",
+      "1.4 Refinement Loop"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.3",
+    "title": "Role Prompting - The Expert Chair",
+    "sourcePages": {
+      "intro": 28,
+      "prompt": 29
+    },
+    "prompt": "Act as a [SPECIFIC EXPERT  e.g. senior B2B SaaS sales strategist with 15 years\nselling to enterprise CTOs].\nYou care most about:  [THEIR PRIORITY - e.g. shortening sales cycles and\nincreasing deal value, not just volume].\nFrom your expert perspective: [YOUR QUESTION OR SCENARIO - be specific]\nGive your honest assessment. Flag risks I may not have considered.\nDeﬁne AI Roles\nHigh Importance\nBroad Roles Expert Roles\nGeneral professional Highly specialized\nperspectives professional viewpoints\nLow Speciﬁcity High Speciﬁcity\nGeneric AI Niche Roles\nStandard, unassigned AI Highly speciﬁc but less\noutput critical perspectives\nLow Importance\nPRO TIP\nThe most underused version: assign a role that would disagree with your plan. 'Act as a\nsceptical investor' or 'Act as the customer who would not buy this' reveals blind spots no\ninternal meeting will find.",
+    "pairsWith": [
+      "1.1 C.A.R.E",
+      "1.5 Six Thinking Hats",
+      "8.6 Red Team Thinking"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.4",
+    "title": "The Refinement Loop",
+    "sourcePages": {
+      "intro": 30,
+      "prompt": 31
+    },
+    "prompt": "Step 1    —   Draft: [Paste your original prompt and generate first output]\nStep 2   —   Critique: Review the response you just gave.\n                     What are the 3 weakest parts? Where is it too vague or generic?\nStep 3   —    Improve: Rewrite the original response with those 3 weaknesses fixed.\n                     Keep what was strong. Improve what was weak.\nStep 4   —    Lock:  Anything that would make this significantly better?\n                     If yes, apply it. If no, confirm this is the final version.\nAchieving AI Output Excellence\nCritique\nAsk AI to evaluate its\nwork\nDraft Improve\nGenerate initial AI Ask AI to ﬁx\noutput weaknesses\nPRO TIP\nUse Step 2 as a standalone habit. After any important output-  email, proposal, plan and\nask AI 'What is the weakest part of this?' before you send it. Takes 10 seconds.",
+    "pairsWith": [
+      "1.1 C.A.R.E",
+      "8.2 Pre-Mortem",
+      "4.7 Proposal Writing"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.5",
+    "title": "Six Thinking Hats",
+    "sourcePages": {
+      "intro": 32,
+      "prompt": 33
+    },
+    "prompt": "Act as a strategic facilitator using De Bono's Six Thinking Hats.\nTopic           :    [YOUR DECISION OR IDEA - be specific]\nWhite Hat   :    Facts and data we have or need?\nRed Hat       :    Gut feelings and emotional reactions?\nBlack Hat    :    Risks, flaws, what could go wrong?\nYellow Hat  :    Benefits and best-case outcomes?\nGreen Hat   :    Creative alternatives and new directions?\nBlue Hat      :    Recommended next step or process?\nGive 3 specific points per hat. Be concrete, not generic.\nSix Thinking Hats Process\nWhite Hat\n1\nFocus on facts and data\nRed Hat\n2\nConsider emotions and gut reactions\nBlack Hat\n3\nIdentify risks and problems\nYellow Hat\n4\nExplore beneﬁts and upside\nGreen Hat\n5\nGenerate creative alternatives\nBlue Hat\n6\nDeﬁne process and next steps\nPRO TIP\nRun this twice  once for your plan, once asking AI to argue the opposite position. The\ngap between the two outputs is where the most useful insight is hiding.",
+    "pairsWith": [
+      "1.6 First Principles",
+      "8.2 Pre-Mortem",
+      "8.6 Red Team Thinking"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.6",
+    "title": "First Principles Thinking",
+    "sourcePages": {
+      "intro": 34,
+      "prompt": 35
+    },
+    "prompt": "Act as a first principles thinking coach.\nCurrent approach or problem: [DESCRIBE YOUR SITUATION SPECIFICALLY]\nStep 1  :  List every assumption in this approach.\nStep 2 :  For each - is this actually true, or just inherited convention?\nStep 3 :  Which are fixed constraints vs. just habits?\nStep 4 :  Reconstruct a fresh approach using only what is genuinely true and necessary.\nFlag the 3 most dangerous assumptions first.\nFIRST PRINCIPLES THINKING: UNVEILING HIDDEN ASSUMPTIONS\nStuck Solution\nObvious problem\n with no breakthrough\nInherited Approach\nUnquestioned way \nof doing things\nEmbedded Assumptions\nUnveriﬁed beliefs underlying \nFundamental Truths the approach\nBasic, undeniable \nfacts about the problem\nPRO TIP\nThe most valuable output isn't the new idea, it's the list of assumptions you'd never\nquestioned. That list alone is worth running this prompt every quarter.",
+    "pairsWith": [
+      "1.7 Second Order",
+      "1.8 Inversion",
+      "2.4 Blue Ocean Strategy"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.7",
+    "title": "Second Order Thinking",
+    "sourcePages": {
+      "intro": 36,
+      "prompt": 37
+    },
+    "prompt": "Act as a strategic advisor specialising in consequence mapping.\nProposed action     :   [YOUR DECISION OR ACTION]\nContext                    :   [INDUSTRY, STAGE, STAKEHOLDERS AFFECTED]\n1st Order                  :   Immediate, direct effects?\n2nd Order                :   What does each 1st-order effect then cause?\n3rd Order                 :   What does each 2nd-order effect lead to?\nFlag any 2nd or 3rd order effects that could undermine the original goal\neven if 1st order looks positive.\nThird-Order Thinking\nExamines long-term\nimplications\nSecond-Order Thinking Negative Consequences\nConsiders subsequent Identiﬁes potential\nconsequences downsides\nFirst-Order Thinking Decision Adjustment\nFocuses on immediate Modiﬁes plans based on\noutcomes analysis\nThe Power of\nSecond-Order\nThinking\nPRO TIP\nDon't just apply this to risky decisions. Good decisions often have harmful second-order\neffects that nobody maps because everyone is celebrating the first-order win.",
+    "pairsWith": [
+      "1.8 Inversion",
+      "8.2 Pre-Mortem",
+      "8.4 Risk Matrix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.8",
+    "title": "Inversion Thinking",
+    "sourcePages": {
+      "intro": 38,
+      "prompt": 39
+    },
+    "prompt": "Act as a strategic risk advisor using inversion thinking.\nGoal        :   [WHAT I AM TRYING TO ACHIEVE  be specific]\nContext  :   [SITUATION, INDUSTRY, STAGE, TEAM]\nStep 1      :   List everything that would guarantee I fail. Think broadly - execution,  \n                     market, team,  timing, assumptions, behaviour.\nStep 2     :   Rank these failure causes by probability.\nStep 3     :   For the top 5, give one specific prevention action I can take \n                    before moving forward.\nSTRESS-TEST PLANS WITH INVERSION THINKING\nReview and Mitigate List Failure Causes\nCross off already Ask AI for failure\naddressed risks guarantees\nBuild Prevention Inversion Thinking\nDeﬁne Goal\nActions\nBe speciﬁc about\nCreate actions to\nachievement\navoid failure\nUnrevealed Plan Problems Stress-Tested Plan\nForward thinking misses risks Risks are identiﬁed and avoided\nPRO TIP\nShare the failure list with your team before launch. Ask each person to add one item you\nmissed. The combined list will contain at least one thing that would have actually stopped\nyou  and now it won't.",
+    "pairsWith": [
+      "1.6 First Principles",
+      "8.2 Pre-Mortem",
+      "8.6 Red Team Thinking"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.9",
+    "title": "Mental Models Library",
+    "sourcePages": {
+      "intro": 40,
+      "prompt": 41
+    },
+    "prompt": "Act as a mental models coach.\nMy situation           :    [DESCRIBE THE CHALLENGE OR DECISION]\nApply these models and give one specific insight each:\nPareto 80/20         :    Where is the highest leverage?\nParkinson's Law    :    Where is time being wasted?\nDunning-Kruger   :    Where might I be overconfident?\nFirst Principles.    :    What assumption am I not questioning?\nInversion                :    What would guarantee this fails?\nGive one concrete action per model. Be direct.\nMENTAL MODELS RANGE FROM SIMPLE TO COMPLEX UNDERSTANDING.\nDunning-Kruger Parkinson's Law\nMaps conﬁdence vs competence Explains work expansion over time\nIceberg Model Pareto's 80/20\nShows surface vs hidden drivers Identiﬁes high-impact areas\nSimple Complex\nPRO TIP\nAfter every quarter, add one new mental model you discovered and note a situation\nwhere it would have helped. In three years you'll have a thinking toolkit no one can buy.",
+    "pairsWith": [
+      "1.5 Six Thinking Hats",
+      "1.6 First Principles",
+      "1.8 Inversion"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.10",
+    "title": "OODA Loop",
+    "sourcePages": {
+      "intro": 42,
+      "prompt": 43
+    },
+    "prompt": "Act as a strategic decision advisor using John Boyd's OODA Loop.\nSituation                         :    [DESCRIBE WHAT IS HAPPENING RIGHT NOW]\nAvailable information   :    [LIST WHAT YOU KNOW , even partial data]\nConstraints                     :    [TIME AVAILABLE, RESOURCES, KEY RISKS]\nObserve                           :    What are the most critical signals in this data?\nOrient                              :    What patterns, threats, or opportunities do these reveal?\nDecide                             :    Give me 3 decision options ranked by speed and impact.\nAct                                    :    For the top option, what is the immediate first move?\nPrioritise speed. Flag what I should monitor after acting.\nOODA LOOP — SPEED UNDER UNCERTAINTY\nObserve\nAct\nGather information about\nImplement the decision the environment\nDecide Orient\nChoose the best course of Analyze and understand\naction the situation\nPRO TIP\nThe Orient phase is where most leaders get stuck,  they have the data but can't see the\npattern fast enough. That's exactly what AI compresses. Use it there, not as a\nreplacement for your judgment on the Decide and Act stages.",
+    "pairsWith": [
+      "1.5 Six Thinking Hats",
+      "8.1 DECIDE Framework",
+      "8.6 Red Team"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.11",
+    "title": "SCAMPER",
+    "sourcePages": {
+      "intro": 44,
+      "prompt": 45
+    },
+    "prompt": "Act as a creative innovation facilitator using SCAMPER.\nI want to innovate on   :  [YOUR PRODUCT, SERVICE, OR PROCESS]\nContext                           :   [INDUSTRY, TARGET CUSTOMER, CURRENT LIMITATIONS]\nSubstitute                       :  What component or step could be replaced?\nCombine                         :   What could be merged for more value?\nAdapt                               :   What works elsewhere that I could borrow?\nModify                             :   What could be changed, enlarged, or reduced?\nPut to other uses           :   What other jobs could this do?\nEliminate                         :   What could be removed entirely?\nReverse                            :   What if the order or direction was flipped?\nGive one specific, actionable idea per lens.\nSCAMPER: Structured Creativity for Innovation\nStagnant Ideas Innovative Solutions\nApply SCAMPER\nVariations of the same New directions for the\nLenses\nthing idea\nClearly state the Use seven creative Merge ideas from Develop the most\ninnovation target lenses different lenses promising ideas\nPRO TIP\nRun SCAMPER on your competitors' products, not just your own. Ask 'what would\nhappen if a competitor applied SCAMPER to our product?' The answers will tell you\nyour vulnerabilities before they do.",
+    "pairsWith": [
+      "1.6 First Principles",
+      "2.4 Blue Ocean Strategy",
+      "1.9 Mental Models"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 1,
+    "lesson": "1.12",
+    "title": "MECE Framework",
+    "sourcePages": {
+      "intro": 46,
+      "prompt": 47
+    },
+    "prompt": "Act as a McKinsey-trained strategy consultant.\nProblem or question to structure: [YOUR PROBLEM, DECISION, OR ANALYSIS TOPIC]\nStep 1       :    Break this into MECE categories. Each category must be \n                       distinct,  no overlap. Together they must cover everything, no gaps.\nStep 2      :    Check your structure. Flag any overlaps or missing areas.\nStep 3      :    For each category, list the 2–3 key questions I need to answer to \n                       address it completely.\nFormat as a structured outline I can use directly.\nMECE Analysis Framework\nComplete Analysis\nOutcome of MECE\nanalysis\nProblem\nIssue to be\nanalyzed\nCollectively Exhaustive\nCovers all\npossibilities\nMutually Exclusive\nNo overlap between\ncategories\nMECE\nCore concept of\ncomprehensive analysis\nPRO TIP\nMECE is not just for analysis  use it to structure any important communication. Before a\nboard presentation or investor meeting, ask AI to check if your argument is MECE.\nIncomplete structure is the most common reason smart people fail to persuade.",
+    "pairsWith": [
+      "1.9 Mental Models",
+      "8.1 DECIDE Framework",
+      "9.5 Investor Narrative"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.1",
+    "title": "Value Proposition Canvas",
+    "sourcePages": {
+      "intro": 49,
+      "prompt": 50
+    },
+    "prompt": "Act as a product-market fit consultant.\nMy product / service :  [DESCRIBE WHAT YOU OFFER]\nTarget customer          :  [SPECIFIC ROLE, INDUSTRY, COMPANY SIZE]\nCUSTOMER PROFILE:\nJobs             :  What are they trying to accomplish — functional, social, and emotional jobs?\nPains           :  What frustrates them, costs them, or risks them?\nGains           :  What outcomes and benefits do they want?\nVALUE MAP:\nPain Relievers  :  How does my product address each pain?\nGain Creators   :  How does it deliver the gains they want?\nFit Score            :  Where is the match strong? Where are the gaps?\nIdentify the top 3 pains I am NOT addressing. Tell me what to build or change first.\nFIT\nValue proposition alignment\nCustomer Proﬁle\nValue Map\nUnderstanding customer\nHow products deliver value\nneeds\nPRO TIP\nAsk AI to fill in the Customer Profile as if it were your most sceptical potential customer\nnot your ideal one. The gap between the ideal profile and the sceptical one is exactly\nwhere your messaging and product need to improve.",
+    "pairsWith": [
+      "2.5 JTBD",
+      "3.4 ICP",
+      "3.8 Voice of Customer",
+      "2.3 Lean Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.2",
+    "title": "Business Model Canvas",
+    "sourcePages": {
+      "intro": 51,
+      "prompt": 52
+    },
+    "prompt": "Act as a business model strategist using Osterwalder's Business Model Canvas.\nMy business: [DESCRIBE WHAT YOUR COMPANY DOES]\nStage: [PRE-REVENUE / EARLY REVENUE / SCALING]\nMap all nine blocks for my business:\n1. Customer Segments             6. Key Resources\n2. Value Propositions               7. Key Activities\n3. Channels                               8. Key Partnerships\n4. Customer Relations             9. Cost Structure\n5. Revenue Streams\nAfter mapping: identify the 2 weakest blocks and explain\nwhat I need to validate or strengthen in each.",
+    "pairsWith": [
+      "2.3 Lean Canvas",
+      "2.1 Value Proposition",
+      "2.8 Moat Builder"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.3",
+    "title": "Lean Canvas",
+    "sourcePages": {
+      "intro": 53,
+      "prompt": 54
+    },
+    "prompt": "Act as a lean startup advisor using Ash Maurya's Lean Canvas.\nMy startup idea   :  [DESCRIBE IN 2–3 SENTENCES]\nTarget customer  :  [WHO IS THE EARLY ADOPTER SPECIFICALLY]\nComplete all nine blocks:\n1. Problem (top 3 problems being solved)\n2. Customer Segment (early adopters specifically)\n3. Unique Value Prop (clear, compelling, different)\n4. Solution (top 3 features or capabilities)\n5. Channels (how you reach customers)\n6. Revenue Streams (how you charge)\n7. Cost Structure (key costs)\n8. Key Metrics (the number that shows traction)\n9. Unfair Advantage (what can't be easily copied)\nThen: flag the 2 highest-risk assumptions to validate first.",
+    "pairsWith": [
+      "2.1 Value Proposition",
+      "2.6 MVP Design",
+      "2.8 Moat Builder"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.4",
+    "title": "Blue Ocean Strategy",
+    "sourcePages": {
+      "intro": 55,
+      "prompt": 56
+    },
+    "prompt": "Act as a Blue Ocean Strategy consultant.\nMy industry                                :  [NAME THE INDUSTRY AND KEY PLAYERS]\nMy current product / service :  [BRIEF DESCRIPTION]\nStep 1 — Map the current competitive factors in my industry.\nStep 2 — Apply the ERRC Grid:\nELIMINATE   :   What factors can I remove entirely?\nREDUCE         :   What can I offer below industry standard?\nRAISE             :   What should I offer above industry standard?\nCREATE          :   What new value can I introduce that doesn't exist \n                                              anywhere in the industry?\nStep 3 — Describe the Blue Ocean this creates and who the new target customer would be.\nHow to achieve market differentiation?\nRed Ocean Blue Ocean\nIntense competition and price wars Uncontested market space\nPRO TIP\nThe best Blue Oceans are often found by looking at the non-customers of your industry,\npeople who don't buy from anyone. Ask AI: 'Who refuses to use any solution in this\nmarket and why?' Their reasons are your roadmap.",
+    "pairsWith": [
+      "2.8 Moat Builder",
+      "3.3 Porter's Five Forces",
+      "1.6 First Principles"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.5",
+    "title": "Jobs To Be Done",
+    "sourcePages": {
+      "intro": 57,
+      "prompt": 58
+    },
+    "prompt": "Act as a Jobs To Be Done research analyst.\nMy product               :   [DESCRIBE WHAT YOUR PRODUCT DOES]\nCustomer type         :   [SPECIFIC ROLE AND CONTEXT]\n                                       For this customer, identify:\nFUNCTIONAL JOB   :   What practical task are they hiring my product to do?\nSOCIAL JOB              :   How do they want to be seen by others when using this product?\nEMOTIONAL JOB     :   How do they want to feel when the job is done?\nCOMPETING JOBS  :    What else do they currently hire to do this job,  including non-  \n                                       obvious alternatives?\nWhere is my product strongest and weakest across layers?\nJOBS TO BE DONE — THE THREE LAYERS OF WHY\nEmotional Job\nHow they want to feel\nSocial Job\nHow they want to be seen\nFunctional Job\nWhat they need done\nPRO TIP\nThe competing jobs answer is the most valuable. When a customer churns, they don't\nleave for nothing  they hire something else to do the job. Ask AI to map the most likely\n'competitor hires' for your product. The answer will surprise you.",
+    "pairsWith": [
+      "2.1 Value Proposition",
+      "3.4 ICP",
+      "3.8 Voice of Customer"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.6",
+    "title": "MVP Design",
+    "sourcePages": {
+      "intro": 59,
+      "prompt": 60
+    },
+    "prompt": "Act as a lean startup product advisor.\nMy business idea   :   [DESCRIBE IN 2–3 SENTENCES]\nCore assumption   :   [THE ONE THING THAT MUST BE TRUE FOR THIS BUSINESS TO  \n                                     WORK]\nStep 1      :  What is the smallest product or experiment that tests this specific  \n                    assumption?\nStep 2     :  What does success look like? Define the metric or signal that confirms the \n                   assumption.\nStep 3     :  What does failure look like? What result would tell me to pivot or stop?\nStep 4     :  What is the fastest way to build or simulate this MVP,  even without writing \n                  code?\nBe specific. Avoid suggesting a full product build.\nProduct\nEvolution\nMVP V2 V3 Full Product\nSmallest viable Iterativ Further Complete and\nversion improvemente reﬁnement feature-rich\nPRO TIP\nThe most common MVP mistake is testing too many assumptions at once. One MVP, one\nassumption. If it passes, move to the next assumption. Running MVP tests in sequence is\nfaster than building a complete product that tests them all at once and fails without\ntelling you which assumption was wrong.",
+    "pairsWith": [
+      "2.3 Lean Canvas",
+      "2.1 Value Proposition",
+      "3.8 Voice of Customer"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.7",
+    "title": "Pricing Strategy - Value Ladder",
+    "sourcePages": {
+      "intro": 61,
+      "prompt": 62
+    },
+    "prompt": "Act as a pricing strategist specialising in value-based pricing.\nMy business          :  [DESCRIBE YOUR PRODUCT OR SERVICE]\nTarget customer  :  [WHO THEY ARE AND WHAT THEY WANT]\nCurrent pricing    :   [WHAT YOU CHARGE NOW, IF ANYTHING]\nDesign a 4-tier Value Ladder for my business:\nTIER 1 — FREE / LOW COST: What delivers enough value to build trust?\nTIER 2 — ENTRY OFFER: First paid step — low friction, clear quick win\nTIER 3 — CORE OFFER: Main product — full transformation delivered\nTIER 4 — PREMIUM / HIGH TICKET: Maximum outcome — for customers who want more\nFor each tier      :   define the offer, price range, and the one outcome that makes the \ncustomer want the next tier.",
+    "pairsWith": [
+      "2.3 Lean Canvas",
+      "2.1 Value Proposition",
+      "5.6 GTM Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.8",
+    "title": "Unfair Advantage,  Moat Builder",
+    "sourcePages": {
+      "intro": 63,
+      "prompt": 64
+    },
+    "prompt": "Act as a competitive strategy advisor focused on economic moats.\nMy business                 :  [DESCRIBE WHAT YOU DO AND WHO YOU SERVE]\nStage                             :   [REVENUE STAGE - PRE / EARLY / SCALING]\nAssess my moat across all five types:\nNETWORK EFFECTS   :  Does value increase with more users?\nCOST ADVANTAGE     :   Can I produce cheaper than competitors?\nSWITCHING COSTS   :   How painful is it for customers to leave?\nINTANGIBLE ASSETS :   Do I have brand, IP, or licence advantages?\nEFFICIENT SCALE       :   Am I in a market too small for competition?\nRate each 1–5. Identify my strongest moat and the fastest moat I could build\nfrom my current position. Give 2 specific actions to widen my strongest moat.\nNetwork Effects\nValue increases with user base growth.\nCost Advantage\nLower production costs enhance\ncompetitiveness.\nSwitching Costs Competitive\nHigh costs deter customers from switching. Protection\nIntangible Assets\nBrand reputation and patents provide\nprotection.\nEﬃcient Scale\nEconomies of scale reduce per-unit \ncosts.\nPRO TIP\nNetwork effects are the most powerful moat but the hardest to build. If your product has\nany element where more users create more value even indirectly, design your product\nand go-to-market specifically to accelerate that loop. Most founders have a network\neffect they don't know they have.",
+    "pairsWith": [
+      "2.4 Blue Ocean",
+      "3.3 Porter's Five Forces",
+      "2.3 Lean Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.9",
+    "title": "Ansoff Matrix",
+    "sourcePages": {
+      "intro": 65,
+      "prompt": 66
+    },
+    "prompt": "Act as a growth strategy advisor using the Ansoff Matrix.\nMy current business             :  [DESCRIBE PRODUCT AND MARKET]\nCurrent stage                         :  [REVENUE, TEAM SIZE, KEY MARKETS]\nGrowth objective                   :  [WHAT YOU WANT TO ACHIEVE IN 12–24 MONTHS]\nAnalyse all four Ansoff quadrants for my situation:\nMARKET PENETRATION      :  How much more can I extract from existing product +\nexisting market?\nMARKET DEVELOPMENT    :  Which new markets could my current product serve with\nminimum change?\nPRODUCT DEVELOPMENT  :  What new products could I offer to my existing\ncustomers?\nDIVERSIFICATION                 :  Where is new product + new market justified by strategic\nopportunity?\nRecommend the highest-leverage quadrant for my stage.\nWhich growth strategy should we pursue?\nMarket Penetration Diversiﬁcation\nLowest risk, focuses on Highest risk, enters new\nexisting customers and markets with new products.\nmarkets.\nMarket Development Product Development\nMedium risk, expands to new Medium risk, introduces new\nmarkets with existing products. products to existing markets.\nPRO TIP\nBefore looking at new markets or new products, ask AI to run a full Market Penetration\nanalysis on your existing business. Most companies at under 20% market share have\nsignificant penetration opportunity they haven't fully activated. Penetration is always\ncheaper than acquisition of new markets.",
+    "pairsWith": [
+      "2.4 Blue Ocean",
+      "2.2 Business Model Canvas",
+      "3.5 TAM SAM SOM"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 2,
+    "lesson": "2.10",
+    "title": "Kano Model",
+    "sourcePages": {
+      "intro": 67,
+      "prompt": 68
+    },
+    "prompt": "Act as a product strategy advisor using the Kano Model.\nMy product            :  [DESCRIBE WHAT IT DOES]\nTarget customer   :  [WHO USES IT AND IN WHAT CONTEXT]\nI will list my features. Classify each as:\nBASIC NEED                   :  Expected — absence causes frustration\nPERFORMANCE NEED  :  More = better, directly drives satisfaction\nEXCITEMENT NEED      :  Unexpected delight — creates love for product\nFeatures to classify        :  [LIST YOUR FEATURES ONE PER LINE]\nAfter classifying              :  which Excitement feature should I build next to create\nmaximum delight? Which Basic Need am I most at risk of failing on?\nKano Model of Customer Satisfaction\nBasic Needs\nEssential features that prevent\ndissatisfaction\nPerformance Needs\nFeatures that improve product\nfunctionality\nExcitement Needs\nUnexpected features that delight\ncustomers\nCustomer Satisfaction\nThe ultimate goal of product\ndevelopment\nPRO TIP\nThe most dangerous Kano insight is the feature that was Excitement two years ago and is\nnow Basic Need. Your competitors have copied it. Your customers expect it. If it's not\nflawless now, it's actively hurting you. Run this audit every six months.",
+    "pairsWith": [
+      "2.1 Value Proposition",
+      "2.5 JTBD",
+      "3.8 Voice of Customer"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.1",
+    "title": "SWOT Analysis",
+    "sourcePages": {
+      "intro": 70,
+      "prompt": 71
+    },
+    "prompt": "Act as a strategic analyst. Build a comprehensive SWOT for:\nBusiness                  :  [YOUR COMPANY NAME AND WHAT IT DOES]\nIndustry                  :  [YOUR MARKET AND KEY COMPETITORS]\nStage                       :  [REVENUE, TEAM, KEY MARKETS]\nContext                   :  [WHAT DECISION YOU ARE ABOUT TO MAKE]\nSTRENGTHS           :  Internal advantages — what we do better\nWEAKNESSES        :  Internal limitations — where we are vulnerable\nOPPORTUNITIES   :  External conditions we can exploit now\nTHREATS                 :  External conditions that could hurt us\nGive 4–5 points per quadrant. Be specific.\nAfter the grid: give 3 strategic actions  one to leverage a strength,\none to fix a critical weakness, one to capture the best opportunity before it closes.\nStrategic Snapshot\n1 2\nStrengths Opportunities\nPositive internal Positive external\nfactors factors\n3 4\nWeaknesses Threats\nNegative internal Negative external\nfactors factors\nPRO TIP\nThe most useful output from SWOT is not the grid itself — it's the SO strategies (use\nStrengths to capture Opportunities) and the WT strategies (reduce Weaknesses to avoid\nThreats). Ask AI to generate those strategies explicitly. Most people stop at the grid and\nnever get to the insight.",
+    "pairsWith": [
+      "3.2 PESTLE",
+      "3.3 Porter's Five Forces",
+      "3.6 Competitor Mapping"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.2",
+    "title": "PESTLE Analysis",
+    "sourcePages": {
+      "intro": 72,
+      "prompt": 73
+    },
+    "prompt": "Act as a macro-environment analyst using the PESTLE framework.\nBusiness context        :  [YOUR INDUSTRY AND WHAT YOU DO]\nMarket / geography  :  [SPECIFIC MARKET YOU ARE ANALYSING]\nDecision                       :  [WHAT YOU ARE DECIDING BASED ON THIS ANALYSIS]\nAnalyse all six PESTLE dimensions:\nPOLITICAL                  :  Government, policy, trade, stability\nECONOMIC                :  Growth, inflation, consumer spending, rates\nSOCIAL                        :  Demographics, culture, behaviour trends\nTECHNOLOGICAL     :  Innovation, AI, digital adoption, disruption\nLEGAL: Regulations, compliance, IP, data law\nENVIRONMENTA L  :  Sustainability, ESG, climate impact\nFor each: give 2–3 specific factors and their likely impact on my business.\nFlag the top 2 highest-risk factors I should act on now.\nInnovation Impact\nCultural Trends\nTechnological advancements\nSocial inﬂuences\nMarket Conditions Sustainability Concerns\nEconomic factors Environmental factors\nGovernment Regulatory\nInﬂuence Compliance\nPESTLE \nPolitical landscape Legal framework\nAnalysis\nPRO TIP\nRun PESTLE before entering any new geography  especially India, Southeast Asia, or the\nMiddle East where political and legal environments change faster than most founders\nexpect. The factors that kill international expansion are almost always in the P and L\ndimensions, not the market size.",
+    "pairsWith": [
+      "3.1 SWOT",
+      "3.3 Porter's Five Forces",
+      "8.5 Scenario Planning"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.3",
+    "title": "Porter's Five Forces",
+    "sourcePages": {
+      "intro": 74,
+      "prompt": 75
+    },
+    "prompt": "Act as a strategic industry analyst using Porter's Five Forces.\nIndustry                                        :  [YOUR SPECIFIC INDUSTRY  be precise]\nMy position                                  :  [WHAT YOU DO, YOUR SIZE, YOUR SEGMENT]\nAnalyse all five forces:\nCOMPETITIVE RIVALRY            :  How intense is competition?\nTHREAT OF NEW ENTRANTS  :  How easy to enter this market?\nTHREAT OF SUBSTITUTES       :  What else could customers use?\nBUYER POWER                            :  How much leverage do buyers have?\nSUPPLIER POWER                      :  How much leverage do suppliers have?\nRate each force                            :  Low / Medium / High.\nIdentify the most dangerous force for my specific position.\nSuggest 2 strategic moves to reduce the impact of the highest-threat force on my business.\nPorter's Five Forces Analysis\nNo legal factors No political factors\nNo legal factors No political factors\nNo environmental\nIndustry Rivalry\nfactors\nCompetition impacts\nNo environmental factors\nproﬁtability\nNo technological factors No social factors\nNo social factors\nNo technological factors\nPRO TIP\nThe most overlooked force is Threat of Substitutes. Customers don't just compare you to\ncompetitors, they compare you to doing nothing, doing it manually, or using a completely\ndifferent category. Ask AI specifically: 'What are the non-obvious substitutes for my\nproduct that I might be underestimating?'",
+    "pairsWith": [
+      "3.1 SWOT",
+      "2.4 Blue Ocean",
+      "2.8 Moat Builder",
+      "3.6 Competitor Mapping"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.4",
+    "title": "Ideal Customer Profile (ICP)",
+    "sourcePages": {
+      "intro": 76,
+      "prompt": 77
+    },
+    "prompt": "Act as a B2B sales strategist helping me define my ICP.\nMy product                    :  [DESCRIBE WHAT IT DOES AND THE PROBLEM IT SOLVES]\nBest customers so far  :  [DESCRIBE 2–3 THAT GOT THE MOST VALUE]\nBuild my Ideal Customer Profile across these dimensions:\nFIRMOGRAPHIC          :  Industry, company size, geography, revenue\nROLE                              :  Job title, seniority, decision-making authority\nTRIGGER                       : What event makes them start looking for a solution?\nPAIN                               : The specific problem they urgently need solved\nOUTCOME                    : The result they need to see to call this a success\nDISQUALIFIER             : What makes a prospect a bad fit despite looking right?\nWrite the ICP as a one-paragraph description I can share with my sales and marketing\nteam. Also give me the 3 fastest signals to identify this customer in a first conversation.\nDeﬁne ICP\nDimensions\nReview and \nAnalyze Existing Specify industry, Update ICP\nCustomers company size, role,\nRegularly update the\ntrigger event, and\nIdentify patterns in Build Negative ICP ICP based on real\noutcome sought.\nsuccessful customer customer feedback.\nProﬁle customers\nproﬁles to deﬁne the\nwho appear to be a\nICP.\nﬁt but disappoint.\nPRO TIP\nDefine your negative ICP with the same rigour as your positive one. The accounts that\nlook like perfect fits but churn in 90 days have a pattern. Ask AI to help you find it.\nDisqualifying bad-fit accounts early is more valuable than closing them,  a churned\ncustomer costs you more than a lost deal.",
+    "pairsWith": [
+      "3.9 STP Model",
+      "2.1 Value Proposition",
+      "4.3 BANT Qualification"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.5",
+    "title": "TAM SAM SOM",
+    "sourcePages": {
+      "intro": 78,
+      "prompt": 79
+    },
+    "prompt": "Act as a venture capital analyst helping me build a credible market sizing model.\nMy business     :  [DESCRIBE WHAT YOU SELL AND TO WHOM]\nGeography       :  [YOUR TARGET MARKETS]\nPrice point       :  [YOUR AVERAGE DEAL / CONTRACT VALUE]\nBuild both top-down and bottom-up sizing for:\nTAM            :  Total global revenue opportunity,  all potential customers using any  \n                        solution for this problem\nSAM            :  Realistic reachable market with my current model and go-to-market  \n                        approach\nSOM            :  Achievable share in 3–5 years based on realistic growth assumptions\nBottom-up :  Number of ICP accounts × ACV = realistic SOM\nFlag the key assumptions and the biggest risks to the sizing model.\nTAM SAM SOM — Market Sizing Made Honest\n$100 billion\nTAM\nTotal Addressable Market\n$50 billion\nSAM\nServiceable Addressable Market\n$10 billion\nSOM\nServiceable Obtainable Market\nPRO TIP\nInvestors are sceptical of top-down market sizing because anyone can find a large\nnumber. The founders who impress are those who say 'bottom-up, we see 12,000\ncompanies that fit our ICP, average deal size is X, that gives us a Y SOM with Z%\npenetration in year 3.' That level of specificity signals you actually know your market.",
+    "pairsWith": [
+      "3.4 ICP",
+      "9.5 Investor Narrative",
+      "2.9 Ansoff Matrix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.6",
+    "title": "Competitor Mapping",
+    "sourcePages": {
+      "intro": 80,
+      "prompt": 81
+    },
+    "prompt": "Act as a competitive intelligence analyst.\nMy business        :  [WHAT YOU DO AND WHO YOU SERVE]\nKey competitors :  [LIST 5–8 DIRECT AND INDIRECT]\nMap each competitor across these dimensions:\nPrice positioning (budget / mid / premium)\nTarget customer (SMB / mid-market / enterprise)\nCore strength (what they are known for)\nCore weakness (where they are consistently criticised)\nKey differentiator (what makes them choose-able)\nAfter mapping :\n1. Where is the market most crowded?\n2. What white space exists that no competitor occupies?\n3. Where am I most vulnerable to competitive pressure?\n4. What is the one thing I must own to be clearly different?\n1\n2\n3\nWhite Space\nTop-right corner,\nHigh Quality, High Price\nrepresenting untapped\nCompetitor Top-left corner, market potential. Low Quality, Low Price\noccupied by premium\nLandscape competitors. Bottom-left corner,\ndominated by budget-\nfriendly options.\nPRO TIP\nThe most valuable output is not the map itself,  it is the white space analysis. Ask AI\nspecifically: 'Given this competitive map, describe the customer who is currently\nunderserved by every player in this market.' That customer is your Blue Ocean\nopportunity.",
+    "pairsWith": [
+      "3.3 Porter's Five Forces",
+      "2.4 Blue Ocean",
+      "3.7 Positioning Statement"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.7",
+    "title": "Market Positioning Statement",
+    "sourcePages": {
+      "intro": 82,
+      "prompt": 83
+    },
+    "prompt": "Act as a brand positioning strategist.\nMy business                      :  [DESCRIBE WHAT YOU DO]\nTarget customer              :  [SPECIFIC ROLE, INDUSTRY, SITUATION]\nKey competitors              :  [WHO THEY COMPARE US TO]\nOur main differentiator  :  [WHAT WE DO THAT OTHERS DON'T]\nProof point                        :  [DATA, RESULT, OR CREDENTIAL THAT BACKS IT UP]\nWrite 3 positioning statements in this format:\nFor [TARGET CUSTOMER] who [PROBLEM OR NEED], [PRODUCT] is the [CATEGORY] \nthat [KEY BENEFIT] because [REASON TO BELIEVE].\nMake each one distinct  not just different words for the same idea.\nVary the angle of differentiation. Then recommend which of the three is sharpest and why.\nMarket Positioning Pyramid\nProof\n1 Provide evidence to\nsupport the\nproduct's claims\nKey Beneﬁt\nHighlight the primary 2\nadvantage the\nproduct offers\nProduct Category\n3 Place the product\nwithin its market\nsegment\nProblem/Need\nDeﬁne the issue or 4\ndesire the customer\nfaces\nTarget Customer\n5\nIdentify the speciﬁc\ngroup of customers\nPRO TIP\nAfter writing your positioning statement, do a simple test: remove your company name\nand replace it with a competitor's. If the statement still works for them, you don't have a\npositioning,  you have a category description. Push harder on the 'because' clause. That's\nwhere real differentiation lives.",
+    "pairsWith": [
+      "3.6 Competitor Mapping",
+      "5.1 StoryBrand",
+      "3.4 ICP",
+      "3.10 Perceptual Map"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.8",
+    "title": "Voice of Customer  Empathy Grid",
+    "sourcePages": {
+      "intro": 84,
+      "prompt": 85
+    },
+    "prompt": "PROMPT — COPY & PASTE READY\nAct as a customer research analyst using the Empathy Grid.\nCustomer profile  :  [ROLE, INDUSTRY, COMPANY SIZE]\nProblem context   :  [WHAT CHALLENGE THEY FACE DAILY]\nReal customer data (if available):\n[PASTE REVIEWS, INTERVIEW NOTES, OR SUPPORT TICKETS]\nMap the full Empathy Grid:\nTHINKS & FEELS  :  Inner concerns, hopes, and worries\nSEES                       :  What their environment looks like\nHEARS                    :  What colleagues, managers, media tell them\nSAYS & DOES        :  Public behaviour and statements\nPAINS                     :  Frustrations, fears, obstacles\nGAINS                     :  Desired outcomes and measures of success\nAfter the grid: give me 5 exact phrases this customer would use to describe their\nproblem in their own words, not marketing language.",
+    "pairsWith": [
+      "2.1 Value Proposition",
+      "2.5 JTBD",
+      "3.4 ICP",
+      "5.1 StoryBrand"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.9",
+    "title": "STP Model - Segment, Target,",
+    "sourcePages": {
+      "intro": 86,
+      "prompt": 87
+    },
+    "prompt": "Act as a marketing strategist using the STP framework.\nMy business          :  [DESCRIBE YOUR PRODUCT AND CURRENT MARKET]\nTotal market         :  [THE BROAD MARKET YOU OPERATE IN]\nSEGMENTATION :\nDivide the total market into 5–6 distinct customer segments based on\nindustry, need, behaviour, or size. Describe each segment in 2–3 lines.\nTARGETING:\nScore each segment 1–5 on:\nMarket size and growth rate\nFit with my current capabilities\nCompetitive intensity in this segment\nLikely profitability and retention\nRecommend the top 1–2 segments to target first.\nPOSITIONING:\nFor the top segment,  write one positioning statement that clearly\ndifferentiates me from alternatives.\nSTP Model — Choose Your Market. Own Your Position.\nSegmentation\nInitial market segmentation\n100%\nTargeting\nTarget market selection\n50%\nPositioning\nMarket positioning\n25%\nPRO TIP\nMost founders target the largest segment, not the most winnable one. The most\nwinnable segment is where you have a natural advantage,  a network, a credential, an\ninsight,  that competitors don't. Winning one segment completely is worth more than\npartial penetration of three.",
+    "pairsWith": [
+      "3.4 ICP",
+      "3.7 Positioning Statement",
+      "5.4 Marketing Mix",
+      "5.6 GTM Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 3,
+    "lesson": "3.10",
+    "title": "Perceptual Mapping",
+    "sourcePages": {
+      "intro": 88,
+      "prompt": 89
+    },
+    "prompt": "Act as a brand strategist using perceptual mapping.\nMy brand                               :  [YOUR COMPANY AND WHAT IT DOES]\nCompetitors                          :  [LIST 5–6 KEY COMPETITORS]\nCustomer decision factors :  [WHAT CUSTOMERS WEIGH MOST WHEN\nCHOOSING IN THIS CATEGORY]\nStep 1  :  Recommend the 2 best axes for this market's perceptual map, \nthe dimensions that most drive customer perception and choice.\nStep 2 :  For each competitor and my brand, describe where they would\nland on the map and why.\nStep 3 :  Identify any white space, an unoccupied position that a\nsizeable customer segment values.\nStep 4 :  Recommend whether I should hold my current position or\nreposition and where to move.\nMap Brands Effectively\nInnovative Premium Target White Space\nHigh innovation, high Unoccupied market\nprice niche\nTraditional Budget Innovative Budget\nEstablished, Novelty at a low cost\naffordable offerings\nPRO TIP\nRun the same perceptual map twice: once based on how you believe customers see the\nmarket, and once asking AI to reflect what customer reviews and public sentiment\nactually say. The gap between your internal map and the external one is your most\nimportant strategic insight.",
+    "pairsWith": [
+      "3.7 Positioning Statement",
+      "3.6 Competitor Mapping",
+      "2.4 Blue Ocean"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.1",
+    "title": "Cold Outreach — AIDA",
+    "sourcePages": {
+      "intro": 91,
+      "prompt": 92
+    },
+    "prompt": "Act as a B2B cold outreach copywriter using the AIDA framework.\nMy product         :  [WHAT YOU SELL AND THE PROBLEM IT SOLVES]\nTarget prospect :  [ROLE, INDUSTRY, COMPANY SIZE]\nSpecific trigger  :  [WHY REACH OUT NOW  news, funding, job change, content they   \n                                  posted]\nDesired action    :  [ONE THING YOU WANT THEM TO DO]\nWrite 3 cold outreach messages using AIDA:\nATTENTION      :  First line stops them  specific to them\nINTEREST         :  Connects their world to the problem you solve\nDESIRE              :  Outcome they want not features you have\nACTION              :  One low-friction next step\nKeep each message under 100 words.\nMake each variation use a different opening angle.\nAIDA — The Cold Outreach Journey\nGrab the reader's focus\nAttention\nSpark curiosity and\nInterest\nrelevance\nCreate a longing for the\nDesire\noutcome\nPrompt a response or\nAction\nengagement\nPRO TIP\nThe single biggest improvement to cold outreach response rates is the first sentence.\nWrite it about them, not about you. Reference something real and specific  a post they\nwrote, a company announcement, a problem specific to their industry right now. AI can\nresearch this context - use it.",
+    "pairsWith": [
+      "4.6 PAS",
+      "4.8 Follow-Up Sequences",
+      "3.4 ICP",
+      "5.2 Hook Framework"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.2",
+    "title": "SPIN Selling - Discovery Call",
+    "sourcePages": {
+      "intro": 93,
+      "prompt": 94
+    },
+    "prompt": "Act as a B2B sales coach using Neil Rackham's SPIN Selling.\nI am selling       :  [YOUR PRODUCT OR SERVICE]\nProspect role    :  [JOB TITLE AND INDUSTRY]\nKnown context :  [WHAT YOU KNOW ABOUT THEM ALREADY]\nGenerate 3 strong questions for each SPIN stage:\nSITUATION       :  Understand their current state and setup\nPROBLEM         :  Surface the pain they may not have named\nIMPLICATION  :  Show the cost and consequence of not solving it\nNEED-PAYOFF :  Let them articulate the value of solving it\n#Make questions feel like natural conversation.  #Avoid yes/no questions.\nFavour open questions.  #Sequence them so each stage flows into the next.\nNeed-Payoff Questions Situation Questions\nFocus on beneﬁts of Gather background\nsolutions information\nSPIN Selling Cycle\nImplication Questions Problem Questions\nExplore consequences of Identify customer\nproblems challenges\nPRO TIP\nSpend 70% of your call on Implication questions  that is where urgency is created.\nMost salespeople rush to Need-Payoff without building enough implication first. A\nprospect who hasn't felt the pain of inaction will not feel urgency to act.",
+    "pairsWith": [
+      "4.3 BANT Qualification",
+      "4.5 Objection Handling",
+      "4.7 Proposal Writing"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.3",
+    "title": "Lead Qualification  BANT & CHAMP",
+    "sourcePages": {
+      "intro": 95,
+      "prompt": 96
+    },
+    "prompt": "Act as a B2B sales qualification coach.\nMy product: [WHAT YOU SELL AND AVERAGE DEAL SIZE]\nProspect: [ROLE, INDUSTRY, WHAT YOU KNOW ABOUT THEM]\nGenerate qualification questions for both frameworks:\nBANT QUALIFICATION:\nBudget: How do I uncover budget without asking directly?\nAuthority: How do I map the decision-making process?\nNeed: How do I confirm this is a real priority?\nTimeline: How do I understand their urgency without pressure?\nCHAMP QUALIFICATION:\nChallenges: What is the core problem driving this search?\nAuthority: Who else is involved in this decision?\nMoney: What have they invested in alternatives?\nPrioritisation: Where does this rank against other initiatives?\nWrite 2 natural-sounding questions per category.\nChallenge-Focused\nBudget-Focused\nQualiﬁcation\nQualiﬁcation\nAuthority Assessment Authority Assessment\nNeed Assessment Money Assessment\nPrioritisation Assessment\nTimeline Assessment\nCHAMP prioritises customer challenges for effective qualiﬁcation.\nBANT CHAMP\nPRO TIP\nThe most important qualification question is Timeline - but never ask it first. Ask it after\nyou've built the pain clearly. A prospect with no timeline usually has no urgency, which means\nno deal. Timeline answers tell you whether to invest or to place in a nurture sequence.",
+    "pairsWith": [
+      "4.2 SPIN Selling",
+      "4.4 Challenger Sale",
+      "4.9 Pipeline Review"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.4",
+    "title": "The Challenger Sale",
+    "sourcePages": {
+      "intro": 97,
+      "prompt": 98
+    },
+    "prompt": "I PROMPT — COPY & PASTE READY\nAct as a Challenger Sale strategist.\nMy product: [WHAT YOU SELL AND THE PROBLEM IT SOLVES]\nProspect type: [INDUSTRY, ROLE, COMPANY STAGE]\nCommon assumption: [WHAT THEY CURRENTLY BELIEVE OR DO THAT YOUR\nPRODUCT CHALLENGES]\nBuild a full Challenger approach:\nTEACH: What counterintuitive insight about their industry or business would genuinely\nsurprise them?\n(must be specific, data-backed, and relevant)\nTAILOR: How does this insight connect specifically to their role, their pain, or their goals?\nTAKE CONTROL: How do I guide from the insight to the conversation about my solution\n— naturally,\nwithout feeling like a pivot?\nWrite the opening 3–4 sentences I would say out loud.\nAlso write the Take Control transition — the bridge from the insight to my solution in 1–2\nsentences.",
+    "pairsWith": [
+      "4.2 SPIN Selling",
+      "4.5 Objection Handling",
+      "4.7 Proposal Writing"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.5",
+    "title": "Objection Handling - LAER",
+    "sourcePages": {
+      "intro": 99,
+      "prompt": 100
+    },
+    "prompt": "Act as a sales coach using the LAER objection handling framework.\nMy product  :  [WHAT YOU SELL AND AVERAGE PRICE POINT]\nFor each objection below, write a full LAER response:\nObjection 1  :  [YOUR MOST COMMON OBJECTION]\nObjection 2  :  [YOUR SECOND MOST COMMON OBJECTION]\nObjection 3  :  'We don't have budget right now.'\nObjection 4 :  'We need to think about it.'\nObjection 5 :  'We're already using [COMPETITOR].'\nFor each objection use this structure:\nLISTEN                  :  (note what to observe / not interrupt)\nACKNOWLEDGE :  Exact words to validate their concern\nEXPLORE              :  One open question to uncover the real issue\nRESPOND             :  Precise response to the likely real concern\nLAER — Turn Objections Into Conversations\nListen\nAcknowledge\nExplore\nRespond\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+    "pairsWith": [
+      "4.2 SPIN Selling",
+      "4.4 Challenger Sale",
+      "4.10 Closing Techniques"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.6",
+    "title": "PAS - Problem Agitate Solve",
+    "sourcePages": {
+      "intro": 101,
+      "prompt": 102
+    },
+    "prompt": "Act as a direct response copywriter using the PAS framework.\nMy product          :  [WHAT YOU SELL]\nTarget customer :  [WHO THEY ARE AND THEIR CONTEXT]\nCore problem       :  [THE MAIN PAIN YOU SOLVE]\nChannel                 :  [EMAIL / LINKEDIN POST / WEBSITE HEADLINE]\nWrite 3 PAS variations for this channel:\nPROBLEM              :  Name the specific pain, their words, not yours\nAGITATE                 :  Expand the consequences, what does this cost them in time,\nmoney, stress, missed opportunity?\nSOLVE         :  Present the solution as natural relief\nVariation 1  :  Lead with the financial cost of the problem\nVariation 2  :  Lead with the emotional cost\nVariation 3  :  Lead with what they are missing out on\nKeep each under 80 words. No jargon.\nPAS Framework for Problem Solving\nUnresolved Problem Agitate Solve Resolved Problem\nSpeciﬁc pain needs Show consequences Present logical Logical solution\naddressing of inaction solution implemented\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+    "pairsWith": [
+      "4.1 Cold Outreach",
+      "5.1 StoryBrand",
+      "4.7 Proposal Writing",
+      "5.2 Hook Framework"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.7",
+    "title": "Proposal Writing — Win Story",
+    "sourcePages": {
+      "intro": 103,
+      "prompt": 104
+    },
+    "prompt": "Act as a proposal writing consultant using the Win Story structure.\nDiscovery call notes   :    [PASTE KEY POINTS FROM YOUR CALL]\nMy solution                  :    [WHAT YOU ARE PROPOSING TO DO]\nProof available             :    [CASE STUDY, DATA, OR REFERENCE]\nDesired next step        :    [WHAT YOU WANT THEM TO DO NEXT]\nWrite a complete Win Story proposal:\nSITUATION             :   Their world as it is today their terms\nCOMPLICATION    :   The problem and the cost of it continuing\nRESOLUTION         :   What their world looks like when solved\nSOLUTION              :   Your approach bridge to the resolution\nPROOF                     :   One specific result that proves delivery\nCALL TO ACTION  :   One sentence, one next step, one date\nResolution\nSituation Proof\nEstablish the Describe the desired Provide evidence of your solution's effectiveness.\noutcome.\ncustomer's current context.\nCrafting a\nWinning Proposal\nCall to Action\nSolution Encourage the customer to take the\nComplication next step.\nPresent your\nIntroduce the problem that proposal as the\nanswer.\n needs solving.\nPRO TIP\nThe single most impactful change to any proposal: move the executive summary to after\nthe Complication section, not at the top. Prospects who feel their problem has been\nunderstood read proposals differently. Understanding before solution is the sequence\nthat closes.",
+    "pairsWith": [
+      "4.2 SPIN Selling",
+      "4.4 Challenger Sale",
+      "5.1 StoryBrand"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.8",
+    "title": "Follow-Up Sequences",
+    "sourcePages": {
+      "intro": 105,
+      "prompt": 106
+    },
+    "prompt": "Act as a B2B sales sequence strategist.\nDeal context        :  [WHAT YOU PROPOSED AND WHAT THEY SAID]\nProspect role      :  [JOB TITLE AND INDUSTRY]\nLast contact        :  [WHAT HAPPENED IN YOUR LAST INTERACTION]\nBuild a 7-touch follow-up sequence:\nTouch 1 (Day 1)    :  Post-meeting summary and one insight\nTouch 2 (Day 3)   :  Relevant content or case study\nTouch 3 (Day 6)   :  Answer a question they didn't ask yet\nTouch 4 (Day 10) :  Social proof specific to their industry\nTouch 5 (Day 15) :  New angle  challenge their status quo\nTouch 6 (Day 22) :  Offer to simplify or reduce scope\nTouch 7 (Day 30) :  Break-up email  honest and respectful\nFor each touch    :  write the subject line and opening sentence.\nKeep every message under 60 words.\nFollow-Up Cadence : 80% of Sales Need 5+ Touches\nLinkedIn\nPhone\nRelevant article\n1 posted to prospect's 3 Personal check-in to 5\nfeed gauge interest\nDay 1 Day 3 Day 5 Day 9 Day 14\nEmail Email Email\n2 4\nValue insight shared Case study Final value\nwith prospect highlighting success proposition and\nstories decision ask\nPRO TIP\nThe break-up email (Touch 7) consistently generates the highest reply rate of any touch\nin a sequence. Something about 'I'm going to stop reaching out' creates a response that\nseven other emails didn't. Write it genuinely  not as a manipulation tactic. If you really\nare moving on, say so honestly.",
+    "pairsWith": [
+      "4.1 Cold Outreach",
+      "4.9 Pipeline Review",
+      "4.5 Objection Handling"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.9",
+    "title": "Pipeline Review - Deal Health Check",
+    "sourcePages": {
+      "intro": 107,
+      "prompt": 108
+    },
+    "prompt": "Act as a sales pipeline analyst conducting a deal health review.\nFor each deal I describe, score it against six criteria\n(Yes / Partial / No) and give a health rating:\nCRITERIA:\n1. Confirmed problem :  Do they acknowledge the pain clearly?\n2. Decision-maker       :  Have I spoken directly to the buyer?\n3. Budget                       :  Is budget confirmed or realistically available?\n4. Timeline                    :  Is there a defined date with stakes attached?\n5. Objections                 :  Have key objections been surfaced and handled?\n6. Next step                   :  Is there a mutual commitment with a date?\nDeal 1     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nDeal 2     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nFor each :  Health rating (Strong / At Risk / Stalled)\nand one specific action to take this week.\nDeal health check ranges from healthy to at risk.\nDecision-Maker Timeline with\nContacted Consequences Mutual Next Step\nReal decision-maker Timeline with clear No mutual next step\nhas been reached consequences is set with a date\nHealthy At Risk\nConﬁrmed Problem Budget Deﬁned Objections Surfaced\nProblem is clearly Budget for the deal Signiﬁcant objections have\nidentiﬁed is established been raised\nPRO TIP\nThe most honest pipeline review question is: 'If this deal were to close, what would have\nto happen in the next 7 days?' If you can't answer that specifically, the deal has no\nmomentum. Deals without momentum don't close, they disappear.",
+    "pairsWith": [
+      "4.3 BANT Qualification",
+      "4.8 Follow-Up",
+      "4.10 Closing Techniques"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.10",
+    "title": "Closing Techniques Matrix",
+    "sourcePages": {
+      "intro": 109,
+      "prompt": 110
+    },
+    "prompt": "Act as a sales closing coach.\nMy deal   :  [DESCRIBE THE DEAL  STAGE, WHAT'S BEEN AGREED, WHAT  \n                     HESITATION REMAINS]\nProspect personality   :  [ANALYTICAL / RELATIONSHIP / DECISIVE]\nRecommend the best closing approach for this situation from these options:\nSUMMARY CLOSE        :  Recap value, ask for decision\nALTERNATIVE CLOSE  :  Two paths forward, both say yes\nASSUMPTIVE CLOSE   :  Move forward as if decided\nQUESTION CLOSE        :  Ask what would make them comfortable\nURGENCY CLOSE          :  Name a real consequence of delay\nWrite the exact words I would say out loud for the recommended close.\nThen write a recovery if they say not yet.\nClosing techniques range from direct to exploratory.\nSummary Close Alternative Close\nSummarizes beneﬁts, asks Offers choices, guides to\nfor commitment decision\nAssumptive Close Question Close\nAssumes agreement, Explores concerns,\ncloses quickly uncovers objections\nConﬁdent Hesitant\nPRO TIP\nThe best close is the one you use before you think you need to close. When all signals are\npositive value confirmed, objections handled, timeline agreed  ask for the decision. Most\nsalespeople wait for perfect certainty before closing. That certainty rarely arrives. Move\nwhen the signals are there.",
+    "pairsWith": [
+      "4.5 Objection Handling",
+      "4.9 Pipeline Review",
+      "4.2 SPIN Selling"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 4,
+    "lesson": "4.11",
+    "title": "FAB - Features Advantages",
+    "sourcePages": {
+      "intro": 111,
+      "prompt": 112
+    },
+    "prompt": "Act as a sales messaging consultant using the FAB framework.\nMy product features    :  [LIST YOUR TOP 5–7 FEATURES]\nTarget customer pain  :  [THE SPECIFIC PROBLEM THEY TOLD YOU ABOUT IN \n                                            DISCOVERY]\nCustomer role               :  [JOB TITLE AND WHAT THEY ARE MEASURED ON]\nFor each feature, complete the FAB chain:\nFEATURE        :  What the product has or does\nADVANTAGE  :  Why this is better than the alternative\nBENEFIT         :  What this specifically means for THIS customer given their stated pain\nand goals\nWrite the Benefit as a sentence they would say to their manager  not a sentence I\nwould say to them.\nFAB Pyramid\nBeneﬁt\nWhat it means for the customer\nAdvantage\nWhy it's better than alternatives\nFeature\nWhat the product has or does\nPRO TIP\nThe best benefits are written from the customer's perspective looking inward, not from\nyour perspective looking outward. 'This saves you 3 hours a week' is a feature-benefit.\n'You can tell your CFO that reporting time dropped by 40%' is a customer benefit\nbecause it solves the customer's real problem, which is not time, it's accountability.",
+    "pairsWith": [
+      "4.6 PAS",
+      "4.2 SPIN Selling",
+      "2.1 Value Proposition Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.1",
+    "title": "StoryBrand Framework - SB7",
+    "sourcePages": {
+      "intro": 114,
+      "prompt": 115
+    },
+    "prompt": "I PROMPT — COPY & PASTE READY\nAct as a StoryBrand messaging consultant using Donald Miller's SB7.\nMy business          :  [WHAT YOU DO AND WHO YOU SERVE]\nCustomer's goal    :  [WHAT THE CUSTOMER WANTS TO ACHIEVE]\n                                    Build the full SB7 for my brand:\nCHARACTER         :   Who is the hero, describe them specifically\nPROBLEM              :   External (practical), Internal (emotional), Philosophical (why it's \n                                     wrong that this exists)\nGUIDE                     :   My brand's empathy and authority\nPLAN                        :  3 simple steps to work with me\nCALL TO ACTION  :  One direct CTA and one transitional CTA\nSUCCESS                 :  What their life looks like after\nFAILURE                  :  What's at stake if they don't act\nThen write a one-sentence brand tagline using this structure.",
+    "pairsWith": [
+      "3.7 Positioning Statement",
+      "4.6 PAS",
+      "4.7 Proposal Writing",
+      "5.8 Brand Voice"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.2",
+    "title": "Hook Framework for Content",
+    "sourcePages": {
+      "intro": 116,
+      "prompt": 117
+    },
+    "prompt": "Act as a content strategist and copywriter specialising in hooks.\nContent topic     :  [WHAT THIS POST, EMAIL, OR VIDEO IS ABOUT]\nTarget audience :  [WHO WILL SEE THIS AND WHAT THEY CARE ABOUT]\nPlatform               :  [LINKEDIN / EMAIL / INSTAGRAM / YOUTUBE]\nCore value            :  [WHAT THE READER WILL LEARN OR GET]\nWrite 5 hook variations using different hook types:\nCURIOSITY HOOK         :  Creates a knowledge gap they must close\nRELATABILITY HOOK   :  Opens with a situation they recognise\nCONTROVERSY HOOK  :  Challenges a common belief in the space\nVALUE HOOK                  :  Leads with the specific benefit upfront\nSTORY HOOK                  :  Opens mid-scene in a compelling moment\nFor each hook: write the opening line only (max 15 words).\nThen recommend the strongest one for this audience.\n3H Hook System\nScroll/Feed\nStopped\nPost Curiosity\nHook Relatability\nContent scrolls past Controversy\nHook\non the left\nHook Value\nOne post stops the\nSparks interest\nscroll with a bold Hook\n with a question\nﬁrst line Connects with the\naudience's\nexperiences Provokes discussion\nwith a bold\nHighlights beneﬁts\nstatement\nand solutions\nPRO TIP\nThe curiosity hook is the most powerful but the most overused. The relatability hook is\nthe most underused  and often outperforms everything else because it makes the reader\nfeel seen before they've read a word of content. Start with: 'You know that moment\nwhen...' and describe your audience's exact situation.",
+    "pairsWith": [
+      "5.5 Content Pillars",
+      "4.6 PAS",
+      "4.1 Cold Outreach",
+      "5.8 Brand Voice"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.3",
+    "title": "4Ps & 7Ps Marketing Mix",
+    "sourcePages": {
+      "intro": 118,
+      "prompt": 119
+    },
+    "prompt": "I PROMPT — COPY & PASTE READY\nAct as a marketing strategist using the 7Ps Marketing Mix.\nMy business        :  [DESCRIBE YOUR PRODUCT OR SERVICE]\nTarget customer :  [WHO THEY ARE AND WHAT THEY VALUE]\nCurrent stage      :  [EARLY / GROWING / SCALING]\nAnalyse and recommend for all 7Ps:\nPRODUCT       :  What are we selling,  features and positioning\nPRICE              :  How should we price, value, cost, or competitive?\nPLACE             :  Where and how do customers access us?\nPROMOTION  :  Which channels and messages drive awareness?\nPEOPLE           :  Who delivers the experience. skills and culture\nPROCESS         :  How is the service or product delivered?\nPHYSICAL       :  What tangible evidence builds trust?\nFlag any contradictions between elements. Identify the 2 Ps that most need improvement.\nFor those 2 Ps, give one specific change I should make in the next 30 days.",
+    "pairsWith": [
+      "5.6 GTM Canvas",
+      "3.9 STP Model",
+      "5.4 Content Strategy",
+      "2.7 Pricing"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.4",
+    "title": "Content Pillars Strategy",
+    "sourcePages": {
+      "intro": 120,
+      "prompt": 121
+    },
+    "prompt": "Act as a content strategy consultant.\nMy background and expertise :  [WHAT YOU KNOW DEEPLY]\nMy target audience                    :  [WHO I WANT TO REACH AND WHAT THEY CARE  \n                                                          ABOUT]\nMy business goal                         :  [WHAT I WANT CONTENT TO ACHIEVE  LEADS, \n                                                           BRAND, AUTHORITY, COMMUNITY]\nPlatform                                        :  [LINKEDIN / INSTAGRAM / X / YOUTUBE]\nDesign my Content Pillar strategy:\nStep 1      :  Suggest 5 content pillars that fit my expertise and audience.\nFor each  :  name, description, and 3 example post topics.\nStep 2     :  Recommend a weekly content mix across pillars.\nStep 3     :  Suggest one signature content format I should own,\nthe thing my audience will recognise me for.\nContent Pillars Strategy\nLeadership\nFocuses on guiding and inspiring your\naudience.\nAI Tools\nExplores innovative technologies to\nenhance productivity.\nSales Strategy\nOutlines effective methods to drive\nrevenue.\nPRO TIP\nYour signature content format is more valuable than your best single post. A consistent\nformat, a weekly framework breakdown, a Monday mindset post, a Friday lessons-\nlearned thread - trains your audience to expect and look for you. Consistency of format\ncompounds faster than variety of topics.",
+    "pairsWith": [
+      "5.2 Hook Framework",
+      "5.8 Brand Voice",
+      "10.8 Personal Brand Flywheel"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.5",
+    "title": "Go-To-Market Canvas",
+    "sourcePages": {
+      "intro": 122,
+      "prompt": 123
+    },
+    "prompt": "Act as a go-to-market strategist.\nWhat I am launching  :   [PRODUCT, SERVICE, OR NEW MARKET ENTRY]\nLaunch date target      :  [WHEN YOU WANT TO GO LIVE]\nResources available     :  [TEAM SIZE, BUDGET RANGE, CHANNELS]\nBuild a complete GTM Canvas:\nTARGET SEGMENT     :  Who specifically - ICP description\nVALUE PROP                :  Why this, why now, why us\nCHANNELS                   :  How we reach them - ranked by priority\nPRICING                        :  Model and rationale\nSALES MOTION           :  Steps from awareness to closed deal\nSUCCESS METRICS    :  The 3 numbers that define success\nTIMELINE                     :  Key milestones for weeks 1, 2, 4, 8\nFlag the highest-risk assumption in this GTM plan and suggest how to validate it before\nfull launch.\nGo-To-Market Canvas\nPricing\nCost of products/services Success Metrics\nMeasures of launch\neffectiveness\nLaunch Timeline\nSchedule for market entry\nSales Motion\nStrategy for customer\nChannels\nengagement\nDistribution and\ncommunication methods\nPRO TIP\nThe highest-risk GTM assumption is almost always Channel, not product. Most founders\nassume a channel will work before testing it. Before investing in a full launch, run a 2-\nweek channel test with minimal spend. Let data pick your primary channel, not your\npreference.",
+    "pairsWith": [
+      "5.3 Marketing Mix",
+      "5.7 Launch Playbook",
+      "2.3 Lean Canvas",
+      "3.4 ICP"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.6",
+    "title": "Product Launch Playbook",
+    "sourcePages": {
+      "intro": 124,
+      "prompt": 125
+    },
+    "prompt": "Act as a product launch strategist using Jeff Walker's Launch Formula.\nProduct                           :  [WHAT YOU ARE LAUNCHING]\nTarget audience            :  [WHO IT IS FOR]\nLaunch date                   :  [WHEN YOU WANT TO GO LIVE]\nExisting audience size :  [EMAIL LIST / FOLLOWERS / NETWORK]\nBuild a 4-phase launch plan:\nPHASE 1 — SEED (4 weeks before):\nHow to plant the idea and gauge genuine interest\nPHASE 2 — PRE-LAUNCH (weeks 2–3):\n3 pieces of content that deliver value and build desire\nPHASE 3 — LAUNCH (launch week):\nDay-by-day sequence with urgency mechanics\nPHASE 4 — POST-LAUNCH (week after):\nFollow-up for non-buyers · Testimonial collection\nGive specific content topics for each phase.\nProduct Launch Formula\nSeed\nPost-Launch\nPlant interest, gauge\nFollow up, collect\nresponse\ntestimonials\nPre-Launch Launch\nDeliver value, build desire Open with urgency, social proof\nPRO TIP\nThe single most valuable pre-launch action is a waitlist. Even 50 people on a waitlist\nchanges the psychology of your launch, it creates social proof before the launch, tells\nyou demand is real, and gives you a warm list to open to first. Start your waitlist before\nyou finish building.",
+    "pairsWith": [
+      "5.5 GTM Canvas",
+      "5.2 Hook Framework",
+      "5.3 Marketing Mix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.7",
+    "title": "Brand Voice Definition",
+    "sourcePages": {
+      "intro": 126,
+      "prompt": 127
+    },
+    "prompt": "Act as a brand strategy consultant specialising in brand voice.\nMy background   :  [WHO YOU ARE - EXPERIENCE, VALUES, STYLE]\nMy audience        :  [WHO I AM TALKING TO AND WHAT THEY VALUE]\nExamples of content I love: [DESCRIBE OR PASTE 2–3 EXAMPLES]\nContent I dislike :  [DESCRIBE THE STYLE YOU WANT TO AVOID]\nDefine my brand voice across four dimensions:\nPERSONALITY TRAITS :  4 adjectives that describe my voice.\nFor each                           :  what it means in practice + what it is NOT.\nVOICE RULES                 :  5 things I always do in my writing.\n5 things I never do.\nTONE VARIATIONS :  How my voice shifts across:\nLinkedIn post / Email newsletter / Sales copy / Bio\nVOICE SAMPLE       :  Write one paragraph in my brand voice about:\n[YOUR CORE TOPIC OR RECENT CHALLENGE]\nBrand Voice Framework\nPersonality Traits Voice Rules Tone Variations\nThe core adjectives Guidelines for what How the brand's voice\nthat deﬁne the brand should adapts to different\nand should not say.\nthe brand's character. communication channels.\nPRO TIP\nThe most useful part of a brand voice guide is the 'what we never say' list. The don'ts\ndefine the voice more sharply than the dos. If you never use jargon, never use passive\nvoice, and never make claims without proof, that combination is already a distinctive\nvoice. Start with the never list.",
+    "pairsWith": [
+      "5.1 StoryBrand",
+      "5.4 Content Pillars",
+      "5.2 Hook Framework",
+      "10.8 Personal Brand"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.8",
+    "title": "Viral Loop - Growth Loop",
+    "sourcePages": {
+      "intro": 128,
+      "prompt": 129
+    },
+    "prompt": "Act as a growth strategy advisor specialising in growth loops.\nMy product                 :  [DESCRIBE WHAT IT DOES AND HOW USERS ENGAGE]\nCurrent acquisition  :  [HOW YOU GET CUSTOMERS NOW]\nUser behaviour          :  [WHAT USERS DO INSIDE THE PRODUCT]\nStep 1  :  Identify which growth loop type is most natural for my product and user  \n                behaviour.\nStep 2  :  Map the complete loop,  every step from new user to loop-generated next user.\nStep 3  :  Identify the weakest point in the loop,  where do most users exit without \n                completing it?\nStep 4  :  Suggest 2 specific product or marketing changes to strengthen the loop's \n                 completion rate.\nStep 5  :  What metric would I track to know the loop is working and improving?",
+    "pairsWith": [
+      "5.9 AARRR Pirate Metrics",
+      "5.5 GTM Canvas",
+      "2.6 MVP Design"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.9",
+    "title": "AARRR  Pirate Metrics",
+    "sourcePages": {
+      "intro": 130,
+      "prompt": 131
+    },
+    "prompt": "Act as a growth analytics advisor using the AARRR framework.\nMy business   :  [DESCRIBE YOUR PRODUCT AND BUSINESS MODEL]\nCurrent metrics (fill in what you know):\nAcquisition    :  [MONTHLY VISITORS / LEADS]\nActivation      :  [% WHO COMPLETE FIRST KEY ACTION]\nRetention       :  [30-DAY RETENTION RATE OR CHURN]\nRevenue          :  [CONVERSION TO PAID / ARPU]\nReferral           :  [NPS SCORE OR REFERRAL RATE]\nStep 1  : Identify the stage with the most critical leak.\nStep 2 : For the weakest stage  suggest 3 specific experiments to improve it.\nStep 3 : Define one metric per stage that I should track weekly going forward.\nStep 4 : If I improved each stage by 10%, model the compounding impact on revenue.\nAARRR Pirate Metrics Funnel\nAcquisition\nActivation\nUsers start using the product\nRetention\nUsers continue using the product\nRevenue\nUsers generate income\nReferral\nUsers recommend the product\nPRO TIP\nActivation is the most underinvested stage in almost every early-stage business. It is the\nmoment a new user first experiences genuine value  the 'aha moment.' If you don't know\nwhat your activation moment is, you can't optimise for it. Ask AI to help you identify and\ndefine it before running any other growth experiments.",
+    "pairsWith": [
+      "5.8 Viral Loop",
+      "9.3 North Star Metric",
+      "9.1 LTV:CAC"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 5,
+    "lesson": "5.10",
+    "title": "Flywheel Model",
+    "sourcePages": {
+      "intro": 132,
+      "prompt": 133
+    },
+    "prompt": "Act as a business strategy advisor using Jim Collins' Flywheel model.\nMy business                     :  [DESCRIBE WHAT YOU DO AND YOUR GROWTH MODEL]\nCurrent growth drivers :  [WHAT IS WORKING TO GROW THE BUSINESS]\nBiggest friction points   :  [WHERE GROWTH SLOWS OR STOPS]\nStep 1  :  Map my business flywheel.\nIdentify 4–6 steps that form a self-reinforcing loop. Each step must logically cause the\nnext.\nStep 2 :  Name the flywheel - what is the core mechanism that drives it?\nStep 3 :  Identify which step in the flywheel has the most friction right now.\nStep 4 :  Suggest 2 specific actions to reduce friction at that step and accelerate the spin.\nCompare my flywheel to Amazon's - what is similar and what is fundamentally different?\nFlywheel Model — Momentum That Compounds\nSelf-Sustaining\nLower Prices\nLower Costs\nMore Sellers\nMore Customers\nLower Prices\nPRO TIP\nMost founders try to build a flywheel at the business level before they have one at the\ncustomer level. Your first flywheel is simpler: a happy customer refers someone, that\nperson becomes a customer, their success becomes your proof, proof attracts the next\ncustomer. Map that loop first and invest in making it spin faster.",
+    "pairsWith": [
+      "5.8 Growth Loop",
+      "5.9 AARRR",
+      "2.8 Moat Builder",
+      "9.1 LTV:CAC"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.1",
+    "title": "RACI Matrix",
+    "sourcePages": {
+      "intro": 135,
+      "prompt": 136
+    },
+    "prompt": "Act as an operations consultant specialising in team clarity.\nProcess or function  : [THE AREA YOU WANT TO MAP  e.g. client onboarding, \n                                        monthly reporting]\nTeam roles involved :\n[LIST YOUR ROLES:  e.g. CEO, Sales Lead, Account Manager, Marketing Manager,\nOperations Lead]\nFor each key task in this process, assign:\nR  =  Responsible (does the actual work)\nA  =  Accountable (one person - owns the outcome)\nC  =  Consulted (gives input before action is taken)\nI   =  Informed (told after action is complete)\nFormat as a clear table.\nFlag any task with more than one A, explain the risk.\nFlag any task with no clear R.\nRecommend the 2 most urgent clarity fixes.\nRACI Matrix Hierarchy\nAccountable\nUltimately responsible for task completion\nResponsible\nCarries out the task\nConsulted\nProvided input and feedback\nInformed\nKept up-to-date on progress\nPRO TIP\nIf more than one person is marked Accountable for any task, the matrix is already\nbroken. There must be exactly one A per row that single constraint removes more\nteam friction than any team meeting ever will. When everyone knows who owns the\noutcome, everything else becomes easier to delegate.",
+    "pairsWith": [
+      "6.2 OKRs",
+      "6.7 Delegation Ladder",
+      "6.8 Meeting Design"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.2",
+    "title": "OKRs - Goals That Drive Action",
+    "sourcePages": {
+      "intro": 137,
+      "prompt": 138
+    },
+    "prompt": "Act as an OKR coach and strategist.\nMy business context    :  [COMPANY STAGE, TEAM SIZE, MAIN FOCUS]\nThis quarter's priority :  [THE ONE THING THAT MATTERS MOST]\nCurrent challenges       :  [WHAT IS HOLDING GROWTH BACK]\nWrite 3 OKRs for this quarter:\nFor each OKR:\nOBJECTIVE      :  Inspiring, qualitative direction (1 sentence)\nKEY RESULT 1 :  Specific, measurable outcome with number\nKEY RESULT 2 :  Specific, measurable outcome with number\nKEY RESULT 3 :  Specific, measurable outcome with number\nThen: flag any Key Result that is actually a task disguised as an outcome - and rewrite it.\nSuggest a weekly check-in question for each OKR.\nAchieving Market Leadership\nDeﬁne Key Results\nEstablish\nmeasurable\noutcomes\nSet Objective Drive Action\nDeﬁne market Launch feature X\nleadership goal and track adoption\nPRO TIP\nThe most common OKR failure is writing Key Results that measure activity instead of\noutcome. 'Conduct 20 customer interviews' is activity. 'Identify 3 validated insights that\nchange our roadmap' is outcome. Your team can tick off activity without moving the\nneedle. Only outcomes tell you if you're actually winning.",
+    "pairsWith": [
+      "6.1 RACI Matrix",
+      "6.8 Meeting Design",
+      "9.3 North Star Metric",
+      "7.4 ICE Scoring"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.3",
+    "title": "1-on-1 Framework - GROW Model",
+    "sourcePages": {
+      "intro": 139,
+      "prompt": 140
+    },
+    "prompt": "Act as an executive coaching facilitator using the GROW model.\nTeam member context :  [ROLE, EXPERIENCE LEVEL, CURRENT PROJECT]\nPresenting situation     :  [WHAT THEY HAVE BROUGHT TO THIS 1-ON-1]\nGuide me through a GROW coaching conversation:\nGOAL        :  What questions should I ask to help them define what they want to get from  \n                      this conversation?\nREALITY  :  What questions surface the honest current situation without my \n                     assumptions?\nOPTIONS :  What prompts generate multiple paths forward not just the obvious one?\nWILL        :  How do I lock in a specific, committed action with a timeline and \n                     accountability?\nGive me 2–3 actual questions for each stage.\nGROW Model for Coaching\nStatus Update Coaching Conversation\nCoaching\nIneffective team Effective team\nConversation\ncommunication communication\nDeﬁne desired Assess current Explore potential Deﬁne actionable\noutcomes situation honestly solutions creatively steps\nPRO TIP\nEnd every GROW conversation by asking the person to rate their commitment to the\nagreed action on a scale of 1–10. Anything below 7 means the action is wrong, too big,\nwrong timing, or not genuinely chosen. Ask what would make it a 9. The answer is\nalmost always a smaller first step or a removed obstacle.",
+    "pairsWith": [
+      "6.5 SBI Feedback",
+      "6.9 Radical Candor",
+      "6.7 Delegation Ladder"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.4",
+    "title": "Hiring with AI -Talent Filter",
+    "sourcePages": {
+      "intro": 141,
+      "prompt": 142
+    },
+    "prompt": "Act as a structured hiring consultant.\nRole I am hiring for  :  [JOB TITLE AND KEY RESPONSIBILITIES]\nTeam context             :  [STAGE, CULTURE, WHO THEY WILL WORK WITH]\nNon-negotiables        :  [MUST-HAVE SKILLS OR EXPERIENCE]\nStep 1  :  Define the top 4 success criteria for this role \n                what does excellent performance look like in year one?\nStep 2 :  For each criterion, write 2 STAR-format behavioural interview questions.\n               (Tell me about a time when...)\nStep 3 :  For each question, define what a strong answer looks like vs a weak answer   \n               2 lines each.\nStep 4 :  Write one work sample task I could give candidates to test the most critical  \n               skill directly.\nStep 5 :  Write 3 red-flag signals to watch for in interviews.\nTalent Filter Hiring Process\nDeﬁne Success Criteria Consistent Scoring Rubric\nEstablish 3-5 key criteria for Use a rubric for fair and\nsuccess consistent scoring\nBehavioral Questions AI-Assisted Analysis\nAsk STAR format questions Analyze candidate data with\nfor each criterion AI tools\nPRO TIP\nThe work sample task (Step 4) is the single highest-signal hiring tool available. A 2-hour\ntask relevant to the actual job outpredicts any amount of interviewing. Candidates who\ndecline the task often self-select out for good reason. Candidates who complete it\nbrilliantly and explain their thinking are almost always the right hire.",
+    "pairsWith": [
+      "6.2 OKRs",
+      "6.5 SBI Feedback",
+      "6.6 Culture Code",
+      "6.11 Situational Leadership"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.5",
+    "title": "SBI Feedback Model",
+    "sourcePages": {
+      "intro": 143,
+      "prompt": 144
+    },
+    "prompt": "Act as a leadership development coach.\nSituation I need to give feedback on:\n[DESCRIBE WHAT HAPPENED - THE CONTEXT AND BEHAVIOUR]\nFormat this as a clean SBI feedback statement:\nSITUATION     :  When and where exactly did this happen? Be specific - meeting, call, \n                             report, date.\nBEHAVIOUR   :  What specifically did I observe? Observable actions only, no \n                             interpretation.\nIMPACT           :  What effect did this have? On me, on the team, on the outcome.\nThen write 2 follow-up questions I should ask after delivering the SBI to open a dialogue.\nFinally             :  rewrite the same feedback as it would typically be delivered badly,\nso I can see the difference.\nSBI Feedback Model\nSituation Behaviour Impact\n1 2 3\nIn Tuesday's client call... You interrupted the It made them feel unheard \n client twice and reduced trust\nPRO TIP\nThe most powerful part of SBI is what comes after the pause. Deliver the Impact\nstatement and stop talking. Most leaders fill the silence with justifications or softening\nlanguage that undoes the feedback. Let the person respond to what they heard. Their\nresponse tells you everything about whether the feedback landed.",
+    "pairsWith": [
+      "6.9 Radical Candor",
+      "6.3 GROW Model",
+      "6.8 Meeting Design"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.6",
+    "title": "Culture Code Canvas",
+    "sourcePages": {
+      "intro": 145,
+      "prompt": 146
+    },
+    "prompt": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.",
+    "pairsWith": [
+      "6.4 Hiring",
+      "6.9 Radical Candor",
+      "6.5 SBI Feedback",
+      "6.11 Situational Leadership"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.7",
+    "title": "Delegation Ladder",
+    "sourcePages": {
+      "intro": 147,
+      "prompt": 148
+    },
+    "prompt": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.\nDelegation Ladder  7 Levels of Letting Go\nTell Consult Advise Delegate\nLevel 1 Level 3 Level 5 Level 7\nLevel 2 Level 4 Level 6\nSell Agree Inquire\nPRO TIP\nThe hardest delegation move is not from level 2 to level 5  it is from level 3 to level 4.\nAsking for input (3) still feels like control. Deciding together (4) requires genuine trust that\nthe person's judgment is sound. That trust is built through smaller delegations done well.\nStart with level 4 on low-stakes decisions and build from there.",
+    "pairsWith": [
+      "6.1 RACI Matrix",
+      "6.3 GROW Model",
+      "6.2 OKRs",
+      "6.11 Situational Leadership"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.8",
+    "title": "Meeting Design - Meeting OS",
+    "sourcePages": {
+      "intro": 149,
+      "prompt": 150
+    },
+    "prompt": "Act as an organisational design consultant specialising in meeting efficiency.\nMy team                : [SIZE, ROLES, WORKING STYLE  REMOTE / IN-PERSON / HYBRID]\nCurrent meetings: [LIST YOUR STANDING MEETINGS AND THEIR FREQUENCY]\nMain frustrations: [WHAT IS BROKEN ABOUT MEETINGS RIGHT NOW]\nDesign a complete Meeting OS for my team:\nMEETING TYPES: Define 4 meeting types and when each is used\nSTANDING MEETINGS: For each existing meeting \nType (decision / discussion / update / brainstorm)\nCorrect frequency and duration\nRequired attendees vs optional\nAgenda format\nMEETING RULES : 5 non-negotiable norms for all meetings\nDECISION LOG     : How we capture and share what was decided\nMEETING AUDIT  : Which of my current meetings should be cancelled, merged, or  \n                                   reformatted?\nMeeting Design Checklist\nMost Important Item\nMeeting Type Agenda 24hrs\nFirst One Facilitator\nAhead\nDecisions + Owners\nSummary Within 1\nRecorded\nHour\nPRO TIP\nThe most productive meeting reform any team can make is adding a mandatory read-\nout at the end of every meeting: 'What did we decide? Who owns each action? By\nwhen?' This 3-minute habit prevents the most common meeting failure,  leaving with\ndifferent understandings of what was agreed.",
+    "pairsWith": [
+      "6.1 RACI Matrix",
+      "6.2 OKRs",
+      "6.5 SBI Feedback"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.9",
+    "title": "Radical Candor",
+    "sourcePages": {
+      "intro": 151,
+      "prompt": 152
+    },
+    "prompt": "Act as a leadership communication coach using Kim Scott's Radical Candor framework.\nSituation  : [DESCRIBE THE PERSON, THE PERFORMANCE ISSUE, AND WHAT YOU HAVE  \n                     SAID OR AVOIDED SO FAR]\nStep 1: Diagnose which quadrant I am currently in:\nRadical Candor (high care + high challenge)\nRuinous Empathy (high care + low challenge)\nObnoxious Aggression (low care + high challenge)\nManipulative Insincerity (low on both)\nStep 2: Write the Radical Candor version of this conversation  what I should actually say.\nStep 3: Write the Ruinous Empathy version the version I am probably tempted to give.\nStep 4: Give me 2 opening lines that demonstrate both care and directness simultaneously.\nRadical Candor Matrix\nRadical Candor\nTop right quadrant\nHigh Care, High Challenge\nHigh Care, Low\nRuinous Empathy\nChallenge\nBottom right quadrant\nLow Care, High\nChallenge\nObnoxious Aggression\nTop left quadrant\nLow Care, Low\nChallenge\nManipulative Insincerity\nBottom left quadrant\nPRO TIP\nRuinous Empathy is the most harmful leadership style precisely because it feels kind.\nWhen you protect someone from honest feedback, you protect yourself from an\nuncomfortable conversation and deny them the information they need to grow. The\nperson who needs the feedback most is the one whose manager feels worst about giving it.",
+    "pairsWith": [
+      "6.5 SBI Feedback",
+      "6.3 GROW Model",
+      "6.5 Culture Code"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.10",
+    "title": "Hoshin Kanri",
+    "sourcePages": {
+      "intro": 153,
+      "prompt": 154
+    },
+    "prompt": "Act as a Hoshin Kanri strategy consultant.\nCompany vision (3–5 years)  :  [WHERE YOU ARE HEADING]\nThis year's priority                 :  [THE ONE BREAKTHROUGH OBJECTIVE FOR THIS YEAR]\nTeam structure                       :   [LIST YOUR TEAMS OR FUNCTIONAL AREAS]\nBuild a Hoshin Kanri cascade:\nTRUE NORTH               :  The 3–5 year vision in one clear sentence\nANNUAL OBJECTIVE  :  The single most important thing to achieve this year\nTEAM OBJECTIVES     :  For each team what they must deliver to support the annual  \n                                            objective\nMONTHLY MILESTONES  : Key proof points for each quarter\nCATCHBALL QUESTIONS : 3 questions I should ask each team lead to align their objectives\nWARNING SIGNALS           :  What would tell me the cascade has broken down?\nHoshin Kanri Hierarchy\nCompany Vision & Goals\nOverall vision and annual objectives of\nthe company\nDepartment Goals\nObjectives set by each department\nTeam Daily Actions\nSpeciﬁc tasks performed by teams daily\nPRO TIP\nThe most common Hoshin failure is confusing activity alignment with outcome\nalignment. Every team can be busy doing things that connect to the objective on paper\nbut don't move the metric. Build the cascade around outcomes at every level  not\ninitiatives. If you can't draw a straight line from a team member's daily work to a\ncompany metric, the cascade has a gap.",
+    "pairsWith": [
+      "6.2 OKRs",
+      "6.1 RACI Matrix",
+      "9.7 Balanced Scorecard",
+      "10.5 3 Horizons"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.11",
+    "title": "Situational Leadership",
+    "sourcePages": {
+      "intro": 155,
+      "prompt": 156
+    },
+    "prompt": "Act as a situational leadership coach.\nTeam member                 :  [ROLE, EXPERIENCE LEVEL, PERSONALITY]\nSpecific task or project :  [WHAT YOU NEED THEM TO DO]\nStep 1 :  Assess their Development Level for this task:\nD1 — Low competence, high commitment (enthusiastic beginner)\nD2 — Some competence, low commitment (disillusioned learner)\nD3 — High competence, variable commitment (capable but cautious)\nD4 — High competence, high commitment (self-reliant achiever)\nStep 2 :  Recommend the matching leadership style:\nS1 — Directing    S2 — Coaching\nS3 — Supporting   S4 — Delegating\nStep 3 :  Write the specific conversation I should have with them this week using that \n               style.\nStep 4 :  What would move them to the next development level  and how long should  \n                that take?\nAdapt Leadership to Team Competence\nInﬂexible Leadership Adaptive Leadership\nSituational\nOne-size-ﬁts-all Tailored approach for\nLeadership\nleadership style each team member\nLow task, low Low task, high High task, high High task, low\nsupport support support support\nPRO TIP\nThe hardest Situational Leadership move is stepping back to Directing with someone\nyou've been Delegating to when they've taken on a new challenge they're not yet\nready for. Leaders resist this because it feels like demotion. Frame it as 'this is a new\narea  let's work through it together' rather than a reversal of trust.",
+    "pairsWith": [
+      "6.3 GROW Model",
+      "6.7 Delegation Ladder",
+      "6.4 Hiring",
+      "6.9 Radical Candor"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 6,
+    "lesson": "6.12",
+    "title": "McKinsey 7S Framework",
+    "sourcePages": {
+      "intro": 157,
+      "prompt": 158
+    },
+    "prompt": "Act as a McKinsey organisational consultant using the 7S Framework.\nMy company               :  [DESCRIBE YOUR BUSINESS, STAGE, RECENT CHANGES]\nThe strategy I am trying to execute: [WHAT YOU WANT TO ACHIEVE]\nWhat is not working :  [WHERE EXECUTION IS STALLING]\nDiagnose all 7 elements for my organisation:\nSTRATEGY            :  The plan, is it clear and understood?\nSTRUCTURE         :  How are we organised,  does it serve the strategy?\nSYSTEMS              :  Processes, tools  do they enable or block?\nSHARED VALUES :  Culture - does it support or resist the change?\nSKILLS                   :  Do we have the capability we need?\nSTYLE                     :  Does leadership behaviour match the strategy?\nSTAFF                     :  Do we have the right people in the right roles?\nIdentify the 2 most misaligned Ss.\nRecommend the sequence to address them with a suggested timeframe for each step.\nMcKinsey 7S Framework\nShared Values\nStructure Skills\nThe core beliefs and The organizational Style The expertise and\nprinciples that guide the hierarchy and reporting The leadership and capabilities of the\norganization management approach. workforce.\nlines.\n.\nStrategy Systems Staff\nThe processes and The employees and their\nThe plan to achieve\nprocedures that support skills.\norganizational goals. operations\n.\nPRO TIP\nThe most common 7S misalignment is between Strategy and Shared Values. Leadership\nchanges direction but the culture hasn't moved  and culture always wins. If your strategy\nrequires behaviours that your current culture punishes or ignores, fix the culture\nalignment before investing more in the strategy.",
+    "pairsWith": [
+      "6.6 Culture Code",
+      "6.10 Hoshin Kanri",
+      "6.2 OKRs",
+      "8.5 Scenario Planning"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.1",
+    "title": "SOP Generation - SIPOC",
+    "sourcePages": {
+      "intro": 160,
+      "prompt": 161
+    },
+    "prompt": "I PROMPT — COPY & PASTE READY\nAct as an operations consultant specialising in SOP documentation.\nProcess to document     :  [NAME AND DESCRIBE THE PROCESS]\nWho performs it             :  [ROLE AND EXPERIENCE LEVEL]\nTools and systems used :  [SOFTWARE, PLATFORMS, RESOURCES]\nHow often it runs            :  [DAILY / WEEKLY / PER PROJECT]\nGenerate a complete SOP using the SIPOC structure:\nSIPOC OVERVIEW:\n→ → → →\nSuppliers  Inputs  Process Steps  Outputs  Customers\nFULL SOP:\nPurpose   :  Why this process exists\nScope       :  What is and is not included\nOwner      :  Who is responsible for this process\nSteps        :  Numbered steps with decision points noted\nQuality     :  How to know each step was done correctly\nErrors       :  Common mistakes and how to avoid them\nReview     :  When and how this SOP should be updated",
+    "pairsWith": [
+      "7.2 Swimlane Mapping",
+      "7.11 Poka-Yoke",
+      "6.1 RACI Matrix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.2",
+    "title": "Workflow Mapping - Swimlane",
+    "sourcePages": {
+      "intro": 162,
+      "prompt": 163
+    },
+    "prompt": "Act as a process improvement consultant specialising in workflow mapping.\nProcess to map       :  [NAME AND DESCRIBE THE PROCESS END TO END]\nRoles involved         :  [LIST ALL PEOPLE OR TEAMS WHO TOUCH THIS PROCESS]\nKnown pain points :  [WHERE THINGS GO WRONG OR SLOW DOWN]\nMap this process as a text-based Swimlane diagram:\nFormat                       :  ROLE | Step description | Output / Handoff to\nAfter the map:\n1.Identify the 3 highest-risk handoff points\n2.Name the role that is the biggest bottleneck\n3.Identify any steps that add no value and could be removed\n4.Suggest one redesign that would most improve flow\nFlag any step where accountability is shared between two lanes, \nthose are your highest failure risk points.\nSwimlane Diagram - See Where Handoffs Break\nSales Team Process Operations Team Process Finance Team Process\nThe sales team initiates the The operations team executes The ﬁnance team completes\nprocess their part of the process their part of the process\nHandoff to Operations Handoff to Finance\nThe sales team hands off the\nThe operations team hands off\nprocess to operations the process to ﬁnance\nPRO TIP\nShared accountability between lanes is the number one predictor of process failure. When\ntwo roles both touch a step, both assume the other is checking it. The fix is always the\nsame: assign one person as Accountable (using RACI) and make the handoff explicit with a\ndefined output format and a confirmation step.",
+    "pairsWith": [
+      "7.1 SOP — SIPOC",
+      "6.1 RACI Matrix",
+      "7.11 Poka-Yoke",
+      "7.3 Theory of Constraints"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.3",
+    "title": "Theory of Constraints",
+    "sourcePages": {
+      "intro": 164,
+      "prompt": 165
+    },
+    "prompt": "Act as a Theory of Constraints advisor.\nMy business process  :  [DESCRIBE YOUR END-TO-END DELIVERY OR OPERATIONAL \n                                          PROCESS]\nCurrent symptoms     :  [WHERE DELAYS, BACKLOGS, OR ERRORS OCCUR]\nTeam structure            : [WHO IS INVOLVED IN EACH STAGE]\nApply the Five Focusing Steps:\nIDENTIFY            :  Where is the constraint  where does work pile up or slow down most?\nEXPLOIT             :  How do we get maximum output from the constraint without major \n                                investment?\nSUBORDINATE  :  What should every other part of the system do differently to support \n                               the constraint?\nELEVATE            :  If exploitation is not enough, what is the minimum investment to  \n                                expand capacity?\nREPEAT              :  What will likely become the next constraint once this one is resolved?\nTheory of Constraints — The Bottleneck Limits Everything Else\nIdentify Subordinate Repeat\nRecognize the constraint in Align other processes to Continuously identify and\nthe system support the constraint address new constraints\nExploit Elevate\nImprove the constraint's\nMaximize the use of the\nconstraint capacity\nPRO TIP\nThe most counterintuitive TOC insight is that making a non-constraint more efficient\nmakes the constraint worse. If your constraint is sales and you invest in a faster delivery\nteam, you now have an even more frustrated delivery team waiting for work. Fix the\nconstraint first. Everything else is noise until you do.",
+    "pairsWith": [
+      "7.2 Swimlane",
+      "7.4 ICE Scoring",
+      "7.6 PDCA Cycle",
+      "7.9 Kaizen"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.4",
+    "title": "ICE Scoring",
+    "sourcePages": {
+      "intro": 166,
+      "prompt": 167
+    },
+    "prompt": "I PROMPT — COPY & PASTE READY\nAct as a growth prioritisation advisor using ICE Scoring.\nOur goal / key metric  : [WHAT WE ARE TRYING TO IMPROVE]\nTime horizon                 : [SPRINT / MONTH / QUARTER]\nScore each idea on three dimensions (1–10 each):\nIMPACT                          : How much will this move our key metric?\nCONFIDENCE                : How sure are we it will work? (data > gut)\nEASE                                : How fast and cheap is execution?\nICE SCORE = Impact × Confidence × Ease\nIdeas to score :\n[LIST YOUR 6–10 IDEAS OR INITIATIVES]\nAfter scoring :\n1. Rank all ideas by ICE Score\n2. Flag any high-Impact, low-Confidence ideas  these need a small test \nbefore full investment\n3. Recommend the top 3 to execute this period\n4. Recommend 1 idea to kill lowest score or highest opportunity cost",
+    "pairsWith": [
+      "7.5 RICE Scoring",
+      "6.2 OKRs",
+      "7.3 Theory of Constraints",
+      "9.3 North Star"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.5",
+    "title": "RICE Scoring",
+    "sourcePages": {
+      "intro": 168,
+      "prompt": 169
+    },
+    "prompt": "Act as a product prioritisation consultant using the RICE framework.\nProduct context               :  [WHAT THE PRODUCT DOES, STAGE, KEY METRIC]\nTime period for scoring :  [MONTH / QUARTER]\nScore each feature / initiative using RICE:\nREACH             :  Users affected in the time period (real number)\nIMPACT           :  3=massive / 2=high / 1=med / 0.5=low / 0.25=min\nCONFIDENCE :  % certain this impact will happen (100/80/50%)\nEFFORT            :  Person-months to build and ship\nRICE = (Reach × Impact × Confidence) ÷ Effort\nInitiatives to score:\n[LIST YOUR 5–8 FEATURES OR INITIATIVES]\nAfter scoring:\n1. Rank by RICE Score\n2. Flag any item where Effort is the swing factor,\n     would a smaller version change the ranking?\n3. Identify the highest-RICE item that is being deprioritised for non-RICE reasons\nRICE Scoring — Effort Divides, Not Just Adds\nReach Impact Conﬁdence Effort\nIdea A High RICE\nRICE Score\nIdea B Low RICE\nPRO TIP\nThe most important RICE output is the item that is being deprioritised for non-RICE\nreasons. Politics, founder preference, and squeaky wheels all suppress high-RICE items.\nWhen you see a high-scoring item consistently skipped, that is where organisational\ndysfunction is most visible and most expensive.",
+    "pairsWith": [
+      "7.4 ICE Scoring",
+      "6.2 OKRs",
+      "9.3 North Star Metric",
+      "2.6 MVP Design"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.6",
+    "title": "PDCA Cycle",
+    "sourcePages": {
+      "intro": 170,
+      "prompt": 171
+    },
+    "prompt": "Act as a continuous improvement facilitator using the PDCA cycle.\nProblem or opportunity  :  [WHAT YOU WANT TO IMPROVE]\nCurrent baseline               :  [THE METRIC OR SITUATION AS IT IS NOW]\nHypothesis                         :  [WHAT YOU THINK WILL IMPROVE IT AND WHY]\nGuide me through a full PDCA cycle:\nPLAN                                   :  Define the problem precisely.\nState the hypothesis        :  If [ACTION] then [RESULT] because [REASON].\nDefine success criteria. Design the smallest useful experiment.\nDO            :  What exactly should be done, by whom, by when?\n                     What data needs to be collected during the test?\nCHECK    :  How will we compare results to the hypothesis?\n                     What would confirm it? What would disprove it?\nACT          :  If confirmed - how to standardise and scale?\n                     If disproved - what does this tell us for the next PDCA cycle?\nPDCA Cycle for Learning\nPlan\nAct\nDeﬁne problem and form\nStandardize and improve hypothesis\nCheck Do\nAnalyze results Run experiment at small\nscale\nPRO TIP\nThe Check step is where most PDCA cycles fail. Teams see a positive result and\nimmediately scale without asking whether the result matched the hypothesis. A result can\nbe positive but the hypothesis still wrong  meaning you got lucky, not right. Always check\nagainst the hypothesis, not just the outcome number.",
+    "pairsWith": [
+      "7.9 Kaizen",
+      "7.1 SOP",
+      "7.3 Theory of Constraints",
+      "8.3 Post-Mortem"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.7",
+    "title": "Working Backwards",
+    "sourcePages": {
+      "intro": 172,
+      "prompt": 173
+    },
+    "prompt": "PROMPT — COPY & PASTE READY\nAct as an Amazon-style product consultant using Working Backwards.\nI am building       :  [PRODUCT, FEATURE, OR INITIATIVE]\nTarget customer :  [WHO  role, situation, problem they have]\nStep 1 — Press Release:\nHeadline             :  [What is live and why it matters to the customer]\nProblem              :  [What were they struggling with before?]\nSolution              :  [How does it solve it  specifically?]\nBetter because   :  [Compared to what existed before]\nCustomer quote : [What a real customer would tell a friend]\nStep 2 — FAQ:\nList the 5 hardest questions a sceptic would ask. Answer each honestly.\nStep 3 — Scope filter:\nList 3 things currently planned that do NOT serve the customer \npromise and should be cut.",
+    "pairsWith": [
+      "7.1 SOP — SIPOC",
+      "7.6 PDCA",
+      "2.1 Value Proposition Canvas",
+      "2.5 Jobs To Be Done"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.8",
+    "title": "Agile Sprint Canvas",
+    "sourcePages": {
+      "intro": 174,
+      "prompt": 175
+    },
+    "prompt": "Act as an Agile coach helping design a focused sprint.\nTeam                                :  [SIZE, ROLES, WHAT YOU ARE BUILDING]\nSprint duration             :  [1 OR 2 WEEKS]\nPriorities this sprint.   :  [WHAT YOU MOST NEED TO ACCOMPLISH]\nCapacity                          :  [AVAILABLE PERSON-DAYS THIS SPRINT]\nDesign a complete Sprint Canvas:\nSPRINT GOAL                 :  One sentence  what defines success\nBACKLOG ITEMS           :  5–8 tasks that directly serve the goal. Each with: owner,  \n                                              estimate,  priority\nDEPENDENCIES             :  What must happen before sprint starts\nRISKS                               :  What could prevent completion\nDEFINITION OF DONE :  How we know each item is complete\nSTANDUP FORMAT       :  3 daily questions for team alignment\nRETROSPECTIVE           :  3 questions for end-of-sprint review\nFlag any backlog item that does not directly serve the sprint goal,  those should be\ndeferred.\nSprint Canvas - Two Weeks That Ship, Not Just Plan\nSprint Canvas \nTwo-Week Sprint Backlog Deﬁnition Daily Standup \nDependencies Risks\nTimeline Bar Goal Items of Done Questions\nPRO TIP\nThe most valuable sprint ritual is not the standup,  it is the retrospective. Teams that run\nhonest retrospectives improve sprint-over-sprint. Teams that skip them repeat the same\nproblems. Block the time before the sprint starts, not at the end when everyone is\nrushing to the next thing.",
+    "pairsWith": [
+      "7.4 ICE Scoring",
+      "7.5 RICE Scoring",
+      "7.6 PDCA",
+      "6.2 OKRs"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.9",
+    "title": "Kaizen  Continuous",
+    "sourcePages": {
+      "intro": 176,
+      "prompt": 177
+    },
+    "prompt": "Act as a Kaizen facilitator.\nMy business / team   :  [DESCRIBE YOUR OPERATION AND TEAM SIZE]\nArea to improve          :  [SPECIFIC PROCESS, FUNCTION, OR BEHAVIOUR]\nCurrent state               :  [HOW THIS AREA WORKS TODAY - SPECIFICALLY]\nRun a Kaizen session on this area:\nOBSERVE  :  What waste exists in this process?\n(Waste = time, effort, rework, waiting, errors)\nANALYSE  :  What is the root cause of the biggest waste? Use the 5 Whys  ask why 5   \n                       times.\nIMPROVE :  What is the smallest change that would meaningfully reduce this waste?\n                      Define the change in one sentence.\nMEASURE : How will we know the improvement worked? Name the metric and the  \n                      target.\nSUSTAIN   : How do we make this improvement permanent? What system or habit      \n                      locks it in?\nAchieving Continuous Improvement\n1 2 Weekly Kaizen 3 4 Celebrate Wins\nReview\nImplement Kaizen Focus on Process\nReward\nLog\nDiscuss small improvements to\nIdentify system\nimprovements made foster culture\nRecord failures, not human\nimprovement\nsuggestions daily\nPRO TIP\nKaizen's power is not in the size of any single improvement it is in the compound\neffect and the culture it creates. A team that makes one small improvement per week\nmakes 50 per year. After three years, the cumulative effect of 150 deliberate\nimprovements makes the business unrecognisable from where it started. The math is\nsimple. The discipline is the hard part.",
+    "pairsWith": [
+      "7.6 PDCA Cycle",
+      "7.3 Theory of Constraints",
+      "7.12 5 Whys",
+      "7.10 5S"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.10",
+    "title": "5S Framework",
+    "sourcePages": {
+      "intro": 178,
+      "prompt": 179
+    },
+    "prompt": "Act as a 5S operational consultant.\nEnvironment to apply 5S:\nDIGITAL           :  shared drive / CRM / Notion / email inbox\nPHYSICAL        :  office / desk / storage / warehouse\nTeam size         :  [HOW MANY PEOPLE USE THIS ENVIRONMENT]\nCurrent state  :  [DESCRIBE THE MAIN FRICTION POINTS]\nGuide me through all five S steps:\nSORT (Seiri)                         :  What should be removed or archived? Decision rule for  \n                                                  keeping vs. removing?\nSET IN ORDER (Seiton)      :  How should items be organised?\nNaming convention, folder structure, or physical layout recommendation.\nSHINE (Seiso)                       :  What maintenance tasks keep it clean? Who is responsible?  \n                                                   How often?\nSTANDARDISE (Seiketsu)  :  What standards should everyone follow? Write 5 simple     \n                                                   rules for this environment.\nSUSTAIN (Shitsuke)            :  How do we audit compliance monthly? What is the  \n                                                   minimum habit to maintain it?\n5S — Order as a Performance Strategy\nSet in Order Standardise\n1 2 3 4 5\nSort Shine Sustain\nPRO TIP\nThe most neglected S is Sustain  and without it, the other four degrade within a month.\nBuild one maintenance habit: a 15-minute monthly '5S check' where one person audits\none area against the standard. The audit does not need to be comprehensive. It needs to\nbe consistent. Consistency is what makes 5S compound.",
+    "pairsWith": [
+      "7.9 Kaizen",
+      "7.1 SOP Generation",
+      "7.11 Poka-Yoke",
+      "7.2 Swimlane"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.11",
+    "title": "Poka-Yoke  Error Proofing",
+    "sourcePages": {
+      "intro": 180,
+      "prompt": 181
+    },
+    "prompt": "Act as a process error-proofing consultant using Poka-Yoke.\nMy process                 :  [DESCRIBE THE PROCESS WHERE ERRORS OCCUR]\nCommon errors         :  [LIST THE MISTAKES THAT RECUR MOST OFTEN]\nImpact of each error :  [TIME LOST / COST / CUSTOMER IMPACT]\nFor each error, design a Poka-Yoke solution:\nERROR        :  [Name the error]\nTYPE           :  Prevention (impossible to make) or Detection (caught immediately after)\nSOLUTION :  The specific design change, checklist, automation, or constraint that \n                        eliminates it\nIMPLEMENTATION  : What needs to change - tool, process, template, or approval \nstep?\nAfter individual solutions :\nIdentify the one error with the highest cost that currently has no Poka-Yoke in place.\nDesign the simplest Prevention solution for it.\nPoka-Yoke: Design Out the Mistake\nProcess with Errors Error-Free Process\nImplement \nRework and cost occur Reduced rework and\nPoka- Yoke\ncost\nError cannot occur Error caught immediately\nPRO TIP\nThe most powerful Poka-Yoke in any knowledge business is a mandatory checklist at a\nprocess handoff. Before a piece of work moves from one person to the next, a checklist\nmust be completed. This single habit catches more errors than any amount of training\nbecause it makes the standard visible at the exact moment it matters.",
+    "pairsWith": [
+      "7.9 Kaizen",
+      "7.1 SOP",
+      "7.2 Swimlane",
+      "7.12 5 Whys"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 7,
+    "lesson": "7.12",
+    "title": "5 Whys - Root Cause Analysis",
+    "sourcePages": {
+      "intro": 182,
+      "prompt": 183
+    },
+    "prompt": "Act as a root cause analysis facilitator using the 5 Whys.\nThe problem   :  [DESCRIBE THE ISSUE SPECIFICALLY - WHAT HAPPENED, WHEN,  \n                             HOW OFTEN]\nImpact             :  [WHAT IT COSTS, TIME, MONEY, CUSTOMER IMPACT]\nContext           :  [RELEVANT PROCESS, TEAM, OR SYSTEM INVOLVED]\nRun a 5 Whys analysis:\nPROBLEM      :  [State the problem clearly]\nWHY 1  :  Why did this happen?\nWHY 2 :  Why did [Why 1 answer] happen?\nWHY 3 :  Why did [Why 2 answer] happen?\nWHY 4 :  Why did [Why 3 answer] happen?\nWHY 5 :  Why did [Why 4 answer] happen?\nROOT CAUSE    :  State the systemic root cause.\nSOLUTION        :  What change at the root cause level would prevent this problem from  \n                                recurring?\nVERIFICATION :  How will we confirm the fix held after 30 days?\nUnderstanding the root cause through iterative questioning.\nSurface Level Deep Root\nProblem/Symptom First Cause Second Cause Third Cause Root Cause\nIdentiﬁes the Explores the direct Investigates the Uncovers the cause Reveals the\nimmediate issue cause of the cause of the ﬁrst of the second cause fundamental reason\nsymptom cause for the problem\nPRO TIP\nThe most valuable discipline in 5 Whys is stopping yourself from jumping to solutions\nbefore you reach Why 5. Every Why is a potential solution, but only the final Why\naddresses the root cause. Solutions applied at Why 2 or Why 3 create the illusion of\nprogress while leaving the root cause intact and ready to resurface.",
+    "pairsWith": [
+      "7.6 PDCA",
+      "7.9 Kaizen",
+      "7.11 Poka-Yoke",
+      "8.3 Post-Mortem"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.1",
+    "title": "The DECIDE Framework",
+    "sourcePages": {
+      "intro": 185,
+      "prompt": 186
+    },
+    "prompt": "Act as a structured decision-making facilitator using the DECIDE framework.\nDecision to make  :  [DESCRIBE THE DECISION IN ONE SENTENCE]\nDeadline                 :  [WHEN THIS MUST BE DECIDED]\nContext                   :  [RELEVANT BACKGROUND, CONSTRAINTS, STAKEHOLDERS]\nGuide me through all six DECIDE steps:\nDEFINE          :  Restate the decision clearly and precisely. What is the core question being  \n                          answered?\nESTABLISH   :  What are the 4–5 criteria for a good decision? Weight each by \n                          importance (1–5).\nCONSIDER    :  Generate 3–4 realistic alternative options. Include one option I may be  \n                           avoiding.\nIDENTIFY     :  Score each option against each criterion. Which scores highest overall?\nDEVELOP      :  What are the first 3 implementation steps?\nEVALUATE    :  What metric or signal will tell me at 90 days whether this was the right  \n                          decision?\nThe DECIDE Framework\nDeﬁne Consider Alternatives Develop & Implement\nEstablish Criteria Identify Best Option Evaluate\nPRO TIP\nThe step most people skip is Establish  defining criteria before looking at options. When\nyou evaluate options without stated criteria, you unconsciously build the criteria around\nyour preferred option. Writing criteria first makes the evaluation honest. If your\npreferred option scores poorly against honest criteria, that is the most valuable output\nfrom this framework.",
+    "pairsWith": [
+      "8.2 Pre-Mortem",
+      "8.9 Decision Tree",
+      "1.12 MECE",
+      "1.6 First Principles"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.2",
+    "title": "Pre-Mortem Analysis",
+    "sourcePages": {
+      "intro": 187,
+      "prompt": 188
+    },
+    "prompt": "Act as a Pre-Mortem facilitator.\nProject or decision      :  [DESCRIBE WHAT YOU ARE ABOUT TO DO]\nTimeline                        :  [HOW LONG THIS WILL TAKE]\nTeam involved              :  [ROLES RESPONSIBLE FOR EXECUTION]\nResources committed :  [BUDGET, TIME, PEOPLE]\nRun a Pre-Mortem:\nSCENARIO: It is [DATE 12 MONTHS FROM NOW]. This project has failed. Not partially,\ncompletely. What happened?\nGenerate 10 specific reasons it failed, across:\nExecution failures (team, timeline, quality)\nMarket failures (wrong assumptions about customers)\nResource failures (budget, capacity, dependencies)\nStrategic failures (wrong direction or timing)\nExternal failures (competition, regulation, market shift)\nThen: rank the top 3 by likelihood × severity.\nFor each top failure: one prevention action and one owner.\nPre-Mortem Analysis\nImagine Failure Write Individually Identify Top 3 Assign Prevention\nProject has failed one year Each person lists every Group ﬁnds the most likely, Each failure mode gets a\nfrom now reason it failed most serious failure modes named owner and action\nPRO TIP\nThe Pre-Mortem's greatest value is not the list of failure modes — it is the social\npermission it creates for people to raise concerns. In a team that is committed to a plan,\nraising doubts feels disloyal. The Pre-Mortem makes it the job. Run it before every\nsignificant commitment and watch concerns surface that would have stayed silent until\nthey became problems.",
+    "pairsWith": [
+      "8.3 Post-Mortem",
+      "8.6 Red Team",
+      "1.8 Inversion",
+      "8.4 Risk Matrix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.3",
+    "title": "Post-Mortem Review",
+    "sourcePages": {
+      "intro": 189,
+      "prompt": 190
+    },
+    "prompt": "Act as a Post-Mortem facilitator.\nProject or event  :  [DESCRIBE WHAT HAPPENED]\nOutcome               :  [WHAT ACTUALLY RESULTED — METRIC, TIMELINE, QUALITY]\nTarget                   :  [WHAT WAS PLANNED OR EXPECTED]\nTeam involved     :  [ROLES AND CONTRIBUTIONS]\nStructure a complete Post-Mortem:\nTIMELINE            :  Reconstruct the key events in sequence. When did things diverge  \n                                  from the plan?\nWHAT WORKED :  3 things that went well and why. What can be systematised from \n                                  these?\nWHAT FAILED    :  3 things that did not work and why. Use 5 Whys for the most critical \n                                 failure.\nROOT CAUSES   :  The underlying systemic reasons, not the surface events.\nACTION ITEMS  :  3 specific changes  owner, deadline. For each: what process or \n                                 system changes?\nKNOWLEDGE CAPTURED: One paragraph to add to our playbook.\nPost-Mortem Review\n1 2 3 4\nCapture the Ask What & Extract the Deﬁne\nOutcome Why Learning Action Items\nPRO TIP\nThe most valuable Post-Mortem output is the paragraph added to the playbook. Not the\naction items, those are often forgotten. A one-paragraph insight written while the\nmemory is fresh and placed in a shared document creates institutional knowledge that\nsurvives team turnover. Build the habit of writing it before the meeting ends.",
+    "pairsWith": [
+      "8.2 Pre-Mortem",
+      "7.6 PDCA",
+      "7.12 5 Whys",
+      "6.8 Meeting Design"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.4",
+    "title": "Risk Matrix",
+    "sourcePages": {
+      "intro": 191,
+      "prompt": 192
+    },
+    "prompt": "Act as a risk management consultant using the Risk Matrix framework.\nMy business                 :  [DESCRIBE YOUR COMPANY, STAGE, AND CURRENT PLANS]\nDecision or initiative :  [WHAT YOU ARE ABOUT TO DO OR COMMIT TO]\nStep 1  :  Generate 15 risks across five categories:\n· Strategic  · Operational  · Financial  · People  · External\nStep 2 :  Score each risk:\nLIKELIHOOD :  1 (unlikely) to 5 (almost certain)\nIMPACT          :  1 (minimal) to 5 (existential)\nRISK SCORE = Likelihood × Impact\nStep 3 :  Group by priority:\nRED (score 15–25)     :  Act immediately\nAMBER (score 8–14) :  Monitor and prepare\nGREEN (score 1–7)    :  Accept or note\nStep 4 :  For each RED risk: Mitigation action · Owner · Trigger signal\nStep 5 :  Identify the one risk I am most likely to be underestimating.\nRisk Matrix Quadrant Actions\nAccept Monitor Closely Manage Immediate Priority\nLow Likelihood / Low Likelihood / High Likelihood / High Likelihood /\nLow Impact High Impact Low Impact High Impact\nPRO TIP\nThe most dangerous risks are not the ones scored highest, they are the ones missing\nfrom the list entirely. After scoring, ask AI: 'What risk have I not considered that\nregularly kills businesses at my stage?' Black swan events, regulatory changes, and key\nperson dependencies are consistently the most underestimated categories.",
+    "pairsWith": [
+      "8.2 Pre-Mortem",
+      "8.5 Scenario Planning",
+      "8.6 Red Team",
+      "1.7 Second Order"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.5",
+    "title": "Scenario Planning",
+    "sourcePages": {
+      "intro": 193,
+      "prompt": 194
+    },
+    "prompt": "Act as a scenario planning strategist.\nMy business           :  [DESCRIBE YOUR COMPANY AND CORE STRATEGY]\nPlanning horizon  :  [1 YEAR / 3 YEARS / 5 YEARS]\nKey uncertainties :  [WHAT 2–3 EXTERNAL FACTORS COULD MOST CHANGE YOUR\nBUSINESS ENVIRONMENT]\nBuild 3 distinct scenarios. For each scenario:\nNAME                 :  A memorable, descriptive title\nDESCRIPTION  :  What this future looks like in 2–3 sentences\nKEY DRIVERS   :  What causes this scenario to unfold\nIMPACT              :  How does this affect my business specifically?\nSTRATEGY         :  What should I do differently in this scenario?\nEARLY SIGNAL :  What would I see in the next 90 days that tells me this scenario is  \n                                emerging?\nAfter the three scenarios:\nWhich elements of my current strategy work across all three?\nWhich are scenario-specific bets?\nScenario planning matrix based on market growth and regulation.\nSlow Fast\nScenario 1 Scenario 2 Scenario 3 Scenario 4\nMinimal government Heavy government High market Limited market\noversight control competition opportunities\nPRO TIP\nThe real value in scenario planning isn't the scenarios, it's the early warning signals. Once\nyou know what each future looks like in its early stages, you know what to watch for.\nBuild a simple 3–5 signal dashboard and review it quarterly. Founders who see change\ncoming are the ones who defined what it would look like before it arrived.",
+    "pairsWith": [
+      "8.4 Risk Matrix",
+      "8.2 Pre-Mortem",
+      "3.2 PESTLE",
+      "1.7 Second Order Thinking"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.6",
+    "title": "Red Team Thinking",
+    "sourcePages": {
+      "intro": 195,
+      "prompt": 196
+    },
+    "prompt": "Act as a Red Team adversary. Your job is to find every weakness in the following plan and\ntry to destroy it.\nBe thorough, critical, and honest. Do not be polite.\nThe plan                         :  [DESCRIBE YOUR STRATEGY, PRODUCT, OR DECISION]\nOur key assumptions  :  [LIST THE THINGS THAT MUST BE TRUE FOR THIS PLAN TO \n                                            WORK]\nAttack this plan from four angles:\nSTRATEGIC ATTACK        :  Why is the direction fundamentally wrong? What are we\nmisreading about the market?\nEXECUTION ATTACK       :  Why will we fail to implement this? Where is our team not\ncapable enough?\nCOMPETITIVE ATTACK  :  How will competitors neutralise this? What move could make \n                                                this irrelevant?\nASSUMPTION ATTACK   :  Which single assumption, if wrong, kills the entire plan?\nEnd with: the one attack I should be most afraid of.\nRed Team Thinking Process\nIdentify Weaknesses Simulate Attacks Gather Feedback Prioritize Fixes\nPRO TIP\nAsk AI to play devil's advocate on your most confident belief about your business. Not\nyour uncertainties, your certainties. The assumptions you are most sure about are the\nones least likely to be tested. That is exactly what makes them dangerous. Red Team your\nstrongest convictions quarterly.",
+    "pairsWith": [
+      "8.2 Pre-Mortem",
+      "8.4 Risk Matrix",
+      "1.8 Inversion",
+      "1.5 Six Thinking Hats"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.7",
+    "title": "Eisenhower Matrix",
+    "sourcePages": {
+      "intro": 197,
+      "prompt": 198
+    },
+    "prompt": "Act as a personal effectiveness coach using the Eisenhower Matrix.\nMy role: [YOUR JOB TITLE AND KEY RESPONSIBILITIES]\nThis week's tasks: [LIST EVERYTHING ON YOUR PLATE]\nStep 1 :  Classify each task into one of four quadrants:\nQ1 URGENT + IMPORTANT                   :  Do now\nQ2 NOT URGENT + IMPORTANT          :  Schedule, protect this time\nQ3 URGENT + NOT IMPORTANT          :  Delegate or batch\nQ4 NOT URGENT + NOT IMPORTANT :  Eliminate\nStep 2 :  Flag any Q2 item that has been on my list for more than 2 weeks,  these are most\nat risk.\nStep 3 :  Identify my top 3 Q2 priorities for this week and suggest when in my week to\nschedule them.\nStep 4 :  For each Q3 item — who should own this instead?\nStep 5 :  What is the Q4 item I should cut today?\nEisenhower Matrix: Task Prioritization\nQ1: Do Now Q2: Schedule Q3: Delegate Q4: Eliminate\nUrgent and Not urgent but Urgent but not Not urgent and not\nimportant tasks. important tasks. important tasks. important tasks.\n25% 25% 25% 25%\nPrioritize important, non-urgent tasks to maximize effectiveness.\nPRO TIP\nMost founders' Q2 lists contain the same items week after week: exercise, strategy\nthinking, key relationships, learning. These are the things that matter most and keep\ngetting deferred. The reason is always the same, they have no deadline and no\nconsequence for deferral. The fix is equally simple: schedule them like meetings, put\nthem in the calendar, and treat cancellation as a failure, not a choice.",
+    "pairsWith": [
+      "8.1 DECIDE Framework",
+      "7.4 ICE Scoring",
+      "6.2 OKRs",
+      "10.3 Weekly Review"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.8",
+    "title": "Regret Minimization Framework",
+    "sourcePages": {
+      "intro": 199,
+      "prompt": 200
+    },
+    "prompt": "Act as a reflective decision coach using Bezos's Regret Minimization Framework.\nThe decision I am facing :  [DESCRIBE THE CHOICE - WHAT YOU ARE CONSIDERING\nDOING]\nCurrent situation              :  [WHAT IS AT STAKE - WHAT YOU HAVE NOW]\nFear or hesitation              :  [WHAT IS STOPPING YOU]\nGuide me through the Regret Minimization exercise:\nSTEP 1 — PROJECT FORWARD:\nI am 80 years old, looking back at this moment.\nDescribe what my life looks like if I chose YES.\nDescribe what my life looks like if I chose NO.\nSTEP 2 — NAME THE REGRETS:\nIf I say YES and it fails - what do I regret?\nIf I say NO and never try - what do I regret?\nWhich regret is harder to live with?\nSTEP 3 — CLARIFY:\nWhat would the 80-year-old version of me tell the current version of me right now?\nSTEP 4 — NEXT STEP:\nWhat is the smallest action that moves toward the less regretted path?\nRegret Minimization Framework\nActive Choice Reﬂective Evaluation\nPRO TIP\nThe Regret Minimization Framework is not a tool for avoiding hard decisions, it is a tool\nfor making them from the right time horizon. Most people make large life decisions from a\n1–3 year perspective and wonder why they feel unsatisfied with the outcome. The 80-year\nperspective doesn't remove risk, it removes the illusion that safety is risk-free.",
+    "pairsWith": [
+      "8.1 DECIDE Framework",
+      "8.9 Decision Tree",
+      "10.5 Three Horizons",
+      "10.9 Ikigai"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.9",
+    "title": "Decision Tree Analysis",
+    "sourcePages": {
+      "intro": 201,
+      "prompt": 202
+    },
+    "prompt": "Act as a decision analysis consultant using Decision Tree Analysis.\nDecision                  :  [DESCRIBE THE MAIN CHOICE YOU ARE FACING]\nOptions                   :  [LIST YOUR 2–4 ALTERNATIVE PATHS]\nKey uncertainties  :  [WHAT OUTCOMES DEPEND ON CHANCE OR EXTERNAL\nFACTORS YOU CAN'T CONTROL]\nValues: [WHAT EACH OUTCOME IS WORTH, REVENUE, COST, TIME, OR STRATEGIC\nVALUE]\nBuild a Decision Tree:\nLEVEL 1: The initial decision - my options\nLEVEL 2: For each option - the key chance events and their estimated probabilities\nLEVEL 3: For each outcome - the value or consequence\nCALCULATE:\nExpected Value for each initial option = Sum of (probability × outcome value) per path\nRECOMMEND:\nWhich option has the highest expected value?\nWhich has the best worst-case outcome?\nWhat single probability estimate most changes the recommendation if it turns out to\nbe wrong?\nDecision Tree Analysis Impacts Outcomes\nOutcome Node 1 Outcome Node 2\nFirst possible result Second possible result\nDecision Node\nStarting point of analysis\nPRO TIP\nThe most valuable output from a Decision Tree is not the expected value calculation  it is\nthe sensitivity analysis. Find the probability estimate that, if wrong by 20%, changes which\noption is best. That is your most critical assumption. Validate it before committing to the\npath with the highest expected value.",
+    "pairsWith": [
+      "8.10 Expected Value",
+      "8.1 DECIDE",
+      "8.5 Scenario Planning",
+      "8.4 Risk Matrix"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 8,
+    "lesson": "8.10",
+    "title": "Expected Value Framework",
+    "sourcePages": {
+      "intro": 203,
+      "prompt": 204
+    },
+    "prompt": "Act as a decision science consultant using Expected Value analysis.\nDecision           :  [DESCRIBE THE CHOICE]\nOptions            :  [LIST YOUR 2–3 ALTERNATIVES]\nFor each option, define all possible outcomes:\nOUTCOME       :  What could happen\nPROBABILITY :  Estimated likelihood (must sum to 100%)\nVALUE: Financial, time, or strategic worth\nCalculate Expected Value for each option:\nEV = Sum of (Probability × Value) across all outcomes\nThen analyse:\n1.Which option has the highest EV?\n2.Which has the best downside protection?\n3.What probability estimate am I most uncertain about?\n4.How does the ranking change if that estimate shifts by +/- 20%?\n5.If I could run this decision 100 times, which option wins most often?\nCalculating Expected Value\nOutcome A\nProbability of Outcome\n A multiplied by its value.\nOutcome B\nProbability of Outcome\n B multiplied by its value.\nExpected Value\nPRO TIP\nThe '100 times' question at the end is the most clarifying. EV is a long-run average, it tells\nyou which option wins if you could repeat the decision many times. For irreversible, once-\nin-a-career decisions, EV is necessary but not sufficient. Pair it with worst-case analysis:\ncan you survive the worst outcome of the highest-EV option? If yes, take it. If no,\nreconsider.",
+    "pairsWith": [
+      "8.9 Decision Tree",
+      "8.4 Risk Matrix",
+      "8.5 Scenario Planning",
+      "9.2 Burn Rate"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.1",
+    "title": "Unit Economics - LTV:CAC",
+    "sourcePages": {
+      "intro": 206,
+      "prompt": 207
+    },
+    "prompt": "Act as a startup finance advisor specialising in unit economics.\nMy business model   : [DESCRIBE HOW YOU ACQUIRE AND RETAIN CUSTOMERS]\nRevenue model          : [SUBSCRIPTION / TRANSACTION / USAGE-BASED]\nHelp me calculate and analyse my LTV:CAC:\nLTV CALCULATION:\nAverage Revenue Per Customer (monthly or annual): [X]\nGross Margin %: [X]\nAverage Customer Lifespan or Churn Rate: [X]\nLTV = (ARPC × Gross Margin) / Churn Rate\nCAC CALCULATION:\nTotal Sales & Marketing Spend (last period): [X]\nNew Customers Acquired (same period): [X]\nCAC = Total Spend / New Customers\nANALYSIS:\n1.What is my LTV:CAC ratio?\n2.How does it compare to healthy benchmarks for my model?\n3.What is the payback period (months to recover CAC)?\n4.What one change would most improve this ratio?\nFactors Inﬂuencing LTV : CAC Ratio\nCustomer \nLifetime Value\nAcquisition Cost\nPRO TIP\nPayback period is often more important than the LTV:CAC ratio for early-stage\ncompanies. A 5:1 LTV:CAC sounds excellent, until you realise the payback period is 36\nmonths and you're burning cash for three years before each customer turns profitable. A\n2.5:1 ratio with a 9-month payback is often a healthier business than a 5:1 with a 30-month\npayback.",
+    "pairsWith": [
+      "9.2 Burn Rate",
+      "5.9 AARRR",
+      "9.3 North Star Metric",
+      "9.6 Financial Model"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.2",
+    "title": "Burn Rate & Runway",
+    "sourcePages": {
+      "intro": 208,
+      "prompt": 209
+    },
+    "prompt": "Act as a startup CFO advisor.\nMy financials:\nCurrent cash / reserves: [AMOUNT]\nMonthly revenue              :   [CURRENT MRR OR ARR / 12]\nMonthly expenses (total) :  [BREAKDOWN IF POSSIBLE:\n  Salaries: [X]\n  Infrastructure: [X]\n  Marketing: [X]\n  Other: [X]]\nCalculate:\nGROSS BURN :  Total monthly cash out\nNET BURN      :  Gross burn minus monthly revenue\nRUNWAY         :  Current cash / net burn = months remaining\nThen model three scenarios:\nSCENARIO A (Current)   :  Runway at current trajectory\nSCENARIO B (Growth)    :  If I hire 2 people and double marketing, new runway?\nSCENARIO C (Conserve) :  If I cut non-essential spend 30%,  how much runway does that  \n                                                add?\nAt what monthly revenue does net burn hit zero?\nWhat is the fastest path to break-even?\nPRO TIP\nThe most important burn rate insight is not the number itself — it is the break-even\nrevenue calculation. Knowing that you need 45,000 in monthly revenue to reach zero\nnet burn gives you a concrete target that connects financial health to sales activity.\nEvery founder should know their break-even revenue number without having to look it\nup.",
+    "pairsWith": [
+      "9.1 LTV:CAC",
+      "9.6 Financial Model",
+      "8.10 Expected Value",
+      "9.9 Rule of 40"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.3",
+    "title": "North Star Metric & OMTM",
+    "sourcePages": {
+      "intro": 210,
+      "prompt": 211
+    },
+    "prompt": "Act as a growth strategy advisor specialising in metrics design.\nMy business                      :  [DESCRIBE YOUR PRODUCT AND BUSINESS MODEL]\nStage                                   :  [PRE-REVENUE / EARLY TRACTION / GROWTH / SCALING]\nCurrent metrics tracked :  [LIST WHAT YOU MEASURE NOW]\nStep 1  :  Define my North Star Metric.\nIt must: measure value to customers, predict revenue, be trackable, and be moveable by\nmy team.\nSuggest 3 candidates and recommend the strongest.\nStep 2  :  Define my OMTM for my current stage.\nWhat one metric should I obsess over right now? Why this one above all others at this\nstage?\nStep 3 :  Build a metrics hierarchy.\nWhat are the 3–5 leading indicators that predict movement in the North Star?\nStep 4 :  What is one metric I am currently tracking that is a vanity metric and should \n                be dropped?\nUnderstanding North Star Metric and OMTM\nOMTM North Star Metric\nMetric that matters, Long-term value\nshifts by growth stage\ndelivered to\ncustomers\nPRO TIP\nThe most common North Star mistake is choosing a metric that measures your activity\ninstead of the customer's value. 'Registered users' measures your acquisition, not their\nvalue. 'Users who completed their first meaningful action' measures whether they got\nvalue. The metric must describe something good happening for the customer, not\nsomething good happening for you.",
+    "pairsWith": [
+      "5.9 AARRR",
+      "9.4 Funnel Analysis",
+      "6.2 OKRs",
+      "9.1 LTV:CAC"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.4",
+    "title": "AARRR Funnel Analysis  Deep",
+    "sourcePages": {
+      "intro": 212,
+      "prompt": 213
+    },
+    "prompt": "Act as a growth analytics advisor running a deep AARRR analysis.\nMy business    :  [DESCRIBE PRODUCT AND REVENUE MODEL]\nPopulate my funnel with current numbers:\nACQUISITION :  Monthly visitors / leads: [X]\nACTIVATION   :  % who complete first key action: [X%]\nRETENTION    :  30-day retention or monthly churn: [X%]\nREVENUE         :  % who convert to paying: [X%] · Average revenue per paying user: [X]\nREFERRAL        :  % who refer at least one other user: [X%]\nANALYSIS:\n1.Calculate conversion rate at each stage transition\n2.Identify the stage with the worst conversion the biggest leak in the funnel\n3.Model the revenue impact if that stage improved 10%\n4.Model the revenue impact if every stage improved 10%\n5.Recommend the 2 highest-ROI experiments to run at the weakest stage\n6.What is my current revenue per acquired visitor?\nWhat would it be at healthy benchmark conversion rates?\nAcquisition Retention Referral\nAttracting new users Keeping users engaged Encouraging user advocacy\nActivation Revenue\nEngaging users initially Monetizing user activity\nPRO TIP\nRun the 10% improvement model for each stage and compare the revenue impact\nnumbers. The stage where a 10% improvement produces the largest revenue gain is your\nhighest-leverage investment. In most early-stage businesses, this is Activation the\ntransition from visitor to engaged user. Fixing Activation compounds through every\ndownstream stage simultaneously.",
+    "pairsWith": [
+      "9.3 North Star",
+      "9.1 LTV:CAC",
+      "5.9 AARRR",
+      "5.8 Growth Loop"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.5",
+    "title": "Investor Narrative  Pitch Spine",
+    "sourcePages": {
+      "intro": 214,
+      "prompt": 215
+    },
+    "prompt": "Act as a venture capital pitch coach.\nMy business  :  [DESCRIBE WHAT YOU DO IN 2 SENTENCES]\nStage               :  [PRE-SEED / SEED / SERIES A]\nTraction         :  [YOUR BEST PROOF POINT - REVENUE, USERS, RETENTION]\nAsk                  :  [AMOUNT AND WHAT IT WILL BE USED FOR]\nWrite my Pitch Spine - all seven beats:\nTHE WORLD AS IT WAS  :  The status quo - how this problem has always been handled\nTHE PROBLEM                  :  Specific pain - who feels it, how bad\nTHE INSIGHT                     :  The non-obvious truth that unlocks the solution \n                                                  (this is your unfair insight)\nTHE SOLUTION                  :  What you built and why it works now\nTHE PROOF                         :  Your strongest evidence it is working\nTHE ASK                               :  Exact amount, use of funds, key milestone\nTHE VISION                         :  The world your company creates at scale\nWrite each beat as 2–3 sentences. Make them build on each other.\nThe Problem The Solution The Ask\nThe World As It Was Investor Conﬁdence\nThe Insight The Proof The Vision\nPRO TIP\nThe Insight beat is what separates memorable pitches from forgettable ones. It should\nmake the investor think: 'I've never heard it framed that way, but that's exactly right.' If\nyour insight is something any well-read person already knows, it is not an insight - it is\ncontext. Push harder. The insight is often the founder's deepest, least comfortable belief\nabout why everyone else is wrong.",
+    "pairsWith": [
+      "9.1 LTV:CAC",
+      "9.2 Burn Rate",
+      "5.1 StoryBrand",
+      "2.3 Lean Canvas"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.6",
+    "title": "3-Scenario Financial Model",
+    "sourcePages": {
+      "intro": 216,
+      "prompt": 217
+    },
+    "prompt": "Act as a startup CFO building a 3-scenario financial model.\nMy business                :  [REVENUE MODEL, STAGE, CURRENT METRICS]\nPlanning horizon       :  [6 MONTHS / 12 MONTHS / 18 MONTHS]\nKey revenue drivers  :  [WHAT DRIVES REVENUE - DEALS, USERS, USAGE]\nKey cost drivers         :  [HEADCOUNT, INFRASTRUCTURE, MARKETING]\nBuild a 3-scenario model:\nBASE CASE: Most likely trajectory\nRevenue assumption, cost assumption, key metric target\nEnd-state    :  cash position, burn, milestone achieved\nBULL CASE :  Everything works - best realistic outcome\nWhat accelerates - which driver performs above base?\nEnd-state    :  cash, burn, milestone, optionality created\nBEAR CASE :  Things go worse - survivable but hard\nWhat underperforms - which driver falls short?\nEnd-state    :  cash, burn, how long can we operate?\nSCENARIO TRIGGERS :  What would I observe by month 3 that confirms each scenario?\nDECISION PLAYBOOK :  What do I do differently in each?\nBear Case Base Case Bull Case\nWorst realistic outcome Most likely outcome Best realistic outcome\nPRO TIP\nThe most important output from scenario modelling is the Bear Case decision playbook.\nDefine now - before you need it - what you will cut first, what you will protect at all\ncosts, and at what runway level you take action. Leaders who make these decisions in\nadvance act calmly when the moment arrives. Leaders who haven't made them in\nadvance make poor decisions under pressure.",
+    "pairsWith": [
+      "9.2 Burn Rate",
+      "9.1 LTV:CAC",
+      "8.5 Scenario Planning",
+      "8.10 Expected Value"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.7",
+    "title": "Balanced Scorecard",
+    "sourcePages": {
+      "intro": 218,
+      "prompt": 219
+    },
+    "prompt": "Act as a business performance consultant using the Balanced Scorecard.\nMy business             :  [DESCRIBE YOUR COMPANY, STAGE, AND STRATEGY]\nStrategic priorities :  [YOUR TOP 3 OBJECTIVES FOR THIS YEAR]\nBuild a Balanced Scorecard across all four perspectives:\nFINANCIAL PERSPECTIVE                      :  Objective, Measure, Target, Initiative\nCUSTOMER PERSPECTIVE                     :  Objective, Measure, Target, Initiative\nINTERNAL PROCESS PERSPECTIVE     :  Objective, Measure, Target, Initiative\nLEARNING & GROWTH PERSPECTIVE :  Objective, Measure, Target, Initiative\nAfter building: show the causal chain.\nHow does improvement in Learning & Growth lead to better Internal Processes,\nwhich leads to better Customer outcomes, which drives Financial results?\nDraw the arrows explicitly.\nBalanced Scorecard\nFinancial Customer Internal Processes Learning & Growth\nLagging, output Leading, input Leading, input Leading, input\nperspective. perspective. perspective. perspective.\n100% 100% 100% 100%\nThe Balanced Scorecard balances ﬁnancial outcomes with customer, internal, and learning perspectives.\nPRO TIP\nThe causal chain exercise at the end is the most valuable part. If you cannot draw a clear\nline from your Learning & Growth measures to your Financial outcomes, your scorecard\nis a collection of metrics, not a strategy. The power of the Balanced Scorecard is not\nmeasurement,  it is the explicit theory of how your business creates value.",
+    "pairsWith": [
+      "6.2 OKRs",
+      "6.10 Hoshin Kanri",
+      "9.3 North Star",
+      "9.4 Funnel Analysis"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.8",
+    "title": "Cash Conversion Cycle",
+    "sourcePages": {
+      "intro": 220,
+      "prompt": 221
+    },
+    "prompt": "Act as a working capital advisor using the Cash Conversion Cycle framework.\nMy business: [DESCRIBE YOUR REVENUE MODEL AND PAYMENT TERMS]\nCurrent data:\nAverage days to collect payment from customers: [X days]\nAverage days inventory is held (if applicable): [X days]\nAverage days to pay suppliers: [X days]\nCalculate my Cash Conversion Cycle:\nCCC = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days\nPayable Outstanding (DPO)\nAnalyse:\n1.What does my CCC tell me about my working capital health?\n2.Which component is the biggest drag on cash flow?\n3.What are 3 specific actions to shorten DSO?\n4.What payment terms or structures would improve my CCC?\n5.If I reduced my CCC by 10 days, how much additional cash would that free up at my\ncurrent revenue run rate?\nOptimizing Cash Conversion Cycle\n1 2 3\nOptimize DIO\nReduce DSO Extend DPO\nManage inventory\nCollect receivables Negotiate favorable\neﬃciently\nfaster payment terms\nPRO TIP\nFor service businesses, Days Sales Outstanding is almost always the lever. The most\neffective DSO reduction tactic is upfront payment or deposit - not better invoicing.\nStructuring contracts to collect 30–50% before work begins can transform a cash-tight\nbusiness into a cash-positive one without changing a single cost line.",
+    "pairsWith": [
+      "9.2 Burn Rate",
+      "9.1 LTV:CAC",
+      "9.6 Financial Model",
+      "9.9 Rule of 40"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 9,
+    "lesson": "9.9",
+    "title": "Rule of 40",
+    "sourcePages": {
+      "intro": 222,
+      "prompt": 223
+    },
+    "prompt": "Act as a SaaS financial advisor using the Rule of 40.\nMy business metrics:\nAnnual Recurring Revenue (ARR): [CURRENT ARR]\nARR 12 months ago: [PRIOR YEAR ARR]\nEBITDA or Operating Profit Margin: [X% - negative if burning]\nCalculate my Rule of 40 score:\nRevenue Growth Rate = (Current ARR - Prior ARR) / Prior ARR\nRule of 40 Score = Growth Rate % + Profit Margin %\nAnalyse:\n1.What is my current Rule of 40 score?\n2.How does it compare to the 40 benchmark?\n3.Am I growth-led or efficiency-led - which matters more at my current stage?\n4.To reach a score of 40, should I prioritise accelerating growth or improving margin?\n5.What is the single most impactful action to improve my score by 5 points in 6 months?\nRevenue Growth Proﬁt Margin Revenue Growth Proﬁt Margin\nRate Rate\nNegative margin Positive margin with\nHigh growth with with high growth. Moderate growth moderate growth.\nnegative margin. with positive margin.\n60% -20% 15% 25%\nThe Rule of 40 balances revenue growth and proﬁt margin to assess business health.\nPRO TIP\nThe Rule of 40 is most useful as a framing tool in investor conversations, not as an\ninternal operating metric. When an investor asks about your growth vs profitability\ntradeoff, presenting a Rule of 40 score and explaining your strategy for where it should\ngo signals financial maturity. Most founders don't know this number. Knowing it\nimmediately sets you apart.",
+    "pairsWith": [
+      "9.2 Burn Rate",
+      "9.6 Financial Model",
+      "9.1 LTV:CAC",
+      "9.5 Investor Narrative"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.1",
+    "title": "Personal SWOT",
+    "sourcePages": {
+      "intro": 225,
+      "prompt": 226
+    },
+    "prompt": "Act as a personal development coach conducting a Personal SWOT.\nMy background     :  [DESCRIBE YOUR EXPERIENCE, SKILLS, TRACK RECORD]\nMy role                    :  [WHAT YOU DO AND WHAT YOU ARE RESPONSIBLE FOR]\nExternal feedback  :  [ANY FEEDBACK YOU HAVE RECEIVED - GOOD OR BAD]\nCurrent goals          :  [WHAT YOU ARE TRYING TO ACHIEVE IN THE NEXT 12 MONTHS]\nBuild a Personal SWOT:\nSTRENGTHS         :  What do I consistently do better than most? What do others come to  \n                                    me for?\nGive 4–5 specific, evidence-backed strengths.\nWEAKNESSES      :  Where do I consistently underperform? What do I avoid or  \n                                   procrastinate on?\nBe honest - what do people notice that I minimise?\nOPPORTUNITIES :  Given my strengths, what external conditions could I leverage that \n                                    others could not?\nTHREATS               :  Given my weaknesses, what external conditions specifically threaten \n                                    my goals?\nStrategic output   :  top 2 strengths to build on, top 1 weakness to address immediately.\nPersonal SWOT\nQuadrant Strengths Weaknesses Opportunities Threats\nAreas you\nCapabilities you External conditions External conditions\nconsistently\nDescription genuinely have, you can leverage that exploit your\nunderperform or\nveriﬁed by others given your strengths weaknesses\navoid\nPRO TIP\nThe most valuable Personal SWOT input is unsolicited feedback you have dismissed or\nminimised. The things people have told you repeatedly but that you haven't fully\naccepted - those are your most accurate weakness data. The reason you dismissed\nthem is usually the reason they are true.",
+    "pairsWith": [
+      "3.1 SWOT",
+      "10.5 Three Horizons",
+      "10.7 Socratic Self-Questioning",
+      "10.9 Ikigai"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.2",
+    "title": "90-Day Planning",
+    "sourcePages": {
+      "intro": 227,
+      "prompt": 228
+    },
+    "prompt": "Act as a 90-day planning coach.\nMy context                :  [YOUR ROLE, CURRENT BUSINESS STAGE, KEY PRIORITIES]\nLonger-term vision :  [WHERE YOU ARE TRYING TO GET TO IN 12–18 MONTHS]\nCurrent blockers      :  [WHAT IS SLOWING YOUR PROGRESS MOST]\nBuild my 90-Day Plan:\nBREAKTHROUGH GOALS :  3 outcomes that would make this quarter genuinely \n                                                   significant  not just busy.\nFor each: define what done looks like measurably.\nWEEKLY MILESTONES    :  For each goal  what should I have achieved by week 4, week \n                                                 8, and week 12?\nKEYSTONE HABITS          :  2 weekly behaviours that are preconditions for hitting these  \n                                                 goals.\nNOT-TO-DO LIST              :  3 things I must stop doing or deprioritise to protect capacity  \n                                                 for these goals.\nWEEKLY CHECK-IN          :  One question to ask myself every Friday to assess whether\n                                                  I am on track.\nAchieving Quarterly Goals\nUnplanned Set Breakthrough Track Quarterly Planned\nQuarter Goals Milestones Review Quarter \nNo clear Deﬁne key Monitor progress Evaluate Clear direction\ndirection objectives weekly performance and progress\nPRO TIP\nThe Not-To-Do List is as important as the goal list. Every 90-Day Plan assumes you will\nhave capacity you don't currently have. That capacity has to come from somewhere  and\nthe only honest place it can come from is stopping or delegating something you\ncurrently do. Write the Not-To-Do List before you commit to the goals.",
+    "pairsWith": [
+      "8.7 Eisenhower Matrix",
+      "10.3 Weekly Review",
+      "6.2 OKRs",
+      "10.6 Atomic Habits"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.3",
+    "title": "Weekly Review  GTD 5-15",
+    "sourcePages": {
+      "intro": 229,
+      "prompt": 230
+    },
+    "prompt": "Act as a personal productivity coach running my Weekly Review.\nThis week's context:\nWhat I planned to do       :  [YOUR GOALS OR INTENTIONS FOR THIS WEEK]\nWhat I actually did           :  [KEY TASKS AND PROJECTS WORKED ON]\nWhat is unfinished           :  [ITEMS CARRIED OVER OR INCOMPLETE]\nUpcoming commitments :  [KEY MEETINGS, DEADLINES NEXT WEEK]\nRun my Weekly Review:\nWINS             :  What 3 things went well this week? What made them possible?\nGAPS             :  What did I plan but not do? Was it worth doing? If yes — why didn't it  \n                          happen?\nLEARNINGS : What one thing would I do differently?\nNEXT WEEK PRIORITIES: My top 3 outcomes for next week. Not tasks, outcomes.\nPROTECT      :  One block of time to schedule now for my most important strategic \n                           work next week.\nCLEAR: One thing to decide, delegate, or delete today.\nThe 5-15 Weekly Review\nWhat Happened What's Next Repeat Weekly\n5 min: What Happened 10 min: What's Next Repeat Weekly\nPRO TIP\nThe single most important output of the Weekly Review is the one block of protected\ntime for Q2 work scheduled in advance. Without scheduling it before the week begins,\nreactive Q1 and Q3 work will fill every available hour. The calendar must reflect your\npriorities before the week starts, not after it ends.",
+    "pairsWith": [
+      "8.7 Eisenhower Matrix",
+      "5-15 Report",
+      "10.2 90-Day Planning",
+      "10.6 Atomic Habits",
+      "6.8"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.4",
+    "title": "4 Energy Quadrants",
+    "sourcePages": {
+      "intro": 231,
+      "prompt": 232
+    },
+    "prompt": "Act as a high-performance coach using the 4 Energy Quadrants framework.\nMy current situation:\nSleep (hours / quality): [X]\nExercise (frequency / type): [X]\nEmotional state (how you typically feel at work): [X]\nFocus (how well you concentrate for deep work): [X]\nSense of purpose (how aligned your work feels): [X]\nMain energy drains: [WHAT DEPLETES YOU MOST]\nAudit my energy across all four dimensions:\nPHYSICAL     :  Current state, biggest gap, one recovery ritual\nEMOTIONAL :  Current state, main drain, one stabiliser habit\nMENTAL         :  Current state, focus blockers, one protection habit\nSPIRITUAL     :  Current alignment, what drains meaning, one anchor\nDesign my Minimum Viable Energy Routine:\nThe smallest set of habits that would most improve my total energy capacity in 30 days.\nMaximum 4 habits. Each under 20 minutes per day.\nFour Types of Energy\nPhysical Emotional Mental Spiritual\nfoundation (sleep, stability (resilience, focus (concentration, meaning (purpose,\nmovement, nutrition) positivity) clear thinking) values)\nPRO TIP\nThe Minimum Viable Energy Routine is designed to be non-negotiable and sustainable\nnot impressive. Most high-performers have complex morning routines they follow for two\nweeks and abandon. Four small, consistent habits performed daily for 90 days compound\ninto a meaningfully different baseline. Start with sleep, then add one habit at a time.",
+    "pairsWith": [
+      "10.3 Weekly Review",
+      "10.6 Atomic Habits",
+      "10.9 Ikigai",
+      "10.10 Hansei"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.5",
+    "title": "Three Horizons Vision",
+    "sourcePages": {
+      "intro": 233,
+      "prompt": 234
+    },
+    "prompt": "Act as a strategic planning advisor using McKinsey's Three Horizons framework.\nMy business                             :  [DESCRIBE YOUR CURRENT CORE BUSINESS]\nStage                                          :  [REVENUE RANGE AND GROWTH RATE]\nCurrent strategic priorities  :  [WHAT YOU ARE FOCUSED ON NOW]\nMap my Three Horizons:\nHORIZON 1 (This year) :\nWhat is the core business I must protect and optimise?\nKey metrics to defend. Main threats to manage.\nHORIZON 2 (1–3 years) :\nWhat 2–3 adjacent opportunities should I be developing?\nWhat experiments should I be running now?\nWhat would need to be true for each to become H1?\nHORIZON 3 (3–5 years) :\nWhat options should I be creating - even if uncertain?\nWhat bets cost little today but matter greatly later?\nBALANCE AUDIT           :\nWhat % of my time/energy goes to each horizon now?\nWhat is the right allocation given my stage?\nWhat would I need to stop doing in H1 to fund H2?\nPRO TIP\nThe most common Three Horizons failure is treating H3 as a vision exercise and H1 as the\nonly real work. H3 options are built through small, cheap bets made consistently over\ntime. Amazon's AWS was an H3 bet in 2003 when their core H1 business was books. The\nvalue of H3 is not in the vision — it is in the options it creates.",
+    "pairsWith": [
+      "10.2 90-Day Planning",
+      "6.10 Hoshin Kanri",
+      "2.9 Ansoff Matrix",
+      "8.5 Scenario Planning"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.6",
+    "title": "Atomic Habits Stack",
+    "sourcePages": {
+      "intro": 235,
+      "prompt": 236
+    },
+    "prompt": "Act as a habit design coach using James Clear's Atomic Habits framework.\nMy goal                                       :  [THE OUTCOME I WANT,  E.G. BETTER FOCUS, \n                                                        EXERCISE, READING]\nMy current morning routine :  [WHAT YOU ACTUALLY DO EACH MORNING]\nMy current evening routine  :  [WHAT YOU ACTUALLY DO EACH EVENING]\nPast habit failures                    :  [WHAT YOU HAVE TRIED AND ABANDONED]\nDesign my Atomic Habits Stack:\nStep 1 :  Identify 3 strong existing habits as anchors.\nStep 2 :  For each new habit I want to build, apply the 4 Laws:\nOBVIOUS        :  What is the cue? Where will I see it?\nATTRACTIVE  :  How do I make it appealing?\nEASY                :  What is the 2-minute version?\nSATISFYING   :  What is the immediate reward?\nStep 3 :  Write my Habit Stack as if/when-then statements:\n                After I [ANCHOR HABIT], I will [NEW HABIT].\nStep 4 :  Design one environment change that makes the most important habit easier \n                without willpower.\nStep 5 :  What is the one habit that, if built, makes all the others easier?\nHabit stacking progresses from awareness to reward.\nCue triggers current Link new habit to Reduce friction for Reinforce new habit\nhabit positive feelings new habit with reward\nPRO TIP\nThe keystone habit, the one that makes all others easier  is almost always sleep. Every\nother habit in your stack performs better on sufficient sleep and degrades on insufficient\nsleep. If your habit stack has any room for only one new behaviour, make it a consistent\nsleep and wake time. Build everything else on that foundation.",
+    "pairsWith": [
+      "10.4 Energy Quadrants",
+      "10.3 Weekly Review",
+      "10.2 90-Day Planning"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.7",
+    "title": "Socratic Self-Questioning",
+    "sourcePages": {
+      "intro": 237,
+      "prompt": 238
+    },
+    "prompt": "Act as a Socratic questioner. Your role is to rigorously examine my thinking through\nprobing questions — not to agree or validate. Push back on weak logic.\nBelief or decision to examine:\n[STATE THE BELIEF, PLAN, OR DECISION YOU WANT TO TEST]\nApply the six categories of Socratic questions:\nCLARIFICATION  :  What exactly do I mean by this? Can I give a concrete example?\nASSUMPTIONS    :  What am I taking for granted here? What would have to be true  \n                                   for this to hold?\nEVIDENCE            :  What is my evidence for this belief? How strong is it — anecdote  \n                                   or data?\nPERSPECTIVE     :  How would a sceptic view this? What is the strongest opposing  \n                                  argument?\nIMPLICATIONS   :  If this is true, what else must be true? What are the consequences \n                                  if I am wrong?\nQUESTIONING THE QUESTION: Is this the right question? What is the deeper question\nunderneath it?\nEnd with: the one assumption I should validate before committing to this belief.\nSocratic Self-Questioning\nStep 1 2 3 4\nQuestion the Steelman the What would prove\nAction Conﬁdent belief\nassumption opposite this wrong?\nPRO TIP\nThe most important Socratic question is \"What would have to be true for me to be\nwrong?\" This forces you to define the falsifiability of your belief - the conditions under\nwhich you would update your view. A belief that cannot be proven wrong isn't a belief, it's\na story you've decided not to test.",
+    "pairsWith": [
+      "1.6 First Principles",
+      "1.8 Inversion",
+      "8.6 Red Team",
+      "10.1 Personal SWOT"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.8",
+    "title": "Personal Brand Flywheel",
+    "sourcePages": {
+      "intro": 239,
+      "prompt": 240
+    },
+    "prompt": "Act as a personal brand strategist.\nMy expertise            :  [WHAT I KNOW DEEPLY — SPECIFIC TOPIC]\nMy target audience :  [WHO I WANT TO REACH — ROLE AND INDUSTRY]\nMy goal                      :  [WHAT I WANT THE BRAND TO GENERATE — LEADS, HIRES,  \n                                       SPEAKING, INVESTMENT, COMMUNITY]\nCurrent platform     :  [LINKEDIN / X / NEWSLETTER / PODCAST / NONE]\nDesign my Personal Brand Flywheel:\nDISTINCTIVE ANGLE   :  What is my specific point of view that others in my space don't\nhave?\nCONTENT SYSTEM       :  What format do I own? What cadence? What is my signature \n                                             series or post type?\nAUDIENCE GROWTH    :  What 2 channels will I focus on? What growth tactic fits my \n                                             style?\nCREDIBILITY SIGNALS :  What proof points build trust? What should I be saying  \n                                              publicly?\nFLYWHEEL SPIN            :  What is the first rotation? What does the flywheel look like at  \n                                              12 months?\nFIRST 30 DAYS: The 3 actions that start the flywheel.\nPRO TIP\nThe Personal Brand Flywheel does not require a large audience to generate value. Fifty\ndeeply engaged people in your exact target market outperform five thousand passive\nfollowers in terms of business outcomes. Build depth before scale, the flywheel\naccelerates faster with a small, engaged audience than with a large, indifferent one.",
+    "pairsWith": [
+      "5.10 Flywheel",
+      "5.4 Content Pillars",
+      "5.7 Brand Voice",
+      "5.2 Hook Framework"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.9",
+    "title": "Ikigai",
+    "sourcePages": {
+      "intro": 241,
+      "prompt": 242
+    },
+    "prompt": "Act as a reflective purpose coach using the Ikigai framework.\nMy background        :  [DESCRIBE YOUR EXPERIENCE, CAREER PATH, KEY LIFE  \n                                       EXPERIENCES]\nCurrent work           :   [WHAT YOU DO NOW AND HOW FULFILLED YOU FEEL]\nGuide me through the Ikigai exercise:\nWHAT I LOVE           :   What work makes me lose track of time? What would I do even\nwithout payment? What topics do I read about without being asked?\nWHAT I'M GOOD AT : What do I do better than most people? What do others consistently\ncome to me for? What has evidence, not just belief - proven?\nWHAT THE WORLD NEEDS :  What problem genuinely needs solving? Who suffers\nwithout what I could provide? What gap do I see that others seem to miss?\nWHAT I CAN BE PAID FOR  :  What will people pay for that sits in my other three circles?\nIKIGAI SYNTHESIS               : Where do all four overlap?\nIf no clear overlap: what small experiment in the next 90 days could test whether one\nexists?\nIkigai: The Intersection of Passion, Vocation, Profession, and Mission\nDelight Excellence\nWhat You What You Are\nLove Good At\nPassion\nVocation\nIkigai\nSuccess Fulfillment\nWhat The What You Can\nWorld Needs Be Paid For\nMission Profession\nPRO TIP\nThe most important Ikigai question is not 'what is my Ikigai?'  it is 'what small\nexperiment would test whether my hypothesis about my Ikigai is correct?' Purpose is\ndiscovered through action, not reflection alone. Design a 90-day experiment that puts\nyou in the overlap zone and see how it feels. The body knows before the mind does.",
+    "pairsWith": [
+      "10.1 Personal SWOT",
+      "10.5 Three Horizons",
+      "8.8 Regret Minimization",
+      "10.10 Hansei"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.10",
+    "title": "Hansei - Reflective Practice",
+    "sourcePages": {
+      "intro": 243,
+      "prompt": 244
+    },
+    "prompt": "Act as a Hansei reflective practice facilitator.\nEvent or period to reflect on:\n[DESCRIBE WHAT HAPPENED  A PROJECT, DECISION, QUARTER, OR RELATIONSHIP\nYOU WANT TO EXAMINE HONESTLY]\nOutcome: [WHAT RESULTED]\nGuide me through a Hansei reflection:\nHONEST ACKNOWLEDGEMENT:\nWhat actually happened? No minimising, no excusing.\nDescribe the outcome as it was not as you wish it had been.\nPERSONAL RESPONSIBILITY:\nWhat was my specific contribution to this outcome?\nWhat did I do,  or not do that mattered?\nWhat did I know and ignore? What did I avoid seeing?\nLEARNING:\nWhat does this tell me about how I think or operate?\nWhat pattern, if any, does this repeat?\nCOMMITMENT:\nWhat one specific behaviour will I change?\nHow will I know in 30 days whether I have changed it?\nGRATITUDE: What, despite the difficulty, am I grateful for?\nPRO TIP\nHansei is uncomfortable because it requires taking personal responsibility before\nassigning external causes. The Western tendency is to explain external causes first and\nassign personal responsibility last, if at all. Hansei inverts this. The founder who practices\nit consistently builds a quality of self-awareness that no coaching, therapy, or feedback\ncan replicate because it is chosen and honest.",
+    "pairsWith": [
+      "10.11 Wabi-Sabi",
+      "8.3 Post-Mortem",
+      "7.9 Kaizen",
+      "10.7 Socratic Self-Questioning"
+    ],
+    "updatedAt": "2026-09-18"
+  },
+  {
+    "module": 10,
+    "lesson": "10.11",
+    "title": "Wabi-Sabi - Imperfect Progress",
+    "sourcePages": {
+      "intro": 245,
+      "prompt": 246
+    },
+    "prompt": "Act as a Wabi-Sabi philosophical advisor helping me move from perfectionism to \npurposeful imperfect action.\nWhat I am delaying                            :   [DESCRIBE WHAT YOU HAVE NOT SHIPPED,\nPUBLISHED, LAUNCHED, OR SHARED AND FOR HOW LONG]\nWhy I am delaying                             :   [YOUR REASON  BE HONEST]\nWhat 'ready' looks like in my head : [THE STANDARD YOU ARE TRYING TO MEET\nBEFORE   SHIPPING]\nApply Wabi-Sabi:\nHONEST DIAGNOSIS    :  Is this perfectionism or legitimate quality concern? How do I\ntell  \n                                              the difference?\nIMPERFECT VERSION  :   What is the version I could ship this week — flawed but honest   \n                                               and real?\nCOST OF WAITING        :   What am I not learning by not shipping? What feedback am I  \n                                               denying myself?\nBEAUTY IN PROCESS    :   What is genuinely good — even beautiful — about this \n                                               unfinished, imperfect thing?\nCOMMITMENT               :   What will I ship, post, or share by [DATE]? What does 'done \n                                               enough' look like?\nPRO TIP\nThe most honest question Wabi-Sabi asks is: 'Who am I protecting by not shipping?' The\nanswer is almost never the customer, it is yourself. From criticism, from comparison,\nfrom the discomfort of being judged on real work rather than potential work. Wabi-Sabi\nteaches that the courage to show imperfect work is itself a form of beauty. Ship it.",
+    "pairsWith": [
+      "10.10 Hansei",
+      "2.6 MVP Design",
+      "7.9 Kaizen",
+      "10.7 Socratic Self-Questioning"
+    ],
+    "updatedAt": "2026-09-18"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.10",
+  "title": "OODA Loop",
+  "sourcePages": {
+    "intro": 42,
+    "prompt": 43
+  },
+  "prompt": "Act as a strategic decision advisor using John Boyd's OODA Loop.\nSituation                         :    [DESCRIBE WHAT IS HAPPENING RIGHT NOW]\nAvailable information   :    [LIST WHAT YOU KNOW , even partial data]\nConstraints                     :    [TIME AVAILABLE, RESOURCES, KEY RISKS]\nObserve                           :    What are the most critical signals in this data?\nOrient                              :    What patterns, threats, or opportunities do these reveal?\nDecide                             :    Give me 3 decision options ranked by speed and impact.\nAct                                    :    For the top option, what is the immediate first move?\nPrioritise speed. Flag what I should monitor after acting.\nOODA LOOP — SPEED UNDER UNCERTAINTY\nObserve\nAct\nGather information about\nImplement the decision the environment\nDecide Orient\nChoose the best course of Analyze and understand\naction the situation\nPRO TIP\nThe Orient phase is where most leaders get stuck,  they have the data but can't see the\npattern fast enough. That's exactly what AI compresses. Use it there, not as a\nreplacement for your judgment on the Decide and Act stages.",
+  "pairsWith": [
+    "1.5 Six Thinking Hats",
+    "8.1 DECIDE Framework",
+    "8.6 Red Team"
+  ],
+  "updatedAt": "2026-09-18"
+}

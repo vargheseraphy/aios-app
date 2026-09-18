@@ -1,0 +1,17 @@
+{
+  "module": 5,
+  "lesson": "5.7",
+  "title": "Brand Voice Definition",
+  "sourcePages": {
+    "intro": 126,
+    "prompt": 127
+  },
+  "prompt": "Act as a brand strategy consultant specialising in brand voice.\nMy background   :  [WHO YOU ARE - EXPERIENCE, VALUES, STYLE]\nMy audience        :  [WHO I AM TALKING TO AND WHAT THEY VALUE]\nExamples of content I love: [DESCRIBE OR PASTE 2–3 EXAMPLES]\nContent I dislike :  [DESCRIBE THE STYLE YOU WANT TO AVOID]\nDefine my brand voice across four dimensions:\nPERSONALITY TRAITS :  4 adjectives that describe my voice.\nFor each                           :  what it means in practice + what it is NOT.\nVOICE RULES                 :  5 things I always do in my writing.\n5 things I never do.\nTONE VARIATIONS :  How my voice shifts across:\nLinkedIn post / Email newsletter / Sales copy / Bio\nVOICE SAMPLE       :  Write one paragraph in my brand voice about:\n[YOUR CORE TOPIC OR RECENT CHALLENGE]\nBrand Voice Framework\nPersonality Traits Voice Rules Tone Variations\nThe core adjectives Guidelines for what How the brand's voice\nthat deﬁne the brand should adapts to different\nand should not say.\nthe brand's character. communication channels.\nPRO TIP\nThe most useful part of a brand voice guide is the 'what we never say' list. The don'ts\ndefine the voice more sharply than the dos. If you never use jargon, never use passive\nvoice, and never make claims without proof, that combination is already a distinctive\nvoice. Start with the never list.",
+  "pairsWith": [
+    "5.1 StoryBrand",
+    "5.4 Content Pillars",
+    "5.2 Hook Framework",
+    "10.8 Personal Brand"
+  ],
+  "updatedAt": "2026-09-18"
+}

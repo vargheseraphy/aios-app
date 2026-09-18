@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.11",
+  "title": "SCAMPER",
+  "sourcePages": {
+    "intro": 44,
+    "prompt": 45
+  },
+  "prompt": "Act as a creative innovation facilitator using SCAMPER.\nI want to innovate on   :  [YOUR PRODUCT, SERVICE, OR PROCESS]\nContext                           :   [INDUSTRY, TARGET CUSTOMER, CURRENT LIMITATIONS]\nSubstitute                       :  What component or step could be replaced?\nCombine                         :   What could be merged for more value?\nAdapt                               :   What works elsewhere that I could borrow?\nModify                             :   What could be changed, enlarged, or reduced?\nPut to other uses           :   What other jobs could this do?\nEliminate                         :   What could be removed entirely?\nReverse                            :   What if the order or direction was flipped?\nGive one specific, actionable idea per lens.\nSCAMPER: Structured Creativity for Innovation\nStagnant Ideas Innovative Solutions\nApply SCAMPER\nVariations of the same New directions for the\nLenses\nthing idea\nClearly state the Use seven creative Merge ideas from Develop the most\ninnovation target lenses different lenses promising ideas\nPRO TIP\nRun SCAMPER on your competitors' products, not just your own. Ask 'what would\nhappen if a competitor applied SCAMPER to our product?' The answers will tell you\nyour vulnerabilities before they do.",
+  "pairsWith": [
+    "1.6 First Principles",
+    "2.4 Blue Ocean Strategy",
+    "1.9 Mental Models"
+  ],
+  "updatedAt": "2026-09-18"
+}

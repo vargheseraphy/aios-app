@@ -1,0 +1,714 @@
+<meta charset="utf-8">
+<title>Who It's For</title>
+<!--
+DIRECTION CONTRACT (as built, locked)
+THESIS: Five seats, one book. A centred 01-05 tab rail names every audience up front; the chosen seat states its week in one line, then resolves into three labelled columns - the situation, the three modules to start with, and one real prompt from the first of those modules. The matrix below proves the seats are reading orders, not editions.
+OWN-WORLD: locked AIOS system. Near-black colour fields alternating with white; blue primary; Archivo/Roboto/Roboto Mono; mono prompt cards with yellow keys and blue placeholders; currentColor line art.
+STORY: a visitor sees all five seats at once, picks their own, reads one line that names their situation, and leaves with three module numbers and a prompt they can run today.
+FIRST VIEWPORT: hero, copy left (crumb, "Five seats at the table. The same 108 frameworks.", sub, two buttons) with index-spine line art right.
+FORM: seat tabs, client-directed, superseding the rolled expanding-index (seed 51df9415); overlap rendered as a 10x5 module/seat matrix. Rule the page keeps: the prompt shown always comes from the module listed first.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .f{fill:currentColor; opacity:.16;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.tab:focus-visible{outline:2px solid var(--blue-hi); outline-offset:3px;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* hero */
+.phero{position:relative; overflow:hidden;}
+.phero .bg{position:absolute; inset:0; background:
+  radial-gradient(820px 560px at 10% 16%, #3B7BF7 0%, transparent 62%),
+  radial-gradient(640px 460px at 86% 6%, #FBBE10 0%, transparent 56%),
+  radial-gradient(620px 520px at 74% 92%, #2FAB57 0%, transparent 58%), var(--ink);}
+.phero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.phero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.46) 58%, rgba(14,15,18,.58) 100%);}
+.phero-in{position:relative; padding-block:58px 48px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.phero-in{grid-template-columns:1.25fr .75fr; gap:52px; padding-block:64px 56px;}}
+.phero-copy{display:flex; flex-direction:column; gap:20px;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+h1.ph-h{font-size:clamp(32px,5.8vw,52px); line-height:1.07; letter-spacing:-.032em; font-weight:800;}
+.ph-sub{font-size:16px; color:var(--fg-1); line-height:1.55; max-width:66ch;}
+@media(min-width:640px){.ph-sub{font-size:17.5px;}}
+.ph-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;}
+.phero-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-d2); background:rgba(0,0,0,.26); backdrop-filter:blur(4px); min-height:258px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.phero-art svg{position:relative; width:100%; max-width:290px; height:auto;}
+
+/* sections */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:78px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l2);}
+.dark .kicker{color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:32ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:84ch; line-height:1.6;}
+.dark .sd{color:var(--fg-2);}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:36px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* ---------- centred section head ---------- */
+.head-mid{display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:46px;}
+.head-mid h2{max-width:26ch; margin-block:12px 14px;}
+.head-mid .sd{max-width:72ch;}
+
+/* ---------- the index: seat tabs ---------- */
+.tabs-center{display:flex; justify-content:center;}
+.tabs{position:relative; display:flex; gap:2px; overflow-x:auto; padding:5px; background:var(--wash); border:1px solid var(--line-l); border-radius:999px; width:fit-content; max-width:100%; scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{position:relative; z-index:2; appearance:none; background:none; border:none; color:var(--gray-l); font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:999px; cursor:pointer; white-space:nowrap; transition:color .18s; display:inline-flex; align-items:center; gap:9px;}
+.tab .tn{font-family:var(--mono); font-size:10.5px; opacity:.6;}
+.tab[aria-selected="true"]{color:#fff;}
+.tab[aria-selected="true"] .tn{opacity:.75;}
+.pillslide{position:absolute; z-index:1; top:5px; height:calc(100% - 10px); background:var(--ink-2); border-radius:999px; transition:transform .3s cubic-bezier(.4,0,.2,1), width .3s cubic-bezier(.4,0,.2,1);}
+
+.seat-line{text-align:center; font-family:var(--disp); font-weight:700; font-size:clamp(19px,2.5vw,26px); line-height:1.2; letter-spacing:-.024em; color:var(--ink-2); max-width:26ch; margin:34px auto 6px;}
+.seat-sub{text-align:center; font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-l2); margin-bottom:38px;}
+
+.seatpanel[hidden]{display:none;}
+.ientry{display:grid; grid-template-columns:1fr; gap:30px; padding-top:6px;}
+@media(min-width:780px){.ientry{grid-template-columns:1fr 1fr; gap:38px;}
+  .ientry .col-sit{grid-column:1 / -1;}}
+@media(min-width:1180px){.ientry{grid-template-columns:1.05fr .72fr 1.13fr; gap:46px;}
+  .ientry .col-sit{grid-column:auto;}}
+.collab{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l2); padding-bottom:12px; margin-bottom:18px; border-bottom:1px solid var(--line-l);}
+.col-sit .lead{font-size:16.5px; line-height:1.68; color:var(--ink-2); margin-bottom:16px;}
+.col-sit .lead b{font-weight:500;}
+.col-sit p{font-size:14.5px; line-height:1.72; color:var(--gray-l);}
+.mods{display:flex; flex-direction:column;}
+.mod{display:grid; grid-template-columns:26px 1fr auto; gap:12px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line-l);}
+.mod:last-of-type{border-bottom:none;}
+.mod .mn{font-family:var(--mono); font-size:11.5px; color:var(--blue);}
+.mod .mt{font-family:var(--disp); font-weight:700; font-size:15px; line-height:1.25;}
+.mod .mc{font-family:var(--mono); font-size:11px; color:var(--gray-l2); white-space:nowrap;}
+.col-start .go{margin-top:18px;}
+
+/* prompt card */
+.promptcard{background:var(--ink); border-radius:14px; overflow:hidden; border:1px solid #23262E; box-shadow:0 24px 50px -28px rgba(10,14,25,.45);}
+.pc-top{display:flex; align-items:center; gap:9px; padding:12px 14px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:2px 6px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--fg-3);}
+.pc-body{padding:16px 15px; font-family:var(--mono); font-size:11.5px; line-height:1.95; color:rgba(255,255,255,.88); white-space:pre-wrap; word-break:break-word;}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:12px 14px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .pairs{font-size:11px; color:var(--fg-3); max-width:36ch;}
+.copybtn{margin-left:auto;} .copybtn.done{background:var(--green); color:#fff;}
+
+/* ---------- overlap matrix ---------- */
+.mx-intro{display:flex; flex-direction:column; gap:14px; margin-bottom:40px; max-width:88ch; margin-inline:auto; text-align:center;}
+.mx-intro p{font-size:15px; color:var(--fg-1); line-height:1.74;}
+.mx-intro p b{color:#fff; font-weight:500;}
+.mx-wrap{overflow-x:auto; scrollbar-width:none;}
+.mx-wrap::-webkit-scrollbar{display:none;}
+.mx{min-width:560px; border:1px solid var(--line-d); border-radius:16px; overflow:hidden;}
+.mx-row{display:grid; grid-template-columns:44px minmax(180px,1fr) repeat(5,64px); align-items:center;}
+@media(min-width:900px){.mx-row{grid-template-columns:56px minmax(220px,1fr) repeat(5,96px);}}
+.mx-row + .mx-row{border-top:1px solid var(--line-d);}
+.mx-head{background:rgba(255,255,255,.05);}
+.mx-head span{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); padding:14px 0; text-align:center;}
+.mx-head span:nth-child(2){text-align:left;}
+.mx-row .mx-n{font-family:var(--mono); font-size:11.5px; color:var(--fg-3); text-align:center;}
+.mx-row .mx-t{font-family:var(--disp); font-weight:700; font-size:14.5px; color:#fff; padding-block:15px; padding-right:12px;}
+.mx-cell{display:flex; align-items:center; justify-content:center; height:100%;}
+.mx-cell i{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.14); display:block;}
+.mx-cell.on i{width:15px; height:15px; box-shadow:0 0 0 5px rgba(255,255,255,.05);}
+.mx-cell.on.f i{background:var(--blue);} .mx-cell.on.m i{background:var(--red);}
+.mx-cell.on.s i{background:var(--green);} .mx-cell.on.t i{background:var(--yellow);}
+.mx-cell.on.i i{background:#fff;}
+.mx-foot{display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; font-family:var(--mono); font-size:11px; color:var(--fg-3);}
+.mx-foot span{display:inline-flex; align-items:center; gap:8px;}
+.mx-foot i{width:9px; height:9px; border-radius:50%; display:inline-block;}
+
+/* ---------- bulk strip ---------- */
+.bulk{position:relative; overflow:hidden; background:var(--ink); padding-block:88px;}
+.bulk .bg{position:absolute; inset:0; background:radial-gradient(680px 440px at 12% 18%,rgba(59,123,247,.45),transparent 62%),radial-gradient(560px 400px at 90% 86%,rgba(251,190,16,.26),transparent 60%);}
+.bulk-in{position:relative; display:grid; gap:30px; grid-template-columns:1fr; align-items:center;}
+@media(min-width:960px){.bulk-in{grid-template-columns:1.15fr .85fr; gap:52px;}}
+.bulk h2{font-size:clamp(24px,3.4vw,34px); line-height:1.12; margin-bottom:14px; max-width:22ch;}
+.bulk p{font-size:15px; color:var(--fg-1); line-height:1.7; max-width:62ch; margin-bottom:22px;}
+.bulk .facts{display:flex; gap:10px; flex-wrap:wrap;}
+.bfact{border:1px solid var(--line-d); border-radius:12px; background:rgba(255,255,255,.055); padding:12px 18px;}
+.bfact b{display:block; font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.02em; line-height:1;}
+.bfact span{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); margin-top:6px;}
+.bulk-art{position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line-d); min-height:280px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.bulk-art .artbg{position:absolute; inset:0; background:radial-gradient(320px 250px at 30% 26%,#3B7BF7,transparent 62%),radial-gradient(280px 240px at 82% 84%,#FBBE10,transparent 60%),#090A0D;}
+.bulk-art svg{position:relative; width:100%; max-width:290px; height:auto;}
+
+/* buy */
+.buy{position:relative; overflow:hidden; background:var(--ink);}
+.buy .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 16% 10%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 440px at 88% 92%, rgba(47,171,87,.8), transparent 60%),
+  radial-gradient(520px 380px at 60% 50%, rgba(251,190,16,.3), transparent 62%), var(--blue-deep);}
+.buy .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.buy-in{position:relative; display:grid; gap:34px; grid-template-columns:1fr;}
+@media(min-width:960px){.buy-in{grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}}
+.buy h2{font-size:clamp(27px,4.2vw,42px); line-height:1.07; max-width:22ch; margin-bottom:14px;}
+.buy p{color:rgba(255,255,255,.88); font-size:15px; max-width:58ch; margin-bottom:26px;}
+.sellers{display:flex; flex-direction:column; gap:12px;}
+.seller{display:flex; align-items:center; gap:16px; padding:18px 20px; border-radius:14px; border:1px solid rgba(255,255,255,.22); background:rgba(0,0,0,.30); backdrop-filter:blur(8px); transition:.15s;}
+.seller:hover{background:rgba(0,0,0,.45); border-color:rgba(255,255,255,.4); transform:translateY(-2px);}
+.seller .si{width:44px; height:44px; border-radius:11px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.seller b{display:block; font-family:var(--disp); font-weight:700; font-size:15.5px;}
+.seller span.sub{font-size:12.5px; color:rgba(255,255,255,.62);}
+.seller .go{margin-left:auto; color:rgba(255,255,255,.7);}
+.buy-note{margin-top:16px; font-family:var(--mono); font-size:11px; color:rgba(255,255,255,.55);}
+
+/* subscribe */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){.pillslide,.tab,.seller,.mx-cell{transition:none;}}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a class="on" href="#">Who it's for</a><a href="how-to-use.html#trouble">FAQ</a><a href="#">Articles</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#get">Get the book</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<header class="phero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad phero-in">
+    <div class="phero-copy">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>Who it's for</span></div>
+      <h1 class="ph-h">Five seats at the table. The same 108 frameworks.</h1>
+      <p class="ph-sub">What changes is where you start. Find the row that sounds like your week, open it, and you get three module numbers and one prompt you can run before lunch.</p>
+      <div class="ph-btns">
+        <a class="btn btn-white" href="#index">Find your row</a>
+        <a class="btn btn-line" href="home.html#modules">See all 10 modules</a>
+      </div>
+    </div>
+    <div class="phero-art">
+      <svg viewBox="0 0 290 300" class="line" aria-hidden="true">
+        <path class="s2" d="M18 34h254"/>
+        <text class="t" x="18" y="26" style="font-size:10px;letter-spacing:.1em">INDEX</text>
+        <path class="s" d="M18 70h44"/><path class="s3" d="M70 70h150"/><text class="t" x="230" y="74">02 08 10</text>
+        <path class="s2" d="M18 110h52"/><path class="s3" d="M78 110h142"/><text class="t" x="230" y="114">06 07 04</text>
+        <path class="s2" d="M18 150h40"/><path class="s3" d="M66 150h154"/><text class="t" x="230" y="154">01 03 09</text>
+        <path class="s2" d="M18 190h58"/><path class="s3" d="M84 190h136"/><text class="t" x="230" y="194">02 05 07</text>
+        <path class="s2" d="M18 230h48"/><path class="s3" d="M74 230h146"/><text class="t" x="230" y="234">01 02 09</text>
+        <circle class="fd" cx="12" cy="70" r="3.6"/>
+        <circle class="s2" cx="12" cy="110" r="3"/><circle class="s2" cx="12" cy="150" r="3"/>
+        <circle class="s2" cx="12" cy="190" r="3"/><circle class="s2" cx="12" cy="230" r="3"/>
+        <path class="s2" d="M18 268h254"/>
+        <text class="t" x="18" y="286" style="font-size:10px;letter-spacing:.1em">108 FRAMEWORKS &#183; 10 MODULES</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE INDEX ============ -->
+<section class="light" id="index" style="padding-top:58px;"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">The index</div>
+      <h2 class="sh">Open the one that sounds like your week.</h2>
+      <p class="sd">Each seat gives you the situation, the three modules to read first, and one real prompt from the first of them.</p>
+    </div>
+  </div>
+
+  <div class="tabs-center">
+    <div class="tabs" role="tablist" id="seattabs">
+      <span class="pillslide" id="seatslide"></span>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="s01" data-p="s01"><span class="tn">01</span>Founders</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="s02" data-p="s02"><span class="tn">02</span>Managers</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="s03" data-p="s03"><span class="tn">03</span>Students</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="s04" data-p="s04"><span class="tn">04</span>Teams</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="s05" data-p="s05"><span class="tn">05</span>Institutions</button>
+    </div>
+  </div>
+
+    <div class="seatpanel" id="s01" role="tabpanel">
+      <p class="seat-line">Deciding alone, at speed, with your own money on it</p>
+      <p class="seat-sub">Seat 01 of 5 &middot; Founders</p>
+      <div class="ientry">
+
+        <div class="col col-sit">
+          <h4 class="collab">The situation</h4>
+          <p class="lead">You are the strategy department, the hiring committee and the finance function, usually before 11am. <b>The expensive mistakes are the ones you make confidently and alone.</b></p>
+          <p>The frameworks do not make the call. They force the question you were skipping &mdash; what would have to be true, what happens if this fails, what the customer actually buys &mdash; and hand back an answer structured enough to argue with.</p>
+        </div>
+
+        <div class="col col-start">
+          <h4 class="collab">Start here</h4>
+          <div class="mods">
+            <div class="mod"><span class="mn">08</span><span class="mt">Decide with Confidence</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">02</span><span class="mt">Design Your Business</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">10</span><span class="mt">Lead Yourself First</span><span class="mc">11</span></div>
+          </div>
+          <a class="btn btn-ink btn-sm go" href="home.html#modules">Open module 08</a>
+        </div>
+
+        <div class="col col-prompt">
+          <h4 class="collab">One prompt to run</h4>
+          <div class="promptcard">
+            <div class="pc-top"><span class="tag">8.2</span><span class="ttl">Pre-Mortem Analysis</span><span class="up">Module 08</span></div>
+            <div class="pc-body">Act as a Pre-Mortem facilitator.
+
+<span class="k">Project or decision:</span>
+  <span class="v">[DESCRIBE WHAT YOU ARE ABOUT TO DO]</span>
+<span class="k">Timeline:</span> <span class="v">[HOW LONG THIS WILL TAKE]</span>
+<span class="k">Team involved:</span> <span class="v">[ROLES RESPONSIBLE]</span>
+
+<span class="k">SCENARIO:</span> It is <span class="v">[12 MONTHS FROM NOW]</span>. This project
+has failed. Not partially &mdash; completely.
+What happened?
+
+Generate 10 specific reasons, ranked by
+likelihood.</div>
+            <div class="pc-foot"><span class="pairs">Pairs with 8.3 Post-Mortem &middot; 8.6 Red Team</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="seatpanel" id="s02" role="tabpanel" hidden>
+      <p class="seat-line">Running conversations nobody trained you to run</p>
+      <p class="seat-sub">Seat 02 of 5 &middot; Managers</p>
+      <div class="ientry">
+
+        <div class="col col-sit">
+          <h4 class="collab">The situation</h4>
+          <p class="lead">Nobody prepared you for the 1-on-1 that goes sideways, the hire you are not sure about, or the process everyone quietly ignores. <b>You are improvising conversations that carry real consequences.</b></p>
+          <p>These modules move the part you rehearse in your head onto paper first: the questions to ask, the order to ask them in, and what to do with whatever comes back.</p>
+        </div>
+
+        <div class="col col-start">
+          <h4 class="collab">Start here</h4>
+          <div class="mods">
+            <div class="mod"><span class="mn">06</span><span class="mt">Build Your Team</span><span class="mc">12</span></div>
+            <div class="mod"><span class="mn">07</span><span class="mt">Operate with Precision</span><span class="mc">12</span></div>
+            <div class="mod"><span class="mn">04</span><span class="mt">Sell Like a Pro</span><span class="mc">11</span></div>
+          </div>
+          <a class="btn btn-ink btn-sm go" href="home.html#modules">Open module 06</a>
+        </div>
+
+        <div class="col col-prompt">
+          <h4 class="collab">One prompt to run</h4>
+          <div class="promptcard">
+            <div class="pc-top"><span class="tag">6.3</span><span class="ttl">1-on-1 &mdash; GROW Model</span><span class="up">Module 06</span></div>
+            <div class="pc-body">Act as an executive coaching facilitator
+using the GROW model.
+
+<span class="k">Team member context:</span>
+  <span class="v">[ROLE, EXPERIENCE, CURRENT PROJECT]</span>
+<span class="k">Presenting situation:</span>
+  <span class="v">[WHAT THEY BROUGHT TO THIS 1-ON-1]</span>
+
+Guide me through the conversation:
+<span class="k">GOAL</span> &mdash; questions that define what they
+  want from it
+<span class="k">REALITY</span> &mdash; questions that surface the
+  honest situation</div>
+            <div class="pc-foot"><span class="pairs">Pairs with 6.5 SBI Feedback &middot; 6.7 Delegation Ladder</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="seatpanel" id="s03" role="tabpanel" hidden>
+      <p class="seat-line">Walking into a first job that assumes you are fluent</p>
+      <p class="seat-sub">Seat 03 of 5 &middot; Students</p>
+      <div class="ientry">
+
+        <div class="col col-sit">
+          <h4 class="collab">The situation</h4>
+          <p class="lead">Knowing how to prompt is table stakes now. <b>What still separates people is whether they can frame a business question worth asking.</b></p>
+          <p>Every framework here is the reasoning a working manager applies, written down. It holds up in a case competition, a placement interview and your first month on the job, because the structure does not change.</p>
+        </div>
+
+        <div class="col col-start">
+          <h4 class="collab">Start here</h4>
+          <div class="mods">
+            <div class="mod"><span class="mn">03</span><span class="mt">Know Your Market</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">01</span><span class="mt">Think Like a Strategist</span><span class="mc">13</span></div>
+            <div class="mod"><span class="mn">09</span><span class="mt">Finance &amp; Metrics</span><span class="mc">9</span></div>
+          </div>
+          <a class="btn btn-ink btn-sm go" href="home.html#modules">Open module 03</a>
+        </div>
+
+        <div class="col col-prompt">
+          <h4 class="collab">One prompt to run</h4>
+          <div class="promptcard">
+            <div class="pc-top"><span class="tag">3.1</span><span class="ttl">SWOT Analysis</span><span class="up">Module 03</span></div>
+            <div class="pc-body">Act as a strategic analyst.
+Build a SWOT for:
+
+<span class="k">Business:</span> <span class="v">[COMPANY AND WHAT IT DOES]</span>
+<span class="k">Industry:</span> <span class="v">[MARKET AND COMPETITORS]</span>
+<span class="k">Stage:</span> <span class="v">[REVENUE, TEAM, KEY MARKETS]</span>
+<span class="k">Context:</span> <span class="v">[THE DECISION BEING MADE]</span>
+
+<span class="k">STRENGTHS</span> &mdash; what we do better
+<span class="k">WEAKNESSES</span> &mdash; where we are exposed</div>
+            <div class="pc-foot"><span class="pairs">Pairs with 3.2 PESTLE &middot; 3.3 Porter&#39;s Five Forces</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="seatpanel" id="s04" role="tabpanel" hidden>
+      <p class="seat-line">Six people, six prompting habits, nothing that adds up</p>
+      <p class="seat-sub">Seat 04 of 5 &middot; Teams</p>
+      <div class="ientry">
+
+        <div class="col col-sit">
+          <h4 class="collab">The situation</h4>
+          <p class="lead">Ask three people on the same team to draft the same brief with AI and three documents come back sharing no structure, no depth and no assumptions. <b>Reviewing them costs more than writing them would have.</b></p>
+          <p>Fixing the input fixes the output. When everyone runs the same framework for the same job, drafts arrive in a shape you can read at a glance, argue with, and pass on without rewriting.</p>
+        </div>
+
+        <div class="col col-start">
+          <h4 class="collab">Start here</h4>
+          <div class="mods">
+            <div class="mod"><span class="mn">02</span><span class="mt">Design Your Business</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">05</span><span class="mt">Market Your Message</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">07</span><span class="mt">Operate with Precision</span><span class="mc">12</span></div>
+          </div>
+          <a class="btn btn-ink btn-sm go" href="home.html#modules">Open module 02</a>
+        </div>
+
+        <div class="col col-prompt">
+          <h4 class="collab">One prompt to run</h4>
+          <div class="promptcard">
+            <div class="pc-top"><span class="tag">2.1</span><span class="ttl">Value Proposition Canvas</span><span class="up">Module 02</span></div>
+            <div class="pc-body">Act as a product-market fit consultant.
+
+<span class="k">My product / service:</span> <span class="v">[WHAT YOU OFFER]</span>
+<span class="k">Target customer:</span>
+  <span class="v">[ROLE, INDUSTRY, COMPANY SIZE]</span>
+
+<span class="k">CUSTOMER PROFILE</span>
+Jobs  &mdash; what are they trying to accomplish?
+Pains &mdash; what frustrates, costs or risks them?
+Gains &mdash; what outcomes do they actually want?</div>
+            <div class="pc-foot"><span class="pairs">Pairs with 2.5 JTBD &middot; 3.4 ICP &middot; 2.3 Lean Canvas</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="seatpanel" id="s05" role="tabpanel" hidden>
+      <p class="seat-line">Shelf space that has to earn itself every semester</p>
+      <p class="seat-sub">Seat 05 of 5 &middot; Institutions</p>
+      <div class="ientry">
+
+        <div class="col col-sit">
+          <h4 class="collab">The situation</h4>
+          <p class="lead">A book about AI dates in eighteen months and gets quietly withdrawn. <b>A book students keep pulling down mid-assignment does not.</b></p>
+          <p>Every page here ends in something to run, which is why it stays in circulation. It sits alongside existing entrepreneurship and management coursework, and because each prompt lives on a page that can be corrected, the shelf copy stays accurate without a second edition.</p>
+        </div>
+
+        <div class="col col-start">
+          <h4 class="collab">Start here</h4>
+          <div class="mods">
+            <div class="mod"><span class="mn">01</span><span class="mt">Think Like a Strategist</span><span class="mc">13</span></div>
+            <div class="mod"><span class="mn">02</span><span class="mt">Design Your Business</span><span class="mc">10</span></div>
+            <div class="mod"><span class="mn">09</span><span class="mt">Finance &amp; Metrics</span><span class="mc">9</span></div>
+          </div>
+          <a class="btn btn-ink btn-sm go" href="home.html#modules">Open module 01</a>
+        </div>
+
+        <div class="col col-prompt">
+          <h4 class="collab">One prompt to run</h4>
+          <div class="promptcard">
+            <div class="pc-top"><span class="tag">1.1</span><span class="ttl">C.A.R.E Prompting</span><span class="up">Module 01</span></div>
+            <div class="pc-body"><span class="k">Role:</span> Act as a <span class="v">[EXPERT ROLE]</span>.
+<span class="k">Context:</span> I am <span class="v">[YOUR SITUATION &mdash; company,
+  stage, industry]</span>.
+<span class="k">Action:</span> <span class="v">[WHAT YOU WANT]</span>.
+<span class="k">Expectation:</span> Format as a numbered list.
+  Each point 2&ndash;3 lines. Plain business
+  language. No jargon.</div>
+            <div class="pc-foot"><span class="pairs">Pairs with 1.2 Context Stack &middot; 1.3 Role Prompting</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div></section>
+
+<!-- ============ OVERLAP MAP ============ -->
+<section class="dark"><div class="pad">
+  <div class="head-mid">
+    <div class="kicker">Where the rows overlap</div>
+    <h2 class="sh">Five starting points. One book underneath them.</h2>
+  </div>
+
+  <div class="mx-intro">
+    <p>Nobody gets a different edition &mdash; the five seats above are reading orders, not versions, and between them they touch every module in the book. <b>Module 02 turns up in three of the five:</b> designing the business is the question a founder, a team and a library all arrive at from different directions. Modules 01, 07 and 09 each appear twice.</p>
+  </div>
+
+  <div class="mx-wrap"><div class="mx">
+      <div class="mx-row mx-head">
+        <span></span><span>Module</span>
+        <span>Founders</span><span>Managers</span><span>Students</span><span>Teams</span><span>Institutions</span>
+      </div>
+      <div class="mx-row"><span class="mx-n">01</span><span class="mx-t">Think Like a Strategist</span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on s"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on i"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">02</span><span class="mx-t">Design Your Business</span><span class="mx-cell on f"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on t"><i></i></span><span class="mx-cell on i"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">03</span><span class="mx-t">Know Your Market</span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on s"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">04</span><span class="mx-t">Sell Like a Pro</span><span class="mx-cell"><i></i></span><span class="mx-cell on m"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">05</span><span class="mx-t">Market Your Message</span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on t"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">06</span><span class="mx-t">Build Your Team</span><span class="mx-cell"><i></i></span><span class="mx-cell on m"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">07</span><span class="mx-t">Operate with Precision</span><span class="mx-cell"><i></i></span><span class="mx-cell on m"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on t"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">08</span><span class="mx-t">Decide with Confidence</span><span class="mx-cell on f"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">09</span><span class="mx-t">Finance &amp; Metrics</span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on s"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell on i"><i></i></span></div>
+      <div class="mx-row"><span class="mx-n">10</span><span class="mx-t">Lead Yourself First</span><span class="mx-cell on f"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span><span class="mx-cell"><i></i></span></div>
+  </div></div>
+
+  <div class="mx-foot">
+    <span><i style="background:var(--blue)"></i>Founders</span>
+    <span><i style="background:var(--red)"></i>Managers</span>
+    <span><i style="background:var(--green)"></i>Students</span>
+    <span><i style="background:var(--yellow)"></i>Teams</span>
+    <span><i style="background:#fff"></i>Institutions</span>
+    <span style="margin-left:auto">All 10 modules covered across the five</span>
+  </div>
+</div></section>
+
+<!-- ============ BULK ============ -->
+<section class="bulk" id="bulk">
+  <div class="bg"></div>
+  <div class="pad bulk-in">
+    <div>
+      <div class="kicker">Teams and institutions</div>
+      <h2>One copy per desk beats one copy per office.</h2>
+      <p>The shared-language effect only works if everyone has the book open in front of them. Bulk and institutional orders are handled directly &mdash; tell us how many copies and where they are going.</p>
+      <div class="ph-btns" style="margin-bottom:22px;">
+        <a class="btn btn-white" href="#">Request a quote</a>
+        <a class="btn btn-line" href="#">Contact Raphy</a>
+      </div>
+      <div class="facts">
+        <div class="bfact"><b>10+</b><span>Copies, invoiced</span></div>
+        <div class="bfact"><b>276</b><span>Pages each</span></div>
+        <div class="bfact"><b>108</b><span>Frameworks</span></div>
+      </div>
+    </div>
+    <div class="bulk-art">
+      <div class="artbg"></div>
+      <svg viewBox="0 0 290 240" class="line" aria-hidden="true">
+        <rect class="s" x="24" y="66" width="42" height="120" rx="5"/>
+        <rect class="s" x="74" y="54" width="42" height="132" rx="5"/>
+        <rect class="s" x="124" y="72" width="42" height="114" rx="5"/>
+        <rect class="s2" x="174" y="60" width="42" height="126" rx="5"/>
+        <rect class="s2" x="224" y="78" width="42" height="108" rx="5"/>
+        <path class="s2" d="M34 96h22M84 86h22M134 102h22M184 90h22M234 108h22"/>
+        <path class="s" d="M14 202h262"/>
+        <circle class="fd" cx="95" cy="36" r="4"/><path class="s3" d="M95 42v8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUY ============ -->
+<section class="buy" id="get">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad buy-in">
+    <div>
+      <h2>Keep it on the desk. Not on a shelf.</h2>
+      <p>108 frameworks in print, every prompt live on this site, updated as the models change.</p>
+      <div class="ph-btns"><a class="btn btn-line" href="home.html#modules">Browse the prompts free</a></div>
+      <p class="buy-note">Paperback &middot; 276 pages &middot; published by Notion Press</p>
+    </div>
+    <div class="sellers">
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><path d="M3 16.5c4.2 3 13.8 3 18-0.5"/><path d="M19.2 19c1-1.5 1.3-3.2.8-3.6"/><path d="M7 4.5h10v8H7z"/><path d="M9.5 8h5"/></svg></span>
+        <span><b>Amazon</b><span class="sub">Paperback and Kindle &mdash; ships next day</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 7.5h8M8 12h8M8 16.5h5"/></svg></span>
+        <span><b>Notion Press</b><span class="sub">Direct from the publisher</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="seller" href="#bulk">
+        <span class="si"><svg class="i" width="22" height="22" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 19c0-2.3 1.3-4 3.2-4s2.8 1.3 2.8 3"/></svg></span>
+        <span><b>Bulk &amp; institutions</b><span class="sub">Ten copies or more, invoiced</span></span>
+        <span class="go"><svg class="i" width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <p class="buy-note">Store links to be added before launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="#">Who it's for</a><a href="#">About Raphy</a><a href="#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="#">For business</a><a href="#bulk">For institutions</a><a href="#bulk">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  // seat tabs
+  var rail=document.getElementById('seattabs'), slide=document.getElementById('seatslide');
+  var tabs=rail.querySelectorAll('.tab');
+  function move(b){ slide.style.width=b.offsetWidth+'px'; slide.style.transform='translateX('+(b.offsetLeft-5)+'px)'; }
+  function select(b){
+    tabs.forEach(function(t){
+      var on=t===b;
+      t.setAttribute('aria-selected',on?'true':'false');
+      document.getElementById(t.dataset.p).hidden=!on;
+    });
+    move(b);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){ select(t); });
+    t.addEventListener('keydown',function(ev){
+      var arr=Array.prototype.slice.call(tabs), i=arr.indexOf(t);
+      if(ev.key==='ArrowRight'||ev.key==='ArrowLeft'){
+        ev.preventDefault();
+        var n=arr[(i+(ev.key==='ArrowRight'?1:arr.length-1))%arr.length];
+        select(n); n.focus();
+      }
+    });
+  });
+  window.addEventListener('resize',function(){ var c=rail.querySelector('.tab[aria-selected="true"]'); if(c) move(c); });
+  requestAnimationFrame(function(){ move(tabs[0]); });
+
+  // copy buttons
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.closest('.promptcard').querySelector('.pc-body').innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy prompt'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+})();
+</script>

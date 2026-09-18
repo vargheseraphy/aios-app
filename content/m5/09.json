@@ -1,0 +1,16 @@
+{
+  "module": 5,
+  "lesson": "5.9",
+  "title": "AARRR  Pirate Metrics",
+  "sourcePages": {
+    "intro": 130,
+    "prompt": 131
+  },
+  "prompt": "Act as a growth analytics advisor using the AARRR framework.\nMy business   :  [DESCRIBE YOUR PRODUCT AND BUSINESS MODEL]\nCurrent metrics (fill in what you know):\nAcquisition    :  [MONTHLY VISITORS / LEADS]\nActivation      :  [% WHO COMPLETE FIRST KEY ACTION]\nRetention       :  [30-DAY RETENTION RATE OR CHURN]\nRevenue          :  [CONVERSION TO PAID / ARPU]\nReferral           :  [NPS SCORE OR REFERRAL RATE]\nStep 1  : Identify the stage with the most critical leak.\nStep 2 : For the weakest stage  suggest 3 specific experiments to improve it.\nStep 3 : Define one metric per stage that I should track weekly going forward.\nStep 4 : If I improved each stage by 10%, model the compounding impact on revenue.\nAARRR Pirate Metrics Funnel\nAcquisition\nActivation\nUsers start using the product\nRetention\nUsers continue using the product\nRevenue\nUsers generate income\nReferral\nUsers recommend the product\nPRO TIP\nActivation is the most underinvested stage in almost every early-stage business. It is the\nmoment a new user first experiences genuine value  the 'aha moment.' If you don't know\nwhat your activation moment is, you can't optimise for it. Ask AI to help you identify and\ndefine it before running any other growth experiments.",
+  "pairsWith": [
+    "5.8 Viral Loop",
+    "9.3 North Star Metric",
+    "9.1 LTV:CAC"
+  ],
+  "updatedAt": "2026-09-18"
+}

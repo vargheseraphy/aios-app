@@ -1,0 +1,16 @@
+{
+  "module": 6,
+  "lesson": "6.3",
+  "title": "1-on-1 Framework - GROW Model",
+  "sourcePages": {
+    "intro": 139,
+    "prompt": 140
+  },
+  "prompt": "Act as an executive coaching facilitator using the GROW model.\nTeam member context :  [ROLE, EXPERIENCE LEVEL, CURRENT PROJECT]\nPresenting situation     :  [WHAT THEY HAVE BROUGHT TO THIS 1-ON-1]\nGuide me through a GROW coaching conversation:\nGOAL        :  What questions should I ask to help them define what they want to get from  \n                      this conversation?\nREALITY  :  What questions surface the honest current situation without my \n                     assumptions?\nOPTIONS :  What prompts generate multiple paths forward not just the obvious one?\nWILL        :  How do I lock in a specific, committed action with a timeline and \n                     accountability?\nGive me 2–3 actual questions for each stage.\nGROW Model for Coaching\nStatus Update Coaching Conversation\nCoaching\nIneffective team Effective team\nConversation\ncommunication communication\nDeﬁne desired Assess current Explore potential Deﬁne actionable\noutcomes situation honestly solutions creatively steps\nPRO TIP\nEnd every GROW conversation by asking the person to rate their commitment to the\nagreed action on a scale of 1–10. Anything below 7 means the action is wrong, too big,\nwrong timing, or not genuinely chosen. Ask what would make it a 9. The answer is\nalmost always a smaller first step or a removed obstacle.",
+  "pairsWith": [
+    "6.5 SBI Feedback",
+    "6.9 Radical Candor",
+    "6.7 Delegation Ladder"
+  ],
+  "updatedAt": "2026-09-18"
+}

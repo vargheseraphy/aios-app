@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.1",
+  "title": "Unit Economics - LTV:CAC",
+  "sourcePages": {
+    "intro": 206,
+    "prompt": 207
+  },
+  "prompt": "Act as a startup finance advisor specialising in unit economics.\nMy business model   : [DESCRIBE HOW YOU ACQUIRE AND RETAIN CUSTOMERS]\nRevenue model          : [SUBSCRIPTION / TRANSACTION / USAGE-BASED]\nHelp me calculate and analyse my LTV:CAC:\nLTV CALCULATION:\nAverage Revenue Per Customer (monthly or annual): [X]\nGross Margin %: [X]\nAverage Customer Lifespan or Churn Rate: [X]\nLTV = (ARPC × Gross Margin) / Churn Rate\nCAC CALCULATION:\nTotal Sales & Marketing Spend (last period): [X]\nNew Customers Acquired (same period): [X]\nCAC = Total Spend / New Customers\nANALYSIS:\n1.What is my LTV:CAC ratio?\n2.How does it compare to healthy benchmarks for my model?\n3.What is the payback period (months to recover CAC)?\n4.What one change would most improve this ratio?\nFactors Inﬂuencing LTV : CAC Ratio\nCustomer \nLifetime Value\nAcquisition Cost\nPRO TIP\nPayback period is often more important than the LTV:CAC ratio for early-stage\ncompanies. A 5:1 LTV:CAC sounds excellent, until you realise the payback period is 36\nmonths and you're burning cash for three years before each customer turns profitable. A\n2.5:1 ratio with a 9-month payback is often a healthier business than a 5:1 with a 30-month\npayback.",
+  "pairsWith": [
+    "9.2 Burn Rate",
+    "5.9 AARRR",
+    "9.3 North Star Metric",
+    "9.6 Financial Model"
+  ],
+  "updatedAt": "2026-09-18"
+}

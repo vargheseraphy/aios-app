@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.4",
+  "title": "ICE Scoring",
+  "sourcePages": {
+    "intro": 166,
+    "prompt": 167
+  },
+  "prompt": "I PROMPT — COPY & PASTE READY\nAct as a growth prioritisation advisor using ICE Scoring.\nOur goal / key metric  : [WHAT WE ARE TRYING TO IMPROVE]\nTime horizon                 : [SPRINT / MONTH / QUARTER]\nScore each idea on three dimensions (1–10 each):\nIMPACT                          : How much will this move our key metric?\nCONFIDENCE                : How sure are we it will work? (data > gut)\nEASE                                : How fast and cheap is execution?\nICE SCORE = Impact × Confidence × Ease\nIdeas to score :\n[LIST YOUR 6–10 IDEAS OR INITIATIVES]\nAfter scoring :\n1. Rank all ideas by ICE Score\n2. Flag any high-Impact, low-Confidence ideas  these need a small test \nbefore full investment\n3. Recommend the top 3 to execute this period\n4. Recommend 1 idea to kill lowest score or highest opportunity cost",
+  "pairsWith": [
+    "7.5 RICE Scoring",
+    "6.2 OKRs",
+    "7.3 Theory of Constraints",
+    "9.3 North Star"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 6,
+  "lesson": "6.9",
+  "title": "Radical Candor",
+  "sourcePages": {
+    "intro": 151,
+    "prompt": 152
+  },
+  "prompt": "Act as a leadership communication coach using Kim Scott's Radical Candor framework.\nSituation  : [DESCRIBE THE PERSON, THE PERFORMANCE ISSUE, AND WHAT YOU HAVE  \n                     SAID OR AVOIDED SO FAR]\nStep 1: Diagnose which quadrant I am currently in:\nRadical Candor (high care + high challenge)\nRuinous Empathy (high care + low challenge)\nObnoxious Aggression (low care + high challenge)\nManipulative Insincerity (low on both)\nStep 2: Write the Radical Candor version of this conversation  what I should actually say.\nStep 3: Write the Ruinous Empathy version the version I am probably tempted to give.\nStep 4: Give me 2 opening lines that demonstrate both care and directness simultaneously.\nRadical Candor Matrix\nRadical Candor\nTop right quadrant\nHigh Care, High Challenge\nHigh Care, Low\nRuinous Empathy\nChallenge\nBottom right quadrant\nLow Care, High\nChallenge\nObnoxious Aggression\nTop left quadrant\nLow Care, Low\nChallenge\nManipulative Insincerity\nBottom left quadrant\nPRO TIP\nRuinous Empathy is the most harmful leadership style precisely because it feels kind.\nWhen you protect someone from honest feedback, you protect yourself from an\nuncomfortable conversation and deny them the information they need to grow. The\nperson who needs the feedback most is the one whose manager feels worst about giving it.",
+  "pairsWith": [
+    "6.5 SBI Feedback",
+    "6.3 GROW Model",
+    "6.5 Culture Code"
+  ],
+  "updatedAt": "2026-09-18"
+}

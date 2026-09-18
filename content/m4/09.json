@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.9",
+  "title": "Pipeline Review - Deal Health Check",
+  "sourcePages": {
+    "intro": 107,
+    "prompt": 108
+  },
+  "prompt": "Act as a sales pipeline analyst conducting a deal health review.\nFor each deal I describe, score it against six criteria\n(Yes / Partial / No) and give a health rating:\nCRITERIA:\n1. Confirmed problem :  Do they acknowledge the pain clearly?\n2. Decision-maker       :  Have I spoken directly to the buyer?\n3. Budget                       :  Is budget confirmed or realistically available?\n4. Timeline                    :  Is there a defined date with stakes attached?\n5. Objections                 :  Have key objections been surfaced and handled?\n6. Next step                   :  Is there a mutual commitment with a date?\nDeal 1     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nDeal 2     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nFor each :  Health rating (Strong / At Risk / Stalled)\nand one specific action to take this week.\nDeal health check ranges from healthy to at risk.\nDecision-Maker Timeline with\nContacted Consequences Mutual Next Step\nReal decision-maker Timeline with clear No mutual next step\nhas been reached consequences is set with a date\nHealthy At Risk\nConﬁrmed Problem Budget Deﬁned Objections Surfaced\nProblem is clearly Budget for the deal Signiﬁcant objections have\nidentiﬁed is established been raised\nPRO TIP\nThe most honest pipeline review question is: 'If this deal were to close, what would have\nto happen in the next 7 days?' If you can't answer that specifically, the deal has no\nmomentum. Deals without momentum don't close, they disappear.",
+  "pairsWith": [
+    "4.3 BANT Qualification",
+    "4.8 Follow-Up",
+    "4.10 Closing Techniques"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.5",
+  "title": "Objection Handling - LAER",
+  "sourcePages": {
+    "intro": 99,
+    "prompt": 100
+  },
+  "prompt": "Act as a sales coach using the LAER objection handling framework.\nMy product  :  [WHAT YOU SELL AND AVERAGE PRICE POINT]\nFor each objection below, write a full LAER response:\nObjection 1  :  [YOUR MOST COMMON OBJECTION]\nObjection 2  :  [YOUR SECOND MOST COMMON OBJECTION]\nObjection 3  :  'We don't have budget right now.'\nObjection 4 :  'We need to think about it.'\nObjection 5 :  'We're already using [COMPETITOR].'\nFor each objection use this structure:\nLISTEN                  :  (note what to observe / not interrupt)\nACKNOWLEDGE :  Exact words to validate their concern\nEXPLORE              :  One open question to uncover the real issue\nRESPOND             :  Precise response to the likely real concern\nLAER — Turn Objections Into Conversations\nListen\nAcknowledge\nExplore\nRespond\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+  "pairsWith": [
+    "4.2 SPIN Selling",
+    "4.4 Challenger Sale",
+    "4.10 Closing Techniques"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.3",
+  "title": "Lead Qualification  BANT & CHAMP",
+  "sourcePages": {
+    "intro": 95,
+    "prompt": 96
+  },
+  "prompt": "Act as a B2B sales qualification coach.\nMy product: [WHAT YOU SELL AND AVERAGE DEAL SIZE]\nProspect: [ROLE, INDUSTRY, WHAT YOU KNOW ABOUT THEM]\nGenerate qualification questions for both frameworks:\nBANT QUALIFICATION:\nBudget: How do I uncover budget without asking directly?\nAuthority: How do I map the decision-making process?\nNeed: How do I confirm this is a real priority?\nTimeline: How do I understand their urgency without pressure?\nCHAMP QUALIFICATION:\nChallenges: What is the core problem driving this search?\nAuthority: Who else is involved in this decision?\nMoney: What have they invested in alternatives?\nPrioritisation: Where does this rank against other initiatives?\nWrite 2 natural-sounding questions per category.\nChallenge-Focused\nBudget-Focused\nQualiﬁcation\nQualiﬁcation\nAuthority Assessment Authority Assessment\nNeed Assessment Money Assessment\nPrioritisation Assessment\nTimeline Assessment\nCHAMP prioritises customer challenges for effective qualiﬁcation.\nBANT CHAMP\nPRO TIP\nThe most important qualification question is Timeline - but never ask it first. Ask it after\nyou've built the pain clearly. A prospect with no timeline usually has no urgency, which means\nno deal. Timeline answers tell you whether to invest or to place in a nurture sequence.",
+  "pairsWith": [
+    "4.2 SPIN Selling",
+    "4.4 Challenger Sale",
+    "4.9 Pipeline Review"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.6",
+  "title": "Culture Code Canvas",
+  "sourcePages": {
+    "intro": 145,
+    "prompt": 146
+  },
+  "prompt": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.",
+  "pairsWith": [
+    "6.4 Hiring",
+    "6.9 Radical Candor",
+    "6.5 SBI Feedback",
+    "6.11 Situational Leadership"
+  ],
+  "updatedAt": "2026-09-18"
+}

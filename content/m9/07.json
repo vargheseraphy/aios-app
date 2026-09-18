@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.7",
+  "title": "Balanced Scorecard",
+  "sourcePages": {
+    "intro": 218,
+    "prompt": 219
+  },
+  "prompt": "Act as a business performance consultant using the Balanced Scorecard.\nMy business             :  [DESCRIBE YOUR COMPANY, STAGE, AND STRATEGY]\nStrategic priorities :  [YOUR TOP 3 OBJECTIVES FOR THIS YEAR]\nBuild a Balanced Scorecard across all four perspectives:\nFINANCIAL PERSPECTIVE                      :  Objective, Measure, Target, Initiative\nCUSTOMER PERSPECTIVE                     :  Objective, Measure, Target, Initiative\nINTERNAL PROCESS PERSPECTIVE     :  Objective, Measure, Target, Initiative\nLEARNING & GROWTH PERSPECTIVE :  Objective, Measure, Target, Initiative\nAfter building: show the causal chain.\nHow does improvement in Learning & Growth lead to better Internal Processes,\nwhich leads to better Customer outcomes, which drives Financial results?\nDraw the arrows explicitly.\nBalanced Scorecard\nFinancial Customer Internal Processes Learning & Growth\nLagging, output Leading, input Leading, input Leading, input\nperspective. perspective. perspective. perspective.\n100% 100% 100% 100%\nThe Balanced Scorecard balances ﬁnancial outcomes with customer, internal, and learning perspectives.\nPRO TIP\nThe causal chain exercise at the end is the most valuable part. If you cannot draw a clear\nline from your Learning & Growth measures to your Financial outcomes, your scorecard\nis a collection of metrics, not a strategy. The power of the Balanced Scorecard is not\nmeasurement,  it is the explicit theory of how your business creates value.",
+  "pairsWith": [
+    "6.2 OKRs",
+    "6.10 Hoshin Kanri",
+    "9.3 North Star",
+    "9.4 Funnel Analysis"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.10",
+  "title": "Perceptual Mapping",
+  "sourcePages": {
+    "intro": 88,
+    "prompt": 89
+  },
+  "prompt": "Act as a brand strategist using perceptual mapping.\nMy brand                               :  [YOUR COMPANY AND WHAT IT DOES]\nCompetitors                          :  [LIST 5–6 KEY COMPETITORS]\nCustomer decision factors :  [WHAT CUSTOMERS WEIGH MOST WHEN\nCHOOSING IN THIS CATEGORY]\nStep 1  :  Recommend the 2 best axes for this market's perceptual map, \nthe dimensions that most drive customer perception and choice.\nStep 2 :  For each competitor and my brand, describe where they would\nland on the map and why.\nStep 3 :  Identify any white space, an unoccupied position that a\nsizeable customer segment values.\nStep 4 :  Recommend whether I should hold my current position or\nreposition and where to move.\nMap Brands Effectively\nInnovative Premium Target White Space\nHigh innovation, high Unoccupied market\nprice niche\nTraditional Budget Innovative Budget\nEstablished, Novelty at a low cost\naffordable offerings\nPRO TIP\nRun the same perceptual map twice: once based on how you believe customers see the\nmarket, and once asking AI to reflect what customer reviews and public sentiment\nactually say. The gap between your internal map and the external one is your most\nimportant strategic insight.",
+  "pairsWith": [
+    "3.7 Positioning Statement",
+    "3.6 Competitor Mapping",
+    "2.4 Blue Ocean"
+  ],
+  "updatedAt": "2026-09-18"
+}

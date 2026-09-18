@@ -1,0 +1,17 @@
+{
+  "module": 4,
+  "lesson": "4.6",
+  "title": "PAS - Problem Agitate Solve",
+  "sourcePages": {
+    "intro": 101,
+    "prompt": 102
+  },
+  "prompt": "Act as a direct response copywriter using the PAS framework.\nMy product          :  [WHAT YOU SELL]\nTarget customer :  [WHO THEY ARE AND THEIR CONTEXT]\nCore problem       :  [THE MAIN PAIN YOU SOLVE]\nChannel                 :  [EMAIL / LINKEDIN POST / WEBSITE HEADLINE]\nWrite 3 PAS variations for this channel:\nPROBLEM              :  Name the specific pain, their words, not yours\nAGITATE                 :  Expand the consequences, what does this cost them in time,\nmoney, stress, missed opportunity?\nSOLVE         :  Present the solution as natural relief\nVariation 1  :  Lead with the financial cost of the problem\nVariation 2  :  Lead with the emotional cost\nVariation 3  :  Lead with what they are missing out on\nKeep each under 80 words. No jargon.\nPAS Framework for Problem Solving\nUnresolved Problem Agitate Solve Resolved Problem\nSpeciﬁc pain needs Show consequences Present logical Logical solution\naddressing of inaction solution implemented\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+  "pairsWith": [
+    "4.1 Cold Outreach",
+    "5.1 StoryBrand",
+    "4.7 Proposal Writing",
+    "5.2 Hook Framework"
+  ],
+  "updatedAt": "2026-09-18"
+}

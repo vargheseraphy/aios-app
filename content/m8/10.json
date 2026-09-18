@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.10",
+  "title": "Expected Value Framework",
+  "sourcePages": {
+    "intro": 203,
+    "prompt": 204
+  },
+  "prompt": "Act as a decision science consultant using Expected Value analysis.\nDecision           :  [DESCRIBE THE CHOICE]\nOptions            :  [LIST YOUR 2–3 ALTERNATIVES]\nFor each option, define all possible outcomes:\nOUTCOME       :  What could happen\nPROBABILITY :  Estimated likelihood (must sum to 100%)\nVALUE: Financial, time, or strategic worth\nCalculate Expected Value for each option:\nEV = Sum of (Probability × Value) across all outcomes\nThen analyse:\n1.Which option has the highest EV?\n2.Which has the best downside protection?\n3.What probability estimate am I most uncertain about?\n4.How does the ranking change if that estimate shifts by +/- 20%?\n5.If I could run this decision 100 times, which option wins most often?\nCalculating Expected Value\nOutcome A\nProbability of Outcome\n A multiplied by its value.\nOutcome B\nProbability of Outcome\n B multiplied by its value.\nExpected Value\nPRO TIP\nThe '100 times' question at the end is the most clarifying. EV is a long-run average, it tells\nyou which option wins if you could repeat the decision many times. For irreversible, once-\nin-a-career decisions, EV is necessary but not sufficient. Pair it with worst-case analysis:\ncan you survive the worst outcome of the highest-EV option? If yes, take it. If no,\nreconsider.",
+  "pairsWith": [
+    "8.9 Decision Tree",
+    "8.4 Risk Matrix",
+    "8.5 Scenario Planning",
+    "9.2 Burn Rate"
+  ],
+  "updatedAt": "2026-09-18"
+}

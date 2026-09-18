@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.10",
+  "title": "Closing Techniques Matrix",
+  "sourcePages": {
+    "intro": 109,
+    "prompt": 110
+  },
+  "prompt": "Act as a sales closing coach.\nMy deal   :  [DESCRIBE THE DEAL  STAGE, WHAT'S BEEN AGREED, WHAT  \n                     HESITATION REMAINS]\nProspect personality   :  [ANALYTICAL / RELATIONSHIP / DECISIVE]\nRecommend the best closing approach for this situation from these options:\nSUMMARY CLOSE        :  Recap value, ask for decision\nALTERNATIVE CLOSE  :  Two paths forward, both say yes\nASSUMPTIVE CLOSE   :  Move forward as if decided\nQUESTION CLOSE        :  Ask what would make them comfortable\nURGENCY CLOSE          :  Name a real consequence of delay\nWrite the exact words I would say out loud for the recommended close.\nThen write a recovery if they say not yet.\nClosing techniques range from direct to exploratory.\nSummary Close Alternative Close\nSummarizes beneﬁts, asks Offers choices, guides to\nfor commitment decision\nAssumptive Close Question Close\nAssumes agreement, Explores concerns,\ncloses quickly uncovers objections\nConﬁdent Hesitant\nPRO TIP\nThe best close is the one you use before you think you need to close. When all signals are\npositive value confirmed, objections handled, timeline agreed  ask for the decision. Most\nsalespeople wait for perfect certainty before closing. That certainty rarely arrives. Move\nwhen the signals are there.",
+  "pairsWith": [
+    "4.5 Objection Handling",
+    "4.9 Pipeline Review",
+    "4.2 SPIN Selling"
+  ],
+  "updatedAt": "2026-09-18"
+}

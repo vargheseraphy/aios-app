@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.10",
+  "title": "5S Framework",
+  "sourcePages": {
+    "intro": 178,
+    "prompt": 179
+  },
+  "prompt": "Act as a 5S operational consultant.\nEnvironment to apply 5S:\nDIGITAL           :  shared drive / CRM / Notion / email inbox\nPHYSICAL        :  office / desk / storage / warehouse\nTeam size         :  [HOW MANY PEOPLE USE THIS ENVIRONMENT]\nCurrent state  :  [DESCRIBE THE MAIN FRICTION POINTS]\nGuide me through all five S steps:\nSORT (Seiri)                         :  What should be removed or archived? Decision rule for  \n                                                  keeping vs. removing?\nSET IN ORDER (Seiton)      :  How should items be organised?\nNaming convention, folder structure, or physical layout recommendation.\nSHINE (Seiso)                       :  What maintenance tasks keep it clean? Who is responsible?  \n                                                   How often?\nSTANDARDISE (Seiketsu)  :  What standards should everyone follow? Write 5 simple     \n                                                   rules for this environment.\nSUSTAIN (Shitsuke)            :  How do we audit compliance monthly? What is the  \n                                                   minimum habit to maintain it?\n5S — Order as a Performance Strategy\nSet in Order Standardise\n1 2 3 4 5\nSort Shine Sustain\nPRO TIP\nThe most neglected S is Sustain  and without it, the other four degrade within a month.\nBuild one maintenance habit: a 15-minute monthly '5S check' where one person audits\none area against the standard. The audit does not need to be comprehensive. It needs to\nbe consistent. Consistency is what makes 5S compound.",
+  "pairsWith": [
+    "7.9 Kaizen",
+    "7.1 SOP Generation",
+    "7.11 Poka-Yoke",
+    "7.2 Swimlane"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.1",
+  "title": "C.A.R.E Prompting",
+  "sourcePages": {
+    "intro": 24,
+    "prompt": 25
+  },
+  "prompt": "Role:               Act as a [EXPERT ROLE  e.g. B2B sales coach].\nContext:        I am [YOUR SITUATION  company, stage, industry].\nAction:           [WHAT YOU WANT e.g. Give me 5 positioning ideas\n                        to differentiate in the [MARKET / REGION]].\nExpectation: Format as a numbered list. Each point 2–3 lines.\nUse plain business language. No jargon.\nCRAFTING EFFECTIVE AI PROMPTS\n4 State Expectation\nClearly outline the desired format,\nlength, and tone of the output.\n3 Start with Role\nBegin the prompt by deﬁning the\nAI's persona.\n2 Fill C.A.R.E Layers\nProvide context, action, role, and\nexpectation for the prompt.\nIdentify Need\n1\nDetermine the speciﬁc task you\nwant the AI to perform.\nPRO TIP\nIf your output feels off, the problem is almost always a vague Role or missing\nExpectation. Fix those two before rewriting the whole prompt.",
+  "pairsWith": [
+    "1.2 Context Stack",
+    "1.3 Role Prompting",
+    "1.4 Refinement Loop"
+  ],
+  "updatedAt": "2026-09-18"
+}

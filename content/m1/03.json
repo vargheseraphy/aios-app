@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.3",
+  "title": "Role Prompting - The Expert Chair",
+  "sourcePages": {
+    "intro": 28,
+    "prompt": 29
+  },
+  "prompt": "Act as a [SPECIFIC EXPERT  e.g. senior B2B SaaS sales strategist with 15 years\nselling to enterprise CTOs].\nYou care most about:  [THEIR PRIORITY - e.g. shortening sales cycles and\nincreasing deal value, not just volume].\nFrom your expert perspective: [YOUR QUESTION OR SCENARIO - be specific]\nGive your honest assessment. Flag risks I may not have considered.\nDeﬁne AI Roles\nHigh Importance\nBroad Roles Expert Roles\nGeneral professional Highly specialized\nperspectives professional viewpoints\nLow Speciﬁcity High Speciﬁcity\nGeneric AI Niche Roles\nStandard, unassigned AI Highly speciﬁc but less\noutput critical perspectives\nLow Importance\nPRO TIP\nThe most underused version: assign a role that would disagree with your plan. 'Act as a\nsceptical investor' or 'Act as the customer who would not buy this' reveals blind spots no\ninternal meeting will find.",
+  "pairsWith": [
+    "1.1 C.A.R.E",
+    "1.5 Six Thinking Hats",
+    "8.6 Red Team Thinking"
+  ],
+  "updatedAt": "2026-09-18"
+}

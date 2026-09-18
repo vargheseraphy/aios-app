@@ -1,0 +1,17 @@
+{
+  "module": 3,
+  "lesson": "3.3",
+  "title": "Porter's Five Forces",
+  "sourcePages": {
+    "intro": 74,
+    "prompt": 75
+  },
+  "prompt": "Act as a strategic industry analyst using Porter's Five Forces.\nIndustry                                        :  [YOUR SPECIFIC INDUSTRY  be precise]\nMy position                                  :  [WHAT YOU DO, YOUR SIZE, YOUR SEGMENT]\nAnalyse all five forces:\nCOMPETITIVE RIVALRY            :  How intense is competition?\nTHREAT OF NEW ENTRANTS  :  How easy to enter this market?\nTHREAT OF SUBSTITUTES       :  What else could customers use?\nBUYER POWER                            :  How much leverage do buyers have?\nSUPPLIER POWER                      :  How much leverage do suppliers have?\nRate each force                            :  Low / Medium / High.\nIdentify the most dangerous force for my specific position.\nSuggest 2 strategic moves to reduce the impact of the highest-threat force on my business.\nPorter's Five Forces Analysis\nNo legal factors No political factors\nNo legal factors No political factors\nNo environmental\nIndustry Rivalry\nfactors\nCompetition impacts\nNo environmental factors\nproﬁtability\nNo technological factors No social factors\nNo social factors\nNo technological factors\nPRO TIP\nThe most overlooked force is Threat of Substitutes. Customers don't just compare you to\ncompetitors, they compare you to doing nothing, doing it manually, or using a completely\ndifferent category. Ask AI specifically: 'What are the non-obvious substitutes for my\nproduct that I might be underestimating?'",
+  "pairsWith": [
+    "3.1 SWOT",
+    "2.4 Blue Ocean",
+    "2.8 Moat Builder",
+    "3.6 Competitor Mapping"
+  ],
+  "updatedAt": "2026-09-18"
+}

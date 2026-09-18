@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.1",
+  "title": "The DECIDE Framework",
+  "sourcePages": {
+    "intro": 185,
+    "prompt": 186
+  },
+  "prompt": "Act as a structured decision-making facilitator using the DECIDE framework.\nDecision to make  :  [DESCRIBE THE DECISION IN ONE SENTENCE]\nDeadline                 :  [WHEN THIS MUST BE DECIDED]\nContext                   :  [RELEVANT BACKGROUND, CONSTRAINTS, STAKEHOLDERS]\nGuide me through all six DECIDE steps:\nDEFINE          :  Restate the decision clearly and precisely. What is the core question being  \n                          answered?\nESTABLISH   :  What are the 4–5 criteria for a good decision? Weight each by \n                          importance (1–5).\nCONSIDER    :  Generate 3–4 realistic alternative options. Include one option I may be  \n                           avoiding.\nIDENTIFY     :  Score each option against each criterion. Which scores highest overall?\nDEVELOP      :  What are the first 3 implementation steps?\nEVALUATE    :  What metric or signal will tell me at 90 days whether this was the right  \n                          decision?\nThe DECIDE Framework\nDeﬁne Consider Alternatives Develop & Implement\nEstablish Criteria Identify Best Option Evaluate\nPRO TIP\nThe step most people skip is Establish  defining criteria before looking at options. When\nyou evaluate options without stated criteria, you unconsciously build the criteria around\nyour preferred option. Writing criteria first makes the evaluation honest. If your\npreferred option scores poorly against honest criteria, that is the most valuable output\nfrom this framework.",
+  "pairsWith": [
+    "8.2 Pre-Mortem",
+    "8.9 Decision Tree",
+    "1.12 MECE",
+    "1.6 First Principles"
+  ],
+  "updatedAt": "2026-09-18"
+}

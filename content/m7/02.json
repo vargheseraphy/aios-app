@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.2",
+  "title": "Workflow Mapping - Swimlane",
+  "sourcePages": {
+    "intro": 162,
+    "prompt": 163
+  },
+  "prompt": "Act as a process improvement consultant specialising in workflow mapping.\nProcess to map       :  [NAME AND DESCRIBE THE PROCESS END TO END]\nRoles involved         :  [LIST ALL PEOPLE OR TEAMS WHO TOUCH THIS PROCESS]\nKnown pain points :  [WHERE THINGS GO WRONG OR SLOW DOWN]\nMap this process as a text-based Swimlane diagram:\nFormat                       :  ROLE | Step description | Output / Handoff to\nAfter the map:\n1.Identify the 3 highest-risk handoff points\n2.Name the role that is the biggest bottleneck\n3.Identify any steps that add no value and could be removed\n4.Suggest one redesign that would most improve flow\nFlag any step where accountability is shared between two lanes, \nthose are your highest failure risk points.\nSwimlane Diagram - See Where Handoffs Break\nSales Team Process Operations Team Process Finance Team Process\nThe sales team initiates the The operations team executes The ﬁnance team completes\nprocess their part of the process their part of the process\nHandoff to Operations Handoff to Finance\nThe sales team hands off the\nThe operations team hands off\nprocess to operations the process to ﬁnance\nPRO TIP\nShared accountability between lanes is the number one predictor of process failure. When\ntwo roles both touch a step, both assume the other is checking it. The fix is always the\nsame: assign one person as Accountable (using RACI) and make the handoff explicit with a\ndefined output format and a confirmation step.",
+  "pairsWith": [
+    "7.1 SOP — SIPOC",
+    "6.1 RACI Matrix",
+    "7.11 Poka-Yoke",
+    "7.3 Theory of Constraints"
+  ],
+  "updatedAt": "2026-09-18"
+}

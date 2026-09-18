@@ -1,0 +1,18 @@
+{
+  "module": 10,
+  "lesson": "10.3",
+  "title": "Weekly Review  GTD 5-15",
+  "sourcePages": {
+    "intro": 229,
+    "prompt": 230
+  },
+  "prompt": "Act as a personal productivity coach running my Weekly Review.\nThis week's context:\nWhat I planned to do       :  [YOUR GOALS OR INTENTIONS FOR THIS WEEK]\nWhat I actually did           :  [KEY TASKS AND PROJECTS WORKED ON]\nWhat is unfinished           :  [ITEMS CARRIED OVER OR INCOMPLETE]\nUpcoming commitments :  [KEY MEETINGS, DEADLINES NEXT WEEK]\nRun my Weekly Review:\nWINS             :  What 3 things went well this week? What made them possible?\nGAPS             :  What did I plan but not do? Was it worth doing? If yes — why didn't it  \n                          happen?\nLEARNINGS : What one thing would I do differently?\nNEXT WEEK PRIORITIES: My top 3 outcomes for next week. Not tasks, outcomes.\nPROTECT      :  One block of time to schedule now for my most important strategic \n                           work next week.\nCLEAR: One thing to decide, delegate, or delete today.\nThe 5-15 Weekly Review\nWhat Happened What's Next Repeat Weekly\n5 min: What Happened 10 min: What's Next Repeat Weekly\nPRO TIP\nThe single most important output of the Weekly Review is the one block of protected\ntime for Q2 work scheduled in advance. Without scheduling it before the week begins,\nreactive Q1 and Q3 work will fill every available hour. The calendar must reflect your\npriorities before the week starts, not after it ends.",
+  "pairsWith": [
+    "8.7 Eisenhower Matrix",
+    "5-15 Report",
+    "10.2 90-Day Planning",
+    "10.6 Atomic Habits",
+    "6.8"
+  ],
+  "updatedAt": "2026-09-18"
+}

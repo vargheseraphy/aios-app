@@ -1,0 +1,17 @@
+{
+  "module": 5,
+  "lesson": "5.1",
+  "title": "StoryBrand Framework - SB7",
+  "sourcePages": {
+    "intro": 114,
+    "prompt": 115
+  },
+  "prompt": "I PROMPT — COPY & PASTE READY\nAct as a StoryBrand messaging consultant using Donald Miller's SB7.\nMy business          :  [WHAT YOU DO AND WHO YOU SERVE]\nCustomer's goal    :  [WHAT THE CUSTOMER WANTS TO ACHIEVE]\n                                    Build the full SB7 for my brand:\nCHARACTER         :   Who is the hero, describe them specifically\nPROBLEM              :   External (practical), Internal (emotional), Philosophical (why it's \n                                     wrong that this exists)\nGUIDE                     :   My brand's empathy and authority\nPLAN                        :  3 simple steps to work with me\nCALL TO ACTION  :  One direct CTA and one transitional CTA\nSUCCESS                 :  What their life looks like after\nFAILURE                  :  What's at stake if they don't act\nThen write a one-sentence brand tagline using this structure.",
+  "pairsWith": [
+    "3.7 Positioning Statement",
+    "4.6 PAS",
+    "4.7 Proposal Writing",
+    "5.8 Brand Voice"
+  ],
+  "updatedAt": "2026-09-18"
+}

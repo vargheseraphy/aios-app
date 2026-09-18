@@ -1,0 +1,17 @@
+{
+  "module": 1,
+  "lesson": "1.0",
+  "title": "The AI Mental Model",
+  "sourcePages": {
+    "intro": 22,
+    "prompt": 23
+  },
+  "prompt": "I want to understand how to work with you more effectively.\nMy situation: [WHO I AM - role, industry, company stage]\nWhat I typically use AI for: [YOUR MAIN USE CASES]\nBased on this, tell me:\n1.Where am I most likely leaving quality on the table?\n2.What context should I always give you that I probably forget?\n3.What is one thing I can do differently from today that would\n       improve every output I get from you?\nBe direct. Assume I am smart but new to working with AI well.\nHow to improve AI output?\nDeﬁne Role\nSpeciﬁes the AI's perspective, leading to\nmore tailored responses.\nProvide Context\nInforms the AI about the situation, ensuring\nrelevance.\nSet Expectations\nGuides the AI towards the desired output\nformat and content.\nPRO TIP\nThe most common mistake is treating a bad output as a model failure. It is\nalmost never the model. It is almost always a missing Role, thin Context, or no\nstated Expectation. Diagnose before you retry.",
+  "pairsWith": [
+    "1.1 C.A.R.E Prompting",
+    "1.2 Context Stack",
+    "1.3 Role Prompting",
+    "1.4 Refinement ..."
+  ],
+  "updatedAt": "2026-09-18"
+}

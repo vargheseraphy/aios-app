@@ -1,0 +1,16 @@
+{
+  "module": 5,
+  "lesson": "5.4",
+  "title": "Content Pillars Strategy",
+  "sourcePages": {
+    "intro": 120,
+    "prompt": 121
+  },
+  "prompt": "Act as a content strategy consultant.\nMy background and expertise :  [WHAT YOU KNOW DEEPLY]\nMy target audience                    :  [WHO I WANT TO REACH AND WHAT THEY CARE  \n                                                          ABOUT]\nMy business goal                         :  [WHAT I WANT CONTENT TO ACHIEVE  LEADS, \n                                                           BRAND, AUTHORITY, COMMUNITY]\nPlatform                                        :  [LINKEDIN / INSTAGRAM / X / YOUTUBE]\nDesign my Content Pillar strategy:\nStep 1      :  Suggest 5 content pillars that fit my expertise and audience.\nFor each  :  name, description, and 3 example post topics.\nStep 2     :  Recommend a weekly content mix across pillars.\nStep 3     :  Suggest one signature content format I should own,\nthe thing my audience will recognise me for.\nContent Pillars Strategy\nLeadership\nFocuses on guiding and inspiring your\naudience.\nAI Tools\nExplores innovative technologies to\nenhance productivity.\nSales Strategy\nOutlines effective methods to drive\nrevenue.\nPRO TIP\nYour signature content format is more valuable than your best single post. A consistent\nformat, a weekly framework breakdown, a Monday mindset post, a Friday lessons-\nlearned thread - trains your audience to expect and look for you. Consistency of format\ncompounds faster than variety of topics.",
+  "pairsWith": [
+    "5.2 Hook Framework",
+    "5.8 Brand Voice",
+    "10.8 Personal Brand Flywheel"
+  ],
+  "updatedAt": "2026-09-18"
+}

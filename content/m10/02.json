@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.2",
+  "title": "90-Day Planning",
+  "sourcePages": {
+    "intro": 227,
+    "prompt": 228
+  },
+  "prompt": "Act as a 90-day planning coach.\nMy context                :  [YOUR ROLE, CURRENT BUSINESS STAGE, KEY PRIORITIES]\nLonger-term vision :  [WHERE YOU ARE TRYING TO GET TO IN 12–18 MONTHS]\nCurrent blockers      :  [WHAT IS SLOWING YOUR PROGRESS MOST]\nBuild my 90-Day Plan:\nBREAKTHROUGH GOALS :  3 outcomes that would make this quarter genuinely \n                                                   significant  not just busy.\nFor each: define what done looks like measurably.\nWEEKLY MILESTONES    :  For each goal  what should I have achieved by week 4, week \n                                                 8, and week 12?\nKEYSTONE HABITS          :  2 weekly behaviours that are preconditions for hitting these  \n                                                 goals.\nNOT-TO-DO LIST              :  3 things I must stop doing or deprioritise to protect capacity  \n                                                 for these goals.\nWEEKLY CHECK-IN          :  One question to ask myself every Friday to assess whether\n                                                  I am on track.\nAchieving Quarterly Goals\nUnplanned Set Breakthrough Track Quarterly Planned\nQuarter Goals Milestones Review Quarter \nNo clear Deﬁne key Monitor progress Evaluate Clear direction\ndirection objectives weekly performance and progress\nPRO TIP\nThe Not-To-Do List is as important as the goal list. Every 90-Day Plan assumes you will\nhave capacity you don't currently have. That capacity has to come from somewhere  and\nthe only honest place it can come from is stopping or delegating something you\ncurrently do. Write the Not-To-Do List before you commit to the goals.",
+  "pairsWith": [
+    "8.7 Eisenhower Matrix",
+    "10.3 Weekly Review",
+    "6.2 OKRs",
+    "10.6 Atomic Habits"
+  ],
+  "updatedAt": "2026-09-18"
+}

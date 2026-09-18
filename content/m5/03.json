@@ -1,0 +1,17 @@
+{
+  "module": 5,
+  "lesson": "5.3",
+  "title": "4Ps & 7Ps Marketing Mix",
+  "sourcePages": {
+    "intro": 118,
+    "prompt": 119
+  },
+  "prompt": "I PROMPT — COPY & PASTE READY\nAct as a marketing strategist using the 7Ps Marketing Mix.\nMy business        :  [DESCRIBE YOUR PRODUCT OR SERVICE]\nTarget customer :  [WHO THEY ARE AND WHAT THEY VALUE]\nCurrent stage      :  [EARLY / GROWING / SCALING]\nAnalyse and recommend for all 7Ps:\nPRODUCT       :  What are we selling,  features and positioning\nPRICE              :  How should we price, value, cost, or competitive?\nPLACE             :  Where and how do customers access us?\nPROMOTION  :  Which channels and messages drive awareness?\nPEOPLE           :  Who delivers the experience. skills and culture\nPROCESS         :  How is the service or product delivered?\nPHYSICAL       :  What tangible evidence builds trust?\nFlag any contradictions between elements. Identify the 2 Ps that most need improvement.\nFor those 2 Ps, give one specific change I should make in the next 30 days.",
+  "pairsWith": [
+    "5.6 GTM Canvas",
+    "3.9 STP Model",
+    "5.4 Content Strategy",
+    "2.7 Pricing"
+  ],
+  "updatedAt": "2026-09-18"
+}

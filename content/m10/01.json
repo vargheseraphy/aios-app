@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.1",
+  "title": "Personal SWOT",
+  "sourcePages": {
+    "intro": 225,
+    "prompt": 226
+  },
+  "prompt": "Act as a personal development coach conducting a Personal SWOT.\nMy background     :  [DESCRIBE YOUR EXPERIENCE, SKILLS, TRACK RECORD]\nMy role                    :  [WHAT YOU DO AND WHAT YOU ARE RESPONSIBLE FOR]\nExternal feedback  :  [ANY FEEDBACK YOU HAVE RECEIVED - GOOD OR BAD]\nCurrent goals          :  [WHAT YOU ARE TRYING TO ACHIEVE IN THE NEXT 12 MONTHS]\nBuild a Personal SWOT:\nSTRENGTHS         :  What do I consistently do better than most? What do others come to  \n                                    me for?\nGive 4–5 specific, evidence-backed strengths.\nWEAKNESSES      :  Where do I consistently underperform? What do I avoid or  \n                                   procrastinate on?\nBe honest - what do people notice that I minimise?\nOPPORTUNITIES :  Given my strengths, what external conditions could I leverage that \n                                    others could not?\nTHREATS               :  Given my weaknesses, what external conditions specifically threaten \n                                    my goals?\nStrategic output   :  top 2 strengths to build on, top 1 weakness to address immediately.\nPersonal SWOT\nQuadrant Strengths Weaknesses Opportunities Threats\nAreas you\nCapabilities you External conditions External conditions\nconsistently\nDescription genuinely have, you can leverage that exploit your\nunderperform or\nveriﬁed by others given your strengths weaknesses\navoid\nPRO TIP\nThe most valuable Personal SWOT input is unsolicited feedback you have dismissed or\nminimised. The things people have told you repeatedly but that you haven't fully\naccepted - those are your most accurate weakness data. The reason you dismissed\nthem is usually the reason they are true.",
+  "pairsWith": [
+    "3.1 SWOT",
+    "10.5 Three Horizons",
+    "10.7 Socratic Self-Questioning",
+    "10.9 Ikigai"
+  ],
+  "updatedAt": "2026-09-18"
+}

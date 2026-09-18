@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.7",
+  "title": "Delegation Ladder",
+  "sourcePages": {
+    "intro": 147,
+    "prompt": 148
+  },
+  "prompt": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.\nDelegation Ladder  7 Levels of Letting Go\nTell Consult Advise Delegate\nLevel 1 Level 3 Level 5 Level 7\nLevel 2 Level 4 Level 6\nSell Agree Inquire\nPRO TIP\nThe hardest delegation move is not from level 2 to level 5  it is from level 3 to level 4.\nAsking for input (3) still feels like control. Deciding together (4) requires genuine trust that\nthe person's judgment is sound. That trust is built through smaller delegations done well.\nStart with level 4 on low-stakes decisions and build from there.",
+  "pairsWith": [
+    "6.1 RACI Matrix",
+    "6.3 GROW Model",
+    "6.2 OKRs",
+    "6.11 Situational Leadership"
+  ],
+  "updatedAt": "2026-09-18"
+}

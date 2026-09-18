@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.5",
+  "title": "TAM SAM SOM",
+  "sourcePages": {
+    "intro": 78,
+    "prompt": 79
+  },
+  "prompt": "Act as a venture capital analyst helping me build a credible market sizing model.\nMy business     :  [DESCRIBE WHAT YOU SELL AND TO WHOM]\nGeography       :  [YOUR TARGET MARKETS]\nPrice point       :  [YOUR AVERAGE DEAL / CONTRACT VALUE]\nBuild both top-down and bottom-up sizing for:\nTAM            :  Total global revenue opportunity,  all potential customers using any  \n                        solution for this problem\nSAM            :  Realistic reachable market with my current model and go-to-market  \n                        approach\nSOM            :  Achievable share in 3–5 years based on realistic growth assumptions\nBottom-up :  Number of ICP accounts × ACV = realistic SOM\nFlag the key assumptions and the biggest risks to the sizing model.\nTAM SAM SOM — Market Sizing Made Honest\n$100 billion\nTAM\nTotal Addressable Market\n$50 billion\nSAM\nServiceable Addressable Market\n$10 billion\nSOM\nServiceable Obtainable Market\nPRO TIP\nInvestors are sceptical of top-down market sizing because anyone can find a large\nnumber. The founders who impress are those who say 'bottom-up, we see 12,000\ncompanies that fit our ICP, average deal size is X, that gives us a Y SOM with Z%\npenetration in year 3.' That level of specificity signals you actually know your market.",
+  "pairsWith": [
+    "3.4 ICP",
+    "9.5 Investor Narrative",
+    "2.9 Ansoff Matrix"
+  ],
+  "updatedAt": "2026-09-18"
+}

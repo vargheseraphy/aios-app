@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.10",
+  "title": "Hoshin Kanri",
+  "sourcePages": {
+    "intro": 153,
+    "prompt": 154
+  },
+  "prompt": "Act as a Hoshin Kanri strategy consultant.\nCompany vision (3–5 years)  :  [WHERE YOU ARE HEADING]\nThis year's priority                 :  [THE ONE BREAKTHROUGH OBJECTIVE FOR THIS YEAR]\nTeam structure                       :   [LIST YOUR TEAMS OR FUNCTIONAL AREAS]\nBuild a Hoshin Kanri cascade:\nTRUE NORTH               :  The 3–5 year vision in one clear sentence\nANNUAL OBJECTIVE  :  The single most important thing to achieve this year\nTEAM OBJECTIVES     :  For each team what they must deliver to support the annual  \n                                            objective\nMONTHLY MILESTONES  : Key proof points for each quarter\nCATCHBALL QUESTIONS : 3 questions I should ask each team lead to align their objectives\nWARNING SIGNALS           :  What would tell me the cascade has broken down?\nHoshin Kanri Hierarchy\nCompany Vision & Goals\nOverall vision and annual objectives of\nthe company\nDepartment Goals\nObjectives set by each department\nTeam Daily Actions\nSpeciﬁc tasks performed by teams daily\nPRO TIP\nThe most common Hoshin failure is confusing activity alignment with outcome\nalignment. Every team can be busy doing things that connect to the objective on paper\nbut don't move the metric. Build the cascade around outcomes at every level  not\ninitiatives. If you can't draw a straight line from a team member's daily work to a\ncompany metric, the cascade has a gap.",
+  "pairsWith": [
+    "6.2 OKRs",
+    "6.1 RACI Matrix",
+    "9.7 Balanced Scorecard",
+    "10.5 3 Horizons"
+  ],
+  "updatedAt": "2026-09-18"
+}

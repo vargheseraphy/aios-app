@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.8",
+  "title": "Follow-Up Sequences",
+  "sourcePages": {
+    "intro": 105,
+    "prompt": 106
+  },
+  "prompt": "Act as a B2B sales sequence strategist.\nDeal context        :  [WHAT YOU PROPOSED AND WHAT THEY SAID]\nProspect role      :  [JOB TITLE AND INDUSTRY]\nLast contact        :  [WHAT HAPPENED IN YOUR LAST INTERACTION]\nBuild a 7-touch follow-up sequence:\nTouch 1 (Day 1)    :  Post-meeting summary and one insight\nTouch 2 (Day 3)   :  Relevant content or case study\nTouch 3 (Day 6)   :  Answer a question they didn't ask yet\nTouch 4 (Day 10) :  Social proof specific to their industry\nTouch 5 (Day 15) :  New angle  challenge their status quo\nTouch 6 (Day 22) :  Offer to simplify or reduce scope\nTouch 7 (Day 30) :  Break-up email  honest and respectful\nFor each touch    :  write the subject line and opening sentence.\nKeep every message under 60 words.\nFollow-Up Cadence : 80% of Sales Need 5+ Touches\nLinkedIn\nPhone\nRelevant article\n1 posted to prospect's 3 Personal check-in to 5\nfeed gauge interest\nDay 1 Day 3 Day 5 Day 9 Day 14\nEmail Email Email\n2 4\nValue insight shared Case study Final value\nwith prospect highlighting success proposition and\nstories decision ask\nPRO TIP\nThe break-up email (Touch 7) consistently generates the highest reply rate of any touch\nin a sequence. Something about 'I'm going to stop reaching out' creates a response that\nseven other emails didn't. Write it genuinely  not as a manipulation tactic. If you really\nare moving on, say so honestly.",
+  "pairsWith": [
+    "4.1 Cold Outreach",
+    "4.9 Pipeline Review",
+    "4.5 Objection Handling"
+  ],
+  "updatedAt": "2026-09-18"
+}

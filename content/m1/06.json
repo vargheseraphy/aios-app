@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.6",
+  "title": "First Principles Thinking",
+  "sourcePages": {
+    "intro": 34,
+    "prompt": 35
+  },
+  "prompt": "Act as a first principles thinking coach.\nCurrent approach or problem: [DESCRIBE YOUR SITUATION SPECIFICALLY]\nStep 1  :  List every assumption in this approach.\nStep 2 :  For each - is this actually true, or just inherited convention?\nStep 3 :  Which are fixed constraints vs. just habits?\nStep 4 :  Reconstruct a fresh approach using only what is genuinely true and necessary.\nFlag the 3 most dangerous assumptions first.\nFIRST PRINCIPLES THINKING: UNVEILING HIDDEN ASSUMPTIONS\nStuck Solution\nObvious problem\n with no breakthrough\nInherited Approach\nUnquestioned way \nof doing things\nEmbedded Assumptions\nUnveriﬁed beliefs underlying \nFundamental Truths the approach\nBasic, undeniable \nfacts about the problem\nPRO TIP\nThe most valuable output isn't the new idea, it's the list of assumptions you'd never\nquestioned. That list alone is worth running this prompt every quarter.",
+  "pairsWith": [
+    "1.7 Second Order",
+    "1.8 Inversion",
+    "2.4 Blue Ocean Strategy"
+  ],
+  "updatedAt": "2026-09-18"
+}

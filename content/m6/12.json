@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.12",
+  "title": "McKinsey 7S Framework",
+  "sourcePages": {
+    "intro": 157,
+    "prompt": 158
+  },
+  "prompt": "Act as a McKinsey organisational consultant using the 7S Framework.\nMy company               :  [DESCRIBE YOUR BUSINESS, STAGE, RECENT CHANGES]\nThe strategy I am trying to execute: [WHAT YOU WANT TO ACHIEVE]\nWhat is not working :  [WHERE EXECUTION IS STALLING]\nDiagnose all 7 elements for my organisation:\nSTRATEGY            :  The plan, is it clear and understood?\nSTRUCTURE         :  How are we organised,  does it serve the strategy?\nSYSTEMS              :  Processes, tools  do they enable or block?\nSHARED VALUES :  Culture - does it support or resist the change?\nSKILLS                   :  Do we have the capability we need?\nSTYLE                     :  Does leadership behaviour match the strategy?\nSTAFF                     :  Do we have the right people in the right roles?\nIdentify the 2 most misaligned Ss.\nRecommend the sequence to address them with a suggested timeframe for each step.\nMcKinsey 7S Framework\nShared Values\nStructure Skills\nThe core beliefs and The organizational Style The expertise and\nprinciples that guide the hierarchy and reporting The leadership and capabilities of the\norganization management approach. workforce.\nlines.\n.\nStrategy Systems Staff\nThe processes and The employees and their\nThe plan to achieve\nprocedures that support skills.\norganizational goals. operations\n.\nPRO TIP\nThe most common 7S misalignment is between Strategy and Shared Values. Leadership\nchanges direction but the culture hasn't moved  and culture always wins. If your strategy\nrequires behaviours that your current culture punishes or ignores, fix the culture\nalignment before investing more in the strategy.",
+  "pairsWith": [
+    "6.6 Culture Code",
+    "6.10 Hoshin Kanri",
+    "6.2 OKRs",
+    "8.5 Scenario Planning"
+  ],
+  "updatedAt": "2026-09-18"
+}

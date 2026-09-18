@@ -1,0 +1,17 @@
+{
+  "module": 5,
+  "lesson": "5.10",
+  "title": "Flywheel Model",
+  "sourcePages": {
+    "intro": 132,
+    "prompt": 133
+  },
+  "prompt": "Act as a business strategy advisor using Jim Collins' Flywheel model.\nMy business                     :  [DESCRIBE WHAT YOU DO AND YOUR GROWTH MODEL]\nCurrent growth drivers :  [WHAT IS WORKING TO GROW THE BUSINESS]\nBiggest friction points   :  [WHERE GROWTH SLOWS OR STOPS]\nStep 1  :  Map my business flywheel.\nIdentify 4–6 steps that form a self-reinforcing loop. Each step must logically cause the\nnext.\nStep 2 :  Name the flywheel - what is the core mechanism that drives it?\nStep 3 :  Identify which step in the flywheel has the most friction right now.\nStep 4 :  Suggest 2 specific actions to reduce friction at that step and accelerate the spin.\nCompare my flywheel to Amazon's - what is similar and what is fundamentally different?\nFlywheel Model — Momentum That Compounds\nSelf-Sustaining\nLower Prices\nLower Costs\nMore Sellers\nMore Customers\nLower Prices\nPRO TIP\nMost founders try to build a flywheel at the business level before they have one at the\ncustomer level. Your first flywheel is simpler: a happy customer refers someone, that\nperson becomes a customer, their success becomes your proof, proof attracts the next\ncustomer. Map that loop first and invest in making it spin faster.",
+  "pairsWith": [
+    "5.8 Growth Loop",
+    "5.9 AARRR",
+    "2.8 Moat Builder",
+    "9.1 LTV:CAC"
+  ],
+  "updatedAt": "2026-09-18"
+}

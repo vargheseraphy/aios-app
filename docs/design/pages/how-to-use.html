@@ -1,0 +1,609 @@
+<meta charset="utf-8">
+<title>How To Use</title>
+<!--
+DIRECTION CONTRACT
+THESIS: The guide is written as lesson 0.0 in the book's own framework format — What it is, When to use it, The prompt, Pairs with — so the page teaches the format by being it. Refuses the numbered-steps-with-icons scaffold.
+OWN-WORLD: locked AIOS system. Near-black colour fields alternating with white; blue primary; Archivo/Roboto/Roboto Mono; mono prompt cards with yellow keys and blue placeholders; currentColor line art; pill tabs and accordion.
+STORY: a reader sees a page shaped like every page in the book, clicks the QR in the demo, watches the prompt arrive on a phone, learns what the brackets are for, and leaves with a helper prompt that fills them.
+FIRST VIEWPORT: a book spread. Left page: lesson tag 0.0, title, "What it is". Right page: printed-page mock with a QR; clicking it slides in a phone with the prompt and a working Copy button. Primary action is that Copy button.
+FORM: candidate 7 of 7 (framework-page-as-guide), seed 5b6469d8, degraded roll, no challengers.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .f{fill:currentColor; opacity:.16;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.tab:focus-visible,.acc-btn:focus-visible,.qr-hit:focus-visible,.brk:focus-visible{outline:2px solid var(--blue-hi); outline-offset:3px;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* ---------- hero: the spread ---------- */
+.spread-hero{position:relative; overflow:hidden; padding-block:56px 64px;}
+.spread-hero .bg{position:absolute; inset:0; background:
+  radial-gradient(880px 600px at 10% 14%, #3B7BF7 0%, transparent 62%),
+  radial-gradient(700px 500px at 88% 6%, #2FAB57 0%, transparent 58%),
+  radial-gradient(640px 520px at 74% 92%, #FBBE10 0%, transparent 56%), var(--ink);}
+.spread-hero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.spread-hero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.92) 0%, rgba(14,15,18,.5) 55%, rgba(14,15,18,.62) 100%);}
+.hero-top{position:relative; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:26px;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+.hero-top .meta{font-family:var(--mono); font-size:11px; color:var(--fg-3); letter-spacing:.06em;}
+
+.spread{position:relative; display:grid; grid-template-columns:1fr; gap:0; border-radius:20px; overflow:hidden; border:1px solid var(--line-d2); background:#fff; color:var(--ink-2); box-shadow:0 40px 90px -40px rgba(0,0,0,.8);}
+@media(min-width:960px){.spread{grid-template-columns:1fr 1fr;}}
+.page{padding:36px 34px 34px; position:relative; min-width:0;}
+@media(min-width:960px){.page{padding:44px 46px 40px;}
+  .page.left{border-right:1px solid var(--line-l);}}
+.page .run{display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l2); margin-bottom:26px;}
+.page .run b{color:var(--ink-2); font-weight:500;}
+.lesson-tag{display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12px; color:var(--blue-lo); background:#E7EFFE; border-radius:6px; padding:5px 10px; margin-bottom:16px;}
+.page h1{font-size:clamp(28px,3.4vw,40px); line-height:1.08; letter-spacing:-.03em; font-weight:800; margin-bottom:22px; max-width:24ch;}
+.fw-lbl{font-family:var(--disp); font-weight:700; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l2); margin:24px 0 8px;}
+.fw-lbl:first-of-type{margin-top:0;}
+.page p{font-size:15px; line-height:1.65; color:var(--gray-l); max-width:70ch;}
+.page .also{margin-top:28px; display:flex; gap:10px; flex-wrap:wrap;}
+
+/* right page: demo */
+.page.right{background:var(--wash); display:flex; flex-direction:column;}
+.demo{position:relative; flex:1; min-height:400px; display:flex; align-items:center; justify-content:center;}
+.paper{position:relative; width:min(100%,300px); aspect-ratio:3/4; background:#fff; border:1px solid var(--line-l2); border-radius:6px; box-shadow:0 20px 44px -22px rgba(20,30,60,.35); padding:22px 20px; display:flex; flex-direction:column; transition:transform .5s cubic-bezier(.2,.8,.2,1), opacity .4s;}
+.paper .pt{font-family:var(--mono); font-size:9.5px; color:var(--gray-l2); letter-spacing:.08em; text-transform:uppercase;}
+.paper .ph{font-family:var(--disp); font-weight:800; font-size:16px; letter-spacing:-.02em; margin:8px 0 12px; color:var(--ink-2);}
+.paper .pl{height:6px; border-radius:3px; background:var(--line-l); margin-bottom:7px;}
+.paper .pl.w1{width:92%;} .paper .pl.w2{width:74%;} .paper .pl.w3{width:84%;} .paper .pl.w4{width:60%;}
+.qr-hit{margin-top:auto; margin-bottom:2px; align-self:flex-end; appearance:none; border:none; background:none; padding:0; cursor:pointer; position:relative; border-radius:8px;}
+.qr-hit svg{display:block; width:78px; height:78px; color:var(--ink-2);}
+.qr-hit .pulse{position:absolute; inset:-6px; border-radius:12px; border:2px solid var(--blue); opacity:0; animation:pulse 2.2s ease-out infinite;}
+@keyframes pulse{0%{opacity:.85; transform:scale(.92)} 70%{opacity:0; transform:scale(1.12)} 100%{opacity:0}}
+.qr-cap{position:absolute; left:50%; top:-24px; transform:translateX(-50%); white-space:nowrap; font-family:var(--mono); font-size:10.5px; color:var(--blue-lo); letter-spacing:.06em; pointer-events:none;}
+.demo.done .paper{transform:translateX(-46%) rotate(-6deg) scale(.86); opacity:.55;}
+.demo.done .qr-hit .pulse,.demo.done .qr-cap{display:none;}
+.phone{position:absolute; left:50%; top:50%; width:min(86%,268px); transform:translate(-50%,-44%) translateY(46px); opacity:0; visibility:hidden; pointer-events:none; transition:transform .55s cubic-bezier(.2,.8,.2,1) .05s, opacity .4s .05s, visibility 0s .05s;}
+.demo.done .phone{transform:translate(-30%,-50%); opacity:1; visibility:visible; pointer-events:auto;}
+@media(max-width:520px){.demo.done .paper{transform:translateX(-30%) rotate(-6deg) scale(.7);} .demo.done .phone{transform:translate(-50%,-50%);}}
+.phone .shell{background:#0E0F12; border-radius:26px; padding:10px; border:1px solid #2A2E3A; box-shadow:0 30px 60px -26px rgba(0,0,0,.7);}
+.phone .screen{background:var(--panel); border-radius:18px; overflow:hidden; border:1px solid var(--line-d);}
+.phone .url{font-family:var(--mono); font-size:10px; color:var(--fg-2); padding:9px 12px; border-bottom:1px solid var(--line-d); display:flex; gap:8px; align-items:center;}
+.phone .url i{width:6px; height:6px; border-radius:50%; background:var(--green); display:inline-block;}
+.phone .pc-top{display:flex; align-items:center; gap:8px; padding:10px 12px; border-bottom:1px solid var(--line-d);}
+.phone .tag{font-family:var(--mono); font-size:10px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:2px 6px;}
+.phone .ttl{font-family:var(--disp); font-weight:700; font-size:12.5px; color:#fff;}
+.phone .pc-body{padding:12px; font-family:var(--mono); font-size:10.5px; line-height:1.75; color:rgba(255,255,255,.88); white-space:pre-wrap;}
+.phone .k{color:var(--yellow);} .phone .v{color:var(--blue-hi);}
+.phone .pc-foot{padding:10px 12px; border-top:1px solid var(--line-d); display:flex; justify-content:flex-end;}
+.copybtn.done{background:var(--green); color:#fff;}
+.demo-reset{font-family:var(--mono); font-size:10.5px; color:var(--gray-l2); background:none; border:none; cursor:pointer; padding:6px 0; letter-spacing:.06em; visibility:hidden;}
+.demo-reset.show{visibility:visible;}
+.page.right .foot{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:22px; position:relative;}
+.page.right .foot .hint{font-size:12.5px; color:var(--gray-l);}
+
+/* ---------- sections ---------- */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:78px;}
+.fw-kicker{font-family:var(--disp); font-weight:700; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l2);}
+.dark .fw-kicker{color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:84ch; line-height:1.6;}
+.dark .sd{color:var(--fg-2);}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:36px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* ---------- the three moves: one connected flow ---------- */
+.flow{display:grid; grid-template-columns:1fr; gap:26px; align-items:start;}
+@media(min-width:960px){.flow{grid-template-columns:1fr auto 1fr auto 1fr; gap:22px; align-items:stretch;}}
+.mv{display:flex; flex-direction:column; gap:14px; min-width:0;}
+.mv .art{height:150px; border-radius:16px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;}
+.mv .art svg{position:relative; width:auto; height:104px;}
+.mv h3{font-size:19px; line-height:1.2;}
+.mv p{font-size:14px; color:var(--gray-l); line-height:1.6; max-width:40ch;}
+.arrow{display:flex; align-items:center; justify-content:center; color:var(--line-l2); padding-top:56px;}
+.arrow svg{width:26px; height:26px;}
+@media(max-width:959px){.arrow{padding:0; transform:rotate(90deg); height:20px;}}
+
+/* ---------- brackets: interactive fill ---------- */
+.brk-grid{display:grid; gap:26px; grid-template-columns:1fr; align-items:center;}
+@media(min-width:960px){.brk-grid{grid-template-columns:.9fr 1.1fr; gap:52px;}}
+.brk-card{background:var(--ink); border-radius:16px; overflow:hidden; border:1px solid #23262E; box-shadow:0 30px 60px -30px rgba(10,14,25,.5);}
+.pc-top{display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:3px 7px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13.5px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10.5px; color:var(--fg-3);}
+.pc-body{padding:20px 18px; font-family:var(--mono); font-size:12.5px; line-height:1.95; color:rgba(255,255,255,.88); white-space:pre-wrap; word-break:break-word;}
+.pc-body .k{color:var(--yellow);}
+.brk{font:inherit; border:1px dashed rgba(110,160,255,.55); background:rgba(59,123,247,.12); color:var(--blue-hi); border-radius:5px; padding:1px 6px; cursor:pointer; transition:background .18s, border-color .18s; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline;}
+.brk:hover{background:rgba(59,123,247,.22);}
+.brk.filled{border-style:solid; border-color:rgba(47,171,87,.6); background:rgba(47,171,87,.16); color:#8EE0B0;}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:13px 16px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .st{font-family:var(--mono); font-size:11px; color:var(--fg-3);}
+.pc-foot .st b{color:#8EE0B0; font-weight:500;}
+.pc-foot .actions{margin-left:auto; display:flex; gap:8px;}
+.brk-copy h3{font-size:clamp(21px,2.6vw,28px); line-height:1.15; margin-bottom:14px;}
+.brk-copy p{font-size:14.5px; color:var(--gray-l); line-height:1.7; max-width:62ch; margin-bottom:14px;}
+.brk-copy .rules{display:flex; flex-direction:column; gap:16px; margin-top:22px;}
+.brk-copy .rule{display:flex; gap:12px; align-items:flex-start;}
+.brk-copy .rule .n{flex:none; width:22px; height:22px; border-radius:6px; background:#E7EFFE; color:var(--blue-lo); display:flex; align-items:center; justify-content:center; margin-top:1px;}
+.brk-copy .rule b{display:block; font-family:var(--disp); font-size:14.5px; margin-bottom:3px;}
+.brk-copy .rule span{font-size:13px; color:var(--gray-l); line-height:1.55;}
+
+/* ---------- the helper prompt ---------- */
+.helper{display:grid; gap:26px; grid-template-columns:1fr; align-items:center;}
+@media(min-width:960px){.helper{grid-template-columns:1.1fr .9fr; gap:52px;}}
+.helper .note{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px; margin-bottom:14px;}
+.helper .note i{width:6px; height:6px; border-radius:50%; background:var(--yellow);}
+.helper h3{font-size:clamp(22px,2.8vw,30px); line-height:1.14; margin-bottom:14px; max-width:22ch;}
+.helper p{font-size:14.5px; color:var(--fg-1); line-height:1.7; max-width:70ch; margin-bottom:12px;}
+.ai-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;}
+.ai-chip{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:#fff; border:1px solid var(--line-d2); border-radius:999px; padding:8px 14px; background:rgba(255,255,255,.06);}
+.ai-chip i{width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block;}
+
+/* ---------- pairs with ---------- */
+.pairs{display:grid; gap:14px; grid-template-columns:1fr;}
+@media(min-width:760px){.pairs{grid-template-columns:repeat(3,1fr);}}
+.pair{display:flex; flex-direction:column; gap:10px; padding:24px; border-radius:16px; transition:transform .18s;}
+.pair:hover{transform:translateY(-3px);}
+.pair .pn{font-family:var(--mono); font-size:11px;}
+.pair h3{font-size:18px;}
+.pair p{font-size:13.5px; line-height:1.55;}
+.pair .go{margin-top:auto; padding-top:10px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500;}
+.pair.t-blue{background:var(--blue); color:#fff;} .pair.t-blue .pn{color:rgba(255,255,255,.7);} .pair.t-blue p{color:rgba(255,255,255,.82);}
+.pair.t-ink{background:#0B0C0F; color:#fff;} .pair.t-ink .pn{color:var(--blue-hi);} .pair.t-ink p{color:var(--fg-1);}
+.pair.t-white{background:#fff; color:var(--ink-2); border:1px solid var(--line-l);} .pair.t-white .pn{color:var(--blue);} .pair.t-white p{color:var(--gray-l);}
+
+/* ---------- accordion ---------- */
+.faq-grid{display:grid; gap:24px; grid-template-columns:1fr;}
+@media(min-width:960px){.faq-grid{grid-template-columns:.78fr 1.22fr; gap:56px; align-items:start;}}
+.faq-art{border-radius:18px; overflow:hidden; position:relative; min-height:230px; display:flex; align-items:center; justify-content:center; padding:26px; margin-bottom:26px;}
+.faq-art .artbg{position:absolute; inset:0; background:radial-gradient(360px 280px at 30% 26%,#EC4A3B,transparent 64%),radial-gradient(320px 260px at 84% 82%,#3B7BF7,transparent 60%),#0B0C0F;}
+.faq-art svg{position:relative; width:100%; max-width:210px;}
+.acc{border-top:1px solid var(--line-l);}
+.acc-item{border-bottom:1px solid var(--line-l);}
+.acc-btn{width:100%; appearance:none; background:none; border:none; color:var(--ink-2); font-family:var(--disp); font-weight:700; font-size:16.5px; letter-spacing:-.015em; text-align:left; padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer;}
+.acc-btn .pm{flex:none; width:24px; height:24px; border-radius:50%; border:1px solid var(--line-l2); display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-size:15px; color:var(--gray-l); transition:.22s;}
+.acc-btn[aria-expanded="true"] .pm{background:var(--ink-2); color:#fff; border-color:var(--ink-2); transform:rotate(45deg);}
+.acc-panel{display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows .3s cubic-bezier(.2,.8,.2,1), opacity .25s ease;}
+.acc-panel.open{grid-template-rows:1fr; opacity:1;}
+.acc-panel>.inner{min-height:0; overflow:hidden;}
+.acc-panel .inner{padding-bottom:22px; font-size:14px; color:var(--gray-l); line-height:1.7; max-width:64ch;}
+.acc-panel .inner code{font-family:var(--mono); font-size:12.5px; background:var(--wash); padding:2px 6px; border-radius:5px;}
+
+/* ---------- sign-up band ---------- */
+.signup{position:relative; overflow:hidden; background:var(--ink); padding-block:96px;}
+.signup .bg{position:absolute; inset:0; background:radial-gradient(620px 360px at 14% 20%,rgba(59,123,247,.55),transparent 62%),radial-gradient(520px 340px at 88% 86%,rgba(47,171,87,.38),transparent 60%);}
+.signup-in{position:relative; display:flex; align-items:center; gap:34px; flex-wrap:wrap;}
+.signup-ic{width:62px; height:62px; border-radius:16px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(255,255,255,.13); border:1px solid var(--line-d);}
+.signup-txt{flex:1 1 380px; min-width:0;}
+.signup-txt h3{font-size:clamp(22px,2.9vw,31px); line-height:1.14; margin-bottom:10px;}
+.signup-txt p{font-size:14.5px; color:var(--fg-1); max-width:70ch; line-height:1.7;}
+.signup-cta{display:flex; gap:12px; flex-wrap:wrap;}
+
+/* ---------- subscribe ---------- */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){
+  .qr-hit .pulse{animation:none; opacity:.6;}
+  .paper,.phone,.brk,.pair,.acc-panel{transition:none;}
+}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a class="on" href="#">How to use</a><a href="#">Who it's for</a><a href="#trouble">FAQ</a><a href="#">Articles</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="home.html#get">Get the book</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<!-- ============ HERO: LESSON 0.0 AS A SPREAD ============ -->
+<header class="spread-hero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad">
+    <div class="hero-top">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>How to use</span></div>
+      <span class="meta">Written in the same shape as every framework in the book</span>
+    </div>
+
+    <div class="spread">
+      <div class="page left">
+        <div class="run"><span>AI Operating System for Leaders</span><b>Page 0</b></div>
+        <span class="lesson-tag">0.0 <span style="color:var(--gray-l2)">&mdash;</span> How to use this book</span>
+        <h1>Scan the page. Copy the prompt. Run it.</h1>
+
+        <div class="fw-lbl">What it is</div>
+        <p>Every framework in this book ends with a QR code. The code opens that framework's prompt on your phone, already expanded, with a copy button &mdash; so the paper explains the thinking and the screen hands you the tool.</p>
+
+        <div class="fw-lbl">When to use it</div>
+        <p>The moment a chapter names the decision you are actually facing. Do not read ahead to collect prompts; scan the one you need, run it, and come back for the next when the next problem arrives.</p>
+
+        <div class="also">
+          <a class="btn btn-ink" href="#moves">The four moves</a>
+          <a class="btn btn-linedark" href="#brackets">What the brackets mean</a>
+        </div>
+      </div>
+
+      <div class="page right">
+        <div class="run"><span>Try it here</span><b>Page 1</b></div>
+        <div class="demo" id="demo">
+          <div class="paper">
+            <span class="pt">Module 01 &middot; Framework 1.1</span>
+            <span class="ph">C.A.R.E Prompting</span>
+            <span class="pl w1"></span><span class="pl w3"></span><span class="pl w2"></span><span class="pl w4"></span>
+            <button class="qr-hit" id="qrBtn" aria-label="Scan the QR code to open the prompt">
+              <span class="pulse"></span>
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="4" y="4" width="56" height="56" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+                <rect x="10" y="10" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="15" y="15" width="6" height="6" fill="currentColor"/>
+                <rect x="38" y="10" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="43" y="15" width="6" height="6" fill="currentColor"/>
+                <rect x="10" y="38" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="15" y="43" width="6" height="6" fill="currentColor"/>
+                <rect x="34" y="34" width="6" height="6" fill="currentColor"/><rect x="44" y="34" width="6" height="6" fill="currentColor"/><rect x="34" y="44" width="6" height="6" fill="currentColor"/><rect x="48" y="44" width="6" height="6" fill="currentColor"/><rect x="40" y="50" width="6" height="6" fill="currentColor"/>
+              </svg>
+              <span class="qr-cap">tap the code</span>
+            </button>
+          </div>
+
+          <div class="phone" aria-live="polite">
+            <div class="shell"><div class="screen">
+              <div class="url"><i></i>aios.obio.in/m1/01</div>
+              <div class="pc-top"><span class="tag">1.1</span><span class="ttl">C.A.R.E Prompting</span></div>
+              <div class="pc-body" id="demoPrompt"><span class="k">Role:</span> Act as a <span class="v">[EXPERT ROLE &mdash; e.g. B2B sales coach]</span>.
+<span class="k">Context:</span> I am <span class="v">[YOUR SITUATION &mdash; company, stage, industry]</span>.
+<span class="k">Action:</span> <span class="v">[WHAT YOU WANT &mdash; e.g. Give me 5 positioning ideas to differentiate in the [MARKET / REGION]]</span>.
+<span class="k">Expectation:</span> Format as a numbered list. Each point 2&ndash;3 lines. Use plain business language. No jargon.</div>
+              <div class="pc-foot"><button class="btn btn-blue btn-sm copybtn" data-src="demoPrompt">Copy prompt</button></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="foot">
+          <span class="hint">Any phone camera reads it. No app, no account.</span>
+          <button class="demo-reset" id="demoReset" type="button">&larr; put the book back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE THREE MOVES ============ -->
+<section class="light" id="moves"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="fw-kicker">How it works</div>
+      <h2 class="sh">Three moves. Under ten seconds.</h2>
+      <p class="sd">The same three every time, for every one of the 108 frameworks. Nothing to set up first.</p>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="mv">
+      <div class="art" style="background:radial-gradient(260px 150px at 30% 40%,#3B7BF7,transparent 62%),radial-gradient(220px 150px at 82% 76%,#6EA0FF,transparent 60%),#0B0C0F">
+        <svg viewBox="0 0 160 104" class="line" aria-hidden="true"><rect class="s" x="12" y="14" width="60" height="76" rx="5"/><rect class="s" x="24" y="26" width="22" height="22" rx="3"/><rect class="fd" x="31" y="33" width="8" height="8"/><path class="s2" d="M24 62h36M24 74h24"/><rect class="s" x="98" y="8" width="50" height="88" rx="10"/><path class="s2" d="M116 20h14"/><path class="s3" d="M76 52h18"/><path class="s" d="M90 46l6 6-6 6"/></svg>
+      </div>
+      <h3>Point the camera at the code</h3>
+      <p>The one printed at the end of the framework. Your phone's own camera reads it.</p>
+    </div>
+    <div class="arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div class="mv">
+      <div class="art" style="background:radial-gradient(260px 150px at 70% 30%,#2FAB57,transparent 62%),radial-gradient(220px 150px at 22% 80%,#3B7BF7,transparent 60%),#0B0C0F">
+        <svg viewBox="0 0 160 104" class="line" aria-hidden="true"><rect class="s" x="54" y="6" width="52" height="92" rx="10"/><rect class="s2" x="64" y="20" width="32" height="7" rx="3.5"/><rect class="s" x="64" y="36" width="32" height="10" rx="3"/><path class="s2" d="M64 56h32M64 66h20M64 76h26"/><path class="s3" d="M14 52h28"/><path class="s" d="M32 46l6 6-6 6"/><path class="s3" d="M118 52h28" opacity=".35"/></svg>
+      </div>
+      <h3>The prompt is already open</h3>
+      <p>That exact framework, expanded, at the top of the screen. The rest of the module waits below it.</p>
+    </div>
+    <div class="arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div class="mv">
+      <div class="art" style="background:radial-gradient(260px 150px at 30% 30%,#FBBE10,transparent 60%),radial-gradient(220px 150px at 82% 80%,#EC4A3B,transparent 62%),#0B0C0F">
+        <svg viewBox="0 0 160 104" class="line" aria-hidden="true"><rect class="s" x="14" y="22" width="76" height="60" rx="10"/><path class="s2" d="M28 40h48M28 52h30M28 64h40"/><rect class="s" x="104" y="40" width="42" height="24" rx="12"/><path class="s" d="M114 52h8M126 52h10" opacity=".8"/><path class="s" d="M92 52h8" opacity=".5"/></svg>
+      </div>
+      <h3>Copy, fill the brackets, run it</h3>
+      <p>One tap copies. Paste into ChatGPT, Claude, Gemini or Copilot and swap in your own situation.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ THE BRACKETS ============ -->
+<section class="wash" id="brackets"><div class="pad">
+  <div class="brk-grid">
+    <div class="brk-copy">
+      <div class="fw-kicker">The brackets</div>
+      <h3>Anything in square brackets is yours to replace.</h3>
+      <p>That substitution is the entire reason the answer stops sounding generic. Tap each bracket in the prompt to see it filled in for an example founder &mdash; then do the same with yours.</p>
+      <div class="rules">
+      <div class="rule"><span class="n"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Be specific, not long</b><span>"A 9-person logistics SaaS in Kochi" beats "my company". One phrase is enough.</span></span></div>
+      <div class="rule"><span class="n"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Keep the words outside the brackets</b><span>They are doing work &mdash; the role, the format, the tone. Change only what is inside.</span></span></div>
+      <div class="rule"><span class="n"><svg class="i" width="12" height="12" viewBox="0 0 24 24" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Nested brackets fill inside out</b><span>The Action line has one: fill <span style="font-family:var(--mono);font-size:12px">[MARKET / REGION]</span> first, then the bracket around it.</span></span></div>
+      </div>
+    </div>
+
+    <div class="brk-card">
+      <div class="pc-top"><span class="tag">1.1</span><span class="ttl">C.A.R.E Prompting</span><span class="up">tap a bracket</span></div>
+      <div class="pc-body" id="brkBody"><span class="k">Role:</span>        Act as a <span class="brk" role="button" tabindex="0" data-fill="B2B sales coach">[EXPERT ROLE]</span>.
+<span class="k">Context:</span>     I am <span class="brk" role="button" tabindex="0" data-fill="a 9-person logistics SaaS in Kochi, 14 months in">[YOUR SITUATION &mdash; company, stage, industry]</span>.
+<span class="k">Action:</span>      <span class="brk" role="button" tabindex="0" data-fill="Give me 5 positioning ideas to differentiate in the South India mid-market">[WHAT YOU WANT &mdash; e.g. 5 positioning ideas for the [MARKET / REGION]]</span>.
+<span class="k">Expectation:</span> Format as a numbered list. Each point 2&ndash;3 lines.
+             Use plain business language. No jargon.</div>
+      <div class="pc-foot">
+        <span class="st" id="brkStatus"><b>0</b> of 3 filled</span>
+        <span class="actions">
+          <button class="btn btn-line btn-sm" id="brkAll" type="button">Fill all</button>
+          <button class="btn btn-line btn-sm" id="brkReset" type="button">Reset</button>
+          <button class="btn btn-blue btn-sm copybtn" data-src="brkBody">Copy prompt</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ THE HELPER PROMPT ============ -->
+<section class="dark"><div class="pad">
+  <div class="helper">
+    <div>
+      <div class="fw-kicker" style="margin-bottom:12px;">The prompt</div>
+      <span class="note"><i></i>Site-only &mdash; not printed in the book</span>
+      <h3>Not sure what to put in a bracket? Ask the AI to ask you.</h3>
+      <p>Paste this once at the start of a session. From then on, every framework prompt you paste after it gets interviewed out of you, one bracket at a time, before it runs.</p>
+      <div class="ai-row">
+        <span class="ai-chip"><i></i>ChatGPT</span><span class="ai-chip"><i></i>Claude</span><span class="ai-chip"><i></i>Gemini</span><span class="ai-chip"><i></i>Copilot</span>
+      </div>
+    </div>
+    <div class="brk-card">
+      <div class="pc-top"><span class="tag">0.0</span><span class="ttl">Bracket interview</span><span class="up">helper</span></div>
+      <div class="pc-body" id="helperBody">For the rest of this conversation, whenever I paste a prompt that contains text in [SQUARE BRACKETS], do not run it yet.
+
+First, ask me one question per bracket, in order, so I can fill each with my real situation. Keep every question to one line.
+
+When all brackets are filled, show me the completed prompt once, then run it.</div>
+      <div class="pc-foot"><span class="st">Plain language &middot; works in any model</span><span class="actions"><button class="btn btn-blue btn-sm copybtn" data-src="helperBody">Copy prompt</button></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ PAIRS WITH ============ -->
+<section class="wash"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="fw-kicker">Pairs with</div>
+      <h2 class="sh">Where to go once you have run your first one.</h2>
+    </div>
+  </div>
+  <div class="pairs">
+    <a class="pair t-blue" href="home.html#modules">
+      <span class="pn">Modules 01&ndash;10</span>
+      <h3>Browse every framework</h3>
+      <p>All 108, grouped by the decision they help with. Read the one on fire this week; ignore the rest until they are.</p>
+      <span class="go">Open the modules <svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="pair t-ink" href="why-this-book.html">
+      <span class="pn">Why this book</span>
+      <h3>See what a framework changes</h3>
+      <p>The same question asked two ways, side by side, with what each one gets back from the model.</p>
+      <span class="go">See the difference <svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="pair t-white" href="#">
+      <span class="pn">Who it's for</span>
+      <h3>Start with your seat</h3>
+      <p>Founders, managers, students, teams, institutions &mdash; each has a page naming the three modules to read first.</p>
+      <span class="go">Find your page <svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ============ IF SOMETHING GOES WRONG ============ -->
+<section class="light" id="trouble"><div class="pad">
+  <div class="faq-grid">
+    <div>
+      <div class="faq-art"><div class="artbg"></div>
+        <svg viewBox="0 0 240 200" class="line" aria-hidden="true">
+          <rect class="s" x="40" y="30" width="112" height="140" rx="10"/>
+          <rect class="s" x="58" y="48" width="36" height="36" rx="4"/><rect class="fd" x="70" y="60" width="12" height="12"/>
+          <path class="s2" d="M58 100h76M58 116h56M58 132h68"/>
+          <circle class="s" cx="188" cy="60" r="22"/><path class="s" d="M188 50v12M188 69v.5"/>
+          <path class="s3" d="M158 60h8"/>
+        </svg>
+      </div>
+      <div class="fw-kicker">If something goes wrong</div>
+      <h2 class="sh">The five things that actually come up.</h2>
+      <p class="sd">Anything else, the contact form reaches Raphy directly.</p>
+      <a class="btn btn-linedark" href="#" style="margin-top:20px;">Contact</a>
+    </div>
+    <div class="acc" id="faqAcc">
+      <div class="acc-item"><button class="acc-btn" aria-expanded="true"><span>The code will not scan</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Move the phone back until the whole square is in frame, and hold it still for a second &mdash; most cameras want the code steady, not close. If the page is in shadow, tilt the book toward the light. If it still will not read, every framework has an address you can type: <code>aios.obio.in/m1/01</code> for framework 1.1, and the module and lesson numbers are on every page.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>The prompt on screen is different from the one in the book</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">That is the site doing its job. When a technique changes, the prompt behind the code is rewritten. The screen version is the current one; the printed version is the one that was current at press. Use the screen.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>I want to keep a prompt without scanning again</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Sign in &mdash; email link or Google, no password &mdash; and tap the bookmark on any framework. It goes into "My prompts", which follows you across devices. Copying never needs an account; keeping does.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>I have no phone with me</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Type the framework's address into any browser: <code>aios.obio.in/m</code>, then the module number, a slash, and the two-digit lesson number &mdash; <code>/m6/03</code> for framework 6.3. Same page, same copy button.</div></div></div>
+      <div class="acc-item"><button class="acc-btn" aria-expanded="false"><span>The answer I got was generic</span><span class="pm">+</span></button><div class="acc-panel"><div class="inner">Nine times out of ten a bracket was left as-is, or filled with something vague. Go back and put a real phrase in each one &mdash; company, stage, market, number. If that still misses, paste the bracket-interview helper above first and let the model ask you.</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ SIGN-UP ============ -->
+<section class="signup">
+  <div class="bg"></div>
+  <div class="pad signup-in">
+    <span class="signup-ic"><svg class="i" width="27" height="27" viewBox="0 0 24 24"><path d="M19 21V10l-7-6-7 6v11"/><path d="M9 21v-7h6v7"/><path d="M15.5 3.5l3 3M18.5 3.5l-3 3"/></svg></span>
+    <div class="signup-txt">
+      <h3>Copying is free. An account keeps them.</h3>
+      <p>Save any prompt to your own list, pick up on another device, and send a colleague a link with your name on it. No card, no trial, no paywall on the prompts themselves.</p>
+    </div>
+    <div class="signup-cta">
+      <a class="btn btn-white" href="#">Create a free account</a>
+      <a class="btn btn-line" href="#">Log in</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="#">How to use</a><a href="#">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="#">For business</a><a href="#">For institutions</a><a href="#">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  // login preview
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  // scan demo
+  var demo=document.getElementById('demo'), qr=document.getElementById('qrBtn'), reset=document.getElementById('demoReset');
+  qr.addEventListener('click',function(){
+    demo.classList.add('done'); reset.classList.add('show');
+    setTimeout(function(){ var c=demo.querySelector('.phone .copybtn'); if(c) c.focus({preventScroll:true}); }, 420);
+  });
+  reset.addEventListener('click',function(){ demo.classList.remove('done'); reset.classList.remove('show'); qr.focus(); });
+
+  // copy buttons
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var src=document.getElementById(btn.dataset.src);
+      var text=src.innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy prompt'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+
+  // bracket fill
+  var brks=document.querySelectorAll('#brkBody .brk'), status=document.getElementById('brkStatus');
+  function count(){ var n=document.querySelectorAll('#brkBody .brk.filled').length; status.innerHTML='<b>'+n+'</b> of '+brks.length+' filled'; }
+  brks.forEach(function(b){
+    b.dataset.orig=b.textContent;
+    function toggle(){ var on=b.classList.toggle('filled'); b.textContent = on ? b.dataset.fill : b.dataset.orig; count(); }
+    b.addEventListener('click',toggle);
+    b.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); toggle(); } });
+  });
+  document.getElementById('brkAll').addEventListener('click',function(){ brks.forEach(function(b){ b.classList.add('filled'); b.textContent=b.dataset.fill; }); count(); });
+  document.getElementById('brkReset').addEventListener('click',function(){ brks.forEach(function(b){ b.classList.remove('filled'); b.textContent=b.dataset.orig; }); count(); });
+
+  // accordion
+  var items=document.querySelectorAll('#faqAcc .acc-item');
+  function shut(it){ it.querySelector('.acc-btn').setAttribute('aria-expanded','false'); it.querySelector('.acc-panel').classList.remove('open'); }
+  function openIt(it){ it.querySelector('.acc-btn').setAttribute('aria-expanded','true'); it.querySelector('.acc-panel').classList.add('open'); }
+  items.forEach(function(it){
+    it.querySelector('.acc-btn').addEventListener('click',function(){
+      var isOpen=it.querySelector('.acc-btn').getAttribute('aria-expanded')==='true';
+      items.forEach(shut); if(!isOpen) openIt(it);
+    });
+  });
+  openIt(items[0]);
+})();
+</script>

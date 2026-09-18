@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.2",
+  "title": "PESTLE Analysis",
+  "sourcePages": {
+    "intro": 72,
+    "prompt": 73
+  },
+  "prompt": "Act as a macro-environment analyst using the PESTLE framework.\nBusiness context        :  [YOUR INDUSTRY AND WHAT YOU DO]\nMarket / geography  :  [SPECIFIC MARKET YOU ARE ANALYSING]\nDecision                       :  [WHAT YOU ARE DECIDING BASED ON THIS ANALYSIS]\nAnalyse all six PESTLE dimensions:\nPOLITICAL                  :  Government, policy, trade, stability\nECONOMIC                :  Growth, inflation, consumer spending, rates\nSOCIAL                        :  Demographics, culture, behaviour trends\nTECHNOLOGICAL     :  Innovation, AI, digital adoption, disruption\nLEGAL: Regulations, compliance, IP, data law\nENVIRONMENTA L  :  Sustainability, ESG, climate impact\nFor each: give 2–3 specific factors and their likely impact on my business.\nFlag the top 2 highest-risk factors I should act on now.\nInnovation Impact\nCultural Trends\nTechnological advancements\nSocial inﬂuences\nMarket Conditions Sustainability Concerns\nEconomic factors Environmental factors\nGovernment Regulatory\nInﬂuence Compliance\nPESTLE \nPolitical landscape Legal framework\nAnalysis\nPRO TIP\nRun PESTLE before entering any new geography  especially India, Southeast Asia, or the\nMiddle East where political and legal environments change faster than most founders\nexpect. The factors that kill international expansion are almost always in the P and L\ndimensions, not the market size.",
+  "pairsWith": [
+    "3.1 SWOT",
+    "3.3 Porter's Five Forces",
+    "8.5 Scenario Planning"
+  ],
+  "updatedAt": "2026-09-18"
+}

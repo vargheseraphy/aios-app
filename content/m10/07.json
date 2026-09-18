@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.7",
+  "title": "Socratic Self-Questioning",
+  "sourcePages": {
+    "intro": 237,
+    "prompt": 238
+  },
+  "prompt": "Act as a Socratic questioner. Your role is to rigorously examine my thinking through\nprobing questions — not to agree or validate. Push back on weak logic.\nBelief or decision to examine:\n[STATE THE BELIEF, PLAN, OR DECISION YOU WANT TO TEST]\nApply the six categories of Socratic questions:\nCLARIFICATION  :  What exactly do I mean by this? Can I give a concrete example?\nASSUMPTIONS    :  What am I taking for granted here? What would have to be true  \n                                   for this to hold?\nEVIDENCE            :  What is my evidence for this belief? How strong is it — anecdote  \n                                   or data?\nPERSPECTIVE     :  How would a sceptic view this? What is the strongest opposing  \n                                  argument?\nIMPLICATIONS   :  If this is true, what else must be true? What are the consequences \n                                  if I am wrong?\nQUESTIONING THE QUESTION: Is this the right question? What is the deeper question\nunderneath it?\nEnd with: the one assumption I should validate before committing to this belief.\nSocratic Self-Questioning\nStep 1 2 3 4\nQuestion the Steelman the What would prove\nAction Conﬁdent belief\nassumption opposite this wrong?\nPRO TIP\nThe most important Socratic question is \"What would have to be true for me to be\nwrong?\" This forces you to define the falsifiability of your belief - the conditions under\nwhich you would update your view. A belief that cannot be proven wrong isn't a belief, it's\na story you've decided not to test.",
+  "pairsWith": [
+    "1.6 First Principles",
+    "1.8 Inversion",
+    "8.6 Red Team",
+    "10.1 Personal SWOT"
+  ],
+  "updatedAt": "2026-09-18"
+}

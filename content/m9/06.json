@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.6",
+  "title": "3-Scenario Financial Model",
+  "sourcePages": {
+    "intro": 216,
+    "prompt": 217
+  },
+  "prompt": "Act as a startup CFO building a 3-scenario financial model.\nMy business                :  [REVENUE MODEL, STAGE, CURRENT METRICS]\nPlanning horizon       :  [6 MONTHS / 12 MONTHS / 18 MONTHS]\nKey revenue drivers  :  [WHAT DRIVES REVENUE - DEALS, USERS, USAGE]\nKey cost drivers         :  [HEADCOUNT, INFRASTRUCTURE, MARKETING]\nBuild a 3-scenario model:\nBASE CASE: Most likely trajectory\nRevenue assumption, cost assumption, key metric target\nEnd-state    :  cash position, burn, milestone achieved\nBULL CASE :  Everything works - best realistic outcome\nWhat accelerates - which driver performs above base?\nEnd-state    :  cash, burn, milestone, optionality created\nBEAR CASE :  Things go worse - survivable but hard\nWhat underperforms - which driver falls short?\nEnd-state    :  cash, burn, how long can we operate?\nSCENARIO TRIGGERS :  What would I observe by month 3 that confirms each scenario?\nDECISION PLAYBOOK :  What do I do differently in each?\nBear Case Base Case Bull Case\nWorst realistic outcome Most likely outcome Best realistic outcome\nPRO TIP\nThe most important output from scenario modelling is the Bear Case decision playbook.\nDefine now - before you need it - what you will cut first, what you will protect at all\ncosts, and at what runway level you take action. Leaders who make these decisions in\nadvance act calmly when the moment arrives. Leaders who haven't made them in\nadvance make poor decisions under pressure.",
+  "pairsWith": [
+    "9.2 Burn Rate",
+    "9.1 LTV:CAC",
+    "8.5 Scenario Planning",
+    "8.10 Expected Value"
+  ],
+  "updatedAt": "2026-09-18"
+}

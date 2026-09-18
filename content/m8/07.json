@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.7",
+  "title": "Eisenhower Matrix",
+  "sourcePages": {
+    "intro": 197,
+    "prompt": 198
+  },
+  "prompt": "Act as a personal effectiveness coach using the Eisenhower Matrix.\nMy role: [YOUR JOB TITLE AND KEY RESPONSIBILITIES]\nThis week's tasks: [LIST EVERYTHING ON YOUR PLATE]\nStep 1 :  Classify each task into one of four quadrants:\nQ1 URGENT + IMPORTANT                   :  Do now\nQ2 NOT URGENT + IMPORTANT          :  Schedule, protect this time\nQ3 URGENT + NOT IMPORTANT          :  Delegate or batch\nQ4 NOT URGENT + NOT IMPORTANT :  Eliminate\nStep 2 :  Flag any Q2 item that has been on my list for more than 2 weeks,  these are most\nat risk.\nStep 3 :  Identify my top 3 Q2 priorities for this week and suggest when in my week to\nschedule them.\nStep 4 :  For each Q3 item — who should own this instead?\nStep 5 :  What is the Q4 item I should cut today?\nEisenhower Matrix: Task Prioritization\nQ1: Do Now Q2: Schedule Q3: Delegate Q4: Eliminate\nUrgent and Not urgent but Urgent but not Not urgent and not\nimportant tasks. important tasks. important tasks. important tasks.\n25% 25% 25% 25%\nPrioritize important, non-urgent tasks to maximize effectiveness.\nPRO TIP\nMost founders' Q2 lists contain the same items week after week: exercise, strategy\nthinking, key relationships, learning. These are the things that matter most and keep\ngetting deferred. The reason is always the same, they have no deadline and no\nconsequence for deferral. The fix is equally simple: schedule them like meetings, put\nthem in the calendar, and treat cancellation as a failure, not a choice.",
+  "pairsWith": [
+    "8.1 DECIDE Framework",
+    "7.4 ICE Scoring",
+    "6.2 OKRs",
+    "10.3 Weekly Review"
+  ],
+  "updatedAt": "2026-09-18"
+}

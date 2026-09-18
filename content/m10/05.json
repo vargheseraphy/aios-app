@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.5",
+  "title": "Three Horizons Vision",
+  "sourcePages": {
+    "intro": 233,
+    "prompt": 234
+  },
+  "prompt": "Act as a strategic planning advisor using McKinsey's Three Horizons framework.\nMy business                             :  [DESCRIBE YOUR CURRENT CORE BUSINESS]\nStage                                          :  [REVENUE RANGE AND GROWTH RATE]\nCurrent strategic priorities  :  [WHAT YOU ARE FOCUSED ON NOW]\nMap my Three Horizons:\nHORIZON 1 (This year) :\nWhat is the core business I must protect and optimise?\nKey metrics to defend. Main threats to manage.\nHORIZON 2 (1–3 years) :\nWhat 2–3 adjacent opportunities should I be developing?\nWhat experiments should I be running now?\nWhat would need to be true for each to become H1?\nHORIZON 3 (3–5 years) :\nWhat options should I be creating - even if uncertain?\nWhat bets cost little today but matter greatly later?\nBALANCE AUDIT           :\nWhat % of my time/energy goes to each horizon now?\nWhat is the right allocation given my stage?\nWhat would I need to stop doing in H1 to fund H2?\nPRO TIP\nThe most common Three Horizons failure is treating H3 as a vision exercise and H1 as the\nonly real work. H3 options are built through small, cheap bets made consistently over\ntime. Amazon's AWS was an H3 bet in 2003 when their core H1 business was books. The\nvalue of H3 is not in the vision — it is in the options it creates.",
+  "pairsWith": [
+    "10.2 90-Day Planning",
+    "6.10 Hoshin Kanri",
+    "2.9 Ansoff Matrix",
+    "8.5 Scenario Planning"
+  ],
+  "updatedAt": "2026-09-18"
+}

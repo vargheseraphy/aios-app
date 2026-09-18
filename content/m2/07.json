@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.7",
+  "title": "Pricing Strategy - Value Ladder",
+  "sourcePages": {
+    "intro": 61,
+    "prompt": 62
+  },
+  "prompt": "Act as a pricing strategist specialising in value-based pricing.\nMy business          :  [DESCRIBE YOUR PRODUCT OR SERVICE]\nTarget customer  :  [WHO THEY ARE AND WHAT THEY WANT]\nCurrent pricing    :   [WHAT YOU CHARGE NOW, IF ANYTHING]\nDesign a 4-tier Value Ladder for my business:\nTIER 1 — FREE / LOW COST: What delivers enough value to build trust?\nTIER 2 — ENTRY OFFER: First paid step — low friction, clear quick win\nTIER 3 — CORE OFFER: Main product — full transformation delivered\nTIER 4 — PREMIUM / HIGH TICKET: Maximum outcome — for customers who want more\nFor each tier      :   define the offer, price range, and the one outcome that makes the \ncustomer want the next tier.",
+  "pairsWith": [
+    "2.3 Lean Canvas",
+    "2.1 Value Proposition",
+    "5.6 GTM Canvas"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,17 @@
+{
+  "module": 3,
+  "lesson": "3.8",
+  "title": "Voice of Customer  Empathy Grid",
+  "sourcePages": {
+    "intro": 84,
+    "prompt": 85
+  },
+  "prompt": "PROMPT — COPY & PASTE READY\nAct as a customer research analyst using the Empathy Grid.\nCustomer profile  :  [ROLE, INDUSTRY, COMPANY SIZE]\nProblem context   :  [WHAT CHALLENGE THEY FACE DAILY]\nReal customer data (if available):\n[PASTE REVIEWS, INTERVIEW NOTES, OR SUPPORT TICKETS]\nMap the full Empathy Grid:\nTHINKS & FEELS  :  Inner concerns, hopes, and worries\nSEES                       :  What their environment looks like\nHEARS                    :  What colleagues, managers, media tell them\nSAYS & DOES        :  Public behaviour and statements\nPAINS                     :  Frustrations, fears, obstacles\nGAINS                     :  Desired outcomes and measures of success\nAfter the grid: give me 5 exact phrases this customer would use to describe their\nproblem in their own words, not marketing language.",
+  "pairsWith": [
+    "2.1 Value Proposition",
+    "2.5 JTBD",
+    "3.4 ICP",
+    "5.1 StoryBrand"
+  ],
+  "updatedAt": "2026-09-18"
+}

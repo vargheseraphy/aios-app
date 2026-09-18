@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.7",
+  "title": "Working Backwards",
+  "sourcePages": {
+    "intro": 172,
+    "prompt": 173
+  },
+  "prompt": "PROMPT — COPY & PASTE READY\nAct as an Amazon-style product consultant using Working Backwards.\nI am building       :  [PRODUCT, FEATURE, OR INITIATIVE]\nTarget customer :  [WHO  role, situation, problem they have]\nStep 1 — Press Release:\nHeadline             :  [What is live and why it matters to the customer]\nProblem              :  [What were they struggling with before?]\nSolution              :  [How does it solve it  specifically?]\nBetter because   :  [Compared to what existed before]\nCustomer quote : [What a real customer would tell a friend]\nStep 2 — FAQ:\nList the 5 hardest questions a sceptic would ask. Answer each honestly.\nStep 3 — Scope filter:\nList 3 things currently planned that do NOT serve the customer \npromise and should be cut.",
+  "pairsWith": [
+    "7.1 SOP — SIPOC",
+    "7.6 PDCA",
+    "2.1 Value Proposition Canvas",
+    "2.5 Jobs To Be Done"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.3",
+  "title": "Post-Mortem Review",
+  "sourcePages": {
+    "intro": 189,
+    "prompt": 190
+  },
+  "prompt": "Act as a Post-Mortem facilitator.\nProject or event  :  [DESCRIBE WHAT HAPPENED]\nOutcome               :  [WHAT ACTUALLY RESULTED — METRIC, TIMELINE, QUALITY]\nTarget                   :  [WHAT WAS PLANNED OR EXPECTED]\nTeam involved     :  [ROLES AND CONTRIBUTIONS]\nStructure a complete Post-Mortem:\nTIMELINE            :  Reconstruct the key events in sequence. When did things diverge  \n                                  from the plan?\nWHAT WORKED :  3 things that went well and why. What can be systematised from \n                                  these?\nWHAT FAILED    :  3 things that did not work and why. Use 5 Whys for the most critical \n                                 failure.\nROOT CAUSES   :  The underlying systemic reasons, not the surface events.\nACTION ITEMS  :  3 specific changes  owner, deadline. For each: what process or \n                                 system changes?\nKNOWLEDGE CAPTURED: One paragraph to add to our playbook.\nPost-Mortem Review\n1 2 3 4\nCapture the Ask What & Extract the Deﬁne\nOutcome Why Learning Action Items\nPRO TIP\nThe most valuable Post-Mortem output is the paragraph added to the playbook. Not the\naction items, those are often forgotten. A one-paragraph insight written while the\nmemory is fresh and placed in a shared document creates institutional knowledge that\nsurvives team turnover. Build the habit of writing it before the meeting ends.",
+  "pairsWith": [
+    "8.2 Pre-Mortem",
+    "7.6 PDCA",
+    "7.12 5 Whys",
+    "6.8 Meeting Design"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.2",
+  "title": "Business Model Canvas",
+  "sourcePages": {
+    "intro": 51,
+    "prompt": 52
+  },
+  "prompt": "Act as a business model strategist using Osterwalder's Business Model Canvas.\nMy business: [DESCRIBE WHAT YOUR COMPANY DOES]\nStage: [PRE-REVENUE / EARLY REVENUE / SCALING]\nMap all nine blocks for my business:\n1. Customer Segments             6. Key Resources\n2. Value Propositions               7. Key Activities\n3. Channels                               8. Key Partnerships\n4. Customer Relations             9. Cost Structure\n5. Revenue Streams\nAfter mapping: identify the 2 weakest blocks and explain\nwhat I need to validate or strengthen in each.",
+  "pairsWith": [
+    "2.3 Lean Canvas",
+    "2.1 Value Proposition",
+    "2.8 Moat Builder"
+  ],
+  "updatedAt": "2026-09-18"
+}

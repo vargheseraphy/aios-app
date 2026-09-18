@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.4",
+  "title": "The Challenger Sale",
+  "sourcePages": {
+    "intro": 97,
+    "prompt": 98
+  },
+  "prompt": "I PROMPT — COPY & PASTE READY\nAct as a Challenger Sale strategist.\nMy product: [WHAT YOU SELL AND THE PROBLEM IT SOLVES]\nProspect type: [INDUSTRY, ROLE, COMPANY STAGE]\nCommon assumption: [WHAT THEY CURRENTLY BELIEVE OR DO THAT YOUR\nPRODUCT CHALLENGES]\nBuild a full Challenger approach:\nTEACH: What counterintuitive insight about their industry or business would genuinely\nsurprise them?\n(must be specific, data-backed, and relevant)\nTAILOR: How does this insight connect specifically to their role, their pain, or their goals?\nTAKE CONTROL: How do I guide from the insight to the conversation about my solution\n— naturally,\nwithout feeling like a pivot?\nWrite the opening 3–4 sentences I would say out loud.\nAlso write the Take Control transition — the bridge from the insight to my solution in 1–2\nsentences.",
+  "pairsWith": [
+    "4.2 SPIN Selling",
+    "4.5 Objection Handling",
+    "4.7 Proposal Writing"
+  ],
+  "updatedAt": "2026-09-18"
+}

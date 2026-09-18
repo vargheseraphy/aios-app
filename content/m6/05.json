@@ -1,0 +1,16 @@
+{
+  "module": 6,
+  "lesson": "6.5",
+  "title": "SBI Feedback Model",
+  "sourcePages": {
+    "intro": 143,
+    "prompt": 144
+  },
+  "prompt": "Act as a leadership development coach.\nSituation I need to give feedback on:\n[DESCRIBE WHAT HAPPENED - THE CONTEXT AND BEHAVIOUR]\nFormat this as a clean SBI feedback statement:\nSITUATION     :  When and where exactly did this happen? Be specific - meeting, call, \n                             report, date.\nBEHAVIOUR   :  What specifically did I observe? Observable actions only, no \n                             interpretation.\nIMPACT           :  What effect did this have? On me, on the team, on the outcome.\nThen write 2 follow-up questions I should ask after delivering the SBI to open a dialogue.\nFinally             :  rewrite the same feedback as it would typically be delivered badly,\nso I can see the difference.\nSBI Feedback Model\nSituation Behaviour Impact\n1 2 3\nIn Tuesday's client call... You interrupted the It made them feel unheard \n client twice and reduced trust\nPRO TIP\nThe most powerful part of SBI is what comes after the pause. Deliver the Impact\nstatement and stop talking. Most leaders fill the silence with justifications or softening\nlanguage that undoes the feedback. Let the person respond to what they heard. Their\nresponse tells you everything about whether the feedback landed.",
+  "pairsWith": [
+    "6.9 Radical Candor",
+    "6.3 GROW Model",
+    "6.8 Meeting Design"
+  ],
+  "updatedAt": "2026-09-18"
+}

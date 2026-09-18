@@ -1,0 +1,16 @@
+{
+  "module": 4,
+  "lesson": "4.11",
+  "title": "FAB - Features Advantages",
+  "sourcePages": {
+    "intro": 111,
+    "prompt": 112
+  },
+  "prompt": "Act as a sales messaging consultant using the FAB framework.\nMy product features    :  [LIST YOUR TOP 5–7 FEATURES]\nTarget customer pain  :  [THE SPECIFIC PROBLEM THEY TOLD YOU ABOUT IN \n                                            DISCOVERY]\nCustomer role               :  [JOB TITLE AND WHAT THEY ARE MEASURED ON]\nFor each feature, complete the FAB chain:\nFEATURE        :  What the product has or does\nADVANTAGE  :  Why this is better than the alternative\nBENEFIT         :  What this specifically means for THIS customer given their stated pain\nand goals\nWrite the Benefit as a sentence they would say to their manager  not a sentence I\nwould say to them.\nFAB Pyramid\nBeneﬁt\nWhat it means for the customer\nAdvantage\nWhy it's better than alternatives\nFeature\nWhat the product has or does\nPRO TIP\nThe best benefits are written from the customer's perspective looking inward, not from\nyour perspective looking outward. 'This saves you 3 hours a week' is a feature-benefit.\n'You can tell your CFO that reporting time dropped by 40%' is a customer benefit\nbecause it solves the customer's real problem, which is not time, it's accountability.",
+  "pairsWith": [
+    "4.6 PAS",
+    "4.2 SPIN Selling",
+    "2.1 Value Proposition Canvas"
+  ],
+  "updatedAt": "2026-09-18"
+}

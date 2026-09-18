@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.6",
+  "title": "MVP Design",
+  "sourcePages": {
+    "intro": 59,
+    "prompt": 60
+  },
+  "prompt": "Act as a lean startup product advisor.\nMy business idea   :   [DESCRIBE IN 2–3 SENTENCES]\nCore assumption   :   [THE ONE THING THAT MUST BE TRUE FOR THIS BUSINESS TO  \n                                     WORK]\nStep 1      :  What is the smallest product or experiment that tests this specific  \n                    assumption?\nStep 2     :  What does success look like? Define the metric or signal that confirms the \n                   assumption.\nStep 3     :  What does failure look like? What result would tell me to pivot or stop?\nStep 4     :  What is the fastest way to build or simulate this MVP,  even without writing \n                  code?\nBe specific. Avoid suggesting a full product build.\nProduct\nEvolution\nMVP V2 V3 Full Product\nSmallest viable Iterativ Further Complete and\nversion improvemente reﬁnement feature-rich\nPRO TIP\nThe most common MVP mistake is testing too many assumptions at once. One MVP, one\nassumption. If it passes, move to the next assumption. Running MVP tests in sequence is\nfaster than building a complete product that tests them all at once and fails without\ntelling you which assumption was wrong.",
+  "pairsWith": [
+    "2.3 Lean Canvas",
+    "2.1 Value Proposition",
+    "3.8 Voice of Customer"
+  ],
+  "updatedAt": "2026-09-18"
+}

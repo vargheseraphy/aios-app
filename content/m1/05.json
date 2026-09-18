@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.5",
+  "title": "Six Thinking Hats",
+  "sourcePages": {
+    "intro": 32,
+    "prompt": 33
+  },
+  "prompt": "Act as a strategic facilitator using De Bono's Six Thinking Hats.\nTopic           :    [YOUR DECISION OR IDEA - be specific]\nWhite Hat   :    Facts and data we have or need?\nRed Hat       :    Gut feelings and emotional reactions?\nBlack Hat    :    Risks, flaws, what could go wrong?\nYellow Hat  :    Benefits and best-case outcomes?\nGreen Hat   :    Creative alternatives and new directions?\nBlue Hat      :    Recommended next step or process?\nGive 3 specific points per hat. Be concrete, not generic.\nSix Thinking Hats Process\nWhite Hat\n1\nFocus on facts and data\nRed Hat\n2\nConsider emotions and gut reactions\nBlack Hat\n3\nIdentify risks and problems\nYellow Hat\n4\nExplore beneﬁts and upside\nGreen Hat\n5\nGenerate creative alternatives\nBlue Hat\n6\nDeﬁne process and next steps\nPRO TIP\nRun this twice  once for your plan, once asking AI to argue the opposite position. The\ngap between the two outputs is where the most useful insight is hiding.",
+  "pairsWith": [
+    "1.6 First Principles",
+    "8.2 Pre-Mortem",
+    "8.6 Red Team Thinking"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.6",
+  "title": "Competitor Mapping",
+  "sourcePages": {
+    "intro": 80,
+    "prompt": 81
+  },
+  "prompt": "Act as a competitive intelligence analyst.\nMy business        :  [WHAT YOU DO AND WHO YOU SERVE]\nKey competitors :  [LIST 5–8 DIRECT AND INDIRECT]\nMap each competitor across these dimensions:\nPrice positioning (budget / mid / premium)\nTarget customer (SMB / mid-market / enterprise)\nCore strength (what they are known for)\nCore weakness (where they are consistently criticised)\nKey differentiator (what makes them choose-able)\nAfter mapping :\n1. Where is the market most crowded?\n2. What white space exists that no competitor occupies?\n3. Where am I most vulnerable to competitive pressure?\n4. What is the one thing I must own to be clearly different?\n1\n2\n3\nWhite Space\nTop-right corner,\nHigh Quality, High Price\nrepresenting untapped\nCompetitor Top-left corner, market potential. Low Quality, Low Price\noccupied by premium\nLandscape competitors. Bottom-left corner,\ndominated by budget-\nfriendly options.\nPRO TIP\nThe most valuable output is not the map itself,  it is the white space analysis. Ask AI\nspecifically: 'Given this competitive map, describe the customer who is currently\nunderserved by every player in this market.' That customer is your Blue Ocean\nopportunity.",
+  "pairsWith": [
+    "3.3 Porter's Five Forces",
+    "2.4 Blue Ocean",
+    "3.7 Positioning Statement"
+  ],
+  "updatedAt": "2026-09-18"
+}

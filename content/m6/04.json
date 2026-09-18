@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.4",
+  "title": "Hiring with AI -Talent Filter",
+  "sourcePages": {
+    "intro": 141,
+    "prompt": 142
+  },
+  "prompt": "Act as a structured hiring consultant.\nRole I am hiring for  :  [JOB TITLE AND KEY RESPONSIBILITIES]\nTeam context             :  [STAGE, CULTURE, WHO THEY WILL WORK WITH]\nNon-negotiables        :  [MUST-HAVE SKILLS OR EXPERIENCE]\nStep 1  :  Define the top 4 success criteria for this role \n                what does excellent performance look like in year one?\nStep 2 :  For each criterion, write 2 STAR-format behavioural interview questions.\n               (Tell me about a time when...)\nStep 3 :  For each question, define what a strong answer looks like vs a weak answer   \n               2 lines each.\nStep 4 :  Write one work sample task I could give candidates to test the most critical  \n               skill directly.\nStep 5 :  Write 3 red-flag signals to watch for in interviews.\nTalent Filter Hiring Process\nDeﬁne Success Criteria Consistent Scoring Rubric\nEstablish 3-5 key criteria for Use a rubric for fair and\nsuccess consistent scoring\nBehavioral Questions AI-Assisted Analysis\nAsk STAR format questions Analyze candidate data with\nfor each criterion AI tools\nPRO TIP\nThe work sample task (Step 4) is the single highest-signal hiring tool available. A 2-hour\ntask relevant to the actual job outpredicts any amount of interviewing. Candidates who\ndecline the task often self-select out for good reason. Candidates who complete it\nbrilliantly and explain their thinking are almost always the right hire.",
+  "pairsWith": [
+    "6.2 OKRs",
+    "6.5 SBI Feedback",
+    "6.6 Culture Code",
+    "6.11 Situational Leadership"
+  ],
+  "updatedAt": "2026-09-18"
+}

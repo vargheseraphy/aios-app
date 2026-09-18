@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.11",
+  "title": "Poka-Yoke  Error Proofing",
+  "sourcePages": {
+    "intro": 180,
+    "prompt": 181
+  },
+  "prompt": "Act as a process error-proofing consultant using Poka-Yoke.\nMy process                 :  [DESCRIBE THE PROCESS WHERE ERRORS OCCUR]\nCommon errors         :  [LIST THE MISTAKES THAT RECUR MOST OFTEN]\nImpact of each error :  [TIME LOST / COST / CUSTOMER IMPACT]\nFor each error, design a Poka-Yoke solution:\nERROR        :  [Name the error]\nTYPE           :  Prevention (impossible to make) or Detection (caught immediately after)\nSOLUTION :  The specific design change, checklist, automation, or constraint that \n                        eliminates it\nIMPLEMENTATION  : What needs to change - tool, process, template, or approval \nstep?\nAfter individual solutions :\nIdentify the one error with the highest cost that currently has no Poka-Yoke in place.\nDesign the simplest Prevention solution for it.\nPoka-Yoke: Design Out the Mistake\nProcess with Errors Error-Free Process\nImplement \nRework and cost occur Reduced rework and\nPoka- Yoke\ncost\nError cannot occur Error caught immediately\nPRO TIP\nThe most powerful Poka-Yoke in any knowledge business is a mandatory checklist at a\nprocess handoff. Before a piece of work moves from one person to the next, a checklist\nmust be completed. This single habit catches more errors than any amount of training\nbecause it makes the standard visible at the exact moment it matters.",
+  "pairsWith": [
+    "7.9 Kaizen",
+    "7.1 SOP",
+    "7.2 Swimlane",
+    "7.12 5 Whys"
+  ],
+  "updatedAt": "2026-09-18"
+}

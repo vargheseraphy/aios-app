@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.4",
+  "title": "AARRR Funnel Analysis  Deep",
+  "sourcePages": {
+    "intro": 212,
+    "prompt": 213
+  },
+  "prompt": "Act as a growth analytics advisor running a deep AARRR analysis.\nMy business    :  [DESCRIBE PRODUCT AND REVENUE MODEL]\nPopulate my funnel with current numbers:\nACQUISITION :  Monthly visitors / leads: [X]\nACTIVATION   :  % who complete first key action: [X%]\nRETENTION    :  30-day retention or monthly churn: [X%]\nREVENUE         :  % who convert to paying: [X%] · Average revenue per paying user: [X]\nREFERRAL        :  % who refer at least one other user: [X%]\nANALYSIS:\n1.Calculate conversion rate at each stage transition\n2.Identify the stage with the worst conversion the biggest leak in the funnel\n3.Model the revenue impact if that stage improved 10%\n4.Model the revenue impact if every stage improved 10%\n5.Recommend the 2 highest-ROI experiments to run at the weakest stage\n6.What is my current revenue per acquired visitor?\nWhat would it be at healthy benchmark conversion rates?\nAcquisition Retention Referral\nAttracting new users Keeping users engaged Encouraging user advocacy\nActivation Revenue\nEngaging users initially Monetizing user activity\nPRO TIP\nRun the 10% improvement model for each stage and compare the revenue impact\nnumbers. The stage where a 10% improvement produces the largest revenue gain is your\nhighest-leverage investment. In most early-stage businesses, this is Activation the\ntransition from visitor to engaged user. Fixing Activation compounds through every\ndownstream stage simultaneously.",
+  "pairsWith": [
+    "9.3 North Star",
+    "9.1 LTV:CAC",
+    "5.9 AARRR",
+    "5.8 Growth Loop"
+  ],
+  "updatedAt": "2026-09-18"
+}

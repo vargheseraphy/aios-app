@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.8",
+  "title": "Agile Sprint Canvas",
+  "sourcePages": {
+    "intro": 174,
+    "prompt": 175
+  },
+  "prompt": "Act as an Agile coach helping design a focused sprint.\nTeam                                :  [SIZE, ROLES, WHAT YOU ARE BUILDING]\nSprint duration             :  [1 OR 2 WEEKS]\nPriorities this sprint.   :  [WHAT YOU MOST NEED TO ACCOMPLISH]\nCapacity                          :  [AVAILABLE PERSON-DAYS THIS SPRINT]\nDesign a complete Sprint Canvas:\nSPRINT GOAL                 :  One sentence  what defines success\nBACKLOG ITEMS           :  5–8 tasks that directly serve the goal. Each with: owner,  \n                                              estimate,  priority\nDEPENDENCIES             :  What must happen before sprint starts\nRISKS                               :  What could prevent completion\nDEFINITION OF DONE :  How we know each item is complete\nSTANDUP FORMAT       :  3 daily questions for team alignment\nRETROSPECTIVE           :  3 questions for end-of-sprint review\nFlag any backlog item that does not directly serve the sprint goal,  those should be\ndeferred.\nSprint Canvas - Two Weeks That Ship, Not Just Plan\nSprint Canvas \nTwo-Week Sprint Backlog Deﬁnition Daily Standup \nDependencies Risks\nTimeline Bar Goal Items of Done Questions\nPRO TIP\nThe most valuable sprint ritual is not the standup,  it is the retrospective. Teams that run\nhonest retrospectives improve sprint-over-sprint. Teams that skip them repeat the same\nproblems. Block the time before the sprint starts, not at the end when everyone is\nrushing to the next thing.",
+  "pairsWith": [
+    "7.4 ICE Scoring",
+    "7.5 RICE Scoring",
+    "7.6 PDCA",
+    "6.2 OKRs"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.6",
+  "title": "Red Team Thinking",
+  "sourcePages": {
+    "intro": 195,
+    "prompt": 196
+  },
+  "prompt": "Act as a Red Team adversary. Your job is to find every weakness in the following plan and\ntry to destroy it.\nBe thorough, critical, and honest. Do not be polite.\nThe plan                         :  [DESCRIBE YOUR STRATEGY, PRODUCT, OR DECISION]\nOur key assumptions  :  [LIST THE THINGS THAT MUST BE TRUE FOR THIS PLAN TO \n                                            WORK]\nAttack this plan from four angles:\nSTRATEGIC ATTACK        :  Why is the direction fundamentally wrong? What are we\nmisreading about the market?\nEXECUTION ATTACK       :  Why will we fail to implement this? Where is our team not\ncapable enough?\nCOMPETITIVE ATTACK  :  How will competitors neutralise this? What move could make \n                                                this irrelevant?\nASSUMPTION ATTACK   :  Which single assumption, if wrong, kills the entire plan?\nEnd with: the one attack I should be most afraid of.\nRed Team Thinking Process\nIdentify Weaknesses Simulate Attacks Gather Feedback Prioritize Fixes\nPRO TIP\nAsk AI to play devil's advocate on your most confident belief about your business. Not\nyour uncertainties, your certainties. The assumptions you are most sure about are the\nones least likely to be tested. That is exactly what makes them dangerous. Red Team your\nstrongest convictions quarterly.",
+  "pairsWith": [
+    "8.2 Pre-Mortem",
+    "8.4 Risk Matrix",
+    "1.8 Inversion",
+    "1.5 Six Thinking Hats"
+  ],
+  "updatedAt": "2026-09-18"
+}

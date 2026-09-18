@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.2",
+  "title": "OKRs - Goals That Drive Action",
+  "sourcePages": {
+    "intro": 137,
+    "prompt": 138
+  },
+  "prompt": "Act as an OKR coach and strategist.\nMy business context    :  [COMPANY STAGE, TEAM SIZE, MAIN FOCUS]\nThis quarter's priority :  [THE ONE THING THAT MATTERS MOST]\nCurrent challenges       :  [WHAT IS HOLDING GROWTH BACK]\nWrite 3 OKRs for this quarter:\nFor each OKR:\nOBJECTIVE      :  Inspiring, qualitative direction (1 sentence)\nKEY RESULT 1 :  Specific, measurable outcome with number\nKEY RESULT 2 :  Specific, measurable outcome with number\nKEY RESULT 3 :  Specific, measurable outcome with number\nThen: flag any Key Result that is actually a task disguised as an outcome - and rewrite it.\nSuggest a weekly check-in question for each OKR.\nAchieving Market Leadership\nDeﬁne Key Results\nEstablish\nmeasurable\noutcomes\nSet Objective Drive Action\nDeﬁne market Launch feature X\nleadership goal and track adoption\nPRO TIP\nThe most common OKR failure is writing Key Results that measure activity instead of\noutcome. 'Conduct 20 customer interviews' is activity. 'Identify 3 validated insights that\nchange our roadmap' is outcome. Your team can tick off activity without moving the\nneedle. Only outcomes tell you if you're actually winning.",
+  "pairsWith": [
+    "6.1 RACI Matrix",
+    "6.8 Meeting Design",
+    "9.3 North Star Metric",
+    "7.4 ICE Scoring"
+  ],
+  "updatedAt": "2026-09-18"
+}

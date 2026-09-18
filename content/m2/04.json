@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.4",
+  "title": "Blue Ocean Strategy",
+  "sourcePages": {
+    "intro": 55,
+    "prompt": 56
+  },
+  "prompt": "Act as a Blue Ocean Strategy consultant.\nMy industry                                :  [NAME THE INDUSTRY AND KEY PLAYERS]\nMy current product / service :  [BRIEF DESCRIPTION]\nStep 1 — Map the current competitive factors in my industry.\nStep 2 — Apply the ERRC Grid:\nELIMINATE   :   What factors can I remove entirely?\nREDUCE         :   What can I offer below industry standard?\nRAISE             :   What should I offer above industry standard?\nCREATE          :   What new value can I introduce that doesn't exist \n                                              anywhere in the industry?\nStep 3 — Describe the Blue Ocean this creates and who the new target customer would be.\nHow to achieve market differentiation?\nRed Ocean Blue Ocean\nIntense competition and price wars Uncontested market space\nPRO TIP\nThe best Blue Oceans are often found by looking at the non-customers of your industry,\npeople who don't buy from anyone. Ask AI: 'Who refuses to use any solution in this\nmarket and why?' Their reasons are your roadmap.",
+  "pairsWith": [
+    "2.8 Moat Builder",
+    "3.3 Porter's Five Forces",
+    "1.6 First Principles"
+  ],
+  "updatedAt": "2026-09-18"
+}

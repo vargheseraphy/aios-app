@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.9",
+  "title": "Rule of 40",
+  "sourcePages": {
+    "intro": 222,
+    "prompt": 223
+  },
+  "prompt": "Act as a SaaS financial advisor using the Rule of 40.\nMy business metrics:\nAnnual Recurring Revenue (ARR): [CURRENT ARR]\nARR 12 months ago: [PRIOR YEAR ARR]\nEBITDA or Operating Profit Margin: [X% - negative if burning]\nCalculate my Rule of 40 score:\nRevenue Growth Rate = (Current ARR - Prior ARR) / Prior ARR\nRule of 40 Score = Growth Rate % + Profit Margin %\nAnalyse:\n1.What is my current Rule of 40 score?\n2.How does it compare to the 40 benchmark?\n3.Am I growth-led or efficiency-led - which matters more at my current stage?\n4.To reach a score of 40, should I prioritise accelerating growth or improving margin?\n5.What is the single most impactful action to improve my score by 5 points in 6 months?\nRevenue Growth Proﬁt Margin Revenue Growth Proﬁt Margin\nRate Rate\nNegative margin Positive margin with\nHigh growth with with high growth. Moderate growth moderate growth.\nnegative margin. with positive margin.\n60% -20% 15% 25%\nThe Rule of 40 balances revenue growth and proﬁt margin to assess business health.\nPRO TIP\nThe Rule of 40 is most useful as a framing tool in investor conversations, not as an\ninternal operating metric. When an investor asks about your growth vs profitability\ntradeoff, presenting a Rule of 40 score and explaining your strategy for where it should\ngo signals financial maturity. Most founders don't know this number. Knowing it\nimmediately sets you apart.",
+  "pairsWith": [
+    "9.2 Burn Rate",
+    "9.6 Financial Model",
+    "9.1 LTV:CAC",
+    "9.5 Investor Narrative"
+  ],
+  "updatedAt": "2026-09-18"
+}

@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.2",
+  "title": "Pre-Mortem Analysis",
+  "sourcePages": {
+    "intro": 187,
+    "prompt": 188
+  },
+  "prompt": "Act as a Pre-Mortem facilitator.\nProject or decision      :  [DESCRIBE WHAT YOU ARE ABOUT TO DO]\nTimeline                        :  [HOW LONG THIS WILL TAKE]\nTeam involved              :  [ROLES RESPONSIBLE FOR EXECUTION]\nResources committed :  [BUDGET, TIME, PEOPLE]\nRun a Pre-Mortem:\nSCENARIO: It is [DATE 12 MONTHS FROM NOW]. This project has failed. Not partially,\ncompletely. What happened?\nGenerate 10 specific reasons it failed, across:\nExecution failures (team, timeline, quality)\nMarket failures (wrong assumptions about customers)\nResource failures (budget, capacity, dependencies)\nStrategic failures (wrong direction or timing)\nExternal failures (competition, regulation, market shift)\nThen: rank the top 3 by likelihood × severity.\nFor each top failure: one prevention action and one owner.\nPre-Mortem Analysis\nImagine Failure Write Individually Identify Top 3 Assign Prevention\nProject has failed one year Each person lists every Group ﬁnds the most likely, Each failure mode gets a\nfrom now reason it failed most serious failure modes named owner and action\nPRO TIP\nThe Pre-Mortem's greatest value is not the list of failure modes — it is the social\npermission it creates for people to raise concerns. In a team that is committed to a plan,\nraising doubts feels disloyal. The Pre-Mortem makes it the job. Run it before every\nsignificant commitment and watch concerns surface that would have stayed silent until\nthey became problems.",
+  "pairsWith": [
+    "8.3 Post-Mortem",
+    "8.6 Red Team",
+    "1.8 Inversion",
+    "8.4 Risk Matrix"
+  ],
+  "updatedAt": "2026-09-18"
+}

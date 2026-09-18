@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.3",
+  "title": "Lean Canvas",
+  "sourcePages": {
+    "intro": 53,
+    "prompt": 54
+  },
+  "prompt": "Act as a lean startup advisor using Ash Maurya's Lean Canvas.\nMy startup idea   :  [DESCRIBE IN 2–3 SENTENCES]\nTarget customer  :  [WHO IS THE EARLY ADOPTER SPECIFICALLY]\nComplete all nine blocks:\n1. Problem (top 3 problems being solved)\n2. Customer Segment (early adopters specifically)\n3. Unique Value Prop (clear, compelling, different)\n4. Solution (top 3 features or capabilities)\n5. Channels (how you reach customers)\n6. Revenue Streams (how you charge)\n7. Cost Structure (key costs)\n8. Key Metrics (the number that shows traction)\n9. Unfair Advantage (what can't be easily copied)\nThen: flag the 2 highest-risk assumptions to validate first.",
+  "pairsWith": [
+    "2.1 Value Proposition",
+    "2.6 MVP Design",
+    "2.8 Moat Builder"
+  ],
+  "updatedAt": "2026-09-18"
+}

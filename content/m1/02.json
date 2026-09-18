@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.2",
+  "title": "The Context Stack",
+  "sourcePages": {
+    "intro": 26,
+    "prompt": 27
+  },
+  "prompt": "Situation           :     [What is happening - current challenge or goal]\nBackground      :     [Industry, team size, stage, audience, product, region -   \n                                  whatever is relevant]\nConstraints       :     [Time, budget, tone, audience level, things to avoid]\nOutput format  :     [List / paragraph / table / email draft]\nNow                    :     [YOUR ACTUAL QUESTION OR REQUEST]\nAI Output Feels Shallow: Missing Context\nRecurring Tasks\nNo built-in template\nReusing Context\nfunctionality\nStack\nRequires manual pasting\nNon-Obvious each time\nConstraints\nAI misses important\nlimitations Imprecise Context\nStack\nLeads to imprecise AI\noutput\nNo AI Memory\nEvery prompt starts from\nzero\nPRO TIP\nSave your most-used context stacks as text snippets. Paste them at the start of any AI\nsession. This single habit cuts prompt iteration time by half.",
+  "pairsWith": [
+    "1.1 C.A.R.E Prompting",
+    "1.3 Role Prompting",
+    "1.4 Refinement Loop"
+  ],
+  "updatedAt": "2026-09-18"
+}

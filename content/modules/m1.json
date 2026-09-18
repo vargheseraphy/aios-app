@@ -1,0 +1,21 @@
+{
+  "module": 1,
+  "title": "Think Like a Strategist",
+  "subtitle": "Learn to work with AI. Then learn to think. Both are non-negotiable.",
+  "description": "Most founders fail with AI not because they lack access but because they never built the foundation. This module gives you two things: the skills to work with AI effectively, and the thinking frameworks that make every decision sharper with or without AI. SECTION A — HOW TO WORK WITH AI 1.0 The AI Mental Model 1.1 C.A.R.E Prompting 1.2 The Context Stack 1.3 Role Prompting — The Expert Chair 1.4 The Refinement Loop SECTION B — HOW TO THINK 1.5 Six Thinking Hats 1.6 First Principles Thinking 1.7 Second Order Thinking 1.8 Inversion Thinking 1.9 Mental Models Library 1.10 OODA Loop 1.11 SCAMPER 1.12 MECE Framework Start here always. Return here when outputs feel shallow or decisions feel foggy. AI Operating System for Leaders 1",
+  "lessons": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6",
+    "1.7",
+    "1.8",
+    "1.9",
+    "1.10",
+    "1.11",
+    "1.12"
+  ]
+}

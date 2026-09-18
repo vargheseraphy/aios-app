@@ -1,0 +1,17 @@
+{
+  "module": 5,
+  "lesson": "5.5",
+  "title": "Go-To-Market Canvas",
+  "sourcePages": {
+    "intro": 122,
+    "prompt": 123
+  },
+  "prompt": "Act as a go-to-market strategist.\nWhat I am launching  :   [PRODUCT, SERVICE, OR NEW MARKET ENTRY]\nLaunch date target      :  [WHEN YOU WANT TO GO LIVE]\nResources available     :  [TEAM SIZE, BUDGET RANGE, CHANNELS]\nBuild a complete GTM Canvas:\nTARGET SEGMENT     :  Who specifically - ICP description\nVALUE PROP                :  Why this, why now, why us\nCHANNELS                   :  How we reach them - ranked by priority\nPRICING                        :  Model and rationale\nSALES MOTION           :  Steps from awareness to closed deal\nSUCCESS METRICS    :  The 3 numbers that define success\nTIMELINE                     :  Key milestones for weeks 1, 2, 4, 8\nFlag the highest-risk assumption in this GTM plan and suggest how to validate it before\nfull launch.\nGo-To-Market Canvas\nPricing\nCost of products/services Success Metrics\nMeasures of launch\neffectiveness\nLaunch Timeline\nSchedule for market entry\nSales Motion\nStrategy for customer\nChannels\nengagement\nDistribution and\ncommunication methods\nPRO TIP\nThe highest-risk GTM assumption is almost always Channel, not product. Most founders\nassume a channel will work before testing it. Before investing in a full launch, run a 2-\nweek channel test with minimal spend. Let data pick your primary channel, not your\npreference.",
+  "pairsWith": [
+    "5.3 Marketing Mix",
+    "5.7 Launch Playbook",
+    "2.3 Lean Canvas",
+    "3.4 ICP"
+  ],
+  "updatedAt": "2026-09-18"
+}

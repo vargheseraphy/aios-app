@@ -1,0 +1,16 @@
+{
+  "module": 5,
+  "lesson": "5.8",
+  "title": "Viral Loop - Growth Loop",
+  "sourcePages": {
+    "intro": 128,
+    "prompt": 129
+  },
+  "prompt": "Act as a growth strategy advisor specialising in growth loops.\nMy product                 :  [DESCRIBE WHAT IT DOES AND HOW USERS ENGAGE]\nCurrent acquisition  :  [HOW YOU GET CUSTOMERS NOW]\nUser behaviour          :  [WHAT USERS DO INSIDE THE PRODUCT]\nStep 1  :  Identify which growth loop type is most natural for my product and user  \n                behaviour.\nStep 2  :  Map the complete loop,  every step from new user to loop-generated next user.\nStep 3  :  Identify the weakest point in the loop,  where do most users exit without \n                completing it?\nStep 4  :  Suggest 2 specific product or marketing changes to strengthen the loop's \n                 completion rate.\nStep 5  :  What metric would I track to know the loop is working and improving?",
+  "pairsWith": [
+    "5.9 AARRR Pirate Metrics",
+    "5.5 GTM Canvas",
+    "2.6 MVP Design"
+  ],
+  "updatedAt": "2026-09-18"
+}

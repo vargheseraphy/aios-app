@@ -1,0 +1,17 @@
+{
+  "module": 3,
+  "lesson": "3.7",
+  "title": "Market Positioning Statement",
+  "sourcePages": {
+    "intro": 82,
+    "prompt": 83
+  },
+  "prompt": "Act as a brand positioning strategist.\nMy business                      :  [DESCRIBE WHAT YOU DO]\nTarget customer              :  [SPECIFIC ROLE, INDUSTRY, SITUATION]\nKey competitors              :  [WHO THEY COMPARE US TO]\nOur main differentiator  :  [WHAT WE DO THAT OTHERS DON'T]\nProof point                        :  [DATA, RESULT, OR CREDENTIAL THAT BACKS IT UP]\nWrite 3 positioning statements in this format:\nFor [TARGET CUSTOMER] who [PROBLEM OR NEED], [PRODUCT] is the [CATEGORY] \nthat [KEY BENEFIT] because [REASON TO BELIEVE].\nMake each one distinct  not just different words for the same idea.\nVary the angle of differentiation. Then recommend which of the three is sharpest and why.\nMarket Positioning Pyramid\nProof\n1 Provide evidence to\nsupport the\nproduct's claims\nKey Beneﬁt\nHighlight the primary 2\nadvantage the\nproduct offers\nProduct Category\n3 Place the product\nwithin its market\nsegment\nProblem/Need\nDeﬁne the issue or 4\ndesire the customer\nfaces\nTarget Customer\n5\nIdentify the speciﬁc\ngroup of customers\nPRO TIP\nAfter writing your positioning statement, do a simple test: remove your company name\nand replace it with a competitor's. If the statement still works for them, you don't have a\npositioning,  you have a category description. Push harder on the 'because' clause. That's\nwhere real differentiation lives.",
+  "pairsWith": [
+    "3.6 Competitor Mapping",
+    "5.1 StoryBrand",
+    "3.4 ICP",
+    "3.10 Perceptual Map"
+  ],
+  "updatedAt": "2026-09-18"
+}

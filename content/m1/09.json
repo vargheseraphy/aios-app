@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.9",
+  "title": "Mental Models Library",
+  "sourcePages": {
+    "intro": 40,
+    "prompt": 41
+  },
+  "prompt": "Act as a mental models coach.\nMy situation           :    [DESCRIBE THE CHALLENGE OR DECISION]\nApply these models and give one specific insight each:\nPareto 80/20         :    Where is the highest leverage?\nParkinson's Law    :    Where is time being wasted?\nDunning-Kruger   :    Where might I be overconfident?\nFirst Principles.    :    What assumption am I not questioning?\nInversion                :    What would guarantee this fails?\nGive one concrete action per model. Be direct.\nMENTAL MODELS RANGE FROM SIMPLE TO COMPLEX UNDERSTANDING.\nDunning-Kruger Parkinson's Law\nMaps conﬁdence vs competence Explains work expansion over time\nIceberg Model Pareto's 80/20\nShows surface vs hidden drivers Identiﬁes high-impact areas\nSimple Complex\nPRO TIP\nAfter every quarter, add one new mental model you discovered and note a situation\nwhere it would have helped. In three years you'll have a thinking toolkit no one can buy.",
+  "pairsWith": [
+    "1.5 Six Thinking Hats",
+    "1.6 First Principles",
+    "1.8 Inversion"
+  ],
+  "updatedAt": "2026-09-18"
+}

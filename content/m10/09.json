@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.9",
+  "title": "Ikigai",
+  "sourcePages": {
+    "intro": 241,
+    "prompt": 242
+  },
+  "prompt": "Act as a reflective purpose coach using the Ikigai framework.\nMy background        :  [DESCRIBE YOUR EXPERIENCE, CAREER PATH, KEY LIFE  \n                                       EXPERIENCES]\nCurrent work           :   [WHAT YOU DO NOW AND HOW FULFILLED YOU FEEL]\nGuide me through the Ikigai exercise:\nWHAT I LOVE           :   What work makes me lose track of time? What would I do even\nwithout payment? What topics do I read about without being asked?\nWHAT I'M GOOD AT : What do I do better than most people? What do others consistently\ncome to me for? What has evidence, not just belief - proven?\nWHAT THE WORLD NEEDS :  What problem genuinely needs solving? Who suffers\nwithout what I could provide? What gap do I see that others seem to miss?\nWHAT I CAN BE PAID FOR  :  What will people pay for that sits in my other three circles?\nIKIGAI SYNTHESIS               : Where do all four overlap?\nIf no clear overlap: what small experiment in the next 90 days could test whether one\nexists?\nIkigai: The Intersection of Passion, Vocation, Profession, and Mission\nDelight Excellence\nWhat You What You Are\nLove Good At\nPassion\nVocation\nIkigai\nSuccess Fulfillment\nWhat The What You Can\nWorld Needs Be Paid For\nMission Profession\nPRO TIP\nThe most important Ikigai question is not 'what is my Ikigai?'  it is 'what small\nexperiment would test whether my hypothesis about my Ikigai is correct?' Purpose is\ndiscovered through action, not reflection alone. Design a 90-day experiment that puts\nyou in the overlap zone and see how it feels. The body knows before the mind does.",
+  "pairsWith": [
+    "10.1 Personal SWOT",
+    "10.5 Three Horizons",
+    "8.8 Regret Minimization",
+    "10.10 Hansei"
+  ],
+  "updatedAt": "2026-09-18"
+}

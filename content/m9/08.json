@@ -1,0 +1,17 @@
+{
+  "module": 9,
+  "lesson": "9.8",
+  "title": "Cash Conversion Cycle",
+  "sourcePages": {
+    "intro": 220,
+    "prompt": 221
+  },
+  "prompt": "Act as a working capital advisor using the Cash Conversion Cycle framework.\nMy business: [DESCRIBE YOUR REVENUE MODEL AND PAYMENT TERMS]\nCurrent data:\nAverage days to collect payment from customers: [X days]\nAverage days inventory is held (if applicable): [X days]\nAverage days to pay suppliers: [X days]\nCalculate my Cash Conversion Cycle:\nCCC = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days\nPayable Outstanding (DPO)\nAnalyse:\n1.What does my CCC tell me about my working capital health?\n2.Which component is the biggest drag on cash flow?\n3.What are 3 specific actions to shorten DSO?\n4.What payment terms or structures would improve my CCC?\n5.If I reduced my CCC by 10 days, how much additional cash would that free up at my\ncurrent revenue run rate?\nOptimizing Cash Conversion Cycle\n1 2 3\nOptimize DIO\nReduce DSO Extend DPO\nManage inventory\nCollect receivables Negotiate favorable\neﬃciently\nfaster payment terms\nPRO TIP\nFor service businesses, Days Sales Outstanding is almost always the lever. The most\neffective DSO reduction tactic is upfront payment or deposit - not better invoicing.\nStructuring contracts to collect 30–50% before work begins can transform a cash-tight\nbusiness into a cash-positive one without changing a single cost line.",
+  "pairsWith": [
+    "9.2 Burn Rate",
+    "9.1 LTV:CAC",
+    "9.6 Financial Model",
+    "9.9 Rule of 40"
+  ],
+  "updatedAt": "2026-09-18"
+}

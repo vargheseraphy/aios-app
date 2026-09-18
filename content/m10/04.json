@@ -1,0 +1,17 @@
+{
+  "module": 10,
+  "lesson": "10.4",
+  "title": "4 Energy Quadrants",
+  "sourcePages": {
+    "intro": 231,
+    "prompt": 232
+  },
+  "prompt": "Act as a high-performance coach using the 4 Energy Quadrants framework.\nMy current situation:\nSleep (hours / quality): [X]\nExercise (frequency / type): [X]\nEmotional state (how you typically feel at work): [X]\nFocus (how well you concentrate for deep work): [X]\nSense of purpose (how aligned your work feels): [X]\nMain energy drains: [WHAT DEPLETES YOU MOST]\nAudit my energy across all four dimensions:\nPHYSICAL     :  Current state, biggest gap, one recovery ritual\nEMOTIONAL :  Current state, main drain, one stabiliser habit\nMENTAL         :  Current state, focus blockers, one protection habit\nSPIRITUAL     :  Current alignment, what drains meaning, one anchor\nDesign my Minimum Viable Energy Routine:\nThe smallest set of habits that would most improve my total energy capacity in 30 days.\nMaximum 4 habits. Each under 20 minutes per day.\nFour Types of Energy\nPhysical Emotional Mental Spiritual\nfoundation (sleep, stability (resilience, focus (concentration, meaning (purpose,\nmovement, nutrition) positivity) clear thinking) values)\nPRO TIP\nThe Minimum Viable Energy Routine is designed to be non-negotiable and sustainable\nnot impressive. Most high-performers have complex morning routines they follow for two\nweeks and abandon. Four small, consistent habits performed daily for 90 days compound\ninto a meaningfully different baseline. Start with sleep, then add one habit at a time.",
+  "pairsWith": [
+    "10.3 Weekly Review",
+    "10.6 Atomic Habits",
+    "10.9 Ikigai",
+    "10.10 Hansei"
+  ],
+  "updatedAt": "2026-09-18"
+}

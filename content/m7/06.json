@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.6",
+  "title": "PDCA Cycle",
+  "sourcePages": {
+    "intro": 170,
+    "prompt": 171
+  },
+  "prompt": "Act as a continuous improvement facilitator using the PDCA cycle.\nProblem or opportunity  :  [WHAT YOU WANT TO IMPROVE]\nCurrent baseline               :  [THE METRIC OR SITUATION AS IT IS NOW]\nHypothesis                         :  [WHAT YOU THINK WILL IMPROVE IT AND WHY]\nGuide me through a full PDCA cycle:\nPLAN                                   :  Define the problem precisely.\nState the hypothesis        :  If [ACTION] then [RESULT] because [REASON].\nDefine success criteria. Design the smallest useful experiment.\nDO            :  What exactly should be done, by whom, by when?\n                     What data needs to be collected during the test?\nCHECK    :  How will we compare results to the hypothesis?\n                     What would confirm it? What would disprove it?\nACT          :  If confirmed - how to standardise and scale?\n                     If disproved - what does this tell us for the next PDCA cycle?\nPDCA Cycle for Learning\nPlan\nAct\nDeﬁne problem and form\nStandardize and improve hypothesis\nCheck Do\nAnalyze results Run experiment at small\nscale\nPRO TIP\nThe Check step is where most PDCA cycles fail. Teams see a positive result and\nimmediately scale without asking whether the result matched the hypothesis. A result can\nbe positive but the hypothesis still wrong  meaning you got lucky, not right. Always check\nagainst the hypothesis, not just the outcome number.",
+  "pairsWith": [
+    "7.9 Kaizen",
+    "7.1 SOP",
+    "7.3 Theory of Constraints",
+    "8.3 Post-Mortem"
+  ],
+  "updatedAt": "2026-09-18"
+}

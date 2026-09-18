@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.4",
+  "title": "The Refinement Loop",
+  "sourcePages": {
+    "intro": 30,
+    "prompt": 31
+  },
+  "prompt": "Step 1    —   Draft: [Paste your original prompt and generate first output]\nStep 2   —   Critique: Review the response you just gave.\n                     What are the 3 weakest parts? Where is it too vague or generic?\nStep 3   —    Improve: Rewrite the original response with those 3 weaknesses fixed.\n                     Keep what was strong. Improve what was weak.\nStep 4   —    Lock:  Anything that would make this significantly better?\n                     If yes, apply it. If no, confirm this is the final version.\nAchieving AI Output Excellence\nCritique\nAsk AI to evaluate its\nwork\nDraft Improve\nGenerate initial AI Ask AI to ﬁx\noutput weaknesses\nPRO TIP\nUse Step 2 as a standalone habit. After any important output-  email, proposal, plan and\nask AI 'What is the weakest part of this?' before you send it. Takes 10 seconds.",
+  "pairsWith": [
+    "1.1 C.A.R.E",
+    "8.2 Pre-Mortem",
+    "4.7 Proposal Writing"
+  ],
+  "updatedAt": "2026-09-18"
+}

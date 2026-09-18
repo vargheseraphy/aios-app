@@ -1,0 +1,17 @@
+{
+  "module": 4,
+  "lesson": "4.1",
+  "title": "Cold Outreach — AIDA",
+  "sourcePages": {
+    "intro": 91,
+    "prompt": 92
+  },
+  "prompt": "Act as a B2B cold outreach copywriter using the AIDA framework.\nMy product         :  [WHAT YOU SELL AND THE PROBLEM IT SOLVES]\nTarget prospect :  [ROLE, INDUSTRY, COMPANY SIZE]\nSpecific trigger  :  [WHY REACH OUT NOW  news, funding, job change, content they   \n                                  posted]\nDesired action    :  [ONE THING YOU WANT THEM TO DO]\nWrite 3 cold outreach messages using AIDA:\nATTENTION      :  First line stops them  specific to them\nINTEREST         :  Connects their world to the problem you solve\nDESIRE              :  Outcome they want not features you have\nACTION              :  One low-friction next step\nKeep each message under 100 words.\nMake each variation use a different opening angle.\nAIDA — The Cold Outreach Journey\nGrab the reader's focus\nAttention\nSpark curiosity and\nInterest\nrelevance\nCreate a longing for the\nDesire\noutcome\nPrompt a response or\nAction\nengagement\nPRO TIP\nThe single biggest improvement to cold outreach response rates is the first sentence.\nWrite it about them, not about you. Reference something real and specific  a post they\nwrote, a company announcement, a problem specific to their industry right now. AI can\nresearch this context - use it.",
+  "pairsWith": [
+    "4.6 PAS",
+    "4.8 Follow-Up Sequences",
+    "3.4 ICP",
+    "5.2 Hook Framework"
+  ],
+  "updatedAt": "2026-09-18"
+}

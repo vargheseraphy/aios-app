@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.5",
+  "title": "Scenario Planning",
+  "sourcePages": {
+    "intro": 193,
+    "prompt": 194
+  },
+  "prompt": "Act as a scenario planning strategist.\nMy business           :  [DESCRIBE YOUR COMPANY AND CORE STRATEGY]\nPlanning horizon  :  [1 YEAR / 3 YEARS / 5 YEARS]\nKey uncertainties :  [WHAT 2–3 EXTERNAL FACTORS COULD MOST CHANGE YOUR\nBUSINESS ENVIRONMENT]\nBuild 3 distinct scenarios. For each scenario:\nNAME                 :  A memorable, descriptive title\nDESCRIPTION  :  What this future looks like in 2–3 sentences\nKEY DRIVERS   :  What causes this scenario to unfold\nIMPACT              :  How does this affect my business specifically?\nSTRATEGY         :  What should I do differently in this scenario?\nEARLY SIGNAL :  What would I see in the next 90 days that tells me this scenario is  \n                                emerging?\nAfter the three scenarios:\nWhich elements of my current strategy work across all three?\nWhich are scenario-specific bets?\nScenario planning matrix based on market growth and regulation.\nSlow Fast\nScenario 1 Scenario 2 Scenario 3 Scenario 4\nMinimal government Heavy government High market Limited market\noversight control competition opportunities\nPRO TIP\nThe real value in scenario planning isn't the scenarios, it's the early warning signals. Once\nyou know what each future looks like in its early stages, you know what to watch for.\nBuild a simple 3–5 signal dashboard and review it quarterly. Founders who see change\ncoming are the ones who defined what it would look like before it arrived.",
+  "pairsWith": [
+    "8.4 Risk Matrix",
+    "8.2 Pre-Mortem",
+    "3.2 PESTLE",
+    "1.7 Second Order Thinking"
+  ],
+  "updatedAt": "2026-09-18"
+}

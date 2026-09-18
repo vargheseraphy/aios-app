@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.5",
+  "title": "Jobs To Be Done",
+  "sourcePages": {
+    "intro": 57,
+    "prompt": 58
+  },
+  "prompt": "Act as a Jobs To Be Done research analyst.\nMy product               :   [DESCRIBE WHAT YOUR PRODUCT DOES]\nCustomer type         :   [SPECIFIC ROLE AND CONTEXT]\n                                       For this customer, identify:\nFUNCTIONAL JOB   :   What practical task are they hiring my product to do?\nSOCIAL JOB              :   How do they want to be seen by others when using this product?\nEMOTIONAL JOB     :   How do they want to feel when the job is done?\nCOMPETING JOBS  :    What else do they currently hire to do this job,  including non-  \n                                       obvious alternatives?\nWhere is my product strongest and weakest across layers?\nJOBS TO BE DONE — THE THREE LAYERS OF WHY\nEmotional Job\nHow they want to feel\nSocial Job\nHow they want to be seen\nFunctional Job\nWhat they need done\nPRO TIP\nThe competing jobs answer is the most valuable. When a customer churns, they don't\nleave for nothing  they hire something else to do the job. Ask AI to map the most likely\n'competitor hires' for your product. The answer will surprise you.",
+  "pairsWith": [
+    "2.1 Value Proposition",
+    "3.4 ICP",
+    "3.8 Voice of Customer"
+  ],
+  "updatedAt": "2026-09-18"
+}

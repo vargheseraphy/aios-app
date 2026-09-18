@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.3",
+  "title": "Theory of Constraints",
+  "sourcePages": {
+    "intro": 164,
+    "prompt": 165
+  },
+  "prompt": "Act as a Theory of Constraints advisor.\nMy business process  :  [DESCRIBE YOUR END-TO-END DELIVERY OR OPERATIONAL \n                                          PROCESS]\nCurrent symptoms     :  [WHERE DELAYS, BACKLOGS, OR ERRORS OCCUR]\nTeam structure            : [WHO IS INVOLVED IN EACH STAGE]\nApply the Five Focusing Steps:\nIDENTIFY            :  Where is the constraint  where does work pile up or slow down most?\nEXPLOIT             :  How do we get maximum output from the constraint without major \n                                investment?\nSUBORDINATE  :  What should every other part of the system do differently to support \n                               the constraint?\nELEVATE            :  If exploitation is not enough, what is the minimum investment to  \n                                expand capacity?\nREPEAT              :  What will likely become the next constraint once this one is resolved?\nTheory of Constraints — The Bottleneck Limits Everything Else\nIdentify Subordinate Repeat\nRecognize the constraint in Align other processes to Continuously identify and\nthe system support the constraint address new constraints\nExploit Elevate\nImprove the constraint's\nMaximize the use of the\nconstraint capacity\nPRO TIP\nThe most counterintuitive TOC insight is that making a non-constraint more efficient\nmakes the constraint worse. If your constraint is sales and you invest in a faster delivery\nteam, you now have an even more frustrated delivery team waiting for work. Fix the\nconstraint first. Everything else is noise until you do.",
+  "pairsWith": [
+    "7.2 Swimlane",
+    "7.4 ICE Scoring",
+    "7.6 PDCA Cycle",
+    "7.9 Kaizen"
+  ],
+  "updatedAt": "2026-09-18"
+}

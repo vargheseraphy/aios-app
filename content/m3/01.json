@@ -1,0 +1,16 @@
+{
+  "module": 3,
+  "lesson": "3.1",
+  "title": "SWOT Analysis",
+  "sourcePages": {
+    "intro": 70,
+    "prompt": 71
+  },
+  "prompt": "Act as a strategic analyst. Build a comprehensive SWOT for:\nBusiness                  :  [YOUR COMPANY NAME AND WHAT IT DOES]\nIndustry                  :  [YOUR MARKET AND KEY COMPETITORS]\nStage                       :  [REVENUE, TEAM, KEY MARKETS]\nContext                   :  [WHAT DECISION YOU ARE ABOUT TO MAKE]\nSTRENGTHS           :  Internal advantages — what we do better\nWEAKNESSES        :  Internal limitations — where we are vulnerable\nOPPORTUNITIES   :  External conditions we can exploit now\nTHREATS                 :  External conditions that could hurt us\nGive 4–5 points per quadrant. Be specific.\nAfter the grid: give 3 strategic actions  one to leverage a strength,\none to fix a critical weakness, one to capture the best opportunity before it closes.\nStrategic Snapshot\n1 2\nStrengths Opportunities\nPositive internal Positive external\nfactors factors\n3 4\nWeaknesses Threats\nNegative internal Negative external\nfactors factors\nPRO TIP\nThe most useful output from SWOT is not the grid itself — it's the SO strategies (use\nStrengths to capture Opportunities) and the WT strategies (reduce Weaknesses to avoid\nThreats). Ask AI to generate those strategies explicitly. Most people stop at the grid and\nnever get to the insight.",
+  "pairsWith": [
+    "3.2 PESTLE",
+    "3.3 Porter's Five Forces",
+    "3.6 Competitor Mapping"
+  ],
+  "updatedAt": "2026-09-18"
+}

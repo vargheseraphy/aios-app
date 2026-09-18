@@ -1,0 +1,16 @@
+{
+  "module": 1,
+  "lesson": "1.12",
+  "title": "MECE Framework",
+  "sourcePages": {
+    "intro": 46,
+    "prompt": 47
+  },
+  "prompt": "Act as a McKinsey-trained strategy consultant.\nProblem or question to structure: [YOUR PROBLEM, DECISION, OR ANALYSIS TOPIC]\nStep 1       :    Break this into MECE categories. Each category must be \n                       distinct,  no overlap. Together they must cover everything, no gaps.\nStep 2      :    Check your structure. Flag any overlaps or missing areas.\nStep 3      :    For each category, list the 2–3 key questions I need to answer to \n                       address it completely.\nFormat as a structured outline I can use directly.\nMECE Analysis Framework\nComplete Analysis\nOutcome of MECE\nanalysis\nProblem\nIssue to be\nanalyzed\nCollectively Exhaustive\nCovers all\npossibilities\nMutually Exclusive\nNo overlap between\ncategories\nMECE\nCore concept of\ncomprehensive analysis\nPRO TIP\nMECE is not just for analysis  use it to structure any important communication. Before a\nboard presentation or investor meeting, ask AI to check if your argument is MECE.\nIncomplete structure is the most common reason smart people fail to persuade.",
+  "pairsWith": [
+    "1.9 Mental Models",
+    "8.1 DECIDE Framework",
+    "9.5 Investor Narrative"
+  ],
+  "updatedAt": "2026-09-18"
+}

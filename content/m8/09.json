@@ -1,0 +1,17 @@
+{
+  "module": 8,
+  "lesson": "8.9",
+  "title": "Decision Tree Analysis",
+  "sourcePages": {
+    "intro": 201,
+    "prompt": 202
+  },
+  "prompt": "Act as a decision analysis consultant using Decision Tree Analysis.\nDecision                  :  [DESCRIBE THE MAIN CHOICE YOU ARE FACING]\nOptions                   :  [LIST YOUR 2–4 ALTERNATIVE PATHS]\nKey uncertainties  :  [WHAT OUTCOMES DEPEND ON CHANCE OR EXTERNAL\nFACTORS YOU CAN'T CONTROL]\nValues: [WHAT EACH OUTCOME IS WORTH, REVENUE, COST, TIME, OR STRATEGIC\nVALUE]\nBuild a Decision Tree:\nLEVEL 1: The initial decision - my options\nLEVEL 2: For each option - the key chance events and their estimated probabilities\nLEVEL 3: For each outcome - the value or consequence\nCALCULATE:\nExpected Value for each initial option = Sum of (probability × outcome value) per path\nRECOMMEND:\nWhich option has the highest expected value?\nWhich has the best worst-case outcome?\nWhat single probability estimate most changes the recommendation if it turns out to\nbe wrong?\nDecision Tree Analysis Impacts Outcomes\nOutcome Node 1 Outcome Node 2\nFirst possible result Second possible result\nDecision Node\nStarting point of analysis\nPRO TIP\nThe most valuable output from a Decision Tree is not the expected value calculation  it is\nthe sensitivity analysis. Find the probability estimate that, if wrong by 20%, changes which\noption is best. That is your most critical assumption. Validate it before committing to the\npath with the highest expected value.",
+  "pairsWith": [
+    "8.10 Expected Value",
+    "8.1 DECIDE",
+    "8.5 Scenario Planning",
+    "8.4 Risk Matrix"
+  ],
+  "updatedAt": "2026-09-18"
+}

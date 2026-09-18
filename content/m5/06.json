@@ -1,0 +1,16 @@
+{
+  "module": 5,
+  "lesson": "5.6",
+  "title": "Product Launch Playbook",
+  "sourcePages": {
+    "intro": 124,
+    "prompt": 125
+  },
+  "prompt": "Act as a product launch strategist using Jeff Walker's Launch Formula.\nProduct                           :  [WHAT YOU ARE LAUNCHING]\nTarget audience            :  [WHO IT IS FOR]\nLaunch date                   :  [WHEN YOU WANT TO GO LIVE]\nExisting audience size :  [EMAIL LIST / FOLLOWERS / NETWORK]\nBuild a 4-phase launch plan:\nPHASE 1 — SEED (4 weeks before):\nHow to plant the idea and gauge genuine interest\nPHASE 2 — PRE-LAUNCH (weeks 2–3):\n3 pieces of content that deliver value and build desire\nPHASE 3 — LAUNCH (launch week):\nDay-by-day sequence with urgency mechanics\nPHASE 4 — POST-LAUNCH (week after):\nFollow-up for non-buyers · Testimonial collection\nGive specific content topics for each phase.\nProduct Launch Formula\nSeed\nPost-Launch\nPlant interest, gauge\nFollow up, collect\nresponse\ntestimonials\nPre-Launch Launch\nDeliver value, build desire Open with urgency, social proof\nPRO TIP\nThe single most valuable pre-launch action is a waitlist. Even 50 people on a waitlist\nchanges the psychology of your launch, it creates social proof before the launch, tells\nyou demand is real, and gives you a warm list to open to first. Start your waitlist before\nyou finish building.",
+  "pairsWith": [
+    "5.5 GTM Canvas",
+    "5.2 Hook Framework",
+    "5.3 Marketing Mix"
+  ],
+  "updatedAt": "2026-09-18"
+}

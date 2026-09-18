@@ -1,0 +1,17 @@
+{
+  "module": 6,
+  "lesson": "6.11",
+  "title": "Situational Leadership",
+  "sourcePages": {
+    "intro": 155,
+    "prompt": 156
+  },
+  "prompt": "Act as a situational leadership coach.\nTeam member                 :  [ROLE, EXPERIENCE LEVEL, PERSONALITY]\nSpecific task or project :  [WHAT YOU NEED THEM TO DO]\nStep 1 :  Assess their Development Level for this task:\nD1 — Low competence, high commitment (enthusiastic beginner)\nD2 — Some competence, low commitment (disillusioned learner)\nD3 — High competence, variable commitment (capable but cautious)\nD4 — High competence, high commitment (self-reliant achiever)\nStep 2 :  Recommend the matching leadership style:\nS1 — Directing    S2 — Coaching\nS3 — Supporting   S4 — Delegating\nStep 3 :  Write the specific conversation I should have with them this week using that \n               style.\nStep 4 :  What would move them to the next development level  and how long should  \n                that take?\nAdapt Leadership to Team Competence\nInﬂexible Leadership Adaptive Leadership\nSituational\nOne-size-ﬁts-all Tailored approach for\nLeadership\nleadership style each team member\nLow task, low Low task, high High task, high High task, low\nsupport support support support\nPRO TIP\nThe hardest Situational Leadership move is stepping back to Directing with someone\nyou've been Delegating to when they've taken on a new challenge they're not yet\nready for. Leaders resist this because it feels like demotion. Frame it as 'this is a new\narea  let's work through it together' rather than a reversal of trust.",
+  "pairsWith": [
+    "6.3 GROW Model",
+    "6.7 Delegation Ladder",
+    "6.4 Hiring",
+    "6.9 Radical Candor"
+  ],
+  "updatedAt": "2026-09-18"
+}

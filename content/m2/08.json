@@ -1,0 +1,16 @@
+{
+  "module": 2,
+  "lesson": "2.8",
+  "title": "Unfair Advantage,  Moat Builder",
+  "sourcePages": {
+    "intro": 63,
+    "prompt": 64
+  },
+  "prompt": "Act as a competitive strategy advisor focused on economic moats.\nMy business                 :  [DESCRIBE WHAT YOU DO AND WHO YOU SERVE]\nStage                             :   [REVENUE STAGE - PRE / EARLY / SCALING]\nAssess my moat across all five types:\nNETWORK EFFECTS   :  Does value increase with more users?\nCOST ADVANTAGE     :   Can I produce cheaper than competitors?\nSWITCHING COSTS   :   How painful is it for customers to leave?\nINTANGIBLE ASSETS :   Do I have brand, IP, or licence advantages?\nEFFICIENT SCALE       :   Am I in a market too small for competition?\nRate each 1–5. Identify my strongest moat and the fastest moat I could build\nfrom my current position. Give 2 specific actions to widen my strongest moat.\nNetwork Effects\nValue increases with user base growth.\nCost Advantage\nLower production costs enhance\ncompetitiveness.\nSwitching Costs Competitive\nHigh costs deter customers from switching. Protection\nIntangible Assets\nBrand reputation and patents provide\nprotection.\nEﬃcient Scale\nEconomies of scale reduce per-unit \ncosts.\nPRO TIP\nNetwork effects are the most powerful moat but the hardest to build. If your product has\nany element where more users create more value even indirectly, design your product\nand go-to-market specifically to accelerate that loop. Most founders have a network\neffect they don't know they have.",
+  "pairsWith": [
+    "2.4 Blue Ocean",
+    "3.3 Porter's Five Forces",
+    "2.3 Lean Canvas"
+  ],
+  "updatedAt": "2026-09-18"
+}

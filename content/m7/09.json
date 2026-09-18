@@ -1,0 +1,17 @@
+{
+  "module": 7,
+  "lesson": "7.9",
+  "title": "Kaizen  Continuous",
+  "sourcePages": {
+    "intro": 176,
+    "prompt": 177
+  },
+  "prompt": "Act as a Kaizen facilitator.\nMy business / team   :  [DESCRIBE YOUR OPERATION AND TEAM SIZE]\nArea to improve          :  [SPECIFIC PROCESS, FUNCTION, OR BEHAVIOUR]\nCurrent state               :  [HOW THIS AREA WORKS TODAY - SPECIFICALLY]\nRun a Kaizen session on this area:\nOBSERVE  :  What waste exists in this process?\n(Waste = time, effort, rework, waiting, errors)\nANALYSE  :  What is the root cause of the biggest waste? Use the 5 Whys  ask why 5   \n                       times.\nIMPROVE :  What is the smallest change that would meaningfully reduce this waste?\n                      Define the change in one sentence.\nMEASURE : How will we know the improvement worked? Name the metric and the  \n                      target.\nSUSTAIN   : How do we make this improvement permanent? What system or habit      \n                      locks it in?\nAchieving Continuous Improvement\n1 2 Weekly Kaizen 3 4 Celebrate Wins\nReview\nImplement Kaizen Focus on Process\nReward\nLog\nDiscuss small improvements to\nIdentify system\nimprovements made foster culture\nRecord failures, not human\nimprovement\nsuggestions daily\nPRO TIP\nKaizen's power is not in the size of any single improvement it is in the compound\neffect and the culture it creates. A team that makes one small improvement per week\nmakes 50 per year. After three years, the cumulative effect of 150 deliberate\nimprovements makes the business unrecognisable from where it started. The math is\nsimple. The discipline is the hard part.",
+  "pairsWith": [
+    "7.6 PDCA Cycle",
+    "7.3 Theory of Constraints",
+    "7.12 5 Whys",
+    "7.10 5S"
+  ],
+  "updatedAt": "2026-09-18"
+}
