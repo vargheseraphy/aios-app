@@ -28,6 +28,14 @@ export function PillTabs({
 }) {
   const railRef = useRef<HTMLDivElement>(null);
   const slideRef = useRef<HTMLSpanElement>(null);
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  function selectByOffset(offset: number) {
+    const i = tabs.findIndex((t) => t.id === activeId);
+    const next = tabs[(i + offset + tabs.length) % tabs.length];
+    onChange(next.id);
+    tabRefs.current[next.id]?.focus();
+  }
 
   useEffect(() => {
     function position() {
@@ -56,7 +64,19 @@ export function PillTabs({
             className={styles.tab}
             aria-selected={tab.id === activeId}
             aria-controls={`${idPrefix}-${tab.id}`}
+            ref={(el) => {
+              tabRefs.current[tab.id] = el;
+            }}
             onClick={() => onChange(tab.id)}
+            onKeyDown={(e) => {
+              if (e.key === "ArrowRight") {
+                e.preventDefault();
+                selectByOffset(1);
+              } else if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                selectByOffset(-1);
+              }
+            }}
           >
             {tab.label}
           </button>

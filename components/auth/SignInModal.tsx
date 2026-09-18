@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "./AuthProvider";
 import { GoogleSignInButton } from "./GoogleSignInButton";
@@ -20,13 +20,43 @@ export function SignInModal() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const headingId = useId();
+  const dialogRef = useRef<HTMLDivElement>(null);
 
+  // Focus trap: move focus in on open, cycle it within the dialog on Tab,
+  // and restore it to whatever triggered the modal (header icon, /account
+  // prompt, etc.) when it closes — the modal only mounts while open, so this
+  // effect's cleanup covers every close path (Escape, backdrop click, X, and
+  // the auth-state-change auto-close in AuthProvider).
   useEffect(() => {
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const selector =
+      'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusables = dialogRef.current?.querySelectorAll<HTMLElement>(selector);
+    focusables?.[0]?.focus();
+
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") closeSignIn();
+      if (e.key === "Escape") {
+        closeSignIn();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = dialogRef.current?.querySelectorAll<HTMLElement>(selector);
+      if (!items || items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      previouslyFocused?.focus();
+    };
   }, [closeSignIn]);
 
   async function handleMagicLink(e: React.FormEvent) {
@@ -57,6 +87,7 @@ export function SignInModal() {
       onClick={closeSignIn}
     >
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={headingId}
@@ -120,7 +151,7 @@ export function SignInModal() {
               placeholder="you@company.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-lg border border-line-d2 bg-ink px-3.5 py-2.5 text-[13.5px] text-white placeholder:text-fg-3 focus:border-blue-hi focus:outline-none"
+              className="w-full rounded-lg border border-line-d2 bg-ink px-3.5 py-2.5 text-[13.5px] text-white placeholder:text-fg-3 focus:border-blue-hi focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-hi focus-visible:ring-offset-2 focus-visible:ring-offset-panel"
             />
             <button
               type="submit"

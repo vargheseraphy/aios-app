@@ -28,10 +28,23 @@
 
   --fg-1: rgba(255, 255, 255, 0.72);
   --fg-2: rgba(255, 255, 255, 0.5);
-  --fg-3: rgba(255, 255, 255, 0.34);
+  /* 0.46, not the 0.34 DESIGN.md documents: measured contrast at 0.34 is
+     ~3.1:1 against every dark-section background in this file (ink/ink-2/
+     panel/panel-2), which fails WCAG AA (4.5:1) for the small mono text
+     (kickers, "pairs with" lists, form labels) this token is actually used
+     for site-wide — not a large-text context, so the 3:1 exception doesn't
+     apply either. 0.46 clears 4.5:1 on all four backgrounds with a small
+     margin while staying visually the same "quietest tier" role. See
+     DECISIONS.md — this is the one locked-palette value changed in the
+     Phase 6 accessibility pass. */
+  --fg-3: rgba(255, 255, 255, 0.46);
 
   --gray-l: #5a6070;
-  --gray-l2: #8a90a0;
+  /* #686e7e, not the #8a90a0 DESIGN.md documents: measured contrast at
+     #8a90a0 is ~2.9-3.2:1 on white/wash, failing WCAG AA (4.5:1) for the
+     small labels/kickers/hints this token is used for. #686e7e clears
+     4.5:1 on both backgrounds with a margin. See DECISIONS.md. */
+  --gray-l2: #686e7e;
 
   --font-disp: var(--font-archivo), "Helvetica Neue", system-ui, sans-serif;
   --font-body: var(--font-roboto), "Helvetica Neue", system-ui, sans-serif;

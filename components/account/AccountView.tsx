@@ -85,7 +85,7 @@ export function AccountView() {
                 setDisplayName(e.target.value);
                 setNameSaved(false);
               }}
-              className="w-full rounded-lg border border-line-d2 bg-ink px-3.5 py-2.5 text-[13.5px] text-white focus:border-blue-hi focus:outline-none"
+              className="w-full rounded-lg border border-line-d2 bg-ink px-3.5 py-2.5 text-[13.5px] text-white focus:border-blue-hi focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-hi focus-visible:ring-offset-2 focus-visible:ring-offset-panel"
             />
           </div>
           <button
