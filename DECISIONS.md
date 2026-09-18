@@ -57,6 +57,15 @@ force-installing Tailwind v3 to match the architecture doc's file name literally
 in a temp dir and its output files (`app/`, `public/`, config files) were copied in, preserving
 `docs/`, `content/`, `README.md`, `TASKS.md`, `DECISIONS.md` and `.git`.
 
+## SiteHeader/SiteFooter live in the root layout
+
+`components/SiteHeader.tsx` and `SiteFooter.tsx` (Phase 4) are rendered once in `app/layout.tsx`,
+not per-page, so every route — including the Phase 3 lesson/module pages and the Phase 5 account
+pages to come — gets the same nav and footer automatically. Confirmed this doesn't reintroduce a
+Supabase import or a database call on the QR path: the header's login-state preview is a local
+`useState` toggle only (no real auth until Phase 5), and `grep -r SUPABASE_SERVICE .next/static`
+stays clean after the change.
+
 ## Known content bug — lesson 6.6
 
 `content/m6/06.json` (framework 6.6, "Culture Code Canvas") holds a duplicate of 6.7's

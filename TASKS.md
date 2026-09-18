@@ -52,8 +52,10 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 4 — port the locked marketing pages
 
-- [ ] Extract shared nav, footer, buttons, prompt card, tab rail, accordion into components
-- [ ] `/` from `docs/design/pages/home.html`
+- [x] Extract shared nav, footer, buttons, prompt card, tab rail, accordion into components
+      (`components/SiteHeader.tsx`, `SiteFooter.tsx`, `Button.tsx`, `Marquee.tsx`, `PillTabs.tsx`;
+      reused Phase 3's `Accordion`/`CopyButton`/`LessonPromptCard` rather than duplicating them)
+- [x] `/` from `docs/design/pages/home.html`
 - [ ] `/why-this-book` from `why-this-book.html`
 - [ ] `/how-to-use` from `how-to-use.html`
 - [ ] `/who-its-for` from `who-its-for.html`
