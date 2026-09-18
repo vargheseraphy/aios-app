@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Roboto, Roboto_Mono } from "next/font/google";
+import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
@@ -35,9 +36,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${archivo.variable} ${roboto.variable} ${robotoMono.variable}`}
     >
       <body>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <AuthProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </AuthProvider>
       </body>
     </html>
   );
