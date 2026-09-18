@@ -88,7 +88,11 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
       (sign-in modal focus trap + restore, arrow-key PillTabs, stronger input
       focus rings, fg-3/gray-l2 contrast bumped to clear WCAG AA — see
       DECISIONS.md)
-- [ ] Lighthouse on a lesson route, mobile: performance and accessibility both 90+
+- [x] Lighthouse on a lesson route, mobile: performance and accessibility both 90+
+      (real run, not simulated — see DECISIONS.md: `/m6/06` scored 100/100
+      after fixing a site-wide crash-when-unconfigured bug and an accordion
+      contrast bug the audit surfaced; `/` and `/who-its-for` also checked,
+      both 90+)
 - [ ] `README.md` updated with setup, env vars, deploy steps
 - [ ] `DECISIONS.md` finalised
 - [ ] Final commit: `docs: record build decisions and outstanding items`

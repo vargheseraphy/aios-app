@@ -213,6 +213,104 @@ condition" pattern and were restructured the same way (derive a display value in
 resetting state, or only set state inside an async callback rather than synchronously in the
 effect body) rather than suppressed.
 
+## Critical fix: the site crashed entirely without a live Supabase project
+
+A real Lighthouse/browser run (see below) against a production build — the
+actual state this repo is in right now, since no Supabase project has been
+provisioned — surfaced that almost the whole site was broken:
+
+- `middleware.ts` called `createServerClient` with empty env vars on every
+  non-QR request. `createServerClient` throws synchronously without a URL/
+  key, so `/`, all four marketing pages, `/account`, `/my-prompts` and
+  `/join` all returned a hard 500. Only the QR path itself worked, because
+  it already bypasses middleware entirely (see the note below).
+- `AuthProvider` called the browser `createClient()` unconditionally in an
+  effect that runs on every page, including the static QR lesson pages —
+  the throw crashed the entire client-side React tree after hydration, with
+  no error boundary anywhere in the app to catch it, replacing the rendered
+  page (prompt text included) with Next's generic `html#__next_error__`
+  fallback. This is the QR-path non-negotiable being violated in the
+  starkest possible way: not merely gated or slow, but blank.
+- `getInviterName` (the public `/join` lookup) and the sign-in modal's
+  magic-link submit had the same unguarded call — one silently failed
+  (unhandled promise rejection), the other left the form stuck on
+  "Sending…" forever with no way out.
+
+Fixed by adding an `isSupabaseConfigured` check (`lib/supabase/client.ts`
+and `lib/supabase/server.ts` each export their own, since one runs in the
+browser and one on the server/edge) and using it everywhere Supabase is
+touched outside a deliberate, already-gated user action:
+`middleware.ts` passes the request through untouched when unconfigured;
+`AuthProvider` treats every visitor as signed out (starts `loading` at
+`false` directly rather than setting it inside the effect — see the
+"Sign-in modal only mounts while open" note above for why this codebase's
+lint config requires that shape); `getInviterName` returns `null` instead
+of throwing; the magic-link form shows "Sign-in isn't set up yet" instead
+of hanging. Deliberate actions gated behind `if (!user)` (bookmarking,
+`getOrCreateInviteCode`, account actions) were left as-is — no one can
+actually sign in without a live project either, so they're unreachable,
+and adding the same guard everywhere would be redundant defensive coding
+for paths that can't currently execute.
+
+Verified with a real headless Chrome run (`/Applications/Google Chrome.app`
+via `puppeteer-core`, installed with `--no-save` and removed again after —
+check `git diff package.json` shows no change) against `npm run start`:
+before the fix, `/`, `/account`, `/my-prompts` and `/join` returned 500 and
+`/m6/06` (and every other QR route) rendered `html#__next_error__` after a
+client-side `pageerror`; after the fix, all eight sampled route shapes
+return 200 with zero console errors. This is the single most important bug
+found during this build — worth flagging prominently, not just fixing
+quietly.
+
+## Real Lighthouse run, not a manual substitute
+
+Lighthouse (`npx lighthouse`) was expected to be unavailable — no
+`chrome`/`chromium`/`google-chrome` binary on `PATH` — but `chrome-launcher`
+found the real `Google Chrome.app` already installed on this machine, so
+Phase 6's Lighthouse acceptance check ran for real, mobile emulation,
+against a `next build && next start` production instance, not a manual
+checklist substitute.
+
+First run against `/m6/06` (before the crash fix above, and before the
+accordion contrast fix below): **performance 98, accessibility 81** — the
+81 was `html-has-lang` and `landmark-one-main` failing because Lighthouse's
+snapshot was of Next's crashed-error-page fallback (`html#__next_error__`),
+not the real page, a direct symptom of the crash bug above, not a separate
+finding.
+
+After the crash fix: **performance 100, accessibility 93** on `/m6/06`,
+down from a perfect score only because of a genuine, separate bug —
+`components/Accordion.tsx` hardcoded `text-ink-2` (dark text for a light
+background) on its trigger title with no way for a dark-section caller to
+override it, so every lesson title in the accordion rendered at a measured
+1.12:1 contrast against the near-black canvas — effectively invisible.
+Fixed with a `variant?: "light" | "dark"` prop (default `"light"`,
+preserving the FAQ accordion's existing look exactly), set to `"dark"` by
+`LessonAccordionList`, the only other caller.
+
+Final run: **`/m6/06` performance 100, accessibility 100.** Also spot-checked
+`/` (100/93) and `/who-its-for` (99/96) since the tooling was already working
+— both comfortably clear 90+; their remaining accessibility gap is a single
+`color-contrast` finding, documented separately below rather than fixed,
+because it's the locked brand blue.
+
+## Known, unfixed: the locked brand blue falls short of AA with white text
+
+Lighthouse's `color-contrast` audit on `/` and `/who-its-for` flags white
+text on the primary blue (`#3B7BF7`) at 3.91:1 — short of the 4.5:1 normal-
+text AA threshold — on the prompt-slider Copy button label and a bento
+card's heading/body. `#3B7BF7` is DESIGN.md's primary brand blue, "blue for
+in-content actions" per its Buttons spec — the single most load-bearing
+color in the whole locked system, not a quiet tertiary tint like the two
+tokens adjusted earlier in this file. Overriding it globally would be a
+materially different kind of change than bumping `fg-3`/`gray-l2`'s alpha
+(which stayed visually near-identical and didn't touch a color anyone would
+recognize as "the brand blue"). Left as-is and flagged here rather than
+changed unilaterally — if Raphy wants full AA compliance, the fix is either
+a slightly darker blue for text-on-blue contexts specifically (leaving the
+button/field/link blue elsewhere untouched) or accepting this as a
+large-text-only guarantee and increasing those two font sizes slightly.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -225,13 +323,23 @@ effect body) rather than suppressed.
   a human with console access; `.env.example` documents the variable name.
 - A live Supabase project (URL + keys) to point `.env.local` at, with migration
   `0001_init.sql` applied — this run only wrote the migration and env var names, no project
-  was provisioned. Once it exists, run a real cross-account RLS test (see the note above) —
-  the current test only checks the policy SQL, not enforcement. Also verify the actual sign-in
-  flows against it: magic link, Google ID-token exchange, and specifically whether Google
-  sign-in via `/join?ref=code` correctly links `invited_by` (see the note above — untested).
-- A real visual check of `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` at 400px, 768px
-  and 1280px against their locked HTML source — this build verified structure and behaviour but
-  had no browser available to confirm pixel fidelity (see the note above).
+  was provisioned. **The site no longer crashes or 500s without one** (see the Phase 6 fix
+  above), so this is safe to deploy before the project exists, but sign-in/bookmarking/invites
+  stay inert until it does. Once it exists, run a real cross-account RLS test (see the note
+  above) — the current test only checks the policy SQL, not enforcement. Also verify the actual
+  sign-in flows: magic link, Google ID-token exchange, and specifically whether Google sign-in
+  via `/join?ref=code` correctly links `invited_by` (see the note above — untested).
+- A real pixel-fidelity check of `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` at 400px,
+  768px and 1280px against their locked HTML source. Phase 6 did confirm — with a real headless
+  Chrome, not just structural review — that every route actually renders without crashing or
+  erroring (zero console errors across all eight route shapes) and that a lesson route scores
+  100/100 on real mobile Lighthouse, but neither of those is a pixel-for-pixel comparison against
+  the locked design. That specific check is still outstanding.
+- The locked brand blue (`#3B7BF7`) with white text falls short of WCAG AA (3.91:1 vs 4.5:1) at
+  small/normal text sizes — e.g. the prompt-slider Copy button label, a home page bento card's
+  heading and body (see the Phase 6 Lighthouse note above). Not changed unilaterally since it's
+  the core CTA color across the whole locked system, not a quiet tertiary tint — worth a design
+  call on whether to use a slightly darker blue for text-on-blue contexts specifically.
 - Content-extraction cleanup: every lesson's `prompt` field in `content/m{module}/{lesson}.json`
   appears to bundle the actual prompt with trailing diagram-caption and "PRO TIP" text from the
   manuscript OCR (confirmed on 5 of 108 lessons). The Copy button on every `/m{module}/{lesson}`
