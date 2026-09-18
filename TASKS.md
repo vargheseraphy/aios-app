@@ -15,12 +15,14 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 
 ## Phase 1 — scaffold
 
-- [ ] Next.js (App Router) + TypeScript + Tailwind, per `docs/technical/ARCHITECTURE.md`
-- [ ] Port design tokens from `docs/design/pages/home.html` into Tailwind config and
-      `globals.css`: colour palette, Archivo/Roboto/Roboto Mono font stack (Google Fonts), the
-      1536px container with 20/40/80px side padding, the type scale
-- [ ] Follow `docs/design/DESIGN.md` for the documented system
-- [ ] Acceptance: `npm run build` passes; a blank page renders with fonts and tokens live
+- [x] Next.js (App Router) + TypeScript + Tailwind, per `docs/technical/ARCHITECTURE.md`
+      (Next.js 16 / Tailwind v4 — CSS-first config, no `tailwind.config.ts`; see DECISIONS.md)
+- [x] Port design tokens from `docs/design/pages/home.html` into `app/globals.css`'s `@theme`
+      block: colour palette, Archivo/Roboto/Roboto Mono font stack (Google Fonts via
+      `next/font/google`), the 1536px container with 20/40/80px side padding, the type scale
+- [x] Follow `docs/design/DESIGN.md` for the documented system
+- [x] Acceptance: `npm run build` passes; a blank page renders with fonts and tokens live
+      (verified in compiled CSS output)
 
 ## Phase 2 — database and security
 

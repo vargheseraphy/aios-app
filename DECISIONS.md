@@ -29,6 +29,18 @@ PRD pages without a locked design file are not built. Sign-in is handled inline 
 input + Google button) rather than as a separate `/sign-in` route, consistent with the accounts
 phase as scoped in the build prompt.
 
+## Scaffold: Next.js 16 / Tailwind v4, no `tailwind.config.ts`
+
+`docs/technical/ARCHITECTURE.md`'s folder tree lists a `tailwind.config.ts`. Current
+`create-next-app` (Next.js 16) scaffolds Tailwind v4, which is CSS-first: theme tokens live in
+an `@theme` block inside `app/globals.css` instead of a JS/TS config file. There is no
+functional loss — colours, fonts, container width and the type scale are all expressed the
+same way, just in CSS — so the app was scaffolded with the current tool default rather than
+force-installing Tailwind v3 to match the architecture doc's file name literally.
+`create-next-app` also refuses to run in a non-empty directory, so the scaffold was generated
+in a temp dir and its output files (`app/`, `public/`, config files) were copied in, preserving
+`docs/`, `content/`, `README.md`, `TASKS.md`, `DECISIONS.md` and `.git`.
+
 ## Known content bug — lesson 6.6
 
 `content/m6/06.json` (framework 6.6, "Culture Code Canvas") holds a duplicate of 6.7's
