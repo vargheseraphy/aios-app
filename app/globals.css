@@ -54,10 +54,15 @@
 
   --color-line-l: var(--line-l);
   --color-line-l2: var(--line-l2);
+  --color-line-d: var(--line-d);
+  --color-line-d2: var(--line-d2);
   --color-wash: var(--wash);
 
   --color-gray-l: var(--gray-l);
   --color-gray-l2: var(--gray-l2);
+  --color-fg-1: var(--fg-1);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
 
   --font-display: var(--font-disp);
   --font-sans: var(--font-body);
