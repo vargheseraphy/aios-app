@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Accordion, AccordionItem } from "./Accordion";
+import { BookmarkButton } from "./BookmarkButton";
 import { LessonPromptCard } from "./LessonPromptCard";
 import type { ResolvedLesson } from "@/lib/content";
 
@@ -36,6 +37,7 @@ export function LessonAccordionList({
           id={`lesson-${lesson.fileId}`}
           defaultOpen={lesson.fileId === expandedFileId}
           className="scroll-mt-20"
+          actions={<BookmarkButton lessonId={lesson.lesson} />}
           trigger={
             <span className="flex items-baseline gap-3">
               <span className="font-mono text-[12px] text-blue-hi">

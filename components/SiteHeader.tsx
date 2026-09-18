@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useAuth } from "./auth/AuthProvider";
 import styles from "./SiteHeader.module.css";
 
 const NAV_LINKS = [
@@ -14,12 +14,15 @@ const NAV_LINKS = [
 ];
 
 /**
- * Sticky site nav, ported from docs/design/pages/home.html. There's no real
- * auth yet (Phase 5) — clicking the login icon just previews the signed-in
- * avatar-chip state locally, exactly as the locked design's own demo does.
+ * Sticky site nav, ported from docs/design/pages/home.html. The login icon
+ * opens the real sign-in modal (Phase 5); once signed in it swaps to an
+ * avatar-chip linking to /account, matching the locked design's own states.
  */
 export function SiteHeader() {
-  const [signedInPreview, setSignedInPreview] = useState(false);
+  const { user, openSignIn } = useAuth();
+  const initials = (user?.user_metadata?.display_name || user?.email || "?")
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
     <nav className={styles.nav}>
@@ -39,13 +42,13 @@ export function SiteHeader() {
           <Link className="btn btn-white btn-sm" href="/#get">
             Get the book
           </Link>
-          {!signedInPreview && (
+          {!user && (
             <button
               type="button"
               className={styles.iconBtn}
               aria-label="Log in"
-              title="Log in (click to preview the signed-in state)"
-              onClick={() => setSignedInPreview(true)}
+              title="Log in"
+              onClick={() => openSignIn()}
             >
               <svg className="i" width="17" height="17" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.5" r="3.6" />
@@ -53,18 +56,13 @@ export function SiteHeader() {
               </svg>
             </button>
           )}
-          {signedInPreview && (
-            <button
-              type="button"
-              className={styles.avatarChip}
-              title="Signed-in state preview"
-              onClick={() => setSignedInPreview(false)}
-            >
-              <span className={styles.av}>RV</span>
+          {user && (
+            <Link href="/account" className={styles.avatarChip} title="Your account">
+              <span className={styles.av}>{initials}</span>
               <svg className={`i ${styles.cr}`} width="14" height="14" viewBox="0 0 24 24">
                 <path d="M6 9l6 6 6-6" />
               </svg>
-            </button>
+            </Link>
           )}
         </span>
       </div>

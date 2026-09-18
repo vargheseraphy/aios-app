@@ -16,6 +16,12 @@ interface AccordionItemProps {
    */
   open?: boolean;
   onToggle?: () => void;
+  /**
+   * Rendered as a sibling of the trigger button, not inside it — e.g. a
+   * bookmark button (Phase 5). Nesting an interactive element inside the
+   * trigger `<button>` would be invalid HTML and double-fire clicks.
+   */
+  actions?: ReactNode;
 }
 
 /**
@@ -33,6 +39,7 @@ export function AccordionItem({
   className = "",
   open: openProp,
   onToggle,
+  actions,
 }: AccordionItemProps) {
   const [openState, setOpenState] = useState(defaultOpen);
   const controlled = openProp !== undefined;
@@ -43,26 +50,29 @@ export function AccordionItem({
 
   return (
     <div className={`border-b border-line-l ${className}`} id={id}>
-      <button
-        id={triggerId}
-        type="button"
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={toggle}
-        className="flex w-full items-center justify-between gap-4 py-[22px] text-left font-display text-[16.5px] font-bold tracking-[-0.015em] text-ink-2 cursor-pointer"
-      >
-        {trigger}
-        <span
-          aria-hidden="true"
-          className={`flex h-6 w-6 flex-none items-center justify-center rounded-full border font-sans text-[15px] transition-transform duration-200 ${
-            open
-              ? "rotate-45 border-ink-2 bg-ink-2 text-white"
-              : "border-line-l2 text-gray-l"
-          }`}
+      <div className="flex items-center gap-2">
+        <button
+          id={triggerId}
+          type="button"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={toggle}
+          className="flex flex-1 items-center justify-between gap-4 py-[22px] text-left font-display text-[16.5px] font-bold tracking-[-0.015em] text-ink-2 cursor-pointer"
         >
-          +
-        </span>
-      </button>
+          {trigger}
+          <span
+            aria-hidden="true"
+            className={`flex h-6 w-6 flex-none items-center justify-center rounded-full border font-sans text-[15px] transition-transform duration-200 ${
+              open
+                ? "rotate-45 border-ink-2 bg-ink-2 text-white"
+                : "border-line-l2 text-gray-l"
+            }`}
+          >
+            +
+          </span>
+        </button>
+        {actions}
+      </div>
       <div
         id={panelId}
         role="region"
