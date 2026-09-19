@@ -14,8 +14,18 @@ import { isBookmarked, toggleBookmark } from "@/lib/actions/bookmarks";
  * statically generated (Phase 3) with zero server-side Supabase calls. Session
  * and bookmark state are both read client-side, after hydration, via a Server
  * Action call — never during the page's own render. See DECISIONS.md.
+ *
+ * `variant="dark"` restyles it for the lesson page's near-black prompt-card
+ * header (lesson.html's `.pcbtn`) instead of the light accordion-row circle —
+ * same auth/toggle behaviour, different chrome to match where it sits.
  */
-export function BookmarkButton({ lessonId }: { lessonId: string }) {
+export function BookmarkButton({
+  lessonId,
+  variant = "default",
+}: {
+  lessonId: string;
+  variant?: "default" | "dark";
+}) {
   const { user, openSignIn } = useAuth();
   const [saved, setSaved] = useState(false);
   const [pending, setPending] = useState(false);
@@ -62,12 +72,20 @@ export function BookmarkButton({ lessonId }: { lessonId: string }) {
       aria-pressed={displaySaved}
       aria-label={displaySaved ? "Remove bookmark" : "Bookmark this lesson"}
       title={displaySaved ? "Remove bookmark" : "Bookmark this lesson"}
-      className="flex h-9 w-9 flex-none cursor-pointer items-center justify-center rounded-full text-gray-l transition-colors hover:text-ink-2 disabled:cursor-wait"
+      className={
+        variant === "dark"
+          ? `flex h-[38px] w-[38px] flex-none cursor-pointer items-center justify-center rounded-[9px] border transition-colors disabled:cursor-wait ${
+              displaySaved
+                ? "border-yellow/50 bg-yellow/[0.18] text-yellow"
+                : "border-line-d2 bg-transparent text-white hover:bg-white/10"
+            }`
+          : "flex h-9 w-9 flex-none cursor-pointer items-center justify-center rounded-full text-gray-l transition-colors hover:text-ink-2 disabled:cursor-wait"
+      }
     >
       <svg
         className="i"
-        width="17"
-        height="17"
+        width={variant === "dark" ? "16" : "17"}
+        height={variant === "dark" ? "16" : "17"}
         viewBox="0 0 24 24"
         style={{ fill: displaySaved ? "currentColor" : "none" }}
       >
