@@ -1,0 +1,136 @@
+.colSide {
+  min-width: 0;
+  display: none;
+}
+@media (min-width: 1040px) {
+  .colSide {
+    display: block;
+    order: 0;
+    position: sticky;
+    top: 92px;
+    max-height: calc(100vh - 124px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    padding-bottom: 20px;
+  }
+}
+
+.sidecard {
+  border: 1px solid var(--line-l);
+  border-radius: 16px;
+  background: #fff;
+  padding: 22px 24px;
+}
+.sidecard + .sidecard,
+.qfwrap + .sidecard,
+.sidecard + .qfwrap {
+  margin-top: 16px;
+}
+.sidecard h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 10.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--gray-l);
+  margin-bottom: 16px;
+}
+
+.jump {
+  display: flex;
+  flex-direction: column;
+}
+.jump a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--gray-l);
+  padding: 11px 0;
+}
+.jump a + a {
+  border-top: 1px solid var(--line-l);
+}
+.jump a:hover {
+  color: var(--ink-2);
+}
+.jd {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-l2);
+  flex: none;
+}
+.jump a:hover .jd {
+  background: var(--blue);
+}
+
+.qfacts {
+  display: block;
+  overflow: visible;
+  border: 1px solid var(--line-l);
+  border-radius: 16px;
+  background: #fff;
+  padding: 8px 24px;
+}
+.qf {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  font-size: 13px;
+}
+.qf + .qf {
+  border-top: 1px solid var(--line-l);
+}
+.qf dt {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-l);
+  white-space: nowrap;
+}
+.qf dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+.keylist {
+  display: flex;
+  flex-direction: column;
+}
+.krow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 0;
+  font-size: 13px;
+  line-height: 1.62;
+  color: var(--gray-l);
+}
+.krow + .krow {
+  border-top: 1px solid var(--line-l);
+}
+.krow code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--wash);
+  border: 1px solid var(--line-l);
+  border-radius: 5px;
+  padding: 2px 6px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.krow b {
+  color: var(--ink-2);
+  font-weight: 500;
+}
