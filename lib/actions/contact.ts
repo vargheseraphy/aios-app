@@ -8,16 +8,18 @@ export interface ContactFormState {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
- * Validates and accepts a contact submission. There is no email-sending
- * provider wired up anywhere in this codebase (no Resend/SMTP key exists,
- * and none should be invented) — see DECISIONS.md. This logs the message
- * server-side so it's visible in deploy logs, and tells the visitor it was
- * received, without claiming a reply will be emailed automatically.
+ * Validates a contact submission and logs it server-side. There is no
+ * email-sending provider wired up anywhere in this codebase (no Resend/SMTP
+ * key exists, and none should be invented) — see DECISIONS.md. The locked
+ * design's own copy is explicit that nothing is sent or stored yet ("This
+ * form is not connected yet"), so the success message matches that framing
+ * rather than implying a reply is coming.
  */
 export async function submitContactMessage(
   _prevState: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> {
+  const topic = String(formData.get("topic") ?? "other").trim();
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
   const organisation = String(formData.get("organisation") ?? "").trim();
@@ -30,10 +32,10 @@ export async function submitContactMessage(
     return { status: "error", message: "That email address doesn't look right." };
   }
 
-  console.info("[contact]", { name, email, organisation: organisation || null, message });
+  console.info("[contact]", { topic, name, email, organisation: organisation || null, message });
 
   return {
     status: "success",
-    message: "Thanks — your message has been received.",
+    message: "Not sent — this form is not connected yet. The reply address goes live with the book.",
   };
 }
