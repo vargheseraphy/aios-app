@@ -398,6 +398,77 @@ than per-page nav content — matching that exactly would mean making the nav pa
 change than this pass's scope. The three pages remain fully reachable via the footer (already
 fixed in Phase 7) even without a matching top-nav entry.
 
+## Phase 8 — lesson page rebuilt on content-v2, kept as a parallel data layer
+
+Raphy supplied a locked design for the lesson page itself (`docs/design/pages/lesson.html`,
+913 lines, the same "DIRECTION CONTRACT" authoring style as the other locked pages, plus an
+exhaustive "TEMPLATE DATA BINDING" comment specifying exact field mappings, edge cases and
+rendering rules) and the richer dataset it's built against, `content-v2/` (mirrored from
+`../aios-book/website/content-v2/`, the cleaner of two copies available there — the
+`build-reference/04-content-v2/` copy still has a figure-caption fragment and a numbering typo
+in lesson 9.1 that the root copy has already had hand-cleaned). This replaces the Phase 3
+accordion-item view for `/m{module}/{lesson}` — the QR target — with a dedicated per-lesson
+page: sticky prompt card first, use-when/how-to/method/roles/origin/pairs, a sticky sidebar,
+module rail, prev/next, maintenance panel, save band.
+
+**Architecture: a new parallel data layer (`lib/content-v2.ts`), not a migration.** 12 files
+already depend on `lib/content.ts` and the older `content/` schema (`app/[module]/page.tsx`,
+`app/page.tsx`, all four original marketing pages, `for-business`/`for-institutions`,
+`LessonAccordionList`, `LessonPromptCard`, `lib/actions/bookmarks.ts`, `lib/pages-content.ts`)
+— all shipped and verified. Rather than risk regressing any of them to unify on one schema,
+content-v2 gets its own reader with its own types, consumed only by the rebuilt lesson page.
+`app/[module]/page.tsx` (the accordion browse view) is deliberately untouched and still runs on
+the older `content/` schema — a real, acknowledged inconsistency (see "Items needing Raphy").
+
+**A real build bug, not a design problem: pure role-switcher logic had to move out of
+`lib/content-v2.ts`.** The role switcher (client-side, since it responds to clicks) originally
+imported `parsePromptRoleLine`/`applyRoleClause` directly from `lib/content-v2.ts` — which also
+has a top-level `import fs from "node:fs"` for its data readers. Turbopack refuses to chunk a
+client bundle that transitively imports `node:fs` at all (a hard build failure, not a warning),
+regardless of whether the specific functions used touch the filesystem. Fixed by splitting
+those two pure string functions into `lib/prompt-role.ts` (no fs import anywhere in its
+dependency graph), with `lib/content-v2.ts` re-exporting them for server-side callers. Worth
+remembering for any future client-interactive feature built against a data-reading lib file.
+
+**A second, genuine content-data bug found and fixed while implementing the "sharpen" cross-
+reference**: every one of the 10 modules' `roleProfile.sharpen` field ends with the same "See
+also" reference, and every one of them cites it as "Framework 1.2 Role Prompting — The Expert
+Chair" — but the lesson actually titled "Role Prompting - The Expert Chair" is 1.3
+(`content-v2/m1/03.json`); 1.2 is "The Context Stack" (`content-v2/m1/02.json`). Verified this
+against all 10 modules' actual JSON, not just the one example lesson.html was built against, to
+confirm it's systemic rather than a one-off typo. `resolveSharpenXref` resolves this reference
+by matching the embedded title text against every real lesson's title first (normalizing
+punctuation so an em-dash-vs-hyphen difference doesn't block the match), falling back to the
+embedded number only if no title match is found — the title text is distinctive and reliably
+correct here, the number consistently is not.
+
+**Content-v2's own documented gaps are handled by hiding the section, never inventing text**:
+`howToUse` missing on 3 lessons, `steps` on 8, `useWhen` on 6, `subtitle` on 5, `origin` on 2,
+`proTip` on 14 (counts verified directly against the 108 real files, matching what
+`content-v2/README.md` and `../aios-book/website/build-reference/CONTENT-ISSUES.md` already
+document). The sidebar's "on this page" jump list only links to a section actually rendered for
+that lesson. Titles with dash damage (double space where the book's dash was lost in
+extraction) render with their stored whitespace intact everywhere a title appears — the lesson
+h1, the module rail, the pairs rail cards, and the prev/next cards — rather than letting normal
+CSS whitespace collapsing silently "fix" them. Lesson 6.6 still shows the established
+prompt-under-review notice with Copy withheld; the bug is unchanged in content-v2, same lesson.
+
+**The role switcher only activates when NOTE 4's regex matches.** 16 of 108 lessons' prompts
+don't open with a literal `Act as {clause}.\n` line (some lead with `Role:\nActa as...`, some
+with a `PROMPT — COPY & PASTE READY` banner line first, some open a different way entirely) —
+for those, the role list still renders (informing the reader who the book suggests running the
+prompt) but as plain, non-interactive rows with an explanatory line, never guessing where an
+unmatched prompt's role clause might be.
+
+**The bookmark button is real, not the locked mockup's preview toggle.** `lesson.html`'s own
+`#markBtn` is explicitly commented as a local-only `aria-pressed` flip with no persistence
+("preview — accounts are not live yet"). This build already has real bookmarking (Phase 5), so
+the rebuilt page wires the actual `BookmarkButton`/`toggleBookmark` infrastructure instead,
+restyled via a new `variant="dark"` prop for the prompt card's near-black header — same
+auth-aware, sign-in-prompts-if-signed-out behavior as the accordion page's bookmark icon, not a
+fake toggle. It remains the one client-side, auth-aware island on an otherwise fully static
+page, exactly the pattern Phase 5 already established.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -445,3 +516,15 @@ fixed in Phase 7) even without a matching top-nav entry.
 - The `/contact` form has no email transport wired up — submissions are logged server-side only
   (see `lib/actions/contact.ts`, `.env.example`'s `CONTACT_NOTIFY_EMAIL`). Needs a real provider
   (e.g. Resend) integrated before this form is actually useful for reaching Raphy.
+- A real pixel-fidelity check of `/m{module}/{lesson}` against `docs/design/pages/lesson.html`
+  at 400px, 768px and 1280px (Phase 8) — same outstanding check as every other locked page,
+  verified structurally/behaviourally (role switcher, pairs resolution, prev/next, all the
+  content gaps) but not against an actual screenshot.
+- `app/[module]/page.tsx` (the module accordion browse view) still runs on the older `content/`
+  schema and hasn't been upgraded to content-v2's richer fields (level, subtitle, steps, etc.) —
+  deliberately out of scope for Phase 8, a real inconsistency between the two lesson views.
+- content-v2's own documented gaps are content, not code, per its own README: `howToUse` missing
+  on 3 lessons, `steps` on 8, `useWhen` on 6, `subtitle` on 5, `origin` on 2, `proTip` on 14, plus
+  the same figure-caption-fragment and dash-damaged-title issues `content/` already has. This
+  build renders every gap correctly (hidden, not invented) but doesn't fix the underlying data —
+  that's a manuscript-extraction cleanup job, same as the existing `content/` cleanup item above.

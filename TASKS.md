@@ -140,3 +140,37 @@ properly this time, plus separated page copy from layout per Raphy's explicit re
 - [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
       pass; 131 routes total, all three pages static; QR routes and their zero-Supabase
       guarantee unaffected
+
+## Phase 8 — rebuild the lesson page from the locked content-v2 design
+
+Raphy supplied a locked design for the lesson page itself (`docs/design/pages/lesson.html`)
+and the richer content-v2 dataset it's bound to (`content-v2/`, mirrored from
+`../aios-book/website/content-v2/`) — a dedicated per-lesson page replacing the Phase 3
+accordion-item view for the QR target. See DECISIONS.md for the architecture decision (a
+parallel content-v2 data layer, not a migration) and the content issues this surfaced.
+
+- [x] `lib/content-v2.ts` + `lib/prompt-role.ts` — typed content-v2 reader, kept deliberately
+      separate from `lib/content.ts` (12 files still depend on the older schema); pure
+      role-clause string helpers split into their own file so the client role switcher doesn't
+      pull `node:fs` into the browser bundle
+- [x] `components/lesson/*` — prompt card with inline key/value/role-clause rendering, the
+      module role profile with a live role switcher (NOTE 4-gated), use-when/how-to/method/
+      origin (each hidden when its field is genuinely absent), the pairs rail, the module rail
+      with a true global prev/next sequence, the sidebar, maintenance panel, save band, seam
+      bar and lesson head
+- [x] `app/[module]/[lesson]/page.tsx` rebuilt wholesale on content-v2; `app/[module]/page.tsx`
+      (the accordion browse view) deliberately left untouched
+- [x] `components/BookmarkButton.tsx` gained a `variant="dark"` for the prompt card's header;
+      real bookmarking wired in, not the locked mockup's fake local-only preview toggle
+- [x] `components/SiteHeader.tsx` nav gained for-business/for-institutions/contact links
+- [x] Fixed a systemic data mislabel: every module's `roleProfile.sharpen` "See also" reference
+      cites "Framework 1.2 Role Prompting — The Expert Chair", but that lesson is really 1.3 —
+      `resolveSharpenXref` now resolves by title match first, falling back to the number only
+      if no title matches
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
+      pass; all 108 lesson routes stay fully static (`generateStaticParams`, `dynamicParams =
+      false`); zero Supabase imports in `app/[module]/[lesson]/**`'s render path; spot-checked
+      `/m9/01` (role switcher, pairs resolution), `/m6/06` (review notice, no Copy button),
+      `/m2/02` (no proTip card), `/m1/03` (dash-damaged title renders exactly as stored),
+      `/m1/00` (non-"Act as" prompt renders roles non-interactively, no Previous card at the
+      book's start), `/m10/11` (no Next card at the book's end)
