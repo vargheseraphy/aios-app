@@ -1,0 +1,913 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit Economics LTV:CAC</title>
+<meta name="description" content="Framework 9.1 from AI Operating System for Leaders - the prompt, how the framework works, who should run it, and where it came from. Free, no account.">
+<meta property="og:title" content="Unit Economics - LTV:CAC &middot; 9.1 &middot; AIOS">
+<meta property="og:description" content="Framework 9.1 from AI Operating System for Leaders. The prompt, kept current.">
+<meta property="og:type" content="article">
+<!--
+DIRECTION CONTRACT
+THESIS: This screen is the next page of the book. It names the printed page the reader scanned
+from, gives the one thing paper cannot - a live, copyable, role-swappable prompt - and then
+carries the rest of the printed spread: when to use it, how it works, the method, who should
+reason through it, and where it came from. The seam between paper and screen is the organising
+principle.
+CONSTRAINT THAT OVERRIDES EVERYTHING: reached by a phone camera, mid-task, by someone holding an
+open book. The prompt card and its Copy button come FIRST, before any context, and the card
+header sticks under the nav while the prompt scrolls. Context follows the prompt, never precedes
+it - the reader already read the printed intro page.
+FORM: candidate 4 of 7 (continuation-of-the-page), seed e1cced1b, degraded roll, no challengers.
+No revision history claimed: extractedAt is an extraction date, not a change log.
+
+=====================  TEMPLATE DATA BINDING  =====================
+Route: /m{module}/{lesson}  ->  content-v2/m{module}/{lesson}.json + content-v2/modules/m{n}.json
+Rendered with real data from content-v2/m9/01.json and content-v2/modules/m9.json.
+
+  content-v2/m{n}/{ll}.json        data-field
+  ---------------------------------------------------------------
+  lesson                           lesson.number
+  title                            lesson.title
+  titlePrinted                     lesson.titlePrinted   (the dash the book actually sets)
+  level                            lesson.level          Beginner | Intermediate | Advanced
+  subtitle                         lesson.subtitle
+  module                           lesson.module
+  sourcePages.intro                lesson.pages.intro
+  sourcePages.prompt               lesson.pages.prompt
+  useWhen                          lesson.useWhen
+  howToUse                         lesson.howToUse
+  steps[]                          lesson.steps[]
+  origin                           lesson.origin
+  promptBody                       lesson.promptBody     <-- NOTE 1
+  proTip                           lesson.proTip         <-- NOTE 2
+  pairsWith[] / pairsPrinted[]     lesson.pairs[]        <-- NOTE 3
+  extractedAt                      lesson.extractedAt
+
+  content-v2/modules/m{n}.json     data-field
+  ---------------------------------------------------------------
+  title                            module.title
+  subtitle                         module.subtitle
+  lessons[]                        module.lessons[]      (rail + prev/next)
+  lessons.length (computed)        module.lessonCount
+  page span      (computed)        module.pageRange
+  roleProfile.question             roles.question
+  roleProfile.lead                 roles.lead
+  roleProfile.internal[]           roles.internal[]      <-- NOTE 6
+  roleProfile.outside[]            roles.outside[]       same shape
+  roleProfile.sharpen              roles.sharpen         the book's "how to make any role sharper"
+
+  <head>: not data-fields. The build composes them:
+    <title>          = lesson.titlePrinted
+    og:title         = lesson.titlePrinted + " · " + lesson.number + " · AIOS"
+    description      = one sentence naming the lesson and that it is free, no account
+  All three use titlePrinted, so one page never shows the title three ways.
+
+  Every data-field sits on a LEAF whose entire text is that field's value. Nothing composed
+  ("Pages 206-207", "9.1 of 108") carries a binding. Repeats mark the container AND every child.
+
+NOTE 1 - promptBody is the only binding that is NOT textContent. Escape the HTML first (prompts
+  contain & and <), then wrap ALL-CAPS section lines and "Label:" prefixes in <span class="k">
+  and every [BRACKET] in <span class="v">, then set innerHTML. The role clause of the first line
+  must be wrapped in <span id="roleLine"> so the role switcher can replace it. Source newlines
+  are significant - Copy reads innerText and white-space is pre-wrap. DO NOT MINIFY IT.
+NOTE 2 - 14 of 108 lessons have no proTip. Set `hidden` on .tipcard when it is empty.
+NOTE 3 - resolve each pairsWith number to its own JSON for the real title and page numbers; the
+  label carried in pairsWith is not always the lesson's own title.
+NOTE 4 - the role switcher rewrites ONLY the text inside #roleLine, which the build wraps around
+  the role clause of the opening line. It requires promptBody to match /^Act as (.+?)\.\n/ - the
+  captured group becomes #roleLine and is also copied to its data-default. If a prompt does not
+  match (it opens "You are...", or names no role), the build must render the role cards WITHOUT
+  the switcher: drop .rolehint, drop each button's data-role, and emit the cards as <div>s.
+  Never guess where the role clause is.
+NOTE 5 - lesson.level drives the chip colour: Beginner green, Intermediate blue, Advanced yellow.
+  It is the reader's difficulty. role.seniority is a different thing entirely - the seniority of
+  the persona, drawn as diamonds - so the two are never rendered the same way and never share a
+  field name.
+NOTE 6 - each role carries role / seniority / priorities / bestWhen / promptClause. promptClause
+  is the text dropped after "Act as " and is stored, not derived at render time: it is the role
+  as printed with an article in front ("a Financial Analyst", "an Auditor", "the CFO of Your
+  Biggest Customer"). scripts/extract-roles.py writes it.
+NOTE 7 - lesson.howToUse and roles.lead are plain strings with no markup. howToUse is one long
+  string: split it into paragraphs on blank lines if present, otherwise render it whole. Do not
+  invent emphasis - nothing in the content marks bold.
+NOTE 8 - every repeating element carries data-field-item as well as the container's data-field,
+  so the renderer knows which node to clone per array entry.
+
+CONTENT NOTES
+  - content-v2/ was extracted from the manuscript PDFs; content/ holds only the prompt. See
+    content-v2/README.md and build-reference/CONTENT-ISSUES.md.
+  - Figure-caption fragments are still present in promptBody for most lessons. 9.1's body was
+    cleaned by hand so this template can be judged.
+  - m6/06.json is titled "Culture Code Canvas" but holds the Delegation Ladder prompt.
+  - Titles render exactly as stored, dash damage included.
+==================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:76px;}
+body{background:#fff; color:var(--ink-2); font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:9px 15px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.pcbtn:focus-visible,.rolerow:focus-visible,.railbtn:focus-visible,.rolereset:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.dark .btn:focus-visible,.nav .btn:focus-visible,.seam .btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.pcbtn:focus-visible{outline-color:#fff;}
+a:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px; border-radius:4px;}
+.nav a:focus-visible,.seam a:focus-visible,.modwrap a:focus-visible,.save a:focus-visible,footer a:focus-visible{outline-color:#fff;}
+.skip{position:absolute; left:16px; top:-60px; z-index:80; background:#fff; color:var(--ink-2); font-weight:500; font-size:13px; padding:11px 18px; border-radius:8px; transition:top .15s;}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px));}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.86); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d); color:#fff;}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em; color:#fff;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1180px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.avatar-chip[hidden],.icon-btn[hidden]{display:none !important;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, border-color .15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer; color:#fff;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* seam */
+.seam{position:relative; overflow:hidden; background:var(--ink); color:#fff;}
+.seam .bg{position:absolute; inset:0; background:
+  radial-gradient(620px 300px at 8% 0%, rgba(59,123,247,.8), transparent 62%),
+  radial-gradient(520px 320px at 92% 100%, rgba(15,46,117,.9), transparent 60%), #0B0C0F;}
+.seam-in{position:relative; display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-block:14px;}
+.seam-art{flex:none; color:#fff; opacity:.9;}
+.seam-txt{flex:1 1 auto; min-width:0; font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:rgba(255,255,255,.94); line-height:1.5;}
+.seam-txt b{color:#fff; font-weight:500;}
+.seam-txt .dim{color:rgba(255,255,255,.70);}
+.seam-long{display:none;} @media(min-width:760px){.seam-long{display:inline;}}
+.seam-back{flex:none; margin-left:auto; font-size:12.5px; color:rgba(255,255,255,.82); display:inline-flex; align-items:center; gap:7px; border:1px solid rgba(255,255,255,.26); border-radius:999px; padding:10px 14px;}
+.seam-back:hover{color:#fff; background:rgba(255,255,255,.10);}
+@media(max-width:639px){.seam-back{padding:10px 11px;} .seam-back .bl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}}
+
+/* lesson head */
+.lhead{padding-block:38px 0;}
+.hrow{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.lnum{display:inline-flex; align-items:center; font-family:var(--mono); font-weight:500; font-size:12px; color:#fff; background:var(--ink-2); border-radius:7px; padding:6px 12px; letter-spacing:.04em;}
+.lev{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; border-radius:7px; padding:6px 11px;}
+.lev::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor;}
+.lev-beginner{background:#E6F6EC; color:#1B7A3C;}
+.lev-intermediate{background:#E8F0FE; color:#1E5CE0;}
+.lev-advanced{background:#FFF4D6; color:#8A5B00;}
+.lmod{display:none; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l);}
+.lmod a:hover{color:var(--ink-2); text-decoration:underline;}
+@media(min-width:560px){.lmod{display:inline;}}
+h1.lt{font-size:clamp(28px,4.8vw,42px); line-height:1.1; letter-spacing:-.03em; font-weight:800; margin-top:20px; max-width:24ch;}
+.lsub{font-size:16px; line-height:1.5; color:var(--gray-l); max-width:64ch; margin-top:13px;}
+@media(min-width:640px){.lsub{font-size:18.5px; line-height:1.55; margin-top:16px;}}
+
+/* two-column body */
+.lgrid{display:grid; grid-template-columns:1fr; gap:34px; padding-block:30px 72px;}
+@media(min-width:1040px){.lgrid{grid-template-columns:minmax(0,1fr) 352px; gap:60px; padding-block:38px 104px; align-items:start;}}
+.col-main{min-width:0; display:flex; flex-direction:column; gap:52px;}
+@media(min-width:1040px){.col-main{gap:60px;}}
+#usewhen,#roles{margin-top:16px;}
+@media(min-width:1040px){#usewhen,#roles{margin-top:24px;}}
+.col-side{min-width:0; order:-1;}
+@media(min-width:1040px){.col-side{order:0; position:sticky; top:92px; max-height:calc(100vh - 124px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; padding-bottom:20px;}}
+
+/* section blocks */
+.blk{min-width:0;}
+.blk > .bh{display:flex; align-items:center; gap:11px; margin-bottom:20px; flex-wrap:wrap;}
+@media(max-width:719px){
+  #prompt > .bh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:0;}
+}
+.bh .bi{width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex:none;}
+.bh h2{font-size:clamp(19px,2.3vw,23px); line-height:1.18;}
+.bh .bn{margin-left:auto; font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--gray-l); white-space:nowrap;}
+@media(max-width:719px){.bh .bn,.bh .railbtns{display:none;}}
+.prose{font-size:15.5px; line-height:1.82; color:var(--gray-l); max-width:74ch;}
+.prose b{color:var(--ink-2); font-weight:500;}
+.prose p + p{margin-top:17px;}
+
+/* prompt */
+.promptcard{background:#0B0C0F; border-radius:16px; border:1px solid #23262E; box-shadow:0 30px 60px -34px rgba(0,0,0,.5);}
+.pc-top{display:flex; align-items:center; gap:9px; padding:11px 13px; border-bottom:1px solid var(--line-d); background:var(--panel); border-radius:15px 15px 0 0;}
+@media(max-width:1039px){.pc-top{position:sticky; top:calc(59px + env(safe-area-inset-top,0px)); z-index:5;}}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.34); border-radius:5px; padding:3px 7px; flex:none;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13.5px; color:#fff; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pc-top .up{margin-left:auto; display:flex; gap:8px; align-items:center; flex:none;}
+.pcbtn{width:38px; height:38px; flex:none; border-radius:9px; border:1px solid var(--line-d2); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, color .15s;}
+.pcbtn:hover{background:rgba(255,255,255,.12);}
+.pcbtn[aria-pressed="true"]{background:rgba(251,190,16,.18); border-color:rgba(251,190,16,.5); color:var(--yellow);}
+.pc-body{padding:20px 17px; font-family:var(--mono); font-size:12px; line-height:1.95; color:rgba(255,255,255,.90); white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere;}
+@media(min-width:640px){.pc-body{font-size:12.5px; padding:22px 20px;}}
+@media(max-width:1039px){.pc-body{border-radius:0 0 15px 15px;} .pc-top{border-radius:0;}}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+#roleLine{color:#fff; background:rgba(59,123,247,.26); box-shadow:0 0 0 1px rgba(110,160,255,.45); border-radius:4px; padding:1px 3px; margin-right:-2px;}
+.pc-foot{display:none; align-items:center; gap:12px; padding:12px 15px; border-top:1px solid var(--line-d); background:var(--panel); border-radius:0 0 15px 15px; flex-wrap:wrap;}
+@media(min-width:1040px){.pc-foot{display:flex;}}
+.pc-foot .legend{display:flex; gap:14px; flex-wrap:wrap; font-family:var(--mono); font-size:10.5px; color:rgba(255,255,255,.66);}
+.pc-foot .legend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px;}
+.pc-foot .legend .ky{background:var(--yellow);} .pc-foot .legend .vl{background:var(--blue-hi);} .pc-foot .legend .rl{background:rgba(59,123,247,.30); box-shadow:0 0 0 1px #6EA0FF inset;}
+.mlegend{display:flex; gap:14px; flex-wrap:wrap; font-family:var(--mono); font-size:10px; color:var(--gray-l); margin-top:10px;}
+.mlegend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px;}
+.mlegend .ky{background:#C99400;} .mlegend .vl{background:var(--blue);} .mlegend .rl{background:rgba(59,123,247,.30); box-shadow:0 0 0 1px var(--blue) inset;}
+@media(min-width:1040px){.mlegend{display:none;}}
+.copybtn{flex:none; padding:10px 16px;} .copybtn.done{background:var(--green); color:#fff;}
+@media(pointer:coarse){.copybtn{padding:13px 18px;}}
+.copystat{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+/* pro tip */
+.tipcard{margin-top:20px; border-radius:16px; padding:24px 26px; background:linear-gradient(170deg,#FFF6DC,#FFFDF6); border:1px solid #F0D894;}
+.tipcard .tlab{display:flex; font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:#8A5B00; margin-bottom:11px; align-items:center; gap:9px;}
+.tipcard .tlab .ti{color:#C99400;}
+.tipcard p{font-size:14.5px; line-height:1.78; color:#4A3B12; max-width:74ch;}
+
+/* use-this-when */
+.uwcard{border-radius:16px; padding:26px 28px; background:linear-gradient(170deg,#FFF0EE,#FFF9F8); border:1px solid #F6C9C2;}
+.uwcard p{font-size:15.5px; line-height:1.8; color:#6B2B22; max-width:74ch;}
+
+/* method steps */
+.steps{display:grid; grid-template-columns:1fr; gap:12px;}
+.step{display:grid; grid-template-columns:34px 1fr; gap:16px; align-items:start; border:1px solid var(--line-l); border-radius:14px; padding:20px 22px; background:#fff;}
+.step .sn{width:34px; height:34px; border-radius:9px; background:var(--ink-2); color:#fff; font-family:var(--mono); font-weight:500; font-size:13px; display:flex; align-items:center; justify-content:center;}
+.step p{font-size:14.5px; line-height:1.7; color:var(--gray-l);}
+
+
+/* roles */
+.rolelead{font-size:15.5px; line-height:1.8; color:var(--gray-l); max-width:76ch; margin-bottom:8px;}
+.rolelead b{color:var(--ink-2); font-weight:500;}
+.rolehint{display:flex; align-items:center; gap:11px; font-size:13.5px; color:var(--ink-2); background:var(--wash); border:1px solid var(--line-l); border-radius:12px; padding:14px 17px; margin-block:20px; line-height:1.6;}
+.rolehint svg{color:var(--blue); flex:none;}
+.rolegrp{margin-top:30px;}
+.senkey{display:flex; gap:18px; flex-wrap:wrap; font-family:var(--mono); font-size:10.5px; line-height:1.7; color:var(--gray-l); margin-top:18px;}
+.senkey b{color:var(--ink-2); font-weight:500; letter-spacing:.12em;}
+.sharpen{margin-top:32px; border-radius:16px; padding:26px 28px; background:var(--wash); border:1px solid var(--line-l);}
+.sharpen h3{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); margin-bottom:13px;}
+.sharpen ol{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:13px;}
+.sharpen li{font-size:14.5px; line-height:1.7; color:var(--gray-l); padding-left:4px;}
+.sharpen li b{color:var(--ink-2); font-weight:500;}
+.sharpen code{font-family:var(--mono); font-size:12px; background:#fff; border:1px solid var(--line-l2); border-radius:5px; padding:2px 6px; color:var(--ink-2);}
+.sharpen .xref{display:inline-flex; align-items:center; gap:7px; margin-top:14px; font-size:13.5px; font-weight:500; color:var(--blue-lo); padding-block:6px;}
+.sharpen .xref:hover{text-decoration:underline;}
+.rolegrp > .gh{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+.rolegrp .gt{font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; font-weight:500;}
+.rolegrp .gd{font-size:13px; color:var(--gray-l);}
+.g-in .gt{color:var(--blue-lo);} .g-out .gt{color:#1B7A3C;}
+.rolelist{border:1px solid var(--line-l); border-radius:16px; overflow:hidden; background:#fff;}
+.rolehead{display:none;}
+@media(min-width:1000px){
+  .rolehead{display:grid; grid-template-columns:58px minmax(150px,1.05fr) minmax(0,1.25fr) minmax(0,1.3fr) 58px; gap:18px;
+    padding:11px 20px; background:var(--wash); border-bottom:1px solid var(--line-l);
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-l);}
+}
+.rolerow{--rc:var(--blue); --rc-ink:var(--blue-lo);
+  display:grid; grid-template-columns:1fr auto; gap:8px 14px; width:100%; text-align:left;
+  padding:16px 18px; background:#fff; border:none; border-top:1px solid var(--line-l);
+  font-family:var(--sans); cursor:pointer; transition:background .15s;}
+.rolelist .rolerow:first-of-type{border-top:none;}
+.g-out .rolerow{--rc:var(--green); --rc-ink:#1B7A3C;}
+.rolerow:hover{background:color-mix(in srgb, var(--rc) 5%, #fff);}
+.rolerow[aria-pressed="true"]{background:color-mix(in srgb, var(--rc) 9%, #fff);}
+.rolerow:focus-visible{outline:2px solid var(--ink-2); outline-offset:-2px;}
+.rolerow .lvl{grid-column:1; font-size:10px; letter-spacing:.14em; color:var(--rc-ink); line-height:1;}
+.rolerow .rn{grid-column:1; font-family:var(--disp); font-weight:700; font-size:15.5px; letter-spacing:-.018em; color:var(--ink-2); line-height:1.25;}
+.rolerow .rp{grid-column:1; font-size:13.5px; line-height:1.6; color:var(--ink-2);}
+.rolerow .rw{grid-column:1; font-size:13px; line-height:1.6; color:var(--gray-l); display:flex; gap:9px;}
+.rolerow .rw::before{content:"\2192"; color:var(--rc-ink); flex:none; font-family:var(--mono);}
+.rolerow .use{grid-column:2; grid-row:1 / span 2; align-self:start; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--rc-ink); border:1px solid color-mix(in srgb,var(--rc) 45%,#fff); border-radius:6px; padding:5px 9px; transition:background .15s, color .15s;}
+.rolerow[aria-pressed="true"] .use{background:var(--rc-ink); color:#fff; border-color:var(--rc-ink);}
+@media(min-width:1000px){
+  .rolerow{grid-template-columns:58px minmax(150px,1.05fr) minmax(0,1.25fr) minmax(0,1.3fr) 58px; gap:18px; align-items:baseline; padding:17px 20px;}
+  .rolerow .lvl{grid-column:1;} .rolerow .rn{grid-column:2;} .rolerow .rp{grid-column:3;}
+  .rolerow .rw{grid-column:4;} .rolerow .rw::before{content:none;}
+  .rolerow .use{grid-column:5; grid-row:auto; justify-self:end;}
+}
+.rolereset{display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-size:13px; font-weight:500; color:var(--blue-lo); background:none; border:none; padding:8px 0; cursor:pointer; font-family:var(--sans);}
+.rolereset:hover{text-decoration:underline;}
+.rolereset[hidden]{display:none !important;}
+
+/* origin */
+.origin{display:grid; grid-template-columns:1fr; gap:18px; align-items:center; border-radius:16px; padding:28px 30px; background:var(--ink); color:#fff;}
+@media(min-width:760px){.origin{grid-template-columns:auto 1fr; gap:24px;}}
+.origin .oi{width:46px; height:46px; border-radius:12px; background:rgba(255,255,255,.10); border:1px solid var(--line-d2); display:flex; align-items:center; justify-content:center; color:#fff; flex:none;}
+.origin h2{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--fg-2); margin-bottom:8px;}
+.origin p{font-size:16px; line-height:1.62; color:#fff; max-width:74ch;}
+
+/* pairs */
+.pairs{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding-bottom:4px;}
+.pairs::-webkit-scrollbar{display:none;}
+.pairs:focus-visible{outline:2px solid var(--ink-2); outline-offset:4px;}
+.pair{flex:0 0 264px; scroll-snap-align:start; display:flex; flex-direction:column; gap:9px; border:1px solid var(--line-l); border-radius:14px; padding:21px 22px; background:#fff; min-height:150px; transition:border-color .15s, transform .15s;}
+
+.pair:hover{border-color:var(--blue); transform:translateY(-2px);}
+.pair .pn{font-family:var(--mono); font-size:11.5px; color:var(--blue);}
+.pair h3{font-size:15.5px; line-height:1.24;}
+.pair .pp{font-family:var(--mono); font-size:11px; color:var(--gray-l); margin-top:auto; padding-top:6px;}
+.railbtns{display:flex; gap:8px;}
+.railbtn{width:38px; height:38px; border-radius:9px; border:1px solid var(--line-l2); background:#fff; color:var(--ink-2); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s;}
+.railbtn:hover:not(:disabled){background:var(--wash);}
+.railbtn:disabled{opacity:.35; cursor:default;}
+
+/* ---- the quick-info rail ---- */
+.qfacts{display:flex; flex-wrap:nowrap; gap:8px; margin:0; overflow-x:auto; scrollbar-width:none; padding-bottom:2px;}
+.qfacts::-webkit-scrollbar{display:none;}
+.qf{flex:none;}
+.qf{display:flex; align-items:baseline; gap:7px; border:1px solid var(--line-l2); border-radius:999px; padding:7px 13px; background:#fff;}
+.qf dt{font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l); white-space:nowrap;}
+.qf dd{margin:0; font-size:12.5px; font-weight:500; color:var(--ink-2); white-space:nowrap;}
+.sidecard{display:none;}
+@media(min-width:1040px){
+  .sidecard{display:block; border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:22px 24px;}
+  .sidecard + .sidecard{margin-top:16px;}
+  .sidecard h2{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); margin-bottom:16px;}
+  .qfacts{display:block; overflow:visible; border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:8px 24px;}
+  .qf{display:flex; justify-content:space-between; align-items:baseline; gap:14px; border:none; border-radius:0; padding:14px 0; background:none;}
+  .qf + .qf{border-top:1px solid var(--line-l);}
+  .qf dd{font-family:var(--mono); font-size:12px; text-align:right; white-space:normal;}
+  .qfwrap + .sidecard,.sidecard + .qfwrap{margin-top:16px;}
+}
+.jump{display:flex; flex-direction:column;}
+.jump a{display:flex; align-items:center; gap:11px; font-size:13.5px; line-height:1.45; color:var(--gray-l); padding:11px 0;}
+.jump a + a{border-top:1px solid var(--line-l);}
+.jump a:hover{color:var(--ink-2);}
+.jump a .jd{width:5px; height:5px; border-radius:50%; background:var(--line-l2); flex:none;}
+.jump a:hover .jd{background:var(--blue);}
+.keylist{display:flex; flex-direction:column;}
+.krow{display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:baseline; padding:12px 0; font-size:13px; line-height:1.62; color:var(--gray-l);}
+.krow + .krow{border-top:1px solid var(--line-l);}
+.krow code{font-family:var(--mono); font-size:11px; background:var(--wash); border:1px solid var(--line-l); border-radius:5px; padding:2px 6px; color:var(--ink-2); white-space:nowrap;}
+.krow b{color:var(--ink-2); font-weight:500;}
+
+/* module rail */
+section{padding-block:72px;}
+@media(min-width:900px){section{padding-block:88px;}}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l2);}
+h2.sh{font-size:clamp(22px,3vw,30px); line-height:1.14; margin-block:11px 10px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:80ch; line-height:1.6;}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:34px;}
+.head-row>div:first-child{flex:1 1 520px; min-width:0;}
+.modwrap{background:var(--ink); color:#fff;}
+.modwrap .kicker{color:var(--fg-2);} .modwrap h2.sh{color:#fff;} .modwrap .sd{color:var(--fg-2);}
+.mlist{border:1px solid var(--line-d); border-radius:16px; overflow:hidden; background:var(--panel);}
+.ml{display:grid; grid-template-columns:52px 1fr auto; gap:16px; align-items:center; padding:17px 20px; color:rgba(255,255,255,.88); transition:background .15s;}
+.ml + .ml{border-top:1px solid var(--line-d);}
+.ml:hover{background:rgba(255,255,255,.055);}
+.ml .mn{font-family:var(--mono); font-size:12px; color:var(--blue-hi);}
+.ml .mt{font-size:14.5px; font-family:var(--disp); font-weight:700; letter-spacing:-.018em; white-space:pre-wrap;}
+.ml .mp{font-family:var(--mono); font-size:11px; color:var(--fg-2); white-space:nowrap;}
+.ml.on{background:rgba(59,123,247,.16); color:#fff;}
+.ml.on .mn{color:#fff;}
+.ml.on .here{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#0E0F12; background:#fff; border-radius:5px; padding:3px 8px;}
+.prevnext{display:grid; grid-template-columns:1fr; gap:16px; margin-top:22px;}
+@media(min-width:720px){.prevnext{grid-template-columns:1fr 1fr;}}
+.pn-card{display:flex; flex-direction:column; gap:7px; border:1px solid var(--line-d); border-radius:14px; padding:20px 22px; background:rgba(255,255,255,.04); transition:background .15s;}
+.pn-card:hover{background:rgba(255,255,255,.09);}
+.pn-card .dir{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-2); display:flex; align-items:center; gap:8px;}
+.pn-card.next{text-align:right;} .pn-card.next .dir{justify-content:flex-end;}
+.pn-card .t{font-family:var(--disp); font-weight:700; font-size:16px; color:#fff; letter-spacing:-.02em;}
+.pn-card .p{font-family:var(--mono); font-size:11px; color:var(--fg-2);}
+
+/* maintenance */
+.maint{background:var(--wash); border-top:1px solid var(--line-l);}
+.maint-in{display:grid; grid-template-columns:1fr; gap:30px; padding-block:48px; align-items:center;}
+@media(min-width:900px){.maint-in{grid-template-columns:1.85fr 1fr; gap:48px;}}
+.maint h2{font-size:clamp(20px,2.6vw,25px); line-height:1.16; margin-bottom:12px; max-width:28ch;}
+.maint p{font-size:14.5px; line-height:1.8; color:var(--gray-l); max-width:76ch;}
+.maint p b{color:var(--ink-2); font-weight:500;}
+.maint .more{display:inline-flex; align-items:center; gap:7px; padding-block:6px; font-size:14.5px; font-weight:500; color:var(--blue-lo);}
+.maint .more:hover{text-decoration:underline;}
+.maint-meta{border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:8px 22px;}
+.mm{display:flex; justify-content:space-between; gap:16px; padding:14px 0; font-size:13px; align-items:baseline;}
+.mm + .mm{border-top:1px solid var(--line-l);}
+.mm span{color:var(--gray-l);}
+.mm b{font-family:var(--mono); font-size:12px; font-weight:500; color:var(--ink-2); text-align:right;}
+
+/* save */
+.save{position:relative; overflow:hidden; background:var(--blue-deep);}
+.save .bg{position:absolute; inset:0; background:
+  radial-gradient(700px 400px at 14% 10%, rgba(59,123,247,.95), transparent 62%),
+  radial-gradient(560px 400px at 88% 90%, rgba(47,171,87,.45), transparent 60%), var(--blue-deep);}
+.save .lines{position:absolute; inset:0; opacity:.32;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.save-in{position:relative; display:grid; grid-template-columns:1fr; gap:28px; align-items:center;}
+@media(min-width:900px){.save-in{grid-template-columns:1.85fr 1fr; gap:48px;}}
+.save h2{color:#fff; font-size:clamp(24px,3.4vw,33px); line-height:1.1; max-width:24ch; margin-bottom:12px;}
+.save p{color:rgba(255,255,255,.88); font-size:15px; line-height:1.7; max-width:62ch;}
+.save-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;}
+.save-list{border:1px solid rgba(255,255,255,.22); border-radius:16px; background:rgba(0,0,0,.28); backdrop-filter:blur(8px); padding:10px 24px;}
+.sl{display:flex; align-items:center; gap:13px; padding:15px 0; font-size:14px; line-height:1.5; color:rgba(255,255,255,.88);}
+.sl + .sl{border-top:1px solid rgba(255,255,255,.14);}
+.sl .si{color:#fff; flex:none;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:52px 30px; color:#fff;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:34px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-2); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:22px; font-size:12px; color:var(--fg-2);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .btn,.icon-btn,.pcbtn,.ml,.pair,.pn-card,.railbtn,.skip,.rolerow,.rolerow .use,.jump a .jd{transition:none;}
+  .pair:hover{transform:none;} .pairs{scroll-behavior:auto;}
+}
+</style>
+
+<a class="skip" href="#promptcard">Skip to the prompt</a>
+<nav class="nav" aria-label="Primary"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a class="on" href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="contact.html">Contact</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#save">Why an account</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <button class="avatar-chip" id="avatarChip" type="button" hidden aria-label="Signed in as RV &mdash; click to sign out (preview)">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </span>
+</div></nav>
+
+<main>
+<!-- ============ SEAM ============ -->
+<div class="seam">
+  <div class="bg"></div>
+  <div class="pad seam-in">
+    <svg class="seam-art line" width="34" height="26" viewBox="0 0 34 26" aria-hidden="true">
+      <path class="s2" d="M2 5c3.5-2 8-2 12 1v16c-3.5-3-8.5-3-12-1"/>
+      <path class="s2" d="M2 5v16"/>
+      <rect class="s" x="19" y="3" width="13" height="20" rx="2.5"/>
+      <path class="s3" d="M15.8 13h1.2"/>
+      <rect class="fd" x="23" y="8" width="5" height="5" rx="1"/>
+    </svg>
+    <p class="seam-txt">
+      <b>Page <span data-field="lesson.pages.prompt">207</span></b><span class="dim"> &middot; </span>Module <span data-field="lesson.module">09</span><span class="seam-long">, <span data-field="module.title">Finance &amp; Metrics</span><span class="dim"> &middot; this screen continues that page</span></span>
+    </p>
+    <a class="seam-back" href="home.html#modules">
+      <svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="bl">All 108 frameworks</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============ HEAD ============ -->
+<div class="pad lhead">
+  <div class="hrow">
+    <span class="lnum" data-field="lesson.number">9.1</span>
+    <span class="lev lev-intermediate" data-field="lesson.level">Intermediate</span>
+    <span class="lmod">Module <span data-field="lesson.module">09</span> &middot; <a href="home.html#modules" data-field="module.title">Finance &amp; Metrics</a></span>
+  </div>
+  <h1 class="lt" data-field="lesson.titlePrinted">Unit Economics - LTV:CAC</h1>
+  <p class="lsub" data-field="lesson.subtitle">The two numbers that tell you whether your business model actually works</p>
+</div>
+
+<div class="pad lgrid">
+<!-- ---------- MAIN COLUMN ---------- -->
+<div class="col-main">
+
+  <!-- the prompt -->
+  <div class="blk" id="prompt">
+    <div class="bh">
+      <span class="bi" style="background:#15171C; color:#fff;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-3.5 4L7 16M17 8l3.5 4L17 16M13.5 6l-3 12"/></svg></span>
+      <h2>The prompt</h2>
+      <span class="bn">Copy &amp; paste ready</span>
+    </div>
+    <div class="promptcard" id="promptcard" tabindex="-1">
+      <div class="pc-top">
+        <span class="tag" data-field="lesson.number">9.1</span>
+        <span class="ttl" data-field="lesson.title">Unit Economics - LTV:CAC</span>
+        <span class="up">
+          <button class="pcbtn" id="markBtn" type="button" aria-pressed="false" aria-label="Save this framework to my list (preview — accounts are not live yet)" title="Preview — accounts are not live yet">
+            <svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4-6.5 4v-16a1 1 0 0 1 1-1z"/></svg>
+          </button>
+          <button class="btn btn-blue btn-sm copybtn" id="copyBtn">Copy prompt</button>
+          <span class="copystat" id="copyStat" role="status"></span>
+        </span>
+      </div>
+      <div class="pc-body" id="promptBody" data-field="lesson.promptBody">Act as <span id="roleLine" data-default="a startup finance advisor specialising in unit economics">a startup finance advisor specialising in unit economics</span>.
+
+<span class="k">My business model:</span> <span class="v">[DESCRIBE HOW YOU ACQUIRE AND RETAIN CUSTOMERS]</span>
+<span class="k">Revenue model:</span> <span class="v">[SUBSCRIPTION / TRANSACTION / USAGE-BASED]</span>
+
+Help me calculate and analyse my LTV:CAC:
+
+<span class="k">LTV CALCULATION</span>
+Average Revenue Per Customer (monthly or annual): <span class="v">[X]</span>
+Gross Margin %: <span class="v">[X]</span>
+Average Customer Lifespan or Churn Rate: <span class="v">[X]</span>
+LTV = (ARPC &times; Gross Margin) / Churn Rate
+
+<span class="k">CAC CALCULATION</span>
+Total Sales &amp; Marketing Spend (last period): <span class="v">[X]</span>
+New Customers Acquired (same period): <span class="v">[X]</span>
+CAC = Total Spend / New Customers
+
+<span class="k">ANALYSIS</span>
+1. What is my LTV:CAC ratio?
+2. How does it compare to healthy benchmarks for my model?
+3. What is the payback period (months to recover CAC)?
+4. What one change would most improve this ratio?</div>
+      <div class="pc-foot">
+        <span class="legend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span><span><i class="rl"></i>Swap the role below</span></span>
+      </div>
+    </div>
+    <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span><span><i class="rl"></i>Swap the role below</span></p>
+
+    <div class="tipcard" id="proTipCard">
+      <p class="tlab"><svg class="i ti" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.6 11.9c.4.3.6.7.6 1.2v.4h6v-.4c0-.5.2-.9.6-1.2A6.5 6.5 0 0 0 12 2.5z"/></svg>Pro tip, from the book</p>
+      <p data-field="lesson.proTip">Payback period is often more important than the LTV:CAC ratio for early-stage companies. A 5:1 LTV:CAC sounds excellent, until you realise the payback period is 36 months and you're burning cash for three years before each customer turns profitable. A 2.5:1 ratio with a 9-month payback is often a healthier business than a 5:1 with a 30-month payback.</p>
+    </div>
+  </div>
+
+  <!-- use this when -->
+  <div class="blk" id="usewhen">
+    <div class="bh">
+      <span class="bi" style="background:#FFEBE8; color:#C4382B;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5v5"/><path d="M12 16.8h.01"/><path d="M10.3 3.9L2.5 17.5A2 2 0 0 0 4.2 20.5h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+      <h2>Use this when</h2>
+      <span class="bn">The problem it solves</span>
+    </div>
+    <div class="uwcard"><p data-field="lesson.useWhen">You are acquiring customers and growing revenue but you're not sure whether each customer is genuinely profitable when you account for the full cost of acquiring and serving them. You might be scaling a model that loses money per customer.</p></div>
+  </div>
+
+  <!-- how to use it -->
+  <div class="blk" id="howto">
+    <div class="bh">
+      <span class="bi" style="background:#E8F0FE; color:#1E5CE0;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.5"/><path d="M12 7.6h.01"/></svg></span>
+      <h2>How the framework works</h2>
+      <span class="bn">From the printed page</span>
+    </div>
+    <div class="prose" data-field="lesson.howToUse">
+      <p>LTV:CAC is the foundational unit economics ratio for any customer-acquisition business. LTV (Lifetime Value) is the total revenue a customer generates over their relationship with you, minus the cost to serve them. CAC (Customer Acquisition Cost) is the total cost &mdash; marketing, sales, onboarding &mdash; to acquire one customer. The ratio tells you how much value you get back per dollar spent acquiring a customer. A ratio of 3:1 or higher is generally considered healthy &mdash; meaning every dollar spent on acquisition returns three dollars of lifetime value. Below 1:1 means you are paying more to acquire customers than they are worth.</p>
+      <p>The ratio alone does not tell you the full story without payback period. A business can show a healthy 4:1 ratio while taking three years to recoup each customer's acquisition cost, which is a cash flow problem the ratio hides.</p>
+    </div>
+  </div>
+
+  <!-- the method -->
+  <div class="blk" id="method">
+    <div class="bh">
+      <span class="bi" style="background:#E6F6EC; color:#1B7A3C;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 12h12M4 17h7"/><path d="M19 5.5l2.5 2.5L19 10.5"/></svg></span>
+      <h2>The method, in four moves</h2>
+      <span class="bn">Do these in order</span>
+    </div>
+    <div class="steps" data-field="lesson.steps[]">
+      <div class="step" data-field-item><span class="sn">1</span><p data-field="step.text">Calculate LTV using actual retention data, not assumed churn rates. Real churn is almost always higher than expected.</p></div>
+      <div class="step" data-field-item><span class="sn">2</span><p data-field="step.text">Calculate CAC by dividing total sales and marketing spend by new customers acquired in the same period.</p></div>
+      <div class="step" data-field-item><span class="sn">3</span><p data-field="step.text">Segment LTV and CAC by customer type &mdash; averages hide the fact that some segments are highly profitable and others destroy value.</p></div>
+      <div class="step" data-field-item><span class="sn">4</span><p data-field="step.text">Track the LTV:CAC ratio monthly. Improvement signals a healthier model; decline signals a problem before it becomes a crisis.</p></div>
+    </div>
+  </div>
+
+  <!-- role profiles -->
+  <div class="blk" id="roles">
+    <div class="bh">
+      <span class="bi" style="background:#E8F0FE; color:#1E5CE0;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M16.5 6.2a3.2 3.2 0 0 1 0 5.6M18 19c0-2.6-1-4.3-2.6-5.1"/></svg></span>
+      <h2>Who should run this prompt</h2>
+      <span class="bn">Module role profile</span>
+    </div>
+    <p class="rolelead"><b data-field="roles.question">Who should review your numbers and financial narrative?</b> <span data-field="roles.lead">Numbers do not lie &mdash; but they can mislead when read through the wrong lens. A CFO and an investor look at the same P&amp;L and ask completely different questions. A customer's finance team looks at your pricing and asks a question neither of them thought of. Use this page to choose who is in the room before you present, model, or decide based on your financial data.</span></p>
+
+    <p class="rolehint">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 13.5h5.5L11 21l8-10.5h-5.5z"/></svg>
+      Choose any role to drop it into the prompt above. Only the highlighted opening clause changes &mdash; the rest of the prompt stays exactly as printed.
+    </p>
+
+    <div class="rolegrp g-in">
+      <div class="gh"><span class="gt">Internal roles</span><span class="gd">Think from inside the organisation</span></div>
+      <div class="rolelist" role="group" aria-label="Internal roles" data-field="roles.internal[]">
+        <div class="rolehead" aria-hidden="true"><span>Level</span><span>Role</span><span>They prioritise</span><span>Best used when</span><span></span></div>
+        
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: CFO (venture-backed startup)" data-role="a CFO (venture-backed startup)"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;&#9670;&#9670;&#9670;&#9670;</span><span class="rn" data-field="role.role">CFO (venture-backed startup)</span><span class="rp" data-field="role.priorities">Runway, unit economics, scenario discipline</span><span class="rw" data-field="role.bestWhen">Reviewing the financial model before board or investor meetings</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: VP Finance" data-role="a VP Finance"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;&#9670;&#9670;&#9670;</span><span class="rn" data-field="role.role">VP Finance</span><span class="rp" data-field="role.priorities">Forecast accuracy, budget vs actuals, burn management</span><span class="rw" data-field="role.bestWhen">Monthly financial review and reforecast conversations</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Head of Revenue Operations" data-role="a Head of Revenue Operations"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;&#9670;&#9670;</span><span class="rn" data-field="role.role">Head of Revenue Operations</span><span class="rp" data-field="role.priorities">Pipeline health, conversion rates, revenue predictability</span><span class="rw" data-field="role.bestWhen">Connecting sales activity to financial outcomes</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Financial Analyst" data-role="a Financial Analyst"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;&#9670;</span><span class="rn" data-field="role.role">Financial Analyst</span><span class="rp" data-field="role.priorities">Internal consistency &mdash; where are the assumptions hiding?</span><span class="rw" data-field="role.bestWhen">Stress-testing any financial model before presenting it</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Metrics and Analytics Lead" data-role="a Metrics &amp; Analytics Lead"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;</span><span class="rn" data-field="role.role">Metrics &amp; Analytics Lead</span><span class="rp" data-field="role.priorities">Is this metric actually measuring what we think it is?</span><span class="rw" data-field="role.bestWhen">Designing your North Star metric and KPI framework</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Accountant" data-role="an Accountant"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9670;</span><span class="rn" data-field="role.role">Accountant</span><span class="rp" data-field="role.priorities">What is real, recognised revenue &mdash; not what we booked?</span><span class="rw" data-field="role.bestWhen">When revenue recognition or cash timing is unclear</span><span class="use">Use</span></button>
+      </div>
+    </div>
+
+    <div class="rolegrp g-out">
+      <div class="gh"><span class="gt">Outside perspectives</span><span class="gd">Challenge your blind spots</span></div>
+      <div class="rolelist" role="group" aria-label="Outside perspectives" data-field="roles.outside[]">
+        <div class="rolehead" aria-hidden="true"><span>Level</span><span>Role</span><span>They prioritise</span><span>Best used when</span><span></span></div>
+        
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Series A Lead Investor" data-role="a Series A Lead Investor"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9672;</span><span class="rn" data-field="role.role">Series A Lead Investor</span><span class="rp" data-field="role.priorities">Does this model work at 10x the current scale?</span><span class="rw" data-field="role.bestWhen">Before any fundraising conversation or investor update</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Pitch Coach" data-role="a Pitch Coach (YC / Sequoia trained)"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9672;</span><span class="rn" data-field="role.role">Pitch Coach</span><span class="rp" data-field="role.priorities">Does this narrative make an investor lean in?</span><span class="rw" data-field="role.bestWhen">Refining the financial story for external audiences</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: Auditor" data-role="an Auditor"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9672;</span><span class="rn" data-field="role.role">Auditor</span><span class="rp" data-field="role.priorities">Where would this unravel under external scrutiny?</span><span class="rw" data-field="role.bestWhen">Before due diligence, acquisition, or regulatory review</span><span class="use">Use</span></button>
+        <button class="rolerow" type="button" data-field-item aria-pressed="false" aria-label="Use the role: CFO of Your Biggest Customer" data-role="the CFO of Your Biggest Customer"><span class="lvl" aria-hidden="true" data-field="role.seniority">&#9672;</span><span class="rn" data-field="role.role">CFO of Your Biggest Customer</span><span class="rp" data-field="role.priorities">Does your pricing model make sense to the buyer's finance team?</span><span class="rw" data-field="role.bestWhen">When enterprise deals are stalling at the procurement stage</span><span class="use">Use</span></button>
+      </div>
+    </div>
+
+    <p class="senkey"><span><b>&#9670;&#9670;&#9670;&#9670;&#9670; &rarr; &#9670;</b> seniority, board level down to specialist</span><span><b>&#9672;</b> outside the organisation</span></p>
+
+    <div class="sharpen" data-field="roles.sharpen">
+      <h3>How to make any role sharper</h3>
+      <ol>
+        <li><b>Add years of experience.</b> <code>&hellip;with 15 years in enterprise SaaS</code> produces different depth than just the title.</li>
+        <li><b>Add what they care most about.</b> <code>You care most about [X]</code> shapes every word of the output.</li>
+        <li><b>Add their communication style.</b> <code>Be direct. Flag risks first. No jargon.</code> changes the tone entirely.</li>
+      </ol>
+      <a class="xref" href="#">See also: 1.2 Role Prompting &mdash; The Expert Chair
+        <svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <button class="rolereset" id="roleReset" type="button" hidden>
+      <svg class="i" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 1 1-2.9-6.4"/><path d="M20.5 4.2V9h-4.8"/></svg>
+      Put the book's own role back
+    </button>
+  </div>
+
+  <!-- origin -->
+  <div class="blk" id="origin">
+    <div class="origin">
+      <span class="oi"><svg class="i" width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 4.5h-5.5a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2H20z"/></svg></span>
+      <div>
+        <h2>Where the framework comes from</h2>
+        <p data-field="lesson.origin">SaaS &amp; venture capital methodology &mdash; LTV:CAC framework widely standardised in the 2010s</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- pairs -->
+  <div class="blk" id="pairs">
+    <div class="bh">
+      <span class="bi" style="background:#F4F5F7; color:#1B1C1F;"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.5a4.2 4.2 0 0 0 5.7 0l2.8-2.8a4.2 4.2 0 0 0-5.7-5.7l-1.4 1.4"/><path d="M14 10.5a4.2 4.2 0 0 0-5.7 0l-2.8 2.8a4.2 4.2 0 0 0 5.7 5.7l1.4-1.4"/></svg></span>
+      <h2>Pairs well with</h2>
+      <span class="bn">As printed with this framework</span>
+      <span class="railbtns">
+        <button class="railbtn" type="button" id="railPrev" aria-label="Scroll to earlier frameworks"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="railbtn" type="button" id="railNext" aria-label="Scroll to later frameworks"><svg class="i" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </span>
+    </div>
+    <div class="pairs" id="pairsRail" data-field="lesson.pairs[]" tabindex="0" role="region" aria-label="Related frameworks, scrollable">
+      <a class="pair" href="#" data-field-item><span class="pn" data-field="pair.number">9.2</span><h3 data-field="pair.title">Burn Rate &amp; Runway</h3><span class="pp">Pages <span data-field="pair.pages.intro">208</span>&ndash;<span data-field="pair.pages.prompt">209</span></span></a>
+      <a class="pair" href="#" data-field-item><span class="pn" data-field="pair.number">5.9</span><h3 data-field="pair.title">AARRR  Pirate Metrics</h3><span class="pp">Pages <span data-field="pair.pages.intro">130</span>&ndash;<span data-field="pair.pages.prompt">131</span></span></a>
+      <a class="pair" href="#" data-field-item><span class="pn" data-field="pair.number">9.3</span><h3 data-field="pair.title">North Star Metric &amp; OMTM</h3><span class="pp">Pages <span data-field="pair.pages.intro">210</span>&ndash;<span data-field="pair.pages.prompt">211</span></span></a>
+      <a class="pair" href="#" data-field-item><span class="pn" data-field="pair.number">9.6</span><h3 data-field="pair.title">3-Scenario Financial Model</h3><span class="pp">Pages <span data-field="pair.pages.intro">216</span>&ndash;<span data-field="pair.pages.prompt">217</span></span></a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ---------- QUICK INFO RAIL ---------- -->
+<aside class="col-side" aria-label="At a glance">
+  <div class="sidecard">
+    <h2>On this page</h2>
+    <nav class="jump" aria-label="Sections of this framework">
+      <a href="#prompt"><span class="jd"></span>The prompt</a>
+      <a href="#usewhen"><span class="jd"></span>Use this when</a>
+      <a href="#howto"><span class="jd"></span>How the framework works</a>
+      <a href="#method"><span class="jd"></span>The method, in four moves</a>
+      <a href="#roles"><span class="jd"></span>Who should run this prompt</a>
+      <a href="#origin"><span class="jd"></span>Where it comes from</a>
+      <a href="#pairs"><span class="jd"></span>Pairs well with</a>
+      <a href="#module"><span class="jd"></span>The rest of the module</a>
+    </nav>
+  </div>
+
+  <div class="qfwrap">
+    <dl class="qfacts">
+      <div class="qf"><dt>Level</dt><dd data-field="lesson.level">Intermediate</dd></div>
+      <div class="qf"><dt>Printed on</dt><dd>Pages <span data-field="lesson.pages.intro">206</span>&ndash;<span data-field="lesson.pages.prompt">207</span></dd></div>
+      <div class="qf"><dt>Module</dt><dd><span data-field="lesson.module">09</span>, <span data-field="module.title">Finance &amp; Metrics</span></dd></div>
+      <div class="qf"><dt>In module</dt><dd><span data-field="module.lessonCount">9</span> frameworks</dd></div>
+      <div class="qf"><dt>Costs</dt><dd>Nothing, no account</dd></div>
+    </dl>
+  </div>
+
+  <div class="sidecard">
+    <h2>What to replace</h2>
+    <div class="keylist">
+      <div class="krow"><code>[X]</code><span>Your own figure. <b>A real one</b> &mdash; an estimate you can defend beats a placeholder.</span></div>
+      <div class="krow"><code>[A / B]</code><span>Where a bracket lists options, keep <b>one</b> and delete the rest.</span></div>
+      <div class="krow"><code>[DESCRIBE&hellip;]</code><span>Two or three sentences. <b>Specifics</b>, not adjectives.</span></div>
+      <div class="krow"><code>Act as&hellip;</code><span>The highlighted role. <b>Swap it</b> from the role index below.</span></div>
+    </div>
+  </div>
+
+</aside>
+</div>
+
+<!-- ============ MODULE ============ -->
+<div class="modwrap" id="module"><section><div class="pad">
+  <div class="head-row">
+    <div>
+      <p class="kicker">Module <span data-field="lesson.module">09</span> &mdash; <span data-field="module.title">Finance &amp; Metrics</span></p>
+      <h2 class="sh" data-field="module.subtitle">Know your numbers. Own your narrative.</h2>
+      <p class="sd"><span data-field="module.lessonCount">9</span> frameworks, printed on pages <span data-field="module.pageRange">206&ndash;223</span>.</p>
+    </div>
+    <a class="btn btn-line btn-sm" href="home.html#modules">All 10 modules</a>
+  </div>
+
+  <div class="mlist" data-field="module.lessons[]">
+    <div class="ml on" aria-current="page"><span class="mn" data-field="row.number">9.1</span><span class="mt" data-field="row.title">Unit Economics - LTV:CAC</span><span class="here">You are here</span></div>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.2</span><span class="mt" data-field="row.title">Burn Rate &amp; Runway</span><span class="mp">pp. <span data-field="row.pages.intro">208</span>&ndash;<span data-field="row.pages.prompt">209</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.3</span><span class="mt" data-field="row.title">North Star Metric &amp; OMTM</span><span class="mp">pp. <span data-field="row.pages.intro">210</span>&ndash;<span data-field="row.pages.prompt">211</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.4</span><span class="mt" data-field="row.title">AARRR Funnel Analysis  Deep</span><span class="mp">pp. <span data-field="row.pages.intro">212</span>&ndash;<span data-field="row.pages.prompt">213</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.5</span><span class="mt" data-field="row.title">Investor Narrative  Pitch Spine</span><span class="mp">pp. <span data-field="row.pages.intro">214</span>&ndash;<span data-field="row.pages.prompt">215</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.6</span><span class="mt" data-field="row.title">3-Scenario Financial Model</span><span class="mp">pp. <span data-field="row.pages.intro">216</span>&ndash;<span data-field="row.pages.prompt">217</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.7</span><span class="mt" data-field="row.title">Balanced Scorecard</span><span class="mp">pp. <span data-field="row.pages.intro">218</span>&ndash;<span data-field="row.pages.prompt">219</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.8</span><span class="mt" data-field="row.title">Cash Conversion Cycle</span><span class="mp">pp. <span data-field="row.pages.intro">220</span>&ndash;<span data-field="row.pages.prompt">221</span></span></a>
+    <a class="ml" href="#" data-field-item><span class="mn" data-field="row.number">9.9</span><span class="mt" data-field="row.title">Rule of 40</span><span class="mp">pp. <span data-field="row.pages.intro">222</span>&ndash;<span data-field="row.pages.prompt">223</span></span></a>
+  </div>
+
+  <nav class="prevnext" aria-label="Previous and next framework">
+    <a class="pn-card" href="#">
+      <span class="dir"><svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span>
+      <span class="t"><span data-field="prev.number">8.10</span> <span data-field="prev.title">Expected Value</span></span>
+      <span class="p">Module <span data-field="prev.module">08</span> &middot; pages <span data-field="prev.pages.intro">204</span>&ndash;<span data-field="prev.pages.prompt">205</span></span>
+    </a>
+    <a class="pn-card next" href="#">
+      <span class="dir">Next<svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="t"><span data-field="next.number">9.2</span> <span data-field="next.title">Burn Rate &amp; Runway</span></span>
+      <span class="p">Module <span data-field="next.module">09</span> &middot; pages <span data-field="next.pages.intro">208</span>&ndash;<span data-field="next.pages.prompt">209</span></span>
+    </a>
+  </nav>
+</div></section></div>
+
+<!-- ============ MAINTENANCE ============ -->
+<div class="maint"><div class="pad maint-in">
+  <div>
+    <h2>When this page changes, your copy of the book does not have to.</h2>
+    <p>The book prints the framework. This page keeps it &mdash; and keeps the prompt current, because prompting technique moves faster than print does. <b>When it moves, this page is rewritten and the code in your copy keeps pointing at it.</b> No second edition, no replacement purchase, no account.</p>
+    <p style="margin-top:10px;">If something here looks wrong &mdash; a prompt that does not match its framework, a figure that reads oddly &mdash; <a class="more" href="contact.html">tell Raphy</a>. That correction reaches every printed copy at once.</p>
+  </div>
+  <div class="maint-meta">
+    <div class="mm"><span>Framework</span><b><span data-field="lesson.number">9.1</span> of 108</b></div>
+    <div class="mm"><span>Printed on</span><b>Pages <span data-field="lesson.pages.intro">206</span>&ndash;<span data-field="lesson.pages.prompt">207</span></b></div>
+    <div class="mm"><span>Prompt extracted</span><b data-field="lesson.extractedAt">18 Sep 2026</b></div>
+    <div class="mm"><span>Costs to read</span><b>Nothing, no account</b></div>
+  </div>
+</div></div>
+
+<!-- ============ SAVE ============ -->
+<section class="save" id="save">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad save-in">
+    <div>
+      <h2>Copying is free. An account keeps them.</h2>
+      <p>Nothing on this page is behind a login and nothing ever will be. Save any prompt to your own list, pick up on another device, and send a colleague a link with your name on it. No card, no trial, no paywall on the prompts themselves.</p>
+      <div class="save-btns">
+        <a class="btn btn-white" href="#">Create an account</a>
+        <a class="btn btn-line" href="how-to-use.html">See how it works</a>
+      </div>
+    </div>
+    <div class="save-list">
+      <div class="sl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4-6.5 4v-16a1 1 0 0 1 1-1z"/></svg><span>Save this framework to your own list</span></div>
+      <div class="sl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span>Pick up where you left off on another device</span></div>
+      <div class="sl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M17 8.5v5M14.5 11h5"/></svg><span>Send a colleague a link with your name on it</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="contact.html#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="for-institutions.html#acquire">Bulk orders</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  document.documentElement.lang='en-GB';
+  var $=function(id){return document.getElementById(id);};
+
+  var lb=$('loginBtn'), ac=$('avatarChip');
+  if(lb&&ac){
+    lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; ac.focus(); });
+    ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; lb.focus(); });
+  }
+
+  var stat=$('copyStat');
+  var say=function(t){ if(stat) stat.textContent=t; };
+
+  /* ---- role switcher: rewrites ONLY the highlighted clause, never the rest ---- */
+  var roleLine=$('roleLine'), reset=$('roleReset');
+  var roleBtns=Array.prototype.slice.call(document.querySelectorAll('.rolerow'));
+  if(roleLine&&roleBtns.length){
+    var deflt=roleLine.getAttribute('data-default')||roleLine.textContent;
+    var apply=function(btn){
+      var txt=btn?btn.getAttribute('data-role'):deflt;
+      roleLine.textContent=txt;
+      roleBtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b===btn)); });
+      if(reset) reset.hidden=!btn;
+      say(btn ? ('Prompt role set to '+txt) : 'The book’s own role is back');
+    };
+    roleBtns.forEach(function(b){
+      b.addEventListener('click',function(){
+        apply(b.getAttribute('aria-pressed')==='true' ? null : b);
+      });
+    });
+    if(reset) reset.addEventListener('click',function(){ apply(null); });
+  }
+
+  /* ---- copy: the prompt body only, exactly as shown ---- */
+  var btn=$('copyBtn'), body=$('promptBody');
+  if(btn&&body){
+    var label=btn.textContent, busy=false;
+    btn.addEventListener('click',function(){
+      if(busy) return; busy=true;
+      var text=body.innerText;
+      var done=function(ok){
+        btn.textContent = ok ? 'Copied' : 'Select and copy';
+        btn.classList.toggle('done', ok);
+        say(ok ? 'Prompt copied to clipboard' : 'Could not copy — select the prompt and copy it manually');
+        setTimeout(function(){ btn.textContent=label; btn.classList.remove('done'); busy=false; },2200);
+      };
+      var settled=false, finish=function(ok){ if(settled) return; settled=true; done(ok); };
+      setTimeout(function(){ finish(false); },3000);
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){finish(true);},function(){finish(false);});
+      } else {
+        var ta=document.createElement('textarea'); ta.value=text;
+        ta.setAttribute('readonly',''); ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+        document.body.removeChild(ta); finish(ok);
+      }
+    });
+  }
+
+  var mk=$('markBtn');
+  if(mk){
+    mk.addEventListener('click',function(){
+      var on = mk.getAttribute('aria-pressed')==='true';
+      mk.setAttribute('aria-pressed', on ? 'false' : 'true');
+      mk.setAttribute('aria-label', on ? 'Save this framework to my list' : 'Saved to my list — click to remove');
+      say(on ? 'Removed from your list' : 'Saved to your list (preview)');
+    });
+  }
+
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
+  var smooth=function(){ return (RM&&RM.matches) ? 'auto' : 'smooth'; };
+  var rail=$('pairsRail'), rp=$('railPrev'), rn=$('railNext');
+  if(rail&&rp&&rn){
+    var step=function(){ var c=rail.querySelector('.pair'); return c ? c.offsetWidth+14 : 272; };
+    var sync=function(){
+      rp.disabled = rail.scrollLeft < 8;
+      rn.disabled = rail.scrollLeft > rail.scrollWidth - rail.clientWidth - 8;
+    };
+    rp.addEventListener('click',function(){ rail.scrollBy({left:-step(),behavior:smooth()}); });
+    rn.addEventListener('click',function(){ rail.scrollBy({left:step(),behavior:smooth()}); });
+    rail.addEventListener('scroll',sync); window.addEventListener('resize',sync); sync();
+  }
+})();
+</script>
