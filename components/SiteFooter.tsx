@@ -51,10 +51,10 @@ export function SiteFooter() {
           </div>
           <div className={styles.footCol}>
             <p className={styles.footColLabel}>Buy &amp; contact</p>
-            <Link href="#">For business</Link>
-            <Link href="#">For institutions</Link>
+            <Link href="/for-business">For business</Link>
+            <Link href="/for-institutions">For institutions</Link>
             <Link href="#">Bulk orders</Link>
-            <Link href="#">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
         <div className={styles.footBot}>
