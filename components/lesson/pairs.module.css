@@ -1,0 +1,128 @@
+.blk {
+  min-width: 0;
+}
+.bh {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.bi {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.bh h2 {
+  font-size: clamp(19px, 2.3vw, 23px);
+  line-height: 1.18;
+}
+.bn {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--gray-l);
+  white-space: nowrap;
+}
+@media (max-width: 719px) {
+  .bn,
+  .railBtns {
+    display: none;
+  }
+}
+.railBtns {
+  display: flex;
+  gap: 8px;
+}
+.railBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  border: 1px solid var(--line-l2);
+  background: #fff;
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.railBtn:hover:not(:disabled) {
+  background: var(--wash);
+}
+.railBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pairs {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.pairs::-webkit-scrollbar {
+  display: none;
+}
+.pairs:focus-visible {
+  outline: 2px solid var(--ink-2);
+  outline-offset: 4px;
+}
+.pair {
+  flex: 0 0 264px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border: 1px solid var(--line-l);
+  border-radius: 14px;
+  padding: 21px 22px;
+  background: #fff;
+  min-height: 150px;
+  transition:
+    border-color 0.15s,
+    transform 0.15s;
+}
+a.pair:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+.pn {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--blue);
+}
+.pair h3 {
+  font-size: 15.5px;
+  line-height: 1.24;
+  /* titles render exactly as stored, damaged dashes included — see DECISIONS.md */
+  white-space: pre-wrap;
+}
+.pp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray-l);
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .railBtn,
+  .pair {
+    transition: none;
+  }
+  a.pair:hover {
+    transform: none;
+  }
+  .pairs {
+    scroll-behavior: auto;
+  }
+}
