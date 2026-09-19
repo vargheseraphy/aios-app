@@ -316,6 +316,10 @@ large-text-only guarantee and increasing those two font sizes slightly.
 
 ## Phase 7 — /for-business, /for-institutions, /contact built without a locked HTML source
 
+**Superseded by Phase 7b below** — Raphy supplied real locked HTML for all three shortly after
+this landed, and the pages were rebuilt from that. Kept as a historical record of the reasoning
+at the time, not as a description of what's currently shipped.
+
 PRD.md lists these three (plus `/about`, already out of scope per this file's earlier "Scope
 taken from BUILD-PROMPT.md" note) as pages Raphy would hand-design directly in HTML, the same
 way home/why-this-book/how-to-use/who-its-for were. No such HTML exists in
@@ -344,6 +348,55 @@ the header's "Why frameworks" link pointed at the home page's own `#why` anchor 
 full `/why-this-book` route (How to use and Who it's for had already been upgraded to real page
 links in Phase 4, this one was missed); and the footer's For business/For institutions/Contact
 rows were `#` placeholders now pointing at the real routes.
+
+## Phase 7b — for-business/for-institutions/contact re-ported from real locked designs
+
+Raphy supplied real hand-designed HTML for all three pages — `docs/design/pages/for-business.html`,
+`for-institution.html`, `contact.html` — each carrying the same "DIRECTION CONTRACT" authoring
+comment the original four locked pages have, confirming they're genuine specs from the same
+source, not placeholders. These supersede Phase 7's from-scratch build entirely; the earlier
+version (department-agnostic feature cards, a simple contact form) is fully replaced.
+
+Verified every module/lesson the designs cite against the real `content/` data before porting —
+all ten module titles and lesson counts, and the five specific lesson citations checked
+(4.2, 5.1, 7.1, 6.5, 9.3), match exactly (the mockup's prompt-card titles are shortened display
+labels — e.g. "SPIN Discovery Call" vs the real "SPIN Selling - Discovery Call" — so the
+rendered card uses the real title via `PromptPreviewCard`, same convention as the why-this-book/
+how-to-use/who-its-for prompt cards). Nothing needed substituting.
+
+**Content/design separation, per Raphy's explicit request** ("hope you are designing in a way
+that content and design are separate"): all three pages' copy — headings, body paragraphs,
+department situations, shelf-test answers, triage rows, form hints — lives in
+`lib/pages-content.ts` as typed data, not embedded in JSX. Components consume it as props.
+Real book data (module titles, lesson counts, prompt text, pairings) is never duplicated into
+that file — only a reference (module number, lesson file id) is stored there, resolved live via
+`lib/content.ts` at render time, so the content module can never drift from the actual book data
+it points at. `components/RichText.tsx` renders `**bold**` markers so copy can carry the locked
+design's inline emphasis without embedding markup in the data.
+
+**This same separation does not yet exist for `/`, `/why-this-book`, `/how-to-use`,
+`/who-its-for`** — those four were built in Phases 3-4, before this requirement was stated, and
+hardcode their copy directly in JSX (see e.g. `app/why-this-book/page.tsx`). Not refactored here
+— it would be a substantial, unrelated change to four already-shipped pages — but flagged
+explicitly so the inconsistency is a known, recorded gap rather than a silent partial
+application of something Raphy asked for once and got on 3 of 8 pages.
+
+One small scoped exception: the "faster than writing" aside on `/contact` links to three other
+pages inline within its own sentences (genuinely mixed prose-and-links, not a list of fields) —
+composed directly in `app/contact/page.tsx` rather than forced into the content data shape.
+
+The contact form's honest "not connected yet" framing (already the from-scratch build's
+approach) is now the locked design's own wording verbatim — `lib/actions/contact.ts`'s success
+message was updated to match exactly, since the previous "your message has been received"
+phrasing overstated what happens (nothing is durably stored, only logged to server output).
+
+**Global nav is not page-customized to match each locked mockup's own nav bar.** The mockups for
+for-business/for-institutions/contact each swap one nav slot for "On this page" styling (e.g.
+for-business.html's nav shows "For business" with `class="on"` in place of "FAQ"). This site
+uses one shared `SiteHeader` across every route (a Phase 4 decision, not changed here) rather
+than per-page nav content — matching that exactly would mean making the nav page-aware, a larger
+change than this pass's scope. The three pages remain fully reachable via the footer (already
+fixed in Phase 7) even without a matching top-nav entry.
 
 ## Items needing Raphy before this goes live
 
@@ -379,10 +432,16 @@ rows were `#` placeholders now pointing at the real routes.
   manuscript OCR (confirmed on 5 of 108 lessons). The Copy button on every `/m{module}/{lesson}`
   page currently copies all of it. Worth splitting into separate fields at the source so the
   Copy button — the entire point of the QR path — copies only the intended prompt.
-- `/for-business`, `/for-institutions` and `/contact` were built without a locked HTML source
-  (see the Phase 7 note above) — review the page structure and copy against Raphy's own design
-  if/when he makes one for these, the way the original four pages were built by porting his
-  markup rather than the reverse.
+- A real pixel-fidelity check of `/for-business`, `/for-institutions` and `/contact` at 400px,
+  768px and 1280px against their locked HTML sources (Phase 7b) — same outstanding check as the
+  original four pages, not yet done for these three either.
+- The global nav isn't page-customized to match each locked mockup's own "on this page" nav
+  state for for-business/for-institutions/contact (see Phase 7b) — cosmetic only, all three
+  pages are fully reachable via the footer.
+- Content/design separation (Phase 7b, at Raphy's explicit request) only covers for-business,
+  for-institutions and contact — `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` still
+  hardcode copy in JSX from Phases 3-4, before the requirement existed. Worth a follow-up pass
+  extracting those four into the same `lib/pages-content.ts` pattern for consistency.
 - The `/contact` form has no email transport wired up — submissions are logged server-side only
   (see `lib/actions/contact.ts`, `.env.example`'s `CONTACT_NOTIFY_EMAIL`). Needs a real provider
   (e.g. Resend) integrated before this form is actually useful for reaching Raphy.
