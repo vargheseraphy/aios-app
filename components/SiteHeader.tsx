@@ -9,8 +9,9 @@ const NAV_LINKS = [
   { href: "/#modules", label: "Modules" },
   { href: "/how-to-use", label: "How to use" },
   { href: "/who-its-for", label: "Who it's for" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "#", label: "Articles" },
+  { href: "/for-business", label: "For business" },
+  { href: "/for-institutions", label: "For institutions" },
+  { href: "/contact", label: "Contact" },
 ];
 
 /**
