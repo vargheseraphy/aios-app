@@ -114,3 +114,29 @@ within the established design system instead — see DECISIONS.md for the caveat
       instead of `#` placeholders
 - [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
       pass; all three new routes build static; the 118 QR routes are unaffected
+
+## Phase 7b — re-port from Raphy's real locked designs
+
+Raphy supplied real hand-designed HTML for all three (`docs/design/pages/for-business.html`,
+`for-institution.html`, `contact.html`), superseding Phase 7's from-scratch build. Re-ported
+properly this time, plus separated page copy from layout per Raphy's explicit request.
+
+- [x] `lib/pages-content.ts` — typed copy for all three pages, separate from the components
+      that render it; module/lesson references resolve live via `lib/content.ts`, never
+      duplicated as static text
+- [x] `components/RichText.tsx` — renders `**bold**` markers so content strings can carry
+      inline emphasis without embedding JSX/HTML in data
+- [x] `/for-business` rebuilt: sticky scroll-spy department rail (`DeptRail`), five
+      departments each with real modules + one real prompt via `PromptPreviewCard`, coverage
+      grid, rollout steps, order band
+- [x] `/for-institutions` rebuilt: three shelf tests, student-mechanism walkthrough with a
+      real prompt, syllabus table sourced live from `getAllModules()`, edition section,
+      acquisition band
+- [x] `/contact` rebuilt: triage section (three answered-before-you-write rows), who-answers
+      dual cards, topic-pill form with a live per-topic hint, honest "not connected yet"
+      status matching the locked copy exactly
+- [x] `SubscribeSection` parametrized (subtext/placeholder/note) to match each page's small
+      copy differences instead of forking the component
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
+      pass; 131 routes total, all three pages static; QR routes and their zero-Supabase
+      guarantee unaffected
