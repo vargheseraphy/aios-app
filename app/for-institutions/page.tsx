@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getLesson, moduleParam } from "@/lib/content";
+import { BuySection } from "@/components/marketing/BuySection";
+import { SubscribeSection } from "@/components/marketing/SubscribeSection";
 import styles from "@/components/for-institutions/for-institutions.module.css";
 
 const COURSE_EXAMPLES: Array<{ module: number; fileId: string }> = [
@@ -165,6 +167,31 @@ export default function ForInstitutionsPage() {
           </div>
         </div>
       </section>
+
+      {/* ============ CTA ============ */}
+      <section className={styles.cta}>
+        <div className={styles.ctaBg} />
+        <div className={`pad ${styles.ctaIn}`}>
+          <div>
+            <h2>Considering this for a course or the library?</h2>
+            <p>
+              Tell us the course, the term size, or how many copies the library needs — we&rsquo;ll
+              help you work out what fits.
+            </p>
+          </div>
+          <div className={styles.ctaBtns}>
+            <Link className="btn btn-white" href="/contact">
+              Talk to us
+            </Link>
+            <Link className="btn btn-line" href="/">
+              Browse the frameworks free
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <BuySection />
+      <SubscribeSection />
     </main>
   );
 }
