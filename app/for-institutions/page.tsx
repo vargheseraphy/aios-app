@@ -52,6 +52,64 @@ export default function ForInstitutionsPage() {
           </div>
         </div>
       </header>
+
+      {/* ============ WHY IT FITS A COURSE ============ */}
+      <section className="dark">
+        <div className="pad">
+          <div className="head-row">
+            <div>
+              <div className="kicker">Why it fits a course</div>
+              <h2 className="sh" style={{ maxWidth: "32ch" }}>
+                Structured the way a syllabus already is.
+              </h2>
+            </div>
+          </div>
+          <div className={styles.diffs}>
+            <div className={`${styles.diff} ${styles.cBlue}`}>
+              <span className={styles.diffIc}>
+                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="7.5" height="7.5" rx="2" />
+                  <rect x="13.5" y="3" width="7.5" height="7.5" rx="2" />
+                  <rect x="3" y="13.5" width="7.5" height="7.5" rx="2" />
+                  <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2" />
+                </svg>
+              </span>
+              <h3>Ten modules, one per unit</h3>
+              <p>Strategy, business design, market, sales, marketing, team, operations, decisions, finance, self-leadership — a term&rsquo;s worth of units already scoped.</p>
+            </div>
+            <div className={`${styles.diff} ${styles.cRed}`}>
+              <span className={styles.diffIc}>
+                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-3.6 3.6-6.2 8-6.2s8 2.6 8 6.2" />
+                </svg>
+              </span>
+              <h3>Every student gets the same starting point</h3>
+              <p>No two students arrive with the same AI habits. A shared module 1 puts everyone on the same mental model before the coursework needs it.</p>
+            </div>
+            <div className={`${styles.diff} ${styles.cYellow}`}>
+              <span className={styles.diffIc}>
+                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
+                  <path d="M12 3v7M12 10L6 20M12 10l6 10" />
+                  <circle cx="12" cy="3" r="1.8" />
+                </svg>
+              </span>
+              <h3>A worked example on every page</h3>
+              <p>Each framework ends in a real, paste-ready prompt with bracketed placeholders — something a student can run, not just read about.</p>
+            </div>
+            <div className={`${styles.diff} ${styles.cGreen}`}>
+              <span className={styles.diffIc}>
+                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                  <path d="M7 9.5h6M7 13.5h4" />
+                </svg>
+              </span>
+              <h3>Free to browse, no login for a student</h3>
+              <p>Every prompt is open on this site with no account required, so assigning a reading never means chasing down sign-ins first.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
