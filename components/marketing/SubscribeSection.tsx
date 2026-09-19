@@ -2,13 +2,25 @@
 
 import styles from "./marketing.module.css";
 
+interface SubscribeSectionProps {
+  subtext?: string;
+  placeholder?: string;
+  note?: string;
+}
+
 /**
- * Ported verbatim from the locked pages' `.news` band — identical on every
- * page. No newsletter backend exists (see DECISIONS.md's never-invent
- * list), so this prevents the default submit and does nothing else, same
- * as the source HTML's own demo form.
+ * Ported from the locked pages' `.news` band — identical structure on
+ * every page, with a couple of pages tweaking the subtext, email
+ * placeholder or adding a closing note (contact.html's "connected before
+ * launch" line). No newsletter backend exists (see DECISIONS.md's
+ * never-invent list), so this prevents the default submit and does
+ * nothing else, same as the source HTML's own demo form.
  */
-export function SubscribeSection() {
+export function SubscribeSection({
+  subtext = "A prompt worth running and the decision it is meant for. No course pitches.",
+  placeholder = "you@company.com",
+  note,
+}: SubscribeSectionProps) {
   return (
     <section className={styles.news} id="subscribe">
       <div className="pad">
@@ -21,17 +33,18 @@ export function SubscribeSection() {
           </span>
           <div className={styles.newsTxt}>
             <b>One framework in your inbox, every other week.</b>
-            <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+            <span>{subtext}</span>
           </div>
           <form className={styles.newsForm} onSubmit={(e) => e.preventDefault()}>
             <label htmlFor="newsEmail" className="vh">
               Email address
             </label>
-            <input id="newsEmail" type="email" placeholder="you@company.com" autoComplete="email" />
+            <input id="newsEmail" type="email" placeholder={placeholder} autoComplete="email" />
             <button className={`btn btn-blue ${styles.newsBtn}`} type="submit">
               Subscribe
             </button>
           </form>
+          {note && <p className={styles.newspend}>{note}</p>}
         </div>
       </div>
     </section>
