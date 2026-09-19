@@ -1,0 +1,161 @@
+/* ---- seam ---- */
+.seam {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  color: #fff;
+}
+.seamBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(620px 300px at 8% 0%, rgba(59, 123, 247, 0.8), transparent 62%),
+    radial-gradient(520px 320px at 92% 100%, rgba(15, 46, 117, 0.9), transparent 60%), #0b0c0f;
+}
+.seamIn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-block: 14px;
+}
+.seamArt {
+  flex: none;
+  color: #fff;
+  opacity: 0.9;
+}
+.seamTxt {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.5;
+}
+.seamTxt b {
+  color: #fff;
+  font-weight: 500;
+}
+.dim {
+  color: rgba(255, 255, 255, 0.7);
+}
+.seamLong {
+  display: none;
+}
+@media (min-width: 760px) {
+  .seamLong {
+    display: inline;
+  }
+}
+.seamBack {
+  flex: none;
+  margin-left: auto;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.82);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+.seamBack:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- lesson head ---- */
+.lhead {
+  padding-block: 38px 0;
+}
+.hrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lnum {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  background: var(--ink-2);
+  border-radius: 7px;
+  padding: 6px 12px;
+  letter-spacing: 0.04em;
+}
+.lev {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 7px;
+  padding: 6px 11px;
+}
+.lev::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.levBeginner {
+  background: #e6f6ec;
+  color: #1b7a3c;
+}
+.levIntermediate {
+  background: #e8f0fe;
+  color: #1e5ce0;
+}
+.levAdvanced {
+  background: #fff4d6;
+  color: #8a5b00;
+}
+.lmod {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-l);
+}
+.lmod a:hover {
+  color: var(--ink-2);
+  text-decoration: underline;
+}
+@media (min-width: 560px) {
+  .lmod {
+    display: inline;
+  }
+}
+.lt {
+  font-size: clamp(28px, 4.8vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin-top: 20px;
+  max-width: 24ch;
+  white-space: pre-wrap;
+}
+.lsub {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-l);
+  max-width: 64ch;
+  margin-top: 13px;
+}
+@media (min-width: 640px) {
+  .lsub {
+    font-size: 18.5px;
+    line-height: 1.55;
+    margin-top: 16px;
+  }
+}
