@@ -260,7 +260,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <SubscribeSection />
+      <SubscribeSection
+        subtext="A prompt worth running and the decision it is meant for. Nothing else."
+        placeholder="you@example.com"
+        note="The mailing list is connected before launch — like the form above, nothing here is stored yet."
+      />
     </main>
   );
 }

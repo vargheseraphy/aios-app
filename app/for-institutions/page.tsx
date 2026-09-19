@@ -291,7 +291,7 @@ export default function ForInstitutionsPage() {
         </div>
       </section>
 
-      <SubscribeSection />
+      <SubscribeSection placeholder="you@institution.edu" />
     </main>
   );
 }
