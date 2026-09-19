@@ -1,6 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getLesson, moduleParam } from "@/lib/content";
 import styles from "@/components/for-institutions/for-institutions.module.css";
+
+const COURSE_EXAMPLES: Array<{ module: number; fileId: string }> = [
+  { module: 1, fileId: "00" }, // The AI Mental Model
+  { module: 1, fileId: "01" }, // C.A.R.E Prompting
+  { module: 1, fileId: "06" }, // First Principles Thinking
+  { module: 1, fileId: "09" }, // Mental Models Library
+  { module: 10, fileId: "02" }, // 90-Day Planning
+  { module: 10, fileId: "07" }, // Socratic Self-Questioning
+];
 
 export const metadata: Metadata = {
   title: "For Institutions — AI Operating System for Leaders",
@@ -9,6 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ForInstitutionsPage() {
+  const examples = COURSE_EXAMPLES.map((e) => getLesson(e.module, e.fileId)).filter(
+    (l): l is NonNullable<typeof l> => Boolean(l),
+  );
+
   return (
     <main>
       {/* ============ PAGE HERO ============ */}
@@ -107,6 +121,47 @@ export default function ForInstitutionsPage() {
               <h3>Free to browse, no login for a student</h3>
               <p>Every prompt is open on this site with no account required, so assigning a reading never means chasing down sign-ins first.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SAMPLE MODULE ============ */}
+      <section className="light" id="start">
+        <div className="pad">
+          <div className="head-row">
+            <div>
+              <div className="kicker">Sample module</div>
+              <h2 className="sh" style={{ maxWidth: "32ch" }}>
+                Six frameworks from the two most classroom-ready modules.
+              </h2>
+              <p className="sd" style={{ maxWidth: "84ch" }}>
+                Module 1, Think Like a Strategist — the foundational AI-and-thinking module — and
+                Module 10, Lead Yourself First, on personal planning and reflection.
+              </p>
+            </div>
+          </div>
+          <div className={styles.examples}>
+            {examples.map((lesson) => (
+              <Link
+                key={lesson.lesson}
+                href={`/${moduleParam(lesson.module)}/${lesson.fileId}`}
+                className={styles.example}
+              >
+                <span className={styles.exNum}>{lesson.lesson}</span>
+                <span className={styles.exBody}>
+                  <span className={styles.exTitle}>{lesson.title}</span>
+                  <br />
+                  <span className={styles.exModule}>
+                    Module {String(lesson.module).padStart(2, "0")}
+                  </span>
+                </span>
+                <span className={styles.exGo}>
+                  <svg className="i" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
