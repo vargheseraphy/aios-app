@@ -1,6 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getLesson, moduleParam } from "@/lib/content";
 import styles from "@/components/for-business/for-business.module.css";
+
+const TEAM_EXAMPLES: Array<{ module: number; fileId: string }> = [
+  { module: 6, fileId: "01" }, // RACI Matrix
+  { module: 6, fileId: "03" }, // 1-on-1 Framework — GROW Model
+  { module: 6, fileId: "07" }, // Delegation Ladder
+  { module: 6, fileId: "09" }, // Radical Candor
+  { module: 8, fileId: "01" }, // The DECIDE Framework
+  { module: 8, fileId: "02" }, // Pre-Mortem Analysis
+];
 
 export const metadata: Metadata = {
   title: "For Teams — AI Operating System for Leaders",
@@ -9,6 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ForBusinessPage() {
+  const examples = TEAM_EXAMPLES.map((e) => getLesson(e.module, e.fileId)).filter(
+    (l): l is NonNullable<typeof l> => Boolean(l),
+  );
+
   return (
     <main>
       {/* ============ PAGE HERO ============ */}
@@ -113,6 +127,47 @@ export default function ForBusinessPage() {
               <h3>Free to browse, nothing to license per seat</h3>
               <p>Every prompt is open on this site with no account and no per-seat sign-in — the book is what you buy, not access to the page behind the code.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ WHERE TEAMS START ============ */}
+      <section className="light" id="start">
+        <div className="pad">
+          <div className="head-row">
+            <div>
+              <div className="kicker">Where teams start</div>
+              <h2 className="sh" style={{ maxWidth: "32ch" }}>
+                Six frameworks most teams reach for first.
+              </h2>
+              <p className="sd" style={{ maxWidth: "84ch" }}>
+                From Module 6, Build Your Team, and Module 8, Decide with Confidence — the two
+                modules teams tend to open before any other.
+              </p>
+            </div>
+          </div>
+          <div className={styles.examples}>
+            {examples.map((lesson) => (
+              <Link
+                key={lesson.lesson}
+                href={`/${moduleParam(lesson.module)}/${lesson.fileId}`}
+                className={styles.example}
+              >
+                <span className={styles.exNum}>{lesson.lesson}</span>
+                <span className={styles.exBody}>
+                  <span className={styles.exTitle}>{lesson.title}</span>
+                  <br />
+                  <span className={styles.exModule}>
+                    Module {String(lesson.module).padStart(2, "0")}
+                  </span>
+                </span>
+                <span className={styles.exGo}>
+                  <svg className="i" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
