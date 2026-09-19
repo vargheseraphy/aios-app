@@ -1,0 +1,34 @@
+{
+ "module": 3,
+ "lesson": "3.2",
+ "title": "PESTLE Analysis",
+ "titlePrinted": "PESTLE Analysis",
+ "level": "Intermediate",
+ "subtitle": "You're entering a new market, geography, or sector and you need to understand the",
+ "sourcePages": {
+  "intro": 72,
+  "prompt": 73
+ },
+ "useWhen": "external forces that could accelerate or kill your plan political, economic, social, technological, legal, and environmental.",
+ "howToUse": "Developed by Francis Aguilar at Harvard in 1967, PESTLE is a macro-environment scan across six dimensions: Political (government policy and stability), Economic (growth, inflation, interest rates), Social (demographics, culture, behaviour trends), Technological (innovation, disruption, digital adoption), Legal (regulations, compliance), Environmental (sustainability, climate, physical). AI has broad knowledge across all six dimensions and can generate a detailed PESTLE in minutes when given the right context.",
+ "steps": [
+  "Define the market, geography, and industry before prompting context is everything.",
+  "Ask AI to flag which PESTLE factors are currently most active or fast-changing.",
+  "Turn the highest-impact factors into assumptions in your Lean Canvas.",
+  "Revisit PESTLE before any major market entry or strategic shift. Read the macro environment before it reads you Before Monzo launched in the UK, its team ran a PESTLE analysis and identified two critical factors: FCA regulatory changes opening challenger bank licensing, and a generational shift in how under-35s trusted traditional banks. Neither was in the existing competitor analysis. Those two factors not the product features became the foundation of Monzo's go-to-market timing and positioning. IN PRACTICE"
+ ],
+ "origin": "Francis Aguilar, Harvard Business School — Scanning the Business Environment, 1967",
+ "promptBody": "Act as a macro-environment analyst using the PESTLE framework.\nBusiness context        :  [YOUR INDUSTRY AND WHAT YOU DO]\nMarket / geography  :  [SPECIFIC MARKET YOU ARE ANALYSING]\nDecision                       :  [WHAT YOU ARE DECIDING BASED ON THIS ANALYSIS]\nAnalyse all six PESTLE dimensions:\nPOLITICAL                  :  Government, policy, trade, stability\nECONOMIC                :  Growth, inflation, consumer spending, rates\nSOCIAL                        :  Demographics, culture, behaviour trends\nTECHNOLOGICAL     :  Innovation, AI, digital adoption, disruption\nLEGAL: Regulations, compliance, IP, data law\nENVIRONMENTA L  :  Sustainability, ESG, climate impact\nFor each: give 2–3 specific factors and their likely impact on my business.\nFlag the top 2 highest-risk factors I should act on now.\nInnovation Impact\nCultural Trends\nTechnological advancements\nSocial inﬂuences\nMarket Conditions Sustainability Concerns\nEconomic factors Environmental factors\nGovernment Regulatory\nInﬂuence Compliance\nPESTLE \nPolitical landscape Legal framework\nAnalysis",
+ "proTip": "Run PESTLE before entering any new geography  especially India, Southeast Asia, or the\nMiddle East where political and legal environments change faster than most founders\nexpect. The factors that kill international expansion are almost always in the P and L\ndimensions, not the market size.",
+ "pairsWith": [
+  "3.1 SWOT",
+  "3.3 Porter's Five Forces",
+  "8.5 Scenario Planning"
+ ],
+ "pairsPrinted": [
+  "3.1 SWOT",
+  "3.3 Porter's Five Forces",
+  "8.5 Scenario Planning"
+ ],
+ "extractedAt": "2026-09-18"
+}

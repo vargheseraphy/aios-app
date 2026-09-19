@@ -1,0 +1,34 @@
+{
+ "module": 10,
+ "lesson": "10.6",
+ "title": "Atomic Habits Stack",
+ "titlePrinted": "Atomic Habits Stack",
+ "level": "Beginner",
+ "subtitle": "Build the habits that compound- one tiny behaviour at a time",
+ "sourcePages": {
+  "intro": 235,
+  "prompt": 236
+ },
+ "useWhen": "You know what habits would make you a better founder. You have tried to build them before and failed. The problem is not motivation it is system design. You are relying on willpower rather than building an environment that makes the right behaviour automatic.",
+ "howToUse": "James Clear's Atomic Habits (2018) synthesises decades of behaviour science into four laws of behaviour change: Make it Obvious (cue), Make it Attractive (craving), Make it Easy (response), Make it Satisfying (reward). Habit Stacking, attaching a new habit to an existing one, is the highest-leverage application of these laws. The formula is: After I [CURRENT HABIT], I will [NEW HABIT]. This eliminates the need for a separate trigger and uses the existing neural pathway as the bridge. The habit succeeds or fails on how tightly it rides that existing routine, not on how much willpower you bring to it. AI can design a complete habit stack for any goal when given your current daily routine.",
+ "steps": [
+  "Map your existing daily habits before designing new ones - stacking requires anchors.",
+  "Start with the smallest possible version of each habit - two minutes maximum. Reduce friction to zero.",
+  "Design your environment before relying on motivation - visible cues beat willpower every time.",
+  "Track habits for 30 days minimum before evaluating, habits take longer to form than most people expect."
+ ],
+ "origin": "James Clear, Atomic Habits, 2018 · BJ Fogg, Tiny Habits, 2019",
+ "promptBody": "Act as a habit design coach using James Clear's Atomic Habits framework.\nMy goal                                       :  [THE OUTCOME I WANT,  E.G. BETTER FOCUS, \n                                                        EXERCISE, READING]\nMy current morning routine :  [WHAT YOU ACTUALLY DO EACH MORNING]\nMy current evening routine  :  [WHAT YOU ACTUALLY DO EACH EVENING]\nPast habit failures                    :  [WHAT YOU HAVE TRIED AND ABANDONED]\nDesign my Atomic Habits Stack:\nStep 1 :  Identify 3 strong existing habits as anchors.\nStep 2 :  For each new habit I want to build, apply the 4 Laws:\nOBVIOUS        :  What is the cue? Where will I see it?\nATTRACTIVE  :  How do I make it appealing?\nEASY                :  What is the 2-minute version?\nSATISFYING   :  What is the immediate reward?\nStep 3 :  Write my Habit Stack as if/when-then statements:\n                After I [ANCHOR HABIT], I will [NEW HABIT].\nStep 4 :  Design one environment change that makes the most important habit easier \n                without willpower.\nStep 5 :  What is the one habit that, if built, makes all the others easier?\nHabit stacking progresses from awareness to reward.\nCue triggers current Link new habit to Reduce friction for Reinforce new habit\nhabit positive feelings new habit with reward",
+ "proTip": "The keystone habit, the one that makes all others easier  is almost always sleep. Every\nother habit in your stack performs better on sufficient sleep and degrades on insufficient\nsleep. If your habit stack has any room for only one new behaviour, make it a consistent\nsleep and wake time. Build everything else on that foundation.",
+ "pairsWith": [
+  "10.4 Energy Quadrants",
+  "10.3 Weekly Review",
+  "10.2 90-Day Planning"
+ ],
+ "pairsPrinted": [
+  "10.4 Energy Quadrants",
+  "10.3 Weekly Review",
+  "10.2 90-Day Planning"
+ ],
+ "extractedAt": "2026-09-18"
+}

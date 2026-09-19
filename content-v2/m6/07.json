@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.7",
+ "title": "Delegation Ladder",
+ "titlePrinted": "Delegation Ladder",
+ "level": "Intermediate",
+ "subtitle": "Stop doing everything yourself, systematically handover what doesn't need you",
+ "sourcePages": {
+  "intro": 147,
+  "prompt": 148
+ },
+ "useWhen": "You're the bottleneck in your own business. Everything flows through you. Your team is capable but waits for your approval on decisions you shouldn't be making. You work longer than anyone and still feel behind.",
+ "howToUse": "The Delegation Ladder, developed within the Management 3.0 framework by Jurgen Appelo, defines seven levels of delegation: Tell (I decide, inform you), Sell (I decide, explain why), Consult (I ask your input before deciding), Agree (we decide together), Advise (you decide with my input), Inquire (you decide, tell me after), Delegate (you decide, no need to tell me). Most founders operate at level 1–2 when their team is ready for levels 4–6. The mismatch creates bottlenecks, kills team motivation, and limits growth.",
+ "steps": [
+  "Map your top 10 recurring decisions against the 7 levels — honestly.",
+  "Identify every decision currently at level 1–2 that could safely move to level 4–5.",
+  "Have an explicit conversation with each team member about their current and target delegation level.",
+  "Move delegation levels up gradually one level at a time, with clear checkpoints. If you jump a decision from level 2 straight to level 6, you're not delegating, you're abandoning. The ladder works because it moves one rung at a time, giving the person a chance to prove readiness before the stakes get real. Skipping rungs isn't trust, it's a shortcut that backfires. The Mismatch Is Yours, Not Theirs"
+ ],
+ "origin": "Jurgen Appelo, Management 3.0 — Delegation Poker / Delegation Ladder",
+ "promptBody": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.\nDelegation Ladder  7 Levels of Letting Go\nTell Consult Advise Delegate\nLevel 1 Level 3 Level 5 Level 7\nLevel 2 Level 4 Level 6\nSell Agree Inquire",
+ "proTip": "The hardest delegation move is not from level 2 to level 5  it is from level 3 to level 4.\nAsking for input (3) still feels like control. Deciding together (4) requires genuine trust that\nthe person's judgment is sound. That trust is built through smaller delegations done well.\nStart with level 4 on low-stakes decisions and build from there.",
+ "pairsWith": [
+  "6.1 RACI Matrix",
+  "6.3 GROW Model",
+  "6.2 OKRs",
+  "6.11 Situational Leadership"
+ ],
+ "pairsPrinted": [
+  "6.1 RACI Matrix",
+  "6.3 GROW Model",
+  "6.2 OKRs",
+  "6.11 Situational Leadership"
+ ],
+ "extractedAt": "2026-09-18"
+}

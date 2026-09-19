@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.12",
+ "title": "MECE Framework",
+ "titlePrinted": "MECE Framework",
+ "level": "Advanced",
+ "subtitle": "Structure any problem so nothing overlaps and nothing is missed",
+ "sourcePages": {
+  "intro": 46,
+  "prompt": 47
+ },
+ "useWhen": "You're presenting an analysis, making a recommendation, or solving a complex problem and your thinking feels incomplete, repetitive, or hard to follow. You need a structure that is airtight.",
+ "howToUse": "MECE stands for Mutually Exclusive, Collectively Exhaustive. It is a McKinsey core thinking principle. Mutually Exclusive means every category is distinct, no overlap. Collectively Exhaustive means together the categories cover everything, no gaps. When your problem breakdown is MECE, your analysis is complete, your communication is clear, and your solution covers all the ground. AI can test whether your structure is MECE and help rebuild it if it isn't.",
+ "steps": [
+  "Define the problem or decision you need to structure.",
+  "Ask AI to break it into MECE categories and check for overlaps or gaps.",
+  "Use the MECE structure as your analysis framework and your presentation outline.",
+  "Apply MECE to any situation where you need to be sure nothing is missed. Barbara Minto created MECE at McKinsey in the 1960s to solve a specific problem: consultant reports were being rejected because the logic had gaps or overlaps. She codified the principle that categories must not repeat (mutually exclusive) and together must cover everything (collectively exhaustive). It became the backbone of all McKinsey output and the standard for structured thinking in consulting globally. ORIGIN STORY"
+ ],
+ "origin": "McKinsey & Company — core consulting methodology, attributed to Barbara Minto, 1960s",
+ "promptBody": "Act as a McKinsey-trained strategy consultant.\nProblem or question to structure: [YOUR PROBLEM, DECISION, OR ANALYSIS TOPIC]\nStep 1       :    Break this into MECE categories. Each category must be \n                       distinct,  no overlap. Together they must cover everything, no gaps.\nStep 2      :    Check your structure. Flag any overlaps or missing areas.\nStep 3      :    For each category, list the 2–3 key questions I need to answer to \n                       address it completely.\nFormat as a structured outline I can use directly.\nMECE Analysis Framework\nComplete Analysis\nOutcome of MECE\nanalysis\nProblem\nIssue to be\nanalyzed\nCollectively Exhaustive\nCovers all\npossibilities\nMutually Exclusive\nNo overlap between\ncategories\nMECE\nCore concept of\ncomprehensive analysis",
+ "proTip": "MECE is not just for analysis  use it to structure any important communication. Before a\nboard presentation or investor meeting, ask AI to check if your argument is MECE.\nIncomplete structure is the most common reason smart people fail to persuade.",
+ "pairsWith": [
+  "1.9 Mental Models",
+  "8.1 DECIDE Framework",
+  "9.5 Investor Narrative"
+ ],
+ "pairsPrinted": [
+  "1.9 Mental Models",
+  "8.1 DECIDE Framework",
+  "9.5 Investor Narrative"
+ ],
+ "extractedAt": "2026-09-18"
+}

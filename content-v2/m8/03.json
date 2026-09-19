@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.3",
+ "title": "Post-Mortem Review",
+ "titlePrinted": "Post-Mortem Review",
+ "level": "Beginner",
+ "subtitle": "Extract the full learning from every outcome - win or lose",
+ "sourcePages": {
+  "intro": 189,
+  "prompt": 190
+ },
+ "useWhen": "Your team debriefs informally after projects finish. The same mistakes recur because learning is not systematically captured or applied. Wins are celebrated without understanding what caused them. You are not compounding your experience.",
+ "howToUse": "A Post-Mortem is a structured review conducted after a project, campaign, launch, or significant event to extract learning and improve future performance. Unlike a blame session or a celebration, a well-run Post-Mortem is analytically neutral it asks what happened, why it happened, and what will be done differently next time. Amazon pioneered the blameless post-mortem culture in engineering; it applies equally to sales, marketing, product, and leadership decisions. AI can structure a complete Post-Mortem analysis when given the outcome data.",
+ "steps": [
+  "Run Post-Mortems on wins as well as failures - understanding what caused a win is equally valuable.",
+  "Schedule the Post-Mortem within 2 weeks of the outcome, memory degrades fast.",
+  "Focus on process, not people , a good Post-Mortem improves systems, not morale.",
+  "The output must include specific changes, a Post-Mortem without action items is a retrospective, not a review. \"Blameless\" doesn't mean consequence-free, it means the analysis targets the system, not the person. If your Post-Mortem drifts into naming who messed up instead of what broke, you've turned a learning tool back into the blame session it was designed to replace."
+ ],
+ "origin": "Amazon engineering culture — blameless post-mortem · Agile retrospective methodology",
+ "promptBody": "Act as a Post-Mortem facilitator.\nProject or event  :  [DESCRIBE WHAT HAPPENED]\nOutcome               :  [WHAT ACTUALLY RESULTED — METRIC, TIMELINE, QUALITY]\nTarget                   :  [WHAT WAS PLANNED OR EXPECTED]\nTeam involved     :  [ROLES AND CONTRIBUTIONS]\nStructure a complete Post-Mortem:\nTIMELINE            :  Reconstruct the key events in sequence. When did things diverge  \n                                  from the plan?\nWHAT WORKED :  3 things that went well and why. What can be systematised from \n                                  these?\nWHAT FAILED    :  3 things that did not work and why. Use 5 Whys for the most critical \n                                 failure.\nROOT CAUSES   :  The underlying systemic reasons, not the surface events.\nACTION ITEMS  :  3 specific changes  owner, deadline. For each: what process or \n                                 system changes?\nKNOWLEDGE CAPTURED: One paragraph to add to our playbook.\nPost-Mortem Review\n1 2 3 4\nCapture the Ask What & Extract the Deﬁne\nOutcome Why Learning Action Items",
+ "proTip": "The most valuable Post-Mortem output is the paragraph added to the playbook. Not the\naction items, those are often forgotten. A one-paragraph insight written while the\nmemory is fresh and placed in a shared document creates institutional knowledge that\nsurvives team turnover. Build the habit of writing it before the meeting ends.",
+ "pairsWith": [
+  "8.2 Pre-Mortem",
+  "7.6 PDCA",
+  "7.12 5 Whys",
+  "6.8 Meeting Design"
+ ],
+ "pairsPrinted": [
+  "8.2 Pre-Mortem",
+  "7.6 PDCA",
+  "7.12 5 Whys",
+  "6.8 Meeting Design"
+ ],
+ "extractedAt": "2026-09-18"
+}

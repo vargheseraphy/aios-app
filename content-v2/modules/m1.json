@@ -1,0 +1,100 @@
+{
+ "module": 1,
+ "title": "Think Like a Strategist",
+ "subtitle": "Learn to work with AI. Then learn to think. Both are non-negotiable.",
+ "description": "Most founders fail with AI not because they lack access but because they never built the foundation. This module gives you two things: the skills to work with AI effectively, and the thinking frameworks that make every decision sharper with or without AI. SECTION A — HOW TO WORK WITH AI 1.0 The AI Mental Model 1.1 C.A.R.E Prompting 1.2 The Context Stack 1.3 Role Prompting — The Expert Chair 1.4 The Refinement Loop SECTION B — HOW TO THINK 1.5 Six Thinking Hats 1.6 First Principles Thinking 1.7 Second Order Thinking 1.8 Inversion Thinking 1.9 Mental Models Library 1.10 OODA Loop 1.11 SCAMPER 1.12 MECE Framework Start here always. Return here when outputs feel shallow or decisions feel foggy. AI Operating System for Leaders 1",
+ "lessons": [
+  "1.0",
+  "1.1",
+  "1.2",
+  "1.3",
+  "1.4",
+  "1.5",
+  "1.6",
+  "1.7",
+  "1.8",
+  "1.9",
+  "1.10",
+  "1.11",
+  "1.12"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Chief Strategy Officer",
+    "priorities": "Long-term position, trade-offs, competitive moat",
+    "bestWhen": "Setting 3-year direction or evaluating a major pivot",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Chief Strategy Officer"
+   },
+   {
+    "role": "McKinsey Senior Partner",
+    "priorities": "MECE structure, evidence-first, no fluff",
+    "bestWhen": "Structuring a complex problem or board presentation",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a McKinsey Senior Partner"
+   },
+   {
+    "role": "Product Strategy Director",
+    "priorities": "Market timing, feature bets, customer signal",
+    "bestWhen": "Deciding what to build next and why",
+    "seniority": "◆◆◆",
+    "promptClause": "a Product Strategy Director"
+   },
+   {
+    "role": "Strategy Manager",
+    "priorities": "Translating direction into quarterly priorities",
+    "bestWhen": "Breaking a big goal into executable 90-day plans",
+    "seniority": "◆◆",
+    "promptClause": "a Strategy Manager"
+   },
+   {
+    "role": "Research Analyst",
+    "priorities": "Data quality, pattern recognition, no assumptions",
+    "bestWhen": "Validating a hypothesis before acting on it",
+    "seniority": "◆",
+    "promptClause": "a Research Analyst"
+   },
+   {
+    "role": "First Principles Coach",
+    "priorities": "Stripping assumptions, rebuilding from fundamentals",
+    "bestWhen": "When every solution feels like a variation of the same thing",
+    "seniority": "◆",
+    "promptClause": "a First Principles Coach"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Sceptical Investor",
+    "priorities": "Finds the hole in every plan",
+    "bestWhen": "Before pitching or committing resources",
+    "seniority": "◈",
+    "promptClause": "a Sceptical Investor"
+   },
+   {
+    "role": "Military Decision Analyst",
+    "priorities": "Speed under uncertainty, clear action bias",
+    "bestWhen": "In fast-moving situations with incomplete data",
+    "seniority": "◈",
+    "promptClause": "a Military Decision Analyst"
+   },
+   {
+    "role": "Devil's Advocate",
+    "priorities": "Argues the opposite as hard as possible",
+    "bestWhen": "When your team agrees too quickly",
+    "seniority": "◈",
+    "promptClause": "a Devil's Advocate"
+   },
+   {
+    "role": "Socratic Facilitator",
+    "priorities": "Never answers — asks until you find it yourself",
+    "bestWhen": "When you need to think, not just receive an answer",
+    "seniority": "◈",
+    "promptClause": "a Socratic Facilitator"
+   }
+  ],
+  "question": "Who should reason through this problem?",
+  "lead": "The quality of your thinking is shaped by whose lens you borrow. A strategist and a risk analyst look at the same problem and see completely different things — both useful, both necessary. Before you prompt, choose who you need in the room. These profiles give you six internal perspectives and four outside views that challenge your assumptions before you commit to them.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 1.0 The AI Mental Model · 1.2 Role Prompting — The Expert Chair · 1.5 Six Thinking Hats"
+ }
+}

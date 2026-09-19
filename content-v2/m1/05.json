@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.5",
+ "title": "Six Thinking Hats",
+ "titlePrinted": "Six Thinking Hats",
+ "level": "Intermediate",
+ "subtitle": "You need to evaluate an idea, plan, or decision from every angle logic, emotion, risk,",
+ "sourcePages": {
+  "intro": 32,
+  "prompt": 33
+ },
+ "useWhen": "creativity, facts, and process and your team debates from fixed positions instead of structured perspectives.",
+ "howToUse": "Created by Edward de Bono, Six Hats forces parallel thinking everyone examines the same dimension at the same time. White Hat: facts and data. Red Hat: emotions and gut reactions. Black Hat: risks and problems. Yellow Hat: benefits and upside. Green Hat: creative alternatives. Blue Hat: process and next steps. AI runs all six in a single prompt.",
+ "steps": [
+  "Write a clear, specific description of your idea or decision.",
+  "Paste the prompt and read each hat section fully never skip Black Hat.",
+  "Use Green Hat output as your brainstorm starting point for next steps.",
+  "For team decisions, share the output and discuss where instinct differs. Acomplete 360-degree view of any decision or idea Edward de Bono created Six Thinking Hats in 1985 after observing that most disagreements in meetings were really people thinking in different modes simultaneously, some analysing facts, others protecting feelings, others generating ideas. Separating the modes eliminated 80% of unproductive conflict. The method is now used in over 50 countries in boardrooms and classrooms. ORIGIN STORY"
+ ],
+ "origin": "Edward de Bono, Six Thinking Hats, 1985",
+ "promptBody": "Act as a strategic facilitator using De Bono's Six Thinking Hats.\nTopic           :    [YOUR DECISION OR IDEA - be specific]\nWhite Hat   :    Facts and data we have or need?\nRed Hat       :    Gut feelings and emotional reactions?\nBlack Hat    :    Risks, flaws, what could go wrong?\nYellow Hat  :    Benefits and best-case outcomes?\nGreen Hat   :    Creative alternatives and new directions?\nBlue Hat      :    Recommended next step or process?\nGive 3 specific points per hat. Be concrete, not generic.\nSix Thinking Hats Process\nWhite Hat\n1\nFocus on facts and data\nRed Hat\n2\nConsider emotions and gut reactions\nBlack Hat\n3\nIdentify risks and problems\nYellow Hat\n4\nExplore beneﬁts and upside\nGreen Hat\n5\nGenerate creative alternatives\nBlue Hat\n6\nDeﬁne process and next steps",
+ "proTip": "Run this twice  once for your plan, once asking AI to argue the opposite position. The\ngap between the two outputs is where the most useful insight is hiding.",
+ "pairsWith": [
+  "1.6 First Principles",
+  "8.2 Pre-Mortem",
+  "8.6 Red Team Thinking"
+ ],
+ "pairsPrinted": [
+  "1.6 First Principles",
+  "8.2 Pre-Mortem",
+  "8.6 Red Team Thinking"
+ ],
+ "extractedAt": "2026-09-18"
+}

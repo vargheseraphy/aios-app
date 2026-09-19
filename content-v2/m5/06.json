@@ -1,0 +1,34 @@
+{
+ "module": 5,
+ "lesson": "5.6",
+ "title": "Product Launch Playbook",
+ "titlePrinted": "Product Launch Playbook",
+ "level": "Intermediate",
+ "subtitle": "You launch something and get a brief spike of attention that fades in 48 hours. You're",
+ "sourcePages": {
+  "intro": 124,
+  "prompt": 125
+ },
+ "useWhen": "announcing, not launching. The difference is what happens before the launch date.",
+ "howToUse": "Jeff Walker's Product Launch Formula, distilled for founders and operators, is a pre-launch sequence that builds anticipation through a structured four-phase approach: Seed (plant the idea and gauge interest), Pre-Launch Content (deliver value that creates desire), Launch (open with urgency and social proof), Post-Launch (follow up with those who didn't convert and collect testimonials). The pre-launch phase is where most founders underinvest they spend 90% of their energy on what happens on launch day and almost nothing on the weeks before it.",
+ "steps": [
+  "Start pre-launch content at least 3 weeks before your launch date.",
+  "Each pre-launch piece should deliver standalone value not tease a sale.",
+  "Build a list of warm leads before launch day, launch to people who already want it.",
+  "Define your launch window: open and close dates create urgency that open-ended launches don't. A close date only creates urgency if it's real fake scarcity gets noticed and remembered. If your \"launch window\" quietly reopens next month, you haven't built urgency, you've taught your audience your deadlines don't mean anything. Urgency Needs to Be Real Build anticipation before you ship not just noise after"
+ ],
+ "origin": "Jeff Walker, Product Launch Formula, 2005 — adapted for B2B and SaaS contexts",
+ "promptBody": "Act as a product launch strategist using Jeff Walker's Launch Formula.\nProduct                           :  [WHAT YOU ARE LAUNCHING]\nTarget audience            :  [WHO IT IS FOR]\nLaunch date                   :  [WHEN YOU WANT TO GO LIVE]\nExisting audience size :  [EMAIL LIST / FOLLOWERS / NETWORK]\nBuild a 4-phase launch plan:\nPHASE 1 — SEED (4 weeks before):\nHow to plant the idea and gauge genuine interest\nPHASE 2 — PRE-LAUNCH (weeks 2–3):\n3 pieces of content that deliver value and build desire\nPHASE 3 — LAUNCH (launch week):\nDay-by-day sequence with urgency mechanics\nPHASE 4 — POST-LAUNCH (week after):\nFollow-up for non-buyers · Testimonial collection\nGive specific content topics for each phase.\nProduct Launch Formula\nSeed\nPost-Launch\nPlant interest, gauge\nFollow up, collect\nresponse\ntestimonials\nPre-Launch Launch\nDeliver value, build desire Open with urgency, social proof",
+ "proTip": "The single most valuable pre-launch action is a waitlist. Even 50 people on a waitlist\nchanges the psychology of your launch, it creates social proof before the launch, tells\nyou demand is real, and gives you a warm list to open to first. Start your waitlist before\nyou finish building.",
+ "pairsWith": [
+  "5.5 GTM Canvas",
+  "5.2 Hook Framework",
+  "5.3 Marketing Mix"
+ ],
+ "pairsPrinted": [
+  "5.5 GTM Canvas",
+  "5.2 Hook Framework",
+  "5.3 Marketing Mix"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,36 @@
+{
+ "module": 7,
+ "lesson": "7.7",
+ "title": "Working Backwards",
+ "titlePrinted": "Working Backwards",
+ "level": "Intermediate",
+ "subtitle": "Your team is building something a product, a feature, a process, a service and the",
+ "sourcePages": {
+  "intro": 172,
+  "prompt": 173
+ },
+ "useWhen": "conversation keeps starting with what you have, what you can build, or what technology allows. You need to reverse the direction of thinking before a single hour of work is spent.your team spends hours every week on tasks that are repetitive, rule-based, and predictable.",
+ "howToUse": "Developed by Jeff Bezos and embedded into Amazon's culture, Working Backwards begins at the end: the customer experience. Before any project starts, the team writes a mock Press Release announcing the finished product from the customer's point of view. It must answer: Who is the customer? What is their problem? Why is this meaningfully better than before? If the press release cannot be written clearly, the project is not ready to start. Amazon used this to build Prime, Alexa, AWS, and the Kindle each beginning with a customer document, not a technology roadmap. What looks like a writing exercise is a decision filter. Projects that cannot survive it should not be started.",
+ "steps": [
+  "Start with the highest-frequency tasks daily tasks with 10 minutes of work are worth more to automate than monthly tasks with 2 hours.",
+  "Never automate a broken process, fix the process first, then automate it.",
+  "Prioritise automation by: frequency × time per occurrence × cost of error.",
+  "Track time saved per automation, it builds the business case for the next one. eff Bezos, Amazon — documented in Working Backwards by Colin Bryar & Bill Carr, 2021 Build from the customer. Not from what is easy to build. The hardest part is the customer quote. If it sounds like marketing copy, your benefit is still abstract. Rewrite until a real person would actually say it to a friend. PRO TIP"
+ ],
+ "origin": null,
+ "promptBody": "PROMPT — COPY & PASTE READY\nAct as an Amazon-style product consultant using Working Backwards.\nI am building       :  [PRODUCT, FEATURE, OR INITIATIVE]\nTarget customer :  [WHO  role, situation, problem they have]\nStep 1 — Press Release:\nHeadline             :  [What is live and why it matters to the customer]\nProblem              :  [What were they struggling with before?]\nSolution              :  [How does it solve it  specifically?]\nBetter because   :  [Compared to what existed before]\nCustomer quote : [What a real customer would tell a friend]\nStep 2 — FAQ:\nList the 5 hardest questions a sceptic would ask. Answer each honestly.\nStep 3 — Scope filter:\nList 3 things currently planned that do NOT serve the customer \npromise and should be cut.",
+ "proTip": "",
+ "pairsWith": [
+  "7.1 SOP — SIPOC",
+  "7.6 PDCA",
+  "2.1 Value Proposition Canvas",
+  "2.5 Jobs To Be Done"
+ ],
+ "pairsPrinted": [
+  "7.1 SOP — SIPOC",
+  "7.6 PDCA",
+  "2.1 Value Proposition Canvas",
+  "2.5 Jobs To Be Done"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,97 @@
+{
+ "module": 3,
+ "title": "Know Your Market",
+ "subtitle": "See your competitive landscape clearly before you move.",
+ "description": "Most founders think they know their market because they operate in it every day. But operating in a market and understanding it strategically are two different things. This module gives you the tools to audit your position, read your competitive environment, define who you are actually for, and ground your decisions in real customer data not assumptions.",
+ "lessons": [
+  "3.1",
+  "3.2",
+  "3.3",
+  "3.4",
+  "3.5",
+  "3.6",
+  "3.7",
+  "3.8",
+  "3.9",
+  "3.10"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Chief Marketing Officer",
+    "priorities": "Category positioning, long-term brand equity",
+    "bestWhen": "Defining where you own a space in the market",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Chief Marketing Officer"
+   },
+   {
+    "role": "Market Research Director",
+    "priorities": "Data accuracy, trend identification, no bias",
+    "bestWhen": "Building the evidence base for any market claim",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a Market Research Director"
+   },
+   {
+    "role": "Competitive Intelligence Lead",
+    "priorities": "Every competitor move, white space identification",
+    "bestWhen": "Mapping the landscape before entering or repositioning",
+    "seniority": "◆◆◆",
+    "promptClause": "a Competitive Intelligence Lead"
+   },
+   {
+    "role": "Customer Success Director",
+    "priorities": "Why customers stay, leave, and what they say",
+    "bestWhen": "Understanding retention drivers and churn signals",
+    "seniority": "◆◆◆",
+    "promptClause": "a Customer Success Director"
+   },
+   {
+    "role": "Sales Manager",
+    "priorities": "What actually closes vs what marketing claims",
+    "bestWhen": "Pressure-testing market assumptions against real deals",
+    "seniority": "◆◆",
+    "promptClause": "a Sales Manager"
+   },
+   {
+    "role": "Industry Analyst (Gartner/Forrester)",
+    "priorities": "Macro trends, category dynamics, benchmarks",
+    "bestWhen": "Contextualising your position within the wider industry",
+    "seniority": "◆",
+    "promptClause": "an Industry Analyst (Gartner/Forrester)"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Private Equity Due Diligence Lead",
+    "priorities": "Market risk, sizing accuracy, defensible position",
+    "bestWhen": "Before raising money or entering a new market",
+    "seniority": "◈",
+    "promptClause": "a Private Equity Due Diligence Lead"
+   },
+   {
+    "role": "Your Ideal Customer (cold)",
+    "priorities": "Sees your positioning with zero prior knowledge",
+    "bestWhen": "Testing whether your message lands without context",
+    "seniority": "◈",
+    "promptClause": "Your Ideal Customer (cold)"
+   },
+   {
+    "role": "Journalist covering your sector",
+    "priorities": "What is the real story — not the PR version?",
+    "bestWhen": "Finding the honest narrative about your market",
+    "seniority": "◈",
+    "promptClause": "a Journalist covering your sector"
+   },
+   {
+    "role": "Regulator or Policy Advisor",
+    "priorities": "Risk, compliance, what could restrict the market",
+    "bestWhen": "In regulated industries or before geographic expansion",
+    "seniority": "◈",
+    "promptClause": "a Regulator or Policy Advisor"
+   }
+  ],
+  "question": "Who should read your competitive landscape?",
+  "lead": "Every market looks different depending on where you are standing. A market researcher sees data. A competitor's strategist sees opportunity. A customer sees none of your positioning — only their own problem. Use this page to choose the right lens before drawing any conclusions about the market you operate in.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 3.1 SWOT · 3.3 Porter's Five Forces · 3.6 Competitor Mapping · 3.8 Voice of Customer"
+ }
+}

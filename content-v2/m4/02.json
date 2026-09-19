@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.2",
+ "title": "SPIN Selling - Discovery Call",
+ "titlePrinted": "SPIN Selling - Discovery Call",
+ "level": "Intermediate",
+ "subtitle": "Framework",
+ "sourcePages": {
+  "intro": 93,
+  "prompt": 94
+ },
+ "useWhen": "You're talking too much and pitching too early on discovery calls. You leave without fully understanding what the prospect actually needs and they leave without feeling heard.",
+ "howToUse": "Neil Rackham analysed 35,000 sales calls over 12 years and found that high-value sales are won through questions, not pitches. SPIN replaces pitching with structured questioning: Situation questions establish context, Problem questions surface pain, Implication questions show the cost of inaction, Need-Payoff questions let the prospect articulate why they need your solution in their own words. The prospect who convinces themselves is the easiest to close. Skipping Implication is what makes a close feel pushed rather than earned. A prospect who says out loud why the problem matters will defend that far harder than any pitch could.",
+ "steps": [
+  "Prepare 3 questions for each SPIN stage before every call use the prompt below.",
+  "Ask all Situation questions first, then move to Problem. Never pitch before Need- Payoff",
+  "After the call, paste the transcript into AI and ask it to identify which SPIN stage each exchange covered.",
+  "The goal of a discovery call is for the prospect to articulate the problem and the value of solving it not for you to explain your product. Turn every sales call into a structured insight session"
+ ],
+ "origin": "Neil Rackham, SPIN Selling, 1988",
+ "promptBody": "Act as a B2B sales coach using Neil Rackham's SPIN Selling.\nI am selling       :  [YOUR PRODUCT OR SERVICE]\nProspect role    :  [JOB TITLE AND INDUSTRY]\nKnown context :  [WHAT YOU KNOW ABOUT THEM ALREADY]\nGenerate 3 strong questions for each SPIN stage:\nSITUATION       :  Understand their current state and setup\nPROBLEM         :  Surface the pain they may not have named\nIMPLICATION  :  Show the cost and consequence of not solving it\nNEED-PAYOFF :  Let them articulate the value of solving it\n#Make questions feel like natural conversation.  #Avoid yes/no questions.\nFavour open questions.  #Sequence them so each stage flows into the next.\nNeed-Payoff Questions Situation Questions\nFocus on beneﬁts of Gather background\nsolutions information\nSPIN Selling Cycle\nImplication Questions Problem Questions\nExplore consequences of Identify customer\nproblems challenges",
+ "proTip": "Spend 70% of your call on Implication questions  that is where urgency is created.\nMost salespeople rush to Need-Payoff without building enough implication first. A\nprospect who hasn't felt the pain of inaction will not feel urgency to act.",
+ "pairsWith": [
+  "4.3 BANT Qualification",
+  "4.5 Objection Handling",
+  "4.7 Proposal Writing"
+ ],
+ "pairsPrinted": [
+  "4.3 BANT Qualification",
+  "4.5 Objection Handling",
+  "4.7 Proposal Writing"
+ ],
+ "extractedAt": "2026-09-18"
+}

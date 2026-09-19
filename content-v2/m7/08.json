@@ -1,0 +1,36 @@
+{
+ "module": 7,
+ "lesson": "7.8",
+ "title": "Agile Sprint Canvas",
+ "titlePrinted": "Agile Sprint Canvas",
+ "level": "Intermediate",
+ "subtitle": "Your team plans a lot but ships inconsistently. Sprints fill up with tasks that don't connect",
+ "sourcePages": {
+  "intro": 174,
+  "prompt": 175
+ },
+ "useWhen": "to a clear goal. By the end of two weeks, the sprint goal has shifted or was never clear in the first place.",
+ "howToUse": "Developed from Jeff Sutherland and Ken Schwaber's Scrum framework, the Sprint Canvas is a one-page planning tool for a two-week sprint. It maps: Sprint Goal (the one thing that defines success for this sprint), Backlog Items (tasks selected to achieve the goal), Dependencies (what needs to happen before these tasks can start), Risks (what could prevent completion), Definition of Done (how we know each item is complete), and Daily Standup Questions (what keeps the team aligned). AI can help design a sprint that is internally coherent, where every backlog item connects to the sprint goal.",
+ "steps": [
+  "Define the Sprint Goal before selecting backlog items, items must serve the goal, not the other way around.",
+  "Limit work in progress, it is better to finish 5 items completely than to start 10.",
+  "The Definition of Done must be agreed before the sprint starts, not interpreted at the end.",
+  "Run a 30-minute sprint retrospective after every sprint: what to start, stop, and continue. Run focused two-week cycles that ship not just plan If you can delete an item from the backlog and the Sprint Goal is still achievable, that item shouldn't have been in the sprint. Every task earns its place by serving the goal, not by being useful, urgent, or already half-started. Backlog Items Aren't the Goal"
+ ],
+ "origin": "Jeff Sutherland & Ken Schwaber — Scrum framework, 1990s · Agile Manifesto, 2001",
+ "promptBody": "Act as an Agile coach helping design a focused sprint.\nTeam                                :  [SIZE, ROLES, WHAT YOU ARE BUILDING]\nSprint duration             :  [1 OR 2 WEEKS]\nPriorities this sprint.   :  [WHAT YOU MOST NEED TO ACCOMPLISH]\nCapacity                          :  [AVAILABLE PERSON-DAYS THIS SPRINT]\nDesign a complete Sprint Canvas:\nSPRINT GOAL                 :  One sentence  what defines success\nBACKLOG ITEMS           :  5–8 tasks that directly serve the goal. Each with: owner,  \n                                              estimate,  priority\nDEPENDENCIES             :  What must happen before sprint starts\nRISKS                               :  What could prevent completion\nDEFINITION OF DONE :  How we know each item is complete\nSTANDUP FORMAT       :  3 daily questions for team alignment\nRETROSPECTIVE           :  3 questions for end-of-sprint review\nFlag any backlog item that does not directly serve the sprint goal,  those should be\ndeferred.\nSprint Canvas - Two Weeks That Ship, Not Just Plan\nSprint Canvas \nTwo-Week Sprint Backlog Deﬁnition Daily Standup \nDependencies Risks\nTimeline Bar Goal Items of Done Questions",
+ "proTip": "The most valuable sprint ritual is not the standup,  it is the retrospective. Teams that run\nhonest retrospectives improve sprint-over-sprint. Teams that skip them repeat the same\nproblems. Block the time before the sprint starts, not at the end when everyone is\nrushing to the next thing.",
+ "pairsWith": [
+  "7.4 ICE Scoring",
+  "7.5 RICE Scoring",
+  "7.6 PDCA",
+  "6.2 OKRs"
+ ],
+ "pairsPrinted": [
+  "7.4 ICE Scoring",
+  "7.5 RICE Scoring",
+  "7.6 PDCA",
+  "6.2 OKRs"
+ ],
+ "extractedAt": "2026-09-18"
+}

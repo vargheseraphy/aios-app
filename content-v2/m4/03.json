@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.3",
+ "title": "Lead Qualification  BANT & CHAMP",
+ "titlePrinted": "Lead Qualification BANT & CHAMP",
+ "level": "Beginner",
+ "subtitle": "You're investing hours in prospects who go dark, say they need to think about it, or reveal at",
+ "sourcePages": {
+  "intro": 95,
+  "prompt": 96
+ },
+ "useWhen": "the end of a long process that they don't have budget or that someone else makes the decision.",
+ "howToUse": "BANT (Budget, Authority, Need, Timeline) was developed by IBM as a qualification framework. A prospect must have all four to be a real opportunity. CHAMP (Challenges, Authority, Money, Prioritisation) is a modern evolution that starts with the customer's challenge rather than your budget question making it less transactional and more consultative. AI can help you build qualification questions that feel like discovery, not interrogation.",
+ "steps": [
+  "Qualify early ideally in the first call, not after a proposal.",
+  "Never ask about budget directly. Ask about what they have invested in similar solutions previously.",
+  "Authority is trickier than it looks there are often multiple decision-makers. Map the buying committee.",
+  "If any BANT element is missing, decide whether to nurture, disqualify, or escalate. Stop spending time on prospects who will never buy The most expensive STP mistake is targeting the largest segment instead of the most winnable one. A smaller segment where you have a clear advantage will outperform a large segment where you are one of many."
+ ],
+ "origin": "IBM — BANT framework, 1950s–60s · HubSpot — CHAMP evolution",
+ "promptBody": "Act as a B2B sales qualification coach.\nMy product: [WHAT YOU SELL AND AVERAGE DEAL SIZE]\nProspect: [ROLE, INDUSTRY, WHAT YOU KNOW ABOUT THEM]\nGenerate qualification questions for both frameworks:\nBANT QUALIFICATION:\nBudget: How do I uncover budget without asking directly?\nAuthority: How do I map the decision-making process?\nNeed: How do I confirm this is a real priority?\nTimeline: How do I understand their urgency without pressure?\nCHAMP QUALIFICATION:\nChallenges: What is the core problem driving this search?\nAuthority: Who else is involved in this decision?\nMoney: What have they invested in alternatives?\nPrioritisation: Where does this rank against other initiatives?\nWrite 2 natural-sounding questions per category.\nChallenge-Focused\nBudget-Focused\nQualiﬁcation\nQualiﬁcation\nAuthority Assessment Authority Assessment\nNeed Assessment Money Assessment\nPrioritisation Assessment\nTimeline Assessment\nCHAMP prioritises customer challenges for effective qualiﬁcation.\nBANT CHAMP",
+ "proTip": "The most important qualification question is Timeline - but never ask it first. Ask it after\nyou've built the pain clearly. A prospect with no timeline usually has no urgency, which means\nno deal. Timeline answers tell you whether to invest or to place in a nurture sequence.",
+ "pairsWith": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "4.9 Pipeline Review"
+ ],
+ "pairsPrinted": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "4.9 Pipeline Review"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,36 @@
+{
+ "module": 4,
+ "lesson": "4.6",
+ "title": "PAS - Problem Agitate Solve",
+ "titlePrinted": "PAS - Problem Agitate Solve",
+ "level": "Beginner",
+ "subtitle": "Your marketing copy explains what you do but creates no emotional urgency. Prospects",
+ "sourcePages": {
+  "intro": 101,
+  "prompt": 102
+ },
+ "useWhen": "read it, understand it, and still do nothing. The information is there, the feeling isn't.",
+ "howToUse": "PAS is a direct response copywriting framework popularised by Dan Kennedy and widely used across sales pages, cold emails, LinkedIn posts, and pitch decks. Problem: name the specific pain the prospect feels. Agitate: expand the consequences - what happens if this problem goes unsolved? What does it cost them in time, money, reputation, or opportunity? Solve: present your solution as the logical answer to the agitated problem. The Agitate step is where most founders stop short, they name the problem but never make the reader feel its weight.",
+ "steps": [
+  "Name the problem in the exact language your customer uses, not your language.",
+  "In the Agitate step, go one level deeper than the obvious consequence.",
+  "The Solve step should feel like relief, not a pitch.",
+  "Test PAS as your email subject line, LinkedIn opening line, and website headline. Write copy that creates urgency without manipulation The Agitate step works best when it names a second-order consequence, not just the direct pain but what that pain causes next. 'You're losing deals' is a problem. 'You're losing deals, and your best salespeople are starting to question whether the product is the issue' is agitation. That second sentence hits differently. PRO TIP"
+ ],
+ "origin": "Dan Kennedy — PAS framework, Direct Response copywriting methodology",
+ "promptBody": "Act as a direct response copywriter using the PAS framework.\nMy product          :  [WHAT YOU SELL]\nTarget customer :  [WHO THEY ARE AND THEIR CONTEXT]\nCore problem       :  [THE MAIN PAIN YOU SOLVE]\nChannel                 :  [EMAIL / LINKEDIN POST / WEBSITE HEADLINE]\nWrite 3 PAS variations for this channel:\nPROBLEM              :  Name the specific pain, their words, not yours\nAGITATE                 :  Expand the consequences, what does this cost them in time,\nmoney, stress, missed opportunity?\nSOLVE         :  Present the solution as natural relief\nVariation 1  :  Lead with the financial cost of the problem\nVariation 2  :  Lead with the emotional cost\nVariation 3  :  Lead with what they are missing out on\nKeep each under 80 words. No jargon.\nPAS Framework for Problem Solving\nUnresolved Problem Agitate Solve Resolved Problem\nSpeciﬁc pain needs Show consequences Present logical Logical solution\naddressing of inaction solution implemented\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+ "proTip": "",
+ "pairsWith": [
+  "4.1 Cold Outreach",
+  "5.1 StoryBrand",
+  "4.7 Proposal Writing",
+  "5.2 Hook Framework"
+ ],
+ "pairsPrinted": [
+  "4.1 Cold Outreach",
+  "5.1 StoryBrand",
+  "4.7 Proposal Writing",
+  "5.2 Hook Framework"
+ ],
+ "extractedAt": "2026-09-18"
+}

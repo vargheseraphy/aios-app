@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.7",
+ "title": "Brand Voice Definition",
+ "titlePrinted": "Brand Voice Definition",
+ "level": "Intermediate",
+ "subtitle": "Your content sounds different every week. Your LinkedIn posts, website copy, and email",
+ "sourcePages": {
+  "intro": 126,
+  "prompt": 127
+ },
+ "useWhen": "newsletters feel like they were written by three different people. You can't brief a writer or a VA because you can't describe your voice.",
+ "howToUse": "Brand voice is the consistent personality and tone your brand uses across all communications. It is not the same as tone: tone adjusts to context (a sales email is more direct than a thought leadership post), but voice stays constant. A strong brand voice has three layers: Personality Traits (the adjectives that describe how you sound), Voice Rules (what you do and don't say), and Tone Variations (how the voice shifts across contexts). When your voice is defined, every piece of content, even AI-generated sounds unmistakably like you.",
+ "steps": [
+  "Define your voice by what you are and what you are not the contrast sharpens the definition.",
+  "Write 3 examples of your brand voice in action for different contexts before defining the rules.",
+  "Test your voice definition by briefing someone who doesn't know your brand and seeing if they get it right.",
+  "Include voice rules in every brief you give to writers, designers, or AI. Sound like yourself consistently, across every channel \"Sounds unmistakably like you\" is doing a lot of work in that last line, even a well- defined voice needs a human pass before it ships. Voice rules stop AI-generated content from sounding generic. They don't make it sound like you wrote it yourself. Never Sounds Like AI\" Isn't Real"
+ ],
+ "origin": "Brand strategy methodology — brand voice frameworks widely documented",
+ "promptBody": "Act as a brand strategy consultant specialising in brand voice.\nMy background   :  [WHO YOU ARE - EXPERIENCE, VALUES, STYLE]\nMy audience        :  [WHO I AM TALKING TO AND WHAT THEY VALUE]\nExamples of content I love: [DESCRIBE OR PASTE 2–3 EXAMPLES]\nContent I dislike :  [DESCRIBE THE STYLE YOU WANT TO AVOID]\nDefine my brand voice across four dimensions:\nPERSONALITY TRAITS :  4 adjectives that describe my voice.\nFor each                           :  what it means in practice + what it is NOT.\nVOICE RULES                 :  5 things I always do in my writing.\n5 things I never do.\nTONE VARIATIONS :  How my voice shifts across:\nLinkedIn post / Email newsletter / Sales copy / Bio\nVOICE SAMPLE       :  Write one paragraph in my brand voice about:\n[YOUR CORE TOPIC OR RECENT CHALLENGE]\nBrand Voice Framework\nPersonality Traits Voice Rules Tone Variations\nThe core adjectives Guidelines for what How the brand's voice\nthat deﬁne the brand should adapts to different\nand should not say.\nthe brand's character. communication channels.",
+ "proTip": "The most useful part of a brand voice guide is the 'what we never say' list. The don'ts\ndefine the voice more sharply than the dos. If you never use jargon, never use passive\nvoice, and never make claims without proof, that combination is already a distinctive\nvoice. Start with the never list.",
+ "pairsWith": [
+  "5.1 StoryBrand",
+  "5.4 Content Pillars",
+  "5.2 Hook Framework",
+  "10.8 Personal Brand"
+ ],
+ "pairsPrinted": [
+  "5.1 StoryBrand",
+  "5.4 Content Pillars",
+  "5.2 Hook Framework",
+  "10.8 Personal Brand"
+ ],
+ "extractedAt": "2026-09-18"
+}

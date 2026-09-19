@@ -1,0 +1,31 @@
+{
+ "module": 7,
+ "lesson": "7.12",
+ "title": "5 Whys - Root Cause Analysis",
+ "titlePrinted": "5 Whys - Root Cause Analysis",
+ "level": "Beginner",
+ "subtitle": null,
+ "sourcePages": {
+  "intro": 182,
+  "prompt": 183
+ },
+ "useWhen": null,
+ "howToUse": "Stop fixing symptoms. Find what is actually causing the problem.",
+ "steps": [],
+ "origin": "Sakichi Toyoda, Toyota Industries, Japan, 1930s · Formalised in Toyota Production System",
+ "promptBody": "Act as a root cause analysis facilitator using the 5 Whys.\nThe problem   :  [DESCRIBE THE ISSUE SPECIFICALLY - WHAT HAPPENED, WHEN,  \n                             HOW OFTEN]\nImpact             :  [WHAT IT COSTS, TIME, MONEY, CUSTOMER IMPACT]\nContext           :  [RELEVANT PROCESS, TEAM, OR SYSTEM INVOLVED]\nRun a 5 Whys analysis:\nPROBLEM      :  [State the problem clearly]\nWHY 1  :  Why did this happen?\nWHY 2 :  Why did [Why 1 answer] happen?\nWHY 3 :  Why did [Why 2 answer] happen?\nWHY 4 :  Why did [Why 3 answer] happen?\nWHY 5 :  Why did [Why 4 answer] happen?\nROOT CAUSE    :  State the systemic root cause.\nSOLUTION        :  What change at the root cause level would prevent this problem from  \n                                recurring?\nVERIFICATION :  How will we confirm the fix held after 30 days?\nUnderstanding the root cause through iterative questioning.\nSurface Level Deep Root\nProblem/Symptom First Cause Second Cause Third Cause Root Cause\nIdentiﬁes the Explores the direct Investigates the Uncovers the cause Reveals the\nimmediate issue cause of the cause of the ﬁrst of the second cause fundamental reason\nsymptom cause for the problem",
+ "proTip": "The most valuable discipline in 5 Whys is stopping yourself from jumping to solutions\nbefore you reach Why 5. Every Why is a potential solution, but only the final Why\naddresses the root cause. Solutions applied at Why 2 or Why 3 create the illusion of\nprogress while leaving the root cause intact and ready to resurface.",
+ "pairsWith": [
+  "7.6 PDCA",
+  "7.9 Kaizen",
+  "7.11 Poka-Yoke",
+  "8.3 Post-Mortem"
+ ],
+ "pairsPrinted": [
+  "7.6 PDCA",
+  "7.9 Kaizen",
+  "7.11 Poka-Yoke",
+  "8.3 Post-Mortem"
+ ],
+ "extractedAt": "2026-09-18"
+}

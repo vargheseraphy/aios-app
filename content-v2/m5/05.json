@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.5",
+ "title": "Go-To-Market Canvas",
+ "titlePrinted": "Go-To-Market Canvas",
+ "level": "Advanced",
+ "subtitle": "You're about to launch a new product, enter a new market, or take a new offer to existing",
+ "sourcePages": {
+  "intro": 122,
+  "prompt": 123
+ },
+ "useWhen": "customers and you don't have a structured plan. You're moving fast but not strategically. Things will fall through the cracks.",
+ "howToUse": "A Go-To-Market (GTM) Canvas is a structured plan that maps seven elements of a successful launch: Target Segment (who exactly), Value Proposition (why this, why now), Channels (how you reach them), Pricing (how you charge), Sales Motion (how you convert), Success Metrics (how you know it's working), and Launch Timeline (sequenced actions). Without a GTM Canvas, launches become activity without direction, lots of effort, unclear results.",
+ "steps": [
+  "Complete the Target Segment and Value Proposition first, everything else follows from those.",
+  "Define success metrics before launch, not after. What number will tell you this worked?",
+  "Map the Sales Motion specifically, who does what, in what order, using which assets.",
+  "Set a 30-day, 60-day, and 90-day milestone to know whether to accelerate or adjust. Plan your launch so it lands, not just ships If Target Segment or Value Proposition is wrong, the other five elements just execute the mistake faster and more efficiently."
+ ],
+ "origin": "VC & startup GTM methodology — widely documented in startup literature",
+ "promptBody": "Act as a go-to-market strategist.\nWhat I am launching  :   [PRODUCT, SERVICE, OR NEW MARKET ENTRY]\nLaunch date target      :  [WHEN YOU WANT TO GO LIVE]\nResources available     :  [TEAM SIZE, BUDGET RANGE, CHANNELS]\nBuild a complete GTM Canvas:\nTARGET SEGMENT     :  Who specifically - ICP description\nVALUE PROP                :  Why this, why now, why us\nCHANNELS                   :  How we reach them - ranked by priority\nPRICING                        :  Model and rationale\nSALES MOTION           :  Steps from awareness to closed deal\nSUCCESS METRICS    :  The 3 numbers that define success\nTIMELINE                     :  Key milestones for weeks 1, 2, 4, 8\nFlag the highest-risk assumption in this GTM plan and suggest how to validate it before\nfull launch.\nGo-To-Market Canvas\nPricing\nCost of products/services Success Metrics\nMeasures of launch\neffectiveness\nLaunch Timeline\nSchedule for market entry\nSales Motion\nStrategy for customer\nChannels\nengagement\nDistribution and\ncommunication methods",
+ "proTip": "The highest-risk GTM assumption is almost always Channel, not product. Most founders\nassume a channel will work before testing it. Before investing in a full launch, run a 2-\nweek channel test with minimal spend. Let data pick your primary channel, not your\npreference.",
+ "pairsWith": [
+  "5.3 Marketing Mix",
+  "5.7 Launch Playbook",
+  "2.3 Lean Canvas",
+  "3.4 ICP"
+ ],
+ "pairsPrinted": [
+  "5.3 Marketing Mix",
+  "5.7 Launch Playbook",
+  "2.3 Lean Canvas",
+  "3.4 ICP"
+ ],
+ "extractedAt": "2026-09-18"
+}

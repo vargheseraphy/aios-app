@@ -1,0 +1,34 @@
+{
+ "module": 3,
+ "lesson": "3.1",
+ "title": "SWOT Analysis",
+ "titlePrinted": "SWOT Analysis",
+ "level": "Beginner",
+ "subtitle": "A structured snapshot of where you stand right now",
+ "sourcePages": {
+  "intro": 70,
+  "prompt": 71
+ },
+ "useWhen": "You need a clear, honest picture of your current position before making a major decision a new market entry, a fundraise, a product pivot, or a new partnership.",
+ "howToUse": "Created at Stanford Research Institute in the 1960s and attributed to Albert Humphrey, SWOT maps four dimensions: Strengths (internal advantages you control), Weaknesses (internal limitations you control), Opportunities (external conditions you can exploit), Threats (external conditions that could hurt you). The real value is not in completing the grid — it's in the strategic questions the grid generates. AI can fill a SWOT in minutes and then analyse the strategic implications.",
+ "steps": [
+  "Complete the internal factors (S and W) first you know these best.",
+  "For Opportunities and Threats, brief AI with industry context before prompting.",
+  "After completing the grid, ask AI for strategic implications not just the list.",
+  "Run SWOT annually and after any major market shift. Most SWOT analyses list 20 items across four boxes and then sit in a drawer. The framework only creates value when you use it to make decisions: which strength counters which threat, which opportunity addresses which weakness. Without that cross-analysis step, SWOT is inventory, not strategy."
+ ],
+ "origin": "Albert Humphrey, Stanford Research Institute — SWOT framework, 1960s",
+ "promptBody": "Act as a strategic analyst. Build a comprehensive SWOT for:\nBusiness                  :  [YOUR COMPANY NAME AND WHAT IT DOES]\nIndustry                  :  [YOUR MARKET AND KEY COMPETITORS]\nStage                       :  [REVENUE, TEAM, KEY MARKETS]\nContext                   :  [WHAT DECISION YOU ARE ABOUT TO MAKE]\nSTRENGTHS           :  Internal advantages — what we do better\nWEAKNESSES        :  Internal limitations — where we are vulnerable\nOPPORTUNITIES   :  External conditions we can exploit now\nTHREATS                 :  External conditions that could hurt us\nGive 4–5 points per quadrant. Be specific.\nAfter the grid: give 3 strategic actions  one to leverage a strength,\none to fix a critical weakness, one to capture the best opportunity before it closes.\nStrategic Snapshot\n1 2\nStrengths Opportunities\nPositive internal Positive external\nfactors factors\n3 4\nWeaknesses Threats\nNegative internal Negative external\nfactors factors",
+ "proTip": "The most useful output from SWOT is not the grid itself — it's the SO strategies (use\nStrengths to capture Opportunities) and the WT strategies (reduce Weaknesses to avoid\nThreats). Ask AI to generate those strategies explicitly. Most people stop at the grid and\nnever get to the insight.",
+ "pairsWith": [
+  "3.2 PESTLE",
+  "3.3 Porter's Five Forces",
+  "3.6 Competitor Mapping"
+ ],
+ "pairsPrinted": [
+  "3.2 PESTLE",
+  "3.3 Porter's Five Forces",
+  "3.6 Competitor Mapping"
+ ],
+ "extractedAt": "2026-09-18"
+}

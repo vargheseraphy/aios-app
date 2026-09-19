@@ -1,0 +1,37 @@
+{
+ "module": 1,
+ "lesson": "1.11",
+ "title": "SCAMPER",
+ "titlePrinted": "SCAMPER",
+ "level": "Intermediate",
+ "subtitle": "Seven creative lenses to transform any idea",
+ "sourcePages": {
+  "intro": 44,
+  "prompt": 45
+ },
+ "useWhen": "You need to innovate on an existing product, process, or idea but every direction feels like a variation of the same thing. You want structured creative thinking, not just brainstorming.",
+ "howToUse": "SCAMPER is a structured creativity tool built on seven lenses: Substitute (what can be replaced?), Combine (what can be merged?), Adapt (what can be borrowed from elsewhere?), Modify or Magnify (what can be changed or amplified?), Put to other uses (what else could this do?), Eliminate (what can be removed?), Reverse or Rearrange (what if we flipped the order?). Each lens forces a different angle on the same problem. Originally developed by Bob Eberle, building on Alex Osborn's brainstorming work.",
+ "steps": [
+  "Define the product, process, or idea you want to innovate on.",
+  "Ask AI to apply all seven SCAMPER lenses to your specific situation.",
+  "Look for combinations, often the best idea comes from two lenses together.",
+  "Select the 2–3 most viable directions and develop them further.",
+  "Have I applied SCAMPER to the constraint itself, not just the product or service?",
+  "Which of the seven lenses am I most likely to skip because it feels too radical?",
+  "Would my best competitor use one of these moves to disrupt me if I don't use it first? QUICK CHECK"
+ ],
+ "origin": "Bob Eberle, SCAMPER, 1971 — based on Alex Osborn's brainstorming work, 1953",
+ "promptBody": "Act as a creative innovation facilitator using SCAMPER.\nI want to innovate on   :  [YOUR PRODUCT, SERVICE, OR PROCESS]\nContext                           :   [INDUSTRY, TARGET CUSTOMER, CURRENT LIMITATIONS]\nSubstitute                       :  What component or step could be replaced?\nCombine                         :   What could be merged for more value?\nAdapt                               :   What works elsewhere that I could borrow?\nModify                             :   What could be changed, enlarged, or reduced?\nPut to other uses           :   What other jobs could this do?\nEliminate                         :   What could be removed entirely?\nReverse                            :   What if the order or direction was flipped?\nGive one specific, actionable idea per lens.\nSCAMPER: Structured Creativity for Innovation\nStagnant Ideas Innovative Solutions\nApply SCAMPER\nVariations of the same New directions for the\nLenses\nthing idea\nClearly state the Use seven creative Merge ideas from Develop the most\ninnovation target lenses different lenses promising ideas",
+ "proTip": "Run SCAMPER on your competitors' products, not just your own. Ask 'what would\nhappen if a competitor applied SCAMPER to our product?' The answers will tell you\nyour vulnerabilities before they do.",
+ "pairsWith": [
+  "1.6 First Principles",
+  "2.4 Blue Ocean Strategy",
+  "1.9 Mental Models"
+ ],
+ "pairsPrinted": [
+  "1.6 First Principles",
+  "2.4 Blue Ocean Strategy",
+  "1.9 Mental Models"
+ ],
+ "extractedAt": "2026-09-18"
+}

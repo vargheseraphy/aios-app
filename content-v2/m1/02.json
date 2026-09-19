@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.2",
+ "title": "The Context Stack",
+ "titlePrinted": "The Context Stack",
+ "level": "Beginner",
+ "subtitle": "Your AI outputs feel shallow or off-target even when you've explained the situation. The AI",
+ "sourcePages": {
+  "intro": 26,
+  "prompt": 27
+ },
+ "useWhen": "is missing crucial background that seems obvious to you.",
+ "howToUse": "AI has no memory of who you are. Every prompt starts from zero. The Context Stack is a four-layer background brief: Situation (current state), Background (relevant history and details), Constraints (what limits apply), Output Format (exactly how you want the answer). The more precise your stack, the more precise the output. Constraints is the layer people forget most, which is why AI often suggests things you already know won't work. Background doesn't need to be exhaustive, just the two or three facts that would change the answer if left out. A reused context stack compounds in value across a session, since each new prompt inherits the setup instead of re-explaining it",
+ "steps": [
+  "Write your context stack before your actual question, treat it as setup.",
+  "Include industry, company stage, audience, and any non-obvious constraints.",
+  "Reuse the same context stack across a session by pasting it at the top.",
+  "For recurring tasks, save your context stack as a reusable template. Why AI gives generic answers and how to fix it Most people give AI context about what they want but not who they are, what they've already tried, or what a good result looks like. AI fills those gaps with assumptions and they're usually wrong. Stack all four layers before you prompt, not after you get a bad result."
+ ],
+ "origin": "Prompt engineering best practice — adapted from AI workflow research, 2023",
+ "promptBody": "Situation           :     [What is happening - current challenge or goal]\nBackground      :     [Industry, team size, stage, audience, product, region -   \n                                  whatever is relevant]\nConstraints       :     [Time, budget, tone, audience level, things to avoid]\nOutput format  :     [List / paragraph / table / email draft]\nNow                    :     [YOUR ACTUAL QUESTION OR REQUEST]\nAI Output Feels Shallow: Missing Context\nRecurring Tasks\nNo built-in template\nReusing Context\nfunctionality\nStack\nRequires manual pasting\nNon-Obvious each time\nConstraints\nAI misses important\nlimitations Imprecise Context\nStack\nLeads to imprecise AI\noutput\nNo AI Memory\nEvery prompt starts from\nzero",
+ "proTip": "Save your most-used context stacks as text snippets. Paste them at the start of any AI\nsession. This single habit cuts prompt iteration time by half.",
+ "pairsWith": [
+  "1.1 C.A.R.E Prompting",
+  "1.3 Role Prompting",
+  "1.4 Refinement Loop"
+ ],
+ "pairsPrinted": [
+  "1.1 C.A.R.E Prompting",
+  "1.3 Role Prompting",
+  "1.4 Refinement Loop"
+ ],
+ "extractedAt": "2026-09-18"
+}

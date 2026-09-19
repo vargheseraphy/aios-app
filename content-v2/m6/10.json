@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.10",
+ "title": "Hoshin Kanri",
+ "titlePrinted": "Hoshin Kanri",
+ "level": "Advanced",
+ "subtitle": "Connect your company vision to daily team action without losing",
+ "sourcePages": {
+  "intro": 153,
+  "prompt": 154
+ },
+ "useWhen": "anything in translation Your company has a clear vision and your team works hard but there is a gap between the strategic direction and what people are actually working on day to day. The vision stays at the top and doesn't reach the ground.",
+ "howToUse": "Hoshin Kanri (Japanese: direction management) is a strategic planning and execution framework developed in Japan in the 1950s, refined at Toyota and Bridgestone, and adopted by many Fortune 500 companies. It cascades organisational objectives through every level of the company using a 'catchball' process goals are thrown back and forth between leadership and teams until both sides agree on what is achievable and how it connects. The result is a company where every person's daily work is visibly connected to the company's annual and long-term goals.",
+ "steps": [
+  "Start with your True North, your 3–5 year vision before setting annual objectives.",
+  "Use the catchball process: share objectives with teams, ask them to set their own targets, adjust together.",
+  "Limit to 3–5 annual breakthrough objectives, Hoshin Kanri is about focus, not comprehensiveness.",
+  "Review monthly: are the team-level actions actually moving the company-level metrics? Catchball only works if leadership actually adjusts the target when a team pushes back, if it's just a one-way announcement dressed up as dialogue, the process is theater, and your team will spot it fast."
+ ],
+ "origin": "Yoji Akao, Toyota / Bridgestone — Hoshin Kanri, Japan, 1950s–1960s",
+ "promptBody": "Act as a Hoshin Kanri strategy consultant.\nCompany vision (3–5 years)  :  [WHERE YOU ARE HEADING]\nThis year's priority                 :  [THE ONE BREAKTHROUGH OBJECTIVE FOR THIS YEAR]\nTeam structure                       :   [LIST YOUR TEAMS OR FUNCTIONAL AREAS]\nBuild a Hoshin Kanri cascade:\nTRUE NORTH               :  The 3–5 year vision in one clear sentence\nANNUAL OBJECTIVE  :  The single most important thing to achieve this year\nTEAM OBJECTIVES     :  For each team what they must deliver to support the annual  \n                                            objective\nMONTHLY MILESTONES  : Key proof points for each quarter\nCATCHBALL QUESTIONS : 3 questions I should ask each team lead to align their objectives\nWARNING SIGNALS           :  What would tell me the cascade has broken down?\nHoshin Kanri Hierarchy\nCompany Vision & Goals\nOverall vision and annual objectives of\nthe company\nDepartment Goals\nObjectives set by each department\nTeam Daily Actions\nSpeciﬁc tasks performed by teams daily",
+ "proTip": "The most common Hoshin failure is confusing activity alignment with outcome\nalignment. Every team can be busy doing things that connect to the objective on paper\nbut don't move the metric. Build the cascade around outcomes at every level  not\ninitiatives. If you can't draw a straight line from a team member's daily work to a\ncompany metric, the cascade has a gap.",
+ "pairsWith": [
+  "6.2 OKRs",
+  "6.1 RACI Matrix",
+  "9.7 Balanced Scorecard",
+  "10.5 3 Horizons"
+ ],
+ "pairsPrinted": [
+  "6.2 OKRs",
+  "6.1 RACI Matrix",
+  "9.7 Balanced Scorecard",
+  "10.5 3 Horizons"
+ ],
+ "extractedAt": "2026-09-18"
+}

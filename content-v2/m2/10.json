@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.10",
+ "title": "Kano Model",
+ "titlePrinted": "Kano Model",
+ "level": "Intermediate",
+ "subtitle": "Understand what truly delights customers and what just keeps them from leaving",
+ "sourcePages": {
+  "intro": 67,
+  "prompt": 68
+ },
+ "useWhen": "You're adding features and your product satisfaction scores aren't improving. Customers say they want something but when you build it, it doesn't seem to move the needle. You're not sure where to invest next.",
+ "howToUse": "Developed by Professor Noriaki Kano at Tokyo University of Science in 1984, the Kano Model classifies product features into three types: Basic Needs (expected, their absence causes dissatisfaction but their presence goes unnoticed), Performance Needs (more is better these features directly drive satisfaction), and Excitement Needs (unexpected, their presence delights, their absence is not missed). Features also evolve over time: today's excitement becomes tomorrow's basic need. AI can help you classify your features and decide where to invest.",
+ "steps": [
+  "List all your current and planned features before prompting.",
+  "Classify each feature honestly, most teams overestimate how many are Excitement features.",
+  "Ensure Basic Needs are fully met before investing in Excitement features.",
+  "Identify features that used to be Excitement and have become Basic these must beflawless. Most teams skip Basic Needs and invest in Excitement features, then wonder why satisfaction scores don't move. A delighted customer who hits a broken basic feature will churn regardless."
+ ],
+ "origin": "Noriaki Kano, Tokyo University of Science — Kano Model, 1984",
+ "promptBody": "Act as a product strategy advisor using the Kano Model.\nMy product            :  [DESCRIBE WHAT IT DOES]\nTarget customer   :  [WHO USES IT AND IN WHAT CONTEXT]\nI will list my features. Classify each as:\nBASIC NEED                   :  Expected — absence causes frustration\nPERFORMANCE NEED  :  More = better, directly drives satisfaction\nEXCITEMENT NEED      :  Unexpected delight — creates love for product\nFeatures to classify        :  [LIST YOUR FEATURES ONE PER LINE]\nAfter classifying              :  which Excitement feature should I build next to create\nmaximum delight? Which Basic Need am I most at risk of failing on?\nKano Model of Customer Satisfaction\nBasic Needs\nEssential features that prevent\ndissatisfaction\nPerformance Needs\nFeatures that improve product\nfunctionality\nExcitement Needs\nUnexpected features that delight\ncustomers\nCustomer Satisfaction\nThe ultimate goal of product\ndevelopment",
+ "proTip": "The most dangerous Kano insight is the feature that was Excitement two years ago and is\nnow Basic Need. Your competitors have copied it. Your customers expect it. If it's not\nflawless now, it's actively hurting you. Run this audit every six months.",
+ "pairsWith": [
+  "2.1 Value Proposition",
+  "2.5 JTBD",
+  "3.8 Voice of Customer"
+ ],
+ "pairsPrinted": [
+  "2.1 Value Proposition",
+  "2.5 JTBD",
+  "3.8 Voice of Customer"
+ ],
+ "extractedAt": "2026-09-18"
+}

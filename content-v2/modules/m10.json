@@ -1,0 +1,98 @@
+{
+ "module": 10,
+ "title": "Lead Yourself First",
+ "subtitle": "The company can only grow as fast as its founder.",
+ "description": "Every other module in this book helps you build a better business. This one helps you become a better founder. The habits, mental models, and self-awareness frameworks here are the ones that separate founders who scale from founders who stall. Three frameworks",
+ "lessons": [
+  "10.1",
+  "10.2",
+  "10.3",
+  "10.4",
+  "10.5",
+  "10.6",
+  "10.7",
+  "10.8",
+  "10.9",
+  "10.10",
+  "10.11"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Seasoned CEO (30yr)",
+    "priorities": "Long game — what compounds and what drains over a career",
+    "bestWhen": "Decisions that trade short-term gain for long-term cost",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Seasoned CEO (30yr)"
+   },
+   {
+    "role": "Chief of Staff",
+    "priorities": "Protecting time, energy, and focus from everything urgent",
+    "bestWhen": "Designing your week, your boundaries, and your priorities",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a Chief of Staff"
+   },
+   {
+    "role": "Leadership Development Director",
+    "priorities": "Building capability — not just solving today's problem",
+    "bestWhen": "Identifying the skills and habits you need to grow into the next level",
+    "seniority": "◆◆◆",
+    "promptClause": "a Leadership Development Director"
+   },
+   {
+    "role": "Therapist (professional context)",
+    "priorities": "Patterns, emotional intelligence, sustainable performance",
+    "bestWhen": "When the same problem keeps recurring despite your best intentions",
+    "seniority": "◆◆",
+    "promptClause": "a Therapist (professional context)"
+   },
+   {
+    "role": "Sports Performance Coach",
+    "priorities": "Energy, recovery, peak performance as a designed system",
+    "bestWhen": "When performance is declining despite effort increasing",
+    "seniority": "◆",
+    "promptClause": "a Sports Performance Coach"
+   },
+   {
+    "role": "Habit Design Specialist",
+    "priorities": "What behaviour architecture will make this stick?",
+    "bestWhen": "When you know what to do but keep not doing it",
+    "seniority": "◆",
+    "promptClause": "a Habit Design Specialist"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Executive Coach",
+    "priorities": "Honest mirror — what patterns are holding you back?",
+    "bestWhen": "When you feel stuck and cannot see why",
+    "seniority": "◈",
+    "promptClause": "an Executive Coach"
+   },
+   {
+    "role": "Mentor (20 years ahead of you)",
+    "priorities": "What would they tell you that your peers will not?",
+    "bestWhen": "Major career, business, or life direction decisions",
+    "seniority": "◈",
+    "promptClause": "a Mentor (20 years ahead of you)"
+   },
+   {
+    "role": "Stoic Philosopher",
+    "priorities": "What is in your control? What are you wasting energy on?",
+    "bestWhen": "When anxiety, overload, or paralysis is affecting your decisions",
+    "seniority": "◈",
+    "promptClause": "a Stoic Philosopher"
+   },
+   {
+    "role": "Biographer (writing your story)",
+    "priorities": "How will this period read in the story of your career?",
+    "bestWhen": "When short-term pressure is pulling you away from who you want to be",
+    "seniority": "◈",
+    "promptClause": "a Biographer (writing your story)"
+   }
+  ],
+  "question": "Who should challenge how you are leading yourself?",
+  "lead": "Self-leadership is the hardest kind because the subject and the observer are the same person. The roles on this page are designed to give you perspectives you cannot generate from inside your own thinking — the mentor who has already made your mistakes, the coach who sees your patterns more clearly than you do, and the critic who wants you to win. Use them when clarity matters most.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 10.2 90-Day Planning · 10.4 Energy Quadrants · 10.7 Socratic Self- Questioning · 10.9 Ikigai"
+ }
+}

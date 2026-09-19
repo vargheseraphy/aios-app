@@ -1,0 +1,99 @@
+{
+ "module": 7,
+ "title": "Operate with Precision",
+ "subtitle": "Build systems that run without you and improve without being told.",
+ "description": "A business that depends on heroic effort every day is not a business, it is a job you cannot quit. This module gives you the operational frameworks to document, automate, prioritise, and improve your processes including three Japanese methodologies from Toyota's production system that have shaped modern operations management worldwide. When your operations run on systems, your team's energy goes to growth, not firefighting.",
+ "lessons": [
+  "7.1",
+  "7.2",
+  "7.3",
+  "7.4",
+  "7.5",
+  "7.6",
+  "7.7",
+  "7.8",
+  "7.9",
+  "7.10",
+  "7.11",
+  "7.12"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Chief Operating Officer",
+    "priorities": "Systems over heroics — zero single points of failure",
+    "bestWhen": "Designing an operation that runs without the founder",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Chief Operating Officer"
+   },
+   {
+    "role": "VP of Operations",
+    "priorities": "Cross-functional efficiency, process coherence, KPIs",
+    "bestWhen": "Diagnosing where the business is losing time and money",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a VP of Operations"
+   },
+   {
+    "role": "Process Improvement Director",
+    "priorities": "Waste elimination, cycle time, defect reduction",
+    "bestWhen": "Mapping and fixing a process that keeps breaking",
+    "seniority": "◆◆◆",
+    "promptClause": "a Process Improvement Director"
+   },
+   {
+    "role": "Project Manager (PMP)",
+    "priorities": "Scope, timeline, dependencies, risk",
+    "bestWhen": "Planning any initiative that involves multiple people and stages",
+    "seniority": "◆◆",
+    "promptClause": "a Project Manager (PMP)"
+   },
+   {
+    "role": "Six Sigma Black Belt",
+    "priorities": "Data, measurement, root cause — no gut-feel fixes",
+    "bestWhen": "When a process problem keeps recurring after fixes",
+    "seniority": "◆",
+    "promptClause": "a Six Sigma Black Belt"
+   },
+   {
+    "role": "Automation Engineer",
+    "priorities": "What should never require a human? Build that first.",
+    "bestWhen": "Identifying and implementing automation opportunities",
+    "seniority": "◆",
+    "promptClause": "an Automation Engineer"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Toyota Production System Coach",
+    "priorities": "Waste in all forms — time, motion, defects, waiting",
+    "bestWhen": "When you want operations-level rigour on any process",
+    "seniority": "◈",
+    "promptClause": "a Toyota Production System Coach"
+   },
+   {
+    "role": "Frontline Team Member",
+    "priorities": "Where the process actually breaks for the person doing it",
+    "bestWhen": "Any time you are designing a process that affects your team",
+    "seniority": "◈",
+    "promptClause": "a Frontline Team Member"
+   },
+   {
+    "role": "Operations Auditor",
+    "priorities": "What would fail an external review — and why?",
+    "bestWhen": "Before scaling a process that has never been pressure-tested",
+    "seniority": "◈",
+    "promptClause": "an Operations Auditor"
+   },
+   {
+    "role": "Customer Receiving the Output",
+    "priorities": "Is the output actually what they needed — on time?",
+    "bestWhen": "When quality or delivery problems are appearing downstream",
+    "seniority": "◈",
+    "promptClause": "a Customer Receiving the Output"
+   }
+  ],
+  "question": "Who should audit and improve your operations?",
+  "lead": "Operations problems hide in plain sight — in the handoffs nobody notices, the processes nobody has documented, and the decisions nobody has questioned. The roles on this page bring the discipline of people who have built systems that run without heroics. Use them to find what is broken before it breaks you, and to build what scales before you need it to.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 7.1 SOP — SIPOC · 7.3 Theory of Constraints · 7.6 PDCA · 7.9 Kaizen · 7.12 5 Whys"
+ }
+}

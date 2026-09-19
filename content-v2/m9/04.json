@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.4",
+ "title": "AARRR Funnel Analysis  Deep",
+ "titlePrinted": "AARRR Funnel Analysis Deep",
+ "level": "Intermediate",
+ "subtitle": "Dive",
+ "sourcePages": {
+  "intro": 212,
+  "prompt": 213
+ },
+ "useWhen": "You are measuring acquisition and revenue but not the middle of the funnel. You are investing in growth without knowing which stage is most broken. You optimise the top of the funnel while the leaks in the middle undo all the gains.",
+ "howToUse": "While AARRR was introduced in Module 5 as a marketing framework, in the Finance module it is used as a quantitative diagnostic tool. By populating each stage with real numbers not aspirations and calculating conversion rates between stages, you create a financial model of your growth engine. The compound effect of improving each stage by 10% is modelled to show the revenue impact. AI can build this model when given your actual stage metrics and calculate the highest-leverage improvement point.",
+ "steps": [
+  "Measure all five stages before analysing any of them incomplete funnels produce misleading conclusions.",
+  "Calculate stage-to-stage conversion rates, not just top-to-bottom the leak is almost always in one specific transition.",
+  "Model the revenue impact of a 10% improvement at each stage the resulting number reveals where to invest.",
+  "Run this analysis quarterly conversion rates change as your product and messaging evolve. Turn your growth metrics into a diagnostic that tells you exactly what to fix A 10% gain at every stage looks great on paper, but stages interact in the real world. Model the number, then verify it against what actually happens next quarter."
+ ],
+ "origin": "Dave McClure, 500 Startups — AARRR, 2007 · Applied as financial diagnostic tool",
+ "promptBody": "Act as a growth analytics advisor running a deep AARRR analysis.\nMy business    :  [DESCRIBE PRODUCT AND REVENUE MODEL]\nPopulate my funnel with current numbers:\nACQUISITION :  Monthly visitors / leads: [X]\nACTIVATION   :  % who complete first key action: [X%]\nRETENTION    :  30-day retention or monthly churn: [X%]\nREVENUE         :  % who convert to paying: [X%] · Average revenue per paying user: [X]\nREFERRAL        :  % who refer at least one other user: [X%]\nANALYSIS:\n1. Calculate conversion rate at each stage transition\n2. Identify the stage with the worst conversion the biggest leak in the funnel\n3. Model the revenue impact if that stage improved 10%\n4. Model the revenue impact if every stage improved 10%\n5. Recommend the 2 highest-ROI experiments to run at the weakest stage\n6. What is my current revenue per acquired visitor?\nWhat would it be at healthy benchmark conversion rates?",
+ "proTip": "Run the 10% improvement model for each stage and compare the revenue impact\nnumbers. The stage where a 10% improvement produces the largest revenue gain is your\nhighest-leverage investment. In most early-stage businesses, this is Activation the\ntransition from visitor to engaged user. Fixing Activation compounds through every\ndownstream stage simultaneously.",
+ "pairsWith": [
+  "9.3 North Star",
+  "9.1 LTV:CAC",
+  "5.9 AARRR",
+  "5.8 Growth Loop"
+ ],
+ "pairsPrinted": [
+  "9.3 North Star",
+  "9.1 LTV:CAC",
+  "5.9 AARRR",
+  "5.8 Growth Loop"
+ ],
+ "extractedAt": "2026-09-18"
+}

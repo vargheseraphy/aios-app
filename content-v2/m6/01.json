@@ -1,0 +1,34 @@
+{
+ "module": 6,
+ "lesson": "6.1",
+ "title": "RACI Matrix",
+ "titlePrinted": "RACI Matrix",
+ "level": "Beginner",
+ "subtitle": "End confusion about who owns what, permanently",
+ "sourcePages": {
+  "intro": 135,
+  "prompt": 136
+ },
+ "useWhen": "People in your team are duplicating work, dropping tasks, or blaming each other for things that fell through the cracks. Decisions keep escalating to you. Nobody is sure who is supposed to decide what.",
+ "howToUse": "RACI defines four roles for every task or decision: Responsible (does the work), Accountable (owns the outcome - one person only), Consulted (gives input before action), Informed (told after action). The single most important rule: there must be exactly one Accountable person per task. When two people are accountable, nobody is accountable. When this matrix is applied to your team's key processes, task duplication drops, decision speed increases, and your inbox stops filling with questions that aren't yours to answer. A RACI chart doesn't fix a culture where nobody wants to be the one Accountable person. If your team resists filling in that column, the matrix isn't the problem, the fear of owning a visible outcome is, and that conversation has to happen before the chart means anything. A Chart Won't Fix Culture",
+ "steps": [
+  "List your team's 8–12 most important recurring tasks or decisions before prompting.",
+  "Map your team roles across the top use role titles, not names, so the matrix survives turnover.",
+  "Every task must have exactly one A, if you find two, that's your first fix.",
+  "Share the completed RACI with your team and run a 30-minute review, disagreements reveal your real accountability gaps."
+ ],
+ "origin": "Operations management best practice — RACI matrix formalised 1950s–1960s",
+ "promptBody": "Act as an operations consultant specialising in team clarity.\nProcess or function  : [THE AREA YOU WANT TO MAP  e.g. client onboarding, \n                                        monthly reporting]\nTeam roles involved :\n[LIST YOUR ROLES:  e.g. CEO, Sales Lead, Account Manager, Marketing Manager,\nOperations Lead]\nFor each key task in this process, assign:\nR  =  Responsible (does the actual work)\nA  =  Accountable (one person - owns the outcome)\nC  =  Consulted (gives input before action is taken)\nI   =  Informed (told after action is complete)\nFormat as a clear table.\nFlag any task with more than one A, explain the risk.\nFlag any task with no clear R.\nRecommend the 2 most urgent clarity fixes.\nRACI Matrix Hierarchy\nAccountable\nUltimately responsible for task completion\nResponsible\nCarries out the task\nConsulted\nProvided input and feedback\nInformed\nKept up-to-date on progress",
+ "proTip": "If more than one person is marked Accountable for any task, the matrix is already\nbroken. There must be exactly one A per row that single constraint removes more\nteam friction than any team meeting ever will. When everyone knows who owns the\noutcome, everything else becomes easier to delegate.",
+ "pairsWith": [
+  "6.2 OKRs",
+  "6.7 Delegation Ladder",
+  "6.8 Meeting Design"
+ ],
+ "pairsPrinted": [
+  "6.2 OKRs",
+  "6.7 Delegation Ladder",
+  "6.8 Meeting Design"
+ ],
+ "extractedAt": "2026-09-18"
+}

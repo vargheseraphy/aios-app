@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.6",
+ "title": "First Principles Thinking",
+ "titlePrinted": "First Principles Thinking",
+ "level": "Intermediate",
+ "subtitle": "You're stuck because you've inherited a way of doing things that nobody has questioned.",
+ "sourcePages": {
+  "intro": 34,
+  "prompt": 35
+ },
+ "useWhen": "Every solution is a variation of the same approach. You need a breakthrough, not an iteration.",
+ "howToUse": "First principles means decomposing a problem to its fundamental truths, stripping away assumptions, analogies, and 'how it's always done', then rebuilding from scratch. Aristotle formalised it. Physicists rely on it. Founders use it to build things that shouldn't be possible by conventional thinking. Most people reason by analogy instead, copying what already exists with small variations, which is faster but caps you at incremental improvements on someone else's idea.",
+ "steps": [
+  "Define the problem or current approach you want to question.",
+  "List every assumption embedded in that approach, write them down.",
+  "For each assumption, ask: is this actually true, or is it inherited?",
+  "Reconstruct using only the things you know to be genuinely true. Break every assumption. Rebuild from the ground up. Elon Musk used First Principles to reduce SpaceX's rocket cost by 10x. The industry assumption was that rockets cost $65M. He asked: what do the raw materials actually cost? Carbon fibre, aluminium, titanium, copper about $2M. SpaceX built its own rockets for $6M. The assumption was the business model, not the physics. IN PRACTICE"
+ ],
+ "origin": "Aristotle — applied as business thinking by Elon Musk, popularised 2012–2018",
+ "promptBody": "Act as a first principles thinking coach.\nCurrent approach or problem: [DESCRIBE YOUR SITUATION SPECIFICALLY]\nStep 1  :  List every assumption in this approach.\nStep 2 :  For each - is this actually true, or just inherited convention?\nStep 3 :  Which are fixed constraints vs. just habits?\nStep 4 :  Reconstruct a fresh approach using only what is genuinely true and necessary.\nFlag the 3 most dangerous assumptions first.\nFIRST PRINCIPLES THINKING: UNVEILING HIDDEN ASSUMPTIONS\nStuck Solution\nObvious problem\n with no breakthrough\nInherited Approach\nUnquestioned way \nof doing things\nEmbedded Assumptions\nUnveriﬁed beliefs underlying \nFundamental Truths the approach\nBasic, undeniable \nfacts about the problem",
+ "proTip": "The most valuable output isn't the new idea, it's the list of assumptions you'd never\nquestioned. That list alone is worth running this prompt every quarter.",
+ "pairsWith": [
+  "1.7 Second Order",
+  "1.8 Inversion",
+  "2.4 Blue Ocean Strategy"
+ ],
+ "pairsPrinted": [
+  "1.7 Second Order",
+  "1.8 Inversion",
+  "2.4 Blue Ocean Strategy"
+ ],
+ "extractedAt": "2026-09-18"
+}

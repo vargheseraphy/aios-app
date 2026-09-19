@@ -1,0 +1,31 @@
+{
+ "module": 9,
+ "lesson": "9.3",
+ "title": "North Star Metric & OMTM",
+ "titlePrinted": "North Star Metric & OMTM",
+ "level": "Intermediate",
+ "subtitle": "Your team tracks many metrics but none of them feel like the right one. Different teams",
+ "sourcePages": {
+  "intro": 210,
+  "prompt": 211
+ },
+ "useWhen": "optimise for different numbers. Metrics move up and down without anyone being sure whether the business is actually getting better or worse. 1.Your North Star Metric must measure value delivered to customers, not revenue extracted from them. 2.The OMTM changes as you move through startup stages, what matters in pre- product-fit is different from what matters in scaling. 3.Instrument your product to track the North Star automatically, not manually. 4.Build every team's weekly goals around moving the North Star, not their departmental metrics. The North Star Metric is the single metric that best captures the core value your product delivers to customers and that, when it grows, predicts long-term company health. Examples: Airbnb's North Star is nights booked, Spotify's is time spent listening, Slack's is messages sent. The OMTM (One Metric That Matters), coined in Lean Analytics by Alistair Croll and Ben Yoskovitz, is the one metric your company should focus on above all others at the current stage of growth. Unlike the North Star (long-term), the OMTM shifts as the company moves through stages. AI can help you identify both for your specific business model and stage.",
+ "howToUse": "Find the one number that predicts every thing elseand focus your entire company on moving it",
+ "steps": [],
+ "origin": "Eric Ries / Lean Analytics — North Star Metric · Alistair Croll & Ben Yoskovitz, OMTM, 2013",
+ "promptBody": "Act as a growth strategy advisor specialising in metrics design.\nMy business                      :  [DESCRIBE YOUR PRODUCT AND BUSINESS MODEL]\nStage                                   :  [PRE-REVENUE / EARLY TRACTION / GROWTH / SCALING]\nCurrent metrics tracked :  [LIST WHAT YOU MEASURE NOW]\nStep 1  :  Define my North Star Metric.\nIt must: measure value to customers, predict revenue, be trackable, and be moveable by\nmy team.\nSuggest 3 candidates and recommend the strongest.\nStep 2  :  Define my OMTM for my current stage.\nWhat one metric should I obsess over right now? Why this one above all others at this\nstage?\nStep 3 :  Build a metrics hierarchy.\nWhat are the 3–5 leading indicators that predict movement in the North Star?\nStep 4 :  What is one metric I am currently tracking that is a vanity metric and should\n                be dropped?",
+ "proTip": "The most common North Star mistake is choosing a metric that measures your activity\ninstead of the customer's value. 'Registered users' measures your acquisition, not their\nvalue. 'Users who completed their first meaningful action' measures whether they got\nvalue. The metric must describe something good happening for the customer, not\nsomething good happening for you.",
+ "pairsWith": [
+  "5.9 AARRR",
+  "9.4 Funnel Analysis",
+  "6.2 OKRs",
+  "9.1 LTV:CAC"
+ ],
+ "pairsPrinted": [
+  "5.9 AARRR",
+  "9.4 Funnel Analysis",
+  "6.2 OKRs",
+  "9.1 LTV:CAC"
+ ],
+ "extractedAt": "2026-09-18"
+}

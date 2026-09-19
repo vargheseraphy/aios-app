@@ -1,0 +1,34 @@
+{
+ "module": 7,
+ "lesson": "7.1",
+ "title": "SOP Generation - SIPOC",
+ "titlePrinted": "SOP Generation - SIPOC",
+ "level": "Beginner",
+ "subtitle": "Your business relies on people remembering how to do things. When someone leaves or is",
+ "sourcePages": {
+  "intro": 160,
+  "prompt": 161
+ },
+ "useWhen": "absent, quality drops. You spend time explaining the same process repeatedly instead of running the business.",
+ "howToUse": "SIPOC is a Six Sigma process mapping tool that defines a process across five elements: Suppliers (who provides inputs), Inputs (what is needed to start), Process (the steps in sequence), Outputs (what is produced), Customers (who receives the output). Used as the structure for a Standard Operating Procedure (SOP), it ensures every process is fully documented not just the steps, but the context, the handoffs, and the success criteria. AI can generate a first-draft SOP for any process you describe in plain language.",
+ "steps": [
+  "Describe the process in plain language first don't try to structure it as you describe it.",
+  "After AI generates the SOP, walk through it physically and correct any gaps.",
+  "Assign a process owner, one person responsible for keeping the SOP current.",
+  "Review all SOPs every six months or after any significant process change. Turn the process in your head into a document anyone can follow The most valuable line in any SOP is the Quality Check column how do you know each step was done correctly? Most SOPs document what to do but not how to verify it was done right. Adding one quality signal per step is the difference between a document that is followed and one that is ignored. PRO TIP"
+ ],
+ "origin": "Six Sigma methodology — SIPOC tool, widely used since 1980s",
+ "promptBody": "I PROMPT — COPY & PASTE READY\nAct as an operations consultant specialising in SOP documentation.\nProcess to document     :  [NAME AND DESCRIBE THE PROCESS]\nWho performs it             :  [ROLE AND EXPERIENCE LEVEL]\nTools and systems used :  [SOFTWARE, PLATFORMS, RESOURCES]\nHow often it runs            :  [DAILY / WEEKLY / PER PROJECT]\nGenerate a complete SOP using the SIPOC structure:\nSIPOC OVERVIEW:\n→ → → →\nSuppliers  Inputs  Process Steps  Outputs  Customers\nFULL SOP:\nPurpose   :  Why this process exists\nScope       :  What is and is not included\nOwner      :  Who is responsible for this process\nSteps        :  Numbered steps with decision points noted\nQuality     :  How to know each step was done correctly\nErrors       :  Common mistakes and how to avoid them\nReview     :  When and how this SOP should be updated",
+ "proTip": "",
+ "pairsWith": [
+  "7.2 Swimlane Mapping",
+  "7.11 Poka-Yoke",
+  "6.1 RACI Matrix"
+ ],
+ "pairsPrinted": [
+  "7.2 Swimlane Mapping",
+  "7.11 Poka-Yoke",
+  "6.1 RACI Matrix"
+ ],
+ "extractedAt": "2026-09-18"
+}

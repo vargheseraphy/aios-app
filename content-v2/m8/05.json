@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.5",
+ "title": "Scenario Planning",
+ "titlePrinted": "Scenario Planning",
+ "level": "Advanced",
+ "subtitle": "Plan for the futures that haven't happened yet, including the ones you're not expecting",
+ "sourcePages": {
+  "intro": 193,
+  "prompt": 194
+ },
+ "useWhen": "You plan for one future: the one you expect. When the market shifts, a competitor moves, or an external event disrupts your assumptions, you are caught without a contingency. You are not naive, you just haven't built the habit of planning for multiple futures.",
+ "howToUse": "Scenario Planning was pioneered by Herman Kahn at the RAND Corporation and developed into a strategic tool by the Shell Oil planning team in the 1970s, most famously used to prepare for the 1973 oil crisis before it happened. The method builds three to four internally consistent, plausible futures based on the key uncertainties in your environment. You then stress-test your strategy against each scenario. The goal is not to predict which future will happen, it is to build a strategy that is robust across multiple futures and to identify the early signals that tell you which future is emerging.",
+ "steps": [
+  "Identify your two most critical and most uncertain variables, these become the axes of your scenario matrix.",
+  "Build scenarios that are plausible, distinct, and internally consistent not best/worst/base.",
+  "Name each scenario memorably, it makes them easier to reference in team conversations.",
+  "Define the early warning signals for each scenario before you need them. A named scenario is worth nothing without a defined trigger. If \"Downturn\" and \"Boom\" don't come with the specific early signals that tell you which one is arriving, you've built a story exercise, not a strategy tool."
+ ],
+ "origin": "Herman Kahn, RAND Corporation · Shell Oil planning team, 1970s",
+ "promptBody": "Act as a scenario planning strategist.\nMy business           :  [DESCRIBE YOUR COMPANY AND CORE STRATEGY]\nPlanning horizon  :  [1 YEAR / 3 YEARS / 5 YEARS]\nKey uncertainties :  [WHAT 2–3 EXTERNAL FACTORS COULD MOST CHANGE YOUR\nBUSINESS ENVIRONMENT]\nBuild 3 distinct scenarios. For each scenario:\nNAME                 :  A memorable, descriptive title\nDESCRIPTION  :  What this future looks like in 2–3 sentences\nKEY DRIVERS   :  What causes this scenario to unfold\nIMPACT              :  How does this affect my business specifically?\nSTRATEGY         :  What should I do differently in this scenario?\nEARLY SIGNAL :  What would I see in the next 90 days that tells me this scenario is  \n                                emerging?\nAfter the three scenarios:\nWhich elements of my current strategy work across all three?\nWhich are scenario-specific bets?\nScenario planning matrix based on market growth and regulation.\nSlow Fast\nScenario 1 Scenario 2 Scenario 3 Scenario 4\nMinimal government Heavy government High market Limited market\noversight control competition opportunities",
+ "proTip": "The real value in scenario planning isn't the scenarios, it's the early warning signals. Once\nyou know what each future looks like in its early stages, you know what to watch for.\nBuild a simple 3–5 signal dashboard and review it quarterly. Founders who see change\ncoming are the ones who defined what it would look like before it arrived.",
+ "pairsWith": [
+  "8.4 Risk Matrix",
+  "8.2 Pre-Mortem",
+  "3.2 PESTLE",
+  "1.7 Second Order Thinking"
+ ],
+ "pairsPrinted": [
+  "8.4 Risk Matrix",
+  "8.2 Pre-Mortem",
+  "3.2 PESTLE",
+  "1.7 Second Order Thinking"
+ ],
+ "extractedAt": "2026-09-18"
+}

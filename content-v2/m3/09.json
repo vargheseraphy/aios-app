@@ -1,0 +1,36 @@
+{
+ "module": 3,
+ "lesson": "3.9",
+ "title": "STP Model - Segment, Target,",
+ "titlePrinted": "STP Model - Segment, Target,",
+ "level": "Intermediate",
+ "subtitle": "Position",
+ "sourcePages": {
+  "intro": 86,
+  "prompt": 87
+ },
+ "useWhen": "You're spreading your marketing budget across too many audiences and seeing weak results everywhere. Or you're about to launch a new product and need to decide which customer segment to go after first.",
+ "howToUse": "Developed by Philip Kotler, the STP Model is a three-stage strategic marketing process. Segmentation divides the total market into distinct groups with different needs or behaviours. Targeting evaluates each segment and chooses which to focus on, based on size, growth, accessibility, and fit with your capabilities. Positioning then defines how you want to be perceived by the chosen segment relative to competitors. STP prevents the costly mistake of trying to be everything to everyone.",
+ "steps": [
+  "Map your market into at least 4–6 distinct segments before evaluating which to target.",
+  "Score each segment on attractiveness and your ability to win in it, not just size.",
+  "For the chosen target segment, write a positioning statement using Framework 3.7.",
+  "Resist targeting more than two segments until you have fully won the first. Choose your market deliberately, don't let the market choose you The most expensive STP mistake is targeting the largest segment instead of the most winnable one. A smaller segment where you have a clear advantage will outperform a large segment where you are one of many."
+ ],
+ "origin": "Philip Kotler, Marketing Management — STP framework, 1967 onwards",
+ "promptBody": "Act as a marketing strategist using the STP framework.\nMy business          :  [DESCRIBE YOUR PRODUCT AND CURRENT MARKET]\nTotal market         :  [THE BROAD MARKET YOU OPERATE IN]\nSEGMENTATION :\nDivide the total market into 5–6 distinct customer segments based on\nindustry, need, behaviour, or size. Describe each segment in 2–3 lines.\nTARGETING:\nScore each segment 1–5 on:\nMarket size and growth rate\nFit with my current capabilities\nCompetitive intensity in this segment\nLikely profitability and retention\nRecommend the top 1–2 segments to target first.\nPOSITIONING:\nFor the top segment,  write one positioning statement that clearly\ndifferentiates me from alternatives.\nSTP Model — Choose Your Market. Own Your Position.\nSegmentation\nInitial market segmentation\n100%\nTargeting\nTarget market selection\n50%\nPositioning\nMarket positioning\n25%",
+ "proTip": "Most founders target the largest segment, not the most winnable one. The most\nwinnable segment is where you have a natural advantage,  a network, a credential, an\ninsight,  that competitors don't. Winning one segment completely is worth more than\npartial penetration of three.",
+ "pairsWith": [
+  "3.4 ICP",
+  "3.7 Positioning Statement",
+  "5.4 Marketing Mix",
+  "5.6 GTM Canvas"
+ ],
+ "pairsPrinted": [
+  "3.4 ICP",
+  "3.7 Positioning Statement",
+  "5.4 Marketing Mix",
+  "5.6 GTM Canvas"
+ ],
+ "extractedAt": "2026-09-18"
+}

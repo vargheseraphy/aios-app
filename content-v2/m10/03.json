@@ -1,0 +1,38 @@
+{
+ "module": 10,
+ "lesson": "10.3",
+ "title": "Weekly Review  GTD 5-15",
+ "titlePrinted": "Weekly Review GTD 5-15",
+ "level": "Beginner",
+ "subtitle": "You end most weeks with a vague sense of what happened and start most weeks reactive",
+ "sourcePages": {
+  "intro": 229,
+  "prompt": 230
+ },
+ "useWhen": "responding to what arrives rather than acting on what matters. Your productivity is high but your progress on the things that matter most is slow.",
+ "howToUse": "David Allen's Getting Things Done (GTD) system includes a Weekly Review as its highest- leverage practice. The 5-15 Report, popularised in the management literature - is a compact weekly review format: 5 minutes reviewing what you accomplished, 10 minutes planning what matters next week. Combined with GTD's capture-and-process discipline, the weekly review is the habit that keeps your system honest and your priorities clear. AI can run the review with you when given the right inputs, turning 15 minutes of structured reflection into a clean weekly action list.",
+ "steps": [
+  "Schedule the weekly review at the same time every week - Friday afternoon or Sunday morning work well for most founders.",
+  "Do not start next week's planning until you have finished this week's review - close the loop before opening the next one.",
+  "The review is not a to-do list audit - it is a priorities audit. Ask whether what you worked on this week actually mattered.",
+  "Keep the review under 20 minutes. If it takes longer, the system needs simplification, not more time. End every week with clarity. Start every week with intention. Checking off a full to-do list feels productive but says nothing about whether the right things got done. The review only works if it asks \"did this matter,\" not \"did I finish it.\""
+ ],
+ "origin": "David Allen, Getting Things Done, 2001",
+ "promptBody": "Act as a personal productivity coach running my Weekly Review.\nThis week's context:\nWhat I planned to do       :  [YOUR GOALS OR INTENTIONS FOR THIS WEEK]\nWhat I actually did           :  [KEY TASKS AND PROJECTS WORKED ON]\nWhat is unfinished           :  [ITEMS CARRIED OVER OR INCOMPLETE]\nUpcoming commitments :  [KEY MEETINGS, DEADLINES NEXT WEEK]\nRun my Weekly Review:\nWINS             :  What 3 things went well this week? What made them possible?\nGAPS             :  What did I plan but not do? Was it worth doing? If yes — why didn't it  \n                          happen?\nLEARNINGS : What one thing would I do differently?\nNEXT WEEK PRIORITIES: My top 3 outcomes for next week. Not tasks, outcomes.\nPROTECT      :  One block of time to schedule now for my most important strategic \n                           work next week.\nCLEAR: One thing to decide, delegate, or delete today.\nThe 5-15 Weekly Review\nWhat Happened What's Next Repeat Weekly\n5 min: What Happened 10 min: What's Next Repeat Weekly",
+ "proTip": "The single most important output of the Weekly Review is the one block of protected\ntime for Q2 work scheduled in advance. Without scheduling it before the week begins,\nreactive Q1 and Q3 work will fill every available hour. The calendar must reflect your\npriorities before the week starts, not after it ends.",
+ "pairsWith": [
+  "8.7 Eisenhower Matrix",
+  "5-15 Report",
+  "10.2 90-Day Planning",
+  "10.6 Atomic Habits",
+  "6.8"
+ ],
+ "pairsPrinted": [
+  "8.7 Eisenhower Matrix",
+  "5-15 Report",
+  "10.2 90-Day Planning",
+  "10.6 Atomic Habits",
+  "6.8"
+ ],
+ "extractedAt": "2026-09-18"
+}

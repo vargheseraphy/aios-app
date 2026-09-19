@@ -1,0 +1,34 @@
+{
+ "module": 6,
+ "lesson": "6.3",
+ "title": "1-on-1 Framework - GROW Model",
+ "titlePrinted": "1-on-1 Framework - GROW Model",
+ "level": "Beginner",
+ "subtitle": "Your 1-on-1s feel like status updates. You ask how things are going, they tell you, and you",
+ "sourcePages": {
+  "intro": 139,
+  "prompt": 140
+ },
+ "useWhen": "both move on. Nothing changes. The conversation is comfortable but not useful. Your best people are not growing and you don't know why.",
+ "howToUse": "The GROW model was developed by Sir John Whitmore and popularised in his 1992 book Coaching for Performance. It is the most widely used coaching framework in the world for a reason: it works. Goal (what do you want to achieve in this conversation?), Reality (what is the current situation honestly?), Options (what are all the possible ways forward?), Will (what will you specifically commit to doing?). Applied to 1-on-1s, GROW transforms a status update into a structured coaching conversation that builds capability and accountability.",
+ "steps": [
+  "Set the Goal at the start of every 1-on-1. what does the person want to resolve by the end?",
+  "In Reality, ask questions rather than giving assessments, the person's self-assessment is more valuable.",
+  "In Options, generate at least 3 paths before evaluating any of them.",
+  "Will must end with a specific action, a specific timeline, and a self-rated commitment score (1–10). Turn weekly check-ins into the most valuable 30 minutes of your team's week A commitment score of 4 out of 10 is more useful than a 9, it tells you the plan won't survive the week. Don't coach the number up. Coach the plan until the number rises on its own. A Low Score Is the Real Data"
+ ],
+ "origin": "Sir John Whitmore, Coaching for Performance, 1992 — GROW model",
+ "promptBody": "Act as an executive coaching facilitator using the GROW model.\nTeam member context :  [ROLE, EXPERIENCE LEVEL, CURRENT PROJECT]\nPresenting situation     :  [WHAT THEY HAVE BROUGHT TO THIS 1-ON-1]\nGuide me through a GROW coaching conversation:\nGOAL        :  What questions should I ask to help them define what they want to get from  \n                      this conversation?\nREALITY  :  What questions surface the honest current situation without my \n                     assumptions?\nOPTIONS :  What prompts generate multiple paths forward not just the obvious one?\nWILL        :  How do I lock in a specific, committed action with a timeline and \n                     accountability?\nGive me 2–3 actual questions for each stage.\nGROW Model for Coaching\nStatus Update Coaching Conversation\nCoaching\nIneffective team Effective team\nConversation\ncommunication communication\nDeﬁne desired Assess current Explore potential Deﬁne actionable\noutcomes situation honestly solutions creatively steps",
+ "proTip": "End every GROW conversation by asking the person to rate their commitment to the\nagreed action on a scale of 1–10. Anything below 7 means the action is wrong, too big,\nwrong timing, or not genuinely chosen. Ask what would make it a 9. The answer is\nalmost always a smaller first step or a removed obstacle.",
+ "pairsWith": [
+  "6.5 SBI Feedback",
+  "6.9 Radical Candor",
+  "6.7 Delegation Ladder"
+ ],
+ "pairsPrinted": [
+  "6.5 SBI Feedback",
+  "6.9 Radical Candor",
+  "6.7 Delegation Ladder"
+ ],
+ "extractedAt": "2026-09-18"
+}

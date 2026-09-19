@@ -1,0 +1,36 @@
+{
+ "module": 7,
+ "lesson": "7.5",
+ "title": "RICE Scoring",
+ "titlePrinted": "RICE Scoring",
+ "level": "Intermediate",
+ "subtitle": "Prioritise your product roadmap with four numbers that matter",
+ "sourcePages": {
+  "intro": 168,
+  "prompt": 169
+ },
+ "useWhen": "Your product roadmap is driven by whoever has the most compelling story in the room. Engineering estimates don't account for how many customers will actually be affected. You're building things that feel important but don't move the metrics.",
+ "howToUse": "RICE was developed by the Intercom product team as a more rigorous alternative to ICE for product decisions. It scores across four dimensions: Reach (how many people will this affect in a given time period?), Impact (how much will it move the metric per person scored 0.25 to 3x), Confidence (how sure are we, as a percentage?), and Effort (how many person-months to build?). RICE Score = (Reach × Impact × Confidence) ÷ Effort. Dividing by Effort is the key difference from ICE it ensures that a small, high-impact feature beats a large, medium-impact one if the effort difference is significant.",
+ "steps": [
+  "Use real data for Reach, not projections. If you don't know, use Confidence to discount it.",
+  "Impact uses a fixed scale: 3 = massive, 2 = high, 1 = medium, 0.5 = low, 0.25 = minimal.",
+  "Effort should be in person-months, not story points it forces cross-team thinking.",
+  "Run RICE in a 30-minute team session group scoring removes individual advocacy bias. RICE looks like math, but Confidence and Impact are opinions with decimal points. Group scoring reduces bias, it doesn't remove it. Don't let the formula outrank your judgment on what the customer actually needs. A Score Feels More Objective Than It Is"
+ ],
+ "origin": "Intercom product team — RICE Scoring framework, 2016",
+ "promptBody": "Act as a product prioritisation consultant using the RICE framework.\nProduct context               :  [WHAT THE PRODUCT DOES, STAGE, KEY METRIC]\nTime period for scoring :  [MONTH / QUARTER]\nScore each feature / initiative using RICE:\nREACH             :  Users affected in the time period (real number)\nIMPACT           :  3=massive / 2=high / 1=med / 0.5=low / 0.25=min\nCONFIDENCE :  % certain this impact will happen (100/80/50%)\nEFFORT            :  Person-months to build and ship\nRICE = (Reach × Impact × Confidence) ÷ Effort\nInitiatives to score:\n[LIST YOUR 5–8 FEATURES OR INITIATIVES]\nAfter scoring:\n1. Rank by RICE Score\n2. Flag any item where Effort is the swing factor,\n     would a smaller version change the ranking?\n3. Identify the highest-RICE item that is being deprioritised for non-RICE reasons\nRICE Scoring — Effort Divides, Not Just Adds\nReach Impact Conﬁdence Effort\nIdea A High RICE\nRICE Score\nIdea B Low RICE",
+ "proTip": "The most important RICE output is the item that is being deprioritised for non-RICE\nreasons. Politics, founder preference, and squeaky wheels all suppress high-RICE items.\nWhen you see a high-scoring item consistently skipped, that is where organisational\ndysfunction is most visible and most expensive.",
+ "pairsWith": [
+  "7.4 ICE Scoring",
+  "6.2 OKRs",
+  "9.3 North Star Metric",
+  "2.6 MVP Design"
+ ],
+ "pairsPrinted": [
+  "7.4 ICE Scoring",
+  "6.2 OKRs",
+  "9.3 North Star Metric",
+  "2.6 MVP Design"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.2",
+ "title": "Business Model Canvas",
+ "titlePrinted": "Business Model Canvas",
+ "level": "Intermediate",
+ "subtitle": "You need to communicate your business model clearly to a co-founder, investor, or team",
+ "sourcePages": {
+  "intro": 51,
+  "prompt": 52
+ },
+ "useWhen": "member or you want to stress-test whether all nine elements of your business actually work together.",
+ "howToUse": "Created by Alexander Osterwalder, the Business Model Canvas maps a business across nine building blocks: Customer Segments, Value Propositions, Channels, Customer Relationships, Revenue Streams, Key Resources, Key Activities, Key Partnerships, and Cost Structure. When completed, it shows you whether your model is internally coherent and where the weakest links are. It's the fastest way to see your whole business in one view.",
+ "steps": [
+  "Complete the Canvas in this order: Customer Segments fi Value Propositions fi Channels fi Revenue. Fill the left side (Resources, Activities, Partners, Costs) last.",
+  "For each block, ask: does this connect logically to the blocks beside it?",
+  "Identify the two blocks with the most assumptions, those are your biggest risks.",
+  "Redo the Canvas after any major pivot to check if the model is still coherent. Map your entire business on one page When Airbnb mapped its Business Model Canvas in 2009, its founders realised they were actually running two separate businesses one serving hosts, one serving guests with completely different value propositions and cost structures. Recognising this prevented them from confusing the two models and helped them identify which customer segment to optimise first. IN PRACTICE"
+ ],
+ "origin": "Alexander Osterwalder & Yves Pigneur, Business Model Generation, 2010",
+ "promptBody": "Act as a business model strategist using Osterwalder's Business Model Canvas.\nMy business: [DESCRIBE WHAT YOUR COMPANY DOES]\nStage: [PRE-REVENUE / EARLY REVENUE / SCALING]\nMap all nine blocks for my business:\n1. Customer Segments             6. Key Resources\n2. Value Propositions               7. Key Activities\n3. Channels                               8. Key Partnerships\n4. Customer Relations             9. Cost Structure\n5. Revenue Streams\nAfter mapping: identify the 2 weakest blocks and explain\nwhat I need to validate or strengthen in each.",
+ "proTip": "",
+ "pairsWith": [
+  "2.3 Lean Canvas",
+  "2.1 Value Proposition",
+  "2.8 Moat Builder"
+ ],
+ "pairsPrinted": [
+  "2.3 Lean Canvas",
+  "2.1 Value Proposition",
+  "2.8 Moat Builder"
+ ],
+ "extractedAt": "2026-09-18"
+}

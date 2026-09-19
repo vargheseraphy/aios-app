@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.9",
+ "title": "Rule of 40",
+ "titlePrinted": "Rule of 40",
+ "level": "Intermediate",
+ "subtitle": "The single benchmark that tells investors whether your SaaS business is healthy",
+ "sourcePages": {
+  "intro": 222,
+  "prompt": 223
+ },
+ "useWhen": "You are a SaaS or subscription business trying to balance growth and profitability. Investors ask whether you are growing fast enough or profitable enough and you are not sure how to frame the answer in a way that makes the tradeoff clear.",
+ "howToUse": "The Rule of 40 was popularised by venture investors Brad Feld and Fred Wilson as a benchmark for SaaS business health. It states that a healthy SaaS company's revenue growth rate plus its profit margin should equal or exceed 40. A company growing at 60% with a -20% margin scores 40. A company growing at 15% with a 25% margin also scores 40. Both are considered healthy. The rule allows a company to trade growth for profitability or vice versa, as long as the combined score stays above 40. Below 40 signals either insufficient growth or insufficient efficiency.",
+ "steps": [
+  "Calculate your Rule of 40 score monthly and track the trend the direction matters as much as the level.",
+  "Early-stage companies should skew toward growth (high growth rate, negative margin) the rule becomes more relevant at $5M+ ARR.",
+  "Use the Rule of 40 to frame the growth vs profitability tradeoff in investor conversations explicitly.",
+  "If your score is below 40, use the model to identify whether the fix is growth acceleration or cost reduction. Below $5M ARR, the Rule of 40 isn't yet the right lens, investors expect growth to dominate, even at a steep loss. Applying it too early can make a normal, healthy growth-stage burn look like a problem it isn't."
+ ],
+ "origin": "Brad Feld & Fred Wilson — Rule of 40 for SaaS, 2015",
+ "promptBody": "Act as a SaaS financial advisor using the Rule of 40.\nMy business metrics:\nAnnual Recurring Revenue (ARR): [CURRENT ARR]\nARR 12 months ago: [PRIOR YEAR ARR]\nEBITDA or Operating Profit Margin: [X% - negative if burning]\nCalculate my Rule of 40 score:\nRevenue Growth Rate = (Current ARR - Prior ARR) / Prior ARR\nRule of 40 Score = Growth Rate % + Profit Margin %\nAnalyse:\n1. What is my current Rule of 40 score?\n2. How does it compare to the 40 benchmark?\n3. Am I growth-led or efficiency-led - which matters more at my current stage?\n4. To reach a score of 40, should I prioritise accelerating growth or improving margin?\n5. What is the single most impactful action to improve my score by 5 points in 6 months?",
+ "proTip": "The Rule of 40 is most useful as a framing tool in investor conversations, not as an\ninternal operating metric. When an investor asks about your growth vs profitability\ntradeoff, presenting a Rule of 40 score and explaining your strategy for where it should\ngo signals financial maturity. Most founders don't know this number. Knowing it\nimmediately sets you apart.",
+ "pairsWith": [
+  "9.2 Burn Rate",
+  "9.6 Financial Model",
+  "9.1 LTV:CAC",
+  "9.5 Investor Narrative"
+ ],
+ "pairsPrinted": [
+  "9.2 Burn Rate",
+  "9.6 Financial Model",
+  "9.1 LTV:CAC",
+  "9.5 Investor Narrative"
+ ],
+ "extractedAt": "2026-09-18"
+}

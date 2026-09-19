@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.9",
+ "title": "Mental Models Library",
+ "titlePrinted": "Mental Models Library",
+ "level": "Intermediate",
+ "subtitle": "You keep solving problems the same way and getting the same results. You need different",
+ "sourcePages": {
+  "intro": 40,
+  "prompt": 41
+ },
+ "useWhen": "lenses, proven frameworks that help you read situations faster and more accurately.",
+ "howToUse": "A mental model is a simplified map of how something works. The best founders carry a library of them. Pareto's 80/20 shows where leverage hides. Parkinson's Law explains why work expands to fill time. Dunning-Kruger maps confidence vs competence. The Iceberg Model shows what's visible vs what's driving behaviour beneath the surface. The value isn't memorizing the list, it's reaching for the right model at the right moment, the way a mechanic reaches for the right tool without thinking about the whole toolbox.",
+ "steps": [
+  "Describe the challenge or situation you're trying to understand.",
+  "Ask AI to apply 3–5 relevant models to your specific situation.",
+  "Look for where two or more models point to the same root cause.",
+  "Build your own shortlist of 5 models you find most useful. The thinking lenses every leader should carry Leaders build a mental model library and then apply the same two or three models to every problem usually the ones they learned first. The value isn't in having the models. It's in knowing which model fits this specific situation. Ask: am I choosing the right lens, or the familiar one?"
+ ],
+ "origin": "Charlie Munger / Farnam Street (Shane Parrish) — The Great Mental Models, 2019",
+ "promptBody": "Act as a mental models coach.\nMy situation           :    [DESCRIBE THE CHALLENGE OR DECISION]\nApply these models and give one specific insight each:\nPareto 80/20         :    Where is the highest leverage?\nParkinson's Law    :    Where is time being wasted?\nDunning-Kruger   :    Where might I be overconfident?\nFirst Principles.    :    What assumption am I not questioning?\nInversion                :    What would guarantee this fails?\nGive one concrete action per model. Be direct.\nMENTAL MODELS RANGE FROM SIMPLE TO COMPLEX UNDERSTANDING.\nDunning-Kruger Parkinson's Law\nMaps conﬁdence vs competence Explains work expansion over time\nIceberg Model Pareto's 80/20\nShows surface vs hidden drivers Identiﬁes high-impact areas\nSimple Complex",
+ "proTip": "After every quarter, add one new mental model you discovered and note a situation\nwhere it would have helped. In three years you'll have a thinking toolkit no one can buy.",
+ "pairsWith": [
+  "1.5 Six Thinking Hats",
+  "1.6 First Principles",
+  "1.8 Inversion"
+ ],
+ "pairsPrinted": [
+  "1.5 Six Thinking Hats",
+  "1.6 First Principles",
+  "1.8 Inversion"
+ ],
+ "extractedAt": "2026-09-18"
+}

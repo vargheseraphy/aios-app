@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.6",
+ "title": "MVP Design",
+ "titlePrinted": "MVP Design",
+ "level": "Beginner",
+ "subtitle": "The smallest valuable thing you can ship and learn from",
+ "sourcePages": {
+  "intro": 59,
+  "prompt": 60
+ },
+ "useWhen": "You're about to spend months building a complete product before getting any customer feedback. You want to launch something real without building everything first, but you're not sure what to cut and what to keep.",
+ "howToUse": "The Minimum Viable Product concept, popularised by Eric Ries in The Lean Startup, is about finding the smallest version of your product that delivers enough value to attract early customers and generate real learning. MVP does not mean low quality, it means maximum learning for minimum investment. The question is not 'what is the smallest thing we can build?' but 'what is the smallest thing that will tell us if we're right?'",
+ "steps": [
+  "Define the one core assumption your business depends on most.",
+  "Design an MVP that tests specifically that assumption, not all assumptions.",
+  "Set your learning criteria before building: what result would confirm or deny the assumption?",
+  "After shipping, treat every customer interaction as data, not validation. Dropbox never built the product first. They made a three-minute demo video showing how it would work and posted it online. Overnight signups went from 5,000 to 75,000. The MVP was a video, not code. They validated the assumption people want effortless file syncing, before writing a single line. IN PRACTICE"
+ ],
+ "origin": "Eric Ries, The Lean Startup, 2011",
+ "promptBody": "Act as a lean startup product advisor.\nMy business idea   :   [DESCRIBE IN 2–3 SENTENCES]\nCore assumption   :   [THE ONE THING THAT MUST BE TRUE FOR THIS BUSINESS TO  \n                                     WORK]\nStep 1      :  What is the smallest product or experiment that tests this specific  \n                    assumption?\nStep 2     :  What does success look like? Define the metric or signal that confirms the \n                   assumption.\nStep 3     :  What does failure look like? What result would tell me to pivot or stop?\nStep 4     :  What is the fastest way to build or simulate this MVP,  even without writing \n                  code?\nBe specific. Avoid suggesting a full product build.\nProduct\nEvolution\nMVP V2 V3 Full Product\nSmallest viable Iterativ Further Complete and\nversion improvemente reﬁnement feature-rich",
+ "proTip": "The most common MVP mistake is testing too many assumptions at once. One MVP, one\nassumption. If it passes, move to the next assumption. Running MVP tests in sequence is\nfaster than building a complete product that tests them all at once and fails without\ntelling you which assumption was wrong.",
+ "pairsWith": [
+  "2.3 Lean Canvas",
+  "2.1 Value Proposition",
+  "3.8 Voice of Customer"
+ ],
+ "pairsPrinted": [
+  "2.3 Lean Canvas",
+  "2.1 Value Proposition",
+  "3.8 Voice of Customer"
+ ],
+ "extractedAt": "2026-09-18"
+}

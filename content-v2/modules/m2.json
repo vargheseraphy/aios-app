@@ -1,0 +1,97 @@
+{
+ "module": 2,
+ "title": "Design Your Business",
+ "subtitle": "Shape what you're building so it deserves to exist.",
+ "description": "Most founders skip from idea to execution without ever properly designing the business. They build the wrong thing efficiently. This module gives you the tools to validate your model, understand your customer deeply, find uncontested market space, and price with confidence before you spend a year building something the market doesn't want.",
+ "lessons": [
+  "2.1",
+  "2.2",
+  "2.3",
+  "2.4",
+  "2.5",
+  "2.6",
+  "2.7",
+  "2.8",
+  "2.9",
+  "2.10"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Founding CEO (repeat founder)",
+    "priorities": "Defensibility, scalability, speed to revenue",
+    "bestWhen": "Validating whether the model is worth building at all",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Founding CEO (repeat founder)"
+   },
+   {
+    "role": "VP Product",
+    "priorities": "Customer problem clarity, build vs buy decisions",
+    "bestWhen": "Defining the MVP and what to leave out",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a VP Product"
+   },
+   {
+    "role": "Pricing Strategist",
+    "priorities": "Value perception, willingness to pay, margin",
+    "bestWhen": "Designing or restructuring your pricing architecture",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a Pricing Strategist"
+   },
+   {
+    "role": "Head of Business Development",
+    "priorities": "Partnerships, channels, unfair advantages",
+    "bestWhen": "Finding leverage that competitors cannot easily copy",
+    "seniority": "◆◆◆",
+    "promptClause": "a Head of Business Development"
+   },
+   {
+    "role": "Lean Startup Coach",
+    "priorities": "Kill assumptions fast, ship small, learn constantly",
+    "bestWhen": "Before spending significant time or money building",
+    "seniority": "◆◆",
+    "promptClause": "a Lean Startup Coach"
+   },
+   {
+    "role": "Unit Economics Analyst",
+    "priorities": "Does each customer make or cost you money?",
+    "bestWhen": "Before scaling any part of the business",
+    "seniority": "◆",
+    "promptClause": "an Unit Economics Analyst"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Series A Venture Capitalist",
+    "priorities": "Market size, defensibility, team, timing",
+    "bestWhen": "Does this model deserve serious investment?",
+    "seniority": "◈",
+    "promptClause": "a Series A Venture Capitalist"
+   },
+   {
+    "role": "Your Strongest Competitor's CEO",
+    "priorities": "How would they respond to your model?",
+    "bestWhen": "Stress-testing your competitive position",
+    "seniority": "◈",
+    "promptClause": "Your Strongest Competitor's CEO"
+   },
+   {
+    "role": "Customer Who Will Not Buy",
+    "priorities": "Every reason your value proposition falls short",
+    "bestWhen": "Before writing copy, pitching, or launching",
+    "seniority": "◈",
+    "promptClause": "a Customer Who Will Not Buy"
+   },
+   {
+    "role": "Acquirer (M&A Director)",
+    "priorities": "What makes this worth buying in 5 years?",
+    "bestWhen": "When designing for long-term value, not just revenue",
+    "seniority": "◈",
+    "promptClause": "an Acquirer (M&A Director)"
+   }
+  ],
+  "question": "Who should stress-test your business model?",
+  "lead": "Business models fail quietly — not all at once, but one flawed assumption at a time. The roles on this page represent the perspectives that expose those assumptions before the market does. Use internal roles to build and refine your model. Use outside perspectives to find the gaps your optimism is covering.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 2.1 Value Proposition Canvas · 2.3 Lean Canvas · 2.8 Moat Builder · 1.2 Role Prompting"
+ }
+}

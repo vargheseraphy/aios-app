@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.1",
+ "title": "StoryBrand Framework - SB7",
+ "titlePrinted": "StoryBrand Framework - SB7",
+ "level": "Intermediate",
+ "subtitle": "Your website, pitch deck, or marketing copy is confusing. People spend time on your",
+ "sourcePages": {
+  "intro": 114,
+  "prompt": 115
+ },
+ "useWhen": "website and leave without understanding what you do or why it matters to them. Your message is accurate it just doesn't land.",
+ "howToUse": "Donald Miller's StoryBrand framework, published in 2017, is built on a single insight: customers don't care about your story, they care about their story, and whether you have a role in it. The SB7 structure positions the customer as the Hero, gives them a Guide (your brand), names the Problem (external, internal, and philosophical), provides a Plan, issues a Call to Action, describes Success, and shows what's at stake in Failure. When your marketing follows this structure, confused prospects become engaged ones.",
+ "steps": [
+  "Never position your brand as the hero you are the guide who helps the hero succeed.",
+  "Name all three problem layers: external (practical), internal (emotional), philosophical (why it's wrong).",
+  "The plan must be simple three steps maximum. Complexity kills action.",
+  "Use this structure for your website homepage first, then apply it to email, ads, and pitches. Clarify your message so customers stop, listen, and act The most common StoryBrand mistake is failing to name the internal problem. The external problem is what they Google. The internal problem is what keeps them awake. Customers buy solutions to external problems but they buy from brands that understand their internal ones. Name the internal problem explicitly in your copy. PRO TIP"
+ ],
+ "origin": "Donald Miller, Building a StoryBrand, 2017",
+ "promptBody": "I PROMPT — COPY & PASTE READY\nAct as a StoryBrand messaging consultant using Donald Miller's SB7.\nMy business          :  [WHAT YOU DO AND WHO YOU SERVE]\nCustomer's goal    :  [WHAT THE CUSTOMER WANTS TO ACHIEVE]\n                                    Build the full SB7 for my brand:\nCHARACTER         :   Who is the hero, describe them specifically\nPROBLEM              :   External (practical), Internal (emotional), Philosophical (why it's \n                                     wrong that this exists)\nGUIDE                     :   My brand's empathy and authority\nPLAN                        :  3 simple steps to work with me\nCALL TO ACTION  :  One direct CTA and one transitional CTA\nSUCCESS                 :  What their life looks like after\nFAILURE                  :  What's at stake if they don't act\nThen write a one-sentence brand tagline using this structure.",
+ "proTip": "",
+ "pairsWith": [
+  "3.7 Positioning Statement",
+  "4.6 PAS",
+  "4.7 Proposal Writing",
+  "5.8 Brand Voice"
+ ],
+ "pairsPrinted": [
+  "3.7 Positioning Statement",
+  "4.6 PAS",
+  "4.7 Proposal Writing",
+  "5.8 Brand Voice"
+ ],
+ "extractedAt": "2026-09-18"
+}

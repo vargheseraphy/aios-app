@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.9",
+ "title": "Decision Tree Analysis",
+ "titlePrinted": "Decision Tree Analysis",
+ "level": "Advanced",
+ "subtitle": "You are facing a complex decision with multiple possible outcomes at each stage. The",
+ "sourcePages": {
+  "intro": 201,
+  "prompt": 202
+ },
+ "useWhen": "decision is not one choice but a sequence of choices, each dependent on what happens before it. You cannot see the whole picture clearly in your head.",
+ "howToUse": "Decision Tree Analysis is an operations research methodology developed in the 1960s that maps decisions as branching trees. Each node represents a decision point or chance event. Each branch represents an outcome with an associated probability and value. Working through the tree, from branches back to the root - allows you to calculate the expected value of each initial choice and identify the path with the highest expected outcome. AI can build a decision tree description and calculate expected values when given decision options, probabilities, and outcome values.",
+ "steps": [
+  "Define your decision options and the key uncertainties before prompting.",
+  "Estimate probabilities honestly, if you don't know, use 50/50 and note the sensitivity.",
+  "Include the cost of making the decision itself (time, money, opportunity) in the tree.",
+  "After building the tree, test it: how much does the best path change if the key probability shifts by 20%? Map every path your decision could take and the odds at each branch A number on every branch feels rigorous, but a guessed 50/50 dressed up in a formal tree is still a guess. The tree organizes your thinking, it doesn't upgrade a bad probability estimate into a good one. Precision Isn't Certainty"
+ ],
+ "origin": "Operations research methodology — Decision Tree Analysis formalised 1960s",
+ "promptBody": "Act as a decision analysis consultant using Decision Tree Analysis.\nDecision                  :  [DESCRIBE THE MAIN CHOICE YOU ARE FACING]\nOptions                   :  [LIST YOUR 2–4 ALTERNATIVE PATHS]\nKey uncertainties  :  [WHAT OUTCOMES DEPEND ON CHANCE OR EXTERNAL\nFACTORS YOU CAN'T CONTROL]\nValues: [WHAT EACH OUTCOME IS WORTH, REVENUE, COST, TIME, OR STRATEGIC\nVALUE]\nBuild a Decision Tree:\nLEVEL 1: The initial decision - my options\nLEVEL 2: For each option - the key chance events and their estimated probabilities\nLEVEL 3: For each outcome - the value or consequence\nCALCULATE:\nExpected Value for each initial option = Sum of (probability × outcome value) per path\nRECOMMEND:\nWhich option has the highest expected value?\nWhich has the best worst-case outcome?\nWhat single probability estimate most changes the recommendation if it turns out to\nbe wrong?\nDecision Tree Analysis Impacts Outcomes\nOutcome Node 1 Outcome Node 2\nFirst possible result Second possible result\nDecision Node\nStarting point of analysis",
+ "proTip": "The most valuable output from a Decision Tree is not the expected value calculation  it is\nthe sensitivity analysis. Find the probability estimate that, if wrong by 20%, changes which\noption is best. That is your most critical assumption. Validate it before committing to the\npath with the highest expected value.",
+ "pairsWith": [
+  "8.10 Expected Value",
+  "8.1 DECIDE",
+  "8.5 Scenario Planning",
+  "8.4 Risk Matrix"
+ ],
+ "pairsPrinted": [
+  "8.10 Expected Value",
+  "8.1 DECIDE",
+  "8.5 Scenario Planning",
+  "8.4 Risk Matrix"
+ ],
+ "extractedAt": "2026-09-18"
+}

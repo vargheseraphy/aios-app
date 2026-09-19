@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.7",
+ "title": "Balanced Scorecard",
+ "titlePrinted": "Balanced Scorecard",
+ "level": "Intermediate",
+ "subtitle": "Your business metrics are almost entirely financial - revenue, costs, and margin. But the",
+ "sourcePages": {
+  "intro": 218,
+  "prompt": 219
+ },
+ "useWhen": "things that will determine your financial results next year, customer satisfaction, team capability, operational efficiency, innovation pipeline, are not being measured at all.",
+ "howToUse": "Developed by Robert Kaplan and David Norton at Harvard Business School and published in Harvard Business Review in 1992, the Balanced Scorecard measures business performance across four perspectives: Financial (how do we look to shareholders?), Customer (how do customers see us?), Internal Processes (what must we excel at?), and Learning & Growth (can we continue to improve and create value?). The insight is that financial metrics are lagging indicators - they tell you what happened. The other three perspectives contain the leading indicators that predict future financial performance.",
+ "steps": [
+  "Build the scorecard around your strategy, not generic KPIs. Each measure must connect to a strategic objective.",
+  "Limit to 4–5 measures per perspective, more creates noise and diffuses attention.",
+  "Financial metrics are the output; Learning & Growth metrics are the input. Both matter.",
+  "Review the scorecard monthly at leadership level quarterly is too infrequent for meaningful course correction. Measure what matters not just what is easy to count By the time your Financial numbers move, the problem started months earlier in Customer or Learning & Growth. Watching only the lagging quadrant means you're always reacting to a story that already finished."
+ ],
+ "origin": "Robert Kaplan & David Norton, Harvard Business School — Balanced Scorecard, 1992",
+ "promptBody": "Act as a business performance consultant using the Balanced Scorecard.\nMy business             :  [DESCRIBE YOUR COMPANY, STAGE, AND STRATEGY]\nStrategic priorities :  [YOUR TOP 3 OBJECTIVES FOR THIS YEAR]\nBuild a Balanced Scorecard across all four perspectives:\nFINANCIAL PERSPECTIVE                      :  Objective, Measure, Target, Initiative\nCUSTOMER PERSPECTIVE                     :  Objective, Measure, Target, Initiative\nINTERNAL PROCESS PERSPECTIVE     :  Objective, Measure, Target, Initiative\nLEARNING & GROWTH PERSPECTIVE :  Objective, Measure, Target, Initiative\nAfter building: show the causal chain.\nHow does improvement in Learning & Growth lead to better Internal Processes,\nwhich leads to better Customer outcomes, which drives Financial results?\nDraw the arrows explicitly.",
+ "proTip": "The causal chain exercise at the end is the most valuable part. If you cannot draw a clear\nline from your Learning & Growth measures to your Financial outcomes, your scorecard\nis a collection of metrics, not a strategy. The power of the Balanced Scorecard is not\nmeasurement,  it is the explicit theory of how your business creates value.",
+ "pairsWith": [
+  "6.2 OKRs",
+  "6.10 Hoshin Kanri",
+  "9.3 North Star",
+  "9.4 Funnel Analysis"
+ ],
+ "pairsPrinted": [
+  "6.2 OKRs",
+  "6.10 Hoshin Kanri",
+  "9.3 North Star",
+  "9.4 Funnel Analysis"
+ ],
+ "extractedAt": "2026-09-18"
+}

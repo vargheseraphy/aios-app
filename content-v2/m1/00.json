@@ -1,0 +1,36 @@
+{
+ "module": 1,
+ "lesson": "1.0",
+ "title": "The AI Mental Model",
+ "titlePrinted": "The AI Mental Model",
+ "level": "Beginner",
+ "subtitle": "Understand what you are working with before you work with it",
+ "sourcePages": {
+  "intro": 22,
+  "prompt": 23
+ },
+ "useWhen": "You are new to AI, your outputs feel unpredictable, or you need to explain how AI works to your team in a way that actually helps them use it. An LLM is a prediction engine, not a thinking machine. It has read an enormous amount of human text and learned to predict what a useful response looks like given what you gave it. It has no memory between sessions. It cannot verify facts. It has no agenda. It is extraordinarily good at one thing: producing structured, relevant output when given clear structure and rich context. Three things determine every output you get: Role: who the AI is reasoning as. Vague role = generic output. Context what the AI knows about your situation. Missing context = missing relevance. Expectation what a good answer looks like. No expectation = AI guesses. As AI evolves from prompting to context engineering to agentic systems these three requirements stay constant. The technology changes. The need for clear human intent does not.",
+ "howToUse": null,
+ "steps": [
+  "Before every AI session, ask: have I given it a Role, Context, and Expectation?",
+  "When output feels wrong, diagnose which of the three is missing do not rewrite randomly.",
+  "When introducing AI to your team, use this page as the one-minute briefing.",
+  "Return here whenever AI feels unpredictable. The answer is almost always in these three."
+ ],
+ "origin": null,
+ "promptBody": "I want to understand how to work with you more effectively.\nMy situation: [WHO I AM - role, industry, company stage]\nWhat I typically use AI for: [YOUR MAIN USE CASES]\nBased on this, tell me:\n1.Where am I most likely leaving quality on the table?\n2.What context should I always give you that I probably forget?\n3.What is one thing I can do differently from today that would\n       improve every output I get from you?\nBe direct. Assume I am smart but new to working with AI well.\nHow to improve AI output?\nDeﬁne Role\nSpeciﬁes the AI's perspective, leading to\nmore tailored responses.\nProvide Context\nInforms the AI about the situation, ensuring\nrelevance.\nSet Expectations\nGuides the AI towards the desired output\nformat and content.",
+ "proTip": "The most common mistake is treating a bad output as a model failure. It is\nalmost never the model. It is almost always a missing Role, thin Context, or no\nstated Expectation. Diagnose before you retry.",
+ "pairsWith": [
+  "1.1 C.A.R.E Prompting",
+  "1.2 Context Stack",
+  "1.3 Role Prompting",
+  "1.4 Refinement ..."
+ ],
+ "pairsPrinted": [
+  "1.1 C.A.R.E Prompting",
+  "1.2 Context Stack",
+  "1.3 Role Prompting",
+  "1.4 Refinement ..."
+ ],
+ "extractedAt": "2026-09-18"
+}

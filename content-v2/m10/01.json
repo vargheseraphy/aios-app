@@ -1,0 +1,36 @@
+{
+ "module": 10,
+ "lesson": "10.1",
+ "title": "Personal SWOT",
+ "titlePrinted": "Personal SWOT",
+ "level": "Beginner",
+ "subtitle": "See yourself clearly before the market does it for you",
+ "sourcePages": {
+  "intro": 225,
+  "prompt": 226
+ },
+ "useWhen": "You are making career and business decisions based on a self-image that may not reflect reality. You either underestimate what you bring or overestimate your readiness. You haven't done an honest audit of where you genuinely stand.",
+ "howToUse": "Applying the SWOT framework to yourself rather than to a business creates a structured self-assessment that combines honesty with strategy. Personal Strengths are capabilities and qualities you genuinely have, verified by evidence. Personal Weaknesses are areas where you consistently underperform or avoid. Opportunities are external conditions you could leverage given your specific strengths. Threats are external conditions that specifically threaten you given your specific weaknesses. The strategic output is identifying which strengths to double down on and which weaknesses need a hire, a partner, or deliberate development.",
+ "steps": [
+  "Ask three people who know your work well to complete the Strengths and Weaknesses sections, your self-assessment will miss things they see clearly.",
+  "Focus Opportunities on things only you can access given your specific combination of strengths.",
+  "For each Weakness, decide: develop it, delegate it, or design around it. Not every weakness is worth fixing.",
+  "Run Personal SWOT annually your position changes as the business evolves. Skipping the outside input is the most common way this exercise fails, self-assessed strengths and weaknesses tend to reflect what you want to believe, not what's actually true."
+ ],
+ "origin": "Stanford Research Institute — SWOT adapted for personal development",
+ "promptBody": "Act as a personal development coach conducting a Personal SWOT.\nMy background     :  [DESCRIBE YOUR EXPERIENCE, SKILLS, TRACK RECORD]\nMy role                    :  [WHAT YOU DO AND WHAT YOU ARE RESPONSIBLE FOR]\nExternal feedback  :  [ANY FEEDBACK YOU HAVE RECEIVED - GOOD OR BAD]\nCurrent goals          :  [WHAT YOU ARE TRYING TO ACHIEVE IN THE NEXT 12 MONTHS]\nBuild a Personal SWOT:\nSTRENGTHS         :  What do I consistently do better than most? What do others come to  \n                                    me for?\nGive 4–5 specific, evidence-backed strengths.\nWEAKNESSES      :  Where do I consistently underperform? What do I avoid or  \n                                   procrastinate on?\nBe honest - what do people notice that I minimise?\nOPPORTUNITIES :  Given my strengths, what external conditions could I leverage that \n                                    others could not?\nTHREATS               :  Given my weaknesses, what external conditions specifically threaten \n                                    my goals?\nStrategic output   :  top 2 strengths to build on, top 1 weakness to address immediately.\nPersonal SWOT\nQuadrant Strengths Weaknesses Opportunities Threats\nAreas you\nCapabilities you External conditions External conditions\nconsistently\nDescription genuinely have, you can leverage that exploit your\nunderperform or\nveriﬁed by others given your strengths weaknesses\navoid",
+ "proTip": "The most valuable Personal SWOT input is unsolicited feedback you have dismissed or\nminimised. The things people have told you repeatedly but that you haven't fully\naccepted - those are your most accurate weakness data. The reason you dismissed\nthem is usually the reason they are true.",
+ "pairsWith": [
+  "3.1 SWOT",
+  "10.5 Three Horizons",
+  "10.7 Socratic Self-Questioning",
+  "10.9 Ikigai"
+ ],
+ "pairsPrinted": [
+  "3.1 SWOT",
+  "10.5 Three Horizons",
+  "10.7 Socratic Self-Questioning",
+  "10.9 Ikigai"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.12",
+ "title": "McKinsey 7S Framework",
+ "titlePrinted": "McKinsey 7S Framework",
+ "level": "Advanced",
+ "subtitle": "You've made a strategic shift new direction, new structure, new hires but results aren't",
+ "sourcePages": {
+  "intro": 157,
+  "prompt": 158
+ },
+ "useWhen": "following. Something is misaligned but you can't identify what. The strategy is clear but the execution keeps resisting it.",
+ "howToUse": "Developed by McKinsey consultants Tom Peters and Robert Waterman in 1980, the 7S Framework maps seven interdependent elements of an organisation that must all be aligned for strategy to work. The Hard Ss - Strategy (plan), Structure (org chart), Systems (processes and IT) are the visible elements. The Soft Ss - Shared Values (culture and beliefs), Skills (capabilities), Style (leadership approach), Staff (people) - are invisible but often more powerful. When any element is misaligned with the others, change stalls. AI can run a 7S diagnostic on your business and identify where the friction lives.",
+ "steps": [
+  "Run a 7S audit whenever a strategy, restructure, or major change is not producing expected results.",
+  "Shared Values sits at the centre of the model, it is the element that all others must align to.",
+  "Changing one S always affects others, map the cascade before acting.",
+  "Use the output to prioritise: fix the most misaligned S before addressing the others. Diagnose why change isn't sticking and what to fix first Fixing Structure or Systems can happen in a quarter. Shifting Shared Values or Style takes years, not months. If your 7S audit says culture is the misalignment, don't expect the same timeline you'd use for an org chart change. The Soft Ss Take Longer"
+ ],
+ "origin": "Tom Peters & Robert Waterman, McKinsey & Company — 7S Framework, 1980",
+ "promptBody": "Act as a McKinsey organisational consultant using the 7S Framework.\nMy company               :  [DESCRIBE YOUR BUSINESS, STAGE, RECENT CHANGES]\nThe strategy I am trying to execute: [WHAT YOU WANT TO ACHIEVE]\nWhat is not working :  [WHERE EXECUTION IS STALLING]\nDiagnose all 7 elements for my organisation:\nSTRATEGY            :  The plan, is it clear and understood?\nSTRUCTURE         :  How are we organised,  does it serve the strategy?\nSYSTEMS              :  Processes, tools  do they enable or block?\nSHARED VALUES :  Culture - does it support or resist the change?\nSKILLS                   :  Do we have the capability we need?\nSTYLE                     :  Does leadership behaviour match the strategy?\nSTAFF                     :  Do we have the right people in the right roles?\nIdentify the 2 most misaligned Ss.\nRecommend the sequence to address them with a suggested timeframe for each step.\nMcKinsey 7S Framework\nShared Values\nStructure Skills\nThe core beliefs and The organizational Style The expertise and\nprinciples that guide the hierarchy and reporting The leadership and capabilities of the\norganization management approach. workforce.\nlines.\n.\nStrategy Systems Staff\nThe processes and The employees and their\nThe plan to achieve\nprocedures that support skills.\norganizational goals. operations\n.",
+ "proTip": "The most common 7S misalignment is between Strategy and Shared Values. Leadership\nchanges direction but the culture hasn't moved  and culture always wins. If your strategy\nrequires behaviours that your current culture punishes or ignores, fix the culture\nalignment before investing more in the strategy.",
+ "pairsWith": [
+  "6.6 Culture Code",
+  "6.10 Hoshin Kanri",
+  "6.2 OKRs",
+  "8.5 Scenario Planning"
+ ],
+ "pairsPrinted": [
+  "6.6 Culture Code",
+  "6.10 Hoshin Kanri",
+  "6.2 OKRs",
+  "8.5 Scenario Planning"
+ ],
+ "extractedAt": "2026-09-18"
+}

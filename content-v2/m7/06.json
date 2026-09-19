@@ -1,0 +1,36 @@
+{
+ "module": 7,
+ "lesson": "7.6",
+ "title": "PDCA Cycle",
+ "titlePrinted": "PDCA Cycle",
+ "level": "Beginner",
+ "subtitle": "Turn every experiment into a learning that compounds",
+ "sourcePages": {
+  "intro": 170,
+  "prompt": 171
+ },
+ "useWhen": "Your team tries things, some work and some don't, but the learning doesn't carry forward. The same mistakes reappear. Successful experiments don't get systematised. You're improving through trial and error instead of through a repeatable process.",
+ "howToUse": "The PDCA (Plan-Do-Check-Act) cycle was developed by W. Edwards Deming in the 1950s and became the foundation of continuous improvement philosophy in Japan and beyond. Plan (define the problem, form a hypothesis, design the experiment), Do (run the experiment on a small scale), Check (analyse the results against the hypothesis), Act (standardise what worked, abandon what didn't, run the next cycle). The cycle is designed to be continuous every Act step feeds the next Plan. When PDCA is embedded in a team's operating rhythm, the team improves structurally, not randomly.",
+ "steps": [
+  "Run PDCA on one small improvement per week — short cycles beat large infrequent ones.",
+  "Write the hypothesis before starting 'if we do X, we expect Y because Z.'",
+  "In the Check step, compare results to the hypothesis, not just whether results were good.",
+  "The Act step must result in either a new SOP or a killed idea, no undecided outcomes. \"We'll decide later\" is the failure mode PDCA is built to kill. An Act step that ends in maybe isn't an Act step, it's an unfinished cycle, and the learning it should have produced never gets locked in"
+ ],
+ "origin": "W. Edwards Deming — PDCA / Shewhart Cycle, adapted from Walter Shewhart, 1950s",
+ "promptBody": "Act as a continuous improvement facilitator using the PDCA cycle.\nProblem or opportunity  :  [WHAT YOU WANT TO IMPROVE]\nCurrent baseline               :  [THE METRIC OR SITUATION AS IT IS NOW]\nHypothesis                         :  [WHAT YOU THINK WILL IMPROVE IT AND WHY]\nGuide me through a full PDCA cycle:\nPLAN                                   :  Define the problem precisely.\nState the hypothesis        :  If [ACTION] then [RESULT] because [REASON].\nDefine success criteria. Design the smallest useful experiment.\nDO            :  What exactly should be done, by whom, by when?\n                     What data needs to be collected during the test?\nCHECK    :  How will we compare results to the hypothesis?\n                     What would confirm it? What would disprove it?\nACT          :  If confirmed - how to standardise and scale?\n                     If disproved - what does this tell us for the next PDCA cycle?\nPDCA Cycle for Learning\nPlan\nAct\nDeﬁne problem and form\nStandardize and improve hypothesis\nCheck Do\nAnalyze results Run experiment at small\nscale",
+ "proTip": "The Check step is where most PDCA cycles fail. Teams see a positive result and\nimmediately scale without asking whether the result matched the hypothesis. A result can\nbe positive but the hypothesis still wrong  meaning you got lucky, not right. Always check\nagainst the hypothesis, not just the outcome number.",
+ "pairsWith": [
+  "7.9 Kaizen",
+  "7.1 SOP",
+  "7.3 Theory of Constraints",
+  "8.3 Post-Mortem"
+ ],
+ "pairsPrinted": [
+  "7.9 Kaizen",
+  "7.1 SOP",
+  "7.3 Theory of Constraints",
+  "8.3 Post-Mortem"
+ ],
+ "extractedAt": "2026-09-18"
+}

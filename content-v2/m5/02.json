@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.2",
+ "title": "Hook Framework for Content",
+ "titlePrinted": "Hook Framework for Content",
+ "level": "Beginner",
+ "subtitle": "Your content is well-written and genuinely useful but it gets ignored. You're posting",
+ "sourcePages": {
+  "intro": 116,
+  "prompt": 117
+ },
+ "useWhen": "consistently and seeing minimal engagement. The problem isn't the content it's that nobody is stopping to read it.",
+ "howToUse": "In a feed of infinite content, the first line of any post, email, or video is the only thing that decides whether the rest gets seen. A hook works by triggering one of four responses: Curiosity (I need to know how this ends), Relatability (that is exactly my situation), Controversy (I disagree and want to respond), or Value (this will help me right now). The 3H Hook System structures every piece of content around a strong opening that earns the scroll followed by a clear value delivery and a closing that creates engagement or action.",
+ "steps": [
+  "Write 5 hook variations for every piece of content the best one is rarely the first.",
+  "Test different hook types across your audience: curiosity works on some, value on others.",
+  "The hook should be the last thing you write after you know what the content delivers.",
+  "If the hook doesn't make you want to keep reading, rewrite it before posting. The first line determines whether the rest gets read Curiosity Isn't a License to Bait A hook that promises one thing and delivers another earns a scroll-past on the next post, not the current one. Curiosity should point at the real value inside if the opening line and the content don't match, you're not hooking, you're baiting."
+ ],
+ "origin": "Social media content strategy — Hook framework methodology, 2020s",
+ "promptBody": "Act as a content strategist and copywriter specialising in hooks.\nContent topic     :  [WHAT THIS POST, EMAIL, OR VIDEO IS ABOUT]\nTarget audience :  [WHO WILL SEE THIS AND WHAT THEY CARE ABOUT]\nPlatform               :  [LINKEDIN / EMAIL / INSTAGRAM / YOUTUBE]\nCore value            :  [WHAT THE READER WILL LEARN OR GET]\nWrite 5 hook variations using different hook types:\nCURIOSITY HOOK         :  Creates a knowledge gap they must close\nRELATABILITY HOOK   :  Opens with a situation they recognise\nCONTROVERSY HOOK  :  Challenges a common belief in the space\nVALUE HOOK                  :  Leads with the specific benefit upfront\nSTORY HOOK                  :  Opens mid-scene in a compelling moment\nFor each hook: write the opening line only (max 15 words).\nThen recommend the strongest one for this audience.\n3H Hook System\nScroll/Feed\nStopped\nPost Curiosity\nHook Relatability\nContent scrolls past Controversy\nHook\non the left\nHook Value\nOne post stops the\nSparks interest\nscroll with a bold Hook\n with a question\nﬁrst line Connects with the\naudience's\nexperiences Provokes discussion\nwith a bold\nHighlights beneﬁts\nstatement\nand solutions",
+ "proTip": "The curiosity hook is the most powerful but the most overused. The relatability hook is\nthe most underused  and often outperforms everything else because it makes the reader\nfeel seen before they've read a word of content. Start with: 'You know that moment\nwhen...' and describe your audience's exact situation.",
+ "pairsWith": [
+  "5.5 Content Pillars",
+  "4.6 PAS",
+  "4.1 Cold Outreach",
+  "5.8 Brand Voice"
+ ],
+ "pairsPrinted": [
+  "5.5 Content Pillars",
+  "4.6 PAS",
+  "4.1 Cold Outreach",
+  "5.8 Brand Voice"
+ ],
+ "extractedAt": "2026-09-18"
+}

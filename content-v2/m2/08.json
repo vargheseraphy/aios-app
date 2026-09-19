@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.8",
+ "title": "Unfair Advantage,  Moat Builder",
+ "titlePrinted": "Unfair Advantage, Moat Builder",
+ "level": "Advanced",
+ "subtitle": "A competitor launches something similar. An investor asks 'what stops someone from",
+ "sourcePages": {
+  "intro": 63,
+  "prompt": 64
+ },
+ "useWhen": "copying this?' You don't have a clear, confident answer. Your business is growing but feels fragile.",
+ "howToUse": "Warren Buffett's concept of an economic moat describes a sustainable competitive advantage that protects a business from competition the way a moat protects a castle. The five types of moat are: Network Effects (the product gets better as more people use it), Cost Advantage (you produce at lower cost than anyone), Switching Costs (customers are locked in by habit, data, or integrations), Intangible Assets (brands, patents, licences), and Efficient Scale (a market so small only one player can profitably serve it). Most businesses have weak or no moats. Building one is a strategic choice.",
+ "steps": [
+  "Identify which of the five moat types you currently have, be honest.",
+  "Rate each on a scale of 1–5 for strength. Anything below 3 is not a real moat.",
+  "Identify which moat type is most achievable given your current position.",
+  "Build moat-widening into your product and business roadmap deliberately. Identify what protects you that competitors cannot easily copy Amazon's unfair advantage wasn't its website , it was the proprietary logistics infrastructure it built over 15 years. When AWS launched, Amazon was already operating data centres at a scale no competitor could match affordably. The moat wasn't the product. It was the underlying capability that took a decade and billions to build and that no startup could replicate quickly. IN PRACTICE"
+ ],
+ "origin": "Warren Buffett, Berkshire Hathaway annual letters — moat concept, 1980s onwards",
+ "promptBody": "Act as a competitive strategy advisor focused on economic moats.\nMy business                 :  [DESCRIBE WHAT YOU DO AND WHO YOU SERVE]\nStage                             :   [REVENUE STAGE - PRE / EARLY / SCALING]\nAssess my moat across all five types:\nNETWORK EFFECTS   :  Does value increase with more users?\nCOST ADVANTAGE     :   Can I produce cheaper than competitors?\nSWITCHING COSTS   :   How painful is it for customers to leave?\nINTANGIBLE ASSETS :   Do I have brand, IP, or licence advantages?\nEFFICIENT SCALE       :   Am I in a market too small for competition?\nRate each 1–5. Identify my strongest moat and the fastest moat I could build\nfrom my current position. Give 2 specific actions to widen my strongest moat.\nNetwork Effects\nValue increases with user base growth.\nCost Advantage\nLower production costs enhance\ncompetitiveness.\nSwitching Costs Competitive\nHigh costs deter customers from switching. Protection\nIntangible Assets\nBrand reputation and patents provide\nprotection.\nEﬃcient Scale\nEconomies of scale reduce per-unit \ncosts.",
+ "proTip": "Network effects are the most powerful moat but the hardest to build. If your product has\nany element where more users create more value even indirectly, design your product\nand go-to-market specifically to accelerate that loop. Most founders have a network\neffect they don't know they have.",
+ "pairsWith": [
+  "2.4 Blue Ocean",
+  "3.3 Porter's Five Forces",
+  "2.3 Lean Canvas"
+ ],
+ "pairsPrinted": [
+  "2.4 Blue Ocean",
+  "3.3 Porter's Five Forces",
+  "2.3 Lean Canvas"
+ ],
+ "extractedAt": "2026-09-18"
+}

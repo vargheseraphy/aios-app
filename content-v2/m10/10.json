@@ -1,0 +1,31 @@
+{
+ "module": 10,
+ "lesson": "10.10",
+ "title": "Hansei - Reflective Practice",
+ "titlePrinted": "Hansei - Reflective Practice",
+ "level": "Intermediate",
+ "subtitle": null,
+ "sourcePages": {
+  "intro": 243,
+  "prompt": 244
+ },
+ "useWhen": null,
+ "howToUse": "The Japanese discipline of honest self-reflection without self-punishment",
+ "steps": [],
+ "origin": "Toyota Production System · Japanese cultural practice — Hansei, widely embedded in Japanese education",
+ "promptBody": "Act as a Hansei reflective practice facilitator.\nEvent or period to reflect on:\n[DESCRIBE WHAT HAPPENED  A PROJECT, DECISION, QUARTER, OR RELATIONSHIP\nYOU WANT TO EXAMINE HONESTLY]\nOutcome: [WHAT RESULTED]\nGuide me through a Hansei reflection:\nHONEST ACKNOWLEDGEMENT:\nWhat actually happened? No minimising, no excusing.\nDescribe the outcome as it was not as you wish it had been.\nPERSONAL RESPONSIBILITY:\nWhat was my specific contribution to this outcome?\nWhat did I do,  or not do that mattered?\nWhat did I know and ignore? What did I avoid seeing?\nLEARNING:\nWhat does this tell me about how I think or operate?\nWhat pattern, if any, does this repeat?\nCOMMITMENT:\nWhat one specific behaviour will I change?\nHow will I know in 30 days whether I have changed it?\nGRATITUDE: What, despite the difficulty, am I grateful for?",
+ "proTip": "Hansei is uncomfortable because it requires taking personal responsibility before\nassigning external causes. The Western tendency is to explain external causes first and\nassign personal responsibility last, if at all. Hansei inverts this. The founder who practices\nit consistently builds a quality of self-awareness that no coaching, therapy, or feedback\ncan replicate because it is chosen and honest.",
+ "pairsWith": [
+  "10.11 Wabi-Sabi",
+  "8.3 Post-Mortem",
+  "7.9 Kaizen",
+  "10.7 Socratic Self-Questioning"
+ ],
+ "pairsPrinted": [
+  "10.11 Wabi-Sabi",
+  "8.3 Post-Mortem",
+  "7.9 Kaizen",
+  "10.7 Socratic Self-Questioning"
+ ],
+ "extractedAt": "2026-09-18"
+}

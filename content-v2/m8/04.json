@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.4",
+ "title": "Risk Matrix",
+ "titlePrinted": "Risk Matrix",
+ "level": "Intermediate",
+ "subtitle": "See your risks clearly and know which ones actually deserve your attention",
+ "sourcePages": {
+  "intro": 191,
+  "prompt": 192
+ },
+ "useWhen": "You have a vague sense that things could go wrong but no clear view of which risks matter most. You either worry about everything equally or dismiss risks until they become crises. Risk management feels either overwhelming or performative.",
+ "howToUse": "The Risk Matrix is an ISO 31000-based tool that plots risks on two dimensions: Likelihood (how probable is this risk?) and Impact (how severe would the consequences be?). Each risk is scored and placed in a 3×3 or 5×5 grid. High likelihood + high impact = immediate priority. Low likelihood + low impact = monitor or accept. The matrix forces explicit ranking and prevents the two most common risk management failures: treating all risks equally, or ignoring low-probability, high-impact risks because they seem unlikely.",
+ "steps": [
+  "Generate a comprehensive risk list first before scoring. Scoring before listing creates anchoring bias.",
+  "Include strategic, operational, financial, people, and external risk categories.",
+  "For every high-priority risk, define a mitigation and an owner risks without owners are not managed.",
+  "Review the matrix quarterly risk profiles change as the business evolves. A pandemic, a key-person departure, a lawsuit - all low likelihood, all capable of ending the business. The matrix exists precisely to stop you from dismissing these as unlikely and forgetting them. Low probability earns a lighter watch, never a blind spot. Low-Likelihood Isn't Low-Stakes"
+ ],
+ "origin": "ISO 31000 Risk Management framework · Risk matrix methodology widely used",
+ "promptBody": "Act as a risk management consultant using the Risk Matrix framework.\nMy business                 :  [DESCRIBE YOUR COMPANY, STAGE, AND CURRENT PLANS]\nDecision or initiative :  [WHAT YOU ARE ABOUT TO DO OR COMMIT TO]\nStep 1  :  Generate 15 risks across five categories:\n· Strategic  · Operational  · Financial  · People  · External\nStep 2 :  Score each risk:\nLIKELIHOOD :  1 (unlikely) to 5 (almost certain)\nIMPACT          :  1 (minimal) to 5 (existential)\nRISK SCORE = Likelihood × Impact\nStep 3 :  Group by priority:\nRED (score 15–25)     :  Act immediately\nAMBER (score 8–14) :  Monitor and prepare\nGREEN (score 1–7)    :  Accept or note\nStep 4 :  For each RED risk: Mitigation action · Owner · Trigger signal\nStep 5 :  Identify the one risk I am most likely to be underestimating.\nRisk Matrix Quadrant Actions\nAccept Monitor Closely Manage Immediate Priority\nLow Likelihood / Low Likelihood / High Likelihood / High Likelihood /\nLow Impact High Impact Low Impact High Impact",
+ "proTip": "The most dangerous risks are not the ones scored highest, they are the ones missing\nfrom the list entirely. After scoring, ask AI: 'What risk have I not considered that\nregularly kills businesses at my stage?' Black swan events, regulatory changes, and key\nperson dependencies are consistently the most underestimated categories.",
+ "pairsWith": [
+  "8.2 Pre-Mortem",
+  "8.5 Scenario Planning",
+  "8.6 Red Team",
+  "1.7 Second Order"
+ ],
+ "pairsPrinted": [
+  "8.2 Pre-Mortem",
+  "8.5 Scenario Planning",
+  "8.6 Red Team",
+  "1.7 Second Order"
+ ],
+ "extractedAt": "2026-09-18"
+}

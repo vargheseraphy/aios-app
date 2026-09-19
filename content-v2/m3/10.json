@@ -1,0 +1,34 @@
+{
+ "module": 3,
+ "lesson": "3.10",
+ "title": "Perceptual Mapping",
+ "titlePrinted": "Perceptual Mapping",
+ "level": "Intermediate",
+ "subtitle": "You believe you occupy a distinct position in your market but customers keep comparing",
+ "sourcePages": {
+  "intro": 88,
+  "prompt": 89
+ },
+ "useWhen": "you to competitors you think are very different from you. Your perception of your position and the market's perception don't match.",
+ "howToUse": "Perceptual mapping is a visual tool used in marketing strategy to plot how customers perceive brands or products relative to each other on key dimensions. The two axes represent the attributes that most influence customer choice in your market, typically price vs quality, or specialist vs generalist, or traditional vs innovative. Where you land on the map reflects customer perception, not your own. AI can generate a perceptual map description and help you identify where the white spaces and repositioning opportunities are.",
+ "steps": [
+  "Choose your two most important customer-decision dimensions as axes.",
+  "Plot your brand and key competitors based on how customers perceive them, not how you see them.",
+  "Look for white spaces, positions on the map that no competitor occupies.",
+  "If your position overlaps heavily with competitors, repositioning may be necessary. See your market the way your customers actually see it Most perceptual maps use price and quality as the two axes because they're easy to measure. The maps that reveal real opportunity use the axes customers actually use to choose, speed vs reliability, personal vs professional, complex vs simple. Ask your best customers: 'When you're choosing between us and an alternative, what two things matter most?' Their answer is your map. IN PRACTICE"
+ ],
+ "origin": "Marketing strategy methodology — perceptual mapping widely used 1960s onwards",
+ "promptBody": "Act as a brand strategist using perceptual mapping.\nMy brand                               :  [YOUR COMPANY AND WHAT IT DOES]\nCompetitors                          :  [LIST 5–6 KEY COMPETITORS]\nCustomer decision factors :  [WHAT CUSTOMERS WEIGH MOST WHEN\nCHOOSING IN THIS CATEGORY]\nStep 1  :  Recommend the 2 best axes for this market's perceptual map, \nthe dimensions that most drive customer perception and choice.\nStep 2 :  For each competitor and my brand, describe where they would\nland on the map and why.\nStep 3 :  Identify any white space, an unoccupied position that a\nsizeable customer segment values.\nStep 4 :  Recommend whether I should hold my current position or\nreposition and where to move.\nMap Brands Effectively\nInnovative Premium Target White Space\nHigh innovation, high Unoccupied market\nprice niche\nTraditional Budget Innovative Budget\nEstablished, Novelty at a low cost\naffordable offerings",
+ "proTip": "Run the same perceptual map twice: once based on how you believe customers see the\nmarket, and once asking AI to reflect what customer reviews and public sentiment\nactually say. The gap between your internal map and the external one is your most\nimportant strategic insight.",
+ "pairsWith": [
+  "3.7 Positioning Statement",
+  "3.6 Competitor Mapping",
+  "2.4 Blue Ocean"
+ ],
+ "pairsPrinted": [
+  "3.7 Positioning Statement",
+  "3.6 Competitor Mapping",
+  "2.4 Blue Ocean"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 3,
+ "lesson": "3.5",
+ "title": "TAM SAM SOM",
+ "titlePrinted": "TAM SAM SOM",
+ "level": "Intermediate",
+ "subtitle": "Show investors and yourself - exactly how big this can get",
+ "sourcePages": {
+  "intro": 78,
+  "prompt": 79
+ },
+ "useWhen": "An investor asks how big your market is and you either say a very large number from a generic report or you have no credible answer. You need a market sizing methodology that is defensible and specific to your actual business.",
+ "howToUse": "TAM SAM SOM is the standard market sizing framework used by investors and strategists. Total Addressable Market (TAM) is the total global revenue opportunity if you captured 100% of the market. Serviceable Addressable Market (SAM) is the portion you can realistically reach with your current model. Serviceable Obtainable Market (SOM) is the realistic share you can capture in the next 3–5 years. The most common mistake is starting with TAM and working down. The best founders build bottom-up from real unit economics and work up.",
+ "steps": [
+  "Build your SOM first from bottom-up: number of target accounts × average contract value.",
+  "Work up to SAM by expanding the customer definition while keeping your delivery model.",
+  "Use TAM to show the theoretical ceiling, but never lead with it.",
+  "Always show both top-down and bottom-up calculations, the difference reveals your assumptions. A TAM number from a generic market report will kill your credibility with an experienced investor faster than having no number at all. Build bottom-up from real unit economics, always."
+ ],
+ "origin": "Venture capital due diligence methodology — TAM SAM SOM widely used 1990s onwards",
+ "promptBody": "Act as a venture capital analyst helping me build a credible market sizing model.\nMy business     :  [DESCRIBE WHAT YOU SELL AND TO WHOM]\nGeography       :  [YOUR TARGET MARKETS]\nPrice point       :  [YOUR AVERAGE DEAL / CONTRACT VALUE]\nBuild both top-down and bottom-up sizing for:\nTAM            :  Total global revenue opportunity,  all potential customers using any  \n                        solution for this problem\nSAM            :  Realistic reachable market with my current model and go-to-market  \n                        approach\nSOM            :  Achievable share in 3–5 years based on realistic growth assumptions\nBottom-up :  Number of ICP accounts × ACV = realistic SOM\nFlag the key assumptions and the biggest risks to the sizing model.\nTAM SAM SOM — Market Sizing Made Honest\n$100 billion\nTAM\nTotal Addressable Market\n$50 billion\nSAM\nServiceable Addressable Market\n$10 billion\nSOM\nServiceable Obtainable Market",
+ "proTip": "Investors are sceptical of top-down market sizing because anyone can find a large\nnumber. The founders who impress are those who say 'bottom-up, we see 12,000\ncompanies that fit our ICP, average deal size is X, that gives us a Y SOM with Z%\npenetration in year 3.' That level of specificity signals you actually know your market.",
+ "pairsWith": [
+  "3.4 ICP",
+  "9.5 Investor Narrative",
+  "2.9 Ansoff Matrix"
+ ],
+ "pairsPrinted": [
+  "3.4 ICP",
+  "9.5 Investor Narrative",
+  "2.9 Ansoff Matrix"
+ ],
+ "extractedAt": "2026-09-18"
+}

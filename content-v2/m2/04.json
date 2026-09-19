@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.4",
+ "title": "Blue Ocean Strategy",
+ "titlePrinted": "Blue Ocean Strategy",
+ "level": "Advanced",
+ "subtitle": "You're operating in a market where everyone is fighting over the same customers with",
+ "sourcePages": {
+  "intro": 55,
+  "prompt": 56
+ },
+ "useWhen": "similar products, and the only lever you have is price. You need to find or create a space where you're not compared.",
+ "howToUse": "Developed by W. Chan Kim and Renée Mauborgne, Blue Ocean Strategy distinguishes between Red Oceans (existing markets: bloody with competition) and Blue Oceans (new market spaces, uncontested). The core tool is the Eliminate-Reduce-Raise-Create grid (ERRC): what can you eliminate that your industry takes for granted? What can you reduce below industry standard? What should be raised above it? What should be created that has never been offered? The result is a value curve that looks nothing like your competitors. TThe ERRC grid forces a trade-off most businesses avoid: you cannot raise everything. Every Raise requires an Eliminate to fund it. That discipline is what separates a genuine Blue Ocean move from a feature list. Most founders fill in Create and Raise easily but stall on Eliminate, because giving something up feels like admitting weakness rather than making a strategic choice. The businesses that actually reshape their category are the ones willing to look incomplete by old industry standards on purpose.",
+ "steps": [
+  "Map what your industry currently competes on price, features, service, speed.",
+  "Apply the ERRC grid to find where you can break the value-cost trade-off.",
+  "Look for non-customers, people who don't use any existing solution. They define your Blue Ocean.",
+  "Test your new value curve: is it focused, divergent, and does it have a compelling tagline? Stop competing. Make the competition irrelevant."
+ ],
+ "origin": "W. Chan Kim & Renée Mauborgne, Blue Ocean Strategy, 2004",
+ "promptBody": "Act as a Blue Ocean Strategy consultant.\nMy industry                                :  [NAME THE INDUSTRY AND KEY PLAYERS]\nMy current product / service :  [BRIEF DESCRIPTION]\nStep 1 — Map the current competitive factors in my industry.\nStep 2 — Apply the ERRC Grid:\nELIMINATE   :   What factors can I remove entirely?\nREDUCE         :   What can I offer below industry standard?\nRAISE             :   What should I offer above industry standard?\nCREATE          :   What new value can I introduce that doesn't exist \n                                              anywhere in the industry?\nStep 3 — Describe the Blue Ocean this creates and who the new target customer would be.\nHow to achieve market differentiation?\nRed Ocean Blue Ocean\nIntense competition and price wars Uncontested market space",
+ "proTip": "The best Blue Oceans are often found by looking at the non-customers of your industry,\npeople who don't buy from anyone. Ask AI: 'Who refuses to use any solution in this\nmarket and why?' Their reasons are your roadmap.",
+ "pairsWith": [
+  "2.8 Moat Builder",
+  "3.3 Porter's Five Forces",
+  "1.6 First Principles"
+ ],
+ "pairsPrinted": [
+  "2.8 Moat Builder",
+  "3.3 Porter's Five Forces",
+  "1.6 First Principles"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.10",
+ "title": "Closing Techniques Matrix",
+ "titlePrinted": "Closing Techniques Matrix",
+ "level": "Intermediate",
+ "subtitle": "You reach the end of a great sales conversation and don't know how to move it forward. Or",
+ "sourcePages": {
+  "intro": 109,
+  "prompt": 110
+ },
+ "useWhen": "you default to the same closing approach every time and it stops working for certain prospect types.",
+ "howToUse": "Closing is not a single technique it is a set of contextual tools. Different situations require different approaches. The Summary Close (recap all agreed value, then ask for the decision) works when the prospect is convinced but hesitant. The Alternative Close (offer two options, both of which move forward) works when they're stuck on one variable. The Assumptive Close (proceed as if the decision is made, surface any remaining concerns) works when signals are positive. The Question Close (ask what would make them comfortable to proceed) works when the real objection hasn't been named. AI can help you identify which close fits your current deal situation.",
+ "steps": [
+  "Never try to close before the prospect has confirmed the value and urgency.",
+  "Match the close to the prospect's personality analytical buyers hate assumptive closes.",
+  "If the close fails, use it as a diagnostic ask what would need to be true to move forward.",
+  "Prepare your close in advance for every meeting don't improvise it. Choose the right close for the right moment, not the only one you know No closing method rescues a conversation where value was never confirmed. If you're reaching for the Alternative Close to escape awkward silence, you're using it as a rescue tool, not a decision tool. Fix the conversation, not the close. Timing Beats Technique"
+ ],
+ "origin": "Classic sales training methodology — closing techniques documented widely",
+ "promptBody": "Act as a sales closing coach.\nMy deal   :  [DESCRIBE THE DEAL  STAGE, WHAT'S BEEN AGREED, WHAT  \n                     HESITATION REMAINS]\nProspect personality   :  [ANALYTICAL / RELATIONSHIP / DECISIVE]\nRecommend the best closing approach for this situation from these options:\nSUMMARY CLOSE        :  Recap value, ask for decision\nALTERNATIVE CLOSE  :  Two paths forward, both say yes\nASSUMPTIVE CLOSE   :  Move forward as if decided\nQUESTION CLOSE        :  Ask what would make them comfortable\nURGENCY CLOSE          :  Name a real consequence of delay\nWrite the exact words I would say out loud for the recommended close.\nThen write a recovery if they say not yet.\nClosing techniques range from direct to exploratory.\nSummary Close Alternative Close\nSummarizes beneﬁts, asks Offers choices, guides to\nfor commitment decision\nAssumptive Close Question Close\nAssumes agreement, Explores concerns,\ncloses quickly uncovers objections\nConﬁdent Hesitant",
+ "proTip": "The best close is the one you use before you think you need to close. When all signals are\npositive value confirmed, objections handled, timeline agreed  ask for the decision. Most\nsalespeople wait for perfect certainty before closing. That certainty rarely arrives. Move\nwhen the signals are there.",
+ "pairsWith": [
+  "4.5 Objection Handling",
+  "4.9 Pipeline Review",
+  "4.2 SPIN Selling"
+ ],
+ "pairsPrinted": [
+  "4.5 Objection Handling",
+  "4.9 Pipeline Review",
+  "4.2 SPIN Selling"
+ ],
+ "extractedAt": "2026-09-18"
+}

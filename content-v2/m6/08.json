@@ -1,0 +1,34 @@
+{
+ "module": 6,
+ "lesson": "6.8",
+ "title": "Meeting Design - Meeting OS",
+ "titlePrinted": "Meeting Design - Meeting OS",
+ "level": "Beginner",
+ "subtitle": "Make every meeting earn its time or cancel it",
+ "sourcePages": {
+  "intro": 149,
+  "prompt": 150
+ },
+ "useWhen": "Your team spends too much time in meetings that end without clear decisions or actions. People leave unclear on what was agreed, who will do what, or why the meeting needed to happen at all.",
+ "howToUse": "Drawing from Patrick Lencioni's work on organisational health and broader meeting efficiency research, the Meeting OS is a set of design principles for every recurring and ad hoc meeting: define the meeting type (decision, discussion, update, or brainstorm), set the agenda 24 hours in advance, start with the most important item first, assign one facilitator, end with explicit decisions and owners recorded, and send a summary within an hour. AI can design a complete meeting operating system for any team structure.",
+ "steps": [
+  "Define the type of every standing meeting most teams mix types and get the worst of each.",
+  "Put the hardest agenda item first energy and attention decline through a meeting, not increase.",
+  "End every meeting with the read-out: what was decided, who owns it, by when.",
+  "Audit all standing meetings quarterly, cancel any that have become status updates disguised as collaboration. Sending a summary within an hour doesn't mean the meeting worked. If the read-out says \"we discussed X\" instead of \"we decided X, owner Y, by Z,\" the meeting still didn't earn its time. A Read-Out Isn't a Decision"
+ ],
+ "origin": "Patrick Lencioni, Death by Meeting, 2004 · Meeting efficiency research",
+ "promptBody": "Act as an organisational design consultant specialising in meeting efficiency.\nMy team                : [SIZE, ROLES, WORKING STYLE  REMOTE / IN-PERSON / HYBRID]\nCurrent meetings: [LIST YOUR STANDING MEETINGS AND THEIR FREQUENCY]\nMain frustrations: [WHAT IS BROKEN ABOUT MEETINGS RIGHT NOW]\nDesign a complete Meeting OS for my team:\nMEETING TYPES: Define 4 meeting types and when each is used\nSTANDING MEETINGS: For each existing meeting \nType (decision / discussion / update / brainstorm)\nCorrect frequency and duration\nRequired attendees vs optional\nAgenda format\nMEETING RULES : 5 non-negotiable norms for all meetings\nDECISION LOG     : How we capture and share what was decided\nMEETING AUDIT  : Which of my current meetings should be cancelled, merged, or  \n                                   reformatted?\nMeeting Design Checklist\nMost Important Item\nMeeting Type Agenda 24hrs\nFirst One Facilitator\nAhead\nDecisions + Owners\nSummary Within 1\nRecorded\nHour",
+ "proTip": "The most productive meeting reform any team can make is adding a mandatory read-\nout at the end of every meeting: 'What did we decide? Who owns each action? By\nwhen?' This 3-minute habit prevents the most common meeting failure,  leaving with\ndifferent understandings of what was agreed.",
+ "pairsWith": [
+  "6.1 RACI Matrix",
+  "6.2 OKRs",
+  "6.5 SBI Feedback"
+ ],
+ "pairsPrinted": [
+  "6.1 RACI Matrix",
+  "6.2 OKRs",
+  "6.5 SBI Feedback"
+ ],
+ "extractedAt": "2026-09-18"
+}

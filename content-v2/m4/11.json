@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.11",
+ "title": "FAB - Features Advantages",
+ "titlePrinted": "FAB - Features Advantages",
+ "level": "Beginner",
+ "subtitle": "Benefits",
+ "sourcePages": {
+  "intro": 111,
+  "prompt": 112
+ },
+ "useWhen": "You describe your product by listing features and specifications. Prospects nod politely and then say they'll think about it. The features are real and impressive but they're not translating into desire.",
+ "howToUse": "FAB is a foundational sales communication framework dating to the 1960s. Features describe what a product has or does. Advantages explain why that feature is better than the alternative. Benefits describe what the feature and advantage mean for this specific customer in their specific situation. Most salespeople stop at Feature or Advantage. The customer only cares about the Benefit and even then, only the benefit that is relevant to their specific pain. AI can translate any feature into a customer-specific benefit when given the right context.",
+ "steps": [
+  "List your top 5–7 features before prompting.",
+  "For each feature, ask: 'So what does that mean for a customer who has this specific problem?'",
+  "Match benefits to the customer's stated pain from your discovery call not generic benefits.",
+  "Use the benefit language verbatim in proposals, demos, and email follow-ups. Stop listing what your product does. Start saying what it means for them. The same feature means something different to each buyer - \"less overtime\" to an ops manager, \"faster board reporting\" to a CFO. One benefit statement for every prospect is still FA, not FAB. Same Benefit, Different Buyer"
+ ],
+ "origin": "Sales training methodology — FAB framework, widely attributed to 1960s salesmanship",
+ "promptBody": "Act as a sales messaging consultant using the FAB framework.\nMy product features    :  [LIST YOUR TOP 5–7 FEATURES]\nTarget customer pain  :  [THE SPECIFIC PROBLEM THEY TOLD YOU ABOUT IN \n                                            DISCOVERY]\nCustomer role               :  [JOB TITLE AND WHAT THEY ARE MEASURED ON]\nFor each feature, complete the FAB chain:\nFEATURE        :  What the product has or does\nADVANTAGE  :  Why this is better than the alternative\nBENEFIT         :  What this specifically means for THIS customer given their stated pain\nand goals\nWrite the Benefit as a sentence they would say to their manager  not a sentence I\nwould say to them.\nFAB Pyramid\nBeneﬁt\nWhat it means for the customer\nAdvantage\nWhy it's better than alternatives\nFeature\nWhat the product has or does",
+ "proTip": "The best benefits are written from the customer's perspective looking inward, not from\nyour perspective looking outward. 'This saves you 3 hours a week' is a feature-benefit.\n'You can tell your CFO that reporting time dropped by 40%' is a customer benefit\nbecause it solves the customer's real problem, which is not time, it's accountability.",
+ "pairsWith": [
+  "4.6 PAS",
+  "4.2 SPIN Selling",
+  "2.1 Value Proposition Canvas"
+ ],
+ "pairsPrinted": [
+  "4.6 PAS",
+  "4.2 SPIN Selling",
+  "2.1 Value Proposition Canvas"
+ ],
+ "extractedAt": "2026-09-18"
+}

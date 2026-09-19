@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.2",
+ "title": "OKRs - Goals That Drive Action",
+ "titlePrinted": "OKRs - Goals That Drive Action",
+ "level": "Intermediate",
+ "subtitle": "Your team sets goals at the start of the quarter that nobody looks at again. Or your goals are",
+ "sourcePages": {
+  "intro": 137,
+  "prompt": 138
+ },
+ "useWhen": "so vague that you can't tell at the end of the quarter whether you achieved them. Activity is high, progress is unclear.",
+ "howToUse": "OKRs were developed by Andy Grove at Intel in the 1970s and popularised by John Doerr at Google. An Objective is a qualitative, inspiring statement of where you want to go. Key Results are 2–4 specific, measurable outcomes that prove you've arrived. The critical rule: Key Results measure outcomes, not activities. 'Launch the new feature' is a task. 'Achieve 40% feature adoption among active users within 60 days' is a Key Result. OKRs work because they separate what you want to achieve from how you'll know you've achieved it.",
+ "steps": [
+  "Write the Objective as something that would genuinely excite the team, not a business metric.",
+  "Key Results must be measurable, if you can't put a number on it, it's not a Key Result.",
+  "Set 3–5 OKRs per quarter. More dilutes focus. Fewer creates over-dependence on one outcome.",
+  "Review OKRs in weekly team meetings, not just at quarter end. Set goals your team actually works toward, not ones they forget by week two Hitting 100% of your Key Results every quarter isn't success, it's a sign you set them too safe. OKRs work as a stretch tool, not a performance review. If your team is always green, you're measuring comfort, not progress. Ambitious Targets Aren't the Point"
+ ],
+ "origin": "Andy Grove, Intel — MBO adapted to OKRs · John Doerr, Google, 1999",
+ "promptBody": "Act as an OKR coach and strategist.\nMy business context    :  [COMPANY STAGE, TEAM SIZE, MAIN FOCUS]\nThis quarter's priority :  [THE ONE THING THAT MATTERS MOST]\nCurrent challenges       :  [WHAT IS HOLDING GROWTH BACK]\nWrite 3 OKRs for this quarter:\nFor each OKR:\nOBJECTIVE      :  Inspiring, qualitative direction (1 sentence)\nKEY RESULT 1 :  Specific, measurable outcome with number\nKEY RESULT 2 :  Specific, measurable outcome with number\nKEY RESULT 3 :  Specific, measurable outcome with number\nThen: flag any Key Result that is actually a task disguised as an outcome - and rewrite it.\nSuggest a weekly check-in question for each OKR.\nAchieving Market Leadership\nDeﬁne Key Results\nEstablish\nmeasurable\noutcomes\nSet Objective Drive Action\nDeﬁne market Launch feature X\nleadership goal and track adoption",
+ "proTip": "The most common OKR failure is writing Key Results that measure activity instead of\noutcome. 'Conduct 20 customer interviews' is activity. 'Identify 3 validated insights that\nchange our roadmap' is outcome. Your team can tick off activity without moving the\nneedle. Only outcomes tell you if you're actually winning.",
+ "pairsWith": [
+  "6.1 RACI Matrix",
+  "6.8 Meeting Design",
+  "9.3 North Star Metric",
+  "7.4 ICE Scoring"
+ ],
+ "pairsPrinted": [
+  "6.1 RACI Matrix",
+  "6.8 Meeting Design",
+  "9.3 North Star Metric",
+  "7.4 ICE Scoring"
+ ],
+ "extractedAt": "2026-09-18"
+}

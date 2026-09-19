@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.8",
+ "title": "Regret Minimization Framework",
+ "titlePrinted": "Regret Minimization Framework",
+ "level": "Intermediate",
+ "subtitle": "You are facing a large, irreversible decision leaving a job, starting a company, making a",
+ "sourcePages": {
+  "intro": 199,
+  "prompt": 200
+ },
+ "useWhen": "major investment, ending a partnership and short-term fear or inertia is preventing you from thinking clearly about the long-term.",
+ "howToUse": "Jeff Bezos developed the Regret Minimization Framework when deciding whether to leave his job at D.E. Shaw to start Amazon in 1994. The method is simple: project yourself to age 80, looking back on your life. From that vantage point, ask which choice you would regret more doing it, or not doing it. Bezos found that he would not regret trying and failing, but he would deeply regret never having tried. The framework shifts the decision from short-term risk calculus to long-term life alignment. AI can help you run this thought experiment with structured reflection prompts.",
+ "steps": [
+  "Use this framework for large, relatively irreversible decisions, not daily choices.",
+  "Be honest in the 80-year-old perspective romanticised or pessimistic projections both distort the output.",
+  "Consider both regrets: the regret of action (if it fails) and the regret of inaction (if you never try).",
+  "Combine with the DECIDE framework for decisions that need both long-term alignment and short-term rigor. Make the big decision from the perspective of your future self Bezos regretted the road not taken, you might not. Be honest about your own relationship with risk, not the answer you think an entrepreneur is supposed to give. One Person's Regret Isn't Yours"
+ ],
+ "origin": "Jeff Bezos — Regret Minimization Framework, described publicly 1997",
+ "promptBody": "Act as a reflective decision coach using Bezos's Regret Minimization Framework.\nThe decision I am facing :  [DESCRIBE THE CHOICE - WHAT YOU ARE CONSIDERING\nDOING]\nCurrent situation              :  [WHAT IS AT STAKE - WHAT YOU HAVE NOW]\nFear or hesitation              :  [WHAT IS STOPPING YOU]\nGuide me through the Regret Minimization exercise:\nSTEP 1 — PROJECT FORWARD:\nI am 80 years old, looking back at this moment.\nDescribe what my life looks like if I chose YES.\nDescribe what my life looks like if I chose NO.\nSTEP 2 — NAME THE REGRETS:\nIf I say YES and it fails - what do I regret?\nIf I say NO and never try - what do I regret?\nWhich regret is harder to live with?\nSTEP 3 — CLARIFY:\nWhat would the 80-year-old version of me tell the current version of me right now?\nSTEP 4 — NEXT STEP:\nWhat is the smallest action that moves toward the less regretted path?\nRegret Minimization Framework\nActive Choice Reﬂective Evaluation",
+ "proTip": "The Regret Minimization Framework is not a tool for avoiding hard decisions, it is a tool\nfor making them from the right time horizon. Most people make large life decisions from a\n1–3 year perspective and wonder why they feel unsatisfied with the outcome. The 80-year\nperspective doesn't remove risk, it removes the illusion that safety is risk-free.",
+ "pairsWith": [
+  "8.1 DECIDE Framework",
+  "8.9 Decision Tree",
+  "10.5 Three Horizons",
+  "10.9 Ikigai"
+ ],
+ "pairsPrinted": [
+  "8.1 DECIDE Framework",
+  "8.9 Decision Tree",
+  "10.5 Three Horizons",
+  "10.9 Ikigai"
+ ],
+ "extractedAt": "2026-09-18"
+}

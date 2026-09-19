@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.8",
+ "title": "Cash Conversion Cycle",
+ "titlePrinted": "Cash Conversion Cycle",
+ "level": "Intermediate",
+ "subtitle": "Your business is profitable on paper but always tight on cash. Invoices are raised but",
+ "sourcePages": {
+  "intro": 220,
+  "prompt": 221
+ },
+ "useWhen": "payment is slow. You are funding your customers' operations with your own cash flow without realising it.",
+ "howToUse": "The Cash Conversion Cycle (CCC) measures how long it takes for a business to convert its investments in inventory, services, or sales activity into cash receipts. CCC = Days Sales Outstanding (how long to collect from customers) + Days Inventory Outstanding (how long stock sits, if applicable) - Days Payable Outstanding (how long you take to pay suppliers). A negative CCC means you collect cash before you have to pay like Amazon or Dell. A high positive CCC means you are funding operations with cash before it arrives, creating persistent working capital strain.",
+ "steps": [
+  "Calculate each component of your CCC from the last 90 days, not estimates.",
+  "Days Sales Outstanding is usually the highest-leverage improvement for service businesses.",
+  "Shortening payment terms and offering early payment discounts both reduce DSO directly.",
+  "A rising CCC is often the first financial signal of a scaling problem, before it shows in the P&L.; Understand how fast your business turns activity into actual cash A rising CCC won't show up in your P&L for months - profitability can look fine while you're quietly running out of cash. If growth feels good but the bank balance feels tight, check the CCC before you check the income statement."
+ ],
+ "origin": "Corporate finance methodology — Cash Conversion Cycle widely used in operations finance",
+ "promptBody": "Act as a working capital advisor using the Cash Conversion Cycle framework.\nMy business: [DESCRIBE YOUR REVENUE MODEL AND PAYMENT TERMS]\nCurrent data:\nAverage days to collect payment from customers: [X days]\nAverage days inventory is held (if applicable): [X days]\nAverage days to pay suppliers: [X days]\nCalculate my Cash Conversion Cycle:\nCCC = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days\nPayable Outstanding (DPO)\nAnalyse:\n1. What does my CCC tell me about my working capital health?\n2. Which component is the biggest drag on cash flow?\n3. What are 3 specific actions to shorten DSO?\n4. What payment terms or structures would improve my CCC?\n5. If I reduced my CCC by 10 days, how much additional cash would that free up at my\ncurrent revenue run rate?",
+ "proTip": "For service businesses, Days Sales Outstanding is almost always the lever. The most\neffective DSO reduction tactic is upfront payment or deposit - not better invoicing.\nStructuring contracts to collect 30–50% before work begins can transform a cash-tight\nbusiness into a cash-positive one without changing a single cost line.",
+ "pairsWith": [
+  "9.2 Burn Rate",
+  "9.1 LTV:CAC",
+  "9.6 Financial Model",
+  "9.9 Rule of 40"
+ ],
+ "pairsPrinted": [
+  "9.2 Burn Rate",
+  "9.1 LTV:CAC",
+  "9.6 Financial Model",
+  "9.9 Rule of 40"
+ ],
+ "extractedAt": "2026-09-18"
+}

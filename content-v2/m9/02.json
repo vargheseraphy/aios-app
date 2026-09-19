@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.2",
+ "title": "Burn Rate & Runway",
+ "titlePrinted": "Burn Rate & Runway",
+ "level": "Beginner",
+ "subtitle": "Know exactly how much time you have and what you're spending it on",
+ "sourcePages": {
+  "intro": 208,
+  "prompt": 209
+ },
+ "useWhen": "You are running a funded startup or a business with variable revenue and you do not have a clear, current view of how many months of operating capital you have left. Financial decisions are being made without a clear runway calculation.",
+ "howToUse": "Burn Rate is the rate at which a company is spending its cash reserves above revenue, either Gross Burn (total monthly expenditure) or Net Burn (monthly cash lost after revenue). Runway is the number of months until cash reaches zero at the current net burn rate. These two numbers are the most fundamental financial metrics for any pre- profitability business. Every strategic decision, hiring, marketing investment, product bets, changes the runway. AI can help model the impact of decisions on runway and identify the break-even scenarios.",
+ "steps": [
+  "Calculate net burn monthly, not quarterly, cash positions change faster than quarterly reviews reveal.",
+  "Build your runway calculation from the bottom up, know exactly what each expense line contributes to burn.",
+  "Model three burn scenarios: current trajectory, growth scenario (higher spend + revenue), and conservation scenario.",
+  "Set a runway alert threshold, when you hit 9 months of runway, fundraising or cost review must begin immediately. Waiting until you hit 9 months to start fundraising is already too late, fundraising itself takes months, and a shrinking runway makes you negotiate from weakness. The threshold triggers action, it doesn't wait for it."
+ ],
+ "origin": "Startup finance fundamentals — burn rate and runway widely standardised in VC lexicon",
+ "promptBody": "Act as a startup CFO advisor.\nMy financials:\nCurrent cash / reserves: [AMOUNT]\nMonthly revenue              :   [CURRENT MRR OR ARR / 12]\nMonthly expenses (total) :  [BREAKDOWN IF POSSIBLE:\n  Salaries: [X]\n  Infrastructure: [X]\n  Marketing: [X]\n  Other: [X]]\nCalculate:\nGROSS BURN :  Total monthly cash out\nNET BURN      :  Gross burn minus monthly revenue\nRUNWAY         :  Current cash / net burn = months remaining\nThen model three scenarios:\nSCENARIO A (Current)   :  Runway at current trajectory\nSCENARIO B (Growth)    :  If I hire 2 people and double marketing, new runway?\nSCENARIO C (Conserve) :  If I cut non-essential spend 30%,  how much runway does that\n                                                add?\nAt what monthly revenue does net burn hit zero?\nWhat is the fastest path to break-even?",
+ "proTip": "The most important burn rate insight is not the number itself — it is the break-even\nrevenue calculation. Knowing that you need 45,000 in monthly revenue to reach zero\nnet burn gives you a concrete target that connects financial health to sales activity.\nEvery founder should know their break-even revenue number without having to look it\nup.",
+ "pairsWith": [
+  "9.1 LTV:CAC",
+  "9.6 Financial Model",
+  "8.10 Expected Value",
+  "9.9 Rule of 40"
+ ],
+ "pairsPrinted": [
+  "9.1 LTV:CAC",
+  "9.6 Financial Model",
+  "8.10 Expected Value",
+  "9.9 Rule of 40"
+ ],
+ "extractedAt": "2026-09-18"
+}

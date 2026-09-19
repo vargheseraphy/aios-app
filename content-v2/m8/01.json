@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.1",
+ "title": "The DECIDE Framework",
+ "titlePrinted": "The DECIDE Framework",
+ "level": "Beginner",
+ "subtitle": "A structured six-step process for any decision that matters",
+ "sourcePages": {
+  "intro": 185,
+  "prompt": 186
+ },
+ "useWhen": "You are going in circles on an important decision. You have information but can't reach clarity. The same arguments keep coming up. You need a process to move from deliberation to decision.",
+ "howToUse": "The DECIDE framework, developed in decision science, is a six-step structured decision process: Define the problem (what exactly are you deciding?), Establish criteria (what does a good decision look like?), Consider alternatives (what are all the realistic options?), Identify the best option (evaluate alternatives against criteria), Develop and implement (commit and plan), Evaluate the outcome (review after the fact). Its value is in making implicit decision-making explicit surfacing the criteria and alternatives that are often left unstated, which is where most poor decisions hide.",
+ "steps": [
+  "Define the decision in one sentence before doing anything else ambiguous definition is the root of most decision paralysis.",
+  "Write your criteria before generating options criteria set after options are considered are reverse-engineered rationalisations.",
+  "Generate at least three alternatives binary choices limit thinking.",
+  "Set a decision date before starting the process. Open-ended decision timelines produce no decisions. If you're writing criteria after you've already generated the options, you're not deciding you're justifying a choice you already made. The order matters as much as the steps: criteria first, or the whole process becomes theater around a decision you'd already reached."
+ ],
+ "origin": "Decision science methodology — DECIDE framework, Kristina Guo and others",
+ "promptBody": "Act as a structured decision-making facilitator using the DECIDE framework.\nDecision to make  :  [DESCRIBE THE DECISION IN ONE SENTENCE]\nDeadline                 :  [WHEN THIS MUST BE DECIDED]\nContext                   :  [RELEVANT BACKGROUND, CONSTRAINTS, STAKEHOLDERS]\nGuide me through all six DECIDE steps:\nDEFINE          :  Restate the decision clearly and precisely. What is the core question being  \n                          answered?\nESTABLISH   :  What are the 4–5 criteria for a good decision? Weight each by \n                          importance (1–5).\nCONSIDER    :  Generate 3–4 realistic alternative options. Include one option I may be  \n                           avoiding.\nIDENTIFY     :  Score each option against each criterion. Which scores highest overall?\nDEVELOP      :  What are the first 3 implementation steps?\nEVALUATE    :  What metric or signal will tell me at 90 days whether this was the right  \n                          decision?\nThe DECIDE Framework\nDeﬁne Consider Alternatives Develop & Implement\nEstablish Criteria Identify Best Option Evaluate",
+ "proTip": "The step most people skip is Establish  defining criteria before looking at options. When\nyou evaluate options without stated criteria, you unconsciously build the criteria around\nyour preferred option. Writing criteria first makes the evaluation honest. If your\npreferred option scores poorly against honest criteria, that is the most valuable output\nfrom this framework.",
+ "pairsWith": [
+  "8.2 Pre-Mortem",
+  "8.9 Decision Tree",
+  "1.12 MECE",
+  "1.6 First Principles"
+ ],
+ "pairsPrinted": [
+  "8.2 Pre-Mortem",
+  "8.9 Decision Tree",
+  "1.12 MECE",
+  "1.6 First Principles"
+ ],
+ "extractedAt": "2026-09-18"
+}

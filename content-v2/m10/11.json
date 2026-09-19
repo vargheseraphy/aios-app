@@ -1,0 +1,31 @@
+{
+ "module": 10,
+ "lesson": "10.11",
+ "title": "Wabi-Sabi - Imperfect Progress",
+ "titlePrinted": "Wabi-Sabi - Imperfect Progress",
+ "level": "Advanced",
+ "subtitle": null,
+ "sourcePages": {
+  "intro": 245,
+  "prompt": 246
+ },
+ "useWhen": null,
+ "howToUse": "Ship imperfect work. Build a beautiful, incomplete company. Move forward anyway.",
+ "steps": [],
+ "origin": "Japanese Zen Buddhist aesthetic — Wabi-Sabi philosophy · Applied to modern entrepreneurship",
+ "promptBody": "Act as a Wabi-Sabi philosophical advisor helping me move from perfectionism to \npurposeful imperfect action.\nWhat I am delaying                            :   [DESCRIBE WHAT YOU HAVE NOT SHIPPED,\nPUBLISHED, LAUNCHED, OR SHARED AND FOR HOW LONG]\nWhy I am delaying                             :   [YOUR REASON  BE HONEST]\nWhat 'ready' looks like in my head : [THE STANDARD YOU ARE TRYING TO MEET\nBEFORE   SHIPPING]\nApply Wabi-Sabi:\nHONEST DIAGNOSIS    :  Is this perfectionism or legitimate quality concern? How do I\ntell  \n                                              the difference?\nIMPERFECT VERSION  :   What is the version I could ship this week — flawed but honest   \n                                               and real?\nCOST OF WAITING        :   What am I not learning by not shipping? What feedback am I  \n                                               denying myself?\nBEAUTY IN PROCESS    :   What is genuinely good — even beautiful — about this \n                                               unfinished, imperfect thing?\nCOMMITMENT               :   What will I ship, post, or share by [DATE]? What does 'done \n                                               enough' look like?",
+ "proTip": "The most honest question Wabi-Sabi asks is: 'Who am I protecting by not shipping?' The\nanswer is almost never the customer, it is yourself. From criticism, from comparison,\nfrom the discomfort of being judged on real work rather than potential work. Wabi-Sabi\nteaches that the courage to show imperfect work is itself a form of beauty. Ship it.",
+ "pairsWith": [
+  "10.10 Hansei",
+  "2.6 MVP Design",
+  "7.9 Kaizen",
+  "10.7 Socratic Self-Questioning"
+ ],
+ "pairsPrinted": [
+  "10.10 Hansei",
+  "2.6 MVP Design",
+  "7.9 Kaizen",
+  "10.7 Socratic Self-Questioning"
+ ],
+ "extractedAt": "2026-09-18"
+}

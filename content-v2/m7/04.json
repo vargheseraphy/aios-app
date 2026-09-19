@@ -1,0 +1,36 @@
+{
+ "module": 7,
+ "lesson": "7.4",
+ "title": "ICE Scoring",
+ "titlePrinted": "ICE Scoring",
+ "level": "Beginner",
+ "subtitle": "Prioritise your next move in three numbers",
+ "sourcePages": {
+  "intro": 166,
+  "prompt": 167
+ },
+ "useWhen": "Your team has a long list of ideas, experiments, and features. Everyone has an opinion about what to do next. You're choosing based on loudest voice or gut feel and the results are inconsistent.",
+ "howToUse": "ICE Scoring was popularised by Sean Ellis, the growth hacker who coined the term 'growth hacking.' It scores every idea across three dimensions: Impact (how much will this move the key metric if it works?), Confidence (how sure are we that it will work, based on evidence?), Ease (how quickly and cheaply can we execute it?). Each is scored 1–10. The ICE Score = Impact × Confidence × Ease. The highest-scoring ideas rise to the top. It is deliberately simple - a tool for fast, defensible prioritisation, not academic analysis.",
+ "steps": [
+  "Score ideas as a team, not individually averaging scores removes individual bias.",
+  "Revisit Confidence scores after each experiment update them with real data.",
+  "Use ICE for prioritising experiments and quick decisions use RICE (7.5) for larger product decisions.",
+  "Cap your active list at the top 5 ICE scores - focus beats volume every time. A high ICE score is not a mandate it is a starting point. Always ask: 'If this idea scores highest but fails, what do we learn?' Ideas that teach you something even in failure are more valuable than safe wins that teach nothing. Build your experiments to generate insight, not just results. PRO TIP"
+ ],
+ "origin": "Sean Ellis — ICE Scoring framework, growth hacking methodology",
+ "promptBody": "I PROMPT — COPY & PASTE READY\nAct as a growth prioritisation advisor using ICE Scoring.\nOur goal / key metric  : [WHAT WE ARE TRYING TO IMPROVE]\nTime horizon                 : [SPRINT / MONTH / QUARTER]\nScore each idea on three dimensions (1–10 each):\nIMPACT                          : How much will this move our key metric?\nCONFIDENCE                : How sure are we it will work? (data > gut)\nEASE                                : How fast and cheap is execution?\nICE SCORE = Impact × Confidence × Ease\nIdeas to score :\n[LIST YOUR 6–10 IDEAS OR INITIATIVES]\nAfter scoring :\n1. Rank all ideas by ICE Score\n2. Flag any high-Impact, low-Confidence ideas  these need a small test \nbefore full investment\n3. Recommend the top 3 to execute this period\n4. Recommend 1 idea to kill lowest score or highest opportunity cost",
+ "proTip": "",
+ "pairsWith": [
+  "7.5 RICE Scoring",
+  "6.2 OKRs",
+  "7.3 Theory of Constraints",
+  "9.3 North Star"
+ ],
+ "pairsPrinted": [
+  "7.5 RICE Scoring",
+  "6.2 OKRs",
+  "7.3 Theory of Constraints",
+  "9.3 North Star"
+ ],
+ "extractedAt": "2026-09-18"
+}

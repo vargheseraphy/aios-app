@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.4",
+ "title": "The Refinement Loop",
+ "titlePrinted": "The Refinement Loop",
+ "level": "Beginner",
+ "subtitle": "You get an AI output, it's okay but not quite right, and you don't know how to improve it",
+ "sourcePages": {
+  "intro": 30,
+  "prompt": 31
+ },
+ "useWhen": "without starting over. You move on, leaving quality on the table.",
+ "howToUse": "One prompt almost never produces the best result. The Refinement Loop is a four-stage iteration: Draft (generate first version), Critique (ask AI what's weak), Improve (ask AI to fix those weaknesses), Lock (confirm the final version meets your goal). Each loop takes under 60 seconds. Most people stop at Draft. They get an output that is 70% right and move on leaving the best version unbuilt. The Critique step is the most underused: AI is surprisingly honest when asked to evaluate its own work, surfacing gaps you might not notice yourself. Two loops is almost always enough",
+ "steps": [
+  "Generate your first draft with any reasonable prompt.",
+  "On the next prompt, ask AI to critique its own output specifically.",
+  "Ask AI to rewrite with those critiques applied.",
+  "Repeat once more if needed. Two loops is usually enough. Stop accepting the first output - iterate to excellence Most people run the critique step, get three weaknesses, fix them then stop. They skip Step 4 (Lock). That final check is where the last 10% of quality lives, and it's also where the error you didn't notice gets caught. Two loops takes four minutes. One loop leaves quality on the table."
+ ],
+ "origin": "Iterative prompt design — design thinking principles applied to LLM workflows, 2023",
+ "promptBody": "Step 1    —   Draft: [Paste your original prompt and generate first output]\nStep 2   —   Critique: Review the response you just gave.\n                     What are the 3 weakest parts? Where is it too vague or generic?\nStep 3   —    Improve: Rewrite the original response with those 3 weaknesses fixed.\n                     Keep what was strong. Improve what was weak.\nStep 4   —    Lock:  Anything that would make this significantly better?\n                     If yes, apply it. If no, confirm this is the final version.\nAchieving AI Output Excellence\nCritique\nAsk AI to evaluate its\nwork\nDraft Improve\nGenerate initial AI Ask AI to ﬁx\noutput weaknesses",
+ "proTip": "Use Step 2 as a standalone habit. After any important output-  email, proposal, plan and\nask AI 'What is the weakest part of this?' before you send it. Takes 10 seconds.",
+ "pairsWith": [
+  "1.1 C.A.R.E",
+  "8.2 Pre-Mortem",
+  "4.7 Proposal Writing"
+ ],
+ "pairsPrinted": [
+  "1.1 C.A.R.E",
+  "8.2 Pre-Mortem",
+  "4.7 Proposal Writing"
+ ],
+ "extractedAt": "2026-09-18"
+}

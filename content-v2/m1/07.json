@@ -1,0 +1,37 @@
+{
+ "module": 1,
+ "lesson": "1.7",
+ "title": "Second Order Thinking",
+ "titlePrinted": "Second Order Thinking",
+ "level": "Intermediate",
+ "subtitle": "A decision seems obviously good but you're worried about unintended consequences.",
+ "sourcePages": {
+  "intro": 36,
+  "prompt": 37
+ },
+ "useWhen": "Everyone agrees on the first-level outcome but nobody is thinking about what that outcome causes next.",
+ "howToUse": "First-order thinking asks: what happens if I do this? Second-order thinking asks: and then what? And then what after that? Most bad decisions look good at the first level. The consequences that hurt you are almost always second or third order. Howard Marks popularised this in investing. It applies to every business decision.",
+ "steps": [
+  "Define your proposed action or decision clearly.",
+  "Ask AI to map first, second, and third order consequences.",
+  "Pay special attention to negative effects of positive first-order outcomes.",
+  "Use the output to adjust the plan before committing resources. What happens after what happens next?",
+  "Have I considered how the people affected by this decision will respond and adapt, not just the immediate outcome?",
+  "Does my plan account for second-order effects 6 to 12 months out, not just next quarter?",
+  "Am I solving the visible symptom or the underlying cause that will keep producing symptoms? QUICK CHECK"
+ ],
+ "origin": "Howard Marks, Oaktree Capital — The Most Important Thing, 2011",
+ "promptBody": "Act as a strategic advisor specialising in consequence mapping.\nProposed action     :   [YOUR DECISION OR ACTION]\nContext                    :   [INDUSTRY, STAGE, STAKEHOLDERS AFFECTED]\n1st Order                  :   Immediate, direct effects?\n2nd Order                :   What does each 1st-order effect then cause?\n3rd Order                 :   What does each 2nd-order effect lead to?\nFlag any 2nd or 3rd order effects that could undermine the original goal\neven if 1st order looks positive.\nThird-Order Thinking\nExamines long-term\nimplications\nSecond-Order Thinking Negative Consequences\nConsiders subsequent Identiﬁes potential\nconsequences downsides\nFirst-Order Thinking Decision Adjustment\nFocuses on immediate Modiﬁes plans based on\noutcomes analysis\nThe Power of\nSecond-Order\nThinking",
+ "proTip": "Don't just apply this to risky decisions. Good decisions often have harmful second-order\neffects that nobody maps because everyone is celebrating the first-order win.",
+ "pairsWith": [
+  "1.8 Inversion",
+  "8.2 Pre-Mortem",
+  "8.4 Risk Matrix"
+ ],
+ "pairsPrinted": [
+  "1.8 Inversion",
+  "8.2 Pre-Mortem",
+  "8.4 Risk Matrix"
+ ],
+ "extractedAt": "2026-09-18"
+}

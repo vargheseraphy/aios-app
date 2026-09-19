@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.5",
+ "title": "Jobs To Be Done",
+ "titlePrinted": "Jobs To Be Done",
+ "level": "Intermediate",
+ "subtitle": "Your customers describe your product differently than you do. Your retention is lower than",
+ "sourcePages": {
+  "intro": 57,
+  "prompt": 58
+ },
+ "useWhen": "it should be. People churn and you don't understand why. You're optimising features nobody really cares about.",
+ "howToUse": "Developed by Clayton Christensen at Harvard Business School, Jobs To Be Done (JTBD) is a lens for understanding why customers 'hire' a product. People don't buy products, they hire them to do a job. That job has three layers: a Functional job (the practical task), a Social job (how they want to be seen doing it), and an Emotional job (how they want to feel). The product that best does all three layers of the job wins. Most products only address the functional layer.",
+ "steps": [
+  "Interview 5 real customers using the JTBD prompt below, don't survey, talk.",
+  "Focus on the moment they decided to look for a solution, that's where the real job lives.",
+  "Map the three job layers for your product: functional, social, emotional.",
+  "Check your marketing: does it speak to all three layers or only the functional one? Understand the real reason customers buy, not what they say When Spotify analysed why users churned, the job wasn't 'listen to music' it was 'fill the silence during my commute.' That insight shifted their focus toward playlist curation and seamless playback. They stopped competing on catalogue size and started competing on moment. IN PRACTICE"
+ ],
+ "origin": "Clayton Christensen, Harvard Business School — JTBD theory, 1990s–2000s",
+ "promptBody": "Act as a Jobs To Be Done research analyst.\nMy product               :   [DESCRIBE WHAT YOUR PRODUCT DOES]\nCustomer type         :   [SPECIFIC ROLE AND CONTEXT]\n                                       For this customer, identify:\nFUNCTIONAL JOB   :   What practical task are they hiring my product to do?\nSOCIAL JOB              :   How do they want to be seen by others when using this product?\nEMOTIONAL JOB     :   How do they want to feel when the job is done?\nCOMPETING JOBS  :    What else do they currently hire to do this job,  including non-  \n                                       obvious alternatives?\nWhere is my product strongest and weakest across layers?\nJOBS TO BE DONE — THE THREE LAYERS OF WHY\nEmotional Job\nHow they want to feel\nSocial Job\nHow they want to be seen\nFunctional Job\nWhat they need done",
+ "proTip": "The competing jobs answer is the most valuable. When a customer churns, they don't\nleave for nothing  they hire something else to do the job. Ask AI to map the most likely\n'competitor hires' for your product. The answer will surprise you.",
+ "pairsWith": [
+  "2.1 Value Proposition",
+  "3.4 ICP",
+  "3.8 Voice of Customer"
+ ],
+ "pairsPrinted": [
+  "2.1 Value Proposition",
+  "3.4 ICP",
+  "3.8 Voice of Customer"
+ ],
+ "extractedAt": "2026-09-18"
+}

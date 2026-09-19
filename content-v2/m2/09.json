@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.9",
+ "title": "Ansoff Matrix",
+ "titlePrinted": "Ansoff Matrix",
+ "level": "Intermediate",
+ "subtitle": "Find the right growth direction before committing resources",
+ "sourcePages": {
+  "intro": 65,
+  "prompt": 66
+ },
+ "useWhen": "Your core business is working and you're ready to grow but you're unsure whether to go deeper with existing customers, expand to new markets, launch new products, or do something entirely new. Every direction feels possible and none feels obvious.",
+ "howToUse": "Developed by Igor Ansoff and published in Harvard Business Review in 1957, the Ansoff Matrix maps four growth strategies against two dimensions: existing vs new products, and existing vs new markets. Market Penetration (existing product, existing market) is lowest risk. Market Development (existing product, new market) and Product Development (new product, existing market) are medium risk. Diversification (new product, new market) is highest risk. Most businesses underinvest in penetration and over-invest in diversification.",
+ "steps": [
+  "Map your current position on the matrix honestly.",
+  "For each quadrant, estimate the level of investment and risk required.",
+  "Start with Market Penetration most businesses have not fully captured their existing market.",
+  "Only move to Diversification after the other three quadrants are saturated. Amazon spent seven years dominating book retail before expanding to electronics, then all products, then cloud services. Each move followed the Ansoff sequence penetrate first, develop markets second, diversify last. The discipline of exhausting one quadrant before entering the next is what made each expansion defensible. IN PRACTICE"
+ ],
+ "origin": "Igor Ansoff, Harvard Business Review — Strategies for Diversification, 1957",
+ "promptBody": "Act as a growth strategy advisor using the Ansoff Matrix.\nMy current business             :  [DESCRIBE PRODUCT AND MARKET]\nCurrent stage                         :  [REVENUE, TEAM SIZE, KEY MARKETS]\nGrowth objective                   :  [WHAT YOU WANT TO ACHIEVE IN 12–24 MONTHS]\nAnalyse all four Ansoff quadrants for my situation:\nMARKET PENETRATION      :  How much more can I extract from existing product +\nexisting market?\nMARKET DEVELOPMENT    :  Which new markets could my current product serve with\nminimum change?\nPRODUCT DEVELOPMENT  :  What new products could I offer to my existing\ncustomers?\nDIVERSIFICATION                 :  Where is new product + new market justified by strategic\nopportunity?\nRecommend the highest-leverage quadrant for my stage.\nWhich growth strategy should we pursue?\nMarket Penetration Diversiﬁcation\nLowest risk, focuses on Highest risk, enters new\nexisting customers and markets with new products.\nmarkets.\nMarket Development Product Development\nMedium risk, expands to new Medium risk, introduces new\nmarkets with existing products. products to existing markets.",
+ "proTip": "Before looking at new markets or new products, ask AI to run a full Market Penetration\nanalysis on your existing business. Most companies at under 20% market share have\nsignificant penetration opportunity they haven't fully activated. Penetration is always\ncheaper than acquisition of new markets.",
+ "pairsWith": [
+  "2.4 Blue Ocean",
+  "2.2 Business Model Canvas",
+  "3.5 TAM SAM SOM"
+ ],
+ "pairsPrinted": [
+  "2.4 Blue Ocean",
+  "2.2 Business Model Canvas",
+  "3.5 TAM SAM SOM"
+ ],
+ "extractedAt": "2026-09-18"
+}

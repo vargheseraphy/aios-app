@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.7",
+ "title": "Proposal Writing — Win Story",
+ "titlePrinted": "Proposal Writing — Win Story",
+ "level": "Intermediate",
+ "subtitle": "You send detailed, professional proposals that prospects read, compliment, and then go",
+ "sourcePages": {
+  "intro": 103,
+  "prompt": 104
+ },
+ "useWhen": "silent on.Your proposals are comprehensive but they don't compel action. They document your solution but don't tell a story.",
+ "howToUse": "A Win Story is a proposal structure that mirrors how humans make decisions - through narrative, not specifications. The structure has six parts: Situation (their world as it is today), Complication (the problem and its cost), Resolution (what success looks like), Solution (your approach- positioned as the bridge from complication to resolution), Proof (evidence that you can deliver), and Call to Action (one clear, specific next step). The key difference from a standard proposal is that the customer's story comes first. Your solution is a supporting character, not the lead.",
+ "steps": [
+  "Write the Situation and Complication sections using the prospect's exact words from your discovery call.",
+  "The Resolution section should describe their future state not your features.",
+  "Proof should be a specific result, not a general claim.",
+  "The Call to Action must be one thing not a list of next steps. Write proposals that close, not just inform Proof Needs a Match Generic proof is worse than none. If your Proof example doesn't mirror the Complication you named earlier, the reader notices the gap and starts doubting the rest of the proposal instead of trusting it."
+ ],
+ "origin": "Solution selling methodology — Win Story narrative structure",
+ "promptBody": "Act as a proposal writing consultant using the Win Story structure.\nDiscovery call notes   :    [PASTE KEY POINTS FROM YOUR CALL]\nMy solution                  :    [WHAT YOU ARE PROPOSING TO DO]\nProof available             :    [CASE STUDY, DATA, OR REFERENCE]\nDesired next step        :    [WHAT YOU WANT THEM TO DO NEXT]\nWrite a complete Win Story proposal:\nSITUATION             :   Their world as it is today their terms\nCOMPLICATION    :   The problem and the cost of it continuing\nRESOLUTION         :   What their world looks like when solved\nSOLUTION              :   Your approach bridge to the resolution\nPROOF                     :   One specific result that proves delivery\nCALL TO ACTION  :   One sentence, one next step, one date\nResolution\nSituation Proof\nEstablish the Describe the desired Provide evidence of your solution's effectiveness.\noutcome.\ncustomer's current context.\nCrafting a\nWinning Proposal\nCall to Action\nSolution Encourage the customer to take the\nComplication next step.\nPresent your\nIntroduce the problem that proposal as the\nanswer.\n needs solving.",
+ "proTip": "The single most impactful change to any proposal: move the executive summary to after\nthe Complication section, not at the top. Prospects who feel their problem has been\nunderstood read proposals differently. Understanding before solution is the sequence\nthat closes.",
+ "pairsWith": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "5.1 StoryBrand"
+ ],
+ "pairsPrinted": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "5.1 StoryBrand"
+ ],
+ "extractedAt": "2026-09-18"
+}

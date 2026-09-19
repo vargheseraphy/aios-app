@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.3",
+ "title": "4Ps & 7Ps Marketing Mix",
+ "titlePrinted": "4Ps & 7Ps Marketing Mix",
+ "level": "Intermediate",
+ "subtitle": "You're running marketing activities that feel disconnected. You're active on social media,",
+ "sourcePages": {
+  "intro": 118,
+  "prompt": 119
+ },
+ "useWhen": "have a website, and occasionally run campaigns but there's no coherent strategy pulling it all together. Something is always off.",
+ "howToUse": "E. Jerome McCarthy's 4Ps Marketing Mix - Product, Price, Place, Promotion is the classic framework for building a complete marketing strategy. Booms and Bitner extended it to 7Ps for service businesses by adding People, Process, and Physical Evidence. The power of the framework is in checking coherence: if your premium pricing (Price) is contradicted by your distribution through discount channels (Place), your strategy has a gap. Every element of your marketing must reinforce the same positioning.",
+ "steps": [
+  "Map your current 4Ps or 7Ps before asking AI for recommendations.",
+  "Look for contradictions between elements, incoherence is the most common marketing failure.",
+  "For service businesses, People and Process are often more important than Promotion.",
+  "Revisit your Marketing Mix after any pricing change, channel shift, or positioning update. Build a complete, coherent marketing strategy not just tactics The most neglected P in service businesses is Process. Brilliant people and strong promotion cannot compensate for a broken delivery process customers experience the process, not the strategy. Map your client delivery process before investing more in promotion. PRO TIP"
+ ],
+ "origin": "E. Jerome McCarthy, Basic Marketing, 1960 · Booms & Bitner, 7Ps extension, 1981",
+ "promptBody": "I PROMPT — COPY & PASTE READY\nAct as a marketing strategist using the 7Ps Marketing Mix.\nMy business        :  [DESCRIBE YOUR PRODUCT OR SERVICE]\nTarget customer :  [WHO THEY ARE AND WHAT THEY VALUE]\nCurrent stage      :  [EARLY / GROWING / SCALING]\nAnalyse and recommend for all 7Ps:\nPRODUCT       :  What are we selling,  features and positioning\nPRICE              :  How should we price, value, cost, or competitive?\nPLACE             :  Where and how do customers access us?\nPROMOTION  :  Which channels and messages drive awareness?\nPEOPLE           :  Who delivers the experience. skills and culture\nPROCESS         :  How is the service or product delivered?\nPHYSICAL       :  What tangible evidence builds trust?\nFlag any contradictions between elements. Identify the 2 Ps that most need improvement.\nFor those 2 Ps, give one specific change I should make in the next 30 days.",
+ "proTip": "",
+ "pairsWith": [
+  "5.6 GTM Canvas",
+  "3.9 STP Model",
+  "5.4 Content Strategy",
+  "2.7 Pricing"
+ ],
+ "pairsPrinted": [
+  "5.6 GTM Canvas",
+  "3.9 STP Model",
+  "5.4 Content Strategy",
+  "2.7 Pricing"
+ ],
+ "extractedAt": "2026-09-18"
+}

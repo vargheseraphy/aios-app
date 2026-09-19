@@ -1,0 +1,36 @@
+{
+ "module": 10,
+ "lesson": "10.5",
+ "title": "Three Horizons Vision",
+ "titlePrinted": "Three Horizons Vision",
+ "level": "Intermediate",
+ "subtitle": "You oscillate between being too focused on today's execution and too lost in long-term",
+ "sourcePages": {
+  "intro": 233,
+  "prompt": 234
+ },
+ "useWhen": "vision. Strategic planning sessions drift into fantasy. Daily operations crowd out anything beyond this week. You need a framework that holds all three time horizons at once.",
+ "howToUse": "McKinsey's Three Horizons framework, developed in the late 1990s, organises strategic thinking across three simultaneous timeframes: Horizon 1 (12 months - defend and optimise your core business), Horizon 2 (1–3 years - develop and scale emerging opportunities), and Horizon 3 (3–5 years - create options for future growth). The framework does not suggest sequential attention - all three horizons require investment and attention simultaneously, in different proportions based on company stage. Applied personally, it becomes a powerful vision tool for founders designing their own trajectory.",
+ "steps": [
+  "Map your current allocation of time and energy across the three horizons most founders are trapped in H1.",
+  "H3 ideas require protection from H1 urgency, they will never survive if they must justify themselves on H1 metrics.",
+  "Build an H2 pipeline even when H1 is working well, H1 success is temporary without H2 in development.",
+  "Review your Three Horizons map quarterly, the business changes faster than annual reviews can track. Plan three futures simultaneously without losing the present"
+ ],
+ "origin": "McKinsey & Company — Three Horizons framework, Baghai, Coley & White, 1999",
+ "promptBody": "Act as a strategic planning advisor using McKinsey's Three Horizons framework.\nMy business                             :  [DESCRIBE YOUR CURRENT CORE BUSINESS]\nStage                                          :  [REVENUE RANGE AND GROWTH RATE]\nCurrent strategic priorities  :  [WHAT YOU ARE FOCUSED ON NOW]\nMap my Three Horizons:\nHORIZON 1 (This year) :\nWhat is the core business I must protect and optimise?\nKey metrics to defend. Main threats to manage.\nHORIZON 2 (1–3 years) :\nWhat 2–3 adjacent opportunities should I be developing?\nWhat experiments should I be running now?\nWhat would need to be true for each to become H1?\nHORIZON 3 (3–5 years) :\nWhat options should I be creating - even if uncertain?\nWhat bets cost little today but matter greatly later?\nBALANCE AUDIT           :\nWhat % of my time/energy goes to each horizon now?\nWhat is the right allocation given my stage?\nWhat would I need to stop doing in H1 to fund H2?",
+ "proTip": "The most common Three Horizons failure is treating H3 as a vision exercise and H1 as the\nonly real work. H3 options are built through small, cheap bets made consistently over\ntime. Amazon's AWS was an H3 bet in 2003 when their core H1 business was books. The\nvalue of H3 is not in the vision — it is in the options it creates.",
+ "pairsWith": [
+  "10.2 90-Day Planning",
+  "6.10 Hoshin Kanri",
+  "2.9 Ansoff Matrix",
+  "8.5 Scenario Planning"
+ ],
+ "pairsPrinted": [
+  "10.2 90-Day Planning",
+  "6.10 Hoshin Kanri",
+  "2.9 Ansoff Matrix",
+  "8.5 Scenario Planning"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.5",
+ "title": "Investor Narrative  Pitch Spine",
+ "titlePrinted": "Investor Narrative Pitch Spine",
+ "level": "Advanced",
+ "subtitle": "You have a real business but your fundraising conversations are not landing. Investors say",
+ "sourcePages": {
+  "intro": 214,
+  "prompt": 215
+ },
+ "useWhen": "they'll think about it. Your deck is comprehensive but the narrative is not compelling. You're presenting data when you should be telling a story.",
+ "howToUse": "The Pitch Spine is a narrative structure synthesised from the YC application framework, Sequoia's pitch deck template, and the StoryBrand methodology. It has seven beats: The World As It Was (the status quo that creates the problem), The Problem (specific, painful, underserved), The Insight (the non-obvious truth that makes your solution possible), The Solution (your specific approach why now, why this), The Proof (traction, metrics, or validation), The Ask (exactly what you need and why), and The Vision (the world your company creates at scale). Each beat must earn the next if the investor is not nodding by The Insight, The Solution will not land.",
+ "steps": [
+  "Write The Insight first, it is the hardest and most important beat. If it is obvious, rewrite it.",
+  "The Problem must be painful enough that the investor immediately wants a solution. If it doesn't hurt, deepen it",
+  "Proof does not have to be revenue, it can be retention, NPS, letters of intent, or waitlist size.",
+  "The Ask must be specific: amount, use of funds, and the milestone it buys you. Tell the story of your business so investors lean in - not check their phones If The Insight feels obvious to you, it will feel obvious to the investor too and the pitch stalls right there. Every beat after it inherits that flatness, no matter how strong your traction numbers are."
+ ],
+ "origin": "YC application framework · Sequoia pitch deck structure · StoryBrand narrative",
+ "promptBody": "Act as a venture capital pitch coach.\nMy business  :  [DESCRIBE WHAT YOU DO IN 2 SENTENCES]\nStage               :  [PRE-SEED / SEED / SERIES A]\nTraction         :  [YOUR BEST PROOF POINT - REVENUE, USERS, RETENTION]\nAsk                  :  [AMOUNT AND WHAT IT WILL BE USED FOR]\nWrite my Pitch Spine - all seven beats:\nTHE WORLD AS IT WAS  :  The status quo - how this problem has always been handled\nTHE PROBLEM                  :  Specific pain - who feels it, how bad\nTHE INSIGHT                     :  The non-obvious truth that unlocks the solution\n                                                  (this is your unfair insight)\nTHE SOLUTION                  :  What you built and why it works now\nTHE PROOF                         :  Your strongest evidence it is working\nTHE ASK                               :  Exact amount, use of funds, key milestone\nTHE VISION                         :  The world your company creates at scale\nWrite each beat as 2–3 sentences. Make them build on each other.",
+ "proTip": "The Insight beat is what separates memorable pitches from forgettable ones. It should\nmake the investor think: 'I've never heard it framed that way, but that's exactly right.' If\nyour insight is something any well-read person already knows, it is not an insight - it is\ncontext. Push harder. The insight is often the founder's deepest, least comfortable belief\nabout why everyone else is wrong.",
+ "pairsWith": [
+  "9.1 LTV:CAC",
+  "9.2 Burn Rate",
+  "5.1 StoryBrand",
+  "2.3 Lean Canvas"
+ ],
+ "pairsPrinted": [
+  "9.1 LTV:CAC",
+  "9.2 Burn Rate",
+  "5.1 StoryBrand",
+  "2.3 Lean Canvas"
+ ],
+ "extractedAt": "2026-09-18"
+}

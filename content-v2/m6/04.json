@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.4",
+ "title": "Hiring with AI -Talent Filter",
+ "titlePrinted": "Hiring with AI -Talent Filter",
+ "level": "Intermediate",
+ "subtitle": "Build the interview system that hire stheright person, not the best interviewer",
+ "sourcePages": {
+  "intro": 141,
+  "prompt": 142
+ },
+ "useWhen": "You've made a hire that looked great on paper and in interviews, then didn't work out. Your hiring process relies too much on gut feel. Interviews feel like conversations but don't consistently predict performance.",
+ "howToUse": "Structured interviewing asking all candidates the same pre-defined questions scored against consistent criteria has been shown in multiple studies to significantly outperform unstructured interviews in predicting job performance. The Talent Filter approach adds a layer: define the role's top 3–5 success criteria before writing a job description, build behavioural questions for each criterion (STAR format: Situation, Task, Action, Result), score each answer against a rubric, and use AI to help build both the questions and the scoring guide. The goal is to reduce bias and increase the signal-to-noise ratio of every interview.",
+ "steps": [
+  "Define the 3–5 success criteria for the role before writing the job description.",
+  "Write at least 2 STAR-format behavioural questions per criterion.",
+  "Score every candidate on the same rubric not your overall impression.",
+  "Use the prompt below to generate role-specific questions and scoring guides instantly. \"They didn't feel like a fit\" is not a score, it's the bias you built this framework to remove sneaking back in through the back door. If the rubric can't explain the rejection, the rubric didn't make the decision. Structure Doesn't Kill the Feel"
+ ],
+ "origin": "Structured interviewing research — Schmidt & Hunter, Journal of Applied Psychology, 1998",
+ "promptBody": "Act as a structured hiring consultant.\nRole I am hiring for  :  [JOB TITLE AND KEY RESPONSIBILITIES]\nTeam context             :  [STAGE, CULTURE, WHO THEY WILL WORK WITH]\nNon-negotiables        :  [MUST-HAVE SKILLS OR EXPERIENCE]\nStep 1  :  Define the top 4 success criteria for this role \n                what does excellent performance look like in year one?\nStep 2 :  For each criterion, write 2 STAR-format behavioural interview questions.\n               (Tell me about a time when...)\nStep 3 :  For each question, define what a strong answer looks like vs a weak answer   \n               2 lines each.\nStep 4 :  Write one work sample task I could give candidates to test the most critical  \n               skill directly.\nStep 5 :  Write 3 red-flag signals to watch for in interviews.\nTalent Filter Hiring Process\nDeﬁne Success Criteria Consistent Scoring Rubric\nEstablish 3-5 key criteria for Use a rubric for fair and\nsuccess consistent scoring\nBehavioral Questions AI-Assisted Analysis\nAsk STAR format questions Analyze candidate data with\nfor each criterion AI tools",
+ "proTip": "The work sample task (Step 4) is the single highest-signal hiring tool available. A 2-hour\ntask relevant to the actual job outpredicts any amount of interviewing. Candidates who\ndecline the task often self-select out for good reason. Candidates who complete it\nbrilliantly and explain their thinking are almost always the right hire.",
+ "pairsWith": [
+  "6.2 OKRs",
+  "6.5 SBI Feedback",
+  "6.6 Culture Code",
+  "6.11 Situational Leadership"
+ ],
+ "pairsPrinted": [
+  "6.2 OKRs",
+  "6.5 SBI Feedback",
+  "6.6 Culture Code",
+  "6.11 Situational Leadership"
+ ],
+ "extractedAt": "2026-09-18"
+}

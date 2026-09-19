@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.7",
+ "title": "Eisenhower Matrix",
+ "titlePrinted": "Eisenhower Matrix",
+ "level": "Beginner",
+ "subtitle": "You end every week feeling like you worked hard but didn't move the right things forward.",
+ "sourcePages": {
+  "intro": 197,
+  "prompt": 198
+ },
+ "useWhen": "Your calendar is full but your priorities aren't progressing. You are reactive, responding to what arrives rather than acting on what matters.",
+ "howToUse": "Dwight D. Eisenhower, Supreme Allied Commander in World War II and 34th US President is credited with the observation that 'What is important is seldom urgent and what is urgent is seldom important.' Stephen Covey popularised this insight as a 2×2 matrix in The 7 Habits of Highly Effective People. The four quadrants are: Q1 Urgent + Important (do now - crises, deadlines), Q2 Not Urgent + Important (schedule - strategy, relationships, health, development), Q3 Urgent + Not Important (delegate - most interruptions, some meetings), Q4 Not Urgent + Not Important (eliminate -time wasters). The insight: Q2 is where the highest-value work lives, and it is the quadrant that gets sacrificed first when Q1 and Q3 crowd the calendar.",
+ "steps": [
+  "Audit your last week's tasks against the four quadrants, the result is almost always sobering.",
+  "Q2 work must be scheduled in advance, or Q1 and Q3 will consume all available time.",
+  "Q3 items feel urgent because someone else made them urgent, they are delegation candidates.",
+  "Review your Q4 list quarterly, some items belong there, others are avoidance disguised as busyness. Stop being busy. Start being effective."
+ ],
+ "origin": "Dwight D. Eisenhower — adapted by Stephen Covey, The 7 Habits, 1989",
+ "promptBody": "Act as a personal effectiveness coach using the Eisenhower Matrix.\nMy role: [YOUR JOB TITLE AND KEY RESPONSIBILITIES]\nThis week's tasks: [LIST EVERYTHING ON YOUR PLATE]\nStep 1 :  Classify each task into one of four quadrants:\nQ1 URGENT + IMPORTANT                   :  Do now\nQ2 NOT URGENT + IMPORTANT          :  Schedule, protect this time\nQ3 URGENT + NOT IMPORTANT          :  Delegate or batch\nQ4 NOT URGENT + NOT IMPORTANT :  Eliminate\nStep 2 :  Flag any Q2 item that has been on my list for more than 2 weeks,  these are most\nat risk.\nStep 3 :  Identify my top 3 Q2 priorities for this week and suggest when in my week to\nschedule them.\nStep 4 :  For each Q3 item — who should own this instead?\nStep 5 :  What is the Q4 item I should cut today?\nEisenhower Matrix: Task Prioritization\nQ1: Do Now Q2: Schedule Q3: Delegate Q4: Eliminate\nUrgent and Not urgent but Urgent but not Not urgent and not\nimportant tasks. important tasks. important tasks. important tasks.\n25% 25% 25% 25%\nPrioritize important, non-urgent tasks to maximize effectiveness.",
+ "proTip": "Most founders' Q2 lists contain the same items week after week: exercise, strategy\nthinking, key relationships, learning. These are the things that matter most and keep\ngetting deferred. The reason is always the same, they have no deadline and no\nconsequence for deferral. The fix is equally simple: schedule them like meetings, put\nthem in the calendar, and treat cancellation as a failure, not a choice.",
+ "pairsWith": [
+  "8.1 DECIDE Framework",
+  "7.4 ICE Scoring",
+  "6.2 OKRs",
+  "10.3 Weekly Review"
+ ],
+ "pairsPrinted": [
+  "8.1 DECIDE Framework",
+  "7.4 ICE Scoring",
+  "6.2 OKRs",
+  "10.3 Weekly Review"
+ ],
+ "extractedAt": "2026-09-18"
+}

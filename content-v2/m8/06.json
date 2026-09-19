@@ -1,0 +1,36 @@
+{
+ "module": 8,
+ "lesson": "8.6",
+ "title": "Red Team Thinking",
+ "titlePrinted": "Red Team Thinking",
+ "level": "Advanced",
+ "subtitle": "Your team has reached consensus on a strategy or plan. Everyone is aligned and optimistic.",
+ "sourcePages": {
+  "intro": 195,
+  "prompt": 196
+ },
+ "useWhen": "But consensus is not the same as correctness and optimism is not the same as rigor. You need someone to try to break the plan before you execute it.",
+ "howToUse": "Red Teaming originates from US military and CIA practice, a dedicated team whose sole job is to find weaknesses in friendly plans by thinking like the adversary. In business, Red Team Thinking means assembling a small group (or prompting AI) to argue as hard as possible against your plan, assumption, or strategy. Unlike a Pre-Mortem (which imagines failure after the fact), Red Team Thinking operates in real time, it is an adversarial stress test of your current thinking. The goal is not to be negative but to find the genuine weaknesses before they are exploited by reality. The moment you defend your plan instead of listening, the Red Team session is over, everyone in the room reads it, and the honest attacks stop coming. Rule 2 exists for a reason: a Red Team that gets argued with becomes a Red Team that goes quiet. Defensiveness Kills the Exercise",
+ "steps": [
+  "Brief the Red Team with the full plan, they cannot attack what they don't understand.",
+  "Prohibit defensive responses during the Red Team session, the goal is to hear, not rebut.",
+  "Ask for the single most dangerous attack on your plan, not a laundry list.",
+  "After the session, sort attacks by likelihood and severity, then address the top three. Attack your own plan before someone else does"
+ ],
+ "origin": "US Military / CIA — Red Team methodology · Micah Zenko, Red Team, 2015",
+ "promptBody": "Act as a Red Team adversary. Your job is to find every weakness in the following plan and\ntry to destroy it.\nBe thorough, critical, and honest. Do not be polite.\nThe plan                         :  [DESCRIBE YOUR STRATEGY, PRODUCT, OR DECISION]\nOur key assumptions  :  [LIST THE THINGS THAT MUST BE TRUE FOR THIS PLAN TO \n                                            WORK]\nAttack this plan from four angles:\nSTRATEGIC ATTACK        :  Why is the direction fundamentally wrong? What are we\nmisreading about the market?\nEXECUTION ATTACK       :  Why will we fail to implement this? Where is our team not\ncapable enough?\nCOMPETITIVE ATTACK  :  How will competitors neutralise this? What move could make \n                                                this irrelevant?\nASSUMPTION ATTACK   :  Which single assumption, if wrong, kills the entire plan?\nEnd with: the one attack I should be most afraid of.\nRed Team Thinking Process\nIdentify Weaknesses Simulate Attacks Gather Feedback Prioritize Fixes",
+ "proTip": "Ask AI to play devil's advocate on your most confident belief about your business. Not\nyour uncertainties, your certainties. The assumptions you are most sure about are the\nones least likely to be tested. That is exactly what makes them dangerous. Red Team your\nstrongest convictions quarterly.",
+ "pairsWith": [
+  "8.2 Pre-Mortem",
+  "8.4 Risk Matrix",
+  "1.8 Inversion",
+  "1.5 Six Thinking Hats"
+ ],
+ "pairsPrinted": [
+  "8.2 Pre-Mortem",
+  "8.4 Risk Matrix",
+  "1.8 Inversion",
+  "1.5 Six Thinking Hats"
+ ],
+ "extractedAt": "2026-09-18"
+}

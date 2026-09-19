@@ -1,0 +1,36 @@
+{
+ "module": 5,
+ "lesson": "5.10",
+ "title": "Flywheel Model",
+ "titlePrinted": "Flywheel Model",
+ "level": "Advanced",
+ "subtitle": "Build momentum that gets easier over time not harder",
+ "sourcePages": {
+  "intro": 132,
+  "prompt": 133
+ },
+ "useWhen": "Your growth feels like pushing a boulder uphill. Every new customer takes the same effort as the last. You're working harder each quarter to hit the same numbers. Growth isn't compounding it's grinding.",
+ "howToUse": "Jim Collins introduced the Flywheel concept in Good to Great (2001) as a metaphor for business momentum. A flywheel takes enormous effort to start spinning but gains momentum with every rotation until it becomes self-sustaining. Amazon's flywheel is the most famous example: lower prices attract more customers, who attract more sellers, who drive lower costs, which enable lower prices. Every business has the potential for a flywheel the question is whether you've designed it deliberately. AI can help you identify and map yours.",
+ "steps": [
+  "Map the 4–6 steps of your potential flywheel before prompting.",
+  "Each step must logically lead to the next if the causality isn't clear, the flywheel won't spin",
+  "Identify the one step in the flywheel that you need to push hardest right now.",
+  "Track flywheel velocity: how long does it take for a new customer to generate another? Not every business has a real flywheel, sometimes what looks like one is just a list of good things that happen to be true, with no actual causality between them. If step 3 doesn't clearly cause step 4, you've drawn a diagram, not a mechanism. Not Every Business Has One"
+ ],
+ "origin": "Jim Collins, Good to Great, 2001 — Flywheel concept · Amazon application, 2002",
+ "promptBody": "Act as a business strategy advisor using Jim Collins' Flywheel model.\nMy business                     :  [DESCRIBE WHAT YOU DO AND YOUR GROWTH MODEL]\nCurrent growth drivers :  [WHAT IS WORKING TO GROW THE BUSINESS]\nBiggest friction points   :  [WHERE GROWTH SLOWS OR STOPS]\nStep 1  :  Map my business flywheel.\nIdentify 4–6 steps that form a self-reinforcing loop. Each step must logically cause the\nnext.\nStep 2 :  Name the flywheel - what is the core mechanism that drives it?\nStep 3 :  Identify which step in the flywheel has the most friction right now.\nStep 4 :  Suggest 2 specific actions to reduce friction at that step and accelerate the spin.\nCompare my flywheel to Amazon's - what is similar and what is fundamentally different?\nFlywheel Model — Momentum That Compounds\nSelf-Sustaining\nLower Prices\nLower Costs\nMore Sellers\nMore Customers\nLower Prices",
+ "proTip": "Most founders try to build a flywheel at the business level before they have one at the\ncustomer level. Your first flywheel is simpler: a happy customer refers someone, that\nperson becomes a customer, their success becomes your proof, proof attracts the next\ncustomer. Map that loop first and invest in making it spin faster.",
+ "pairsWith": [
+  "5.8 Growth Loop",
+  "5.9 AARRR",
+  "2.8 Moat Builder",
+  "9.1 LTV:CAC"
+ ],
+ "pairsPrinted": [
+  "5.8 Growth Loop",
+  "5.9 AARRR",
+  "2.8 Moat Builder",
+  "9.1 LTV:CAC"
+ ],
+ "extractedAt": "2026-09-18"
+}

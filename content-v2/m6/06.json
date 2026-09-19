@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.6",
+ "title": "Culture Code Canvas",
+ "titlePrinted": "Culture Code Canvas",
+ "level": "Intermediate",
+ "subtitle": "Define your culture before your culture defines itself without you",
+ "sourcePages": {
+  "intro": 145,
+  "prompt": 146
+ },
+ "useWhen": "Your team is growing and people are joining who haven't been shaped by your founding culture. Or different parts of the team have different norms and it's causing friction. Culture is happening but not the one you intended.",
+ "howToUse": "Daniel Coyle's research in The Culture Code identified three core elements of high- performing team cultures: Safety (people feel they can speak up without risk), Vulnerability (leaders show imperfection, creating permission for others to do the same), and Purpose (a shared sense of why the work matters). The Culture Code Canvas operationalises these into a practical document that defines your team's values, behaviours, decision-making norms, and cultural boundaries, the things you hire for, reward, and fire for.",
+ "steps": [
+  "Write your culture code based on how you actually behave, not how you aspire to behave.",
+  "For each value, write a behaviour that demonstrates it and a behaviour that violates it.",
+  "Share the culture code with every new hire in their first week before their first project.",
+  "Review and update annually cultures drift, and drift is invisible until it's damage. The 'what we don't tolerate' section is the most important and the most avoided. Every culture has things it informally tolerates that it publicly says it doesn't. Write the real list, not the aspirational one. The gap between what you say you won't tolerate and what you actually do tolerate is exactly where culture breaks down. PRO TIP"
+ ],
+ "origin": "Daniel Coyle, The Culture Code, 2018",
+ "promptBody": "Act as a leadership development advisor using the Delegation Ladder.\nMy role   :  [YOUR TITLE AND KEY RESPONSIBILITIES]\nTeam       :  [TEAM SIZE, EXPERIENCE LEVELS, KEY ROLES]\nI will list my current recurring decisions.\nFor each  :  assess the current delegation level I operate at,\nrecommend the target level, and explain what needs to be true to move there safely.\nDelegation levels:\n1 — Tell: I decide, inform\n2 — Sell: I decide, explain why\n3 — Consult: I ask for input before deciding\n4 — Agree: We decide together\n5 — Advise: They decide, I give input\n6 — Inquire: They decide, tell me after\n7 — Delegate: Fully theirs\nMy decisions to assess:\n[LIST YOUR 8–10 KEY RECURRING DECISIONS]\nFlag the 3 decisions I should delegate first\nand what support each person needs to own them.",
+ "proTip": "",
+ "pairsWith": [
+  "6.4 Hiring",
+  "6.9 Radical Candor",
+  "6.5 SBI Feedback",
+  "6.11 Situational Leadership"
+ ],
+ "pairsPrinted": [
+  "6.4 Hiring",
+  "6.9 Radical Candor",
+  "6.5 SBI Feedback",
+  "6.11 Situational Leadership"
+ ],
+ "extractedAt": "2026-09-18"
+}

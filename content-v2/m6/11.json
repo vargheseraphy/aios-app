@@ -1,0 +1,36 @@
+{
+ "module": 6,
+ "lesson": "6.11",
+ "title": "Situational Leadership",
+ "titlePrinted": "Situational Leadership",
+ "level": "Intermediate",
+ "subtitle": "Lead each person the way they need to be led, not the way you prefer to lead",
+ "sourcePages": {
+  "intro": 155,
+  "prompt": 156
+ },
+ "useWhen": "You lead everyone the same way. Some team members thrive under your style. Others seem disengaged, over-dependent, or frustrated. You're not sure whether to give more direction or more autonomy and you default to one regardless of the person.",
+ "howToUse": "Developed by Paul Hersey and Ken Blanchard in 1969, Situational Leadership proposes that no single leadership style works for all people in all situations. Effective leadership adapts to two variables: the team member's Competence (knowledge and skill for the specific task) and Commitment (motivation and confidence). The four resulting styles are: Directing (high task, low support for low competence, high commitment), Coaching (high task, high support for some competence, variable commitment), Supporting (low task, high support for high competence, low confidence), and Delegating (low task, low support for high competence, high commitment).",
+ "steps": [
+  "Assess each team member on each task not overall. Someone can be 'Delegate' in one area and 'Direct' in another.",
+  "The most common mismatch: over-delegating to someone still in the Coaching stage.",
+  "Move people through the stages deliberately each stage requires a different conversation.",
+  "Use AI to prepare adjustments for a specific person on a specific task. Someone at \"Delegate\" on their core skill can still be at \"Directing\" on a brand- new task, reassess per task, not per person, or you'll either smother a strong performer or set up a beginner to fail."
+ ],
+ "origin": "Paul Hersey & Ken Blanchard, Management of Organizational Behavior, 1969",
+ "promptBody": "Act as a situational leadership coach.\nTeam member                 :  [ROLE, EXPERIENCE LEVEL, PERSONALITY]\nSpecific task or project :  [WHAT YOU NEED THEM TO DO]\nStep 1 :  Assess their Development Level for this task:\nD1 — Low competence, high commitment (enthusiastic beginner)\nD2 — Some competence, low commitment (disillusioned learner)\nD3 — High competence, variable commitment (capable but cautious)\nD4 — High competence, high commitment (self-reliant achiever)\nStep 2 :  Recommend the matching leadership style:\nS1 — Directing    S2 — Coaching\nS3 — Supporting   S4 — Delegating\nStep 3 :  Write the specific conversation I should have with them this week using that \n               style.\nStep 4 :  What would move them to the next development level  and how long should  \n                that take?\nAdapt Leadership to Team Competence\nInﬂexible Leadership Adaptive Leadership\nSituational\nOne-size-ﬁts-all Tailored approach for\nLeadership\nleadership style each team member\nLow task, low Low task, high High task, high High task, low\nsupport support support support",
+ "proTip": "The hardest Situational Leadership move is stepping back to Directing with someone\nyou've been Delegating to when they've taken on a new challenge they're not yet\nready for. Leaders resist this because it feels like demotion. Frame it as 'this is a new\narea  let's work through it together' rather than a reversal of trust.",
+ "pairsWith": [
+  "6.3 GROW Model",
+  "6.7 Delegation Ladder",
+  "6.4 Hiring",
+  "6.9 Radical Candor"
+ ],
+ "pairsPrinted": [
+  "6.3 GROW Model",
+  "6.7 Delegation Ladder",
+  "6.4 Hiring",
+  "6.9 Radical Candor"
+ ],
+ "extractedAt": "2026-09-18"
+}

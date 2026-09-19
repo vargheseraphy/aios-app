@@ -1,0 +1,36 @@
+{
+ "module": 3,
+ "lesson": "3.3",
+ "title": "Porter's Five Forces",
+ "titlePrinted": "Porter's Five Forces",
+ "level": "Advanced",
+ "subtitle": "Understand the true profitability and power dynamics of your industry",
+ "sourcePages": {
+  "intro": 74,
+  "prompt": 75
+ },
+ "useWhen": "You want to understand why some businesses in your industry are profitable and others aren't or you're deciding whether to enter or exit a market and need a rigorous structural analysis.",
+ "howToUse": "Developed by Michael Porter at Harvard Business School in 1979, the Five Forces model maps the structural forces that determine industry profitability: Competitive Rivalry (intensity of competition), Threat of New Entrants (how easy is it to enter?), Threat of Substitutes (what else could customers use?), Bargaining Power of Buyers (how much power do customers have?), Bargaining Power of Suppliers (how much power do your suppliers have?). The collective strength of these forces determines the long-run profit potential of an industry. Porter's insight was that profitability is not random it is structural. A brilliant strategy in a structurally weak industry will always underperform a mediocre strategy in a structurally strong one.",
+ "steps": [
+  "Assess each force on a scale of Low, Medium, or High intensity.",
+  "Identify which force is most dangerous to your specific position.",
+  "Look for forces you can influence through strategic action, not all forces are fixed.",
+  "Use the output to decide where to build your moat. Five Forces maps the industry you are in today, not the one you are building toward. Analysing the wrong industry boundary is the most common mistake when applying this framework."
+ ],
+ "origin": "Michael Porter, Harvard Business School — Competitive Strategy, 1979",
+ "promptBody": "Act as a strategic industry analyst using Porter's Five Forces.\nIndustry                                        :  [YOUR SPECIFIC INDUSTRY  be precise]\nMy position                                  :  [WHAT YOU DO, YOUR SIZE, YOUR SEGMENT]\nAnalyse all five forces:\nCOMPETITIVE RIVALRY            :  How intense is competition?\nTHREAT OF NEW ENTRANTS  :  How easy to enter this market?\nTHREAT OF SUBSTITUTES       :  What else could customers use?\nBUYER POWER                            :  How much leverage do buyers have?\nSUPPLIER POWER                      :  How much leverage do suppliers have?\nRate each force                            :  Low / Medium / High.\nIdentify the most dangerous force for my specific position.\nSuggest 2 strategic moves to reduce the impact of the highest-threat force on my business.\nPorter's Five Forces Analysis\nNo legal factors No political factors\nNo legal factors No political factors\nNo environmental\nIndustry Rivalry\nfactors\nCompetition impacts\nNo environmental factors\nproﬁtability\nNo technological factors No social factors\nNo social factors\nNo technological factors",
+ "proTip": "The most overlooked force is Threat of Substitutes. Customers don't just compare you to\ncompetitors, they compare you to doing nothing, doing it manually, or using a completely\ndifferent category. Ask AI specifically: 'What are the non-obvious substitutes for my\nproduct that I might be underestimating?'",
+ "pairsWith": [
+  "3.1 SWOT",
+  "2.4 Blue Ocean",
+  "2.8 Moat Builder",
+  "3.6 Competitor Mapping"
+ ],
+ "pairsPrinted": [
+  "3.1 SWOT",
+  "2.4 Blue Ocean",
+  "2.8 Moat Builder",
+  "3.6 Competitor Mapping"
+ ],
+ "extractedAt": "2026-09-18"
+}

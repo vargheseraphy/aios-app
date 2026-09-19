@@ -1,0 +1,34 @@
+{
+ "module": 5,
+ "lesson": "5.4",
+ "title": "Content Pillars Strategy",
+ "titlePrinted": "Content Pillars Strategy",
+ "level": "Beginner",
+ "subtitle": "You post content randomly, whatever feels relevant that day. Your audience doesn't know",
+ "sourcePages": {
+  "intro": 120,
+  "prompt": 121
+ },
+ "useWhen": "what to expect from you and your posts attract different people with no consistent theme. You have followers but no community.",
+ "howToUse": "Content Pillars are the 3–5 core topics that define what you stand for online. Each pillar represents an area where your brand has genuine expertise and your audience has genuine interest. Every piece of content you create sits under one pillar. This creates consistency your audience knows what you're about and self-selects if they're the right fit. It also makes content creation faster instead of asking 'what should I post today?' you ask 'which pillar am I covering this week?'",
+ "steps": [
+  "Choose pillars that sit at the intersection of your expertise and your audience's needs.",
+  "Each pillar should be specific enough to exclude broad pillars dilute positioning.",
+  "Allocate content across pillars by week not every post needs to be educational.",
+  "Review pillar performance every 90 days and retire any pillar that consistently underperforms. Post with purpose build an audience that trusts you Pillars Aren't Permanent Picking pillars once and never revisiting them is how brands go stale. What your audience needed a year ago isn't what they need now. The 90-day review isn't optional housekeeping it's how you catch a pillar that's coasting on habit instead of earning its place in your content."
+ ],
+ "origin": "Content marketing best practice — content pillar methodology, widely adopted 2015s onwards",
+ "promptBody": "Act as a content strategy consultant.\nMy background and expertise :  [WHAT YOU KNOW DEEPLY]\nMy target audience                    :  [WHO I WANT TO REACH AND WHAT THEY CARE  \n                                                          ABOUT]\nMy business goal                         :  [WHAT I WANT CONTENT TO ACHIEVE  LEADS, \n                                                           BRAND, AUTHORITY, COMMUNITY]\nPlatform                                        :  [LINKEDIN / INSTAGRAM / X / YOUTUBE]\nDesign my Content Pillar strategy:\nStep 1      :  Suggest 5 content pillars that fit my expertise and audience.\nFor each  :  name, description, and 3 example post topics.\nStep 2     :  Recommend a weekly content mix across pillars.\nStep 3     :  Suggest one signature content format I should own,\nthe thing my audience will recognise me for.\nContent Pillars Strategy\nLeadership\nFocuses on guiding and inspiring your\naudience.\nAI Tools\nExplores innovative technologies to\nenhance productivity.\nSales Strategy\nOutlines effective methods to drive\nrevenue.",
+ "proTip": "Your signature content format is more valuable than your best single post. A consistent\nformat, a weekly framework breakdown, a Monday mindset post, a Friday lessons-\nlearned thread - trains your audience to expect and look for you. Consistency of format\ncompounds faster than variety of topics.",
+ "pairsWith": [
+  "5.2 Hook Framework",
+  "5.8 Brand Voice",
+  "10.8 Personal Brand Flywheel"
+ ],
+ "pairsPrinted": [
+  "5.2 Hook Framework",
+  "5.8 Brand Voice",
+  "10.8 Personal Brand Flywheel"
+ ],
+ "extractedAt": "2026-09-18"
+}

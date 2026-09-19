@@ -1,0 +1,36 @@
+{
+ "module": 10,
+ "lesson": "10.8",
+ "title": "Personal Brand Flywheel",
+ "titlePrinted": "Personal Brand Flywheel",
+ "level": "Intermediate",
+ "subtitle": "Build the reputation that brings opportunities to you - instead of always",
+ "sourcePages": {
+  "intro": 239,
+  "prompt": 240
+ },
+ "useWhen": "chasing them You rely entirely on your network and referrals for business development. When you stop actively selling, the pipeline dries up. You have not built a reputation that generates inbound interest independently of your direct effort.",
+ "howToUse": "The Personal Brand Flywheel applies the compounding logic of Jim Collins's Flywheel (Framework 5.10) to an individual founder's reputation and authority. The loop: distinctive expertise generates original content, which builds an audience, which creates credibility, which attracts speaking and press opportunities, which expands the audience, which builds more authority, which compounds expertise through feedback and the loop spins faster with each rotation. The flywheel takes 12–18 months to build meaningful momentum, but once spinning, it generates inbound opportunities that become the best leads, hires, and partnerships in the business.",
+ "steps": [
+  "Choose one specific topic to be known for generalists build audiences slowly, specialists build them fast.",
+  "Consistency of output matters more than quality of any single piece, weekly beats occasional brilliant.",
+  "Document your thinking, not just your advice people follow founders for their process, not just their conclusions.",
+  "Measure flywheel velocity: how many inbound opportunities came from your content this quarter?"
+ ],
+ "origin": "Jim Collins flywheel applied to personal brand — founder marketing best practice",
+ "promptBody": "Act as a personal brand strategist.\nMy expertise            :  [WHAT I KNOW DEEPLY — SPECIFIC TOPIC]\nMy target audience :  [WHO I WANT TO REACH — ROLE AND INDUSTRY]\nMy goal                      :  [WHAT I WANT THE BRAND TO GENERATE — LEADS, HIRES,  \n                                       SPEAKING, INVESTMENT, COMMUNITY]\nCurrent platform     :  [LINKEDIN / X / NEWSLETTER / PODCAST / NONE]\nDesign my Personal Brand Flywheel:\nDISTINCTIVE ANGLE   :  What is my specific point of view that others in my space don't\nhave?\nCONTENT SYSTEM       :  What format do I own? What cadence? What is my signature \n                                             series or post type?\nAUDIENCE GROWTH    :  What 2 channels will I focus on? What growth tactic fits my \n                                             style?\nCREDIBILITY SIGNALS :  What proof points build trust? What should I be saying  \n                                              publicly?\nFLYWHEEL SPIN            :  What is the first rotation? What does the flywheel look like at  \n                                              12 months?\nFIRST 30 DAYS: The 3 actions that start the flywheel.",
+ "proTip": "The Personal Brand Flywheel does not require a large audience to generate value. Fifty\ndeeply engaged people in your exact target market outperform five thousand passive\nfollowers in terms of business outcomes. Build depth before scale, the flywheel\naccelerates faster with a small, engaged audience than with a large, indifferent one.",
+ "pairsWith": [
+  "5.10 Flywheel",
+  "5.4 Content Pillars",
+  "5.7 Brand Voice",
+  "5.2 Hook Framework"
+ ],
+ "pairsPrinted": [
+  "5.10 Flywheel",
+  "5.4 Content Pillars",
+  "5.7 Brand Voice",
+  "5.2 Hook Framework"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 6,
+ "lesson": "6.9",
+ "title": "Radical Candor",
+ "titlePrinted": "Radical Candor",
+ "level": "Intermediate",
+ "subtitle": "Care personally. Challenge directly. Do both at the same time.",
+ "sourcePages": {
+  "intro": 151,
+  "prompt": 152
+ },
+ "useWhen": "You avoid giving direct feedback because you don't want to hurt people. Or you give feedback so bluntly that people feel attacked rather than helped. You're either too nice or too hard and neither works.",
+ "howToUse": "Kim Scott developed Radical Candor at Google and Apple as a two-axis model of leadership communication. The axes are Care Personally (do you genuinely care about the person as a human being?) and Challenge Directly (do you say what you think clearly and specifically?). High on both = Radical Candor (the goal). High challenge, low care = Obnoxious Aggression. High care, low challenge = Ruinous Empathy (the most common failure). Low on both = Manipulative Insincerity. Most founders default to Ruinous Empathy - they avoid the hard conversation because they care about the person, but the kindest thing they could do is have it.",
+ "steps": [
+  "Before any difficult feedback, check: is this coming from genuine care, or is it about you?",
+  "Challenge directly means saying the specific thing, not softening it to the point of unrecognisability.",
+  "Start by soliciting candid feedback about yourself before expecting it from others it earns trust.",
+  "Use the SBI model (6.5) to structure the content of Radical Candor conversations. Calling yourself \"direct\" doesn't excuse Obnoxious Aggression, care personally comes first for a reason. If the person can't feel you're on their side, the challenge lands as an attack, no matter how honest it was."
+ ],
+ "origin": "Kim Scott, Radical Candor, 2017",
+ "promptBody": "Act as a leadership communication coach using Kim Scott's Radical Candor framework.\nSituation  : [DESCRIBE THE PERSON, THE PERFORMANCE ISSUE, AND WHAT YOU HAVE  \n                     SAID OR AVOIDED SO FAR]\nStep 1: Diagnose which quadrant I am currently in:\nRadical Candor (high care + high challenge)\nRuinous Empathy (high care + low challenge)\nObnoxious Aggression (low care + high challenge)\nManipulative Insincerity (low on both)\nStep 2: Write the Radical Candor version of this conversation  what I should actually say.\nStep 3: Write the Ruinous Empathy version the version I am probably tempted to give.\nStep 4: Give me 2 opening lines that demonstrate both care and directness simultaneously.\nRadical Candor Matrix\nRadical Candor\nTop right quadrant\nHigh Care, High Challenge\nHigh Care, Low\nRuinous Empathy\nChallenge\nBottom right quadrant\nLow Care, High\nChallenge\nObnoxious Aggression\nTop left quadrant\nLow Care, Low\nChallenge\nManipulative Insincerity\nBottom left quadrant",
+ "proTip": "Ruinous Empathy is the most harmful leadership style precisely because it feels kind.\nWhen you protect someone from honest feedback, you protect yourself from an\nuncomfortable conversation and deny them the information they need to grow. The\nperson who needs the feedback most is the one whose manager feels worst about giving it.",
+ "pairsWith": [
+  "6.5 SBI Feedback",
+  "6.3 GROW Model",
+  "6.5 Culture Code"
+ ],
+ "pairsPrinted": [
+  "6.5 SBI Feedback",
+  "6.3 GROW Model",
+  "6.5 Culture Code"
+ ],
+ "extractedAt": "2026-09-18"
+}

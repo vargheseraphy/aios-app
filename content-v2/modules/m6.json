@@ -1,0 +1,99 @@
+{
+ "module": 6,
+ "title": "Build Your Team",
+ "subtitle": "Build people who build the company leadership is the product.",
+ "description": "The best product in the world fails with the wrong team. The best team in the world fails without clear direction, honest feedback, and the right structure. This module gives you the complete leadership toolkit from clarifying who owns what, to setting goals that drive real action, to having the honest conversations that most leaders avoid. It includes three Japanese leadership frameworks that bring a depth of discipline most Western management books miss.",
+ "lessons": [
+  "6.1",
+  "6.2",
+  "6.3",
+  "6.4",
+  "6.5",
+  "6.6",
+  "6.7",
+  "6.8",
+  "6.9",
+  "6.10",
+  "6.11",
+  "6.12"
+ ],
+ "roleProfile": {
+  "internal": [
+   {
+    "role": "Chief People Officer",
+    "priorities": "Culture systems, retention architecture, hiring rigour",
+    "bestWhen": "Designing how your organisation finds and keeps great people",
+    "seniority": "◆◆◆◆◆",
+    "promptClause": "a Chief People Officer"
+   },
+   {
+    "role": "VP of Talent",
+    "priorities": "Structured hiring, bias reduction, talent pipeline",
+    "bestWhen": "Building a repeatable process for identifying the right people",
+    "seniority": "◆◆◆◆",
+    "promptClause": "a VP of Talent"
+   },
+   {
+    "role": "Experienced People Manager (10yr)",
+    "priorities": "Day-to-day realism — what works with actual humans",
+    "bestWhen": "Preparing for a difficult performance or feedback conversation",
+    "seniority": "◆◆◆",
+    "promptClause": "an Experienced People Manager (10yr)"
+   },
+   {
+    "role": "Organisational Design Consultant",
+    "priorities": "Structure, spans of control, accountability clarity",
+    "bestWhen": "When the team is growing and roles are becoming unclear",
+    "seniority": "◆◆◆",
+    "promptClause": "an Organisational Design Consultant"
+   },
+   {
+    "role": "L&D Director",
+    "priorities": "Capability building, coaching culture, skill gaps",
+    "bestWhen": "Identifying where your team needs to grow and how",
+    "seniority": "◆◆",
+    "promptClause": "a L&D Director"
+   },
+   {
+    "role": "Organisational Psychologist",
+    "priorities": "Behaviour, motivation, team dynamics, conflict patterns",
+    "bestWhen": "Understanding why a team dynamic is breaking down",
+    "seniority": "◆",
+    "promptClause": "an Organisational Psychologist"
+   }
+  ],
+  "outside": [
+   {
+    "role": "Executive Coach",
+    "priorities": "Honest mirror — what patterns are holding this person back?",
+    "bestWhen": "Before a major leadership decision or difficult conversation",
+    "seniority": "◈",
+    "promptClause": "an Executive Coach"
+   },
+   {
+    "role": "New Team Member (Day 1)",
+    "priorities": "What does culture, clarity, and onboarding look like fresh?",
+    "bestWhen": "Auditing your onboarding and team experience honestly",
+    "seniority": "◈",
+    "promptClause": "a New Team Member (Day 1)"
+   },
+   {
+    "role": "Departing Employee (nothing to lose)",
+    "priorities": "The honest reason they are leaving — not the polite one",
+    "bestWhen": "Understanding what your culture actually is, not what you think it is",
+    "seniority": "◈",
+    "promptClause": "a Departing Employee (nothing to lose)"
+   },
+   {
+    "role": "Employment Lawyer",
+    "priorities": "Risk, compliance, what could become a legal problem",
+    "bestWhen": "Before any termination, restructuring, or policy change",
+    "seniority": "◈",
+    "promptClause": "an Employment Lawyer"
+   }
+  ],
+  "question": "Who should advise on people and leadership decisions?",
+  "lead": "Leadership decisions are the highest-leverage decisions in any organisation — and the hardest to get right because the stakes are human. The roles on this page bring the perspectives of people who have seen hundreds of teams succeed and fail. Use them before hiring, before giving difficult feedback, before restructuring, and before having the conversations you have been avoiding.",
+  "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 6.3 GROW Model · 6.5 SBI Feedback · 6.9 Radical Candor · 6.11 Situational Leadership"
+ }
+}

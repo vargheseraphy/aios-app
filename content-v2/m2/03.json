@@ -1,0 +1,34 @@
+{
+ "module": 2,
+ "lesson": "2.3",
+ "title": "Lean Canvas",
+ "titlePrinted": "Lean Canvas",
+ "level": "Beginner",
+ "subtitle": "You're pre-revenue and need to validate quickly. You don't need a full business plan, you",
+ "sourcePages": {
+  "intro": 53,
+  "prompt": 54
+ },
+ "useWhen": "need to identify your riskiest assumptions and test them before spending months building.",
+ "howToUse": "Ash Maurya adapted the Business Model Canvas into the Lean Canvas specifically for startups. It replaces the left-side partnership and activity blocks with Problem, Solution, Key Metrics, and Unfair Advantage, the four things that matter most before product- market fit. The Lean Canvas is designed to be completed in one sitting and updated as you learn. Think of it as a living hypothesis, not a fixed plan.",
+ "steps": [
+  "Complete the Problem block first - if you can't describe the problem sharply, stop here.",
+  "Write your Unfair Advantage honestly - if you can't fill this in yet, that's important information.",
+  "Mark the two most uncertain blocks - those are your first two things to validate.",
+  "Update the Canvas after every 5 customer conversations. Validate fast before you build the wrong thing Founders fill in the Lean Canvas once at the beginning, then never update it. The canvas is a live document, it should change every time a core assumption is tested and proven wrong. A canvas that hasn't changed in three months usually means the founder isn't talking to customers enough."
+ ],
+ "origin": "Ash Maurya, Running Lean, 2012 — adapted from Osterwalder's BMC",
+ "promptBody": "Act as a lean startup advisor using Ash Maurya's Lean Canvas.\nMy startup idea   :  [DESCRIBE IN 2–3 SENTENCES]\nTarget customer  :  [WHO IS THE EARLY ADOPTER SPECIFICALLY]\nComplete all nine blocks:\n1. Problem (top 3 problems being solved)\n2. Customer Segment (early adopters specifically)\n3. Unique Value Prop (clear, compelling, different)\n4. Solution (top 3 features or capabilities)\n5. Channels (how you reach customers)\n6. Revenue Streams (how you charge)\n7. Cost Structure (key costs)\n8. Key Metrics (the number that shows traction)\n9. Unfair Advantage (what can't be easily copied)\nThen: flag the 2 highest-risk assumptions to validate first.",
+ "proTip": "",
+ "pairsWith": [
+  "2.1 Value Proposition",
+  "2.6 MVP Design",
+  "2.8 Moat Builder"
+ ],
+ "pairsPrinted": [
+  "2.1 Value Proposition",
+  "2.6 MVP Design",
+  "2.8 Moat Builder"
+ ],
+ "extractedAt": "2026-09-18"
+}

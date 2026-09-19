@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.5",
+ "title": "Objection Handling - LAER",
+ "titlePrinted": "Objection Handling - LAER",
+ "level": "Intermediate",
+ "subtitle": "A prospect raises an objection and you immediately counter it with a feature or a price",
+ "sourcePages": {
+  "intro": 99,
+  "prompt": 100
+ },
+ "useWhen": "justification. They feel unheard, push back harder, and the conversation dies. You're winning arguments and losing deals.",
+ "howToUse": "Developed by Carew International, the LAER model is a four-step objection response framework built on one principle: an objection is a request for more information, not an attack to defend against. Listen (fully, without interrupting), Acknowledge (validate their concern before responding), Explore (ask a question to understand the objection more deeply), and Respond (only now address it with precision). Skipping Explore is the most common mistake. Most objections have a deeper concern underneath the surface one.",
+ "steps": [
+  "Never respond to an objection in the same breath you heard it, pause.",
+  "Acknowledge before you explore - validation opens people, defence closes them.",
+  "Use the Explore question to find what is really underneath the objection.",
+  "Prepare LAER responses for your top 5 most common objections using the prompt below. Turn resistance into a deeper conversation, not a debate 'We need to think about it' is never about thinking. It is always about one of three things: they don't see enough value, they don't have authority, or they don't have urgency. The Explore question reveals which one it is. Without that question, you're responding to the wrong problem. PRO TIP"
+ ],
+ "origin": "Carew International — LAER objection handling methodology",
+ "promptBody": "Act as a sales coach using the LAER objection handling framework.\nMy product  :  [WHAT YOU SELL AND AVERAGE PRICE POINT]\nFor each objection below, write a full LAER response:\nObjection 1  :  [YOUR MOST COMMON OBJECTION]\nObjection 2  :  [YOUR SECOND MOST COMMON OBJECTION]\nObjection 3  :  'We don't have budget right now.'\nObjection 4 :  'We need to think about it.'\nObjection 5 :  'We're already using [COMPETITOR].'\nFor each objection use this structure:\nLISTEN                  :  (note what to observe / not interrupt)\nACKNOWLEDGE :  Exact words to validate their concern\nEXPLORE              :  One open question to uncover the real issue\nRESPOND             :  Precise response to the likely real concern\nLAER — Turn Objections Into Conversations\nListen\nAcknowledge\nExplore\nRespond\nThe most expensive STP mistake is targeting the largest segment instead of the\nmost winnable one. A smaller segment where you have a clear advantage will\noutperform a large segment where you are one of many.",
+ "proTip": "",
+ "pairsWith": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "4.10 Closing Techniques"
+ ],
+ "pairsPrinted": [
+  "4.2 SPIN Selling",
+  "4.4 Challenger Sale",
+  "4.10 Closing Techniques"
+ ],
+ "extractedAt": "2026-09-18"
+}

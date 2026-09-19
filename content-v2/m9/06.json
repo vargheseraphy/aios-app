@@ -1,0 +1,36 @@
+{
+ "module": 9,
+ "lesson": "9.6",
+ "title": "3-Scenario Financial Model",
+ "titlePrinted": "3-Scenario Financial Model",
+ "level": "Advanced",
+ "subtitle": "You have a single financial plan that assumes everything goes roughly as expected. When",
+ "sourcePages": {
+  "intro": 216,
+  "prompt": 217
+ },
+ "useWhen": "reality diverges and it always does , you have no framework for how to respond. Every deviation triggers a re-plan from scratch.",
+ "howToUse": "The 3-Scenario Financial Model is a planning practice used by CFOs and serious operators to replace single-point forecasting with range forecasting. The three scenarios are: Base Case (most likely trajectory - what you genuinely expect), Bull Case (everything works - best realistic outcome, not fantasy), and Bear Case (things go worse than expected - what you plan for but hope doesn't happen). The model forces you to define the key drivers of each scenario and the decision triggers, what happens in Month 3 that tells you which scenario you're in, and what you do about it.",
+ "steps": [
+  "Build the model around 3–5 key drivers, not 50 line items. Key drivers are the variables that most affect the outcome.",
+  "Define scenario triggers before you need them, what metric, at what level, confirms each scenario?",
+  "The Bear Case must be survivable, if it would kill the company, your base case planning is too aggressive.",
+  "Share all three scenarios with your board or key investors, single-scenario plans erode trust when they miss. Plan for the future you want and the two you might get instead If your Bear Case would kill the company, you don't have a Bear Case, you have a Base Case wearing a disguise. Rebuild it until it's survivable, or the exercise is theater."
+ ],
+ "origin": "CFO best practice — 3-scenario modelling widely used in venture-backed companies",
+ "promptBody": "Act as a startup CFO building a 3-scenario financial model.\nMy business                :  [REVENUE MODEL, STAGE, CURRENT METRICS]\nPlanning horizon       :  [6 MONTHS / 12 MONTHS / 18 MONTHS]\nKey revenue drivers  :  [WHAT DRIVES REVENUE - DEALS, USERS, USAGE]\nKey cost drivers         :  [HEADCOUNT, INFRASTRUCTURE, MARKETING]\nBuild a 3-scenario model:\nBASE CASE: Most likely trajectory\nRevenue assumption, cost assumption, key metric target\nEnd-state    :  cash position, burn, milestone achieved\nBULL CASE :  Everything works - best realistic outcome\nWhat accelerates - which driver performs above base?\nEnd-state    :  cash, burn, milestone, optionality created\nBEAR CASE :  Things go worse - survivable but hard\nWhat underperforms - which driver falls short?\nEnd-state    :  cash, burn, how long can we operate?\nSCENARIO TRIGGERS :  What would I observe by month 3 that confirms each scenario?\nDECISION PLAYBOOK :  What do I do differently in each?",
+ "proTip": "The most important output from scenario modelling is the Bear Case decision playbook.\nDefine now - before you need it - what you will cut first, what you will protect at all\ncosts, and at what runway level you take action. Leaders who make these decisions in\nadvance act calmly when the moment arrives. Leaders who haven't made them in\nadvance make poor decisions under pressure.",
+ "pairsWith": [
+  "9.2 Burn Rate",
+  "9.1 LTV:CAC",
+  "8.5 Scenario Planning",
+  "8.10 Expected Value"
+ ],
+ "pairsPrinted": [
+  "9.2 Burn Rate",
+  "9.1 LTV:CAC",
+  "8.5 Scenario Planning",
+  "8.10 Expected Value"
+ ],
+ "extractedAt": "2026-09-18"
+}

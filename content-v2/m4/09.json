@@ -1,0 +1,34 @@
+{
+ "module": 4,
+ "lesson": "4.9",
+ "title": "Pipeline Review - Deal Health Check",
+ "titlePrinted": "Pipeline Review - Deal Health Check",
+ "level": "Intermediate",
+ "subtitle": "Your pipeline looks healthy but your close rate is lower than expected. Deals sit in the same",
+ "sourcePages": {
+  "intro": 107,
+  "prompt": 108
+ },
+ "useWhen": "stage for weeks. You discover deals are stuck or dead - too late to recover them.",
+ "howToUse": "A Deal Health Check is a structured review of each active opportunity against a set of objective criteria: Is there a confirmed problem? Have you spoken to the real decision- maker? Is there a defined budget? Is there a timeline with consequences for missing it? Have objections been surfaced and addressed? Is there a mutual next step with a date? Deals that can't answer all six questions are at risk regardless of what the CRM stage says. AI can conduct a deal health review when you describe the deal's current state.",
+ "steps": [
+  "Review every deal over 21 days old against the six criteria every week.",
+  "Any deal without a confirmed next step with a date is not active it is stalled.",
+  "Move stalled deals to a nurture sequence rather than leaving them in the active pipeline.",
+  "Use the output to identify your one highest-risk deal and take action this week. Know which deals will close before your forecast does Six yes-answers don't guarantee a close, and one \"no\" doesn't mean walk away. Deals are made by people, not checklists - a stalled deal with a strong relationship can still move. Use the health check to focus your attention, not to make the decision for you. Don't let a scorecard replace your judgment."
+ ],
+ "origin": "Salesforce / CRM methodology — pipeline management best practice",
+ "promptBody": "Act as a sales pipeline analyst conducting a deal health review.\nFor each deal I describe, score it against six criteria\n(Yes / Partial / No) and give a health rating:\nCRITERIA:\n1. Confirmed problem :  Do they acknowledge the pain clearly?\n2. Decision-maker       :  Have I spoken directly to the buyer?\n3. Budget                       :  Is budget confirmed or realistically available?\n4. Timeline                    :  Is there a defined date with stakes attached?\n5. Objections                 :  Have key objections been surfaced and handled?\n6. Next step                   :  Is there a mutual commitment with a date?\nDeal 1     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nDeal 2     :  [STAGE, LAST CONTACT, WHAT WAS AGREED, WHAT IS BLOCKING]\nFor each :  Health rating (Strong / At Risk / Stalled)\nand one specific action to take this week.\nDeal health check ranges from healthy to at risk.\nDecision-Maker Timeline with\nContacted Consequences Mutual Next Step\nReal decision-maker Timeline with clear No mutual next step\nhas been reached consequences is set with a date\nHealthy At Risk\nConﬁrmed Problem Budget Deﬁned Objections Surfaced\nProblem is clearly Budget for the deal Signiﬁcant objections have\nidentiﬁed is established been raised",
+ "proTip": "The most honest pipeline review question is: 'If this deal were to close, what would have\nto happen in the next 7 days?' If you can't answer that specifically, the deal has no\nmomentum. Deals without momentum don't close, they disappear.",
+ "pairsWith": [
+  "4.3 BANT Qualification",
+  "4.8 Follow-Up",
+  "4.10 Closing Techniques"
+ ],
+ "pairsPrinted": [
+  "4.3 BANT Qualification",
+  "4.8 Follow-Up",
+  "4.10 Closing Techniques"
+ ],
+ "extractedAt": "2026-09-18"
+}

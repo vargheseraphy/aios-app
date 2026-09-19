@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.1",
+ "title": "C.A.R.E Prompting",
+ "titlePrinted": "C.A.R.E Prompting",
+ "level": "Beginner",
+ "subtitle": "How LLMs actually think and how to work with that",
+ "sourcePages": {
+  "intro": 24,
+  "prompt": 25
+ },
+ "useWhen": "You're new to AI and getting inconsistent, generic outputs. You want a reliable structure that makes every prompt work better from day one. LLMs respond to structure. C.A.R.E gives every prompt four layers: Context (the situation), Action (what you want done), Role (who the AI should be), Expectation (what the output should look like). Every strong prompt has all four. Most weak prompts are missing two. Context is usually the layer people skip, and it does the heaviest lifting since the AI has no idea who you are or what you need without it. Role is the fastest lever for quality, narrowing vocabulary and depth instantly. Expectation is where most prompts fail silently: if you don't state a length or format, the AI guesses one for you.",
+ "howToUse": null,
+ "steps": [
+  "Identify what you need: a decision, a draft, an analysis, or a plan.",
+  "Fill in each C.A.R.E layer before prompting even just mentally.",
+  "Start every prompt with the Role. It sets the entire tone.",
+  "State Expectation clearly: format, length, tone, and depth. A B2B SaaS founder was getting generic copy from AI. After adding Role ('Act as a direct-response copywriter who specialises in B2B SaaS') and Expectation ('3 subject lines, under 8 words, curiosity-gap style'), his open rate jumped from 18% to 31% in one send. Same brief. One C.A.R.E pass. IN PRACTICE"
+ ],
+ "origin": "Prompt Engineering community best practice — popularised 2022–2023",
+ "promptBody": "Role:               Act as a [EXPERT ROLE  e.g. B2B sales coach].\nContext:        I am [YOUR SITUATION  company, stage, industry].\nAction:           [WHAT YOU WANT e.g. Give me 5 positioning ideas\n                        to differentiate in the [MARKET / REGION]].\nExpectation: Format as a numbered list. Each point 2–3 lines.\nUse plain business language. No jargon.\nCRAFTING EFFECTIVE AI PROMPTS\n4 State Expectation\nClearly outline the desired format,\nlength, and tone of the output.\n3 Start with Role\nBegin the prompt by deﬁning the\nAI's persona.\n2 Fill C.A.R.E Layers\nProvide context, action, role, and\nexpectation for the prompt.\nIdentify Need\n1\nDetermine the speciﬁc task you\nwant the AI to perform.",
+ "proTip": "If your output feels off, the problem is almost always a vague Role or missing\nExpectation. Fix those two before rewriting the whole prompt.",
+ "pairsWith": [
+  "1.2 Context Stack",
+  "1.3 Role Prompting",
+  "1.4 Refinement Loop"
+ ],
+ "pairsPrinted": [
+  "1.2 Context Stack",
+  "1.3 Role Prompting",
+  "1.4 Refinement Loop"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 5,
+ "lesson": "5.8",
+ "title": "Viral Loop - Growth Loop",
+ "titlePrinted": "Viral Loop - Growth Loop",
+ "level": "Advanced",
+ "subtitle": "Your growth comes entirely from paid acquisition or your personal network. When you stop",
+ "sourcePages": {
+  "intro": 128,
+  "prompt": 129
+ },
+ "useWhen": "spending or posting, growth stops. You have no compounding engine every customer takes the same effort to acquire as the last.",
+ "howToUse": "A Growth Loop is a self-reinforcing system where each user or customer generates the conditions for the next. Unlike a funnel (linear, ends at conversion), a loop feeds itself. The four types are: Viral Loop (users invite others), Content Loop (content generates SEO or social reach that drives new users), Paid Loop (revenue from users funds ads that acquire more users), and Product Loop (using the product creates value that is visible to non- users). Andrew Chen and Brian Balfour popularised growth loops as the foundation of sustainable, compounding growth.",
+ "steps": [
+  "Map your current acquisition: is it a funnel or a loop? Most are funnels.",
+  "Identify which loop type is most natural given your product and user behaviour.",
+  "Design the loop explicitly, every step must be mapped and optimised.",
+  "Measure loop efficiency: how many new users does each existing user generate? Build growth that compounds, not just campaigns that spike Most founders try to build a viral loop before their product has strong retention. A leaky bucket with a viral loop just leaks faster. Fix retention first define the moment users get genuine value then build the loop around that moment. Loops only compound when the core product earns them. PRO TIP"
+ ],
+ "origin": "Andrew Chen / Brian Balfour — Growth Loops framework, 2017",
+ "promptBody": "Act as a growth strategy advisor specialising in growth loops.\nMy product                 :  [DESCRIBE WHAT IT DOES AND HOW USERS ENGAGE]\nCurrent acquisition  :  [HOW YOU GET CUSTOMERS NOW]\nUser behaviour          :  [WHAT USERS DO INSIDE THE PRODUCT]\nStep 1  :  Identify which growth loop type is most natural for my product and user  \n                behaviour.\nStep 2  :  Map the complete loop,  every step from new user to loop-generated next user.\nStep 3  :  Identify the weakest point in the loop,  where do most users exit without \n                completing it?\nStep 4  :  Suggest 2 specific product or marketing changes to strengthen the loop's \n                 completion rate.\nStep 5  :  What metric would I track to know the loop is working and improving?",
+ "proTip": "",
+ "pairsWith": [
+  "5.9 AARRR Pirate Metrics",
+  "5.5 GTM Canvas",
+  "2.6 MVP Design"
+ ],
+ "pairsPrinted": [
+  "5.9 AARRR Pirate Metrics",
+  "5.5 GTM Canvas",
+  "2.6 MVP Design"
+ ],
+ "extractedAt": "2026-09-18"
+}

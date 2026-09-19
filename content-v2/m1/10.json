@@ -1,0 +1,34 @@
+{
+ "module": 1,
+ "lesson": "1.10",
+ "title": "OODA Loop",
+ "titlePrinted": "OODA Loop",
+ "level": "Advanced",
+ "subtitle": "You're in a fast-moving competitive situation a market shift, a competitor move, a crisis",
+ "sourcePages": {
+  "intro": 42,
+  "prompt": 43
+ },
+ "useWhen": "and your decision-making process is too slow to keep up with what's happening.",
+ "howToUse": "Developed by US Air Force Colonel John Boyd from studying aerial dogfights, the OODA Loop is a decision cycle built for speed under uncertainty. Observe (take in raw information), Orient (analyse it through your context and mental models), Decide (choose a course of action), Act (execute). The winner in any fast-changing situation is the one who cycles through OODA faster than the opposition. AI can compress the Orient phase dramatically.",
+ "steps": [
+  "Define the fast-moving situation you're inside right now.",
+  "Feed AI all available information, don't filter it yet, let AI orient.",
+  "Ask for decision options, not one answer. Keep your cycle moving.",
+  "After acting, immediately feed the result back in as new Observe data. Observe,Orient,Decide,Act - military speed for startup decisions Boyd was considered the best fighter pilot in the US Air Force he had an open bet that from a position of disadvantage, he could defeat any opponent in under 40 seconds. He never lost. His secret was not reflexes but decision speed: he could complete a full OODA cycle faster than his opponent could react to his last move. Boyd later spent decades refining the framework, applying it to military strategy, business, and geopolitics. ORIGIN STORY"
+ ],
+ "origin": "John Boyd, US Air Force — OODA Loop, 1970s–1980s",
+ "promptBody": "Act as a strategic decision advisor using John Boyd's OODA Loop.\nSituation                         :    [DESCRIBE WHAT IS HAPPENING RIGHT NOW]\nAvailable information   :    [LIST WHAT YOU KNOW , even partial data]\nConstraints                     :    [TIME AVAILABLE, RESOURCES, KEY RISKS]\nObserve                           :    What are the most critical signals in this data?\nOrient                              :    What patterns, threats, or opportunities do these reveal?\nDecide                             :    Give me 3 decision options ranked by speed and impact.\nAct                                    :    For the top option, what is the immediate first move?\nPrioritise speed. Flag what I should monitor after acting.\nOODA LOOP — SPEED UNDER UNCERTAINTY\nObserve\nAct\nGather information about\nImplement the decision the environment\nDecide Orient\nChoose the best course of Analyze and understand\naction the situation",
+ "proTip": "The Orient phase is where most leaders get stuck,  they have the data but can't see the\npattern fast enough. That's exactly what AI compresses. Use it there, not as a\nreplacement for your judgment on the Decide and Act stages.",
+ "pairsWith": [
+  "1.5 Six Thinking Hats",
+  "8.1 DECIDE Framework",
+  "8.6 Red Team"
+ ],
+ "pairsPrinted": [
+  "1.5 Six Thinking Hats",
+  "8.1 DECIDE Framework",
+  "8.6 Red Team"
+ ],
+ "extractedAt": "2026-09-18"
+}

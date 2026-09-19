@@ -1,0 +1,36 @@
+{
+ "module": 10,
+ "lesson": "10.7",
+ "title": "Socratic Self-Questioning",
+ "titlePrinted": "Socratic Self-Questioning",
+ "level": "Advanced",
+ "subtitle": "You hold beliefs about your market, your customers, and your business that you have never",
+ "sourcePages": {
+  "intro": 237,
+  "prompt": 238
+ },
+ "useWhen": "seriously tested. These beliefs shape your decisions without you realising it. Some of them are correct. Some are expensive assumptions masquerading as facts.",
+ "howToUse": "Socratic questioning named after Socrates' method of rigorous intellectual inquiry through probing questions is a structured technique for examining beliefs, uncovering assumptions, and testing the logic of conclusions. Applied as a self-examination tool, it becomes one of the most powerful mental models a founder can use: before committing to a strategic direction, a major hire, or a significant investment, you ask a series of questions designed to expose what you actually believe and why. AI makes this practice available on demand a rigorous thinking partner that will push back without ego.",
+ "steps": [
+  "Use Socratic questioning on your most confident beliefs, not your uncertainties. Confidence is where blind spots hide.",
+  "Ask AI to steelman the opposite position before you commit to your view.",
+  "Write your reasoning before the session, vague beliefs survive questioning; explicit ones do not.",
+  "Run this exercise before any major strategic decision, not after it. Challenge your own thinking before it becomes your strategy AI won't push back without ego\" is the pitch, but it can just as easily mirror your confidence back to you unless you explicitly ask it to argue the other side."
+ ],
+ "origin": "Socratic method — ancient Greek philosophy — applied to business strategic thinking",
+ "promptBody": "Act as a Socratic questioner. Your role is to rigorously examine my thinking through\nprobing questions — not to agree or validate. Push back on weak logic.\nBelief or decision to examine:\n[STATE THE BELIEF, PLAN, OR DECISION YOU WANT TO TEST]\nApply the six categories of Socratic questions:\nCLARIFICATION  :  What exactly do I mean by this? Can I give a concrete example?\nASSUMPTIONS    :  What am I taking for granted here? What would have to be true  \n                                   for this to hold?\nEVIDENCE            :  What is my evidence for this belief? How strong is it — anecdote  \n                                   or data?\nPERSPECTIVE     :  How would a sceptic view this? What is the strongest opposing  \n                                  argument?\nIMPLICATIONS   :  If this is true, what else must be true? What are the consequences \n                                  if I am wrong?\nQUESTIONING THE QUESTION: Is this the right question? What is the deeper question\nunderneath it?\nEnd with: the one assumption I should validate before committing to this belief.\nSocratic Self-Questioning\nStep 1 2 3 4\nQuestion the Steelman the What would prove\nAction Conﬁdent belief\nassumption opposite this wrong?",
+ "proTip": "The most important Socratic question is \"What would have to be true for me to be\nwrong?\" This forces you to define the falsifiability of your belief - the conditions under\nwhich you would update your view. A belief that cannot be proven wrong isn't a belief, it's\na story you've decided not to test.",
+ "pairsWith": [
+  "1.6 First Principles",
+  "1.8 Inversion",
+  "8.6 Red Team",
+  "10.1 Personal SWOT"
+ ],
+ "pairsPrinted": [
+  "1.6 First Principles",
+  "1.8 Inversion",
+  "8.6 Red Team",
+  "10.1 Personal SWOT"
+ ],
+ "extractedAt": "2026-09-18"
+}

@@ -1,0 +1,34 @@
+{
+ "module": 3,
+ "lesson": "3.4",
+ "title": "Ideal Customer Profile (ICP)",
+ "titlePrinted": "Ideal Customer Profile (ICP)",
+ "level": "Beginner",
+ "subtitle": "Your conversion rates are low, your sales cycles are long, and your customers vary wildly in",
+ "sourcePages": {
+  "intro": 76,
+  "prompt": 77
+ },
+ "useWhen": "how much they value your product. You're spending equal time on accounts that become long-term partners and accounts that churn in 90 days.",
+ "howToUse": "The Ideal Customer Profile defines the specific type of company or individual who will get the most value from your product, buy fastest, pay most, and stay longest. It is not a target audience, it is a precise description of your best-fit customer based on firmographic, behavioural, and situational criteria. Building sales and marketing around your ICP dramatically improves conversion, reduces churn, and focuses your team on the accounts most likely to grow.",
+ "steps": [
+  "Start by analysing your existing best customers, look for patterns in industry, size, role, and problem.",
+  "Define your ICP in at least five dimensions: industry, company size, role, trigger event, and outcome sought.",
+  "Build a negative ICP too, the profile that looks like a fit but consistently disappoints.",
+  "Review and update your ICP every six months as you learn more from real customers. Stop selling to everyone. Start selling to the right one. The most common ICP mistake is building from assumptions rather than interviewing your 10 best customers. They will tell you exactly why they bought and what they'd lose without you. Your assumptions will be wrong."
+ ],
+ "origin": "B2B sales and marketing best practice — ICP methodology widely adopted 2010s",
+ "promptBody": "Act as a B2B sales strategist helping me define my ICP.\nMy product                    :  [DESCRIBE WHAT IT DOES AND THE PROBLEM IT SOLVES]\nBest customers so far  :  [DESCRIBE 2–3 THAT GOT THE MOST VALUE]\nBuild my Ideal Customer Profile across these dimensions:\nFIRMOGRAPHIC          :  Industry, company size, geography, revenue\nROLE                              :  Job title, seniority, decision-making authority\nTRIGGER                       : What event makes them start looking for a solution?\nPAIN                               : The specific problem they urgently need solved\nOUTCOME                    : The result they need to see to call this a success\nDISQUALIFIER             : What makes a prospect a bad fit despite looking right?\nWrite the ICP as a one-paragraph description I can share with my sales and marketing\nteam. Also give me the 3 fastest signals to identify this customer in a first conversation.\nDeﬁne ICP\nDimensions\nReview and \nAnalyze Existing Specify industry, Update ICP\nCustomers company size, role,\nRegularly update the\ntrigger event, and\nIdentify patterns in Build Negative ICP ICP based on real\noutcome sought.\nsuccessful customer customer feedback.\nProﬁle customers\nproﬁles to deﬁne the\nwho appear to be a\nICP.\nﬁt but disappoint.",
+ "proTip": "Define your negative ICP with the same rigour as your positive one. The accounts that\nlook like perfect fits but churn in 90 days have a pattern. Ask AI to help you find it.\nDisqualifying bad-fit accounts early is more valuable than closing them,  a churned\ncustomer costs you more than a lost deal.",
+ "pairsWith": [
+  "3.9 STP Model",
+  "2.1 Value Proposition",
+  "4.3 BANT Qualification"
+ ],
+ "pairsPrinted": [
+  "3.9 STP Model",
+  "2.1 Value Proposition",
+  "4.3 BANT Qualification"
+ ],
+ "extractedAt": "2026-09-18"
+}
