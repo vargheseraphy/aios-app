@@ -314,6 +314,37 @@ a slightly darker blue for text-on-blue contexts specifically (leaving the
 button/field/link blue elsewhere untouched) or accepting this as a
 large-text-only guarantee and increasing those two font sizes slightly.
 
+## Phase 7 — /for-business, /for-institutions, /contact built without a locked HTML source
+
+PRD.md lists these three (plus `/about`, already out of scope per this file's earlier "Scope
+taken from BUILD-PROMPT.md" note) as pages Raphy would hand-design directly in HTML, the same
+way home/why-this-book/how-to-use/who-its-for were. No such HTML exists in
+`docs/design/pages/` for any of the three. The original build (Phases 1-6) treated their
+absence as reason to skip them; Raphy then explicitly asked for them anyway.
+
+Built them within the established system instead of waiting for a mockup: same page-hero,
+coloured-feature-card, and module-list patterns already used on `why-this-book`, recoloured per
+page (`components/for-business/`, `components/for-institutions/`), plus a plain form page for
+`/contact` (`components/contact/`). Content is real where it can be — module/lesson examples on
+both pitch pages read from `lib/content.ts` (Module 6/8 lessons for `for-business`, Module 1/10
+for `for-institutions`), not invented copy — but the page structure itself is this build's
+design judgment, not Raphy's. **These three should be reviewed against, and replaced by, his
+own HTML if/when he makes one** — same as the original four were built by porting his markup
+rather than writing new markup from a description, this went the other direction out of
+necessity.
+
+The contact form (`lib/actions/contact.ts`) validates and logs a submission server-side via a
+real Next.js Server Action (no third-party embed, per PRD) but has no email transport wired up
+— no Resend/SMTP key exists anywhere in this codebase, and none was invented. A submission is
+currently only visible in server logs. `.env.example` now documents a placeholder
+`CONTACT_NOTIFY_EMAIL` for whichever provider gets wired up later.
+
+Also fixed two small pre-existing inconsistencies while touching shared nav/footer components:
+the header's "Why frameworks" link pointed at the home page's own `#why` anchor instead of the
+full `/why-this-book` route (How to use and Who it's for had already been upgraded to real page
+links in Phase 4, this one was missed); and the footer's For business/For institutions/Contact
+rows were `#` placeholders now pointing at the real routes.
+
 ## Items needing Raphy before this goes live
 
 - Store URLs (Amazon / Notion Press) — currently placeholders (`#` with a labelled note).
@@ -348,3 +379,10 @@ large-text-only guarantee and increasing those two font sizes slightly.
   manuscript OCR (confirmed on 5 of 108 lessons). The Copy button on every `/m{module}/{lesson}`
   page currently copies all of it. Worth splitting into separate fields at the source so the
   Copy button — the entire point of the QR path — copies only the intended prompt.
+- `/for-business`, `/for-institutions` and `/contact` were built without a locked HTML source
+  (see the Phase 7 note above) — review the page structure and copy against Raphy's own design
+  if/when he makes one for these, the way the original four pages were built by porting his
+  markup rather than the reverse.
+- The `/contact` form has no email transport wired up — submissions are logged server-side only
+  (see `lib/actions/contact.ts`, `.env.example`'s `CONTACT_NOTIFY_EMAIL`). Needs a real provider
+  (e.g. Resend) integrated before this form is actually useful for reaching Raphy.
