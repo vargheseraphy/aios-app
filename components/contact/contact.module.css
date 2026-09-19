@@ -1,0 +1,54 @@
+/*
+ * /contact has no locked HTML source (see DECISIONS.md). Simpler than the
+ * other new pages — a utilitarian form doesn't need the full colour-field
+ * hero, so this borrows the plain "light section with a kicker" header
+ * pattern used throughout the locked pages instead of inventing one.
+ */
+.wrap {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .wrap {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+}
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 8px;
+}
+.infoItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.infoIc {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--wash);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoItem h3 {
+  font-size: 14.5px;
+  margin-bottom: 3px;
+}
+.infoItem p {
+  font-size: 13.5px;
+  color: var(--gray-l2);
+  line-height: 1.55;
+}
+.formCard {
+  border: 1px solid var(--line-l2);
+  border-radius: 18px;
+  padding: 28px;
+  background: #fff;
+}
