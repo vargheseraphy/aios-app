@@ -96,3 +96,21 @@ criteria, and `DECISIONS.md` for anything resolved autonomously along the way.
 - [x] `README.md` updated with setup, env vars, deploy steps
 - [x] `DECISIONS.md` finalised
 - [x] Final commit: `docs: record build decisions and outstanding items`
+
+## Phase 7 — additional marketing pages (added post-launch, at Raphy's request)
+
+PRD.md lists `/for-business`, `/for-institutions` and `/contact` as pages Raphy would
+hand-design in HTML, same as the original four. No such HTML exists yet, so these were built
+within the established design system instead — see DECISIONS.md for the caveat this implies.
+
+- [x] `/for-business` — org/team pitch, real Module 6/8 examples, CTA to `/contact`
+- [x] `/for-institutions` — colleges/libraries pitch, real Module 1/10 examples, CTA to
+      `/contact`
+- [x] `/contact` — name/email/organisation/message form via a Next.js Server Action, no
+      third-party embed; no email transport wired up yet (see `.env.example`, DECISIONS.md)
+- [x] Nav: "Why frameworks" now links to `/why-this-book` instead of the home page's `#why`
+      anchor, matching how "How to use" and "Who it's for" already worked
+- [x] Footer: "For business", "For institutions" and "Contact" now link to their real routes
+      instead of `#` placeholders
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
+      pass; all three new routes build static; the 118 QR routes are unaffected
