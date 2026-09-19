@@ -1,0 +1,310 @@
+/*
+ * /for-institutions has no locked HTML source (unlike home/why-this-book/
+ * how-to-use/who-its-for) — see DECISIONS.md. Structurally identical to
+ * for-business.module.css's pattern, recoloured, since both pitch pages
+ * share the same shape (hero, feature cards, real examples, CTA).
+ */
+
+/* ---- page hero ---- */
+.phero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 420px;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(820px 560px at 14% 14%, #fbbe10 0%, transparent 58%),
+    radial-gradient(660px 480px at 90% 10%, #3b7bf7 0%, transparent 60%),
+    radial-gradient(620px 520px at 70% 92%, #1e5ce0 0%, transparent 56%), var(--ink);
+}
+.gridLines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse at 50% 45%, black, transparent 74%);
+}
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 15, 18, 0.95) 0%,
+    rgba(14, 15, 18, 0.44) 58%,
+    rgba(14, 15, 18, 0.58) 100%
+  );
+}
+.pheroIn {
+  position: relative;
+  padding-block: 70px 54px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  align-items: center;
+}
+@media (min-width: 1000px) {
+  .pheroIn {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 52px;
+    padding-block: 76px 66px;
+  }
+}
+.pheroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+}
+.pheroArt {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line-d2);
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+}
+.pheroArt svg {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.crumb a:hover {
+  color: #fff;
+}
+.phH {
+  font-size: clamp(32px, 5.6vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.phSub {
+  font-size: 16px;
+  color: var(--fg-1);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+.phBtns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- coloured feature cards, same shape as why-this-book's .diffs ---- */
+.diffs {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .diffs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1120px) {
+  .diffs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.diff {
+  position: relative;
+  border: 1px solid var(--line-d);
+  border-radius: 18px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  overflow: hidden;
+  transition: 0.18s;
+}
+.diff::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+}
+.diff:hover {
+  transform: translateY(-3px);
+}
+.diff h3 {
+  font-size: 16px;
+  line-height: 1.25;
+}
+.diff p {
+  color: var(--fg-2);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.diffIc {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.cBlue {
+  background: rgba(59, 123, 247, 0.13);
+  border-color: rgba(59, 123, 247, 0.34);
+}
+.cBlue::before {
+  background: var(--blue);
+}
+.cBlue .diffIc {
+  background: var(--blue);
+}
+.cRed {
+  background: rgba(236, 74, 59, 0.13);
+  border-color: rgba(236, 74, 59, 0.34);
+}
+.cRed::before {
+  background: var(--red);
+}
+.cRed .diffIc {
+  background: var(--red);
+}
+.cYellow {
+  background: rgba(251, 190, 16, 0.14);
+  border-color: rgba(251, 190, 16, 0.36);
+}
+.cYellow::before {
+  background: var(--yellow);
+}
+.cYellow .diffIc {
+  background: var(--yellow);
+  color: #1b1408;
+}
+.cGreen {
+  background: rgba(47, 171, 87, 0.14);
+  border-color: rgba(47, 171, 87, 0.36);
+}
+.cGreen::before {
+  background: var(--green);
+}
+.cGreen .diffIc {
+  background: var(--green);
+}
+
+/* ---- "where courses start" module/lesson list ---- */
+.examples {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .examples {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.example {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--line-l2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: 0.15s;
+}
+.example:hover {
+  border-color: var(--blue);
+  background: var(--wash);
+}
+.exNum {
+  font-family: var(--font-mono-stack);
+  font-size: 11.5px;
+  color: var(--blue);
+  flex: none;
+  width: 34px;
+}
+.exBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.exTitle {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  font-size: 14.5px;
+}
+.exModule {
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  color: var(--gray-l2);
+}
+.exGo {
+  flex: none;
+  color: var(--gray-l);
+}
+
+/* ---- CTA band ---- */
+.cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--blue-deep);
+}
+.ctaBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(680px 420px at 20% 20%, rgba(251, 190, 16, 0.55), transparent 62%),
+    radial-gradient(560px 400px at 90% 90%, rgba(59, 123, 247, 0.8), transparent 60%),
+    var(--blue-deep);
+}
+.ctaIn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-start;
+}
+@media (min-width: 760px) {
+  .ctaIn {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+}
+.ctaIn h2 {
+  font-size: clamp(24px, 3.6vw, 34px);
+  line-height: 1.12;
+  max-width: 24ch;
+}
+.ctaIn p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14.5px;
+  max-width: 48ch;
+  margin-top: 10px;
+}
+.ctaBtns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: none;
+}
