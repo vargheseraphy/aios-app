@@ -1,0 +1,666 @@
+<meta charset="utf-8">
+<title>For Business</title>
+<!--
+DIRECTION CONTRACT
+THESIS: The page is organised by department, not by benefit. A buyer scrolls their own org chart - Sales, Marketing, Operations, People, Leadership - and finds, for each function, the modules that team would live in and one real prompt from them. Refuses the problem/solution/pricing ladder and the fabricated logo wall.
+OWN-WORLD: locked AIOS system. Near-black colour fields alternating with white; blue primary; Archivo/Roboto/Roboto Mono; mono prompt cards with yellow keys and blue placeholders; currentColor line art.
+STORY: a team lead recognises their own functions, sees real frameworks attached to each, understands that one shared set covers the whole org, and requests a bulk quote.
+FIRST VIEWPORT: hero, copy left with the org-coverage line art right; the department rail begins immediately below.
+FORM: candidate 4 of 7 (department-by-department), seed 26d9dcf2, degraded roll, no challengers. Navigation is a sticky side rail - tabs and accordions are already spent on other pages.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.rail a:focus-visible{outline:2px solid var(--blue-hi); outline-offset:3px;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* hero */
+.phero{position:relative; overflow:hidden;}
+.phero .bg{position:absolute; inset:0; background:
+  radial-gradient(820px 560px at 10% 16%, #3B7BF7 0%, transparent 62%),
+  radial-gradient(660px 470px at 86% 8%, #2FAB57 0%, transparent 58%),
+  radial-gradient(600px 500px at 72% 92%, #EC4A3B 0%, transparent 56%), var(--ink);}
+.phero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.phero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.46) 58%, rgba(14,15,18,.58) 100%);}
+.phero-in{position:relative; padding-block:60px 54px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.phero-in{grid-template-columns:1.25fr .75fr; gap:52px; padding-block:68px 62px;}}
+.phero-copy{display:flex; flex-direction:column; gap:20px;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+h1.ph-h{font-size:clamp(32px,5.8vw,52px); line-height:1.07; letter-spacing:-.032em; font-weight:800;}
+.ph-sub{font-size:16px; color:var(--fg-1); line-height:1.55; max-width:68ch;}
+@media(min-width:640px){.ph-sub{font-size:17.5px;}}
+.ph-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;}
+.phero-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-d2); background:rgba(0,0,0,.26); backdrop-filter:blur(4px); min-height:270px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.phero-art svg{position:relative; width:100%; max-width:300px; height:auto;}
+
+/* sections */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:78px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l2);}
+.dark .kicker{color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:84ch; line-height:1.6;}
+.dark .sd{color:var(--fg-2);}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:40px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* ---------- department rail + sections ---------- */
+.dept-wrap{display:grid; grid-template-columns:1fr; gap:0;}
+@media(min-width:1040px){.dept-wrap{grid-template-columns:232px 1fr; gap:64px; align-items:start;}}
+.rail{position:sticky; top:74px; z-index:20; display:flex; gap:8px; overflow-x:auto; scrollbar-width:none;
+  background:#fff; border-bottom:1px solid var(--line-l); padding-block:14px; margin-bottom:26px;}
+.rail::-webkit-scrollbar{display:none;}
+.rail a{display:flex; align-items:center; gap:11px; white-space:nowrap; font-size:14px; color:var(--gray-l);
+  padding:10px 14px; border-radius:8px; border:1px solid var(--line-l); transition:color .16s, background .16s;}
+.rail a .rn{font-family:var(--mono); font-size:10.5px; color:var(--gray-l2);}
+.rail a:hover{color:var(--ink-2); background:var(--wash);}
+.rail a.on{color:var(--ink-2); font-weight:500; background:var(--wash);}
+.rail a.on .dot{background:var(--dc);}
+.rail a.on .rn{color:var(--dc-ink,var(--blue));}
+.rail .rail-lab{display:none;}
+@media(min-width:1040px){
+  .rail{flex-direction:column; gap:1px; overflow:visible; border-bottom:none; padding-block:0; margin-bottom:0; background:none;
+    border-left:1px solid var(--line-l);}
+  .rail a{border:none; border-radius:0; padding:12px 20px; position:relative; background:none;}
+  .rail a::before{content:""; position:absolute; left:-4.5px; top:50%; transform:translateY(-50%); width:8px; height:8px;
+    border-radius:50%; background:var(--line-l2); transition:background .16s, box-shadow .16s;}
+  .rail a:hover{background:none;} .rail a:hover::before{background:var(--gray-l2);}
+  .rail a.on{background:none;}
+  .rail a::before{background:var(--line-l2);}
+  .rail a.on::before{background:var(--dc,var(--blue)); box-shadow:0 0 0 3px color-mix(in srgb, var(--dc,var(--blue)) 22%, transparent);}
+  .rail .rail-lab{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l2); padding:0 20px 16px;}
+}
+
+.dept{padding-block:44px; border-top:1px solid var(--line-l); scroll-margin-top:90px;}
+.c-sales{--dc:#3B7BF7; --dc-ink:#1E5CE0;}
+.c-marketing{--dc:#EC4A3B; --dc-ink:#BE3122;}
+.c-ops{--dc:#2FAB57; --dc-ink:#1B7A3C;}
+.c-people{--dc:#FBBE10; --dc-ink:#8A5B00;}
+.c-leadership{--dc:#1B1C1F; --dc-ink:#1B1C1F;}
+.dark .c-leadership,.covercell.c-leadership{--dc:#FFFFFF;}
+.dept:first-of-type{border-top:none; padding-top:0;}
+.dept-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:10px;}
+.dept-head .dn{font-family:var(--mono); font-size:11px; color:#fff; background:var(--dc-ink); padding:5px 10px; border-radius:7px; letter-spacing:.04em;}
+.dept-head h3{font-size:clamp(21px,2.7vw,28px); letter-spacing:-.026em; line-height:1.1;}
+.dept .situation{font-size:16px; line-height:1.68; color:var(--ink-2); max-width:76ch; margin-bottom:8px;}
+.dept .situation b{font-weight:500;}
+.dept .detail{font-size:14.5px; line-height:1.72; color:var(--gray-l); max-width:78ch;}
+.dept-body{display:grid; grid-template-columns:1fr; gap:28px; margin-top:26px;}
+@media(min-width:900px){.dept-body{grid-template-columns:.85fr 1.15fr; gap:44px; align-items:start;}}
+.collab{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l2); padding-bottom:12px; margin-bottom:16px; border-bottom:1px solid var(--line-l);}
+.mods{display:flex; flex-direction:column;}
+.mod{display:grid; grid-template-columns:26px 1fr auto; gap:12px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line-l);}
+.mod:last-of-type{border-bottom:none;}
+.mod .mn{font-family:var(--mono); font-size:11.5px; color:var(--dc-ink,var(--blue));}
+.mod .mt{font-family:var(--disp); font-weight:700; font-size:15px; line-height:1.25;}
+.mod .mc{font-family:var(--mono); font-size:11px; color:var(--gray-l2); white-space:nowrap;}
+
+/* prompt card */
+.promptcard{background:var(--ink); border-radius:14px; overflow:hidden; border:1px solid #23262E; box-shadow:0 24px 50px -28px rgba(10,14,25,.45);}
+.pc-top{display:flex; align-items:center; gap:9px; padding:12px 14px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:2px 6px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--fg-3);}
+.pc-body{padding:16px 15px; font-family:var(--mono); font-size:11.5px; line-height:1.95; color:rgba(255,255,255,.88); white-space:pre-wrap; word-break:break-word;}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:12px 14px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .pairs{font-size:11px; color:var(--fg-3); max-width:38ch;}
+.copybtn{margin-left:auto;} .copybtn.done{background:var(--green); color:#fff;}
+
+/* ---------- coverage strip ---------- */
+.cover{display:grid; grid-template-columns:1fr; gap:34px;}
+@media(min-width:1040px){.cover{grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center;}}
+.cover p{font-size:15px; color:var(--fg-1); line-height:1.74; max-width:62ch; margin-bottom:14px;}
+.cover p b{color:#fff; font-weight:500;}
+.covergrid{display:grid; grid-template-columns:1fr; gap:10px;}
+@media(min-width:620px){.covergrid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1040px){.covergrid{grid-template-columns:repeat(5,1fr); gap:12px;}}
+.covercell{border:1px solid var(--line-d); border-radius:14px; background:rgba(255,255,255,.05); overflow:hidden; display:flex; flex-direction:column;}
+.covercell .bar{height:4px; background:var(--dc);}
+.covercell .inner{padding:15px 15px 17px; display:flex; flex-direction:column; gap:12px; flex:1;}
+.covercell .dept-name{font-family:var(--disp); font-weight:700; font-size:15px; color:#fff; letter-spacing:-.015em;}
+.covercell ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px;}
+.covercell li{display:grid; grid-template-columns:24px 1fr; gap:9px; align-items:baseline;}
+.covercell li .n{font-family:var(--mono); font-size:11px; color:var(--dc);}
+.covercell li .t{font-size:12.5px; color:var(--fg-1); line-height:1.4;}
+.cover-legend{margin-top:18px; font-family:var(--mono); font-size:11px; color:var(--fg-3);}
+
+/* ---------- rollout ---------- */
+.roll{display:grid; grid-template-columns:1fr; gap:22px;}
+@media(min-width:900px){.roll{grid-template-columns:repeat(3,1fr); gap:26px;}}
+.rstep{display:flex; flex-direction:column; gap:12px;}
+.rstep .rart{height:130px; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;}
+.rstep .rart svg{position:relative; height:92px; width:auto;}
+.rstep h3{font-size:17.5px;}
+.rstep p{font-size:14px; color:var(--gray-l); line-height:1.65; max-width:44ch;}
+
+/* ---------- quote block ---------- */
+.quote{position:relative; overflow:hidden; background:var(--ink);}
+.quote .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 16% 10%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 440px at 88% 92%, rgba(47,171,87,.8), transparent 60%),
+  radial-gradient(520px 380px at 60% 50%, rgba(251,190,16,.28), transparent 62%), var(--blue-deep);}
+.quote .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.quote-in{position:relative; display:grid; gap:34px; grid-template-columns:1fr;}
+@media(min-width:960px){.quote-in{grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}}
+.quote h2{font-size:clamp(27px,4.2vw,42px); line-height:1.07; max-width:22ch; margin-bottom:14px;}
+.quote p{color:rgba(255,255,255,.88); font-size:15px; max-width:58ch; margin-bottom:26px;}
+.qfacts{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+.qfact{border:1px solid rgba(255,255,255,.22); border-radius:12px; background:rgba(0,0,0,.26); padding:12px 18px;}
+.qfact b{display:block; font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.02em;}
+.qfact span{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-top:6px;}
+.ordercard{background:rgba(0,0,0,.34); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:26px; backdrop-filter:blur(8px);}
+.ordercard h3{font-size:18px; margin-bottom:16px;}
+.orow{display:flex; align-items:center; gap:13px; padding:13px 0; border-bottom:1px solid rgba(255,255,255,.14); font-size:14px;}
+.orow:last-of-type{border-bottom:none;}
+.orow .oi{width:30px; height:30px; border-radius:8px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.orow span{color:rgba(255,255,255,.86);}
+.ordercard .btn{width:100%; margin-top:18px;}
+.ordercard .note{margin-top:12px; font-family:var(--mono); font-size:10.5px; color:rgba(255,255,255,.55); text-align:center;}
+
+/* subscribe */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .rail a,.btn{transition:none;}}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a class="on" href="#">For business</a><a href="#">Articles</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#order">Request a quote</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<header class="phero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad phero-in">
+    <div class="phero-copy">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>For business</span></div>
+      <h1 class="ph-h">Every function in your company already uses AI. None of them the same way.</h1>
+      <p class="ph-sub">Sales prompts differently from operations, which prompts differently from marketing, and none of the output can be compared. One shared set of 108 frameworks fixes the input across the whole org &mdash; and every department gets the ones written for its own job.</p>
+      <div class="ph-btns">
+        <a class="btn btn-white" href="#depts">See it by department</a>
+        <a class="btn btn-line" href="#order">Request a quote</a>
+      </div>
+    </div>
+    <div class="phero-art">
+      <svg viewBox="0 0 300 268" class="line" aria-hidden="true">
+        <!-- one book -->
+        <path class="s" d="M118 20c10-6 24-6 32 2v46c-8-8-22-8-32-2z"/>
+        <path class="s" d="M182 20c-10-6-24-6-32 2v46c8-8 22-8 32-2z"/>
+        <path class="s" d="M150 22v46"/>
+        <text class="t" x="118" y="86" style="font-size:9px; letter-spacing:.09em">ONE BOOK</text>
+
+        <!-- distribution -->
+        <path class="s3" d="M150 96v14"/>
+        <path class="s2" d="M38 110h224"/>
+        <path class="s3" d="M38 110v16M94 110v16M150 110v16M206 110v16M262 110v16"/>
+
+        <!-- five departments, each in its colour -->
+        <circle cx="38"  cy="134" r="8" fill="#3B7BF7"/>
+        <circle cx="94"  cy="134" r="8" fill="#EC4A3B"/>
+        <circle cx="150" cy="134" r="8" fill="#2FAB57"/>
+        <circle cx="206" cy="134" r="8" fill="#FBBE10"/>
+        <circle cx="262" cy="134" r="8" fill="#FFFFFF"/>
+        <text class="t" x="30"  y="158">01</text><text class="t" x="86"  y="158">02</text>
+        <text class="t" x="142" y="158">03</text><text class="t" x="198" y="158">04</text>
+        <text class="t" x="254" y="158">05</text>
+
+        <!-- work coming back in the same shape -->
+        <rect class="s" x="18"  y="176" width="40" height="56" rx="5"/><rect x="18"  y="176" width="40" height="4" rx="2" fill="#3B7BF7"/>
+        <rect class="s" x="74"  y="176" width="40" height="56" rx="5"/><rect x="74"  y="176" width="40" height="4" rx="2" fill="#EC4A3B"/>
+        <rect class="s" x="130" y="176" width="40" height="56" rx="5"/><rect x="130" y="176" width="40" height="4" rx="2" fill="#2FAB57"/>
+        <rect class="s" x="186" y="176" width="40" height="56" rx="5"/><rect x="186" y="176" width="40" height="4" rx="2" fill="#FBBE10"/>
+        <rect class="s" x="242" y="176" width="40" height="56" rx="5"/><rect x="242" y="176" width="40" height="4" rx="2" fill="#FFFFFF"/>
+        <path class="s2" d="M26 196h24M26 208h16M82 196h24M82 208h16M138 196h24M138 208h16M194 196h24M194 208h16M250 196h24M250 208h16"/>
+
+        <text class="t" x="18" y="256" style="font-size:9px; letter-spacing:.09em">SAME SHAPE COMING BACK</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DEPARTMENTS ============ -->
+<section class="light" id="depts"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">By department</div>
+      <h2 class="sh">Find your org chart. Every function has its own frameworks.</h2>
+      <p class="sd">Each one below lists the modules that team lives in and one real prompt from them &mdash; the actual text, not a description of it.</p>
+    </div>
+  </div>
+
+  <div class="dept-wrap">
+    <nav class="rail" id="rail" aria-label="Departments">
+      <span class="rail-lab">Jump to</span>
+      <a href="#d-sales" class="c-sales on"><span class="rn">01</span>Sales</a>
+      <a href="#d-marketing" class="c-marketing"><span class="rn">02</span>Marketing</a>
+      <a href="#d-ops" class="c-ops"><span class="rn">03</span>Operations</a>
+      <a href="#d-people" class="c-people"><span class="rn">04</span>People</a>
+      <a href="#d-leadership" class="c-leadership"><span class="rn">05</span>Leadership</a>
+    </nav>
+
+    <div>
+      <!-- SALES -->
+      <div class="dept c-sales" id="d-sales">
+        <div class="dept-head"><span class="dn">01</span><h3>Sales</h3></div>
+        <p class="situation">Every rep runs discovery their own way, so no two call notes answer the same questions. <b>Coaching becomes guesswork, because there is nothing consistent to coach against.</b></p>
+        <p class="detail">Module 04 gives the team one structure for discovery, qualification, objections and proposals. Module 03 sits behind it, so the market view a rep argues from is the same one the company holds.</p>
+        <div class="dept-body">
+          <div>
+            <h4 class="collab">Modules this team lives in</h4>
+            <div class="mods">
+              <div class="mod"><span class="mn">04</span><span class="mt">Sell Like a Pro</span><span class="mc">11 frameworks</span></div>
+              <div class="mod"><span class="mn">03</span><span class="mt">Know Your Market</span><span class="mc">10 frameworks</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="collab">One prompt from it</h4>
+            <div class="promptcard">
+              <div class="pc-top"><span class="tag">4.2</span><span class="ttl">SPIN Discovery Call</span><span class="up">Module 04</span></div>
+              <div class="pc-body">Act as a B2B sales coach using SPIN Selling.
+
+<span class="k">I am selling:</span> <span class="v">[YOUR PRODUCT OR SERVICE]</span>
+<span class="k">Prospect role:</span> <span class="v">[JOB TITLE AND INDUSTRY]</span>
+<span class="k">Known context:</span> <span class="v">[WHAT YOU ALREADY KNOW]</span>
+
+Generate 3 questions for each stage:
+<span class="k">SITUATION</span> &mdash; their current state and setup
+<span class="k">PROBLEM</span> &mdash; the pain they have not named
+<span class="k">IMPLICATION</span> &mdash; the cost of leaving it alone
+<span class="k">NEED-PAYOFF</span> &mdash; let them state the value</div>
+              <div class="pc-foot"><span class="pairs">Pairs with 4.3 BANT &middot; 4.5 Objection Handling</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARKETING -->
+      <div class="dept c-marketing" id="d-marketing">
+        <div class="dept-head"><span class="dn">02</span><h3>Marketing</h3></div>
+        <p class="situation">Three people describe the company three ways in the same week, on the site, in a deck and in a campaign. <b>The positioning drifts without anyone deciding to change it.</b></p>
+        <p class="detail">Module 05 puts messaging, content and launches on one spine. Module 02 anchors it to what the business actually is, so the story marketing tells matches the model the founders are running.</p>
+        <div class="dept-body">
+          <div>
+            <h4 class="collab">Modules this team lives in</h4>
+            <div class="mods">
+              <div class="mod"><span class="mn">05</span><span class="mt">Market Your Message</span><span class="mc">10 frameworks</span></div>
+              <div class="mod"><span class="mn">02</span><span class="mt">Design Your Business</span><span class="mc">10 frameworks</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="collab">One prompt from it</h4>
+            <div class="promptcard">
+              <div class="pc-top"><span class="tag">5.1</span><span class="ttl">StoryBrand &mdash; SB7</span><span class="up">Module 05</span></div>
+              <div class="pc-body">Act as a StoryBrand messaging consultant
+using the SB7 framework.
+
+<span class="k">My business:</span> <span class="v">[WHAT YOU DO AND WHO YOU SERVE]</span>
+<span class="k">Customer's goal:</span> <span class="v">[WHAT THEY WANT TO ACHIEVE]</span>
+
+Build the full SB7:
+<span class="k">CHARACTER</span> &mdash; who is the hero, specifically
+<span class="k">PROBLEM</span> &mdash; external, internal, philosophical
+<span class="k">GUIDE</span> &mdash; how we show empathy and authority</div>
+              <div class="pc-foot"><span class="pairs">Pairs with 3.7 Positioning &middot; 5.7 Brand Voice</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPERATIONS -->
+      <div class="dept c-ops" id="d-ops">
+        <div class="dept-head"><span class="dn">03</span><h3>Operations</h3></div>
+        <p class="situation">The process lives in one person's head and gets explained again every time someone new asks. <b>Documenting it keeps losing to doing it.</b></p>
+        <p class="detail">Module 07 turns a process into a written SOP in one pass, then gives you the tools to find the constraint, prioritise fixes and stop the same failure recurring. Module 08 covers the calls that come out of it.</p>
+        <div class="dept-body">
+          <div>
+            <h4 class="collab">Modules this team lives in</h4>
+            <div class="mods">
+              <div class="mod"><span class="mn">07</span><span class="mt">Operate with Precision</span><span class="mc">12 frameworks</span></div>
+              <div class="mod"><span class="mn">08</span><span class="mt">Decide with Confidence</span><span class="mc">10 frameworks</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="collab">One prompt from it</h4>
+            <div class="promptcard">
+              <div class="pc-top"><span class="tag">7.1</span><span class="ttl">SOP Generation &mdash; SIPOC</span><span class="up">Module 07</span></div>
+              <div class="pc-body">Act as an operations consultant specialising
+in SOP documentation.
+
+<span class="k">Process to document:</span> <span class="v">[NAME AND DESCRIBE IT]</span>
+<span class="k">Who performs it:</span> <span class="v">[ROLE AND EXPERIENCE]</span>
+<span class="k">Tools and systems:</span> <span class="v">[SOFTWARE, PLATFORMS]</span>
+<span class="k">How often it runs:</span> <span class="v">[DAILY / WEEKLY]</span>
+
+Generate a complete SOP using SIPOC:
+Suppliers, Inputs, Process steps, Outputs,
+Customers &mdash; then purpose and scope.</div>
+              <div class="pc-foot"><span class="pairs">Pairs with 7.2 Swimlane &middot; 6.1 RACI Matrix</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PEOPLE -->
+      <div class="dept c-people" id="d-people">
+        <div class="dept-head"><span class="dn">04</span><h3>People</h3></div>
+        <p class="situation">Managers who were promoted for doing the work now run reviews, hiring loops and hard conversations. <b>Most of them are improvising, and the quality swings by manager.</b></p>
+        <p class="detail">Module 06 covers the twelve that matter: goals, 1-on-1s, feedback, hiring filters, delegation, meeting design. Every manager runs the same structures, so an employee's experience stops depending on who they report to.</p>
+        <div class="dept-body">
+          <div>
+            <h4 class="collab">Modules this team lives in</h4>
+            <div class="mods">
+              <div class="mod"><span class="mn">06</span><span class="mt">Build Your Team</span><span class="mc">12 frameworks</span></div>
+              <div class="mod"><span class="mn">10</span><span class="mt">Lead Yourself First</span><span class="mc">11 frameworks</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="collab">One prompt from it</h4>
+            <div class="promptcard">
+              <div class="pc-top"><span class="tag">6.5</span><span class="ttl">SBI Feedback Model</span><span class="up">Module 06</span></div>
+              <div class="pc-body">Act as a leadership development coach.
+
+<span class="k">Situation I need to give feedback on:</span>
+  <span class="v">[WHAT HAPPENED &mdash; CONTEXT AND BEHAVIOUR]</span>
+
+Format this as a clean SBI statement:
+<span class="k">SITUATION</span> &mdash; when and where exactly, be
+  specific: meeting, call, report, date
+<span class="k">BEHAVIOUR</span> &mdash; observable actions only,
+  no interpretation
+<span class="k">IMPACT</span> &mdash; the effect on me, the team,
+  the outcome</div>
+              <div class="pc-foot"><span class="pairs">Pairs with 6.9 Radical Candor &middot; 6.3 GROW Model</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <div class="dept c-leadership" id="d-leadership">
+        <div class="dept-head"><span class="dn">05</span><h3>Leadership</h3></div>
+        <p class="situation">Each function reports the number it likes best, and the board deck is assembled from five different definitions of progress. <b>Nobody is lying; nobody is measuring the same thing either.</b></p>
+        <p class="detail">Module 09 settles what the company counts and why. Module 01 is the one everybody reads first, because it is where the shared way of framing a question comes from in the first place.</p>
+        <div class="dept-body">
+          <div>
+            <h4 class="collab">Modules this team lives in</h4>
+            <div class="mods">
+              <div class="mod"><span class="mn">09</span><span class="mt">Finance &amp; Metrics</span><span class="mc">9 frameworks</span></div>
+              <div class="mod"><span class="mn">01</span><span class="mt">Think Like a Strategist</span><span class="mc">13 frameworks</span></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="collab">One prompt from it</h4>
+            <div class="promptcard">
+              <div class="pc-top"><span class="tag">9.3</span><span class="ttl">North Star Metric &amp; OMTM</span><span class="up">Module 09</span></div>
+              <div class="pc-body">Act as a growth strategy advisor specialising
+in metrics design.
+
+<span class="k">My business:</span> <span class="v">[PRODUCT AND BUSINESS MODEL]</span>
+<span class="k">Stage:</span> <span class="v">[EARLY TRACTION / GROWTH / SCALING]</span>
+<span class="k">Currently tracked:</span> <span class="v">[WHAT YOU MEASURE NOW]</span>
+
+<span class="k">Step 1:</span> Define my North Star Metric. It must
+measure customer value, predict revenue, be
+trackable, and be moveable by my team.
+Suggest 3 candidates, recommend the strongest.</div>
+              <div class="pc-foot"><span class="pairs">Pairs with 9.4 Funnel Analysis &middot; 6.2 OKRs</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ COVERAGE ============ -->
+<section class="dark"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Coverage</div>
+      <h2 class="sh">Five functions. Ten modules. One book on every desk.</h2>
+    </div>
+  </div>
+  <div class="cover">
+    <div>
+      <p>No department gets a cut-down version. <b>The same 108 frameworks ship to everyone</b> &mdash; what differs is where each team starts reading.</p>
+      <p>That is the whole mechanism. When sales, ops and marketing all frame a question the same way, their answers arrive in a shape the next person can actually use, and reviewing work stops being a rewrite.</p>
+      <div class="ph-btns" style="margin-top:22px;">
+        <a class="btn btn-white" href="#order">Request a quote</a>
+        <a class="btn btn-line" href="home.html#modules">Browse all 10 modules</a>
+      </div>
+    </div>
+    <div class="covergrid">
+      <div class="covercell c-sales"><span class="bar"></span><div class="inner"><span class="dept-name">Sales</span><ul><li><span class="n">04</span><span class="t">Sell Like a Pro</span></li><li><span class="n">03</span><span class="t">Know Your Market</span></li></ul></div></div>
+      <div class="covercell c-marketing"><span class="bar"></span><div class="inner"><span class="dept-name">Marketing</span><ul><li><span class="n">05</span><span class="t">Market Your Message</span></li><li><span class="n">02</span><span class="t">Design Your Business</span></li></ul></div></div>
+      <div class="covercell c-ops"><span class="bar"></span><div class="inner"><span class="dept-name">Operations</span><ul><li><span class="n">07</span><span class="t">Operate with Precision</span></li><li><span class="n">08</span><span class="t">Decide with Confidence</span></li></ul></div></div>
+      <div class="covercell c-people"><span class="bar"></span><div class="inner"><span class="dept-name">People</span><ul><li><span class="n">06</span><span class="t">Build Your Team</span></li><li><span class="n">10</span><span class="t">Lead Yourself First</span></li></ul></div></div>
+      <div class="covercell c-leadership"><span class="bar"></span><div class="inner"><span class="dept-name">Leadership</span><ul><li><span class="n">09</span><span class="t">Finance &amp; Metrics</span></li><li><span class="n">01</span><span class="t">Think Like a Strategist</span></li></ul></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ROLLOUT ============ -->
+<section class="wash"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Rollout</div>
+      <h2 class="sh">There is no deployment. It is a book.</h2>
+      <p class="sd">No licences to provision, no seats to manage, no tool for IT to approve. Three steps and the team is running.</p>
+    </div>
+  </div>
+  <div class="roll">
+    <div class="rstep">
+      <div class="rart" style="background:radial-gradient(240px 140px at 30% 35%,#3B7BF7,transparent 62%),radial-gradient(200px 140px at 82% 76%,#6EA0FF,transparent 60%),#0B0C0F">
+        <svg viewBox="0 0 150 96" class="line" aria-hidden="true"><rect class="s" x="16" y="16" width="40" height="60" rx="5"/><rect class="s2" x="34" y="22" width="40" height="60" rx="5"/><rect class="s2" x="52" y="28" width="40" height="60" rx="5"/><path class="s" d="M108 46h26M124 38l10 8-10 8"/></svg>
+      </div>
+      <h3>Order one per desk</h3>
+      <p>Ten copies or more are invoiced directly. The shared-language effect only works when everyone has their own copy open, not one circulating.</p>
+    </div>
+    <div class="rstep">
+      <div class="rart" style="background:radial-gradient(240px 140px at 70% 30%,#2FAB57,transparent 62%),radial-gradient(200px 140px at 20% 80%,#3B7BF7,transparent 60%),#0B0C0F">
+        <svg viewBox="0 0 150 96" class="line" aria-hidden="true"><rect class="s" x="12" y="24" width="44" height="48" rx="5"/><path class="s2" d="M22 40h24M22 52h16"/><circle class="s" cx="96" cy="32" r="11"/><path class="s" d="M78 72c0-10 8-17 18-17s18 7 18 17"/><path class="s3" d="M60 48h22"/><text class="t" x="120" y="52">01</text></svg>
+      </div>
+      <h3>Everyone starts at their function</h3>
+      <p>Sales opens module 04, ops opens 07, managers open 06. Nobody reads front to back first &mdash; they read the module that matches this week.</p>
+    </div>
+    <div class="rstep">
+      <div class="rart" style="background:radial-gradient(240px 140px at 30% 30%,#FBBE10,transparent 60%),radial-gradient(200px 140px at 82% 80%,#EC4A3B,transparent 62%),#0B0C0F">
+        <svg viewBox="0 0 150 96" class="line" aria-hidden="true"><rect class="s" x="14" y="20" width="36" height="46" rx="4"/><rect class="s" x="56" y="20" width="36" height="46" rx="4"/><rect class="s" x="98" y="20" width="36" height="46" rx="4"/><path class="s2" d="M22 34h20M64 34h20M106 34h20M22 46h12M64 46h12M106 46h12"/><path class="s" d="M28 80l8 8 16-18" /></svg>
+      </div>
+      <h3>The work starts matching</h3>
+      <p>Within a fortnight briefs, SOPs and proposals arrive in the same structure. That consistency is the return, not the prompts themselves.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ORDER ============ -->
+<section class="quote" id="order">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad quote-in">
+    <div>
+      <h2>One copy per desk beats one copy per office.</h2>
+      <p>Tell us how many and where they are going. Bulk and institutional orders are handled directly by Raphy, invoiced, with no subscription attached.</p>
+      <div class="qfacts">
+        <div class="qfact"><b>10+</b><span>Copies, invoiced</span></div>
+        <div class="qfact"><b>108</b><span>Frameworks each</span></div>
+        <div class="qfact"><b>276</b><span>Pages</span></div>
+      </div>
+    </div>
+    <div class="ordercard">
+      <h3>What a bulk order includes</h3>
+      <div class="orow"><span class="oi"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span><span>Paperback copies, 276 pages, published by Notion Press</span></div>
+      <div class="orow"><span class="oi"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><path d="M17.25 13.5v7.5M13.5 17.25h7.5"/></svg></span><span>Every QR code live on this site, free for every reader</span></div>
+      <div class="orow"><span class="oi"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.9-6.4"/><path d="M20.5 4.2V9h-4.8"/></svg></span><span>Prompts updated on the site as technique changes &mdash; no reprint</span></div>
+      <div class="orow"><span class="oi"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>Invoiced to the company, no per-seat licence or renewal</span></div>
+      <a class="btn btn-white" href="#">Request a quote</a>
+      <p class="note">Contact form and ordering details to be added before launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@company.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="#">For business</a><a href="#">For institutions</a><a href="#order">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.closest('.promptcard').querySelector('.pc-body').innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+
+  // rail highlights the department in view
+  var links=Array.prototype.slice.call(document.querySelectorAll('#rail a'));
+  var depts=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var i=depts.indexOf(en.target);
+        links.forEach(function(a,j){ a.classList.toggle('on', j===i); });
+      });
+    },{rootMargin:'-45% 0px -50% 0px', threshold:0});
+    depts.forEach(function(d){ if(d) io.observe(d); });
+  }
+})();
+</script>

@@ -1,0 +1,599 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact</title>
+<!--
+DIRECTION CONTRACT
+THESIS: Most messages do not need a reply - they need an answer that already exists. The page settles the three most common reasons someone is about to write, in full, on the page itself; states plainly what a reply is and is not; and reserves one form for what genuinely needs a person. Refuses the "we'd love to hear from you" band, the invented response-time promise and the fake support desk.
+OWN-WORLD: locked AIOS system. Near-black colour fields alternating with white; blue primary; Archivo/Roboto/Roboto Mono; currentColor line art; colour-coded blocks.
+STORY: a reader arrives mid-question, finds their question answered two screens before the form, learns who is actually at the other end, and writes only if they still need to.
+FIRST VIEWPORT: hero, copy left, routing line art right - one message, three answered on the page, one through to a person.
+FORM: candidate 6 of 7 (wrong-door triage), seed 81989a90, degraded roll, no challengers. No response-time claim, no support-team fiction, no email address published until one is confirmed.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.dark .btn:focus-visible,.phero .btn:focus-visible,.nav .btn:focus-visible,.icon-btn:focus-visible{outline-color:#fff;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1180px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.avatar-chip[hidden],.icon-btn[hidden]{display:none !important;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, border-color .15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* hero */
+.phero{position:relative; overflow:hidden;}
+.phero .bg{position:absolute; inset:0; background:
+  radial-gradient(780px 540px at 14% 18%, #3B7BF7 0%, transparent 60%),
+  radial-gradient(640px 460px at 84% 10%, #2FAB57 0%, transparent 58%),
+  radial-gradient(600px 500px at 66% 94%, #FBBE10 0%, transparent 56%), var(--ink);}
+.phero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.phero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.48) 58%, rgba(14,15,18,.60) 100%);}
+.phero-in{position:relative; padding-block:60px 54px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.phero-in{grid-template-columns:1.3fr .7fr; gap:52px; padding-block:68px 62px;}}
+.phero-copy{display:flex; flex-direction:column; gap:20px;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+h1.ph-h{font-size:clamp(32px,5.8vw,52px); line-height:1.07; letter-spacing:-.032em; font-weight:800;}
+.ph-sub{font-size:16px; color:var(--fg-1); line-height:1.55; max-width:70ch;}
+@media(min-width:640px){.ph-sub{font-size:17.5px;}}
+.ph-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;}
+.phero-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-d2); background:rgba(0,0,0,.26); backdrop-filter:blur(4px); min-height:272px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.phero-art svg{position:relative; width:100%; max-width:300px; height:auto;}
+
+/* sections */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:78px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l2);}
+.dark .kicker{color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:84ch; line-height:1.6;}
+.dark .sd{color:var(--fg-2);}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:42px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* ---------- triage ---------- */
+.triage{display:flex; flex-direction:column; gap:64px;}
+.tr{--tc:var(--blue); --tcf:#fff; display:grid; grid-template-columns:1fr; gap:24px;}
+@media(min-width:960px){.tr{grid-template-columns:.88fr 1.12fr; gap:56px; align-items:start;}}
+.tr-blue{--tc:#3B7BF7; --tcf:#fff;} .tr-yellow{--tc:#FBBE10; --tcf:#1B1C1F;} .tr-green{--tc:#2FAB57; --tcf:#fff;}
+.tr-q{display:flex; flex-direction:column; gap:14px;}
+.tr-q .tag{font-family:var(--mono); font-weight:500; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--tcf); background:var(--tc); width:fit-content; padding:6px 12px; border-radius:7px;}
+.tr-q .said{font-family:var(--disp); font-weight:700; font-size:clamp(20px,2.7vw,27px); line-height:1.16; letter-spacing:-.022em; max-width:30ch; text-wrap:balance;}
+.tr-q .meta{font-size:13.5px; line-height:1.65; color:var(--gray-l); max-width:56ch;}
+.tr-a{position:relative; overflow:hidden; border-radius:16px; border:1px solid var(--line-l); background:var(--wash); padding:30px 26px 26px;}
+.tr-a::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:var(--tc);}
+.tr-a p{font-size:15px; line-height:1.72; color:var(--ink-2); max-width:68ch;}
+.tr-a p + p{margin-top:12px;}
+.tr-a p b{font-weight:500;}
+.tr-go{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+.golink{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--ink-2); background:#fff; border:1px solid color-mix(in srgb, var(--tc) 45%, var(--line-l2)); border-radius:999px; padding:11px 17px; transition:background .15s;}
+.golink:hover{background:color-mix(in srgb, var(--tc) 10%, #fff);}
+.golink:focus-visible{outline:2px solid var(--ink-2); outline-offset:2px;}
+.golink svg{color:var(--tc);}
+.golink.dead{color:var(--gray-l); border-style:dashed; cursor:default;}
+
+/* ---------- who answers ---------- */
+.who{display:grid; grid-template-columns:1fr; gap:26px;}
+@media(min-width:960px){.who{grid-template-columns:1fr 1fr; gap:30px;}}
+.wcard{border-radius:18px; padding:28px; border:1px solid var(--line-d2); background:var(--panel);}
+.wcard.will{background:linear-gradient(180deg, rgba(47,171,87,.16), rgba(47,171,87,.05)); border-color:rgba(47,171,87,.42);}
+.wcard.wont{background:linear-gradient(180deg, rgba(236,74,59,.15), rgba(236,74,59,.04)); border-color:rgba(236,74,59,.38);}
+.wcard h3{font-size:19px; margin-bottom:6px;}
+.wcard .wsub{font-size:13px; color:var(--fg-2); margin-bottom:20px;}
+.wlist{display:flex; flex-direction:column; gap:14px;}
+.wrow{display:grid; grid-template-columns:22px 1fr; gap:13px; align-items:start; font-size:14.5px; line-height:1.6; color:rgba(255,255,255,.88);}
+.wrow .wi{width:22px; height:22px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px;}
+.will .wrow .wi{background:rgba(47,171,87,.28); color:#8FE3AC;}
+.wont .wrow .wi{background:rgba(236,74,59,.26); color:#FFA79D;}
+.wrow b{color:#fff; font-weight:500;}
+.whorow{display:grid; grid-template-columns:1fr; gap:30px; align-items:center; margin-top:34px;}
+@media(min-width:960px){.whorow{grid-template-columns:1.85fr 1fr; gap:54px;}}
+.whonote{font-size:15px; line-height:1.74; color:var(--fg-1); max-width:70ch;}
+.whonote b{color:#fff; font-weight:500;}
+.whonote .wtag{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:12px;}
+.whoart{position:relative; border-radius:18px; overflow:hidden; min-height:250px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.whoart .artbg{position:absolute; inset:0; background:radial-gradient(320px 250px at 28% 26%,#FBBE10,transparent 62%),radial-gradient(300px 240px at 84% 84%,#3B7BF7,transparent 60%),#0B0C0F;}
+.whoart svg{position:relative; width:100%; max-width:300px; height:auto;}
+
+/* ---------- form ---------- */
+.fwrap{display:grid; grid-template-columns:1fr; gap:34px;}
+@media(min-width:1000px){.fwrap{grid-template-columns:1.35fr .65fr; gap:56px; align-items:start;}}
+.formcard{background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:30px 28px;}
+.routes{border:none; padding:0; margin:0 0 26px;}
+.routes legend{font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); padding:0; margin-bottom:12px;}
+.rgrid{display:flex; gap:9px; flex-wrap:wrap;}
+.rpill input{position:absolute; opacity:0; width:1px; height:1px;}
+.rpill span{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-2); background:#fff; border:1px solid var(--line-l2); border-radius:999px; padding:12px 18px; cursor:pointer; transition:background .15s, border-color .15s, color .15s;}
+.rpill span::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--line-l2); flex:none; transition:background .15s;}
+.rpill span:hover{border-color:var(--gray-l2);}
+.rpill input:checked + span{background:var(--ink-2); color:#fff; border-color:var(--ink-2);}
+.rpill input:checked + span::before{background:var(--blue-hi);}
+.rpill input:focus-visible + span{outline:2px solid var(--ink-2); outline-offset:2px;}
+.fgrid{display:grid; grid-template-columns:1fr; gap:16px;}
+.fgrid + .fgrid{margin-top:16px;}
+@media(min-width:620px){.fgrid.two{grid-template-columns:1fr 1fr;}}
+.field{display:flex; flex-direction:column; gap:7px;}
+.field label{font-size:12.5px; font-weight:500; color:var(--gray-l);}
+.field label .opt{font-weight:400; color:var(--gray-l);}
+.field input,.field textarea{font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:13px 15px; border-radius:10px; border:1px solid var(--line-l2); background:#fff; width:100%;}
+.field textarea{min-height:150px; resize:vertical; line-height:1.6;}
+.field input::placeholder,.field textarea::placeholder{color:#6E7484;}
+.field input:focus,.field textarea:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.inlink{color:var(--blue-lo); font-weight:500;} .inlink:hover{text-decoration:underline;}
+.btn.fitw{width:fit-content;}
+.fhint{margin-top:16px; font-size:13px; line-height:1.65; color:var(--gray-l); background:var(--wash); border-radius:10px; padding:13px 15px;}
+.fhint b{color:var(--ink-2); font-weight:500;}
+.fsend{display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:20px;}
+.fpend{display:flex; align-items:flex-start; gap:11px; margin-top:20px; border:1px dashed var(--line-l2); border-radius:10px; padding:13px 15px; font-size:13px; line-height:1.6; color:var(--gray-l); background:#fff;}
+.fpend b{color:var(--ink-2); font-weight:500;}
+.fpend .pi{color:var(--yellow); flex:none; margin-top:1px;}
+.dark .fpend .pi{color:var(--yellow);}
+.fstatus{font-size:13px; font-weight:500; color:var(--red);}
+.fstatus:empty{display:none;}
+.aside{display:flex; flex-direction:column; gap:16px;}
+.acard{border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:22px;}
+.acard h3{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); margin-bottom:14px;}
+.acard p{font-size:14px; line-height:1.68; color:var(--gray-l);}
+.acard p b{color:var(--ink-2); font-weight:500;}
+.acard p + p{margin-top:10px;}
+.steps{display:flex; flex-direction:column;}
+.step{display:grid; grid-template-columns:24px 1fr; gap:12px; align-items:baseline; padding:11px 0;}
+.step + .step{border-top:1px solid var(--line-l);}
+.step .sn{font-family:var(--mono); font-size:11px; color:var(--blue);}
+.step .st{font-size:13.5px; line-height:1.55; color:var(--gray-l);}
+.step .st b{color:var(--ink-2); font-weight:500;}
+
+/* ---------- routes band ---------- */
+.dest{position:relative; overflow:hidden; background:var(--ink);}
+.dest .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 18% 12%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(600px 430px at 86% 88%, rgba(47,171,87,.5), transparent 60%),
+  radial-gradient(520px 380px at 58% 52%, rgba(251,190,16,.3), transparent 62%), var(--blue-deep);}
+.dest .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 42% 50%, black, transparent 78%);}
+.dest-in{position:relative;}
+.dest h2{font-size:clamp(27px,4.2vw,40px); line-height:1.08; max-width:26ch; margin-bottom:12px;}
+.dest .dlead{color:rgba(255,255,255,.88); font-size:15px; line-height:1.6; max-width:70ch; margin-bottom:34px;}
+.dcards{display:grid; grid-template-columns:1fr; gap:16px;}
+@media(min-width:900px){.dcards{grid-template-columns:1.15fr .95fr .95fr;}}
+.dcard{border:1px solid rgba(255,255,255,.22); border-radius:16px; background:rgba(0,0,0,.30); backdrop-filter:blur(8px); padding:24px; display:flex; flex-direction:column; gap:12px;}
+.dcard .di{width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); display:flex; align-items:center; justify-content:center; color:#fff;}
+.dcard h3{font-size:17px;}
+.dcard p{font-size:13.5px; line-height:1.6; color:rgba(255,255,255,.80); flex:1;}
+.dcard .btn{margin-top:4px;}
+.dcard .pend{font-family:var(--mono); font-size:10px; color:rgba(255,255,255,.55);}
+
+/* subscribe */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+.newspend{flex:1 1 100%; font-size:12.5px; line-height:1.55; color:var(--gray-l);}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .btn,.icon-btn,.golink,.rpill span,.rpill span::before{transition:none;}}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a class="on" href="#">Contact</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#write">Write to Raphy</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <button class="avatar-chip" id="avatarChip" type="button" hidden aria-label="Signed in as RV — click to sign out (preview)">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </span>
+</div></nav>
+
+<header class="phero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad phero-in">
+    <div class="phero-copy">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>Contact</span></div>
+      <h1 class="ph-h">Most reasons to write are already answered on this page.</h1>
+      <p class="ph-sub">There is no support desk behind this book &mdash; there is one person. So the questions that can be answered once are settled below, in full, rather than queued. If yours is not one of them, the form is further down and it reaches him directly.</p>
+      <div class="ph-btns">
+        <a class="btn btn-white" href="#answers">Read the three answers</a>
+        <a class="btn btn-line" href="#write">Skip to the form</a>
+      </div>
+    </div>
+    <div class="phero-art">
+      <svg viewBox="0 0 300 240" class="line" aria-hidden="true">
+        <!-- one incoming message -->
+        <rect class="s" x="20" y="112" width="44" height="32" rx="3"/>
+        <path class="s" d="M20 116l22 15 22-15"/>
+        <text class="t" x="18" y="164" style="font-size:9px; letter-spacing:.09em">ONE MESSAGE</text>
+
+        <!-- routing -->
+        <path class="s2" d="M64 128h32"/>
+        <path class="s2" d="M96 44v168"/>
+        <path class="s2" d="M96 44h52M96 100h52M96 156h52"/>
+        <path class="s" d="M96 212h52"/>
+
+        <!-- settled on the page -->
+        <rect class="s2" x="148" y="30" width="28" height="28" rx="6"/>
+        <path class="s2" d="M156 44l5 5 9-11"/>
+        <text class="t" x="186" y="48">WHERE TO BUY</text>
+
+        <rect class="s2" x="148" y="86" width="28" height="28" rx="6"/>
+        <path class="s2" d="M156 100l5 5 9-11"/>
+        <text class="t" x="186" y="104">PROMPT TROUBLE</text>
+
+        <rect class="s2" x="148" y="142" width="28" height="28" rx="6"/>
+        <path class="s2" d="M156 156l5 5 9-11"/>
+        <text class="t" x="186" y="160">USING IT AT WORK</text>
+
+        <!-- through to a person -->
+        <rect class="s" x="148" y="198" width="28" height="28" rx="6"/>
+        <circle class="s" cx="162" cy="207.5" r="3.6"/>
+        <path class="s" d="M154.5 219c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/>
+        <text class="t" x="186" y="216" style="opacity:.95">EVERYTHING ELSE</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TRIAGE ============ -->
+<section class="light" id="answers"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Before you write</div>
+      <h2 class="sh">Three questions this page can settle without an email.</h2>
+      <p class="sd">Each is answered in full below, with a link to the page that goes further. None of the three needs a form.</p>
+    </div>
+  </div>
+
+  <div class="triage">
+
+    <div class="tr tr-blue">
+      <div class="tr-q">
+        <span class="tag">Buying a copy</span>
+        <h3 class="said">&ldquo;Where do I actually buy the book, and is there a digital version?&rdquo;</h3>
+        <p class="meta">Comes up for individual readers, and for managers buying two or three copies for a team.</p>
+      </div>
+      <div class="tr-a">
+        <p><b>The paperback is published by Notion Press &mdash; 276 pages, 108 frameworks across 10 modules.</b> It is sold through the usual retail listings, and the buying links on this site will point at them.</p>
+        <p>For a single copy, buy it wherever you normally buy books. For ten or more &mdash; a team, a department, a library &mdash; the order goes directly through Raphy and is invoiced, because that is cheaper than retail and does not involve a licence, a platform or a per-seat fee.</p>
+        <p>Whichever copy you end up with, everything behind the QR codes is free and needs no account. Buying more copies does not buy more access; it buys more copies.</p>
+        <div class="tr-go">
+          <span class="golink dead"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 2"/></svg>Retail links added before launch</span>
+          <a class="golink" href="for-business.html"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Team and bulk orders</a>
+          <a class="golink" href="for-institutions.html"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Library and department orders</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr tr-yellow">
+      <div class="tr-q">
+        <span class="tag">A prompt misbehaving</span>
+        <h3 class="said">&ldquo;I ran the prompt and the answer was generic. Is the prompt wrong?&rdquo;</h3>
+        <p class="meta">Usually the same cause, and usually fixable in one edit.</p>
+      </div>
+      <div class="tr-a">
+        <p><b>A generic answer nearly always means the brackets were left as brackets.</b> Every prompt in the book is built around placeholders you replace with your own specifics &mdash; your numbers, your market, your constraint. Pasted unfilled, the model has nothing to work with, so it returns the average of everything it has read.</p>
+        <p>The second most common cause is stopping at the first output. The frameworks are written to be argued with: push back once, name what is wrong, and run it again. That second pass is where the useful answer lives.</p>
+        <p>Both of these, and the rest of the failure modes, are written out on the How To Use page &mdash; including what to do when a model refuses, truncates, or invents a figure.</p>
+        <div class="tr-go">
+          <a class="golink" href="how-to-use.html#trouble"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Troubleshooting a prompt</a>
+          <a class="golink" href="how-to-use.html"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>How to use the book</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tr tr-green">
+      <div class="tr-q">
+        <span class="tag">Using it at work</span>
+        <h3 class="said">&ldquo;Can I use these prompts with my team, or in a class I teach?&rdquo;</h3>
+        <p class="meta">Worth settling before you share a prompt internally, or put one on a slide.</p>
+      </div>
+      <div class="tr-a">
+        <p><b>Yes. Run the prompts at work, in class, in a workshop, in a client meeting.</b> There is no licence to buy, no seat count to declare and no account to create &mdash; the pages behind the QR codes are open to anyone who scans them.</p>
+        <p>The one thing to keep straight is the difference between using a framework and republishing it. Running a prompt with your own data, teaching from it, or pointing people at the page it lives on is exactly what the book is for. Copying the text of the frameworks into your own paid course or product is a separate conversation, and that one does need an email.</p>
+        <p>If your organisation needs something in writing before you can use it internally, say so in the form &mdash; that is exactly the kind of message worth sending.</p>
+        <div class="tr-go">
+          <a class="golink" href="who-its-for.html"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Who it's for</a>
+          <a class="golink" href="#write"><svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Ask about republishing</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- ============ WHO ANSWERS ============ -->
+<section class="dark"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Who is at the other end</div>
+      <h2 class="sh">One author, one inbox. Worth knowing before you write.</h2>
+      <p class="sd">Everything on this site &mdash; the book, the pages behind the codes, the replies &mdash; comes from Raphy Varghese, the author. Knowing that changes which messages are worth sending.</p>
+    </div>
+  </div>
+  <div class="who">
+    <div class="wcard will">
+      <h3>What you will get back</h3>
+      <p class="wsub">Things a single person can genuinely do</p>
+      <div class="wlist">
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>A reply from <b>the author</b>, not a ticket number or an autoresponder.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>A page <b>corrected</b> if you report a mistake &mdash; and the QR code in your printed copy then points at the fixed version.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>A <b>quote for copies</b>, invoiced to you or your institution, with nothing attached to it.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>A straight answer on whether the book covers what you need &mdash; <b>including when it doesn't</b>.</span></div>
+      </div>
+    </div>
+    <div class="wcard wont">
+      <h3>What you won't</h3>
+      <p class="wsub">Not a policy &mdash; simply what one inbox cannot carry</p>
+      <div class="wlist">
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>A <b>prompt written for your specific case</b>. That is what the 108 frameworks are, and they are already yours.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>A review of <b>a business plan, a pitch deck or a financial model</b> sent as an attachment.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>A <b>promised reply date</b>. Some messages are answered quickly and some are not.</span></div>
+        <div class="wrow"><span class="wi"><svg class="i" width="13" height="13" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span><span>A change to <b>what is printed</b> in a copy you already own &mdash; only the page behind the code can be rewritten.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="whorow">
+    <p class="whonote">
+      <span class="wtag">The message worth sending</span>
+      If you have found a mistake &mdash; a prompt that does not match its framework, a code that lands on the wrong page, a figure that looks wrong &mdash; <b>that message is worth more than almost anything else you could send</b>. It is the one kind that improves the copy sitting on everybody else&rsquo;s desk, not just your own: the page gets rewritten, and the code printed in every copy already sold starts pointing at the corrected version. Nobody has to buy anything again.
+    </p>
+    <div class="whoart">
+      <div class="artbg"></div>
+      <svg viewBox="0 0 300 176" class="line" aria-hidden="true">
+        <rect class="s" x="16" y="74" width="40" height="28" rx="3"/>
+        <path class="s" d="M16 77l20 14 20-14"/>
+        <text class="t" x="14" y="124" style="font-size:9px; letter-spacing:.09em">YOUR REPORT</text>
+
+        <path class="s2" d="M64 88h26"/><path class="s2" d="M84 82l6 6-6 6"/>
+
+        <rect class="s" x="104" y="38" width="92" height="104" rx="6"/>
+        <path class="s3" d="M120 62h56M120 78h40M120 94h50"/>
+        <rect class="s" x="120" y="106" width="24" height="24" rx="3"/>
+        <rect class="fd" x="124" y="110" width="6" height="6" rx="1"/>
+        <text class="t" x="104" y="160" style="font-size:9px; letter-spacing:.09em">SAME CODE</text>
+
+        <path class="s2" d="M212 70a30 30 0 0 1 0 60"/>
+        <path class="s2" d="M218 125l-6 5 6 5"/>
+        <text class="t" x="206" y="158" style="font-size:9px; letter-spacing:.09em">REWRITTEN</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ FORM ============ -->
+<section class="wash" id="write"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Everything else</div>
+      <h2 class="sh">What's left, and it goes straight to him.</h2>
+      <p class="sd">Pick what it is about first &mdash; it changes what's useful to include, and the hint under the box will tell you what.</p>
+    </div>
+  </div>
+  <div class="fwrap">
+    <form class="formcard" id="contactForm" novalidate>
+      <fieldset class="routes">
+        <legend>What is this about?</legend>
+        <div class="rgrid">
+          <label class="rpill"><input type="radio" name="topic" value="error" checked><span>A mistake on a page</span></label>
+          <label class="rpill"><input type="radio" name="topic" value="bulk"><span>Copies for a team or library</span></label>
+          <label class="rpill"><input type="radio" name="topic" value="speak"><span>Speaking or a workshop</span></label>
+          <label class="rpill"><input type="radio" name="topic" value="rights"><span>Republishing or licensing</span></label>
+          <label class="rpill"><input type="radio" name="topic" value="other"><span>Something else</span></label>
+        </div>
+      </fieldset>
+
+      <div class="fgrid two">
+        <div class="field">
+          <label for="cName">Your name</label>
+          <input id="cName" name="name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input id="cEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+        </div>
+      </div>
+      <div class="fgrid">
+        <div class="field">
+          <label for="cOrg">Organisation <span class="opt">&mdash; optional</span></label>
+          <input id="cOrg" name="org" type="text" autocomplete="organization" placeholder="Company, college or department">
+        </div>
+      </div>
+
+      <p class="fhint" id="topicHint" aria-live="polite"><b>For a mistake:</b> give the module and lesson number printed beside the framework &mdash; for example 6.6 &mdash; and say what you expected to find. That is enough to fix it.</p>
+
+      <div class="fgrid">
+        <div class="field">
+          <label for="cMsg">Message</label>
+          <textarea id="cMsg" name="message" aria-describedby="topicHint" placeholder="Module and lesson number, then what is wrong with it."></textarea>
+        </div>
+      </div>
+
+      <div class="fpend">
+        <svg class="i pi" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6v5"/><path d="M12 16.2h.01"/></svg>
+        <span><b>This form is not connected yet.</b> The site is still being built, so nothing you type here is sent or stored anywhere. The reply address goes live with the book.</span>
+      </div>
+
+      <div class="fsend">
+        <button class="btn btn-blue" type="submit">Send the message</button>
+        <span class="fstatus" id="fStatus" role="status"></span>
+      </div>
+    </form>
+
+    <aside class="aside">
+      <div class="acard">
+        <h3>What happens to it</h3>
+        <div class="steps">
+          <div class="step"><span class="sn">01</span><span class="st">It arrives in <b>one inbox</b> &mdash; no routing, no queue, no tier.</span></div>
+          <div class="step"><span class="sn">02</span><span class="st">Reported mistakes are checked <b>against the printed page</b> first.</span></div>
+          <div class="step"><span class="sn">03</span><span class="st">If a page needs rewriting, it is rewritten &mdash; <b>the code keeps working</b>.</span></div>
+          <div class="step"><span class="sn">04</span><span class="st">You get told what changed, <b>in a reply from a person</b>.</span></div>
+        </div>
+      </div>
+      <div class="acard">
+        <h3>Faster than writing</h3>
+        <p><b>A prompt behaving oddly?</b> The troubleshooting list on <a class="inlink" href="how-to-use.html#trouble">How to use</a> covers the common causes.</p>
+        <p><b>Looking for a framework?</b> The <a class="inlink" href="home.html#modules">module index</a> is organised by the decision you are making, not by chapter.</p>
+        <p><b>Buying more than ten copies?</b> <a class="inlink" href="for-business.html">For business</a> and <a class="inlink" href="for-institutions.html">For institutions</a> already answer most of it.</p>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. Nothing else.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@example.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="newspend">The mailing list is connected before launch &mdash; like the form above, nothing here is stored yet.</p>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="for-institutions.html#acquire">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  document.documentElement.lang='en-GB';
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  if(lb&&ac){
+    lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; ac.focus(); });
+    ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; lb.focus(); });
+  }
+
+  var HINTS={
+    error:{h:'<b>For a mistake:</b> give the module and lesson number printed beside the framework &mdash; for example 6.6 &mdash; and say what you expected to find. That is enough to fix it.',
+           p:'Module and lesson number, then what is wrong with it.'},
+    bulk:{h:'<b>For copies:</b> the institution or company, how many copies, and the department. A quote comes back with an invoice, not a licence agreement.',
+          p:'How many copies, for whom, and where to invoice.'},
+    speak:{h:'<b>For speaking:</b> the date, the audience and roughly how long. Worth saying which modules matter most to them &mdash; it changes the answer.',
+           p:'Date, audience, length, and which modules matter to them.'},
+    rights:{h:'<b>For republishing:</b> say where the text would appear and whether it is being sold. Teaching from the frameworks needs no permission; reprinting them does.',
+            p:'Where the frameworks would appear, and whether it is a paid product.'},
+    other:{h:'<b>Anything else:</b> one paragraph is plenty. If it is about a specific framework, the lesson number saves a round trip.',
+           p:'What you need, in a paragraph.'}
+  };
+  var hint=document.getElementById('topicHint'), msg=document.getElementById('cMsg');
+  if(hint&&msg) document.querySelectorAll('input[name="topic"]').forEach(function(r){
+    r.addEventListener('change',function(){
+      var d=HINTS[r.value]; if(!d) return;
+      hint.innerHTML=d.h; msg.setAttribute('placeholder',d.p);
+    });
+  });
+
+  var cf=document.getElementById('contactForm'), st=document.getElementById('fStatus');
+  if(cf && st){
+    cf.addEventListener('submit',function(e){
+      e.preventDefault();
+      st.textContent='Not sent \u2014 this form is not connected yet.';
+    });
+  }
+})();
+</script>

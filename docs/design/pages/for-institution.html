@@ -1,0 +1,552 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Institutions</title>
+<!--
+DIRECTION CONTRACT
+THESIS: Acquisition is the easy part; circulation is the test. The page argues from what happens to the book after it reaches the shelf - three shelf tests, the mechanism that makes a student open it mid-assignment, and where it sits in an existing syllabus. Refuses the generic "equip your students" pitch, the invented circulation statistic and the logo wall.
+OWN-WORLD: locked AIOS system. Near-black colour fields alternating with white; blue primary; Archivo/Roboto/Roboto Mono; mono prompt cards with yellow keys and blue placeholders; currentColor line art.
+STORY: a librarian or department head recognises their real worry - another AI title nobody borrows - sees why this one is opened rather than read, finds it already maps to courses they teach, and requests a quote.
+FIRST VIEWPORT: hero, copy left with shelf line art right; the first shelf test begins immediately below.
+FORM: candidate 7 of 7 (usage-after-acquisition case), seed a15ad461, degraded roll, no challengers. Argued from mechanism only - no usage or circulation figures exist, so none are claimed.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink); color:#fff; font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.65; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-ink{background:var(--ink-2); color:#fff;} .btn-ink:hover{background:#2A2C33;}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible{outline:2px solid var(--blue-hi); outline-offset:3px;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d);}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1040px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* hero */
+.phero{position:relative; overflow:hidden;}
+.phero .bg{position:absolute; inset:0; background:
+  radial-gradient(820px 560px at 12% 16%, #FBBE10 0%, transparent 58%),
+  radial-gradient(680px 480px at 86% 8%, #3B7BF7 0%, transparent 60%),
+  radial-gradient(600px 500px at 70% 92%, #EC4A3B 0%, transparent 56%), var(--ink);}
+.phero .grid-lines{position:absolute; inset:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 50% 45%, black, transparent 74%);}
+.phero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(14,15,18,.95) 0%, rgba(14,15,18,.48) 58%, rgba(14,15,18,.60) 100%);}
+.phero-in{position:relative; padding-block:60px 54px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.phero-in{grid-template-columns:1.25fr .75fr; gap:52px; padding-block:68px 62px;}}
+.phero-copy{display:flex; flex-direction:column; gap:20px;}
+.crumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3);}
+.crumb a:hover{color:#fff;}
+h1.ph-h{font-size:clamp(32px,5.8vw,52px); line-height:1.07; letter-spacing:-.032em; font-weight:800;}
+.ph-sub{font-size:16px; color:var(--fg-1); line-height:1.55; max-width:68ch;}
+@media(min-width:640px){.ph-sub{font-size:17.5px;}}
+.ph-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;}
+.phero-art{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line-d2); background:rgba(0,0,0,.26); backdrop-filter:blur(4px); min-height:272px; display:flex; align-items:center; justify-content:center; padding:26px;}
+.phero-art svg{position:relative; width:100%; max-width:300px; height:auto;}
+
+/* sections */
+.light{background:#fff; color:var(--ink-2);}
+.wash{background:var(--wash); color:var(--ink-2);}
+.dark{background:var(--ink); color:#fff;}
+section{padding-block:78px;}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l2);}
+.dark .kicker{color:var(--fg-3);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:84ch; line-height:1.6;}
+.dark .sd{color:var(--fg-2);}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:42px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+
+/* ---------- shelf tests ---------- */
+.test{--tc:var(--blue); --tcf:#fff; display:grid; grid-template-columns:1fr; gap:26px; padding-block:42px; border-top:1px solid var(--line-l);}
+.t-blue{--tc:#3B7BF7; --tcf:#fff;} .t-yellow{--tc:#FBBE10; --tcf:#1B1C1F;} .t-green{--tc:#2FAB57; --tcf:#fff;}
+.head-row + .test{border-top:none; padding-top:0;}
+@media(min-width:960px){.test{grid-template-columns:1fr 1fr; gap:56px; align-items:start;}}
+.test-q{display:flex; flex-direction:column; gap:14px;}
+.test-q .tn{font-family:var(--mono); font-size:11px; font-weight:500; color:var(--tcf); background:var(--tc); width:fit-content; padding:6px 12px; border-radius:7px; letter-spacing:.09em; text-transform:uppercase;}
+.test-q h3{font-size:clamp(20px,2.7vw,27px); line-height:1.15; max-width:30ch;}
+.test-q .usual{font-size:14.5px; line-height:1.72; color:var(--gray-l); max-width:68ch;}
+.test-a{position:relative; border-radius:16px; border:1px solid var(--line-l); background:var(--wash); padding:30px 26px 26px; overflow:hidden;}
+.test-a::before{content:""; position:absolute; inset:0 0 auto 0; height:4px; background:var(--tc);}
+.test-a .alab{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l2); display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+.test-a .alab::after{content:""; flex:1; height:1px; background:var(--line-l2);}
+.test-a p{font-size:15px; line-height:1.72; color:var(--ink-2); max-width:68ch;}
+.test-a p + p{margin-top:12px;}
+.test-a p b{font-weight:500;}
+.test-a .ev{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+.evchip{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-2); background:#fff; border:1px solid color-mix(in srgb, var(--tc) 45%, var(--line-l2)); border-radius:999px; padding:7px 14px;}
+.evchip i{width:8px; height:8px; border-radius:50%; background:var(--tc); display:inline-block; flex:none;}
+
+/* ---------- the mechanism ---------- */
+.mech{display:grid; grid-template-columns:1fr; gap:30px; align-items:center;}
+@media(min-width:1000px){.mech{grid-template-columns:.92fr 1.08fr; gap:54px;}}
+.mech p{font-size:15px; line-height:1.74; color:var(--fg-1); max-width:62ch; margin-bottom:14px;}
+.mech p b{color:#fff; font-weight:500;}
+.mech .seq{display:flex; flex-direction:column; gap:0; margin-top:24px;}
+.seqrow{display:grid; grid-template-columns:28px 1fr; gap:14px; align-items:baseline; padding:13px 0; border-top:1px solid var(--line-d);}
+.seqrow:first-child{border-top:none;}
+.seqrow .sn{font-family:var(--mono); font-size:11px; color:var(--blue-hi);}
+.seqrow .st{font-size:14px; color:var(--fg-1); line-height:1.55;}
+.seqrow .st b{color:#fff; font-weight:500;}
+.promptcard{background:#0B0C0F; border-radius:14px; overflow:hidden; border:1px solid #23262E; box-shadow:0 24px 50px -28px rgba(0,0,0,.6);}
+.pc-top{display:flex; align-items:center; gap:9px; padding:12px 14px; border-bottom:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-top .tag{font-family:var(--mono); font-size:10px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.3); border-radius:5px; padding:2px 6px;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13px; color:#fff;}
+.pc-top .up{margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--fg-3);}
+.pc-body{padding:16px 15px; font-family:var(--mono); font-size:11.5px; line-height:1.95; color:rgba(255,255,255,.88); white-space:pre-wrap; word-break:break-word;}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.pc-foot{display:flex; align-items:center; gap:10px; padding:12px 14px; border-top:1px solid var(--line-d); background:var(--panel); flex-wrap:wrap;}
+.pc-foot .pairs{font-size:11px; color:var(--fg-3); max-width:38ch;}
+.copybtn{margin-left:auto;} .copybtn.done{background:var(--green); color:#fff;}
+
+/* ---------- syllabus table ---------- */
+.syl-wrap{overflow-x:auto; scrollbar-width:none; border:1px solid var(--line-l); border-radius:16px;}
+.syl-wrap:focus-visible{outline:2px solid var(--blue); outline-offset:3px;}
+.syl caption{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.syl-wrap::-webkit-scrollbar{display:none;}
+.syl{min-width:620px; width:100%; border-collapse:collapse; font-size:14px; background:#fff;}
+.syl th{text-align:left; font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-l2); padding:16px 18px; background:var(--wash); border-bottom:1px solid var(--line-l); white-space:nowrap;}
+.syl td{padding:14px 18px; border-bottom:1px solid var(--line-l); vertical-align:middle;}
+.syl tr:last-child td{border-bottom:none;}
+.syl tbody tr:hover td{background:var(--wash);}
+.syl .mn{font-family:var(--mono); font-size:11.5px; color:var(--blue); white-space:nowrap;}
+.syl .mt{font-family:var(--disp); font-weight:700; font-size:14.5px; color:var(--ink-2);}
+.syl .course{color:var(--gray-l); font-size:13.5px;}
+.syl .cnt{font-family:var(--mono); font-size:11.5px; color:var(--gray-l2); white-space:nowrap; text-align:right;}
+.syl-note{margin-top:16px; font-size:13px; color:var(--gray-l); max-width:76ch;}
+
+/* ---------- edition ---------- */
+.ed{display:grid; grid-template-columns:1fr; gap:30px; align-items:center;}
+@media(min-width:960px){.ed{grid-template-columns:1.35fr .65fr; gap:54px;}}
+.ed p{font-size:15px; line-height:1.74; color:var(--gray-l); max-width:62ch; margin-bottom:14px;}
+.ed p b{color:var(--ink-2); font-weight:500;}
+.ed-art{position:relative; border-radius:18px; overflow:hidden; min-height:280px; display:flex; align-items:center; justify-content:center; padding:28px;}
+.ed-art .artbg{position:absolute; inset:0; background:radial-gradient(340px 260px at 30% 26%,#3B7BF7,transparent 62%),radial-gradient(300px 250px at 82% 82%,#2FAB57,transparent 60%),#0B0C0F;}
+.ed-art svg{position:relative; width:100%; max-width:300px; height:auto;}
+
+/* ---------- acquisition ---------- */
+.acq{position:relative; overflow:hidden; background:var(--ink);}
+.acq .bg{position:absolute; inset:0; background:
+  radial-gradient(760px 440px at 16% 10%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 440px at 88% 92%, rgba(251,190,16,.5), transparent 60%),
+  radial-gradient(520px 380px at 60% 50%, rgba(47,171,87,.35), transparent 62%), var(--blue-deep);}
+.acq .lines{position:absolute; inset:0; opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.acq-in{position:relative; display:grid; gap:34px; grid-template-columns:1fr;}
+@media(min-width:960px){.acq-in{grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}}
+.acq h2{font-size:clamp(27px,4.2vw,42px); line-height:1.07; max-width:28ch; margin-bottom:14px;}
+.acq p{color:rgba(255,255,255,.88); font-size:15px; line-height:1.6; max-width:66ch; margin-bottom:24px;}
+.acq-facts{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+.afact{border:1px solid rgba(255,255,255,.22); border-radius:12px; background:rgba(0,0,0,.26); padding:12px 18px;}
+.afact b{display:block; font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.02em;}
+.afact span{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-top:6px;}
+.acqcard{background:rgba(0,0,0,.34); border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:26px; backdrop-filter:blur(8px);}
+.acqcard h3{font-size:18px; margin-bottom:16px;}
+.arow{display:flex; align-items:center; gap:13px; padding:13px 0; border-bottom:1px solid rgba(255,255,255,.14); font-size:14px;}
+.arow:last-of-type{border-bottom:none;}
+.arow .ai{width:30px; height:30px; border-radius:8px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); display:flex; align-items:center; justify-content:center; flex:none; color:#fff;}
+.arow span{color:rgba(255,255,255,.86);}
+.acqcard .btn{width:100%; margin-top:18px;}
+.acqcard .note{margin-top:12px; font-family:var(--mono); font-size:10.5px; color:rgba(255,255,255,.55); text-align:center;}
+
+/* subscribe */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:var(--gray-l2);}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-3);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .btn,.icon-btn,.news-form input{transition:none;}}
+</style>
+
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a class="on" href="#">For institutions</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#acquire">Request a quote</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <span class="avatar-chip" id="avatarChip" hidden title="Signed-in state preview">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </span>
+  </span>
+</div></nav>
+
+<header class="phero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad phero-in">
+    <div class="phero-copy">
+      <div class="crumb"><a href="home.html">Home</a> <span>/</span> <span>For institutions</span></div>
+      <h1 class="ph-h">Acquiring a book about AI is easy. Getting it borrowed is the hard part.</h1>
+      <p class="ph-sub">Most libraries already hold several. They go out of date, they read like commentary, and students cite them without opening them. This one is built to be opened mid-assignment, which is a different design problem entirely.</p>
+      <div class="ph-btns">
+        <a class="btn btn-white" href="#tests">The three shelf tests</a>
+        <a class="btn btn-line" href="#syllabus">Where it fits in the syllabus</a>
+      </div>
+    </div>
+    <div class="phero-art">
+      <svg viewBox="0 0 300 292" class="line" aria-hidden="true">
+        <!-- shelf of books, one pulled out -->
+        <path class="s2" d="M26 40h248"/>
+        <rect class="s2" x="34" y="52" width="26" height="92" rx="3"/>
+        <rect class="s2" x="66" y="52" width="22" height="92" rx="3"/>
+        <rect class="s2" x="94" y="52" width="28" height="92" rx="3"/>
+        <rect class="s2" x="128" y="52" width="24" height="92" rx="3"/>
+        <rect class="s2" x="158" y="52" width="26" height="92" rx="3"/>
+        <rect class="s2" x="190" y="52" width="22" height="92" rx="3"/>
+        <rect class="s2" x="218" y="52" width="26" height="92" rx="3"/>
+        <rect class="s2" x="250" y="52" width="24" height="92" rx="3"/>
+        <path class="s" d="M26 152h248"/>
+        <text class="t" x="26" y="30" style="font-size:9px; letter-spacing:.09em">ON THE SHELF</text>
+
+        <!-- the one in use, pulled forward and open -->
+        <path class="s" d="M88 186c18-9 44-9 62 4v72c-18-13-44-13-62-4z"/>
+        <path class="s" d="M212 186c-18-9-44-9-62 4v72c18-13 44-13 62-4z"/>
+        <path class="s" d="M150 190v72"/>
+        <path class="s2" d="M102 208h30M102 220h21M168 208h30M168 220h23"/>
+        <rect class="s" x="166" y="224" width="20" height="20" rx="3"/>
+        <rect class="fd" x="170" y="228" width="5.5" height="5.5" rx="1"/>
+        <path class="s3" d="M150 158v20"/>
+        <circle class="fd" cx="150" cy="172" r="3.4"/>
+        <text class="t" x="84" y="286" style="font-size:9px; letter-spacing:.09em">IN SOMEONE&#39;S HANDS</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SHELF TESTS ============ -->
+<section class="light" id="tests"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">The shelf test</div>
+      <h2 class="sh">Three questions an acquisitions decision actually turns on.</h2>
+      <p class="sd">Not whether the content is sound &mdash; plenty of it is. Whether the book gets taken down again after the first week.</p>
+    </div>
+  </div>
+
+  <div class="test t-blue">
+    <div class="test-q">
+      <span class="tn">The Tuesday test</span>
+      <h3>Is there a reason to open it on a Tuesday afternoon?</h3>
+      <p class="usual">A book that explains a subject is read once, if at all. It competes with a lecture, a video and a search box, and it usually loses, because none of those require walking to a shelf.</p>
+    </div>
+    <div class="test-a">
+      <h4 class="alab">What this one does instead</h4>
+      <p>Every framework ends in a prompt the reader runs immediately, against their own assignment or case study. <b>The book is not the destination; it is the thing you consult on the way to finishing something.</b></p>
+      <p>That changes when it gets picked up. Not at the start of a course, but at the point a student is stuck on a specific question &mdash; which is the only moment a reference title earns its shelf space.</p>
+      <div class="ev">
+        <span class="evchip"><i></i>108 frameworks, each ending in a prompt</span>
+        <span class="evchip"><i></i>Indexed by decision, not by chapter</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test t-yellow">
+    <div class="test-q">
+      <span class="tn">The accuracy test</span>
+      <h3>Will it still be accurate at the end of the accession period?</h3>
+      <p class="usual">This is where most AI titles fail. Technique moves faster than print, so a book bought today ends up carrying advice that is partly wrong &mdash; and nothing on the page tells a student which parts.</p>
+    </div>
+    <div class="test-a">
+      <h4 class="alab">What this one does instead</h4>
+      <p>Every framework in the printed book carries a QR code pointing at its own page on this site. <b>When a technique changes, that page is rewritten; the printed copy keeps working, because the code points at a page rather than at fixed text.</b></p>
+      <p>The shelf copy stays valid without a second edition and without a replacement purchase. What ages is the screen, and the screen is maintained.</p>
+      <div class="ev">
+        <span class="evchip"><i></i>Free to read, no account, no institutional licence</span>
+        <span class="evchip"><i></i>Updated without reprinting</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test t-green">
+    <div class="test-q">
+      <span class="tn">The faculty test</span>
+      <h3>Does a faculty member have a reason to point at it?</h3>
+      <p class="usual">A title nobody assigns gets borrowed by nobody. Recommending a book usually means restructuring a session around it, which is why most recommendations never happen.</p>
+    </div>
+    <div class="test-a">
+      <h4 class="alab">What this one does instead</h4>
+      <p>The ten modules map onto courses already being taught &mdash; strategy, entrepreneurship, marketing, operations, organisational behaviour, finance. <b>A lecturer can point at one framework for one session without changing the syllabus around it.</b></p>
+      <p>It works as a companion to coursework rather than a replacement for a textbook, which is a far lower bar for a faculty member to clear.</p>
+      <div class="ev">
+        <span class="evchip"><i></i>Maps to 10 standard course areas</span>
+        <span class="evchip"><i></i>Usable one framework at a time</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ THE MECHANISM ============ -->
+<section class="dark"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">What a student actually does with it</div>
+      <h2 class="sh">Four steps, and none of them are "read the chapter".</h2>
+    </div>
+  </div>
+  <div class="mech">
+    <div>
+      <p>A second-year student has a case study due and needs to show whether a business model holds. <b>They do not need a chapter on unit economics. They need to run one.</b></p>
+      <p>The framework beside this text is what they scan to. It arrives on their phone with the brackets waiting to be filled with the case's own numbers, and it works in whichever model the institution permits.</p>
+      <div class="seq">
+        <div class="seqrow"><span class="sn">01</span><span class="st">Finds the framework in the index &mdash; <b>by the decision, not the chapter</b></span></div>
+        <div class="seqrow"><span class="sn">02</span><span class="st">Scans the code on that page with a phone camera</span></div>
+        <div class="seqrow"><span class="sn">03</span><span class="st">Copies the prompt, fills the brackets with the case data</span></div>
+        <div class="seqrow"><span class="sn">04</span><span class="st">Runs it, then <b>argues with the output</b> &mdash; which is the part being assessed</span></div>
+      </div>
+    </div>
+    <div class="promptcard">
+      <div class="pc-top"><span class="tag">9.1</span><span class="ttl">Unit Economics &mdash; LTV:CAC</span><span class="up">Module 09</span></div>
+      <div class="pc-body">Act as a startup finance advisor specialising
+in unit economics.
+
+<span class="k">My business model:</span>
+  <span class="v">[HOW YOU ACQUIRE AND RETAIN CUSTOMERS]</span>
+<span class="k">Revenue model:</span>
+  <span class="v">[SUBSCRIPTION / TRANSACTION / USAGE-BASED]</span>
+
+Help me calculate and analyse my LTV:CAC:
+
+<span class="k">LTV CALCULATION</span>
+Average revenue per customer: <span class="v">[X]</span>
+Gross margin %: <span class="v">[X]</span>
+Churn rate: <span class="v">[X]</span>
+LTV = (ARPC &times; Gross Margin) / Churn Rate
+
+<span class="k">CAC CALCULATION</span>
+Sales and marketing spend: <span class="v">[X]</span>
+New customers acquired: <span class="v">[X]</span>
+CAC = Total Spend / New Customers
+
+<span class="k">ANALYSIS</span>
+1. What is my LTV:CAC ratio?
+2. What is the payback period in months?</div>
+      <div class="pc-foot"><span class="pairs">Pairs with 9.2 Burn Rate &middot; 5.9 AARRR &middot; 9.6 Financial Model</span><button class="btn btn-blue btn-sm copybtn">Copy</button></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ SYLLABUS MAP ============ -->
+<section class="wash" id="syllabus"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Where it fits</div>
+      <h2 class="sh">Ten modules against courses already on the timetable.</h2>
+      <p class="sd">Nothing here needs a new paper or a syllabus revision. Each module sits alongside a course most management programmes already run.</p>
+    </div>
+    <a class="btn btn-linedark" href="home.html#modules">Browse the modules</a>
+  </div>
+
+  <div class="syl-wrap" tabindex="0" role="region" aria-label="Modules mapped to course areas, scrollable table">
+    <table class="syl">
+      <caption>Each of the ten modules, the course area it sits alongside, and how many frameworks it contains.</caption>
+      <thead><tr><th scope="col">Module</th><th scope="col">Sits alongside</th><th scope="col" style="text-align:right">Frameworks</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mn">01</span> <span class="mt">Think Like a Strategist</span></td><td class="course">Strategic Management &middot; Critical Thinking</td><td class="cnt">13</td></tr>
+        <tr><td><span class="mn">02</span> <span class="mt">Design Your Business</span></td><td class="course">Entrepreneurship &middot; New Venture Design</td><td class="cnt">10</td></tr>
+        <tr><td><span class="mn">03</span> <span class="mt">Know Your Market</span></td><td class="course">Marketing Research &middot; Competitive Strategy</td><td class="cnt">10</td></tr>
+        <tr><td><span class="mn">04</span> <span class="mt">Sell Like a Pro</span></td><td class="course">Sales &amp; Distribution Management</td><td class="cnt">11</td></tr>
+        <tr><td><span class="mn">05</span> <span class="mt">Market Your Message</span></td><td class="course">Marketing Management &middot; Brand Management</td><td class="cnt">10</td></tr>
+        <tr><td><span class="mn">06</span> <span class="mt">Build Your Team</span></td><td class="course">Organisational Behaviour &middot; HRM</td><td class="cnt">12</td></tr>
+        <tr><td><span class="mn">07</span> <span class="mt">Operate with Precision</span></td><td class="course">Operations Management &middot; Process Design</td><td class="cnt">12</td></tr>
+        <tr><td><span class="mn">08</span> <span class="mt">Decide with Confidence</span></td><td class="course">Managerial Decision Making</td><td class="cnt">10</td></tr>
+        <tr><td><span class="mn">09</span> <span class="mt">Finance &amp; Metrics</span></td><td class="course">Financial Management &middot; Business Analytics</td><td class="cnt">9</td></tr>
+        <tr><td><span class="mn">10</span> <span class="mt">Lead Yourself First</span></td><td class="course">Leadership Development</td><td class="cnt">11</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="syl-note">Course names vary by programme &mdash; the mapping is indicative, not a claim of accreditation or endorsement by any institution.</p>
+</div></section>
+
+<!-- ============ EDITION ============ -->
+<section class="light"><div class="pad">
+  <div class="head-row">
+    <div>
+      <div class="kicker">Accession</div>
+      <h2 class="sh">One accession. No replacement edition scheduled.</h2>
+    </div>
+  </div>
+  <div class="ed">
+    <div>
+      <p>The usual pattern with a technology title is a purchase, a slow decline in accuracy, a withdrawal, and a repeat purchase of the next edition. <b>That cycle exists because the text and the advice are the same object.</b></p>
+      <p>Here they are separated. The printed frameworks &mdash; the reasoning, the structure, when to reach for which &mdash; do not change. The prompts do, and those live on a page behind a code.</p>
+      <p>Which means the copy you catalogue this year is the copy that stays accurate, and no part of that depends on the library maintaining anything.</p>
+      <div class="ph-btns" style="margin-top:22px;">
+        <a class="btn btn-ink" href="#acquire">Request a quote</a>
+        <a class="btn btn-linedark" href="how-to-use.html">See how scanning works</a>
+      </div>
+    </div>
+    <div class="ed-art">
+      <div class="artbg"></div>
+      <svg viewBox="0 0 300 250" class="line" aria-hidden="true">
+        <rect class="s" x="24" y="76" width="96" height="112" rx="7"/>
+        <path class="s2" d="M42 106h60M42 124h44M42 142h56"/>
+        <rect class="s" x="60" y="154" width="26" height="26" rx="4"/>
+        <rect class="fd" x="65" y="159" width="7" height="7" rx="1"/>
+        <text class="t" x="24" y="206" style="font-size:9px; letter-spacing:.08em">PRINTED ONCE</text>
+
+        <path class="s3" d="M132 132h30"/><path class="s" d="M152 124l10 8-10 8"/>
+
+        <rect class="s2" x="176" y="52" width="100" height="38" rx="7"/><text class="t" x="200" y="76">v1</text>
+        <rect class="s2" x="176" y="102" width="100" height="38" rx="7"/><text class="t" x="200" y="126">v2</text>
+        <rect class="s" x="176" y="152" width="100" height="38" rx="7"/><text class="t" x="200" y="176" style="opacity:.95">v3 &mdash; current</text>
+        <path class="s3" d="M226 90v12M226 140v12"/>
+        <circle class="fd" cx="188" cy="171" r="3.4"/>
+        <text class="t" x="176" y="212" style="font-size:9px; letter-spacing:.08em">REWRITTEN AS NEEDED</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ACQUISITION ============ -->
+<section class="acq" id="acquire">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad acq-in">
+    <div>
+      <h2>Library copies, department sets, reading-list orders.</h2>
+      <p>Tell us the institution, the number of copies and the department. Orders are handled directly by Raphy and invoiced &mdash; there is no platform, subscription or per-student licence attached.</p>
+      <div class="acq-facts">
+        <div class="afact"><b>10+</b><span>Copies, invoiced</span></div>
+        <div class="afact"><b>108</b><span>Frameworks</span></div>
+        <div class="afact"><b>276</b><span>Pages</span></div>
+      </div>
+    </div>
+    <div class="acqcard">
+      <h3>What an institutional order includes</h3>
+      <div class="arow"><span class="ai"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><path d="M4 4.5h6.5a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 4.5h-5.5a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2H20z"/></svg></span><span>Paperback copies, 276 pages, published by Notion Press</span></div>
+      <div class="arow"><span class="ai"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><path d="M17.25 13.5v7.5M13.5 17.25h7.5"/></svg></span><span>Every QR code live on this site, free for any reader, no login</span></div>
+      <div class="arow"><span class="ai"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.9-6.4"/><path d="M20.5 4.2V9h-4.8"/></svg></span><span>Prompts maintained on the site &mdash; no replacement edition to budget for</span></div>
+      <div class="arow"><span class="ai"><svg class="i" width="16" height="16" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>Invoiced to the institution, no subscription or renewal</span></div>
+      <a class="btn btn-white" href="#">Request a quote</a>
+      <p class="note">Contact form and ordering details to be added before launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. No course pitches.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@institution.edu" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="#">For institutions</a><a href="#acquire">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; });
+  ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; });
+
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=btn.closest('.promptcard').querySelector('.pc-body').innerText;
+      var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1800); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,done); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+})();
+</script>
