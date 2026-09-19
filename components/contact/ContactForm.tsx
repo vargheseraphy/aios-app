@@ -1,71 +1,87 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { submitContactMessage, type ContactFormState } from "@/lib/actions/contact";
+import { CONTACT_CONTENT as C } from "@/lib/pages-content";
+import { Rich } from "@/components/RichText";
+import styles from "./contact.module.css";
 
 const initialState: ContactFormState = { status: "idle", message: "" };
 
-const fieldClass =
-  "w-full rounded-lg border border-line-l2 bg-white px-3.5 py-2.5 text-[13.5px] text-ink-2 placeholder:text-gray-l focus:border-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2";
-
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactMessage, initialState);
-
-  if (state.status === "success") {
-    return (
-      <div
-        role="status"
-        className="rounded-xl border border-green/30 bg-green/10 px-5 py-4 text-[14px] text-ink-2"
-      >
-        {state.message}
-      </div>
-    );
-  }
+  const [topic, setTopic] = useState(C.topics[0].value);
+  const active = C.topics.find((t) => t.value === topic) ?? C.topics[0];
 
   return (
-    <form action={formAction} className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="contact-name" className="text-[12px] font-medium text-gray-l2">
-          Name
-        </label>
-        <input id="contact-name" name="name" type="text" required className={fieldClass} />
+    <form action={formAction} className={styles.formcard} id="contactForm">
+      <fieldset className={styles.routes}>
+        <legend>What is this about?</legend>
+        <div className={styles.rgrid}>
+          {C.topics.map((t) => (
+            <label className={styles.rpill} key={t.value}>
+              <input
+                type="radio"
+                name="topic"
+                value={t.value}
+                checked={topic === t.value}
+                onChange={() => setTopic(t.value)}
+              />
+              <span className={styles.rpillLabel}>{t.label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div className={`${styles.fgrid} ${styles.fgridTwo}`}>
+        <div className={styles.field}>
+          <label htmlFor="cName">Your name</label>
+          <input id="cName" name="name" type="text" autoComplete="name" required />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="cEmail">Email</label>
+          <input id="cEmail" name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
+        </div>
       </div>
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="contact-email" className="text-[12px] font-medium text-gray-l2">
-          Email
-        </label>
-        <input id="contact-email" name="email" type="email" required className={fieldClass} />
+      <div className={styles.fgrid}>
+        <div className={styles.field}>
+          <label htmlFor="cOrg">
+            Organisation <span className={styles.opt}>— optional</span>
+          </label>
+          <input id="cOrg" name="organisation" type="text" autoComplete="organization" placeholder="Company, college or department" />
+        </div>
       </div>
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="contact-org" className="text-[12px] font-medium text-gray-l2">
-          Organisation <span className="text-gray-l">(optional)</span>
-        </label>
-        <input id="contact-org" name="organisation" type="text" className={fieldClass} />
+
+      <p className={styles.fhint} id="topicHint" aria-live="polite">
+        <Rich text={active.hint} />
+      </p>
+
+      <div className={styles.fgrid}>
+        <div className={styles.field}>
+          <label htmlFor="cMsg">Message</label>
+          <textarea id="cMsg" name="message" aria-describedby="topicHint" placeholder={active.placeholder} required />
+        </div>
       </div>
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="contact-message" className="text-[12px] font-medium text-gray-l2">
-          Message
-        </label>
-        <textarea
-          id="contact-message"
-          name="message"
-          required
-          rows={5}
-          className={fieldClass}
-        />
+
+      <div className={styles.fpend}>
+        <svg className={`i ${styles.pi}`} width="17" height="17" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.6" />
+          <path d="M12 7.6v5" />
+          <path d="M12 16.2h.01" />
+        </svg>
+        <span>
+          <Rich text={C.formPendingNotice} />
+        </span>
       </div>
-      {state.status === "error" && (
-        <p role="alert" className="text-[12.5px] text-red">
-          {state.message}
-        </p>
-      )}
-      <button
-        type="submit"
-        disabled={isPending}
-        className="btn btn-ink w-fit disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        {isPending ? "Sending…" : "Send message"}
-      </button>
+
+      <div className={styles.fsend}>
+        <button className="btn btn-blue" type="submit" disabled={isPending}>
+          {isPending ? "Sending…" : "Send the message"}
+        </button>
+        <span className={styles.fstatus} role="status">
+          {state.status !== "idle" ? state.message : ""}
+        </span>
+      </div>
     </form>
   );
 }
