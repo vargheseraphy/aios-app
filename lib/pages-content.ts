@@ -292,7 +292,7 @@ export const CONTACT_CONTENT = {
         { label: "Retail links added before launch", href: "#", dead: true },
         { label: "Team and bulk orders", href: "/for-business" },
         { label: "Library and department orders", href: "/for-institutions" },
-      ] satisfies TriageRoute[],
+      ] as TriageRoute[],
     },
     {
       colorKey: "yellow" as const,
@@ -307,7 +307,7 @@ export const CONTACT_CONTENT = {
       routes: [
         { label: "Troubleshooting a prompt", href: "/how-to-use#trouble" },
         { label: "How to use the book", href: "/how-to-use" },
-      ] satisfies TriageRoute[],
+      ] as TriageRoute[],
     },
     {
       colorKey: "green" as const,
@@ -322,7 +322,7 @@ export const CONTACT_CONTENT = {
       routes: [
         { label: "Who it's for", href: "/who-its-for" },
         { label: "Ask about republishing", href: "#write" },
-      ] satisfies TriageRoute[],
+      ] as TriageRoute[],
     },
   ],
 
