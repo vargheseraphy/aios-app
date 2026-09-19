@@ -479,14 +479,26 @@ page, exactly the pattern Phase 5 already established.
 - Google Cloud OAuth client ID/secret for Google Sign-In (steps in
   `docs/technical/ARCHITECTURE.md`) — not created during this autonomous run, since it requires
   a human with console access; `.env.example` documents the variable name.
-- A live Supabase project (URL + keys) to point `.env.local` at, with migration
-  `0001_init.sql` applied — this run only wrote the migration and env var names, no project
-  was provisioned. **The site no longer crashes or 500s without one** (see the Phase 6 fix
-  above), so this is safe to deploy before the project exists, but sign-in/bookmarking/invites
-  stay inert until it does. Once it exists, run a real cross-account RLS test (see the note
-  above) — the current test only checks the policy SQL, not enforcement. Also verify the actual
-  sign-in flows: magic link, Google ID-token exchange, and specifically whether Google sign-in
-  via `/join?ref=code` correctly links `invited_by` (see the note above — untested).
+- ~~A live Supabase project~~ **Done, 2026-09-19**: a project named `aios` (ref
+  `endatmaraqlcvhbymxfw`, ap-south-1) now exists, connected via the Supabase MCP connector.
+  `0001_init.sql` is applied, followed by a new `0002_lock_down_and_tune.sql` written after
+  running Supabase's own security/performance advisors against the live database: it revoked
+  public `EXECUTE` on `handle_new_user()` (a real, if low-severity, gap — Postgres already
+  refuses to invoke a `returns trigger` function outside trigger context, so it wasn't actually
+  exploitable, but there was no reason to leave it exposed as a public RPC), rewrote all six RLS
+  policies' `auth.uid()` calls as `(select auth.uid())` per Supabase's per-query-not-per-row
+  guidance, and indexed `users.invited_by`. Advisors are clean now except the one intentional
+  warning already documented in `0001` (`get_inviter_name` being publicly callable is the point
+  of that function). `.env.local` has the real project URL and anon key; `SUPABASE_SERVICE_ROLE_KEY`
+  is still empty — the MCP connector doesn't expose secret keys by design, so that one has to be
+  pasted in by hand from the Supabase dashboard (Settings → API → `service_role`). **Still
+  outstanding**: a real cross-account RLS test with actual accounts — deliberately not done by
+  creating throwaway auth users directly in the live project, since that would leave fake data in
+  what's meant to be the real database; this should happen naturally via real sign-ins, or
+  Raphy can ask for a proper scripted test against a Supabase branch if he wants one before
+  launch. Also still untested: the actual sign-in flows (magic link, Google ID-token exchange),
+  and specifically whether Google sign-in via `/join?ref=code` correctly links `invited_by` (see
+  the note above).
 - A real pixel-fidelity check of `/`, `/why-this-book`, `/how-to-use`, `/who-its-for` at 400px,
   768px and 1280px against their locked HTML source. Phase 6 did confirm — with a real headless
   Chrome, not just structural review — that every route actually renders without crashing or
