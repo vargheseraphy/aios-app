@@ -1,33 +1,31 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getLesson, moduleParam } from "@/lib/content";
-import { BuySection } from "@/components/marketing/BuySection";
+import { getAllModules, getLesson } from "@/lib/content";
+import { FOR_INSTITUTIONS_CONTENT as C } from "@/lib/pages-content";
+import { Rich } from "@/components/RichText";
+import { PromptPreviewCard } from "@/components/PromptPreviewCard";
+import { ButtonLink } from "@/components/Button";
 import { SubscribeSection } from "@/components/marketing/SubscribeSection";
 import styles from "@/components/for-institutions/for-institutions.module.css";
-
-const COURSE_EXAMPLES: Array<{ module: number; fileId: string }> = [
-  { module: 1, fileId: "00" }, // The AI Mental Model
-  { module: 1, fileId: "01" }, // C.A.R.E Prompting
-  { module: 1, fileId: "06" }, // First Principles Thinking
-  { module: 1, fileId: "09" }, // Mental Models Library
-  { module: 10, fileId: "02" }, // 90-Day Planning
-  { module: 10, fileId: "07" }, // Socratic Self-Questioning
-];
 
 export const metadata: Metadata = {
   title: "For Institutions — AI Operating System for Leaders",
   description:
-    "108 frameworks for teaching students how to think with AI, not just how to prompt it — free to browse on this site, in print for the library shelf.",
+    "A book built to be opened mid-assignment, not shelved after the first week — three shelf tests, and where the ten modules sit in a syllabus already being taught.",
+};
+
+const testColorClass: Record<string, string> = {
+  blue: styles.tBlue,
+  yellow: styles.tYellow,
+  green: styles.tGreen,
 };
 
 export default function ForInstitutionsPage() {
-  const examples = COURSE_EXAMPLES.map((e) => getLesson(e.module, e.fileId)).filter(
-    (l): l is NonNullable<typeof l> => Boolean(l),
-  );
+  const modules = getAllModules();
+  const mechLesson = getLesson(C.mechPromptRef.module, C.mechPromptRef.fileId);
 
   return (
     <main>
-      {/* ============ PAGE HERO ============ */}
       <header className={styles.phero}>
         <div className={styles.bg} />
         <div className={styles.gridLines} />
@@ -35,162 +33,264 @@ export default function ForInstitutionsPage() {
         <div className={`pad ${styles.pheroIn}`}>
           <div className={styles.pheroCopy}>
             <div className={styles.crumb}>
-              <Link href="/">Home</Link> <span>/</span> <span>For institutions</span>
+              <Link href="/">Home</Link> <span>/</span> <span>{C.crumb}</span>
             </div>
-            <h1 className={styles.phH}>A framework for thinking with AI, not just prompting it.</h1>
-            <p className={styles.phSub}>
-              Most AI literacy stops at syntax. This book&rsquo;s first module teaches the mental
-              model underneath it — role, context, action, expectation — then spends nine more
-              modules applying it to real business decisions.
-            </p>
+            <h1 className={styles.phH}>{C.heroHeading}</h1>
+            <p className={styles.phSub}>{C.heroSub}</p>
             <div className={styles.phBtns}>
-              <a className="btn btn-white" href="#start">
-                See a sample module
-              </a>
-              <Link className="btn btn-line" href="/contact">
-                Ask about course adoption
-              </Link>
+              <ButtonLink variant="white" href={C.heroPrimaryCta.href}>
+                {C.heroPrimaryCta.label}
+              </ButtonLink>
+              <ButtonLink variant="line" href={C.heroSecondaryCta.href}>
+                {C.heroSecondaryCta.label}
+              </ButtonLink>
             </div>
           </div>
           <div className={styles.pheroArt}>
-            <svg viewBox="0 0 280 260" className="line" aria-hidden="true">
-              <rect className="s" x="46" y="30" width="188" height="140" rx="10" />
-              <path className="s3" d="M140 30v140" />
-              <path className="s2" d="M64 52h56M64 68h44M64 84h50" />
-              <path className="s2" d="M158 52h56M158 68h40M158 84h50" />
-              <path className="s" d="M46 170l-14 34h216l-14-34" />
-              <circle className="fd" cx="140" cy="204" r="3.2" />
-              <path className="s3" d="M60 220h160" />
-              <text className="t" x="98" y="240" style={{ fontSize: 10, letterSpacing: "0.1em" }}>
-                10 MODULES · 108 FRAMEWORKS
+            <svg viewBox="0 0 300 292" className="line" aria-hidden="true">
+              <path className="s2" d="M26 40h248" />
+              <rect className="s2" x="34" y="52" width="26" height="92" rx="3" />
+              <rect className="s2" x="66" y="52" width="22" height="92" rx="3" />
+              <rect className="s2" x="94" y="52" width="28" height="92" rx="3" />
+              <rect className="s2" x="128" y="52" width="24" height="92" rx="3" />
+              <rect className="s2" x="158" y="52" width="26" height="92" rx="3" />
+              <rect className="s2" x="190" y="52" width="22" height="92" rx="3" />
+              <rect className="s2" x="218" y="52" width="26" height="92" rx="3" />
+              <rect className="s2" x="250" y="52" width="24" height="92" rx="3" />
+              <path className="s" d="M26 152h248" />
+              <text className="t" x="26" y="30" style={{ fontSize: 9, letterSpacing: "0.09em" }}>
+                ON THE SHELF
+              </text>
+              <path className="s" d="M88 186c18-9 44-9 62 4v72c-18-13-44-13-62-4z" />
+              <path className="s" d="M212 186c-18-9-44-9-62 4v72c18-13 44-13 62-4z" />
+              <path className="s" d="M150 190v72" />
+              <path className="s2" d="M102 208h30M102 220h21M168 208h30M168 220h23" />
+              <rect className="s" x="166" y="224" width="20" height="20" rx="3" />
+              <rect className="fd" x="170" y="228" width="5.5" height="5.5" rx="1" />
+              <path className="s3" d="M150 158v20" />
+              <circle className="fd" cx="150" cy="172" r="3.4" />
+              <text className="t" x="84" y="286" style={{ fontSize: 9, letterSpacing: "0.09em" }}>
+                IN SOMEONE&rsquo;S HANDS
               </text>
             </svg>
           </div>
         </div>
       </header>
 
-      {/* ============ WHY IT FITS A COURSE ============ */}
+      <section className="light" id="tests">
+        <div className="pad">
+          <div className="head-row">
+            <div>
+              <div className="kicker">{C.testsKicker}</div>
+              <h2 className="sh">{C.testsHeading}</h2>
+              <p className="sd">{C.testsSub}</p>
+            </div>
+          </div>
+          {C.shelfTests.map((test) => (
+            <div className={`${styles.test} ${testColorClass[test.colorKey]}`} key={test.tag}>
+              <div className={styles.testQ}>
+                <span className={styles.tn}>{test.tag}</span>
+                <h3>{test.question}</h3>
+                <p className={styles.usual}>{test.usual}</p>
+              </div>
+              <div className={styles.testA}>
+                <h4 className={styles.alab}>What this one does instead</h4>
+                {test.answer.map((para) => (
+                  <p key={para}>
+                    <Rich text={para} />
+                  </p>
+                ))}
+                <div className={styles.ev}>
+                  {test.evidence.map((chip) => (
+                    <span className={styles.evchip} key={chip}>
+                      <span className={styles.evDot} />
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="dark">
         <div className="pad">
           <div className="head-row">
             <div>
-              <div className="kicker">Why it fits a course</div>
-              <h2 className="sh" style={{ maxWidth: "32ch" }}>
-                Structured the way a syllabus already is.
-              </h2>
+              <div className="kicker">{C.mechKicker}</div>
+              <h2 className="sh">{C.mechHeading}</h2>
             </div>
           </div>
-          <div className={styles.diffs}>
-            <div className={`${styles.diff} ${styles.cBlue}`}>
-              <span className={styles.diffIc}>
-                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
-                  <rect x="3" y="3" width="7.5" height="7.5" rx="2" />
-                  <rect x="13.5" y="3" width="7.5" height="7.5" rx="2" />
-                  <rect x="3" y="13.5" width="7.5" height="7.5" rx="2" />
-                  <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2" />
-                </svg>
-              </span>
-              <h3>Ten modules, one per unit</h3>
-              <p>Strategy, business design, market, sales, marketing, team, operations, decisions, finance, self-leadership — a term&rsquo;s worth of units already scoped.</p>
+          <div className={styles.mech}>
+            <div>
+              <p>
+                <Rich text={C.mechP1} />
+              </p>
+              <p>
+                <Rich text={C.mechP2} />
+              </p>
+              <div className={styles.seq}>
+                {C.mechSteps.map((step, i) => (
+                  <div className={styles.seqrow} key={step}>
+                    <span className={styles.sn}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={styles.st}>
+                      <Rich text={step} />
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className={`${styles.diff} ${styles.cRed}`}>
-              <span className={styles.diffIc}>
-                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M4 20c0-3.6 3.6-6.2 8-6.2s8 2.6 8 6.2" />
-                </svg>
-              </span>
-              <h3>Every student gets the same starting point</h3>
-              <p>No two students arrive with the same AI habits. A shared module 1 puts everyone on the same mental model before the coursework needs it.</p>
-            </div>
-            <div className={`${styles.diff} ${styles.cYellow}`}>
-              <span className={styles.diffIc}>
-                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
-                  <path d="M12 3v7M12 10L6 20M12 10l6 10" />
-                  <circle cx="12" cy="3" r="1.8" />
-                </svg>
-              </span>
-              <h3>A worked example on every page</h3>
-              <p>Each framework ends in a real, paste-ready prompt with bracketed placeholders — something a student can run, not just read about.</p>
-            </div>
-            <div className={`${styles.diff} ${styles.cGreen}`}>
-              <span className={styles.diffIc}>
-                <svg className="i" width="21" height="21" viewBox="0 0 24 24">
-                  <rect x="3" y="5" width="18" height="14" rx="2.5" />
-                  <path d="M7 9.5h6M7 13.5h4" />
-                </svg>
-              </span>
-              <h3>Free to browse, no login for a student</h3>
-              <p>Every prompt is open on this site with no account required, so assigning a reading never means chasing down sign-ins first.</p>
-            </div>
+            {mechLesson && (
+              <PromptPreviewCard
+                lessonId={mechLesson.lesson}
+                title={mechLesson.title}
+                moduleLabel={`Module ${String(C.mechPromptRef.module).padStart(2, "0")}`}
+                prompt={mechLesson.prompt}
+                pairsWith={mechLesson.pairsWith}
+              />
+            )}
           </div>
         </div>
       </section>
 
-      {/* ============ SAMPLE MODULE ============ */}
-      <section className="light" id="start">
+      <section className="wash" id="syllabus">
         <div className="pad">
           <div className="head-row">
             <div>
-              <div className="kicker">Sample module</div>
-              <h2 className="sh" style={{ maxWidth: "32ch" }}>
-                Six frameworks from the two most classroom-ready modules.
-              </h2>
-              <p className="sd" style={{ maxWidth: "84ch" }}>
-                Module 1, Think Like a Strategist — the foundational AI-and-thinking module — and
-                Module 10, Lead Yourself First, on personal planning and reflection.
-              </p>
+              <div className="kicker">{C.syllabusKicker}</div>
+              <h2 className="sh">{C.syllabusHeading}</h2>
+              <p className="sd">{C.syllabusSub}</p>
+            </div>
+            <ButtonLink variant="linedark" href="/#modules">
+              Browse the modules
+            </ButtonLink>
+          </div>
+
+          <div className={styles.sylWrap} tabIndex={0} role="region" aria-label="Modules mapped to course areas, scrollable table">
+            <table className={styles.syl}>
+              <caption>Each of the ten modules, the course area it sits alongside, and how many frameworks it contains.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Module</th>
+                  <th scope="col">Sits alongside</th>
+                  <th scope="col" style={{ textAlign: "right" }}>
+                    Frameworks
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {modules.map((mod) => (
+                  <tr key={mod.module}>
+                    <td>
+                      <span className={styles.sylMn}>{String(mod.module).padStart(2, "0")}</span>{" "}
+                      <span className={styles.sylMt}>{mod.title}</span>
+                    </td>
+                    <td className={styles.sylCourse}>{C.courseByModule[mod.module]}</td>
+                    <td className={styles.sylCnt}>{mod.lessons.length}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className={styles.sylNote}>{C.syllabusNote}</p>
+        </div>
+      </section>
+
+      <section className="light">
+        <div className="pad">
+          <div className="head-row">
+            <div>
+              <div className="kicker">{C.editionKicker}</div>
+              <h2 className="sh">{C.editionHeading}</h2>
             </div>
           </div>
-          <div className={styles.examples}>
-            {examples.map((lesson) => (
-              <Link
-                key={lesson.lesson}
-                href={`/${moduleParam(lesson.module)}/${lesson.fileId}`}
-                className={styles.example}
-              >
-                <span className={styles.exNum}>{lesson.lesson}</span>
-                <span className={styles.exBody}>
-                  <span className={styles.exTitle}>{lesson.title}</span>
-                  <br />
-                  <span className={styles.exModule}>
-                    Module {String(lesson.module).padStart(2, "0")}
-                  </span>
-                </span>
-                <span className={styles.exGo}>
+          <div className={styles.ed}>
+            <div>
+              {C.editionParas.map((para) => (
+                <p key={para}>
+                  <Rich text={para} />
+                </p>
+              ))}
+              <div className={styles.phBtns} style={{ marginTop: 22 }}>
+                <ButtonLink variant="ink" href="#acquire">
+                  Request a quote
+                </ButtonLink>
+                <ButtonLink variant="linedark" href="/how-to-use">
+                  See how scanning works
+                </ButtonLink>
+              </div>
+            </div>
+            <div className={styles.edArt}>
+              <div className={styles.edArtBg} />
+              <svg viewBox="0 0 300 250" className="line" aria-hidden="true">
+                <rect className="s" x="24" y="76" width="96" height="112" rx="7" />
+                <path className="s2" d="M42 106h60M42 124h44M42 142h56" />
+                <rect className="s" x="60" y="154" width="26" height="26" rx="4" />
+                <rect className="fd" x="65" y="159" width="7" height="7" rx="1" />
+                <text className="t" x="24" y="206" style={{ fontSize: 9, letterSpacing: "0.08em" }}>
+                  PRINTED ONCE
+                </text>
+                <path className="s3" d="M132 132h30" />
+                <path className="s" d="M152 124l10 8-10 8" />
+                <rect className="s2" x="176" y="52" width="100" height="38" rx="7" />
+                <text className="t" x="200" y="76">v1</text>
+                <rect className="s2" x="176" y="102" width="100" height="38" rx="7" />
+                <text className="t" x="200" y="126">v2</text>
+                <rect className="s" x="176" y="152" width="100" height="38" rx="7" />
+                <text className="t" x="200" y="176" style={{ opacity: 0.95 }}>v3 &mdash; current</text>
+                <path className="s3" d="M226 90v12M226 140v12" />
+                <circle className="fd" cx="188" cy="171" r="3.4" />
+                <text className="t" x="176" y="212" style={{ fontSize: 9, letterSpacing: "0.08em" }}>
+                  REWRITTEN AS NEEDED
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.acq} id="acquire">
+        <div className={styles.acqBg} />
+        <div className={styles.acqLines} />
+        <div className={`pad ${styles.acqIn}`}>
+          <div>
+            <h2>{C.acquireHeading}</h2>
+            <p>{C.acquireBody}</p>
+            <div className={styles.acqFacts}>
+              {C.acquireFacts.map((fact) => (
+                <div className={styles.afact} key={fact.label}>
+                  <b>{fact.value}</b>
+                  <span>{fact.label}</span>
+                </div>
+              ))}
+              <div className={styles.afact}>
+                <b>{modules.reduce((sum, m) => sum + m.lessons.length, 0)}</b>
+                <span>Frameworks</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.acqcard}>
+            <h3>{C.acquireCardHeading}</h3>
+            {C.acquireIncludes.map((item) => (
+              <div className={styles.arow} key={item}>
+                <span className={styles.ai}>
                   <svg className="i" width="16" height="16" viewBox="0 0 24 24">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
+                    <path d="M4 4.5h6.5a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z" />
+                    <path d="M20 4.5h-5.5a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2H20z" />
                   </svg>
                 </span>
-              </Link>
+                <span>{item}</span>
+              </div>
             ))}
+            <ButtonLink variant="white" href="/contact" className={styles.fullBtn}>
+              Request a quote
+            </ButtonLink>
+            <p className={styles.acqNote}>{C.acquireNote}</p>
           </div>
         </div>
       </section>
 
-      {/* ============ CTA ============ */}
-      <section className={styles.cta}>
-        <div className={styles.ctaBg} />
-        <div className={`pad ${styles.ctaIn}`}>
-          <div>
-            <h2>Considering this for a course or the library?</h2>
-            <p>
-              Tell us the course, the term size, or how many copies the library needs — we&rsquo;ll
-              help you work out what fits.
-            </p>
-          </div>
-          <div className={styles.ctaBtns}>
-            <Link className="btn btn-white" href="/contact">
-              Talk to us
-            </Link>
-            <Link className="btn btn-line" href="/">
-              Browse the frameworks free
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <BuySection />
       <SubscribeSection />
     </main>
   );
