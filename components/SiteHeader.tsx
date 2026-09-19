@@ -5,7 +5,7 @@ import { useAuth } from "./auth/AuthProvider";
 import styles from "./SiteHeader.module.css";
 
 const NAV_LINKS = [
-  { href: "/#why", label: "Why frameworks" },
+  { href: "/why-this-book", label: "Why frameworks" },
   { href: "/#modules", label: "Modules" },
   { href: "/how-to-use", label: "How to use" },
   { href: "/who-its-for", label: "Who it's for" },
