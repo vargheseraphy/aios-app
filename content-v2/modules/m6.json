@@ -95,5 +95,8 @@
   "question": "Who should advise on people and leadership decisions?",
   "lead": "Leadership decisions are the highest-leverage decisions in any organisation — and the hardest to get right because the stakes are human. The roles on this page bring the perspectives of people who have seen hundreds of teams succeed and fail. Use them before hiring, before giving difficult feedback, before restructuring, and before having the conversations you have been avoiding.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 6.3 GROW Model · 6.5 SBI Feedback · 6.9 Radical Candor · 6.11 Situational Leadership"
- }
+ },
+ "whatItDoes": "The best product in the world fails with the wrong team. The best team in the world fails without clear direction, honest feedback, and the right structure. This module gives you the complete leadership toolkit from clarifying who owns what, to setting goals that drive real action, to having the honest conversations that most leaders avoid. It includes three Japanese leadership frameworks that bring a depth of discipline most Western management",
+ "promise": "Build people who build the company leadership is the product.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

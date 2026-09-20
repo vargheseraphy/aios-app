@@ -92,5 +92,8 @@
   "question": "Who should review your numbers and financial narrative?",
   "lead": "Numbers do not lie — but they can mislead when read through the wrong lens. A CFO and an investor look at the same P&L and ask completely different questions. A customer's finance team looks at your pricing and asks a question neither of them thought of. Use this page to choose who is in the room before you present, model, or decide based on your financial data.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 9.1 LTV:CAC · 9.2 Burn Rate · 9.5 Investor Narrative · 9.6 3-Scenario Financial Model"
- }
+ },
+ "whatItDoes": "You do not need to be a CFO to run a financially healthy business. You need to understand nine numbers and one story. This module gives you the frameworks to know whether your unit economics work, how long your runway is, what metric defines your growth, and how to present your financial reality to investors in a way that builds confidence rather than questions. Finance is not accounting it is the language of business decisions.",
+ "promise": "Know your numbers. Own your narrative.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

@@ -93,5 +93,8 @@
   "question": "Who should build and review your marketing?",
   "lead": "Marketing fails at two points: when the message is unclear, and when it reaches the wrong people. The roles on this page cover both failure modes. Internal roles help you build, sharpen, and distribute. Outside perspectives — especially the cold customer — tell you whether what you built actually works before the campaign launches.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 5.1 StoryBrand · 5.2 Hook Framework · 5.4 Content Pillars · 5.7 Brand Voice Definition"
- }
+ },
+ "whatItDoes": "Marketing without a clear message is noise. This module gives you the frameworks to define what you stand for, who you stand for, and how to reach them consistently. From the story structure that makes your brand instantly clear, to the growth loops that compound your reach over time, these are the tools that build audiences, generate leads, and make your",
+ "promise": "Build the system that makes your right customer find you.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

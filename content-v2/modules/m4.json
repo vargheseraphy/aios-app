@@ -94,5 +94,8 @@
   "question": "Who should prepare and run your sales conversations?",
   "lead": "Every stage of a sale requires a different mindset. The person who writes great cold outreach thinks differently from the person who closes enterprise deals. The buyer's procurement officer thinks differently from both. Use internal roles to prepare and execute. Use outside perspectives to find the objections, hesitations, and real decision criteria before they surface in a live conversation.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 4.2 SPIN Selling · 4.4 Challenger Sale · 4.5 Objection Handling · 4.9 Pipeline Review"
- }
+ },
+ "whatItDoes": "Sales is the one skill that pays for every other mistake in business. You can have an average product with great sales and survive. You cannot have a great product with no sales and survive. This module gives you the complete sales toolkit from cold outreach to closing, from objection handling to pipeline management all powered by AI prompts that prepare",
+ "promise": "Build a machine that turns cold strangers into paying customers.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

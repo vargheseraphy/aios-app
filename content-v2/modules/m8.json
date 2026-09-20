@@ -93,5 +93,8 @@
   "question": "Who should stress-test your most important decisions?",
   "lead": "Most bad decisions were not obviously bad at the time — they had a good first-order case and a hidden second-order cost. The roles on this page are designed to surface what you cannot see from inside your own reasoning. Some will challenge your logic. Some will challenge your assumptions. One will challenge whether you are even asking the right question.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 8.1 DECIDE Framework · 8.2 Pre-Mortem · 8.5 Scenario Planning · 8.6 Red Team Thinking"
- }
+ },
+ "whatItDoes": "Most business failures are not failures of effort they are failures of decision. The wrong market entered. The wrong hire kept too long. The wrong pivot made too late. This module gives you ten frameworks for structured decision-making from rapid frameworks for daily decisions to deep analytical tools for irreversible ones. Combined with AI, these frameworks turn gut-feel decisions into evidence-based ones without slowing you down.",
+ "promise": "Make better decisions faster, with less regret.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

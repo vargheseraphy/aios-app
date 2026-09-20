@@ -1,0 +1,50 @@
+{
+ "role": "About the Author",
+ "quote": "I am not a professor. I am not a consultant writing from the sidelines.",
+ "byline": "Builder · Strategist · AI Practitioner · Human-Centered Leadership Futurist",
+ "story": [
+  "I have sat in the same room as every problem in this book — no playbook, no team, no clear path forward — and I have had to think my way through every one of them. What I learned is that the right framework, asked the right way to AI, turns hours of confusion into minutes of clarity.",
+  "I wrote this book for the founder building their first company without a mentor in the room. The manager who became a leader before they felt ready. The student who wants to think at a level most peers have not reached yet. The professional who knows they are capable of more — but does not yet have the language or the structure to unlock it.",
+  "I have spent years at the intersection of people, strategy, and technology — building teams, advising founders, mentoring emerging leaders, and watching what separates the ones who break through from the ones who stay stuck. It is almost never talent. It is almost always tools — and the thinking habits that go with them.",
+  "This is not theory. Every framework here is one I have used when it actually mattered. Every prompt was written to produce something useful, not something that sounds impressive.",
+  "I believe the best leaders do not hoard the map. They hand it out. That is why this book exists."
+ ],
+ "whatSeparates": "What separates leaders who succeed fastest from everyone else is rarely intelligence. It is access to the right thinking tools at the right moment.",
+ "mission": "My mission: put these tools in the hands of every leader — not just the ones in business schools with expensive advisors and curated networks. The first-generation entrepreneur. The student who does not yet know they will lead something important. The manager who stepped up before they felt ready.",
+ "gap": "The most dangerous gap in modern leadership is not a gap in ambition. It is a gap in tools. This book closes that gap.",
+ "who": [
+  {
+   "who": "The Founder",
+   "what": "Building the first company without a mentor in the room."
+  },
+  {
+   "who": "The Manager",
+   "what": "Who became a leader before they felt ready."
+  },
+  {
+   "who": "The Student",
+   "what": "Who wants to think at a level most peers have not reached yet."
+  },
+  {
+   "who": "The Professional",
+   "what": "Who knows they are capable of more but lacks the structure to unlock it."
+  },
+  {
+   "who": "The First-Generation Builder",
+   "what": "No expensive network, no curated MBA. Just drive and the right tools."
+  }
+ ],
+ "whoIntro": "This book was written for leaders — but not just the ones who already have the title.",
+ "notAboutAI": "This is not a book about AI. It is a book about thinking better, faster — with AI as your thinking partner.",
+ "without": "Help me with my pricing strategy.",
+ "with": "Act as a pricing consultant. Design a 4-tier Value Ladder for [MY BUSINESS], with price points, offer names, and the customer upgrade logic between each tier.",
+ "withoutResult": "Generic advice that applies to no one.",
+ "withResult": "A specific, actionable pricing architecture for your exact business.",
+ "withFramework": "2.7 Pricing Strategy — Value Ladder",
+ "sourcePages": {
+  "author": "iv",
+  "mission": "vi",
+  "who": "vii"
+ },
+ "extractionNote": "Em dashes and some inter-word spaces are lost by the PDF text layer and were restored; no wording was changed."
+}

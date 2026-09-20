@@ -94,5 +94,8 @@
   "question": "Who should challenge how you are leading yourself?",
   "lead": "Self-leadership is the hardest kind because the subject and the observer are the same person. The roles on this page are designed to give you perspectives you cannot generate from inside your own thinking — the mentor who has already made your mistakes, the coach who sees your patterns more clearly than you do, and the critic who wants you to win. Use them when clarity matters most.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 10.2 90-Day Planning · 10.4 Energy Quadrants · 10.7 Socratic Self- Questioning · 10.9 Ikigai"
- }
+ },
+ "whatItDoes": "Every other module in this book helps you build a better business. This one helps you become a better founder. The habits, mental models, and self-awareness frameworks here are the ones that separate founders who scale from founders who stall. Three frameworks in this module come from Japanese philosophy Ikigai, Hansei, and Wabi-Sabi, because some of the deepest wisdom about purposeful work and graceful imperfection comes from",
+ "promise": "The company can only grow as fast as its founder.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

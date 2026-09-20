@@ -93,5 +93,8 @@
   "question": "Who should read your competitive landscape?",
   "lead": "Every market looks different depending on where you are standing. A market researcher sees data. A competitor's strategist sees opportunity. A customer sees none of your positioning — only their own problem. Use this page to choose the right lens before drawing any conclusions about the market you operate in.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 3.1 SWOT · 3.3 Porter's Five Forces · 3.6 Competitor Mapping · 3.8 Voice of Customer"
- }
+ },
+ "whatItDoes": "Most founders think they know their market because they operate in it every day. But operating in a market and understanding it strategically are two different things. This module gives you the tools to audit your position, read your competitive environment, define who you are actually for, and ground your decisions in real customer data not",
+ "promise": "See your competitive landscape clearly before you move.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }

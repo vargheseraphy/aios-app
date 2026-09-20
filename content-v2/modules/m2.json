@@ -93,5 +93,8 @@
   "question": "Who should stress-test your business model?",
   "lead": "Business models fail quietly — not all at once, but one flawed assumption at a time. The roles on this page represent the perspectives that expose those assumptions before the market does. Use internal roles to build and refine your model. Use outside perspectives to find the gaps your optimism is covering.",
   "sharpen": "HOW TO MAKE ANY ROLE SHARPER 1. Add years of experience: \"...with 15 years in enterprise SaaS\" produces different depth than just the title. 2. Add what they care most about: \"You care most about [X]\" shapes every word of the output. 3. Add their communication style: \"Be direct. Flag risks first. No jargon.\" changes the tone entirely. → See also: Framework 1.2 Role Prompting — The Expert Chair · 2.1 Value Proposition Canvas · 2.3 Lean Canvas · 2.8 Moat Builder · 1.2 Role Prompting"
- }
+ },
+ "whatItDoes": "Most founders skip from idea to execution without ever properly designing the business. They build the wrong thing efficiently. This module gives you the tools to validate your model, understand your customer deeply, find uncontested market space, and price with confidence before you spend a year building something the market doesn't want.",
+ "promise": "Shape what you're building so it deserves to exist.",
+ "startHere": "Start here if you are new to AI, or your prompts feel hit-or-miss."
 }
