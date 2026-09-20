@@ -57,8 +57,12 @@ export function Sidebar({
             <dd>{lessonCount} frameworks</dd>
           </div>
           <div className={styles.qf}>
-            <dt>Costs</dt>
-            <dd>Nothing, no account</dd>
+            <dt>The prompt</dt>
+            <dd>Free, no account</dd>
+          </div>
+          <div className={styles.qf}>
+            <dt>Full breakdown</dt>
+            <dd>Free account</dd>
           </div>
         </dl>
       </div>

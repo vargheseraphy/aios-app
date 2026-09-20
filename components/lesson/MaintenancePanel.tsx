@@ -54,8 +54,8 @@ export function MaintenancePanel({
             <b>{formatExtractedAt(extractedAt)}</b>
           </div>
           <div className={styles.mm}>
-            <span>Costs to read</span>
-            <b>Nothing, no account</b>
+            <span>The prompt</span>
+            <b>Free, no account</b>
           </div>
         </div>
       </div>
