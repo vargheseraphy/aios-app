@@ -476,9 +476,23 @@ page, exactly the pattern Phase 5 already established.
 - Author biography beyond "author of the book" and author portrait/photography — currently
   line-art placeholders per the locked design.
 - Correct prompt text for lesson 6.6 "Culture Code Canvas".
-- Google Cloud OAuth client ID/secret for Google Sign-In (steps in
-  `docs/technical/ARCHITECTURE.md`) — not created during this autonomous run, since it requires
-  a human with console access; `.env.example` documents the variable name.
+- ~~Google Cloud OAuth client ID/secret~~ **Done, 2026-09-20**: created the "AIOS Companion
+  Site" Google Cloud project, configured its OAuth branding (External audience, support email
+  raphy202@gmail.com), and created a Web application OAuth client — `AIOS Web Client` — with
+  authorized JavaScript origins `https://aios.obio.in` and `http://localhost:3000`, and the
+  Supabase callback (`https://endatmaraqlcvhbymxfw.supabase.co/auth/v1/callback`) as an
+  authorized redirect URI, done together with Raphy via browser automation (he approved
+  creating the project and agreeing to Google's API Services User Data Policy). The Client ID
+  and Secret are saved in Supabase's Google provider (Authentication → Sign In / Providers), and
+  the Client ID is in `.env.local` as `NEXT_PUBLIC_GOOGLE_CLIENT_ID` — verified locally: the
+  "Google sign-in not configured yet" placeholder is gone from the rendered sign-in modal.
+  **Still needed**: the OAuth consent screen is in External/testing mode by default, which
+  limits sign-in to test users Raphy explicitly adds (Google Auth Platform → Audience → Test
+  users) until the app is verified/published — fine for initial testing, but move it to
+  "In production" before a real reader tries to sign in with Google. Also add
+  `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to Vercel's project environment variables (same value as
+  `.env.local`) so the deployed site picks it up — it isn't there automatically, since
+  `.env.local` is never deployed.
 - ~~A live Supabase project~~ **Done, 2026-09-19**: a project named `aios` (ref
   `endatmaraqlcvhbymxfw`, ap-south-1) now exists, connected via the Supabase MCP connector.
   `0001_init.sql` is applied, followed by a new `0002_lock_down_and_tune.sql` written after
