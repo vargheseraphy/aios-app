@@ -471,3 +471,143 @@ export const ABOUT_CONTENT = {
   closeCtaPrimary: "See all ten modules",
   closeCtaSecondary: "Why this book",
 };
+
+/**
+ * Shared by /m{module} (each-module.html) and /modules (all-module.html) —
+ * both designs' "join" bands carry byte-identical copy, so it lives once
+ * here rather than twice.
+ */
+export const MODULES_JOIN_CONTENT = {
+  heading: "A free account, and the whole book opens.",
+  body: "Email link or Google, no password and no card. It exists so your saved prompts have somewhere to live and so the lesson pages know who you are — not to meter anything you have already paid for in print.",
+  ctaPrimary: "Create an account",
+  ctaSecondary: "How the book works",
+  list: [
+    "All 108 full lesson pages",
+    "Save any prompt to your own list",
+    "Send a colleague a link with your name on it",
+  ],
+};
+
+/** Static UI copy for /m{module} — ported from each-module.html. Real book
+ * data (title, subtitle, description, promptBody, ...) always comes from
+ * lib/content-v2.ts, never duplicated here. */
+export const EACH_MODULE_CONTENT = {
+  skipLabel: "Skip to the prompts",
+  seamNote: "every prompt in this module, free to copy",
+  backLabel: "All 10 modules",
+
+  chipFrameworksLabel: "Frameworks",
+  chipPagesLabel: "Pages",
+  chipPromptsLabel: "Prompts",
+  chipPromptsValue: "Free, no account",
+
+  tocFrameworksSuffix: "frameworks",
+  tocSectionsHeading: "On this page",
+  sectionLessonsLabel: "Every prompt in this module",
+  sectionAboutLabel: "About this module",
+  sectionWhyLabel: "What an account opens",
+  sectionJoinLabel: "Create an account",
+
+  lessonsHeading: "Every prompt in this module",
+  lessonsSub: "Open one to read its prompt and copy it. No account needed.",
+
+  legendKeyLabel: "Labels",
+  legendValueLabel: "Replace these",
+  copyLabel: "Copy prompt",
+  copiedLabel: "Copied",
+
+  fullLessonLabel: "View full lesson",
+  lockWhyPrefix: "Free account",
+  lockWhyLinkLabel: "what that opens",
+
+  aboutHeading: "About this module",
+  spreadBeginnerLabel: "Beginner",
+  spreadIntermediateLabel: "Intermediate",
+  spreadAdvancedLabel: "Advanced",
+  spreadPrintedLabel: "Printed on",
+
+  whyKicker: "What an account opens",
+  whyHeading: "The prompt is the tool. The lesson page is how you aim it.",
+  whyLead:
+    "You have the prompt already — copy it and go. The full lesson page is the printed spread around it, which is what turns a good prompt into a good answer. It is free; it just needs a name to attach your saved prompts to.",
+  whyItems: [
+    {
+      title: "The problem it solves",
+      body: "The situation the framework was written for, in the author's words. **If it is not your situation, you have saved yourself an hour.**",
+    },
+    {
+      title: "How the framework works",
+      body: "What the numbers mean, what counts as healthy, and **what the framework hides** if you read it on its own.",
+    },
+    {
+      title: "The method, step by step",
+      body: "The numbered moves to run before and after the prompt — **where most people get the inputs wrong.**",
+    },
+    {
+      // the leading "{n} " is interpolated with module.roleCount in WhySignupBand
+      title: "roles you can drop in",
+      titleIsRoleCount: true,
+      body: "This module's role profile index. **Choose one and the prompt's opening line rewrites itself** — a CFO and an auditor give you different answers.",
+    },
+    {
+      title: "Where it came from",
+      body: "Who built the framework and when. **Useful when someone asks you to justify the method** in a meeting.",
+    },
+    {
+      title: "The pro tip and the pairings",
+      body: "The one caveat the author flags, and **the four frameworks to run beside it**, with their page numbers.",
+    },
+  ],
+  whyFoot:
+    "**The prompts on this page stay free either way.** An account is for the lesson pages, your saved list, and nothing else. No card, no trial.",
+};
+
+/** Static UI copy for /modules — ported from all-module.html. */
+export const ALL_MODULES_CONTENT = {
+  skipLabel: "Skip to the modules",
+  seamNote: "every prompt free to copy",
+  backLabel: "Home",
+
+  kicker: "The book",
+  heading: "All ten modules",
+  subheading: "Open one to see what it covers and every framework inside it.",
+
+  chipModulesLabel: "Modules",
+  chipFrameworksLabel: "Frameworks",
+  chipPagesLabel: "Pages",
+  chipPromptsLabel: "Prompts",
+  chipPromptsValue: "Free, no account",
+
+  tocHeading: "modules",
+  tocSectionsHeading: "On this page",
+  sectionModulesLabel: "The ten modules",
+  sectionAboutLabel: "How the book is built",
+  sectionJoinLabel: "Create an account",
+
+  modulesHeading: "The ten modules",
+  modulesSub: "Open one to read what it does and see its frameworks. No account needed.",
+
+  modstatFrameworksLabel: "Frameworks",
+  modstatRolesLabel: "Role profiles",
+  modstatPagesLabel: "Printed pages",
+  modstatFreeLabel: "Free",
+  modstatFreeValue: "Prompts, no account",
+
+  frameworkListHeadNo: "No.",
+  frameworkListHeadFramework: "Framework",
+  frameworkListHeadLevel: "Level",
+  frameworkListHeadPages: "Pages",
+
+  openModulePrefix: "Open module",
+  openModuleSuffix: "copy the prompts",
+  openModuleLockWhySuffix: "prompts free, no account",
+
+  aboutHeading: "How the book is built",
+  aboutBody:
+    "Every framework is printed across two pages: the reasoning on the left, the prompt on the right, and a QR code that opens the prompt on this site. The modules run in the order a business grows — how to think, what to build, who to sell to, how to reach them, who to hire, how to run it, how to decide, what the numbers say, and finally how to lead yourself. You can read it straight through, or scan the one code you need in the middle of a Tuesday.",
+  spreadModulesLabel: "Modules",
+  spreadFrameworksLabel: "Frameworks",
+  spreadRoleProfilesLabel: "Role profiles",
+  spreadPrintedLabel: "Printed on",
+};
