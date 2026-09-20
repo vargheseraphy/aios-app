@@ -1,0 +1,950 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All Ten Modules</title>
+<meta name="description" content="The ten modules of AI Operating System for Leaders - what each one covers, the frameworks inside it, and where to copy the prompts. Free, no account.">
+<meta property="og:title" content="All ten modules &middot; AIOS">
+<meta property="og:description" content="108 frameworks across 10 modules. What each module does, and every framework inside it.">
+<meta property="og:type" content="article">
+<!--
+DIRECTION CONTRACT
+THESIS: The same accordion the module page uses for its lessons, one level up. Each row is a
+module; opening it says what that module does in the author's words, what it contains, and sends
+the reader to the page where the prompts are. Nothing here is gated - this page is the map.
+It deliberately mirrors module.html so the two read as one system.
+
+=====================  TEMPLATE DATA BINDING  =====================
+Route: /modules  ->  every content-v2/modules/m{n}.json + their lessons
+
+  modules/m{n}.json             data-field
+  ------------------------------------------------------------
+  module                        module.number      zero-padded to 2 digits
+  title                         module.title
+  promise                       module.promise     the opener's one-line promise
+  whatItDoes                    module.whatItDoes  the opener's "WHAT THIS MODULE DOES" paragraph
+  lessons.length (computed)     module.lessonCount
+  page span      (computed)     module.pageRange
+  roleProfile counts            module.roleCount
+  lessons[] -> each lesson json lesson.number / .titlePrinted / .level / .pages.intro / .pages.prompt
+
+  Every data-field sits on a LEAF whose whole text is that field's value. Repeating elements
+  carry data-field-item as well as the container's data-field.
+
+NOTE 1 - accordion panels are `hidden` when closed, so they leave the tab order and find-in-page.
+  Module 1 ships open.
+NOTE 2 - `startHere` was extracted from the openers but is NOT rendered. The same sentence
+  ("Start here if you are new to AI, or your prompts feel hit-or-miss") is printed on 9 of the
+  10 module openers, where it only makes sense on module 1. See CONTENT-ISSUES.md.
+NOTE 3 - every "Open module" link points at module.html in this demo. In the build it is /m{n}.
+==================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:76px;}
+body{background:#fff; color:var(--ink-2); font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:9px 15px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.lrow-btn:focus-visible,.pcbtn:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.nav .btn:focus-visible,.seam .btn:focus-visible,.join .btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.pcbtn:focus-visible{outline-color:#fff;}
+a:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px; border-radius:4px;}
+.nav a:focus-visible,.seam a:focus-visible,.join a:focus-visible,footer a:focus-visible{outline-color:#fff;}
+.skip{position:absolute; left:16px; top:-60px; z-index:80; background:#fff; color:var(--ink-2); font-weight:500; font-size:13px; padding:11px 18px; border-radius:8px; transition:top .15s;}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px));}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.86); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d); color:#fff;}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em; color:#fff;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1180px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.avatar-chip[hidden],.icon-btn[hidden]{display:none !important;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, border-color .15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer; color:#fff;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* seam */
+.seam{position:relative; overflow:hidden; background:var(--ink); color:#fff;}
+.seam .bg{position:absolute; inset:0; background:
+  radial-gradient(620px 300px at 8% 0%, rgba(59,123,247,.8), transparent 62%),
+  radial-gradient(520px 320px at 92% 100%, rgba(15,46,117,.9), transparent 60%), #0B0C0F;}
+.seam-in{position:relative; display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-block:14px;}
+.seam-art{flex:none; color:#fff; opacity:.9;}
+.seam-txt{flex:1 1 auto; min-width:0; font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:rgba(255,255,255,.94); line-height:1.5;}
+.seam-txt b{color:#fff; font-weight:500;} .seam-txt .dim{color:rgba(255,255,255,.70);}
+.seam-long{display:none;} @media(min-width:760px){.seam-long{display:inline;}}
+.seam-back{flex:none; margin-left:auto; font-size:12.5px; color:rgba(255,255,255,.82); display:inline-flex; align-items:center; gap:7px; border:1px solid rgba(255,255,255,.26); border-radius:999px; padding:10px 14px;}
+.seam-back:hover{color:#fff; background:rgba(255,255,255,.10);}
+@media(max-width:639px){.seam-back{padding:10px 11px;} .seam-back .bl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}}
+
+/* module head */
+.mhead{border-bottom:1px solid var(--line-l);}
+.mhead-in{display:flex; align-items:flex-end; justify-content:space-between; gap:20px 34px; flex-wrap:wrap; padding-block:24px 22px;}
+.mhead-l{min-width:0; flex:1 1 420px;}
+.mkick{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l);}
+h1.mt{font-size:clamp(26px,3.6vw,36px); line-height:1.1; letter-spacing:-.028em; font-weight:800; margin-top:9px; max-width:26ch;}
+.msub{font-size:15px; line-height:1.5; color:var(--gray-l); max-width:64ch; margin-top:8px;}
+@media(min-width:640px){.msub{font-size:16px;}}
+.mfacts{display:flex; flex-wrap:wrap; gap:8px; flex:0 1 auto;}
+.mf{display:flex; align-items:baseline; gap:7px; border:1px solid var(--line-l2); border-radius:999px; padding:7px 13px; background:#fff;}
+.mf dt{font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l); white-space:nowrap;}
+.mf dd{margin:0; font-size:12.5px; font-weight:500; color:var(--ink-2); white-space:nowrap;}
+
+/* how this page works */
+.howbar{display:flex; align-items:flex-start; gap:13px; margin-top:34px; padding:16px 20px; border-radius:14px; background:var(--wash); border:1px solid var(--line-l); font-size:14px; line-height:1.65; color:var(--gray-l); max-width:88ch;}
+.howbar svg{color:var(--green); flex:none; margin-top:2px;}
+.howbar b{color:var(--ink-2); font-weight:500;}
+
+/* two-column body: contents rail left, content right */
+.mgrid{display:grid; grid-template-columns:1fr; gap:0; padding-top:4px;}
+@media(min-width:1100px){.mgrid{grid-template-columns:292px minmax(0,1fr); gap:56px; align-items:start; padding-top:30px;}}
+.toc{display:none;}
+@media(min-width:1100px){
+  .toc{display:block; position:sticky; top:92px; max-height:calc(100vh - 124px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; padding-bottom:24px;}
+}
+.toc-card{border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:18px 20px;}
+.toc-card + .toc-card{margin-top:14px;}
+.toc-card h2{font-family:var(--mono); font-weight:500; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); margin-bottom:14px;}
+.toc-sec{display:flex; flex-direction:column;}
+.toc-sec a{display:flex; align-items:center; gap:10px; font-size:13.5px; line-height:1.45; color:var(--gray-l); padding:10px 0;}
+.toc-sec a + a{border-top:1px solid var(--line-l);}
+.toc-sec a:hover{color:var(--ink-2);}
+.toc-sec a .dot{width:5px; height:5px; border-radius:50%; background:var(--line-l2); flex:none;}
+.toc-sec a:hover .dot,.toc-sec a.here .dot{background:var(--blue);}
+.toc-sec a.here{color:var(--ink-2); font-weight:500;}
+.toc-list{display:flex; flex-direction:column;}
+.tl{display:grid; grid-template-columns:34px minmax(0,1fr) 16px; gap:10px; align-items:center; width:100%; text-align:left;
+  background:none; border:none; padding:9px 6px; margin-inline:-6px; cursor:pointer; font-family:var(--sans); border-radius:8px; transition:background .15s;}
+.tl + .tl{border-top:1px solid var(--line-l);}
+.tl:hover{background:var(--wash);}
+.tl:focus-visible{outline:2px solid var(--ink-2); outline-offset:-1px;}
+.tl .tn{font-family:var(--mono); font-size:11.5px; color:var(--blue);}
+.tl .tt{font-size:13px; line-height:1.4; color:var(--gray-l); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.tl .tk{width:16px; height:16px; flex:none; color:#1B7A3C; opacity:0; transition:opacity .15s;}
+.tl[data-copied="1"] .tk{opacity:1;}
+.tl[aria-current="true"]{background:var(--wash);}
+.tl[aria-current="true"] .tt{color:var(--ink-2); font-weight:500;}
+.tl[aria-current="true"] .tn{color:var(--ink-2);}
+.toc-prog{display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:13px; border-top:1px solid var(--line-l); font-family:var(--mono); font-size:10.5px; color:var(--gray-l);}
+.toc-bar{flex:1; height:4px; border-radius:999px; background:var(--line-l); overflow:hidden;}
+.toc-bar i{display:block; height:100%; width:100%; background:#1B7A3C; border-radius:999px; transform:scaleX(0); transform-origin:left; transition:transform .25s;}
+
+.lhead2{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:34px;}
+@media(min-width:1100px){.lhead2{margin-top:4px;}}
+.lhead2 h2{font-size:clamp(20px,2.6vw,25px); line-height:1.18;}
+.lhead2 p{font-size:13.5px; color:var(--gray-l);}
+
+/* accordion */
+.lessons{margin-top:18px; border:1px solid var(--line-l); border-radius:18px; overflow:hidden; background:#fff;}
+.lrow + .lrow{border-top:1px solid var(--line-l);}
+.lrow-h{margin:0; font-size:inherit; font-weight:inherit; letter-spacing:normal;}
+.lrow-btn{display:grid; grid-template-columns:auto 1fr auto; gap:8px 14px; align-items:center; width:100%; text-align:left;
+  padding:18px 20px; background:#fff; border:none; cursor:pointer; font-family:var(--sans); transition:background .15s;}
+@media(min-width:900px){.lrow-btn{grid-template-columns:52px minmax(190px,0.9fr) minmax(0,1.3fr) 116px 34px; gap:18px; padding:20px 22px;}}
+@media(min-width:900px){.lrow-btn .lp{grid-column:4; grid-row:1; justify-self:start;} .lrow-btn .lx{grid-column:5; grid-row:1;}}
+.lrow-btn:hover{background:var(--wash);}
+.lrow-btn[aria-expanded="true"]{background:var(--wash);}
+.lrow-btn .ln{font-family:var(--mono); font-size:12.5px; color:var(--blue); grid-column:1;}
+.lrow-btn .lpromise{grid-column:1 / span 2; font-size:13.5px; line-height:1.5; color:var(--gray-l);}
+@media(min-width:900px){.lrow-btn .lpromise{grid-column:3; grid-row:1; justify-self:start; align-self:center;}}
+.lrow-btn .lt2{font-family:var(--disp); font-weight:700; font-size:16px; letter-spacing:-.02em; color:var(--ink-2); line-height:1.25; grid-column:2; white-space:pre-wrap;}
+.lrow-btn .lv{grid-column:1 / span 2; justify-self:start; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; border-radius:6px; padding:4px 9px;}
+.lrow-btn .lv::before{content:""; width:6px; height:6px; border-radius:50%; background:currentColor;}
+.lev-beginner{background:#E6F6EC; color:#1B7A3C;} .lev-intermediate{background:#E8F0FE; color:#1E5CE0;} .lev-advanced{background:#FFF4D6; color:#8A5B00;}
+.lrow-btn .lp{grid-column:1 / span 2; justify-self:start; font-family:var(--mono); font-size:11px; color:var(--gray-l);}
+.lrow-btn .lx{grid-column:3; grid-row:1; width:30px; height:30px; border-radius:50%; border:1px solid var(--line-l2); display:flex; align-items:center; justify-content:center; color:var(--ink-2); transition:transform .25s, background .15s, color .15s, border-color .15s;}
+.lrow-btn[aria-expanded="true"] .lx{transform:rotate(45deg); background:var(--ink-2); color:#fff; border-color:var(--ink-2);}
+@media(min-width:900px){
+  .lrow-btn .lp{grid-column:4; grid-row:1; justify-self:start; white-space:nowrap;}
+  .lrow-btn .lx{grid-column:5; grid-row:1; justify-self:end;}
+}
+.lpanel{padding:4px 20px 24px;}
+@media(min-width:900px){.lpanel{padding:4px 22px 26px;}}
+.lpanel .lsum{font-size:15px; line-height:1.7; color:var(--gray-l); max-width:76ch; margin-bottom:18px;}
+
+/* prompt card */
+.promptcard{background:#0B0C0F; border-radius:14px; border:1px solid #23262E;}
+.pc-top{display:flex; align-items:center; gap:9px; padding:10px 12px; border-bottom:1px solid var(--line-d); background:var(--panel); border-radius:13px 13px 0 0;}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.34); border-radius:5px; padding:3px 7px; flex:none;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13px; color:#fff; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pc-top .up{margin-left:auto; flex:none; display:flex; gap:8px; align-items:center;}
+.pc-body{padding:18px 16px; font-family:var(--mono); font-size:12px; line-height:1.95; color:rgba(255,255,255,.90); white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere; border-radius:0 0 13px 13px;}
+@media(min-width:640px){.pc-body{font-size:12.5px; padding:20px 19px;}}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.copybtn{flex:none; padding:9px 15px;} .copybtn.done{background:var(--green); color:#fff;}
+@media(pointer:coarse){.copybtn{padding:12px 17px;}}
+.copystat{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.mlegend{display:flex; gap:14px; flex-wrap:wrap; font-family:var(--mono); font-size:10px; color:var(--gray-l); margin-top:10px;}
+.mlegend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px;}
+.mlegend .ky{background:#C99400;} .mlegend .vl{background:var(--blue);}
+
+/* row actions + the lock */
+.lacts{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:16px;}
+.fulllink{display:inline-flex; align-items:center; gap:9px; font-family:var(--sans); font-weight:500; font-size:13.5px; color:var(--ink-2); background:#fff; border:1px solid var(--line-l2); border-radius:8px; padding:10px 16px; cursor:pointer; transition:background .15s, border-color .15s;}
+.fulllink:hover{background:var(--wash); border-color:var(--gray-l2);}
+.fulllink:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.fulllink .lk{color:var(--gray-l);}
+html[data-auth="in"] .fulllink .lk{display:none;}
+.lockwhy{font-size:12.5px; color:var(--gray-l);}
+html[data-auth="in"] .lockwhy{display:none;}
+.lockwhy a{color:var(--blue-lo); font-weight:500;} .lockwhy a:hover{text-decoration:underline;}
+
+/* about this module, below the prompts */
+.about{display:grid; grid-template-columns:1fr; gap:22px; margin-top:44px; border:1px solid var(--line-l); border-radius:18px; padding:28px 26px; background:#fff;}
+@media(min-width:900px){.about{grid-template-columns:1.85fr 1fr; gap:44px; padding:32px 34px; align-items:start;}}
+.about h2{font-size:clamp(19px,2.3vw,23px); line-height:1.2; margin-bottom:13px;}
+.about p{font-size:15px; line-height:1.8; color:var(--gray-l); max-width:76ch;}
+.about .lead{font-family:var(--disp); font-weight:600; font-size:17px; line-height:1.45; letter-spacing:-.018em; color:var(--ink-2); margin-bottom:12px; max-width:56ch;}
+.spread{border:1px solid var(--line-l); border-radius:14px; background:var(--wash); padding:6px 18px;}
+.sp{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0; font-size:13.5px;}
+.sp + .sp{border-top:1px solid var(--line-l);}
+.sp .spl{display:inline-flex; align-items:center; gap:9px; color:var(--gray-l);}
+.sp .spl::before{content:""; width:8px; height:8px; border-radius:50%; background:currentColor;}
+.sp .b{color:#1B7A3C;} .sp .i{color:#1E5CE0;} .sp .a{color:#8A5B00;}
+.sp b{font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--ink-2);}
+
+/* why sign up */
+.why{background:var(--wash); border:1px solid var(--line-l); border-radius:20px; margin-top:20px;}
+.why-in{padding:42px 24px;}
+@media(min-width:900px){.why-in{padding:54px 38px;}}
+.why .kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l);}
+.why h2{font-size:clamp(23px,3.2vw,32px); line-height:1.14; margin-block:12px 12px; max-width:30ch;}
+.why .lead{font-size:15.5px; line-height:1.8; color:var(--gray-l); max-width:78ch;}
+.whygrid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:34px;}
+@media(min-width:760px){.whygrid{grid-template-columns:1fr 1fr; gap:16px;}}
+.wi{display:grid; grid-template-columns:34px 1fr; gap:15px; align-items:start; background:#fff; border:1px solid var(--line-l); border-radius:14px; padding:20px 22px;}
+.wi .ic{width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex:none;}
+.wi h3{font-size:15.5px; line-height:1.25; margin-bottom:6px;}
+.wi p{font-size:13.5px; line-height:1.65; color:var(--gray-l);}
+.wi p b{color:var(--ink-2); font-weight:500;}
+.wfoot{display:flex; align-items:center; gap:13px; flex-wrap:wrap; margin-top:30px; font-size:14px; color:var(--gray-l); line-height:1.6;}
+.wfoot b{color:var(--ink-2); font-weight:500;}
+
+/* join */
+.join{position:relative; overflow:hidden; background:var(--blue-deep); padding-block:72px;}
+@media(min-width:900px){.join{padding-block:88px;}}
+.join .bg{position:absolute; inset:0; background:
+  radial-gradient(700px 400px at 14% 10%, rgba(59,123,247,.95), transparent 62%),
+  radial-gradient(560px 400px at 88% 90%, rgba(47,171,87,.45), transparent 60%), var(--blue-deep);}
+.join .lines{position:absolute; inset:0; opacity:.32;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.join-in{position:relative; display:grid; grid-template-columns:1fr; gap:30px; align-items:center;}
+@media(min-width:900px){.join-in{grid-template-columns:1.85fr 1fr; gap:48px;}}
+.join h2{color:#fff; font-size:clamp(24px,3.4vw,33px); line-height:1.1; max-width:24ch; margin-bottom:12px;}
+.join p{color:rgba(255,255,255,.88); font-size:15px; line-height:1.7; max-width:62ch;}
+.join-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;}
+.join-list{border:1px solid rgba(255,255,255,.22); border-radius:16px; background:rgba(0,0,0,.28); backdrop-filter:blur(8px); padding:10px 24px;}
+.jl{display:flex; align-items:center; gap:13px; padding:15px 0; font-size:14px; line-height:1.5; color:rgba(255,255,255,.88);}
+.jl + .jl{border-top:1px solid rgba(255,255,255,.14);}
+.jl .si{color:#fff; flex:none;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:52px 30px; color:#fff;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:34px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-2); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:22px; font-size:12px; color:var(--fg-2);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .btn,.icon-btn,.lrow-btn,.lrow-btn .lx,.fulllink,.skip,.tl,.tl .tk,.toc-bar i{transition:none;}
+}
+
+/* module index extras */
+.mods{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:20px;}
+@media(min-width:620px){.mods{grid-template-columns:repeat(4,1fr);}}
+.modstat{border:1px solid var(--line-l); border-radius:12px; background:var(--wash); padding:13px 15px;}
+.modstat b{display:block; font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.02em; color:var(--ink-2);}
+.modstat span{display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--gray-l); margin-top:5px;}
+.mwhat{font-size:15px; line-height:1.8; color:var(--gray-l); max-width:80ch;}
+.mwhat b{color:var(--ink-2); font-weight:500;}
+.frlist{margin-top:20px; border:1px solid var(--line-l); border-radius:14px; overflow:hidden;}
+.frhead{display:none;}
+@media(min-width:820px){.frhead{display:grid; grid-template-columns:52px minmax(0,1fr) 116px 108px; gap:16px; padding:10px 18px; background:var(--wash); border-bottom:1px solid var(--line-l); font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-l);}}
+.fr{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; padding:13px 18px; background:#fff;}
+.fr + .fr{border-top:1px solid var(--line-l);}
+@media(min-width:820px){.fr{grid-template-columns:52px minmax(0,1fr) 116px 108px; gap:16px; align-items:center; padding:12px 18px;}}
+.fr .fn{font-family:var(--mono); font-size:12px; color:var(--blue);}
+.fr .ft{font-size:14.5px; font-family:var(--disp); font-weight:700; letter-spacing:-.018em; color:var(--ink-2); line-height:1.3; white-space:pre-wrap;}
+.fr .flv{grid-column:1 / span 2; justify-self:start; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:9.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; border-radius:6px; padding:3px 8px;}
+.fr .flv::before{content:""; width:6px; height:6px; border-radius:50%; background:currentColor;}
+.fr .fp{grid-column:1 / span 2; justify-self:start; font-family:var(--mono); font-size:11px; color:var(--gray-l);}
+@media(min-width:820px){.fr .flv{grid-column:3; justify-self:start;} .fr .fp{grid-column:4; justify-self:start;}}
+.macts{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:20px;}
+</style>
+
+<a class="skip" href="#lessons">Skip to the modules</a>
+<nav class="nav" aria-label="Primary"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a class="on" href="#">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="contact.html">Contact</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#join">Create an account</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <button class="avatar-chip" id="avatarChip" type="button" hidden aria-label="Signed in as RV &mdash; click to sign out (preview)">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </span>
+</div></nav>
+
+<main>
+<div class="seam">
+  <div class="bg"></div>
+  <div class="pad seam-in">
+    <svg class="seam-art line" width="34" height="26" viewBox="0 0 34 26" aria-hidden="true">
+      <path class="s2" d="M2 5c3.5-2 8-2 12 1v16c-3.5-3-8.5-3-12-1"/>
+      <path class="s2" d="M2 5v16"/>
+      <rect class="s" x="19" y="3" width="13" height="20" rx="2.5"/>
+      <path class="s3" d="M15.8 13h1.2"/>
+      <rect class="fd" x="23" y="8" width="5" height="5" rx="1"/>
+    </svg>
+    <p class="seam-txt"><b>108 frameworks</b><span class="dim"> &middot; </span>10 modules<span class="seam-long"><span class="dim"> &middot; every prompt free to copy</span></span></p>
+    <a class="seam-back" href="home.html">
+      <svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="bl">Home</span>
+    </a>
+  </div>
+</div>
+
+<div class="mhead"><div class="pad mhead-in">
+  <div class="mhead-l">
+    <p class="mkick">The book</p>
+    <h1 class="mt">All ten modules</h1>
+    <p class="msub">Open one to see what it covers and every framework inside it.</p>
+  </div>
+  <dl class="mfacts">
+    <div class="mf"><dt>Modules</dt><dd>10</dd></div>
+    <div class="mf"><dt>Frameworks</dt><dd>108</dd></div>
+    <div class="mf"><dt>Pages</dt><dd>22&ndash;246</dd></div>
+    <div class="mf"><dt>Prompts</dt><dd>Free, no account</dd></div>
+  </dl>
+</div></div>
+
+<div class="pad mgrid">
+<aside class="toc" aria-label="Contents">
+  <div class="toc-card">
+    <h2>10 modules</h2>
+    <div class="toc-list" id="tocList" data-field="modules[]">
+      <button class="tl" type="button" data-field-item data-target="1" aria-current="false" aria-label="Go to module 01, Think Like a Strategist"><span class="tn" data-field="module.number">01</span><span class="tt" data-field="module.title">Think Like a Strategist</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="2" aria-current="false" aria-label="Go to module 02, Design Your Business"><span class="tn" data-field="module.number">02</span><span class="tt" data-field="module.title">Design Your Business</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="3" aria-current="false" aria-label="Go to module 03, Know Your Market"><span class="tn" data-field="module.number">03</span><span class="tt" data-field="module.title">Know Your Market</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="4" aria-current="false" aria-label="Go to module 04, Sell Like a Pro"><span class="tn" data-field="module.number">04</span><span class="tt" data-field="module.title">Sell Like a Pro</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="5" aria-current="false" aria-label="Go to module 05, Market Your Message"><span class="tn" data-field="module.number">05</span><span class="tt" data-field="module.title">Market Your Message</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="6" aria-current="false" aria-label="Go to module 06, Build Your Team"><span class="tn" data-field="module.number">06</span><span class="tt" data-field="module.title">Build Your Team</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="7" aria-current="false" aria-label="Go to module 07, Operate with Precision"><span class="tn" data-field="module.number">07</span><span class="tt" data-field="module.title">Operate with Precision</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="8" aria-current="false" aria-label="Go to module 08, Decide with Confidence"><span class="tn" data-field="module.number">08</span><span class="tt" data-field="module.title">Decide with Confidence</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="9" aria-current="false" aria-label="Go to module 09, Finance &amp; Metrics"><span class="tn" data-field="module.number">09</span><span class="tt" data-field="module.title">Finance &amp; Metrics</span><span style="width:16px"></span></button>
+      <button class="tl" type="button" data-field-item data-target="10" aria-current="false" aria-label="Go to module 10, Lead Yourself First"><span class="tn" data-field="module.number">10</span><span class="tt" data-field="module.title">Lead Yourself First</span><span style="width:16px"></span></button>
+    </div>
+  </div>
+  <div class="toc-card">
+    <h2>On this page</h2>
+    <nav class="toc-sec" aria-label="Sections">
+      <a href="#lessons"><span class="dot"></span>The ten modules</a>
+      <a href="#about"><span class="dot"></span>How the book is built</a>
+      <a href="#join"><span class="dot"></span>Create an account</a>
+    </nav>
+  </div>
+</aside>
+
+<div class="mcol">
+<div id="lessons">
+  <div class="lhead2">
+    <h2>The ten modules</h2>
+    <p>Open one to read what it does and see its frameworks. No account needed.</p>
+  </div>
+  <div class="lessons" data-field="modules[]">
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-1" aria-controls="p-1" aria-expanded="true">
+        <span class="ln" data-field="module.number">01</span>
+        <span class="lt2" data-field="module.title">Think Like a Strategist</span>
+        <span class="lpromise" data-field="module.promise">Learn to work with AI. Then learn to think. Both are non-negotiable.</span>
+        <span class="lp"><span data-field="module.lessonCount">13</span> frameworks &middot; pp. <span data-field="module.pageRange">22&ndash;47</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-1" role="region" aria-labelledby="b-1">
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">13</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>26</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Most founders fail with AI not because they lack access but because they never built the foundation. This module gives you two things: the skills to work with AI effectively, and the thinking frameworks that make every decision sharper with or without AI.</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.0</span><span class="ft" data-field="lesson.titlePrinted">The AI Mental Model</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">22</span>&ndash;<span data-field="lesson.pages.prompt">23</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.1</span><span class="ft" data-field="lesson.titlePrinted">C.A.R.E Prompting</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">24</span>&ndash;<span data-field="lesson.pages.prompt">25</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.2</span><span class="ft" data-field="lesson.titlePrinted">The Context Stack</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">26</span>&ndash;<span data-field="lesson.pages.prompt">27</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.3</span><span class="ft" data-field="lesson.titlePrinted">Role Prompting - The Expert Chair</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">28</span>&ndash;<span data-field="lesson.pages.prompt">29</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.4</span><span class="ft" data-field="lesson.titlePrinted">The Refinement Loop</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">30</span>&ndash;<span data-field="lesson.pages.prompt">31</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.5</span><span class="ft" data-field="lesson.titlePrinted">Six Thinking Hats</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">32</span>&ndash;<span data-field="lesson.pages.prompt">33</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.6</span><span class="ft" data-field="lesson.titlePrinted">First Principles Thinking</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">34</span>&ndash;<span data-field="lesson.pages.prompt">35</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.7</span><span class="ft" data-field="lesson.titlePrinted">Second Order Thinking</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">36</span>&ndash;<span data-field="lesson.pages.prompt">37</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.8</span><span class="ft" data-field="lesson.titlePrinted">Inversion Thinking</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">38</span>&ndash;<span data-field="lesson.pages.prompt">39</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.9</span><span class="ft" data-field="lesson.titlePrinted">Mental Models Library</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">40</span>&ndash;<span data-field="lesson.pages.prompt">41</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.10</span><span class="ft" data-field="lesson.titlePrinted">OODA Loop</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">42</span>&ndash;<span data-field="lesson.pages.prompt">43</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.11</span><span class="ft" data-field="lesson.titlePrinted">SCAMPER</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">44</span>&ndash;<span data-field="lesson.pages.prompt">45</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">1.12</span><span class="ft" data-field="lesson.titlePrinted">MECE Framework</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">46</span>&ndash;<span data-field="lesson.pages.prompt">47</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 01 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 13 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-2" aria-controls="p-2" aria-expanded="false">
+        <span class="ln" data-field="module.number">02</span>
+        <span class="lt2" data-field="module.title">Design Your Business</span>
+        <span class="lpromise" data-field="module.promise">Shape what you&#x27;re building so it deserves to exist.</span>
+        <span class="lp"><span data-field="module.lessonCount">10</span> frameworks &middot; pp. <span data-field="module.pageRange">49&ndash;68</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-2" role="region" aria-labelledby="b-2" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">10</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>20</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Most founders skip from idea to execution without ever properly designing the business. They build the wrong thing efficiently. This module gives you the tools to validate your model, understand your customer deeply, find uncontested market space, and price with confidence before you spend a year building something the market doesn&#x27;t want.</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.1</span><span class="ft" data-field="lesson.titlePrinted">Value Proposition Canvas</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">49</span>&ndash;<span data-field="lesson.pages.prompt">50</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.2</span><span class="ft" data-field="lesson.titlePrinted">Business Model Canvas</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">51</span>&ndash;<span data-field="lesson.pages.prompt">52</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.3</span><span class="ft" data-field="lesson.titlePrinted">Lean Canvas</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">53</span>&ndash;<span data-field="lesson.pages.prompt">54</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.4</span><span class="ft" data-field="lesson.titlePrinted">Blue Ocean Strategy</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">55</span>&ndash;<span data-field="lesson.pages.prompt">56</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.5</span><span class="ft" data-field="lesson.titlePrinted">Jobs To Be Done</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">57</span>&ndash;<span data-field="lesson.pages.prompt">58</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.6</span><span class="ft" data-field="lesson.titlePrinted">MVP Design</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">59</span>&ndash;<span data-field="lesson.pages.prompt">60</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.7</span><span class="ft" data-field="lesson.titlePrinted">Pricing Strategy - Value Ladder</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">61</span>&ndash;<span data-field="lesson.pages.prompt">62</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.8</span><span class="ft" data-field="lesson.titlePrinted">Unfair Advantage, Moat Builder</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">63</span>&ndash;<span data-field="lesson.pages.prompt">64</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.9</span><span class="ft" data-field="lesson.titlePrinted">Ansoff Matrix</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">65</span>&ndash;<span data-field="lesson.pages.prompt">66</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">2.10</span><span class="ft" data-field="lesson.titlePrinted">Kano Model</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">67</span>&ndash;<span data-field="lesson.pages.prompt">68</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 02 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 10 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-3" aria-controls="p-3" aria-expanded="false">
+        <span class="ln" data-field="module.number">03</span>
+        <span class="lt2" data-field="module.title">Know Your Market</span>
+        <span class="lpromise" data-field="module.promise">See your competitive landscape clearly before you move.</span>
+        <span class="lp"><span data-field="module.lessonCount">10</span> frameworks &middot; pp. <span data-field="module.pageRange">70&ndash;89</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-3" role="region" aria-labelledby="b-3" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">10</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>20</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Most founders think they know their market because they operate in it every day. But operating in a market and understanding it strategically are two different things. This module gives you the tools to audit your position, read your competitive environment, define who you are actually for, and ground your decisions in real customer data not</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.1</span><span class="ft" data-field="lesson.titlePrinted">SWOT Analysis</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">70</span>&ndash;<span data-field="lesson.pages.prompt">71</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.2</span><span class="ft" data-field="lesson.titlePrinted">PESTLE Analysis</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">72</span>&ndash;<span data-field="lesson.pages.prompt">73</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.3</span><span class="ft" data-field="lesson.titlePrinted">Porter&#x27;s Five Forces</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">74</span>&ndash;<span data-field="lesson.pages.prompt">75</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.4</span><span class="ft" data-field="lesson.titlePrinted">Ideal Customer Profile (ICP)</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">76</span>&ndash;<span data-field="lesson.pages.prompt">77</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.5</span><span class="ft" data-field="lesson.titlePrinted">TAM SAM SOM</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">78</span>&ndash;<span data-field="lesson.pages.prompt">79</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.6</span><span class="ft" data-field="lesson.titlePrinted">Competitor Mapping</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">80</span>&ndash;<span data-field="lesson.pages.prompt">81</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.7</span><span class="ft" data-field="lesson.titlePrinted">Market Positioning Statement</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">82</span>&ndash;<span data-field="lesson.pages.prompt">83</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.8</span><span class="ft" data-field="lesson.titlePrinted">Voice of Customer Empathy Grid</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">84</span>&ndash;<span data-field="lesson.pages.prompt">85</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.9</span><span class="ft" data-field="lesson.titlePrinted">STP Model - Segment, Target,</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">86</span>&ndash;<span data-field="lesson.pages.prompt">87</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">3.10</span><span class="ft" data-field="lesson.titlePrinted">Perceptual Mapping</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">88</span>&ndash;<span data-field="lesson.pages.prompt">89</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 03 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 10 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-4" aria-controls="p-4" aria-expanded="false">
+        <span class="ln" data-field="module.number">04</span>
+        <span class="lt2" data-field="module.title">Sell Like a Pro</span>
+        <span class="lpromise" data-field="module.promise">Build a machine that turns cold strangers into paying customers.</span>
+        <span class="lp"><span data-field="module.lessonCount">11</span> frameworks &middot; pp. <span data-field="module.pageRange">91&ndash;112</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-4" role="region" aria-labelledby="b-4" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">11</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>22</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Sales is the one skill that pays for every other mistake in business. You can have an average product with great sales and survive. You cannot have a great product with no sales and survive. This module gives you the complete sales toolkit from cold outreach to closing, from objection handling to pipeline management all powered by AI prompts that prepare</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.1</span><span class="ft" data-field="lesson.titlePrinted">Cold Outreach — AIDA</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">91</span>&ndash;<span data-field="lesson.pages.prompt">92</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.2</span><span class="ft" data-field="lesson.titlePrinted">SPIN Selling - Discovery Call</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">93</span>&ndash;<span data-field="lesson.pages.prompt">94</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.3</span><span class="ft" data-field="lesson.titlePrinted">Lead Qualification BANT &amp; CHAMP</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">95</span>&ndash;<span data-field="lesson.pages.prompt">96</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.4</span><span class="ft" data-field="lesson.titlePrinted">The Challenger Sale</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">97</span>&ndash;<span data-field="lesson.pages.prompt">98</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.5</span><span class="ft" data-field="lesson.titlePrinted">Objection Handling - LAER</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">99</span>&ndash;<span data-field="lesson.pages.prompt">100</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.6</span><span class="ft" data-field="lesson.titlePrinted">PAS - Problem Agitate Solve</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">101</span>&ndash;<span data-field="lesson.pages.prompt">102</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.7</span><span class="ft" data-field="lesson.titlePrinted">Proposal Writing — Win Story</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">103</span>&ndash;<span data-field="lesson.pages.prompt">104</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.8</span><span class="ft" data-field="lesson.titlePrinted">Follow-Up Sequences</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">105</span>&ndash;<span data-field="lesson.pages.prompt">106</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.9</span><span class="ft" data-field="lesson.titlePrinted">Pipeline Review - Deal Health Check</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">107</span>&ndash;<span data-field="lesson.pages.prompt">108</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.10</span><span class="ft" data-field="lesson.titlePrinted">Closing Techniques Matrix</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">109</span>&ndash;<span data-field="lesson.pages.prompt">110</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">4.11</span><span class="ft" data-field="lesson.titlePrinted">FAB - Features Advantages</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">111</span>&ndash;<span data-field="lesson.pages.prompt">112</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 04 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 11 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-5" aria-controls="p-5" aria-expanded="false">
+        <span class="ln" data-field="module.number">05</span>
+        <span class="lt2" data-field="module.title">Market Your Message</span>
+        <span class="lpromise" data-field="module.promise">Build the system that makes your right customer find you.</span>
+        <span class="lp"><span data-field="module.lessonCount">10</span> frameworks &middot; pp. <span data-field="module.pageRange">114&ndash;133</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-5" role="region" aria-labelledby="b-5" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">10</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>20</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Marketing without a clear message is noise. This module gives you the frameworks to define what you stand for, who you stand for, and how to reach them consistently. From the story structure that makes your brand instantly clear, to the growth loops that compound your reach over time, these are the tools that build audiences, generate leads, and make your</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.1</span><span class="ft" data-field="lesson.titlePrinted">StoryBrand Framework - SB7</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">114</span>&ndash;<span data-field="lesson.pages.prompt">115</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.2</span><span class="ft" data-field="lesson.titlePrinted">Hook Framework for Content</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">116</span>&ndash;<span data-field="lesson.pages.prompt">117</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.3</span><span class="ft" data-field="lesson.titlePrinted">4Ps &amp; 7Ps Marketing Mix</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">118</span>&ndash;<span data-field="lesson.pages.prompt">119</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.4</span><span class="ft" data-field="lesson.titlePrinted">Content Pillars Strategy</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">120</span>&ndash;<span data-field="lesson.pages.prompt">121</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.5</span><span class="ft" data-field="lesson.titlePrinted">Go-To-Market Canvas</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">122</span>&ndash;<span data-field="lesson.pages.prompt">123</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.6</span><span class="ft" data-field="lesson.titlePrinted">Product Launch Playbook</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">124</span>&ndash;<span data-field="lesson.pages.prompt">125</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.7</span><span class="ft" data-field="lesson.titlePrinted">Brand Voice Definition</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">126</span>&ndash;<span data-field="lesson.pages.prompt">127</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.8</span><span class="ft" data-field="lesson.titlePrinted">Viral Loop - Growth Loop</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">128</span>&ndash;<span data-field="lesson.pages.prompt">129</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.9</span><span class="ft" data-field="lesson.titlePrinted">AARRR Pirate Metrics</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">130</span>&ndash;<span data-field="lesson.pages.prompt">131</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">5.10</span><span class="ft" data-field="lesson.titlePrinted">Flywheel Model</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">132</span>&ndash;<span data-field="lesson.pages.prompt">133</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 05 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 10 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-6" aria-controls="p-6" aria-expanded="false">
+        <span class="ln" data-field="module.number">06</span>
+        <span class="lt2" data-field="module.title">Build Your Team</span>
+        <span class="lpromise" data-field="module.promise">Build people who build the company leadership is the product.</span>
+        <span class="lp"><span data-field="module.lessonCount">12</span> frameworks &middot; pp. <span data-field="module.pageRange">135&ndash;158</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-6" role="region" aria-labelledby="b-6" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">12</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>24</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">The best product in the world fails with the wrong team. The best team in the world fails without clear direction, honest feedback, and the right structure. This module gives you the complete leadership toolkit from clarifying who owns what, to setting goals that drive real action, to having the honest conversations that most leaders avoid. It includes three Japanese leadership frameworks that bring a depth of discipline most Western management</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.1</span><span class="ft" data-field="lesson.titlePrinted">RACI Matrix</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">135</span>&ndash;<span data-field="lesson.pages.prompt">136</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.2</span><span class="ft" data-field="lesson.titlePrinted">OKRs - Goals That Drive Action</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">137</span>&ndash;<span data-field="lesson.pages.prompt">138</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.3</span><span class="ft" data-field="lesson.titlePrinted">1-on-1 Framework - GROW Model</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">139</span>&ndash;<span data-field="lesson.pages.prompt">140</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.4</span><span class="ft" data-field="lesson.titlePrinted">Hiring with AI -Talent Filter</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">141</span>&ndash;<span data-field="lesson.pages.prompt">142</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.5</span><span class="ft" data-field="lesson.titlePrinted">SBI Feedback Model</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">143</span>&ndash;<span data-field="lesson.pages.prompt">144</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.6</span><span class="ft" data-field="lesson.titlePrinted">Culture Code Canvas</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">145</span>&ndash;<span data-field="lesson.pages.prompt">146</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.7</span><span class="ft" data-field="lesson.titlePrinted">Delegation Ladder</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">147</span>&ndash;<span data-field="lesson.pages.prompt">148</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.8</span><span class="ft" data-field="lesson.titlePrinted">Meeting Design - Meeting OS</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">149</span>&ndash;<span data-field="lesson.pages.prompt">150</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.9</span><span class="ft" data-field="lesson.titlePrinted">Radical Candor</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">151</span>&ndash;<span data-field="lesson.pages.prompt">152</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.10</span><span class="ft" data-field="lesson.titlePrinted">Hoshin Kanri</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">153</span>&ndash;<span data-field="lesson.pages.prompt">154</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.11</span><span class="ft" data-field="lesson.titlePrinted">Situational Leadership</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">155</span>&ndash;<span data-field="lesson.pages.prompt">156</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">6.12</span><span class="ft" data-field="lesson.titlePrinted">McKinsey 7S Framework</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">157</span>&ndash;<span data-field="lesson.pages.prompt">158</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 06 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 12 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-7" aria-controls="p-7" aria-expanded="false">
+        <span class="ln" data-field="module.number">07</span>
+        <span class="lt2" data-field="module.title">Operate with Precision</span>
+        <span class="lpromise" data-field="module.promise">Build systems that run without you and improve without being told.</span>
+        <span class="lp"><span data-field="module.lessonCount">12</span> frameworks &middot; pp. <span data-field="module.pageRange">160&ndash;183</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-7" role="region" aria-labelledby="b-7" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">12</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>24</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">A business that depends on heroic effort every day is not a business, it is a job you cannot quit. This module gives you the operational frameworks to document, automate, prioritise, and improve your processes including three Japanese methodologies from Toyota&#x27;s production system that have shaped modern operations management worldwide. When your operations run on systems, your team&#x27;s energy goes to growth, not firefighting.</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.1</span><span class="ft" data-field="lesson.titlePrinted">SOP Generation - SIPOC</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">160</span>&ndash;<span data-field="lesson.pages.prompt">161</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.2</span><span class="ft" data-field="lesson.titlePrinted">Workflow Mapping - Swimlane</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">162</span>&ndash;<span data-field="lesson.pages.prompt">163</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.3</span><span class="ft" data-field="lesson.titlePrinted">Theory of Constraints</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">164</span>&ndash;<span data-field="lesson.pages.prompt">165</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.4</span><span class="ft" data-field="lesson.titlePrinted">ICE Scoring</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">166</span>&ndash;<span data-field="lesson.pages.prompt">167</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.5</span><span class="ft" data-field="lesson.titlePrinted">RICE Scoring</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">168</span>&ndash;<span data-field="lesson.pages.prompt">169</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.6</span><span class="ft" data-field="lesson.titlePrinted">PDCA Cycle</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">170</span>&ndash;<span data-field="lesson.pages.prompt">171</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.7</span><span class="ft" data-field="lesson.titlePrinted">Working Backwards</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">172</span>&ndash;<span data-field="lesson.pages.prompt">173</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.8</span><span class="ft" data-field="lesson.titlePrinted">Agile Sprint Canvas</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">174</span>&ndash;<span data-field="lesson.pages.prompt">175</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.9</span><span class="ft" data-field="lesson.titlePrinted">Kaizen Continuous</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">176</span>&ndash;<span data-field="lesson.pages.prompt">177</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.10</span><span class="ft" data-field="lesson.titlePrinted">5S Framework</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">178</span>&ndash;<span data-field="lesson.pages.prompt">179</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.11</span><span class="ft" data-field="lesson.titlePrinted">Poka-Yoke Error Proofing</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">180</span>&ndash;<span data-field="lesson.pages.prompt">181</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">7.12</span><span class="ft" data-field="lesson.titlePrinted">5 Whys - Root Cause Analysis</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">182</span>&ndash;<span data-field="lesson.pages.prompt">183</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 07 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 12 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-8" aria-controls="p-8" aria-expanded="false">
+        <span class="ln" data-field="module.number">08</span>
+        <span class="lt2" data-field="module.title">Decide with Confidence</span>
+        <span class="lpromise" data-field="module.promise">Make better decisions faster, with less regret.</span>
+        <span class="lp"><span data-field="module.lessonCount">10</span> frameworks &middot; pp. <span data-field="module.pageRange">185&ndash;204</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-8" role="region" aria-labelledby="b-8" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">10</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>20</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Most business failures are not failures of effort they are failures of decision. The wrong market entered. The wrong hire kept too long. The wrong pivot made too late. This module gives you ten frameworks for structured decision-making from rapid frameworks for daily decisions to deep analytical tools for irreversible ones. Combined with AI, these frameworks turn gut-feel decisions into evidence-based ones without slowing you down.</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.1</span><span class="ft" data-field="lesson.titlePrinted">The DECIDE Framework</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">185</span>&ndash;<span data-field="lesson.pages.prompt">186</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.2</span><span class="ft" data-field="lesson.titlePrinted">Pre-Mortem Analysis</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">187</span>&ndash;<span data-field="lesson.pages.prompt">188</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.3</span><span class="ft" data-field="lesson.titlePrinted">Post-Mortem Review</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">189</span>&ndash;<span data-field="lesson.pages.prompt">190</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.4</span><span class="ft" data-field="lesson.titlePrinted">Risk Matrix</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">191</span>&ndash;<span data-field="lesson.pages.prompt">192</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.5</span><span class="ft" data-field="lesson.titlePrinted">Scenario Planning</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">193</span>&ndash;<span data-field="lesson.pages.prompt">194</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.6</span><span class="ft" data-field="lesson.titlePrinted">Red Team Thinking</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">195</span>&ndash;<span data-field="lesson.pages.prompt">196</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.7</span><span class="ft" data-field="lesson.titlePrinted">Eisenhower Matrix</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">197</span>&ndash;<span data-field="lesson.pages.prompt">198</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.8</span><span class="ft" data-field="lesson.titlePrinted">Regret Minimization Framework</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">199</span>&ndash;<span data-field="lesson.pages.prompt">200</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.9</span><span class="ft" data-field="lesson.titlePrinted">Decision Tree Analysis</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">201</span>&ndash;<span data-field="lesson.pages.prompt">202</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">8.10</span><span class="ft" data-field="lesson.titlePrinted">Expected Value Framework</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">203</span>&ndash;<span data-field="lesson.pages.prompt">204</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 08 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 10 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9" aria-controls="p-9" aria-expanded="false">
+        <span class="ln" data-field="module.number">09</span>
+        <span class="lt2" data-field="module.title">Finance &amp; Metrics</span>
+        <span class="lpromise" data-field="module.promise">Know your numbers. Own your narrative.</span>
+        <span class="lp"><span data-field="module.lessonCount">9</span> frameworks &middot; pp. <span data-field="module.pageRange">206&ndash;223</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9" role="region" aria-labelledby="b-9" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">9</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>18</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">You do not need to be a CFO to run a financially healthy business. You need to understand nine numbers and one story. This module gives you the frameworks to know whether your unit economics work, how long your runway is, what metric defines your growth, and how to present your financial reality to investors in a way that builds confidence rather than questions. Finance is not accounting it is the language of business decisions.</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.1</span><span class="ft" data-field="lesson.titlePrinted">Unit Economics - LTV:CAC</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">206</span>&ndash;<span data-field="lesson.pages.prompt">207</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.2</span><span class="ft" data-field="lesson.titlePrinted">Burn Rate &amp; Runway</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">208</span>&ndash;<span data-field="lesson.pages.prompt">209</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.3</span><span class="ft" data-field="lesson.titlePrinted">North Star Metric &amp; OMTM</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">210</span>&ndash;<span data-field="lesson.pages.prompt">211</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.4</span><span class="ft" data-field="lesson.titlePrinted">AARRR Funnel Analysis Deep</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">212</span>&ndash;<span data-field="lesson.pages.prompt">213</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.5</span><span class="ft" data-field="lesson.titlePrinted">Investor Narrative Pitch Spine</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">214</span>&ndash;<span data-field="lesson.pages.prompt">215</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.6</span><span class="ft" data-field="lesson.titlePrinted">3-Scenario Financial Model</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">216</span>&ndash;<span data-field="lesson.pages.prompt">217</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.7</span><span class="ft" data-field="lesson.titlePrinted">Balanced Scorecard</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">218</span>&ndash;<span data-field="lesson.pages.prompt">219</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.8</span><span class="ft" data-field="lesson.titlePrinted">Cash Conversion Cycle</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">220</span>&ndash;<span data-field="lesson.pages.prompt">221</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">9.9</span><span class="ft" data-field="lesson.titlePrinted">Rule of 40</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">222</span>&ndash;<span data-field="lesson.pages.prompt">223</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 09 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 9 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-10" aria-controls="p-10" aria-expanded="false">
+        <span class="ln" data-field="module.number">10</span>
+        <span class="lt2" data-field="module.title">Lead Yourself First</span>
+        <span class="lpromise" data-field="module.promise">The company can only grow as fast as its founder.</span>
+        <span class="lp"><span data-field="module.lessonCount">11</span> frameworks &middot; pp. <span data-field="module.pageRange">225&ndash;246</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-10" role="region" aria-labelledby="b-10" hidden>
+        <div class="mods">
+          <div class="modstat"><b data-field="module.lessonCount">11</b><span>Frameworks</span></div>
+          <div class="modstat"><b data-field="module.roleCount">10</b><span>Role profiles</span></div>
+          <div class="modstat"><b>22</b><span>Printed pages</span></div>
+          <div class="modstat"><b>Free</b><span>Prompts, no account</span></div>
+        </div>
+        <p class="mwhat" data-field="module.whatItDoes">Every other module in this book helps you build a better business. This one helps you become a better founder. The habits, mental models, and self-awareness frameworks here are the ones that separate founders who scale from founders who stall. Three frameworks in this module come from Japanese philosophy Ikigai, Hansei, and Wabi-Sabi, because some of the deepest wisdom about purposeful work and graceful imperfection comes from</p>
+        <div class="frlist" data-field="module.lessons[]">
+          <div class="frhead" aria-hidden="true"><span>No.</span><span>Framework</span><span>Level</span><span>Pages</span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.1</span><span class="ft" data-field="lesson.titlePrinted">Personal SWOT</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">225</span>&ndash;<span data-field="lesson.pages.prompt">226</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.2</span><span class="ft" data-field="lesson.titlePrinted">90-Day Planning</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">227</span>&ndash;<span data-field="lesson.pages.prompt">228</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.3</span><span class="ft" data-field="lesson.titlePrinted">Weekly Review GTD 5-15</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">229</span>&ndash;<span data-field="lesson.pages.prompt">230</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.4</span><span class="ft" data-field="lesson.titlePrinted">4 Energy Quadrants</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">231</span>&ndash;<span data-field="lesson.pages.prompt">232</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.5</span><span class="ft" data-field="lesson.titlePrinted">Three Horizons Vision</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">233</span>&ndash;<span data-field="lesson.pages.prompt">234</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.6</span><span class="ft" data-field="lesson.titlePrinted">Atomic Habits Stack</span><span class="flv lev-beginner" data-field="lesson.level">Beginner</span><span class="fp">pp. <span data-field="lesson.pages.intro">235</span>&ndash;<span data-field="lesson.pages.prompt">236</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.7</span><span class="ft" data-field="lesson.titlePrinted">Socratic Self-Questioning</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">237</span>&ndash;<span data-field="lesson.pages.prompt">238</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.8</span><span class="ft" data-field="lesson.titlePrinted">Personal Brand Flywheel</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">239</span>&ndash;<span data-field="lesson.pages.prompt">240</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.9</span><span class="ft" data-field="lesson.titlePrinted">Ikigai</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">241</span>&ndash;<span data-field="lesson.pages.prompt">242</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.10</span><span class="ft" data-field="lesson.titlePrinted">Hansei - Reflective Practice</span><span class="flv lev-intermediate" data-field="lesson.level">Intermediate</span><span class="fp">pp. <span data-field="lesson.pages.intro">243</span>&ndash;<span data-field="lesson.pages.prompt">244</span></span></div>
+          <div class="fr" data-field-item><span class="fn" data-field="lesson.number">10.11</span><span class="ft" data-field="lesson.titlePrinted">Wabi-Sabi - Imperfect Progress</span><span class="flv lev-advanced" data-field="lesson.level">Advanced</span><span class="fp">pp. <span data-field="lesson.pages.intro">245</span>&ndash;<span data-field="lesson.pages.prompt">246</span></span></div>
+        </div>
+        <div class="macts">
+          <a class="btn btn-blue btn-sm" href="module.html">Open module 10 &mdash; copy the prompts</a>
+          <span class="lockwhy">All 11 prompts free, no account</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about" id="about">
+  <div>
+    <h2>How the book is built</h2>
+    <p class="lead">Ten modules, 108 frameworks, one prompt each.</p>
+    <p>Every framework is printed across two pages: the reasoning on the left, the prompt on the right, and a QR code that opens the prompt on this site. The modules run in the order a business grows &mdash; how to think, what to build, who to sell to, how to reach them, who to hire, how to run it, how to decide, what the numbers say, and finally how to lead yourself. You can read it straight through, or scan the one code you need in the middle of a Tuesday.</p>
+  </div>
+  <div class="spread">
+    <div class="sp"><span class="spl" style="color:var(--blue)">Modules</span><b>10</b></div>
+    <div class="sp"><span class="spl" style="color:#1B7A3C">Frameworks</span><b>108</b></div>
+    <div class="sp"><span class="spl" style="color:#8A5B00">Role profiles</span><b>100</b></div>
+    <div class="sp"><span class="spl" style="color:var(--gray-l2)">Printed on</span><b>Pages 22&ndash;246</b></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ============ JOIN ============ -->
+<section class="join" id="join">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad join-in">
+    <div>
+      <h2>A free account, and the whole book opens.</h2>
+      <p>Email link or Google, no password and no card. It exists so your saved prompts have somewhere to live and so the lesson pages know who you are &mdash; not to meter anything you have already paid for in print.</p>
+      <div class="join-btns">
+        <a class="btn btn-white" href="#">Create an account</a>
+        <a class="btn btn-line" href="how-to-use.html">How the book works</a>
+      </div>
+    </div>
+    <div class="join-list">
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>All 108 full lesson pages</span></div>
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4-6.5 4v-16a1 1 0 0 1 1-1z"/></svg><span>Save any prompt to your own list</span></div>
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M17 8.5v5M14.5 11h5"/></svg><span>Send a colleague a link with your name on it</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Prompts free</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="contact.html#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="for-institutions.html#acquire">Bulk orders</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<span class="copystat" id="copyStat" role="status"></span>
+
+<script>
+(function(){
+  document.documentElement.lang='en-GB';
+  var $=function(id){return document.getElementById(id);};
+  var stat=$('copyStat');
+  var say=function(t){ if(stat) stat.textContent=t; };
+
+  /* signed-in preview: flips <html data-auth> so every lock on the page follows one switch */
+  var lb=$('loginBtn'), ac=$('avatarChip');
+  var setAuth=function(on){
+    document.documentElement.setAttribute('data-auth', on ? 'in' : 'out');
+    if(lb) lb.hidden=on; if(ac) ac.hidden=!on;
+    document.querySelectorAll('.fulllink').forEach(function(el){
+      var n=el.getAttribute('data-lesson')||'';
+      el.setAttribute('aria-label', (on?'Open the full lesson for ':'Create a free account to open the full lesson for ')+n);
+      el.setAttribute('href', on ? (el.getAttribute('data-href')||'#join') : '#join');
+    });
+  };
+  setAuth(false);
+  if(lb&&ac){
+    lb.addEventListener('click',function(){ setAuth(true); ac.focus(); say('Signed-in preview on'); });
+    ac.addEventListener('click',function(){ setAuth(false); lb.focus(); say('Signed-in preview off'); });
+  }
+
+  /* accordion: closed panels are hidden, so they leave the tab order and find-in-page */
+  document.querySelectorAll('.lrow-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      var panel=document.getElementById(btn.getAttribute('aria-controls'));
+      if(panel) panel.hidden=open;
+    });
+  });
+
+  /* the contents rail: jump to a framework, and keep a tally of what has been copied */
+  var copied={}, tocBtns=Array.prototype.slice.call(document.querySelectorAll('.tl'));
+  var bar=$('tocBar'), cnt=$('tocCount'), total=tocBtns.length;
+  var tally=function(){
+    var n=Object.keys(copied).length;
+    if(bar) bar.style.transform='scaleX('+(total? (n/total):0)+')';
+    if(cnt) cnt.textContent=n+' of '+total+' copied';
+  };
+  var openRow=function(sid,focus){
+    var b=$('b-'+sid), p=$('p-'+sid);
+    if(!b||!p) return;
+    if(b.getAttribute('aria-expanded')!=='true'){ b.setAttribute('aria-expanded','true'); p.hidden=false; }
+    var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    b.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'});
+    if(focus) b.focus({preventScroll:true});
+  };
+  tocBtns.forEach(function(t){
+    t.addEventListener('click',function(){ openRow(t.getAttribute('data-target'), true); });
+  });
+  var markCopied=function(num){
+    copied[num]=1; tally();
+    tocBtns.forEach(function(t){
+      if(t.querySelector('.tn') && t.querySelector('.tn').textContent.trim()===num) t.setAttribute('data-copied','1');
+    });
+  };
+  tally();
+
+  /* follow the scroll so the rail shows where you are */
+  if('IntersectionObserver' in window && tocBtns.length){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ seen[e.target.id]=e.isIntersecting?e.boundingClientRect.top:null; });
+      var best=null;
+      tocBtns.forEach(function(t){
+        var id='b-'+t.getAttribute('data-target');
+        if(seen[id]!=null && (best===null || seen[id]<seen['b-'+best])) best=t.getAttribute('data-target');
+      });
+      tocBtns.forEach(function(t){ t.setAttribute('aria-current', String(t.getAttribute('data-target')===best)); });
+    },{rootMargin:'-70px 0px -70% 0px'});
+    tocBtns.forEach(function(t){ var b=$('b-'+t.getAttribute('data-target')); if(b) io.observe(b); });
+    var secs=Array.prototype.slice.call(document.querySelectorAll('.toc-sec a'));
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        secs.forEach(function(a){ a.classList.toggle('here', a.getAttribute('href')==='#'+e.target.id); });
+      });
+    },{rootMargin:'-70px 0px -60% 0px'});
+    ['lessons','about','why','join'].forEach(function(id){ var el=$(id); if(el) io2.observe(el); });
+  }
+
+  /* copy: each panel copies its own prompt body, nothing else */
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    var label=btn.textContent, busy=false;
+    btn.addEventListener('click',function(){
+      if(busy) return; busy=true;
+      var body=document.getElementById(btn.getAttribute('data-copy'));
+      var settled=false;
+      var done=function(ok){
+        if(settled) return; settled=true;
+        btn.textContent = ok ? 'Copied' : 'Select and copy';
+        btn.classList.toggle('done', ok);
+        if(ok) markCopied(btn.getAttribute('data-lesson')||'');
+        say(ok ? ('Prompt '+(btn.getAttribute('data-lesson')||'')+' copied to clipboard') : 'Could not copy — select the prompt and copy it manually');
+        setTimeout(function(){ btn.textContent=label; btn.classList.remove('done'); busy=false; },2200);
+      };
+      setTimeout(function(){ done(false); },3000);
+      if(!body){ done(false); return; }
+      var text=body.innerText;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(false);});
+      } else {
+        var ta=document.createElement('textarea'); ta.value=text;
+        ta.setAttribute('readonly',''); ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+        document.body.removeChild(ta); done(ok);
+      }
+    });
+  });
+
+  /* the lock: signed out, "View full lesson" explains itself instead of failing silently */
+  document.querySelectorAll('.fulllink').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(document.documentElement.getAttribute('data-auth')!=='in'){
+        say('A free account opens the full lesson page');   // the href already points at #join
+      }
+    });
+  });
+})();
+</script>

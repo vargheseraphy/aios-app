@@ -1,0 +1,510 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Raphy Varghese</title>
+<meta name="description" content="Why Raphy Varghese wrote AI Operating System for Leaders, who he wrote it for, and what he means by a framework - in his own words, from the book.">
+<meta property="og:title" content="About Raphy Varghese &middot; AIOS">
+<meta property="og:description" content="I am not a professor. I am not a consultant writing from the sidelines.">
+<meta property="og:type" content="profile">
+<!--
+DIRECTION CONTRACT
+THESIS: The page runs the book's own argument on the book's own author. It opens with the
+demonstration the book opens with - a vague question gets a vague answer, a framework gets a
+specific one - states the four parts every framework in the book takes, and then answers
+"who wrote this and why trust it?" in exactly those four parts.
+VOICE RULE THE PAGE KEEPS: Raphy's words always sit in a bordered wash panel with a page
+citation; the site's words are plain grey Roboto outside it. A reader can always tell who is
+speaking, on a page whose subject is whether to trust the speaker.
+FORM: candidate 5 of 7 (the page demonstrates its own thesis), seed 113c3397, degraded roll.
+SOURCE: every sentence of Raphy's comes from the book, pages iv, vi and vii, via
+scripts/extract-about.py -> content-v2/about.json. Nothing about him is invented or paraphrased.
+
+=====================  TEMPLATE DATA BINDING  =====================
+  about.json           data-field
+  ---------------------------------------------------------------
+  quote                about.quote          page iv - the h1
+  byline               about.byline
+  story[0..4]          about.story[]        one per part, story[4] closes the page
+  who[]                about.who[]          page vii
+  whatSeparates        about.whatSeparates  page vi
+  mission              about.mission        page vi
+  gap                  about.gap            page vi
+  notAboutAI           about.notAboutAI     page vii
+  without / with / withoutResult / withResult / withFramework    page vii
+
+NOTE 1 - the PDF text layer drops every em dash and some inter-word spaces; the extractor
+  restores both and records it in about.extractionNote. No wording is changed.
+NOTE 2 - the book prints "Save 20-30 hours every week" on page vi. NOT rendered: an
+  unsubstantiated quantified claim, and no other page on this site makes one.
+NOTE 3 - the dedication (page iii) is personal and is deliberately not published.
+NOTE 4 - the 01-04 markers are a real sequence: the four parts are the shape the book's own
+  frameworks take, and the page states that rule in visible copy before using it.
+NOTE 5 - story[1] and who[] are the same four sentences in the book. Only the cards render;
+  printing both would repeat the list twice in a row.
+==================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:86px;}
+body{margin:0; background:#fff; color:var(--ink-2); font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+.line .t{fill:currentColor; opacity:.7; font-family:'Roboto Mono',monospace; font-size:9px;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:8px 14px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.ahero .btn:focus-visible,.close .btn:focus-visible,.nav .btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible{outline:2px solid #fff; outline-offset:3px;}
+a:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px; border-radius:4px;}
+.nav a:focus-visible,.ahero a:focus-visible,.close a:focus-visible,footer a:focus-visible{outline-color:#fff;}
+.skip{position:absolute; left:-9999px; top:0;}
+.skip:focus{position:fixed; left:14px; top:calc(12px + env(safe-area-inset-top,0px)); z-index:90; width:auto; background:#fff; color:var(--ink-2); font-weight:500; font-size:13px; padding:11px 18px; border-radius:8px; outline:2px solid var(--ink-2);}
+.inlink{color:var(--blue-lo); font-weight:500;} .inlink:hover{text-decoration:underline;}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.86); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d); color:#fff;}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em; color:#fff;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1180px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.avatar-chip[hidden],.icon-btn[hidden]{display:none !important;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, border-color .15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer; color:#fff;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* shared section furniture */
+section{padding-block:76px;}
+@media(min-width:900px){section{padding-block:92px;}}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l);}
+h2.sh{font-size:clamp(25px,3.6vw,38px); line-height:1.1; margin-block:12px 12px; max-width:30ch;}
+.sd{font-size:14.5px; color:var(--gray-l); max-width:80ch; line-height:1.6;}
+.head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:36px;}
+.head-row>div:first-child{flex:1 1 560px; min-width:0;}
+.light{background:#fff;} .wash{background:var(--wash);}
+
+/* ---------- hero ---------- */
+.ahero{position:relative; overflow:hidden; background:#0B0C0F;}
+.ahero .bg{position:absolute; inset:0; background:
+  radial-gradient(860px 580px at 8% 8%, #3B7BF7 0%, transparent 58%),
+  radial-gradient(660px 540px at 92% 2%, #0F2E75 0%, transparent 62%),
+  radial-gradient(620px 520px at 74% 98%, #2FAB57 0%, transparent 56%), #0B0C0F;}
+.ahero .grid-lines{position:absolute; inset:0; opacity:.4;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:52px 52px; mask-image:radial-gradient(ellipse at 45% 45%, black, transparent 74%);}
+.ahero .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(11,12,15,.95) 0%, rgba(11,12,15,.5) 58%, rgba(11,12,15,.62) 100%);}
+.ahero-in{position:relative; padding-block:58px 46px; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:1000px){.ahero-in{grid-template-columns:1.85fr 1fr; gap:56px; padding-block:76px 62px;}}
+.acrumb{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:24px;}
+.acrumb a:hover{color:#fff;}
+h1.aq{font-family:var(--disp); font-weight:800; font-size:clamp(29px,4.6vw,50px); line-height:1.1; letter-spacing:-.032em; color:#fff; max-width:30ch;}
+h1.aq em{font-style:normal; color:var(--blue-hi);}
+.aplate{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:30px; padding-top:26px; border-top:1px solid var(--line-d2);}
+.aplate .av{width:52px; height:52px; border-radius:50%; flex:none; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:800; font-size:18px; color:#fff;}
+.aplate .nm b{display:block; font-family:var(--disp); font-weight:700; font-size:17px; letter-spacing:-.018em; color:#fff;}
+.aplate .nm span{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:rgba(255,255,255,.76); margin-top:5px; line-height:1.65; max-width:46ch;}
+.ahero-art{position:relative; border-radius:18px; overflow:hidden; min-height:250px; display:flex; align-items:center; justify-content:center; padding:26px; border:1px solid var(--line-d2); background:rgba(0,0,0,.28); backdrop-filter:blur(4px);}
+.ahero-art svg{width:100%; max-width:270px; height:auto;}
+
+/* ---------- the demonstration ---------- */
+.vs{display:grid; grid-template-columns:1fr; gap:14px;}
+@media(min-width:900px){.vs{grid-template-columns:1fr 1fr; gap:20px; align-items:stretch;}}
+.vsc{display:flex; flex-direction:column; border-radius:16px; padding:24px 26px;}
+.vsc.no{background:#fff; border:1px solid var(--line-l2);}
+.vsc.yes{background:#fff; border:1px solid var(--blue); box-shadow:0 22px 48px -28px rgba(59,123,247,.5);}
+.vsc h3{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+.vsc.no h3{color:#C4382B;} .vsc.yes h3{color:var(--blue-lo);}
+.said{font-family:var(--mono); font-size:13px; line-height:1.85; color:rgba(255,255,255,.92); background:#0B0C0F; border-radius:10px; padding:16px 17px;}
+.said b{color:var(--yellow); font-weight:400;} .said i{font-style:normal; color:var(--blue-hi);}
+.vsc .res{margin-top:16px; font-size:14.5px; line-height:1.65; color:var(--gray-l);}
+.vsc.yes .res{color:var(--ink-2); font-weight:500;}
+.vsc .tag{align-self:flex-start; margin-top:auto; padding-top:16px; font-family:var(--mono); font-size:10.5px; color:var(--gray-l);}
+.rule{margin-top:36px; display:grid; grid-template-columns:1fr; gap:14px; border-radius:16px; background:var(--ink); color:#fff; padding:26px 28px;}
+@media(min-width:900px){.rule{grid-template-columns:auto 1fr; gap:26px; align-items:center; padding:30px 34px;}}
+.rule .rk{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-2); white-space:nowrap;}
+.rule p{font-family:var(--disp); font-weight:700; font-size:clamp(18px,2.3vw,24px); line-height:1.35; letter-spacing:-.022em; color:#fff; max-width:48ch;}
+.rule p span{color:var(--blue-hi);}
+
+/* ---------- the four parts ---------- */
+.part{padding-block:0;}
+.part + .part{margin-top:72px;}
+.part-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:22px;}
+.part-h .pn{font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--blue-lo);}
+.part-h h2{font-size:clamp(21px,2.6vw,27px); line-height:1.18;}
+.part-h .pf{margin-left:auto; font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--gray-l);}
+@media(max-width:719px){.part-h .pf{display:none;}}
+.part-g{display:grid; grid-template-columns:1fr; gap:22px; align-items:start;}
+@media(min-width:1000px){.part-g{grid-template-columns:1.85fr 1fr; gap:52px;}}
+.voice{border-radius:16px; background:var(--wash); border:1px solid var(--line-l); padding:26px 28px;}
+.voice p{font-size:16px; line-height:1.78; color:var(--ink-2); max-width:62ch;}
+.voice p + p{margin-top:16px;}
+.voice .attr{display:flex; align-items:center; gap:9px; margin-top:18px; font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; color:var(--gray-l);}
+.voice .attr::before{content:""; width:20px; height:1px; background:var(--line-l2);}
+.mine{font-size:15px; line-height:1.7; color:var(--gray-l); max-width:62ch; margin-top:18px;}
+.mine b{color:var(--ink-2); font-weight:500;}
+.part-art{position:relative; border-radius:16px; overflow:hidden; min-height:220px; display:flex; align-items:center; justify-content:center; padding:24px;}
+.part-art .abg{position:absolute; inset:0;}
+.part-art svg{position:relative; width:100%; max-width:240px; height:auto;}
+.a1 .abg{background:radial-gradient(300px 230px at 32% 26%,#3B7BF7,transparent 62%),radial-gradient(280px 220px at 82% 82%,#0F2E75,transparent 60%),#0B0C0F;}
+.a3 .abg{background:radial-gradient(300px 230px at 30% 24%,#2FAB57,transparent 62%),radial-gradient(280px 220px at 84% 84%,#3B7BF7,transparent 60%),#0B0C0F;}
+.proof{border-radius:16px; background:#0B0C0F; border:1px solid #23262E; padding:24px 26px; box-shadow:0 24px 50px -30px rgba(0,0,0,.55);}
+.proof h3{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--blue-hi); margin-bottom:14px;}
+.proof .said{background:transparent; padding:0; font-size:13.5px;}
+.proof .tag{display:block; margin-top:18px; padding-top:16px; border-top:1px solid var(--line-d); font-family:var(--mono); font-size:10.5px; color:rgba(255,255,255,.66);}
+
+/* who it was written for */
+.whos{display:grid; grid-template-columns:1fr; gap:12px;}
+@media(min-width:760px){.whos{grid-template-columns:1fr 1fr;}}
+.whoc{--wc:var(--blue-lo); background:#fff; border:1px solid var(--line-l); border-radius:14px; padding:20px 22px; display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start;}
+.whoc:nth-child(2){--wc:#1B7A3C;} .whoc:nth-child(3){--wc:#8A5B00;} .whoc:nth-child(4){--wc:#C4382B;} .whoc:nth-child(5){--wc:#1B1C1F;}
+@media(min-width:760px){.whoc:nth-child(5){grid-column:1 / -1;}}
+.whoc .wd{width:10px; height:10px; border-radius:50%; background:var(--wc); margin-top:7px; flex:none;}
+.whoc h3{font-size:16px; line-height:1.25; margin-bottom:6px; color:var(--wc);}
+.whoc p{font-size:14.5px; line-height:1.62; color:var(--gray-l);}
+
+/* mission */
+.mis-in{display:grid; grid-template-columns:1fr; gap:32px;}
+@media(min-width:960px){.mis-in{grid-template-columns:1.85fr 1fr; gap:56px; align-items:start;}}
+.mis h2{font-size:clamp(22px,3vw,30px); line-height:1.18; max-width:34ch; margin-block:12px 18px;}
+.mis p{font-size:15px; line-height:1.72; color:var(--gray-l); max-width:62ch;}
+.gapline{margin-top:26px; border-radius:16px; background:#fff; border:1px solid var(--line-l); padding:26px 28px;}
+.gapline b{display:block; font-family:var(--disp); font-weight:700; font-size:clamp(18px,2.2vw,22px); line-height:1.35; letter-spacing:-.02em; color:var(--ink-2); max-width:34ch;}
+.misfacts{border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:8px 22px;}
+.mf2{display:flex; justify-content:space-between; gap:14px; align-items:baseline; padding:14px 0; font-size:13.5px; color:var(--gray-l);}
+.mf2 + .mf2{border-top:1px solid var(--line-l);}
+.mf2 b{font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--ink-2); text-align:right;}
+
+/* close */
+.close{position:relative; overflow:hidden; background:#0B0C0F; color:#fff;}
+.close .bg{position:absolute; inset:0; background:
+  radial-gradient(740px 460px at 12% 8%, rgba(59,123,247,.9), transparent 62%),
+  radial-gradient(620px 460px at 90% 94%, rgba(47,171,87,.42), transparent 60%), #0B0C0F;}
+.close .scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(11,12,15,.9) 0%, rgba(11,12,15,.5) 60%, rgba(11,12,15,.6) 100%);}
+.close-in{position:relative; display:grid; grid-template-columns:1fr; gap:34px; align-items:center;}
+@media(min-width:960px){.close-in{grid-template-columns:1.85fr 1fr; gap:56px;}}
+.close .kicker{color:var(--fg-1);}
+.close h2{color:#fff; font-size:clamp(23px,3.4vw,36px); line-height:1.16; letter-spacing:-.028em; max-width:26ch; margin-block:14px 18px;}
+.close p{color:rgba(255,255,255,.88); font-size:15px; line-height:1.72; max-width:64ch;}
+.close .cbtns{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px;}
+.close-art{position:relative; border-radius:18px; overflow:hidden; min-height:220px; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid var(--line-d2); background:rgba(0,0,0,.28);}
+.close-art svg{width:100%; max-width:270px; height:auto;}
+
+/* subscribe + footer */
+.news{background:var(--wash); color:var(--ink-2); border-top:1px solid var(--line-l); padding-block:44px;}
+.news-band{display:flex; align-items:center; gap:26px; flex-wrap:wrap; background:#fff; border:1px solid var(--line-l); border-radius:18px; padding:26px 32px;}
+.news-ic{width:50px; height:50px; border-radius:13px; flex:none; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(140deg,var(--blue),var(--blue-lo));}
+.news-txt{flex:1 1 300px; min-width:0;}
+.news-txt b{display:block; font-family:var(--disp); font-weight:700; font-size:17.5px; letter-spacing:-.018em; line-height:1.25; margin-bottom:4px;}
+.news-txt span{font-size:13.5px; color:var(--gray-l); line-height:1.5;}
+.news-form{display:flex; gap:10px; flex:1 1 340px; min-width:0;}
+.news-form input{flex:1 1 auto; min-width:0; font-family:var(--sans); font-size:14.5px; color:var(--ink-2); padding:14px 16px; border-radius:10px; border:1px solid var(--line-l2); background:#fff;}
+.news-form input::placeholder{color:#6E7484;}
+.news-form input:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,123,247,.18);}
+.news-btn{flex:none; padding:14px 30px; font-size:15px; border-radius:10px;}
+.newspend{flex:1 1 100%; font-size:12.5px; line-height:1.55; color:var(--gray-l);}
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:56px 32px; color:#fff;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:36px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-2); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;} .foot-col a.on{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:24px; font-size:12px; color:var(--fg-2);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .btn,.icon-btn{transition:none;}}
+</style>
+
+<a class="skip" href="#demo">Skip to the content</a>
+<nav class="nav"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="contact.html">Contact</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="contact.html">Write to Raphy</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <button class="avatar-chip" id="avatarChip" type="button" hidden aria-label="Signed in as RV — click to sign out (preview)">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </span>
+</div></nav>
+<main>
+<header class="ahero">
+  <div class="bg"></div><div class="grid-lines"></div><div class="scrim"></div>
+  <div class="pad ahero-in">
+    <div>
+      <p class="acrumb"><a href="home.html">Home</a> <span>/</span> <span>About the author</span></p>
+      <h1 class="aq" data-field="about.quote">I am not a professor. I am not a consultant writing <em>from the sidelines.</em></h1>
+      <div class="aplate">
+        <span class="av">RV</span>
+        <span class="nm"><b>Raphy Varghese</b><span data-field="about.byline">Builder &middot; Strategist &middot; AI Practitioner &middot; Human-Centered Leadership Futurist</span></span>
+      </div>
+    </div>
+    <div class="ahero-art">
+      <svg viewBox="0 0 260 215" class="line" aria-hidden="true">
+        <rect class="s2" x="18" y="150" width="224" height="2" rx="1"/>
+        <path class="s" d="M58 96c14-8 34-8 50 4v54c-16-12-36-12-50-5z"/>
+        <path class="s" d="M164 96c-14-8-34-8-50 4v54c16-12 36-12 50-5z"/>
+        <path class="s" d="M114 100v54"/>
+        <path class="s2" d="M72 116h26M72 128h18M126 116h26M126 128h20"/>
+        <rect class="s" x="126" y="136" width="18" height="18" rx="3"/>
+        <rect class="fd" x="129.5" y="139.5" width="5" height="5" rx="1"/>
+        <path class="s3" d="M114 60v24"/>
+        <circle class="fd" cx="114" cy="74" r="3.2"/>
+        <circle class="s" cx="114" cy="38" r="11"/>
+        <path class="s" d="M96 62c0-9.4 8-15 18-15s18 5.6 18 15"/>
+        <text class="t" x="18" y="178" style="letter-spacing:.09em">ONE PERSON</text>
+        <text class="t" x="18" y="194" style="letter-spacing:.09em">EVERY PROBLEM IN THIS BOOK</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- the demonstration the book opens with -->
+<section class="wash" id="demo"><div class="pad">
+  <div class="head-row"><div>
+    <p class="kicker">The argument the book makes</p>
+    <h2 class="sh">A vague question gets a vague answer.</h2>
+    <p class="sd">The example the book opens with, on page vii. Read it first &mdash; the rest of this page is the same move, applied to its author.</p>
+  </div></div>
+  <div class="vs">
+    <div class="vsc no">
+      <h3><svg class="i" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>Without a framework</h3>
+      <p class="said" data-field="about.without">Help me with my pricing strategy.</p>
+      <p class="res" data-field="about.withoutResult">Generic advice that applies to no one.</p>
+      <span class="tag">Any model, any day</span>
+    </div>
+    <div class="vsc yes">
+      <h3><svg class="i" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>With the Value Ladder</h3>
+      <p class="said" data-field="about.with"><b>Act as a pricing consultant.</b> Design a 4-tier Value Ladder for <i>[MY BUSINESS]</i>, with price points, offer names, and the customer upgrade logic between each tier.</p>
+      <p class="res" data-field="about.withResult">A specific, actionable pricing architecture for your exact business.</p>
+      <span class="tag" data-field="about.withFramework">Framework 2.7 &middot; Pricing Strategy &mdash; Value Ladder</span>
+    </div>
+  </div>
+  <div class="rule">
+    <span class="rk">The shape of every framework</span>
+    <p>Each of the 108 has four parts: <span>the situation, who it is for, the method, and the proof.</span> So does the answer below.</p>
+  </div>
+</div></section>
+
+<!-- the four parts -->
+<section class="light" id="parts"><div class="pad">
+  <div class="head-row"><div>
+    <p class="kicker">The structured answer</p>
+    <h2 class="sh">Who wrote this, and why trust it?</h2>
+  </div></div>
+
+  <div class="part">
+    <div class="part-h"><span class="pn">01</span><h2>The situation</h2><span class="pf">Page iv</span></div>
+    <div class="part-g">
+      <div class="voice"><p data-field-item>I have sat in the same room as every problem in this book &mdash; no playbook, no team, no clear path forward &mdash; and I have had to think my way through every one of them. What I learned is that the right framework, asked the right way to AI, turns hours of confusion into minutes of clarity.</p>
+        <p class="attr">Raphy Varghese, from the book</p></div>
+      <div class="part-art a1">
+        <div class="abg"></div>
+        <svg viewBox="0 0 240 190" class="line" aria-hidden="true">
+          <path class="s" d="M34 124h172"/>
+          <path class="s" d="M52 124v42M188 124v42"/>
+          <path class="s2" d="M62 124v-6a10 10 0 0 1 10-10h18a10 10 0 0 1 10 10v6"/>
+          <path class="s2" d="M72 108V80a10 10 0 0 1 10-10h0a10 10 0 0 1 10 10v28"/>
+          <path class="s2" d="M62 166v-42M100 166v-42"/>
+          <path class="s3" d="M140 112h44M140 96h36"/>
+          <text class="t" x="34" y="56" style="letter-spacing:.09em">ONE CHAIR</text>
+          <text class="t" x="140" y="76" style="letter-spacing:.09em">NO SECOND ONE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="part">
+    <div class="part-h"><span class="pn">02</span><h2>Who it is for</h2><span class="pf">Page vii</span></div>
+    <p class="mine" style="margin-top:0; margin-bottom:22px;">The book names five readers. <b>None of them is defined by a job title.</b></p>
+    <div class="whos" data-field="about.who[]">
+      <div class="whoc" data-field-item><span class="wd"></span><div><h3 data-field="about.who.who">The Founder</h3><p data-field="about.who.what">Building the first company without a mentor in the room.</p></div></div>
+      <div class="whoc" data-field-item><span class="wd"></span><div><h3 data-field="about.who.who">The Manager</h3><p data-field="about.who.what">Who became a leader before they felt ready.</p></div></div>
+      <div class="whoc" data-field-item><span class="wd"></span><div><h3 data-field="about.who.who">The Student</h3><p data-field="about.who.what">Who wants to think at a level most peers have not reached yet.</p></div></div>
+      <div class="whoc" data-field-item><span class="wd"></span><div><h3 data-field="about.who.who">The Professional</h3><p data-field="about.who.what">Who knows they are capable of more but lacks the structure to unlock it.</p></div></div>
+      <div class="whoc" data-field-item><span class="wd"></span><div><h3 data-field="about.who.who">The First-Generation Builder</h3><p data-field="about.who.what">No expensive network, no curated MBA. Just drive and the right tools.</p></div></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <div class="part-h"><span class="pn">03</span><h2>The method</h2><span class="pf">Pages iv and vii</span></div>
+    <div class="part-g">
+      <div class="voice">
+        <p data-field-item>I have spent years at the intersection of people, strategy, and technology &mdash; building teams, advising founders, mentoring emerging leaders, and watching what separates the ones who break through from the ones who stay stuck. It is almost never talent. It is almost always tools &mdash; and the thinking habits that go with them.</p>
+        <p data-field="about.notAboutAI">This is not a book about AI. It is a book about thinking better, faster &mdash; with AI as your thinking partner.</p>
+        <p class="attr">Raphy Varghese, from the book</p>
+      </div>
+      <div class="part-art a3">
+        <div class="abg"></div>
+        <svg viewBox="0 0 240 190" class="line" aria-hidden="true">
+          <circle class="s2" cx="58" cy="52" r="12"/>
+          <path class="s2" d="M38 96c0-11 9-18 20-18s20 7 20 18"/>
+          <circle class="s" cx="162" cy="52" r="12"/>
+          <path class="s" d="M142 96c0-11 9-18 20-18s20 7 20 18"/>
+          <path class="s" d="M186 62l14-14M200 48l-6-2 2 6"/>
+          <path class="s3" d="M92 74h40"/>
+          <path class="s" d="M124 66l8 8-8 8"/>
+          <text class="t" x="30" y="128" style="letter-spacing:.09em">SAME TALENT</text>
+          <text class="t" x="138" y="128" style="letter-spacing:.09em">BETTER TOOLS</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="part">
+    <div class="part-h"><span class="pn">04</span><h2>The proof</h2><span class="pf">Page iv</span></div>
+    <div class="part-g">
+      <div class="proof">
+        <h3>His answer, in full</h3>
+        <p class="said" data-field-item>This is not theory. Every framework here is one I have used when it actually mattered. Every prompt was written to produce something useful, not something that sounds impressive.</p>
+        <span class="tag">Page iv &middot; the author&rsquo;s own words</span>
+      </div>
+      <div>
+        <p class="mine" style="margin-top:0;">Which is a claim, not proof. <b>The proof is that all 108 prompts are on this site, free, with no account</b> &mdash; so you can test the claim before you buy anything.</p>
+        <p style="margin-top:16px;"><a class="inlink" href="modules.html">Open any module and judge them &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+
+</div></section>
+
+<!-- the mission -->
+<section class="wash mis" id="mission"><div class="pad mis-in">
+  <div>
+    <p class="kicker">The mission</p>
+    <h2 data-field="about.whatSeparates">What separates leaders who succeed fastest from everyone else is rarely intelligence. It is access to the right thinking tools at the right moment.</h2>
+    <p data-field="about.mission">My mission: put these tools in the hands of every leader &mdash; not just the ones in business schools with expensive advisors and curated networks. The first-generation entrepreneur. The student who does not yet know they will lead something important. The manager who stepped up before they felt ready.</p>
+    <p class="gapline"><b data-field="about.gap">The most dangerous gap in modern leadership is not a gap in ambition. It is a gap in tools. This book closes that gap.</b></p>
+  </div>
+  <div class="misfacts">
+    <div class="mf2"><span>From the book</span><b>Pages iv&ndash;vii</b></div>
+    <div class="mf2"><span>Frameworks</span><b>108 across 10 modules</b></div>
+    <div class="mf2"><span>Every prompt</span><b>Free, no account</b></div>
+    <div class="mf2"><span>Reach him</span><b><a class="inlink" href="contact.html">Contact</a></b></div>
+  </div>
+</div></section>
+
+<!-- the close -->
+<section class="close">
+  <div class="bg"></div><div class="scrim"></div>
+  <div class="pad close-in">
+    <div>
+      <p class="kicker">Why there is a website at all</p>
+      <h2 data-field-item>&ldquo;I believe the best leaders do not hoard the map. They hand it out.&rdquo;</h2>
+      <p>That is the last line of his author page. It is also why every framework in the printed book carries a code that opens its prompt here, free. <strong style="color:#fff; font-weight:500;">The map is printed. The directions are kept current.</strong></p>
+      <div class="cbtns">
+        <a class="btn btn-white" href="modules.html">See all ten modules</a>
+        <a class="btn btn-line" href="why-this-book.html">Why this book</a>
+      </div>
+    </div>
+    <div class="close-art">
+      <svg viewBox="0 0 260 190" class="line" aria-hidden="true">
+        <path class="s" d="M30 58c14-8 34-8 48 4v56c-15-12-34-12-48-5z"/>
+        <path class="s" d="M126 58c-14-8-34-8-48 4v56c15-12 34-12 48-5z"/>
+        <path class="s" d="M78 62v56"/>
+        <path class="s2" d="M42 76h24M42 88h17M90 76h24M90 88h19"/>
+        <rect class="s" x="90" y="96" width="17" height="17" rx="3"/>
+        <rect class="fd" x="93" y="99" width="5" height="5" rx="1"/>
+        <path class="s3" d="M140 86h26"/><path class="s" d="M160 78l8 8-8 8"/>
+        <circle class="s" cx="196" cy="58" r="10"/>
+        <path class="s" d="M180 84c0-8.6 7.2-14 16-14s16 5.4 16 14"/>
+        <circle class="s2" cx="228" cy="70" r="8"/>
+        <path class="s2" d="M215 92c0-7 5.8-11.5 13-11.5s13 4.5 13 11.5"/>
+        <circle class="s2" cx="176" cy="102" r="8"/>
+        <path class="s2" d="M163 124c0-7 5.8-11.5 13-11.5s13 4.5 13 11.5"/>
+        <text class="t" x="30" y="146" style="letter-spacing:.09em">PRINTED ONCE</text>
+        <text class="t" x="166" y="146" style="letter-spacing:.09em">HANDED OUT</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="news" id="subscribe"><div class="pad">
+  <div class="news-band">
+    <span class="news-ic"><svg class="i" width="24" height="24" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 7.5l9.5 6 9.5-6"/></svg></span>
+    <div class="news-txt">
+      <b>One framework in your inbox, every other week.</b>
+      <span>A prompt worth running and the decision it is meant for. Nothing else.</span>
+    </div>
+    <form class="news-form" onsubmit="return false;">
+      <label for="newsEmail" class="vh">Email address</label>
+      <input id="newsEmail" type="email" placeholder="you@example.com" autocomplete="email">
+      <button class="btn btn-blue news-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="newspend">The mailing list is connected before launch &mdash; like the form above, nothing here is stored yet.</p>
+  </div>
+</div></section>
+</main>
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Free to use</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a class="on" href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="for-institutions.html#acquire">Bulk orders</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+<script>
+(function(){
+  document.documentElement.lang='en-GB';
+  var lb=document.getElementById('loginBtn'), ac=document.getElementById('avatarChip');
+  if(lb&&ac){
+    lb.addEventListener('click',function(){ lb.hidden=true; ac.hidden=false; ac.focus(); });
+    ac.addEventListener('click',function(){ ac.hidden=true; lb.hidden=false; lb.focus(); });
+  }
+})();
+</script>

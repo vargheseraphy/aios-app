@@ -1,0 +1,1024 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finance &amp; Metrics</title>
+<meta name="description" content="Module 09 of AI Operating System for Leaders - all nine prompts, free to copy, no account needed.">
+<meta property="og:title" content="Finance &amp; Metrics &middot; Module 09 &middot; AIOS">
+<meta property="og:description" content="Nine frameworks, nine prompts, free to copy. Module 09 of AI Operating System for Leaders.">
+<meta property="og:type" content="article">
+<!--
+DIRECTION CONTRACT
+THESIS: The module QR opens a page that hands over every prompt in the module and asks nothing
+for them. Each lesson is one accordion row; opening it shows the prompt and a Copy button. The
+full lesson page - the problem, the method, the role profiles, the origin - sits behind a free
+account, and the page says so plainly at the point of the lock rather than in the small print.
+SIMPLE BY INSTRUCTION: two actions per row and no more. Copy the prompt, or open the full lesson.
+
+=====================  TEMPLATE DATA BINDING  =====================
+Route: /m{module}  ->  content-v2/modules/m{n}.json + every content-v2/m{n}/*.json
+Rendered with real data from module 9.
+
+  modules/m{n}.json               data-field
+  ------------------------------------------------------------
+  module                          module.number      zero-padded to 2 digits for display
+  title                           module.title
+  subtitle                        module.subtitle
+  description                     module.description
+  lessons[]                       module.lessons[]
+  lessons.length (computed)       module.lessonCount
+  page span      (computed)       module.pageRange
+  roleProfile.internal+outside    module.roleCount   (used only in the sign-up rationale)
+  level tally    (computed)       module.levelCount.beginner / .intermediate / .advanced
+
+  PAGE SHAPE - the head band carries only kicker, title, subtitle and three chips, because the
+  reader arrived from a QR code to copy a prompt, not to read about the module. The module
+  description sits in #about, BELOW the prompts, where it is context rather than an obstacle.
+
+  m{n}/{ll}.json                  data-field        (one per accordion row)
+  ------------------------------------------------------------
+  lesson                          lesson.number
+  titlePrinted                    lesson.titlePrinted
+  level                           lesson.level
+  subtitle                        lesson.subtitle
+  sourcePages.intro/.prompt       lesson.pages.intro / lesson.pages.prompt
+  promptBody                      lesson.promptBody   <-- same rules as the lesson page
+  proTip                          NOT rendered here - it belongs to the full lesson page
+
+  Every data-field sits on a LEAF whose whole text is that field's value. Repeating rows carry
+  data-field-item as well as the container's data-field.
+
+NOTE 1 - promptBody is set as innerHTML after escaping, with ALL-CAPS lines and "Label:" prefixes
+  wrapped in <span class="k"> and every [BRACKET] in <span class="v">. Source newlines are
+  significant: Copy reads innerText and white-space is pre-wrap. DO NOT MINIFY .pc-body.
+NOTE 2 - accordion panels are `hidden` when closed so they leave the tab order and find-in-page.
+  The first row ships open so the page is not a wall of closed bars at rest.
+NOTE 3 - the lock. Signed out, every "View full lesson" anchor points at #join and carries the
+  real destination in data-href; signed in, the script swaps href to data-href. So a middle-click,
+  a right-click "open in new tab" or a JS failure all land on the sign-up band rather than on a
+  lesson page - a preventDefault-only lock leaks through all three.
+  THIS IS AN AFFORDANCE, NOT SECURITY. /m{n}/{ll} must be gated on the server as well, or the URL
+  is guessable from the module rail. Copy NEVER depends on auth: the prompts on this page are free
+  with or without an account, and the page says so.
+
+CONTENT NOTE - the nine prompt bodies in module 9 have been cleaned of the figure-caption
+  fragments described in build-reference/CONTENT-ISSUES.md. 99 of the other lessons have not.
+
+OPEN QUESTION FOR THE AUTHOR - gating the full lesson page contradicts copy on six locked pages
+  and in PRODUCT.md, which say the pages behind the QR codes are free and need no account. The
+  prompts still are. The lesson page no longer is. Those lines need rewriting before launch.
+==================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --blue:#3B7BF7; --blue-hi:#6EA0FF; --blue-lo:#1E5CE0; --blue-deep:#0F2E75;
+  --red:#EC4A3B; --yellow:#FBBE10; --green:#2FAB57;
+  --ink:#0E0F12; --ink-2:#1B1C1F;
+  --panel:#15171C; --panel-2:#1B1E26;
+  --line-d:rgba(255,255,255,.10); --line-d2:rgba(255,255,255,.18);
+  --line-l:#E6E8EC; --line-l2:#D3D7DE; --wash:#F4F5F7;
+  --fg-1:rgba(255,255,255,.72); --fg-2:rgba(255,255,255,.50); --fg-3:rgba(255,255,255,.34);
+  --gray-l:#5A6070; --gray-l2:#8A90A0;
+  --disp:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --sans:'Roboto','Helvetica Neue',system-ui,sans-serif;
+  --mono:'Roboto Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:76px;}
+body{background:#fff; color:var(--ink-2); font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--disp); font-weight:700; margin:0; letter-spacing:-.022em; text-wrap:balance;}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--blue); color:#fff;}
+img,svg{max-width:100%;}
+.pad{width:100%; max-width:1536px; margin-inline:auto; padding-inline:20px;}
+@media(min-width:640px){.pad{padding-inline:40px;}}
+@media(min-width:1024px){.pad{padding-inline:80px;}}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+.i{fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+.line{color:#fff;}
+.line .s{fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:.95;}
+.line .s2{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; opacity:.55;}
+.line .s3{fill:none; stroke:currentColor; stroke-width:1.8; stroke-dasharray:4 6; stroke-linecap:round; opacity:.55;}
+.line .fd{fill:currentColor;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--sans); font-weight:500; font-size:14px; padding:12px 22px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:background .15s, color .15s, border-color .15s;}
+.btn-white{background:#fff; color:#0E0F12;} .btn-white:hover{background:rgba(255,255,255,.88);}
+.btn-line{background:transparent; color:#fff; border-color:rgba(255,255,255,.55);} .btn-line:hover{background:rgba(255,255,255,.10);}
+.btn-blue{background:var(--blue); color:#fff;} .btn-blue:hover{background:var(--blue-lo);}
+.btn-linedark{background:transparent; color:var(--ink-2); border-color:var(--line-l2);} .btn-linedark:hover{background:var(--wash);}
+.btn-sm{padding:9px 15px; font-size:13px;}
+.btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.lrow-btn:focus-visible,.pcbtn:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.nav .btn:focus-visible,.seam .btn:focus-visible,.join .btn:focus-visible,.icon-btn:focus-visible,.avatar-chip:focus-visible,.pcbtn:focus-visible{outline-color:#fff;}
+a:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px; border-radius:4px;}
+.nav a:focus-visible,.seam a:focus-visible,.join a:focus-visible,footer a:focus-visible{outline-color:#fff;}
+.skip{position:absolute; left:16px; top:-60px; z-index:80; background:#fff; color:var(--ink-2); font-weight:500; font-size:13px; padding:11px 18px; border-radius:8px; transition:top .15s;}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px));}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:rgba(14,15,18,.86); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-d); color:#fff;}
+.nav-in{display:flex; align-items:center; gap:10px; height:58px;}
+.mark{display:flex; align-items:center; gap:9px; font-family:var(--disp); font-weight:800; font-size:14.5px; letter-spacing:-.02em; color:#fff;}
+.mark .sq{width:19px; height:19px; border-radius:5px; background:conic-gradient(from 210deg,var(--blue),var(--red),var(--yellow),var(--green),var(--blue));}
+.nav-links{display:none; gap:2px; margin-left:20px;}
+@media(min-width:1180px){.nav-links{display:flex;}}
+.nav-links a{font-size:13px; color:var(--fg-2); padding:7px 11px; border-radius:6px;}
+.nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+.nav-links a.on{color:#fff; background:rgba(255,255,255,.10);}
+.nav-cta{margin-left:auto; display:flex; gap:8px; align-items:center;}
+.avatar-chip[hidden],.icon-btn[hidden]{display:none !important;}
+.icon-btn{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s, border-color .15s; flex:none;}
+.icon-btn:hover{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.5);}
+.avatar-chip{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 4px; border-radius:999px; border:1px solid var(--line-d); background:rgba(255,255,255,.08); cursor:pointer; color:#fff;}
+.avatar-chip .av{width:28px; height:28px; border-radius:50%; background:linear-gradient(140deg,var(--blue),var(--green)); display:flex; align-items:center; justify-content:center; font-family:var(--disp); font-weight:700; font-size:12px; color:#fff;}
+.avatar-chip .cr{color:var(--fg-3);}
+
+/* seam */
+.seam{position:relative; overflow:hidden; background:var(--ink); color:#fff;}
+.seam .bg{position:absolute; inset:0; background:
+  radial-gradient(620px 300px at 8% 0%, rgba(59,123,247,.8), transparent 62%),
+  radial-gradient(520px 320px at 92% 100%, rgba(15,46,117,.9), transparent 60%), #0B0C0F;}
+.seam-in{position:relative; display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-block:14px;}
+.seam-art{flex:none; color:#fff; opacity:.9;}
+.seam-txt{flex:1 1 auto; min-width:0; font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:rgba(255,255,255,.94); line-height:1.5;}
+.seam-txt b{color:#fff; font-weight:500;} .seam-txt .dim{color:rgba(255,255,255,.70);}
+.seam-long{display:none;} @media(min-width:760px){.seam-long{display:inline;}}
+.seam-back{flex:none; margin-left:auto; font-size:12.5px; color:rgba(255,255,255,.82); display:inline-flex; align-items:center; gap:7px; border:1px solid rgba(255,255,255,.26); border-radius:999px; padding:10px 14px;}
+.seam-back:hover{color:#fff; background:rgba(255,255,255,.10);}
+@media(max-width:639px){.seam-back{padding:10px 11px;} .seam-back .bl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}}
+
+/* module head */
+.mhead{border-bottom:1px solid var(--line-l);}
+.mhead-in{display:flex; align-items:flex-end; justify-content:space-between; gap:20px 34px; flex-wrap:wrap; padding-block:24px 22px;}
+.mhead-l{min-width:0; flex:1 1 420px;}
+.mkick{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l);}
+h1.mt{font-size:clamp(26px,3.6vw,36px); line-height:1.1; letter-spacing:-.028em; font-weight:800; margin-top:9px; max-width:26ch;}
+.msub{font-size:15px; line-height:1.5; color:var(--gray-l); max-width:64ch; margin-top:8px;}
+@media(min-width:640px){.msub{font-size:16px;}}
+.mfacts{display:flex; flex-wrap:wrap; gap:8px; flex:0 1 auto;}
+.mf{display:flex; align-items:baseline; gap:7px; border:1px solid var(--line-l2); border-radius:999px; padding:7px 13px; background:#fff;}
+.mf dt{font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-l); white-space:nowrap;}
+.mf dd{margin:0; font-size:12.5px; font-weight:500; color:var(--ink-2); white-space:nowrap;}
+
+/* how this page works */
+.howbar{display:flex; align-items:flex-start; gap:13px; margin-top:34px; padding:16px 20px; border-radius:14px; background:var(--wash); border:1px solid var(--line-l); font-size:14px; line-height:1.65; color:var(--gray-l); max-width:88ch;}
+.howbar svg{color:var(--green); flex:none; margin-top:2px;}
+.howbar b{color:var(--ink-2); font-weight:500;}
+
+/* two-column body: contents rail left, content right */
+.mgrid{display:grid; grid-template-columns:1fr; gap:0; padding-top:4px;}
+@media(min-width:1100px){.mgrid{grid-template-columns:292px minmax(0,1fr); gap:56px; align-items:start; padding-top:30px;}}
+.toc{display:none;}
+@media(min-width:1100px){
+  .toc{display:block; position:sticky; top:92px; max-height:calc(100vh - 124px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; padding-bottom:24px;}
+}
+.toc-card{border:1px solid var(--line-l); border-radius:16px; background:#fff; padding:18px 20px;}
+.toc-card + .toc-card{margin-top:14px;}
+.toc-card h2{font-family:var(--mono); font-weight:500; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--gray-l); margin-bottom:14px;}
+.toc-sec{display:flex; flex-direction:column;}
+.toc-sec a{display:flex; align-items:center; gap:10px; font-size:13.5px; line-height:1.45; color:var(--gray-l); padding:10px 0;}
+.toc-sec a + a{border-top:1px solid var(--line-l);}
+.toc-sec a:hover{color:var(--ink-2);}
+.toc-sec a .dot{width:5px; height:5px; border-radius:50%; background:var(--line-l2); flex:none;}
+.toc-sec a:hover .dot,.toc-sec a.here .dot{background:var(--blue);}
+.toc-sec a.here{color:var(--ink-2); font-weight:500;}
+.toc-list{display:flex; flex-direction:column;}
+.tl{display:grid; grid-template-columns:34px minmax(0,1fr) 16px; gap:10px; align-items:center; width:100%; text-align:left;
+  background:none; border:none; padding:9px 6px; margin-inline:-6px; cursor:pointer; font-family:var(--sans); border-radius:8px; transition:background .15s;}
+.tl + .tl{border-top:1px solid var(--line-l);}
+.tl:hover{background:var(--wash);}
+.tl:focus-visible{outline:2px solid var(--ink-2); outline-offset:-1px;}
+.tl .tn{font-family:var(--mono); font-size:11.5px; color:var(--blue);}
+.tl .tt{font-size:13px; line-height:1.4; color:var(--gray-l); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.tl .tk{width:16px; height:16px; flex:none; color:#1B7A3C; opacity:0; transition:opacity .15s;}
+.tl[data-copied="1"] .tk{opacity:1;}
+.tl[aria-current="true"]{background:var(--wash);}
+.tl[aria-current="true"] .tt{color:var(--ink-2); font-weight:500;}
+.tl[aria-current="true"] .tn{color:var(--ink-2);}
+.toc-prog{display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:13px; border-top:1px solid var(--line-l); font-family:var(--mono); font-size:10.5px; color:var(--gray-l);}
+.toc-bar{flex:1; height:4px; border-radius:999px; background:var(--line-l); overflow:hidden;}
+.toc-bar i{display:block; height:100%; width:100%; background:#1B7A3C; border-radius:999px; transform:scaleX(0); transform-origin:left; transition:transform .25s;}
+
+.lhead2{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:34px;}
+@media(min-width:1100px){.lhead2{margin-top:4px;}}
+.lhead2 h2{font-size:clamp(20px,2.6vw,25px); line-height:1.18;}
+.lhead2 p{font-size:13.5px; color:var(--gray-l);}
+
+/* accordion */
+.lessons{margin-top:18px; border:1px solid var(--line-l); border-radius:18px; overflow:hidden; background:#fff;}
+.lrow + .lrow{border-top:1px solid var(--line-l);}
+.lrow-h{margin:0; font-size:inherit; font-weight:inherit; letter-spacing:normal;}
+.lrow-btn{display:grid; grid-template-columns:auto 1fr auto; gap:8px 14px; align-items:center; width:100%; text-align:left;
+  padding:18px 20px; background:#fff; border:none; cursor:pointer; font-family:var(--sans); transition:background .15s;}
+@media(min-width:900px){.lrow-btn{grid-template-columns:52px minmax(0,1fr) 116px 108px 34px; gap:18px; padding:18px 22px;}}
+.lrow-btn:hover{background:var(--wash);}
+.lrow-btn[aria-expanded="true"]{background:var(--wash);}
+.lrow-btn .ln{font-family:var(--mono); font-size:12.5px; color:var(--blue); grid-column:1;}
+.lrow-btn .lt2{font-family:var(--disp); font-weight:700; font-size:16px; letter-spacing:-.02em; color:var(--ink-2); line-height:1.25; grid-column:2; white-space:pre-wrap;}
+.lrow-btn .lv{grid-column:1 / span 2; justify-self:start; display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; border-radius:6px; padding:4px 9px;}
+.lrow-btn .lv::before{content:""; width:6px; height:6px; border-radius:50%; background:currentColor;}
+.lev-beginner{background:#E6F6EC; color:#1B7A3C;} .lev-intermediate{background:#E8F0FE; color:#1E5CE0;} .lev-advanced{background:#FFF4D6; color:#8A5B00;}
+.lrow-btn .lp{grid-column:1 / span 2; justify-self:start; font-family:var(--mono); font-size:11px; color:var(--gray-l);}
+.lrow-btn .lx{grid-column:3; grid-row:1; width:30px; height:30px; border-radius:50%; border:1px solid var(--line-l2); display:flex; align-items:center; justify-content:center; color:var(--ink-2); transition:transform .25s, background .15s, color .15s, border-color .15s;}
+.lrow-btn[aria-expanded="true"] .lx{transform:rotate(45deg); background:var(--ink-2); color:#fff; border-color:var(--ink-2);}
+@media(min-width:900px){
+  .lrow-btn .lv{grid-column:3; grid-row:1; justify-self:start;}
+  .lrow-btn .lp{grid-column:4; grid-row:1; justify-self:start;}
+  .lrow-btn .lx{grid-column:5; grid-row:1; justify-self:end;}
+}
+.lpanel{padding:4px 20px 24px;}
+@media(min-width:900px){.lpanel{padding:4px 22px 26px;}}
+.lpanel .lsum{font-size:15px; line-height:1.7; color:var(--gray-l); max-width:76ch; margin-bottom:18px;}
+
+/* prompt card */
+.promptcard{background:#0B0C0F; border-radius:14px; border:1px solid #23262E;}
+.pc-top{display:flex; align-items:center; gap:9px; padding:10px 12px; border-bottom:1px solid var(--line-d); background:var(--panel); border-radius:13px 13px 0 0;}
+.pc-top .tag{font-family:var(--mono); font-size:10.5px; color:var(--blue-hi); border:1px solid rgba(110,160,255,.34); border-radius:5px; padding:3px 7px; flex:none;}
+.pc-top .ttl{font-family:var(--disp); font-weight:700; font-size:13px; color:#fff; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pc-top .up{margin-left:auto; flex:none; display:flex; gap:8px; align-items:center;}
+.pc-body{padding:18px 16px; font-family:var(--mono); font-size:12px; line-height:1.95; color:rgba(255,255,255,.90); white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere; border-radius:0 0 13px 13px;}
+@media(min-width:640px){.pc-body{font-size:12.5px; padding:20px 19px;}}
+.pc-body .k{color:var(--yellow);} .pc-body .v{color:var(--blue-hi);}
+.copybtn{flex:none; padding:9px 15px;} .copybtn.done{background:var(--green); color:#fff;}
+@media(pointer:coarse){.copybtn{padding:12px 17px;}}
+.copystat{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.mlegend{display:flex; gap:14px; flex-wrap:wrap; font-family:var(--mono); font-size:10px; color:var(--gray-l); margin-top:10px;}
+.mlegend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:6px;}
+.mlegend .ky{background:#C99400;} .mlegend .vl{background:var(--blue);}
+
+/* row actions + the lock */
+.lacts{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:16px;}
+.fulllink{display:inline-flex; align-items:center; gap:9px; font-family:var(--sans); font-weight:500; font-size:13.5px; color:var(--ink-2); background:#fff; border:1px solid var(--line-l2); border-radius:8px; padding:10px 16px; cursor:pointer; transition:background .15s, border-color .15s;}
+.fulllink:hover{background:var(--wash); border-color:var(--gray-l2);}
+.fulllink:focus-visible{outline:2px solid var(--ink-2); outline-offset:3px;}
+.fulllink .lk{color:var(--gray-l);}
+html[data-auth="in"] .fulllink .lk{display:none;}
+.lockwhy{font-size:12.5px; color:var(--gray-l);}
+html[data-auth="in"] .lockwhy{display:none;}
+.lockwhy a{color:var(--blue-lo); font-weight:500;} .lockwhy a:hover{text-decoration:underline;}
+
+/* about this module, below the prompts */
+.about{display:grid; grid-template-columns:1fr; gap:22px; margin-top:44px; border:1px solid var(--line-l); border-radius:18px; padding:28px 26px; background:#fff;}
+@media(min-width:900px){.about{grid-template-columns:1.85fr 1fr; gap:44px; padding:32px 34px; align-items:start;}}
+.about h2{font-size:clamp(19px,2.3vw,23px); line-height:1.2; margin-bottom:13px;}
+.about p{font-size:15px; line-height:1.8; color:var(--gray-l); max-width:76ch;}
+.about .lead{font-family:var(--disp); font-weight:600; font-size:17px; line-height:1.45; letter-spacing:-.018em; color:var(--ink-2); margin-bottom:12px; max-width:56ch;}
+.spread{border:1px solid var(--line-l); border-radius:14px; background:var(--wash); padding:6px 18px;}
+.sp{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0; font-size:13.5px;}
+.sp + .sp{border-top:1px solid var(--line-l);}
+.sp .spl{display:inline-flex; align-items:center; gap:9px; color:var(--gray-l);}
+.sp .spl::before{content:""; width:8px; height:8px; border-radius:50%; background:currentColor;}
+.sp .b{color:#1B7A3C;} .sp .i{color:#1E5CE0;} .sp .a{color:#8A5B00;}
+.sp b{font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--ink-2);}
+
+/* why sign up */
+.why{background:var(--wash); border:1px solid var(--line-l); border-radius:20px; margin-top:20px;}
+.why-in{padding:42px 24px;}
+@media(min-width:900px){.why-in{padding:54px 38px;}}
+.why .kicker{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-l);}
+.why h2{font-size:clamp(23px,3.2vw,32px); line-height:1.14; margin-block:12px 12px; max-width:30ch;}
+.why .lead{font-size:15.5px; line-height:1.8; color:var(--gray-l); max-width:78ch;}
+.whygrid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:34px;}
+@media(min-width:760px){.whygrid{grid-template-columns:1fr 1fr; gap:16px;}}
+.wi{display:grid; grid-template-columns:34px 1fr; gap:15px; align-items:start; background:#fff; border:1px solid var(--line-l); border-radius:14px; padding:20px 22px;}
+.wi .ic{width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex:none;}
+.wi h3{font-size:15.5px; line-height:1.25; margin-bottom:6px;}
+.wi p{font-size:13.5px; line-height:1.65; color:var(--gray-l);}
+.wi p b{color:var(--ink-2); font-weight:500;}
+.wfoot{display:flex; align-items:center; gap:13px; flex-wrap:wrap; margin-top:30px; font-size:14px; color:var(--gray-l); line-height:1.6;}
+.wfoot b{color:var(--ink-2); font-weight:500;}
+
+/* join */
+.join{position:relative; overflow:hidden; background:var(--blue-deep); padding-block:72px;}
+@media(min-width:900px){.join{padding-block:88px;}}
+.join .bg{position:absolute; inset:0; background:
+  radial-gradient(700px 400px at 14% 10%, rgba(59,123,247,.95), transparent 62%),
+  radial-gradient(560px 400px at 88% 90%, rgba(47,171,87,.45), transparent 60%), var(--blue-deep);}
+.join .lines{position:absolute; inset:0; opacity:.32;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse at 40% 50%, black, transparent 78%);}
+.join-in{position:relative; display:grid; grid-template-columns:1fr; gap:30px; align-items:center;}
+@media(min-width:900px){.join-in{grid-template-columns:1.85fr 1fr; gap:48px;}}
+.join h2{color:#fff; font-size:clamp(24px,3.4vw,33px); line-height:1.1; max-width:24ch; margin-bottom:12px;}
+.join p{color:rgba(255,255,255,.88); font-size:15px; line-height:1.7; max-width:62ch;}
+.join-btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;}
+.join-list{border:1px solid rgba(255,255,255,.22); border-radius:16px; background:rgba(0,0,0,.28); backdrop-filter:blur(8px); padding:10px 24px;}
+.jl{display:flex; align-items:center; gap:13px; padding:15px 0; font-size:14px; line-height:1.5; color:rgba(255,255,255,.88);}
+.jl + .jl{border-top:1px solid rgba(255,255,255,.14);}
+.jl .si{color:#fff; flex:none;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--line-d); padding-block:52px 30px; color:#fff;}
+.foot-top{display:grid; gap:34px; grid-template-columns:1fr; padding-bottom:34px; border-bottom:1px solid var(--line-d);}
+@media(min-width:840px){.foot-top{grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;}}
+.foot-col h4{font-family:var(--mono); font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-2); margin-bottom:14px;}
+.foot-col a{display:block; font-size:13px; color:var(--fg-2); padding-block:6px;}
+.foot-col a:hover{color:#fff;}
+.foot-about p{font-size:13px; color:var(--fg-2); max-width:32ch; line-height:1.6; margin-top:14px;}
+.foot-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;}
+.fbadge{font-family:var(--mono); font-size:10.5px; color:var(--fg-2); border:1px solid var(--line-d); border-radius:999px; padding:5px 11px;}
+.foot-bot{display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; padding-top:22px; font-size:12px; color:var(--fg-2);}
+.foot-bot .legal{display:flex; gap:18px; flex-wrap:wrap;}
+.foot-bot a:hover{color:#fff;}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .btn,.icon-btn,.lrow-btn,.lrow-btn .lx,.fulllink,.skip,.tl,.tl .tk,.toc-bar i{transition:none;}
+}
+</style>
+
+<a class="skip" href="#lessons">Skip to the prompts</a>
+<nav class="nav" aria-label="Primary"><div class="pad nav-in">
+  <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+  <span class="nav-links">
+    <a href="why-this-book.html">Why this book</a><a class="on" href="home.html#modules">Modules</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="contact.html">Contact</a>
+  </span>
+  <span class="nav-cta">
+    <a class="btn btn-white btn-sm" href="#join">Create an account</a>
+    <button class="icon-btn" id="loginBtn" aria-label="Log in" title="Log in (click to preview the signed-in state)">
+      <svg class="i" width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c0-3.6 3.1-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+    </button>
+    <button class="avatar-chip" id="avatarChip" type="button" hidden aria-label="Signed in as RV &mdash; click to sign out (preview)">
+      <span class="av">RV</span><svg class="i cr" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </span>
+</div></nav>
+
+<main>
+<div class="seam">
+  <div class="bg"></div>
+  <div class="pad seam-in">
+    <svg class="seam-art line" width="34" height="26" viewBox="0 0 34 26" aria-hidden="true">
+      <path class="s2" d="M2 5c3.5-2 8-2 12 1v16c-3.5-3-8.5-3-12-1"/>
+      <path class="s2" d="M2 5v16"/>
+      <rect class="s" x="19" y="3" width="13" height="20" rx="2.5"/>
+      <path class="s3" d="M15.8 13h1.2"/>
+      <rect class="fd" x="23" y="8" width="5" height="5" rx="1"/>
+    </svg>
+    <p class="seam-txt">
+      <b>Module <span data-field="module.number">09</span></b><span class="dim"> &middot; </span>Pages <span data-field="module.pageRange">206&ndash;223</span><span class="seam-long"><span class="dim"> &middot; every prompt in this module, free to copy</span></span>
+    </p>
+    <a class="seam-back" href="home.html#modules">
+      <svg class="i" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="bl">All 10 modules</span>
+    </a>
+  </div>
+</div>
+
+<div class="mhead"><div class="pad mhead-in">
+  <div class="mhead-l">
+    <p class="mkick">Module <span data-field="module.number">09</span></p>
+    <h1 class="mt" data-field="module.title">Finance &amp; Metrics</h1>
+    <p class="msub" data-field="module.subtitle">Know your numbers. Own your narrative.</p>
+  </div>
+  <dl class="mfacts">
+    <div class="mf"><dt>Frameworks</dt><dd><span data-field="module.lessonCount">9</span></dd></div>
+    <div class="mf"><dt>Pages</dt><dd data-field="module.pageRange">206&ndash;223</dd></div>
+    <div class="mf"><dt>Prompts</dt><dd>Free, no account</dd></div>
+  </dl>
+</div></div>
+
+<div class="pad mgrid">
+<aside class="toc" aria-label="Contents">
+  <div class="toc-card">
+    <h2><span data-field="module.lessonCount">9</span> frameworks</h2>
+    <div class="toc-list" id="tocList" data-field="module.lessons[]">
+      <button class="tl" type="button" data-field-item data-target="9-1" aria-current="false" aria-label="Go to 9.1 Unit Economics - LTV:CAC"><span class="tn" data-field="lesson.number">9.1</span><span class="tt" data-field="lesson.titlePrinted">Unit Economics - LTV:CAC</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-2" aria-current="false" aria-label="Go to 9.2 Burn Rate & Runway"><span class="tn" data-field="lesson.number">9.2</span><span class="tt" data-field="lesson.titlePrinted">Burn Rate &amp; Runway</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-3" aria-current="false" aria-label="Go to 9.3 North Star Metric & OMTM"><span class="tn" data-field="lesson.number">9.3</span><span class="tt" data-field="lesson.titlePrinted">North Star Metric &amp; OMTM</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-4" aria-current="false" aria-label="Go to 9.4 AARRR Funnel Analysis Deep"><span class="tn" data-field="lesson.number">9.4</span><span class="tt" data-field="lesson.titlePrinted">AARRR Funnel Analysis Deep</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-5" aria-current="false" aria-label="Go to 9.5 Investor Narrative Pitch Spine"><span class="tn" data-field="lesson.number">9.5</span><span class="tt" data-field="lesson.titlePrinted">Investor Narrative Pitch Spine</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-6" aria-current="false" aria-label="Go to 9.6 3-Scenario Financial Model"><span class="tn" data-field="lesson.number">9.6</span><span class="tt" data-field="lesson.titlePrinted">3-Scenario Financial Model</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-7" aria-current="false" aria-label="Go to 9.7 Balanced Scorecard"><span class="tn" data-field="lesson.number">9.7</span><span class="tt" data-field="lesson.titlePrinted">Balanced Scorecard</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-8" aria-current="false" aria-label="Go to 9.8 Cash Conversion Cycle"><span class="tn" data-field="lesson.number">9.8</span><span class="tt" data-field="lesson.titlePrinted">Cash Conversion Cycle</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <button class="tl" type="button" data-field-item data-target="9-9" aria-current="false" aria-label="Go to 9.9 Rule of 40"><span class="tn" data-field="lesson.number">9.9</span><span class="tt" data-field="lesson.titlePrinted">Rule of 40</span><svg class="i tk" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+    </div>
+    <p class="toc-prog"><span class="toc-bar"><i id="tocBar"></i></span><span id="tocCount">0 of <span data-field="module.lessonCount">9</span> copied</span></p>
+  </div>
+  <div class="toc-card">
+    <h2>On this page</h2>
+    <nav class="toc-sec" aria-label="Sections">
+      <a href="#lessons"><span class="dot"></span>Every prompt in this module</a>
+      <a href="#about"><span class="dot"></span>About this module</a>
+      <a href="#why"><span class="dot"></span>What an account opens</a>
+      <a href="#join"><span class="dot"></span>Create an account</a>
+    </nav>
+  </div>
+</aside>
+
+<div class="mcol">
+<div id="lessons">
+  <div class="lhead2">
+    <h2>Every prompt in this module</h2>
+    <p>Open one to read its prompt and copy it. No account needed.</p>
+  </div>
+  <div class="lessons" data-field="module.lessons[]">
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-1" aria-controls="p-9-1" aria-expanded="true">
+        <span class="ln" data-field="lesson.number">9.1</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Unit Economics - LTV:CAC</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">206</span>&ndash;<span data-field="lesson.pages.prompt">207</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-1" role="region" aria-labelledby="b-9-1">
+        <p class="lsum" data-field="lesson.subtitle">The two numbers that tell you whether your business model actually works</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.1</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Unit Economics - LTV:CAC</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-1" data-lesson="9.1">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-1" data-field="lesson.promptBody">Act as a startup finance advisor specialising in unit economics.
+<span class="k">My business model   :</span> <span class="v">[DESCRIBE HOW YOU ACQUIRE AND RETAIN CUSTOMERS]</span>
+<span class="k">Revenue model          :</span> <span class="v">[SUBSCRIPTION / TRANSACTION / USAGE-BASED]</span>
+<span class="k">Help me calculate and analyse my LTV:</span> CAC:
+<span class="k">LTV CALCULATION:</span>
+Average Revenue Per Customer (monthly or annual): <span class="v">[X]</span>
+<span class="k">Gross Margin %:</span> <span class="v">[X]</span>
+<span class="k">Average Customer Lifespan or Churn Rate:</span> <span class="v">[X]</span>
+LTV = (ARPC × Gross Margin) / Churn Rate
+<span class="k">CAC CALCULATION:</span>
+Total Sales &amp; Marketing Spend (last period): <span class="v">[X]</span>
+<span class="k">New Customers Acquired (same period):</span> <span class="v">[X]</span>
+CAC = Total Spend / New Customers
+<span class="k">ANALYSIS:</span>
+1. What is my LTV:CAC ratio?
+2. How does it compare to healthy benchmarks for my model?
+3. What is the payback period (months to recover CAC)?
+4. What one change would most improve this ratio?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.1">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-2" aria-controls="p-9-2" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.2</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Burn Rate &amp; Runway</span>
+        <span class="lv lev-beginner" data-field="lesson.level">Beginner</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">208</span>&ndash;<span data-field="lesson.pages.prompt">209</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-2" role="region" aria-labelledby="b-9-2" hidden>
+        <p class="lsum" data-field="lesson.subtitle">Know exactly how much time you have and what you&#x27;re spending it on</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.2</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Burn Rate &amp; Runway</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-2" data-lesson="9.2">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-2" data-field="lesson.promptBody">Act as a startup CFO advisor.
+My financials:
+<span class="k">Current cash / reserves:</span> <span class="v">[AMOUNT]</span>
+<span class="k">Monthly revenue              :</span> <span class="v">[CURRENT MRR OR ARR / 12]</span>
+<span class="k">Monthly expenses (total) :</span> [BREAKDOWN IF POSSIBLE:
+  <span class="k">Salaries:</span> <span class="v">[X]</span>
+  <span class="k">Infrastructure:</span> <span class="v">[X]</span>
+  <span class="k">Marketing:</span> <span class="v">[X]</span>
+  <span class="k">Other:</span> <span class="v">[X]</span>]
+Calculate:
+<span class="k">GROSS BURN :</span> Total monthly cash out
+<span class="k">NET BURN      :</span> Gross burn minus monthly revenue
+<span class="k">RUNWAY         :</span> Current cash / net burn = months remaining
+Then model three scenarios:
+<span class="k">SCENARIO A (Current)   :</span> Runway at current trajectory
+<span class="k">SCENARIO B (Growth)    :</span> If I hire 2 people and double marketing, new runway?
+<span class="k">SCENARIO C (Conserve) :</span> If I cut non-essential spend 30%,  how much runway does that
+                                                add?
+At what monthly revenue does net burn hit zero?
+What is the fastest path to break-even?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.2">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-3" aria-controls="p-9-3" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.3</span>
+        <span class="lt2" data-field="lesson.titlePrinted">North Star Metric &amp; OMTM</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">210</span>&ndash;<span data-field="lesson.pages.prompt">211</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-3" role="region" aria-labelledby="b-9-3" hidden>
+        <p class="lsum" data-field="lesson.subtitle">Your team tracks many metrics but none of them feel like the right one. Different teams</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.3</span>
+            <span class="ttl" data-field="lesson.titlePrinted">North Star Metric &amp; OMTM</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-3" data-lesson="9.3">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-3" data-field="lesson.promptBody">Act as a growth strategy advisor specialising in metrics design.
+<span class="k">My business                      :</span> <span class="v">[DESCRIBE YOUR PRODUCT AND BUSINESS MODEL]</span>
+<span class="k">Stage                                   :</span> <span class="v">[PRE-REVENUE / EARLY TRACTION / GROWTH / SCALING]</span>
+<span class="k">Current metrics tracked :</span> <span class="v">[LIST WHAT YOU MEASURE NOW]</span>
+<span class="k">Step 1  :</span> Define my North Star Metric.
+<span class="k">It must:</span> measure value to customers, predict revenue, be trackable, and be moveable by
+my team.
+Suggest 3 candidates and recommend the strongest.
+<span class="k">Step 2  :</span> Define my OMTM for my current stage.
+What one metric should I obsess over right now? Why this one above all others at this
+stage?
+<span class="k">Step 3 :</span> Build a metrics hierarchy.
+What are the 3–5 leading indicators that predict movement in the North Star?
+<span class="k">Step 4 :</span> What is one metric I am currently tracking that is a vanity metric and should
+                be dropped?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.3">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-4" aria-controls="p-9-4" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.4</span>
+        <span class="lt2" data-field="lesson.titlePrinted">AARRR Funnel Analysis Deep</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">212</span>&ndash;<span data-field="lesson.pages.prompt">213</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-4" role="region" aria-labelledby="b-9-4" hidden>
+        <p class="lsum" data-field="lesson.subtitle">Dive</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.4</span>
+            <span class="ttl" data-field="lesson.titlePrinted">AARRR Funnel Analysis Deep</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-4" data-lesson="9.4">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-4" data-field="lesson.promptBody">Act as a growth analytics advisor running a deep AARRR analysis.
+<span class="k">My business    :</span> <span class="v">[DESCRIBE PRODUCT AND REVENUE MODEL]</span>
+Populate my funnel with current numbers:
+<span class="k">ACQUISITION :</span> Monthly visitors / leads: <span class="v">[X]</span>
+<span class="k">ACTIVATION   :</span> % who complete first key action: <span class="v">[X%]</span>
+<span class="k">RETENTION    :</span> 30-day retention or monthly churn: <span class="v">[X%]</span>
+<span class="k">REVENUE         :</span> % who convert to paying: <span class="v">[X%]</span> · Average revenue per paying user: <span class="v">[X]</span>
+<span class="k">REFERRAL        :</span> % who refer at least one other user: <span class="v">[X%]</span>
+<span class="k">ANALYSIS:</span>
+1. Calculate conversion rate at each stage transition
+2. Identify the stage with the worst conversion the biggest leak in the funnel
+3. Model the revenue impact if that stage improved 10%
+4. Model the revenue impact if every stage improved 10%
+5. Recommend the 2 highest-ROI experiments to run at the weakest stage
+6. What is my current revenue per acquired visitor?
+What would it be at healthy benchmark conversion rates?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.4">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-5" aria-controls="p-9-5" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.5</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Investor Narrative Pitch Spine</span>
+        <span class="lv lev-advanced" data-field="lesson.level">Advanced</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">214</span>&ndash;<span data-field="lesson.pages.prompt">215</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-5" role="region" aria-labelledby="b-9-5" hidden>
+        <p class="lsum" data-field="lesson.subtitle">You have a real business but your fundraising conversations are not landing. Investors say</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.5</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Investor Narrative Pitch Spine</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-5" data-lesson="9.5">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-5" data-field="lesson.promptBody">Act as a venture capital pitch coach.
+<span class="k">My business  :</span> <span class="v">[DESCRIBE WHAT YOU DO IN 2 SENTENCES]</span>
+<span class="k">Stage               :</span> <span class="v">[PRE-SEED / SEED / SERIES A]</span>
+<span class="k">Traction         :</span> <span class="v">[YOUR BEST PROOF POINT - REVENUE, USERS, RETENTION]</span>
+<span class="k">Ask                  :</span> <span class="v">[AMOUNT AND WHAT IT WILL BE USED FOR]</span>
+Write my Pitch Spine - all seven beats:
+<span class="k">THE WORLD AS IT WAS  :</span> The status quo - how this problem has always been handled
+<span class="k">THE PROBLEM                  :</span> Specific pain - who feels it, how bad
+<span class="k">THE INSIGHT                     :</span> The non-obvious truth that unlocks the solution
+                                                  (this is your unfair insight)
+<span class="k">THE SOLUTION                  :</span> What you built and why it works now
+<span class="k">THE PROOF                         :</span> Your strongest evidence it is working
+<span class="k">THE ASK                               :</span> Exact amount, use of funds, key milestone
+<span class="k">THE VISION                         :</span> The world your company creates at scale
+Write each beat as 2–3 sentences. Make them build on each other.</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.5">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-6" aria-controls="p-9-6" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.6</span>
+        <span class="lt2" data-field="lesson.titlePrinted">3-Scenario Financial Model</span>
+        <span class="lv lev-advanced" data-field="lesson.level">Advanced</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">216</span>&ndash;<span data-field="lesson.pages.prompt">217</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-6" role="region" aria-labelledby="b-9-6" hidden>
+        <p class="lsum" data-field="lesson.subtitle">You have a single financial plan that assumes everything goes roughly as expected. When</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.6</span>
+            <span class="ttl" data-field="lesson.titlePrinted">3-Scenario Financial Model</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-6" data-lesson="9.6">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-6" data-field="lesson.promptBody">Act as a startup CFO building a 3-scenario financial model.
+<span class="k">My business                :</span> <span class="v">[REVENUE MODEL, STAGE, CURRENT METRICS]</span>
+<span class="k">Planning horizon       :</span> <span class="v">[6 MONTHS / 12 MONTHS / 18 MONTHS]</span>
+<span class="k">Key revenue drivers  :</span> <span class="v">[WHAT DRIVES REVENUE - DEALS, USERS, USAGE]</span>
+<span class="k">Key cost drivers         :</span> <span class="v">[HEADCOUNT, INFRASTRUCTURE, MARKETING]</span>
+Build a 3-scenario model:
+<span class="k">BASE CASE:</span> Most likely trajectory
+Revenue assumption, cost assumption, key metric target
+<span class="k">End-state    :</span> cash position, burn, milestone achieved
+<span class="k">BULL CASE :</span> Everything works - best realistic outcome
+What accelerates - which driver performs above base?
+<span class="k">End-state    :</span> cash, burn, milestone, optionality created
+<span class="k">BEAR CASE :</span> Things go worse - survivable but hard
+What underperforms - which driver falls short?
+<span class="k">End-state    :</span> cash, burn, how long can we operate?
+<span class="k">SCENARIO TRIGGERS :</span> What would I observe by month 3 that confirms each scenario?
+<span class="k">DECISION PLAYBOOK :</span> What do I do differently in each?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.6">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-7" aria-controls="p-9-7" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.7</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Balanced Scorecard</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">218</span>&ndash;<span data-field="lesson.pages.prompt">219</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-7" role="region" aria-labelledby="b-9-7" hidden>
+        <p class="lsum" data-field="lesson.subtitle">Your business metrics are almost entirely financial - revenue, costs, and margin. But the</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.7</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Balanced Scorecard</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-7" data-lesson="9.7">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-7" data-field="lesson.promptBody">Act as a business performance consultant using the Balanced Scorecard.
+<span class="k">My business             :</span> <span class="v">[DESCRIBE YOUR COMPANY, STAGE, AND STRATEGY]</span>
+<span class="k">Strategic priorities :</span> <span class="v">[YOUR TOP 3 OBJECTIVES FOR THIS YEAR]</span>
+Build a Balanced Scorecard across all four perspectives:
+<span class="k">FINANCIAL PERSPECTIVE                      :</span> Objective, Measure, Target, Initiative
+<span class="k">CUSTOMER PERSPECTIVE                     :</span> Objective, Measure, Target, Initiative
+<span class="k">INTERNAL PROCESS PERSPECTIVE     :</span> Objective, Measure, Target, Initiative
+LEARNING &amp; GROWTH PERSPECTIVE :  Objective, Measure, Target, Initiative
+<span class="k">After building:</span> show the causal chain.
+How does improvement in Learning &amp; Growth lead to better Internal Processes,
+which leads to better Customer outcomes, which drives Financial results?
+Draw the arrows explicitly.</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.7">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-8" aria-controls="p-9-8" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.8</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Cash Conversion Cycle</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">220</span>&ndash;<span data-field="lesson.pages.prompt">221</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-8" role="region" aria-labelledby="b-9-8" hidden>
+        <p class="lsum" data-field="lesson.subtitle">Your business is profitable on paper but always tight on cash. Invoices are raised but</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.8</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Cash Conversion Cycle</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-8" data-lesson="9.8">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-8" data-field="lesson.promptBody">Act as a working capital advisor using the Cash Conversion Cycle framework.
+<span class="k">My business:</span> <span class="v">[DESCRIBE YOUR REVENUE MODEL AND PAYMENT TERMS]</span>
+Current data:
+Average days to collect payment from customers: <span class="v">[X days]</span>
+Average days inventory is held (if applicable): <span class="v">[X days]</span>
+<span class="k">Average days to pay suppliers:</span> <span class="v">[X days]</span>
+Calculate my Cash Conversion Cycle:
+CCC = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days
+Payable Outstanding (DPO)
+Analyse:
+1. What does my CCC tell me about my working capital health?
+2. Which component is the biggest drag on cash flow?
+3. What are 3 specific actions to shorten DSO?
+4. What payment terms or structures would improve my CCC?
+5. If I reduced my CCC by 10 days, how much additional cash would that free up at my
+current revenue run rate?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.8">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="lrow" data-field-item>
+      <h3 class="lrow-h"><button class="lrow-btn" type="button" id="b-9-9" aria-controls="p-9-9" aria-expanded="false">
+        <span class="ln" data-field="lesson.number">9.9</span>
+        <span class="lt2" data-field="lesson.titlePrinted">Rule of 40</span>
+        <span class="lv lev-intermediate" data-field="lesson.level">Intermediate</span>
+        <span class="lp">pp. <span data-field="lesson.pages.intro">222</span>&ndash;<span data-field="lesson.pages.prompt">223</span></span>
+        <span class="lx" aria-hidden="true"><svg class="i" width="15" height="15" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button></h3>
+      <div class="lpanel" id="p-9-9" role="region" aria-labelledby="b-9-9" hidden>
+        <p class="lsum" data-field="lesson.subtitle">The single benchmark that tells investors whether your SaaS business is healthy</p>
+        <div class="promptcard">
+          <div class="pc-top">
+            <span class="tag" data-field="lesson.number">9.9</span>
+            <span class="ttl" data-field="lesson.titlePrinted">Rule of 40</span>
+            <span class="up"><button class="btn btn-blue btn-sm copybtn" type="button" data-copy="pb-9-9" data-lesson="9.9">Copy prompt</button></span>
+          </div>
+          <div class="pc-body" id="pb-9-9" data-field="lesson.promptBody">Act as a SaaS financial advisor using the Rule of 40.
+My business metrics:
+<span class="k">Annual Recurring Revenue (ARR):</span> <span class="v">[CURRENT ARR]</span>
+<span class="k">ARR 12 months ago:</span> <span class="v">[PRIOR YEAR ARR]</span>
+<span class="k">EBITDA or Operating Profit Margin:</span> <span class="v">[X% - negative if burning]</span>
+Calculate my Rule of 40 score:
+Revenue Growth Rate = (Current ARR - Prior ARR) / Prior ARR
+Rule of 40 Score = Growth Rate % + Profit Margin %
+Analyse:
+1. What is my current Rule of 40 score?
+2. How does it compare to the 40 benchmark?
+3. Am I growth-led or efficiency-led - which matters more at my current stage?
+4. To reach a score of 40, should I prioritise accelerating growth or improving margin?
+5. What is the single most impactful action to improve my score by 5 points in 6 months?</div>
+        </div>
+        <p class="mlegend"><span><i class="ky"></i>Labels</span><span><i class="vl"></i>Replace these</span></p>
+        <div class="lacts">
+          <a class="fulllink" href="#join" data-href="lesson.html" data-lesson="9.9">
+            <svg class="i lk" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+            View full lesson
+          </a>
+          <span class="lockwhy">Free account &mdash; <a href="#why">what that opens</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT THIS MODULE ============ -->
+<div class="about" id="about">
+  <div>
+    <h2>About this module</h2>
+    <p class="lead" data-field="module.subtitle">Know your numbers. Own your narrative.</p>
+    <p data-field="module.description">You do not need to be a CFO to run a financially healthy business. You need to understand nine numbers and one story. This module gives you the frameworks to know whether your unit economics work, how long your runway is, what metric defines your growth, and how to present your financial reality to investors in a way that builds confidence rather than questions. Finance is not accounting &mdash; it is the language of business decisions.</p>
+  </div>
+  <div class="spread">
+    <div class="sp"><span class="spl b">Beginner</span><b data-field="module.levelCount.beginner">1</b></div>
+    <div class="sp"><span class="spl i">Intermediate</span><b data-field="module.levelCount.intermediate">6</b></div>
+    <div class="sp"><span class="spl a">Advanced</span><b data-field="module.levelCount.advanced">2</b></div>
+    <div class="sp"><span class="spl" style="color:var(--gray-l2)">Printed on</span><b>Pages <span data-field="module.pageRange">206&ndash;223</span></b></div>
+  </div>
+</div>
+
+<!-- ============ WHY THE FULL LESSON ============ -->
+<div class="why" id="why"><div class="why-in">
+  <p class="kicker">What an account opens</p>
+  <h2>The prompt is the tool. The lesson page is how you aim it.</h2>
+  <p class="lead">You have the prompt already &mdash; copy it and go. The full lesson page is the printed spread around it, which is what turns a good prompt into a good answer. It is free; it just needs a name to attach your saved prompts to.</p>
+  <div class="whygrid">
+    <div class="wi">
+      <span class="ic" style="background:#FFEBE8; color:#C4382B;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5v5"/><path d="M12 16.8h.01"/><path d="M10.3 3.9L2.5 17.5A2 2 0 0 0 4.2 20.5h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+      <div><h3>The problem it solves</h3><p>The situation the framework was written for, in the author's words. <b>If it is not your situation, you have saved yourself an hour.</b></p></div>
+    </div>
+    <div class="wi">
+      <span class="ic" style="background:#E8F0FE; color:#1E5CE0;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.5"/><path d="M12 7.6h.01"/></svg></span>
+      <div><h3>How the framework works</h3><p>What the numbers mean, what counts as healthy, and <b>what the framework hides</b> if you read it on its own.</p></div>
+    </div>
+    <div class="wi">
+      <span class="ic" style="background:#E6F6EC; color:#1B7A3C;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M4 12h12M4 17h7"/><path d="M19 5.5l2.5 2.5L19 10.5"/></svg></span>
+      <div><h3>The method, step by step</h3><p>The numbered moves to run before and after the prompt &mdash; <b>where most people get the inputs wrong.</b></p></div>
+    </div>
+    <div class="wi">
+      <span class="ic" style="background:#E8F0FE; color:#1E5CE0;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M16.5 6.2a3.2 3.2 0 0 1 0 5.6M18 19c0-2.6-1-4.3-2.6-5.1"/></svg></span>
+      <div><h3><span data-field="module.roleCount">10</span> roles you can drop in</h3><p>This module's role profile index. <b>Choose one and the prompt's opening line rewrites itself</b> &mdash; a CFO and an auditor give you different answers.</p></div>
+    </div>
+    <div class="wi">
+      <span class="ic" style="background:#F4F5F7; color:#1B1C1F;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5a2 2 0 0 1 2 2V20a2 2 0 0 0-2-2H4z"/><path d="M20 4.5h-5.5a2 2 0 0 0-2 2V20a2 2 0 0 1 2-2H20z"/></svg></span>
+      <div><h3>Where it came from</h3><p>Who built the framework and when. <b>Useful when someone asks you to justify the method</b> in a meeting.</p></div>
+    </div>
+    <div class="wi">
+      <span class="ic" style="background:#FFF4D6; color:#8A5B00;"><svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.6 11.9c.4.3.6.7.6 1.2v.4h6v-.4c0-.5.2-.9.6-1.2A6.5 6.5 0 0 0 12 2.5z"/></svg></span>
+      <div><h3>The pro tip and the pairings</h3><p>The one caveat the author flags, and <b>the four frameworks to run beside it</b>, with their page numbers.</p></div>
+    </div>
+  </div>
+  <p class="wfoot">
+    <svg class="i" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--green)"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    <span><b>The prompts on this page stay free either way.</b> An account is for the lesson pages, your saved list, and nothing else. No card, no trial.</span>
+  </p>
+</div></div>
+</div>
+</div>
+
+<!-- ============ JOIN ============ -->
+<section class="join" id="join">
+  <div class="bg"></div><div class="lines"></div>
+  <div class="pad join-in">
+    <div>
+      <h2>A free account, and the whole book opens.</h2>
+      <p>Email link or Google, no password and no card. It exists so your saved prompts have somewhere to live and so the lesson pages know who you are &mdash; not to meter anything you have already paid for in print.</p>
+      <div class="join-btns">
+        <a class="btn btn-white" href="#">Create an account</a>
+        <a class="btn btn-line" href="how-to-use.html">How the book works</a>
+      </div>
+    </div>
+    <div class="join-list">
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>All 108 full lesson pages</span></div>
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4-6.5 4v-16a1 1 0 0 1 1-1z"/></svg><span>Save any prompt to your own list</span></div>
+      <div class="jl"><svg class="i si" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M17 8.5v5M14.5 11h5"/></svg><span>Send a colleague a link with your name on it</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="pad">
+  <div class="foot-top">
+    <div class="foot-col foot-about">
+      <a class="mark" href="home.html"><span class="sq"></span>AIOS</a>
+      <p>The companion site to <i>AI Operating System for Leaders</i> by Raphy Varghese &mdash; 108 frameworks, kept current.</p>
+      <div class="foot-badges"><span class="fbadge">108 prompts</span><span class="fbadge">10 modules</span><span class="fbadge">Prompts free</span></div>
+    </div>
+    <div class="foot-col"><h4>The book</h4><a href="why-this-book.html">Why this book</a><a href="how-to-use.html">How to use</a><a href="who-its-for.html">Who it's for</a><a href="#">About Raphy</a><a href="home.html#get">Buy a copy</a></div>
+    <div class="foot-col"><h4>Prompts</h4><a href="home.html#modules">All 10 modules</a><a href="home.html#try">Sample prompts</a><a href="#">Latest updates</a><a href="#">My prompts</a></div>
+    <div class="foot-col"><h4>Read</h4><a href="#">Articles</a><a href="#">Blog</a><a href="how-to-use.html#trouble">FAQ</a><a href="contact.html#subscribe">Newsletter</a></div>
+    <div class="foot-col"><h4>Buy &amp; contact</h4><a href="for-business.html">For business</a><a href="for-institutions.html">For institutions</a><a href="for-institutions.html#acquire">Bulk orders</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="foot-bot">
+    <span>&copy; 2026 Raphy Varghese &middot; aios.obio.in</span>
+    <span class="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></span>
+  </div>
+</div></footer>
+
+<span class="copystat" id="copyStat" role="status"></span>
+
+<script>
+(function(){
+  document.documentElement.lang='en-GB';
+  var $=function(id){return document.getElementById(id);};
+  var stat=$('copyStat');
+  var say=function(t){ if(stat) stat.textContent=t; };
+
+  /* signed-in preview: flips <html data-auth> so every lock on the page follows one switch */
+  var lb=$('loginBtn'), ac=$('avatarChip');
+  var setAuth=function(on){
+    document.documentElement.setAttribute('data-auth', on ? 'in' : 'out');
+    if(lb) lb.hidden=on; if(ac) ac.hidden=!on;
+    document.querySelectorAll('.fulllink').forEach(function(el){
+      var n=el.getAttribute('data-lesson')||'';
+      el.setAttribute('aria-label', (on?'Open the full lesson for ':'Create a free account to open the full lesson for ')+n);
+      el.setAttribute('href', on ? (el.getAttribute('data-href')||'#join') : '#join');
+    });
+  };
+  setAuth(false);
+  if(lb&&ac){
+    lb.addEventListener('click',function(){ setAuth(true); ac.focus(); say('Signed-in preview on'); });
+    ac.addEventListener('click',function(){ setAuth(false); lb.focus(); say('Signed-in preview off'); });
+  }
+
+  /* accordion: closed panels are hidden, so they leave the tab order and find-in-page */
+  document.querySelectorAll('.lrow-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      var panel=document.getElementById(btn.getAttribute('aria-controls'));
+      if(panel) panel.hidden=open;
+    });
+  });
+
+  /* the contents rail: jump to a framework, and keep a tally of what has been copied */
+  var copied={}, tocBtns=Array.prototype.slice.call(document.querySelectorAll('.tl'));
+  var bar=$('tocBar'), cnt=$('tocCount'), total=tocBtns.length;
+  var tally=function(){
+    var n=Object.keys(copied).length;
+    if(bar) bar.style.transform='scaleX('+(total? (n/total):0)+')';
+    if(cnt) cnt.textContent=n+' of '+total+' copied';
+  };
+  var openRow=function(sid,focus){
+    var b=$('b-'+sid), p=$('p-'+sid);
+    if(!b||!p) return;
+    if(b.getAttribute('aria-expanded')!=='true'){ b.setAttribute('aria-expanded','true'); p.hidden=false; }
+    var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    b.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'});
+    if(focus) b.focus({preventScroll:true});
+  };
+  tocBtns.forEach(function(t){
+    t.addEventListener('click',function(){ openRow(t.getAttribute('data-target'), true); });
+  });
+  var markCopied=function(num){
+    copied[num]=1; tally();
+    tocBtns.forEach(function(t){
+      if(t.querySelector('.tn') && t.querySelector('.tn').textContent.trim()===num) t.setAttribute('data-copied','1');
+    });
+  };
+  tally();
+
+  /* follow the scroll so the rail shows where you are */
+  if('IntersectionObserver' in window && tocBtns.length){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ seen[e.target.id]=e.isIntersecting?e.boundingClientRect.top:null; });
+      var best=null;
+      tocBtns.forEach(function(t){
+        var id='b-'+t.getAttribute('data-target');
+        if(seen[id]!=null && (best===null || seen[id]<seen['b-'+best])) best=t.getAttribute('data-target');
+      });
+      tocBtns.forEach(function(t){ t.setAttribute('aria-current', String(t.getAttribute('data-target')===best)); });
+    },{rootMargin:'-70px 0px -70% 0px'});
+    tocBtns.forEach(function(t){ var b=$('b-'+t.getAttribute('data-target')); if(b) io.observe(b); });
+    var secs=Array.prototype.slice.call(document.querySelectorAll('.toc-sec a'));
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        secs.forEach(function(a){ a.classList.toggle('here', a.getAttribute('href')==='#'+e.target.id); });
+      });
+    },{rootMargin:'-70px 0px -60% 0px'});
+    ['lessons','about','why','join'].forEach(function(id){ var el=$(id); if(el) io2.observe(el); });
+  }
+
+  /* copy: each panel copies its own prompt body, nothing else */
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    var label=btn.textContent, busy=false;
+    btn.addEventListener('click',function(){
+      if(busy) return; busy=true;
+      var body=document.getElementById(btn.getAttribute('data-copy'));
+      var settled=false;
+      var done=function(ok){
+        if(settled) return; settled=true;
+        btn.textContent = ok ? 'Copied' : 'Select and copy';
+        btn.classList.toggle('done', ok);
+        if(ok) markCopied(btn.getAttribute('data-lesson')||'');
+        say(ok ? ('Prompt '+(btn.getAttribute('data-lesson')||'')+' copied to clipboard') : 'Could not copy — select the prompt and copy it manually');
+        setTimeout(function(){ btn.textContent=label; btn.classList.remove('done'); busy=false; },2200);
+      };
+      setTimeout(function(){ done(false); },3000);
+      if(!body){ done(false); return; }
+      var text=body.innerText;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(false);});
+      } else {
+        var ta=document.createElement('textarea'); ta.value=text;
+        ta.setAttribute('readonly',''); ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+        document.body.removeChild(ta); done(ok);
+      }
+    });
+  });
+
+  /* the lock: signed out, "View full lesson" explains itself instead of failing silently */
+  document.querySelectorAll('.fulllink').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(document.documentElement.getAttribute('data-auth')!=='in'){
+        say('A free account opens the full lesson page');   // the href already points at #join
+      }
+    });
+  });
+})();
+</script>
