@@ -617,3 +617,77 @@ design) and `all-module.html` (→ new route `/modules`) are ported designs stil
 own build pass. Until then those two links 404; they're wired to the route the site is meant to
 have, not to a placeholder, since re-wiring them later would be a second pass through this exact
 file for no reason.
+
+## `/m{module}`'s "View full lesson" links stay plain — the lesson-page gate is not built here
+
+`each-module.html`'s NOTE 3 describes a client-side lock on every "View full lesson" anchor:
+signed out, the link points at `#join` and carries its real destination in `data-href`; a script
+swaps `href` to `data-href` once signed in. The design's own comment flags this as "an
+affordance, not security" and says the real gate belongs on `/m{module}/{lesson}` itself.
+
+This build does not implement that NOTE 3 script at all. Every "View full lesson" link on
+`/m{module}` is a plain `<Link href="/m{module}/{lesson}">`, identical for signed-in and
+signed-out visitors. This is deliberate, not an oversight:
+
+- Raphy confirmed directly (see the "sign-in gate confirmed" entry above) that QR codes are
+  printed at module level only. `/m{module}` is the page a scanned code opens, so it must stay
+  fully open with no auth-dependent behaviour at all, matching the QR-path non-negotiable.
+- Building the NOTE 3 lock on `/m{module}` while leaving `/m{module}/{lesson}` itself ungated
+  would produce the worst of both: a fake lock that "leaks through" on middle-click, right-click
+  "open in new tab", or JS failure (the design's own words), for a page that isn't actually
+  protected yet.
+- The real gate — actually restricting `/m{module}/{lesson}` server-side — is a separate,
+  larger piece of work (auth check in the lesson route, redirect-then-return flow, copy changes
+  to the six locked pages and PRODUCT.md the design's own "OPEN QUESTION FOR THE AUTHOR" flags as
+  contradicted) that belongs entirely on that route, not smuggled in half-built on this one.
+
+Net effect: today, `/m{module}/{lesson}` is not actually gated either (Phase 8 built it fully
+open), so this doesn't create a broken link — it just correctly does nothing until the lesson
+page's own gate lands as its own piece of work.
+
+## `/modules` and `/m{module}` share almost everything except one row component
+
+`each-module.html` and `all-module.html` say outright that they mirror each other "so the two
+read as one system" — same seam strip, head band, two-column TOC grid, accordion shell, "about"
+spread, join band. The real difference is what one accordion row contains: `/m{module}`'s row is
+a lesson with a copy-ready prompt card; `/modules`' row is a module with a stats grid and a
+framework list, no prompt, no Copy button, and (per its NOTE 3) an unconditional link to
+`/m{n}` — no lock question even arises there since a module page has never claimed to be behind
+an account.
+
+`components/modules/` reflects that: `SeamStrip`, `PageHeadBand`, `TocRail`, `AboutSpread` and
+`JoinBand` are shared as-is; `LessonRow` and `ModuleRow` are the two page-specific pieces. This
+keeps the "one system" relationship visible in the code, not just in the two source HTML files.
+
+## Two of each-module.html's vanilla-JS enhancements were cut for scope
+
+The locked mockup's own `<script>` does two things beyond a working accordion: it tallies
+"N of M copied" with a progress bar and per-row checkmarks in the contents rail, and it uses an
+`IntersectionObserver` to highlight which "on this page" section is currently in view. Both are
+cosmetic layers on top of a page that works fully without them — every row still opens, copies,
+and links out; the contents rail still jumps to and opens any row on click.
+
+Given the size of this task (two full page builds against a ~2,000-line combined design spec in
+one pass), both were dropped rather than built. If Raphy wants them back: the copy tally needs a
+small piece of state shared between the TOC and the rows it isn't currently wired to (`TocRail`
+and `LessonRow` are presently decoupled — a TOC click finds a row by DOM id and calls `.click()`
+on it, nothing more); the section highlighter is a straightforward `IntersectionObserver` over
+the four `#lessons`/`#about`/`#why`/`#join` anchors, same as `components/lesson/Sidebar.tsx`'s
+jump-link pattern if that's a useful reference.
+
+## `LessonRow`/`ModuleRow` take narrowed props, not the full `LessonV2`/`ModuleV2`
+
+Both are client components (`"use client"`, for their own open/close state), and every prop
+passed to a client component gets serialised into that route's RSC payload — visible in the
+page's HTML as JSON, even though nothing renders it. Passing the full `ModuleV2` to `ModuleRow`
+put `startHere` (all-module.html's own NOTE 2: extracted from the data but must never render)
+into `/modules`' payload verbatim, alongside `description` and the full `roleProfile`, none of
+which that row uses. Passing the full `LessonV2` to `LessonRow` would have done the same with
+`useWhen`/`howToUse`/`steps`/`origin`/`pairsWith`/`extractedAt` — all real lesson-page fields
+this row never touches.
+
+Both components now declare their own minimal prop shape (`ModuleRowModule`,
+`ModuleRowLessonSummary`, `LessonRowLesson`) and their callers build those shapes explicitly at
+the call site instead of forwarding the accessor's full return type. Confirmed by grepping the
+built `/modules` HTML for `startHere`'s own text after the change: zero matches, including inside
+the RSC payload script tag.

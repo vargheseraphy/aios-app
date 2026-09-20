@@ -209,3 +209,62 @@ separately — see the "still outstanding" note below.
 QR-gating conflict already resolved) and the new `/modules` route from `all-module.html` — both
 designs are in place but not yet ported. `/about` links to `/modules` and `why-this-book.html`'s
 existing content ahead of that route existing, matching the intended final site map.
+
+## Phase 10 — `/m{module}` rebuilt and `/modules` added, from `each-module.html`/`all-module.html`
+
+Closes out the two routes Phase 9 left outstanding. `/m{module}` moves off the old `content/`
+schema onto `content-v2`, joining `/m{module}/{lesson}` which made that move in Phase 8.
+`/m{module}/{lesson}` and every file under `components/lesson/**` are untouched by this phase —
+verified via `git diff --stat` against both paths returning empty.
+
+- [x] `lib/content-v2.ts`: `ModuleV2` gains `promise`/`whatItDoes`/`startHere` (already synced
+      into `content-v2/modules/m*.json` since Phase 9); added `getModuleStatsV2()` (per-module
+      `lessonCount`/`pageRange`/`roleCount`/`levelCount`, all computed, none hardcoded) and
+      `getBookStatsV2()` (book-wide totals for `/modules`' head band and "about" spread, replacing
+      the `108`/`10`/`22–246`/`100` each-module.html/all-module.html hardcode as their own demo
+      placeholders)
+- [x] `EACH_MODULE_CONTENT`/`ALL_MODULES_CONTENT`/`MODULES_JOIN_CONTENT` added to
+      `lib/pages-content.ts` — site-authored copy only; every module/lesson field on both new
+      pages reads live from `content-v2` via the accessors above, never duplicated as strings
+- [x] `components/modules/` — new, shared by both routes: `SeamStrip`, `PageHeadBand`, `TocRail`,
+      `AboutSpread`, `JoinBand` (one join band, reused as-is — the two designs' join copy is
+      byte-identical); `LessonRow` (per-lesson accordion row, `/m{module}` only) and `ModuleRow`
+      (per-module accordion row, `/modules` only) are the two pages' one real difference
+- [x] `app/[module]/page.tsx` rebuilt wholesale on `content-v2`, replacing the Phase 3
+      `content`-schema build; deleted `components/LessonAccordionList.tsx`, left orphaned by the
+      replacement (`LessonPromptCard`, which it wrapped, stays — still used by
+      `PromptPreviewCard`/`ScanDemo`)
+- [x] `app/modules/page.tsx` — new route
+- [x] Reused rather than reimplemented: the `promptBody` k/v-span render rule, via
+      `components/lesson/PromptBodyRich` (imported, not copied); lesson 6.6's "prompt under
+      review" notice and Copy-button suppression, same condition
+      (`isFlaggedForReviewV2`) and same message as the lesson page's own `PromptCard`
+- [x] **Confirmed NOT implemented**: `each-module.html`'s NOTE 3 lock (the `#join`/`data-href`
+      swap-on-auth script on "View full lesson"). Every such link on `/m{module}` is a plain
+      `<Link>` straight to `/m{module}/{lesson}` for every visitor, signed in or not — see
+      DECISIONS.md's "the lesson-page gate stays off /m{module}" entry. `/modules`' "Open module"
+      links were never gated in the design to begin with (its own NOTE 3 just repoints them from
+      the demo's `module.html` to the real `/m{n}`)
+- [x] `SiteHeader.tsx`'s `NAV_LINKS` "Modules" entry now points at `/modules`, not `/#modules` —
+      the one nav change in scope; the broader nav/footer curation pass Raphy asked for separately
+      is not part of this phase
+- [x] Judgment call: added a small "See all 10 modules" link to the home page's
+      `ModuleRailSection` pointing at `/modules`, without otherwise touching that rail
+- [x] Judgment call: client components (`LessonRow`, `ModuleRow`) take narrowed prop shapes
+      rather than the full `LessonV2`/`ModuleV2` — every prop on a client component serialises
+      into the page's RSC payload, so passing the full objects would have put `startHere` into
+      `/modules`' client bundle even though it's never rendered, defeating the point of NOTE 2
+- [x] Judgment call: dropped two enhancements from each-module.html's vanilla-JS mockup —
+      the "N of M copied" progress tally/checkmarks and `IntersectionObserver`-driven "on this
+      page" active-section highlighting. Both are cosmetic on top of a fully working page (every
+      row still opens/closes, copies, and the contents rail still jumps to and opens any row);
+      cut for scope given the size of this task. See DECISIONS.md
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all pass;
+      all 10 `/m{module}` routes and the new `/modules` route build static, zero Supabase
+      imports; all 108 `/m{module}/{lesson}` routes still build static and unchanged. Spot-checked
+      rendered HTML: `/m9` (9 "View full lesson" links all point at `/m9/0N`, none at `#join`,
+      no `data-href`/`data-auth` markers anywhere on the page); `/m6` (6.6 shows the review
+      notice, Copy button absent from that row only); `/modules` (module 1's panel ships
+      `aria-expanded="true"`, module 10's `"false"`; `startHere`'s text does not appear anywhere
+      in the rendered HTML, including the RSC payload; all ten "Open module" links point at
+      `/m{n}`)
