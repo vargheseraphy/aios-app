@@ -16,38 +16,34 @@ physical book is already printed, the site must match the format the locked desi
 extension the real printed QR codes) already commits to. Routes are implemented as Next.js
 folders named `m[module]` (no separating slash) so the resulting URL is `/m6/06`, not `/m/6/06`.
 
-## each-module.html's server-side lesson gate is not implemented — conflicts with the QR rule
+## The full lesson page is gated behind sign-in — confirmed by Raphy, QR codes are module-level only
 
 `docs/design/pages/each-module.html`'s own DIRECTION CONTRACT (NOTE 3) says the full lesson
 page's problem/method/roles/origin content "sits behind a free account" and that
 `/m{n}/{ll}` "must be gated on the server as well, or the URL is guessable from the module
-rail." Taken literally, that means a signed-out request to `/m{module}/{lesson}` — the exact
-URL every one of the book's 108 printed QR codes encodes — would be redirected to a sign-up
-wall instead of rendering the prompt.
+rail." Read on its own, gating that exact route looked like a conflict with this build's
+QR-path non-negotiable, since `/m{module}/{lesson}` was the URL format the earlier locked
+designs (`how-to-use.html`) showed as the QR target.
 
-That is a direct conflict with the single non-negotiable rule this whole build has protected
-since Phase 0: "a scanned QR code must reach its prompt with no sign-in, no interstitial, no
-loading gate... whatever else it improves." It also contradicts `docs/product/PRD.md`'s
-explicit scope ("browsing and copying prompts is never gated behind sign-in — only
-bookmarking and invites require an account") and every account-related decision made in this
-file since. A server can't tell a request that came from a phone camera scanning a printed
-page apart from a request that came from clicking a link — gating the route gates the QR code
-too, with no way to exempt it.
+**Raphy confirmed directly (2026-09-20) that this isn't a conflict**: the physical book's QR
+codes are printed at the **module level only** (`/m{module}`), not per lesson. Every prompt in
+that module is copy-ready right there on the module page, free, no account — satisfying
+"copying is free" and the QR-path rule in full. The individual lesson page
+(`/m{module}/{lesson}`) is a deeper, richer view — use-when, method, role profiles, origin,
+pairs — that a reader reaches only by clicking through from the module page, never by scanning
+a code, and Raphy wants that page gated behind sign-in as the site's account-conversion
+mechanism ("this is how I bring users to login").
 
-Resolution: the module page (`/m{module}`, from `each-module.html`) is ported faithfully for
-everything that doesn't touch this — the accordion, the open prompt + Copy button on every row
-(never gated, matching the rest of the site), the module description, chips, sign-up framing.
-The "View full lesson" link on each row is a plain link straight to the real
-`/m{module}/{lesson}` page for every visitor, signed in or not — no `#join` redirect, no
-`data-href` swap-on-auth script, and no server-side check added to the lesson route. The
-sign-up value proposition (save prompts, invite links) stays exactly as already built in
-Phase 5 — it's just not used to gate content that's supposed to be free.
+Implementation: the module page (`/m{module}`) stays exactly as already decided — every
+lesson's prompt open with a working Copy button, "View full lesson" a plain link to the real
+`/m{module}/{lesson}` page. The lesson page itself now checks auth client-side (same
+session-aware pattern already used for the bookmark button) and shows a locked/teaser view
+with a sign-in prompt when signed out, revealing the full content once authenticated — so the
+route stays statically generated (no per-request Supabase call) rather than becoming dynamic.
 
-**Needs Raphy**: if gating the full lesson narrative behind an account is genuinely wanted for
-non-QR traffic, that needs a mechanism that can't be satisfied by a route-level check alone
-(e.g. QR codes carrying a signed query parameter that unlocks that one lesson) — flagging this
-rather than inventing that mechanism myself, since it changes the QR code content that's
-already printed in a physical book.
+No outstanding question here. (If the physical QR codes turn out to actually be printed at
+`/m{module}/{lesson}` rather than `/m{module}`, that would reopen this — Raphy has confirmed
+they are not.)
 
 ## Scope taken from BUILD-PROMPT.md, not the older PRD
 
