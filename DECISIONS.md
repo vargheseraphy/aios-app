@@ -1,5 +1,18 @@
 # Decisions
 
+## Nav curated to four top-level links, rest in a "More" menu — Raphy's request
+
+The shared nav (`SiteHeader.tsx`) had grown to seven direct links as pages got built one at a
+time across this session (Why frameworks, Modules, How to use, Who it's for, For business,
+For institutions, Contact) — Raphy asked for it to stay consistent but not list every page,
+since that gets confusing. Kept the four a QR-scanning reader or a browsing visitor actually
+needs as direct links (Why frameworks, How to use, Modules, Who it's for); moved the
+buyer/gifter-facing pages (For business, For institutions, About, Contact) into a small
+keyboard-operable "More" dropdown (Escape to close, closes on outside click, `aria-expanded`/
+`aria-haspopup` wired). Footer is unaffected — it already lists every real page in its
+columns, which is the right place for a full site map; also fixed its "All 10 modules" link,
+which was still pointing at the home page's `/#modules` anchor from before `/modules` existed.
+
 Autonomous decisions made during the build, blockers, and everything that needs Raphy before
 this goes live. Updated as the build progresses; finalised in Phase 6.
 
