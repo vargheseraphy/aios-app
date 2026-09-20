@@ -6,7 +6,7 @@ import styles from "./SiteHeader.module.css";
 
 const NAV_LINKS = [
   { href: "/why-this-book", label: "Why frameworks" },
-  { href: "/#modules", label: "Modules" },
+  { href: "/modules", label: "Modules" },
   { href: "/how-to-use", label: "How to use" },
   { href: "/who-its-for", label: "Who it's for" },
   { href: "/for-business", label: "For business" },
