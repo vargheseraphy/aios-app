@@ -3,8 +3,7 @@ import styles from "./SiteFooter.module.css";
 
 /**
  * Ported from docs/design/pages/home.html's <footer>. Links only point at
- * routes that exist in this build's scope (see DECISIONS.md — /about,
- * /for-business, /for-institutions, /contact etc. aren't built); everything
+ * routes that exist in this build's scope (see DECISIONS.md); everything
  * else stays "#" rather than link to a page that isn't there.
  */
 export function SiteFooter() {
@@ -32,7 +31,7 @@ export function SiteFooter() {
             <Link href="/why-this-book">Why this book</Link>
             <Link href="/how-to-use">How to use</Link>
             <Link href="/who-its-for">Who it&rsquo;s for</Link>
-            <Link href="#">About Raphy</Link>
+            <Link href="/about">About Raphy</Link>
             <Link href="/#get">Buy a copy</Link>
           </div>
           <div className={styles.footCol}>
