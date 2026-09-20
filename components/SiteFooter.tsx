@@ -36,7 +36,7 @@ export function SiteFooter() {
           </div>
           <div className={styles.footCol}>
             <p className={styles.footColLabel}>Prompts</p>
-            <Link href="/#modules">All 10 modules</Link>
+            <Link href="/modules">All 10 modules</Link>
             <Link href="/#try">Sample prompts</Link>
             <Link href="#">Latest updates</Link>
             <Link href="/my-prompts">My prompts</Link>
