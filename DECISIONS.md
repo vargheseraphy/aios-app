@@ -587,3 +587,37 @@ page, exactly the pattern Phase 5 already established.
   the same figure-caption-fragment and dash-damaged-title issues `content/` already has. This
   build renders every gap correctly (hidden, not invented) but doesn't fix the underlying data —
   that's a manuscript-extraction cleanup job, same as the existing `content/` cleanup item above.
+
+## /about doesn't reproduce two of the locked design's inline text highlights
+
+`docs/design/pages/about.html` colours part of the hero quote (`<em>from the sidelines.</em>`)
+and part of the demo section's "with a framework" example (`<b>Act as a pricing consultant.</b>`,
+`<i>[MY BUSINESS]</i>` in blue) by hand-marking specific words inside what are, in the mockup,
+static strings. In the real build those strings come from `content-v2/about.json` — real
+extracted book text with no markdown markers in it, unlike `lib/pages-content.ts`'s own strings
+which do carry `**bold**` for `Rich` to render.
+
+Reproducing the mockup's highlight would mean either (a) hardcoding a substring match against
+today's exact wording of `about.json`'s `quote`/`with` fields directly in the page component, or
+(b) adding markdown markers into `about.json` itself, which is supposed to hold only what the
+extractor pulled from the printed page, unedited. Both break the rule this file exists to
+protect: real book content and how it's styled shouldn't be coupled to today's exact sentence.
+
+Resolution: `/about` renders both strings as plain text, no inline accent colour. Everything else
+in `about.html` is ported faithfully. If Raphy wants the highlight back, the clean fix is adding
+the emphasis to `about.json` as `**bold**`/`*italic*` the same way `ABOUT_CONTENT` already does
+for site copy, at the point the string is next re-extracted or hand-edited.
+
+## /about's "Framework 2.7" cross-link and the two pages this phase left for later
+
+The demo section's "Framework 2.7" tag now links to `/m2/07`, resolved through
+`moduleParam(2)`/`fileIdFor("2.7")` with a build-time check (`getLessonV2` must find it, or the
+build fails) rather than a hardcoded path — so if lesson 2.7 is ever renumbered, this page fails
+loudly instead of shipping a dead link. The proof section's "Open any module and judge them" link
+and the close section's "See all ten modules" button both point at `/modules`, per
+`each-module.html`/`all-module.html`'s own intended site map, even though that route doesn't
+exist yet in this build — `each-module.html` (→ `/m{module}`, replacing the Phase 3 accordion
+design) and `all-module.html` (→ new route `/modules`) are ported designs still awaiting their
+own build pass. Until then those two links 404; they're wired to the route the site is meant to
+have, not to a placeholder, since re-wiring them later would be a second pass through this exact
+file for no reason.

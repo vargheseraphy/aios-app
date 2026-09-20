@@ -174,3 +174,38 @@ parallel content-v2 data layer, not a migration) and the content issues this sur
       `/m2/02` (no proTip card), `/m1/03` (dash-damaged title renders exactly as stored),
       `/m1/00` (non-"Act as" prompt renders roles non-interactively, no Previous card at the
       book's start), `/m10/11` (no Next card at the book's end)
+
+## Phase 9 — about, module and all-modules pages from three new locked designs
+
+Raphy added three more locked designs to `docs/design/pages/`: `about.html`, `each-module.html`
+and `all-module.html`. This phase covers `/about`; the other two (`/m{module}` rebuilt from
+`each-module.html`, and the new `/modules` route from `all-module.html`) are tracked
+separately — see the "still outstanding" note below.
+
+- [x] `content-v2/about.json` synced from `../aios-book/website/content-v2/about.json`; all 10
+      `content-v2/modules/m{n}.json` re-synced too, to pick up new `promise`/`whatItDoes`/
+      `startHere` fields `each-module.html`/`all-module.html` need (not consumed by this phase)
+- [x] `lib/about.ts` — typed, cached reader for `content-v2/about.json`, same pattern as
+      `lib/content-v2.ts`
+- [x] `ABOUT_CONTENT` added to `lib/pages-content.ts` — site-authored headings/kickers/labels,
+      kept separate from Raphy's own words
+- [x] `components/about/about.module.css` + `app/about/page.tsx` — faithful port of
+      `about.html`: the vague-question-vs-framework demo, the four-part "who wrote this and why
+      trust it" answer, the mission section, the close
+- [x] The demo section's "Framework 2.7" tag links to the real `/m2/07`, resolved via
+      `moduleParam`/`fileIdFor` with a build-time existence guard — not a hardcoded path
+- [x] `components/SiteFooter.tsx`'s "About Raphy" placeholder now points at `/about`
+- [x] Judgment call: `SiteHeader`'s top nav does NOT gain an "About" link — no locked design's
+      own nav includes one, only footers do
+- [x] Judgment call: the hero quote's `<em>` accent and the demo card's inline bold/italic
+      spans on `about.json` string fields are not reproduced — highlighting an arbitrary
+      substring of book-sourced data would mean hardcoding a match against today's exact
+      wording, which breaks the content/design separation this file exists to protect
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all
+      pass; `/about` is static; all 108 lesson routes and 10 module routes still build static;
+      `app/[module]/**` untouched
+
+**Still outstanding**: `/m{module}` rebuilt from `each-module.html` (see DECISIONS.md for the
+QR-gating conflict already resolved) and the new `/modules` route from `all-module.html` — both
+designs are in place but not yet ported. `/about` links to `/modules` and `why-this-book.html`'s
+existing content ahead of that route existing, matching the intended final site map.
