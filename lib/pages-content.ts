@@ -411,3 +411,63 @@ export const CONTACT_CONTENT = {
  * data shape. Kept as a short, clearly-commented exception rather than
  * inventing an awkward rich-text-with-links type for three lines of copy.
  */
+
+/**
+ * Site-authored copy for /about — headings, kickers and labels that are
+ * *not* Raphy's own words. His actual sentences (quote, story, mission,
+ * gap, who[], etc.) come from lib/about.ts's getAboutContent(), which reads
+ * content-v2/about.json — kept separate so the page can always tell the
+ * two voices apart, per the locked design's own rule.
+ */
+export const ABOUT_CONTENT = {
+  crumb: "About the author",
+
+  demoKicker: "The argument the book makes",
+  demoHeading: "A vague question gets a vague answer.",
+  demoSub:
+    "The example the book opens with, on page vii. Read it first — the rest of this page is the same move, applied to its author.",
+  withoutLabel: "Without a framework",
+  withLabel: "With the Value Ladder",
+  withoutTag: "Any model, any day",
+  ruleKicker: "The shape of every framework",
+  ruleLead: "Each of the 108 has four parts:",
+  ruleHighlight: "the situation, who it is for, the method, and the proof.",
+  ruleTrail: "So does the answer below.",
+
+  partsKicker: "The structured answer",
+  partsHeading: "Who wrote this, and why trust it?",
+  attribution: "Raphy Varghese, from the book",
+
+  part1Label: "The situation",
+  part1Page: "Page iv",
+
+  part2Label: "Who it is for",
+  part2Page: "Page vii",
+  part2Intro: "The book names five readers. **None of them is defined by a job title.**",
+
+  part3Label: "The method",
+  part3Page: "Pages iv and vii",
+
+  part4Label: "The proof",
+  part4Page: "Page iv",
+  proofHeading: "His answer, in full",
+  proofTag: "Page iv · the author's own words",
+  proofResponse:
+    "Which is a claim, not proof. **The proof is that all 108 prompts are on this site, free, with no account** — so you can test the claim before you buy anything.",
+  proofLinkLabel: "Open any module and judge them",
+
+  missionKicker: "The mission",
+  missFactBook: "From the book",
+  missFactBookValue: "Pages iv–vii",
+  missFactFrameworks: "Frameworks",
+  missFactFrameworksValue: "108 across 10 modules",
+  missFactPrompt: "Every prompt",
+  missFactPromptValue: "Free, no account",
+  missFactReach: "Reach him",
+
+  closeKicker: "Why there is a website at all",
+  closeBody:
+    "That is the last line of his author page. It is also why every framework in the printed book carries a code that opens its prompt here, free. **The map is printed. The directions are kept current.**",
+  closeCtaPrimary: "See all ten modules",
+  closeCtaSecondary: "Why this book",
+};
