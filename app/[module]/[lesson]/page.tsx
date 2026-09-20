@@ -59,10 +59,13 @@ export async function generateMetadata({
 }
 
 /**
- * This is the QR target — `/m{module}/{lesson}`. No sign-in, no
- * interstitial, no database call: static content only, read from
- * content-v2 at build time. See DECISIONS.md for why this lives on a
- * separate data layer from the rest of the site.
+ * The deeper view a reader reaches by clicking through from `/m{module}` —
+ * not the QR target itself (the printed codes point at the module page; see
+ * DECISIONS.md). Still statically generated with zero server-side Supabase
+ * calls: the prompt renders open for everyone, the rest of the page (roles,
+ * use-when, method, origin, pairs) is gated behind sign-in client-side, via
+ * LessonGate, after hydration — never a server-side auth check, so this
+ * route never becomes dynamic. See DECISIONS.md.
  */
 export default async function LessonPage({
   params,
@@ -137,12 +140,16 @@ export default async function LessonPage({
             roleProfile={mod.roleProfile}
             sharpenTips={sharpenTips}
             sharpenXref={sharpenXref}
+            deeperContent={
+              <>
+                {lesson.useWhen && <UseWhenSection text={lesson.useWhen} />}
+                {lesson.howToUse && <HowToUseSection text={lesson.howToUse} />}
+                {lesson.steps && lesson.steps.length > 0 && <MethodSteps steps={lesson.steps} />}
+                {lesson.origin && <OriginBlock text={lesson.origin} />}
+                <PairsRail pairs={pairs} />
+              </>
+            }
           />
-          {lesson.useWhen && <UseWhenSection text={lesson.useWhen} />}
-          {lesson.howToUse && <HowToUseSection text={lesson.howToUse} />}
-          {lesson.steps && lesson.steps.length > 0 && <MethodSteps steps={lesson.steps} />}
-          {lesson.origin && <OriginBlock text={lesson.origin} />}
-          <PairsRail pairs={pairs} />
         </div>
 
         <Sidebar
