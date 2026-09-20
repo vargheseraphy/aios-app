@@ -57,6 +57,15 @@ export interface ModuleV2 {
   title: string;
   subtitle: string;
   description: string;
+  /** the opener's one-line promise, e.g. "Know your numbers. Own your narrative." */
+  promise: string;
+  /** the opener's "WHAT THIS MODULE DOES" paragraph */
+  whatItDoes: string;
+  /** Duplicated boilerplate across 9 of 10 openers ("Start here if you are new
+   * to AI..."), where it only makes sense on module 1 — see CONTENT-ISSUES.md.
+   * Extracted here because it's in the data, but per all-module.html's own
+   * NOTE 2, it must never be rendered. */
+  startHere: string;
   lessons: string[];
   roleProfile: RoleProfileV2;
 }
@@ -116,6 +125,76 @@ export function getLessonsForModuleV2(moduleNumber: number): LessonV2[] {
 }
 
 export { moduleParam, parseModuleParam };
+
+export interface LevelCount {
+  beginner: number;
+  intermediate: number;
+  advanced: number;
+}
+
+export interface ModuleStats {
+  lessonCount: number;
+  /** e.g. "206–223" */
+  pageRange: string;
+  /** roleProfile.internal.length + roleProfile.outside.length — used only
+   * in the sign-up rationale, per each-module.html's data-binding table. */
+  roleCount: number;
+  levelCount: LevelCount;
+}
+
+/** Computed tallies for a single module's head band and "about" spread —
+ * kept here, next to the data, rather than recomputed ad hoc in page
+ * components (see each-module.html's data-binding NOTE: lessonCount,
+ * pageRange and levelCount are all marked "computed"). */
+export function getModuleStatsV2(moduleNumber: number): ModuleStats | undefined {
+  const mod = getModuleV2(moduleNumber);
+  if (!mod) return undefined;
+  const lessons = getLessonsForModuleV2(moduleNumber);
+  const levelCount: LevelCount = { beginner: 0, intermediate: 0, advanced: 0 };
+  for (const lesson of lessons) {
+    if (lesson.level === "Beginner") levelCount.beginner++;
+    else if (lesson.level === "Intermediate") levelCount.intermediate++;
+    else if (lesson.level === "Advanced") levelCount.advanced++;
+  }
+  return {
+    lessonCount: lessons.length,
+    pageRange: lessons.length
+      ? `${lessons[0].sourcePages.intro}–${lessons[lessons.length - 1].sourcePages.prompt}`
+      : "",
+    roleCount: mod.roleProfile.internal.length + mod.roleProfile.outside.length,
+    levelCount,
+  };
+}
+
+export interface BookStats {
+  moduleCount: number;
+  /** total frameworks across all 10 modules */
+  lessonCount: number;
+  /** e.g. "22–246" */
+  pageRange: string;
+  /** sum of every module's roleCount — all-module.html's about spread shows
+   * this as a flat total (100), not a deduplicated count. */
+  roleProfileCount: number;
+}
+
+/** Book-wide tallies for /modules' head band and "how the book is built"
+ * spread — computed from real content rather than the hardcoded 108/10/
+ * 22–246/100 each-module.html and all-module.html use as demo placeholders. */
+export function getBookStatsV2(): BookStats {
+  const modules = getAllModulesV2();
+  const allLessons = getGlobalLessonSequence();
+  return {
+    moduleCount: modules.length,
+    lessonCount: allLessons.length,
+    pageRange: allLessons.length
+      ? `${allLessons[0].sourcePages.intro}–${allLessons[allLessons.length - 1].sourcePages.prompt}`
+      : "",
+    roleProfileCount: modules.reduce(
+      (sum, m) => sum + m.roleProfile.internal.length + m.roleProfile.outside.length,
+      0,
+    ),
+  };
+}
 
 export function getAllLessonParamsV2(): { module: string; lesson: string }[] {
   return getAllModulesV2().flatMap((m) =>
