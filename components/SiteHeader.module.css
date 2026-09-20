@@ -55,6 +55,58 @@
   color: #fff;
   background: rgba(255, 255, 255, 0.07);
 }
+.more {
+  position: relative;
+  display: inline-flex;
+}
+.more > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--fg-2);
+  background: transparent;
+  border: none;
+  padding: 7px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.more > button:hover,
+.more > button[aria-expanded="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+.moreCr {
+  color: var(--fg-3);
+  transition: transform 0.15s;
+}
+.more > button[aria-expanded="true"] .moreCr {
+  transform: rotate(180deg);
+}
+.moreMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 180px;
+  background: var(--panel);
+  border: 1px solid var(--line-d);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+.moreMenu a {
+  font-size: 13px;
+  color: var(--fg-2);
+  padding: 9px 11px;
+  border-radius: 6px;
+}
+.moreMenu a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
 .navCta {
   margin-left: auto;
   display: flex;
