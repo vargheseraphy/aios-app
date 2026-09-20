@@ -691,3 +691,63 @@ Both components now declare their own minimal prop shape (`ModuleRowModule`,
 the call site instead of forwarding the accessor's full return type. Confirmed by grepping the
 built `/modules` HTML for `startHere`'s own text after the change: zero matches, including inside
 the RSC payload script tag.
+
+## The lesson page's sign-in gate, built — what's gated, what isn't, and why
+
+Phase 10's "the lesson-page gate is not built here" entry above said this was separate,
+larger work that belonged entirely on `/m{module}/{lesson}`. This is that work.
+
+**What stays outside the gate**: `PromptCard` — the prompt itself, its Copy button, and its
+"pro tip, from the book" note. The same prompt is already free and copy-ready one click away
+on `/m{module}`, so gating it again here would protect nothing real while confusing a visitor
+who just copied it from the module page. `proTip` isn't shown on `/m{module}` (only the lesson
+page has it), which is a real argument for gating it as genuinely deeper content — but it lives
+inside `PromptCard` as one visual unit, and splitting a single card's own footer note behind a
+different auth state than the rest of the card would read as broken, not as a feature. Left
+ungated; revisit if Raphy wants it treated as part of the paid-in-attention breakdown instead.
+
+**What's gated, behind one shared `LessonGate`**: `RolesSection` (who should run the prompt,
+including the interactive role switcher), use-when, how-to-use, method steps, origin, and the
+pairs rail — everything a reader only reaches by clicking through from the module page, never
+by scanning a code. One sign-in panel covers all of it, rather than repeating a "sign in to see
+this" notice five times down the page.
+
+**What was deliberately left alone**: `Sidebar`'s jump-link nav, quick facts, and "what to
+replace" legend, and `ModuleRail`/`MaintenancePanel` (the rest of the module, and the
+page-freshness note). None of this is the "deeper view" Raphy described — it's navigation and
+the legend needed to actually use the prompt you already copied — so gating it would work
+against the "copying is free" principle rather than for the conversion goal. Two of `Sidebar`'s
+and `MaintenancePanel`'s quick facts did need fixing regardless: both said "Costs: Nothing, no
+account" for the page as a whole, which stopped being true the moment the breakdown got gated.
+Sidebar now shows two honest facts ("The prompt: free, no account" / "Full breakdown: free
+account"); MaintenancePanel's line narrowed to just the prompt. `SaveBand`'s closing CTA had
+the same problem at larger scale ("nothing on this page is behind a login and nothing ever will
+be") and got a full rewrite rather than a word-level patch.
+
+**Known, accepted rough edge**: `Sidebar`'s jump links still point at `#roles`, `#usewhen`, etc.
+— anchors that now sit inside a `hidden` wrapper when signed out. A `hidden` element isn't a
+scroll target, so clicking one of those links while signed out updates the URL hash but visibly
+does nothing. Not fixed here: doing it properly means either duplicating the gate's lock state
+into a client-aware `Sidebar` (turning a simple server-rendered nav list into another auth-aware
+island) or removing/relabelling links for a state most visitors won't be in for long, and either
+is a genuine nice-to-have, not a functional break — no 404, no crash, works immediately once
+signed in. Flagging it here rather than silently shipping it.
+
+**Server-side enforcement, still knowingly not built**: `each-module.html`'s NOTE 3/NOTE 2 said
+the real gate "must be [enforced] on the server as well, or the URL is guessable from the
+module rail." This build only ever does the client-side check — the route stays statically
+generated, with the full HTML/JS already containing the gated content (just `hidden`), so it is
+technically inspectable by anyone who looks at page source or the RSC payload. This is the
+explicit trade-off Raphy's confirmed decision already accepted (see "The full lesson page is
+gated behind sign-in" above: "the route stays statically generated... rather than becoming
+dynamic") — server-side enforcement would require the route to render per-request, which is a
+different, larger change (auth check in the route handler, a redirect-then-return flow) not in
+scope here. Not an oversight; the confirmed decision already chose static-and-inspectable over
+dynamic-and-enforced.
+
+**Verified**: all 108 `/m{module}/{lesson}` routes still build static (`generateStaticParams`,
+`●` in the build output, `x-nextjs-prerender: 1` in the route's `.meta`); `grep -rl
+SUPABASE_SERVICE .next/static` and `grep -rl "lib/supabase/server" .next/static` both come back
+empty, so nothing pulled the server Supabase client into a client bundle or forced the route
+dynamic. `/m9`'s "View full lesson" links (built in Phase 10) are untouched by this change —
+still plain `<Link>`s, no lock markers.

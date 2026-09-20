@@ -268,3 +268,41 @@ verified via `git diff --stat` against both paths returning empty.
       `aria-expanded="true"`, module 10's `"false"`; `startHere`'s text does not appear anywhere
       in the rendered HTML, including the RSC payload; all ten "Open module" links point at
       `/m{n}`)
+
+## Phase 11 — sign-in gate on `/m{module}/{lesson}` (Raphy's account-conversion mechanism)
+
+- [x] New `components/lesson/LessonGate.tsx` — client component, same auth-check pattern as
+      `BookmarkButton`, wraps real server-rendered children and keeps them `hidden` until
+      `useAuth()` resolves a signed-in user; defaults to locked rather than flashing content
+      while the session check is in flight
+- [x] `PromptCard` (the prompt + Copy button) stays outside the gate — already free and
+      copy-ready one click away on `/m{module}`, so re-gating it here protects nothing
+- [x] Gated behind one shared `LessonGate`: `RolesSection` (role profiles + switcher), use-when,
+      how-to-use, method steps, origin, pairs rail — one sign-in panel for the whole "deeper
+      view," not one per section
+- [x] `RolesSection` moved out of `PromptAndRoles`'s own render into the gate's children;
+      `PromptAndRoles` gained a `deeperContent: ReactNode` prop so `page.tsx` can hand it the
+      trailing static sections without breaking the shared `activeRoleClause` state PromptCard
+      and RolesSection both need
+- [x] Fixed three places whose copy predated the gate and had gone false: Sidebar's and
+      MaintenancePanel's "Costs: Nothing, no account" (now split into "the prompt is free" /
+      "full breakdown needs a free account"), and SaveBand's "nothing on this page is behind a
+      login and nothing ever will be" (rewritten to say plainly what's free and what an account
+      buys) — see DECISIONS.md
+- [x] Updated the lesson page's own docstring (`page.tsx`) — it used to claim to be the QR
+      target; the QR target is `/m{module}` (confirmed by Raphy, see Phase 10/DECISIONS.md), this
+      page is the deeper view reached by clicking through from it
+- [x] Judgment call, documented in DECISIONS.md: server-side enforcement (the locked design's
+      own NOTE 3, "must be gated on the server as well, or the URL is guessable") is knowingly
+      not built — client-side-only gating is what keeps the route statically generated, which
+      Raphy's confirmed decision already accepted as the trade-off
+- [x] Known, accepted rough edge, documented in DECISIONS.md: `Sidebar`'s jump links to gated
+      section anchors (`#roles`, `#usewhen`, etc.) are inert for a signed-out visitor, since a
+      `hidden` element isn't a scroll target — not fixed here, see DECISIONS.md for why
+- [x] Acceptance: `npm run build`, `npx tsc --noEmit`, `npx vitest run`, `npm run lint` all pass;
+      all 108 `/m{module}/{lesson}` routes still build static; `grep -rl SUPABASE_SERVICE
+      .next/static` and `grep -rl "lib/supabase/server" .next/static` both empty. Spot-checked
+      `/m9/01` and `/m6/06`'s rendered HTML: `#signin-gate` panel present, the roles/use-when/
+      how-to/method/origin/pairs wrapper renders with `hidden=""` by default, the prompt card and
+      Copy button sit outside it, 6.6's review notice is unaffected, `/m9`'s "View full lesson"
+      links are untouched (still plain, no lock markers)
