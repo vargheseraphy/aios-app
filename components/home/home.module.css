@@ -849,6 +849,19 @@
     padding-inline: 80px;
   }
 }
+.seeAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--blue-lo);
+}
+.seeAll:hover {
+  text-decoration: underline;
+}
+
 .railnav {
   display: flex;
   gap: 8px;
